@@ -19,6 +19,12 @@ public class Link {
     this.refrence = refrence;
   }
 
+  public Link(Link link) {
+    this.text = link.text;
+    this.refrence = link.refrence;
+  }
+
+
   public String getText() {
     return text;
   }
