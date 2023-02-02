@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added Passage class">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added files in class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" afterDir="false" />
     </list>
@@ -20,22 +20,28 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2LBBaNZgst9at1QbyjUwid8xKV6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths",
+    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/H22/Java/mappevurdering",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.general",
     "vue.rearranger.settings.migration": "true"
   }
@@ -51,6 +57,8 @@
       <workItem from="1675334659117" duration="6000" />
       <workItem from="1675340471287" duration="135000" />
       <workItem from="1675341076096" duration="331000" />
+      <workItem from="1675341828334" duration="300000" />
+      <workItem from="1675342203297" duration="402000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -59,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675341123222</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added files in class">
+      <created>1675341969290</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675341969290</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,8 +92,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added Passage class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Passage class" />
+    <MESSAGE value="Added files in class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added files in class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

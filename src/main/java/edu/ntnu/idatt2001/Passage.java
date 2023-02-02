@@ -6,9 +6,22 @@ public class Passage {
   private List<Link> links;
 
   public Passage(String title, String content) {
+
+    if (title.isBlank()) {
+      throw new IllegalArgumentException("Title must not be empty");
+    }
+    if (content.isBlank()) {
+      throw new IllegalArgumentException("Content must not be empty");
+    }
+
     this.title = title;
     this.content = content;
   }
+
+public Passage(Passage passage) {
+    this.title = passage.title;
+    this.content = passage.content;
+}
 
   public String getTitle() {
     return title;
@@ -27,13 +40,11 @@ public class Passage {
   }
   public boolean setLinks(List<Link> links) {
     this.links = links;
+    return false;
   }
 
   public boolean hasLinks() {
-    if (links != null) {
-      return true;
-    }
-    return false;
+    return links != null;
   }
   @java.lang.Override
   public java.lang.String toString() {
