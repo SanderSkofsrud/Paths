@@ -8,6 +8,13 @@ public class Link {
   private Link<Action> actions;
 
   public Link(String text, String refrence) {
+    if (text.isBlank()){
+      throw new IllegalArgumentException("The text can´t be empty");
+    }
+    if(refrence.isBlank()){
+      throw new IllegalArgumentException("The reference can´t be empty");
+    }
+
     this.text = text;
     this.refrence = refrence;
   }
@@ -21,7 +28,7 @@ public class Link {
   }
 
   public boolean addAction(Action action) {
-      return action != null;
+    return action != null;
   }
 
   public Link<Action> getActions() {
