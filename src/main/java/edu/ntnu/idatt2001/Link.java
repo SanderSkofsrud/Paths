@@ -3,6 +3,7 @@ package edu.ntnu.idatt2001;
 import javax.swing.*;
 import edu.ntnu.idatt2001.actions.Action;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,11 +22,13 @@ public class Link {
 
     this.text = text;
     this.refrence = refrence;
+    this.actions = new ArrayList<>();
   }
 
   public Link(Link link) {
     this.text = link.text;
     this.refrence = link.refrence;
+    this.actions = link.actions;
   }
 
 
@@ -37,8 +40,8 @@ public class Link {
     return refrence;
   }
 
-  public boolean addAction(Action action) {
-    return action != null;
+  public void addAction(Action action) {
+    actions.add(action);
   }
 
   public List<Action> getActions() {
