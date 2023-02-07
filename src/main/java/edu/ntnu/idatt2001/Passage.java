@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.*;
 
 public class Passage {
-  private String title;
-  private String content;
+  private final String title;
+  private final String content;
   private List<Link> links;
 
   public Passage(String title, String content) {
