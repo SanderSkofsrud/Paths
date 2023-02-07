@@ -4,6 +4,7 @@ import javax.swing.*;
 import edu.ntnu.idatt2001.actions.Action;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Link {
   private final String text;
@@ -67,9 +68,6 @@ public class Link {
 
     @Override
     public int hashCode() {
-        int result = text.hashCode();
-        result = 31 * result + refrence.hashCode();
-        result = 31 * result + actions.hashCode();
-        return result;
-    }
+    return Objects.hash(getText(),getRefrence(),getActions());  }
+
 }
