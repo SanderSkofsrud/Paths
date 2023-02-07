@@ -9,6 +9,11 @@ public class Story {
   Passage openingPassage;
 
   public Story(String title, Passage openingPassage) {
+
+    if (title.isEmpty()) {
+      throw new IllegalArgumentException("Title must not be empty");
+    }
+
     this.title = title;
     this.openingPassage = openingPassage;
   }
