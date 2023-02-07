@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="filled inn story class v1.0">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="filled inn story class v1.1 added condition to title (can not be empty)">
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675767758252</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="filled inn story class v1.1 added condition to title (can not be empty)">
+      <created>1675768165867</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675768165867</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,7 +118,8 @@
     <MESSAGE value="Added files in class" />
     <MESSAGE value="Passage.java v1.1 added exceptions and deepcopy constructor" />
     <MESSAGE value="filled inn story class v1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="filled inn story class v1.0" />
+    <MESSAGE value="filled inn story class v1.1 added condition to title (can not be empty)" />
+    <option name="LAST_COMMIT_MESSAGE" value="filled inn story class v1.1 added condition to title (can not be empty)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -30,4 +30,31 @@ public class Player {
     this.score = score;
     this.gold = gold;
   }
+
+  public String getName() {
+    return name;
+  }
+
+  public void addHealth(int health){}
+
+  public int getHealth() {
+    return health;
+  }
+
+  public void addScore(int points){}
+
+  public int getScore() {
+    return score;
+  }
+
+  public void addGold(int gold){}
+  public int getGold() {
+    return gold;
+  }
+
+  public void addToInventory(String item){}
+
+  public List<String> getInventory() {
+    return inventory;
+  }
 }
