@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="filled inn story class v1.1 added condition to title (can not be empty)">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="filled in player class v1.0">
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675768165867</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="filled in player class v1.0">
+      <created>1675768310153</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675768310153</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +127,8 @@
     <MESSAGE value="Passage.java v1.1 added exceptions and deepcopy constructor" />
     <MESSAGE value="filled inn story class v1.0" />
     <MESSAGE value="filled inn story class v1.1 added condition to title (can not be empty)" />
-    <option name="LAST_COMMIT_MESSAGE" value="filled inn story class v1.1 added condition to title (can not be empty)" />
+    <MESSAGE value="filled in player class v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="filled in player class v1.0" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -31,6 +31,13 @@ public class Player {
     this.gold = gold;
   }
 
+  public Player(Player player) {
+    this.name = player.name;
+    this.health = player.health;
+    this.score = player.score;
+    this.gold = player.gold;
+  }
+
   public String getName() {
     return name;
   }
