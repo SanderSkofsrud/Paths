@@ -5,6 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Passage.java v1.12 modified hashCode() and fixed imports">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/Action.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/GoldAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/HealthAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/InventoryAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/ScoreAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/Goal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/GoldGoal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/HealthGoal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/InventoryGoal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/ScoreGoal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +22,26 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2LBBaNZgst9at1QbyjUwid8xKV6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -33,7 +58,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths-fasit&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -62,6 +87,8 @@
       <workItem from="1675757385443" duration="1914000" />
       <workItem from="1675760879780" duration="1328000" />
       <workItem from="1675764387262" duration="303000" />
+      <workItem from="1675766772297" duration="320000" />
+      <workItem from="1675767445921" duration="881000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -91,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675757616179</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Passage.java v1.12 modified hashCode() and fixed imports">
+      <created>1675767068006</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675767068006</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
