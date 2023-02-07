@@ -27,15 +27,15 @@ public Passage(Passage passage) {
 }
 
   public String getTitle() {
-    return this.title;
+    return title;
   }
 
   public String getContent() {
-    return this.content;
+    return content;
   }
 
   public List<Link> getLinks() {
-    return this.links;
+    return links;
   }
 
   public void addLink(Link link) {
