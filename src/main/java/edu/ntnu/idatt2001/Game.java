@@ -13,5 +13,29 @@ public class Game {
     this.goals = goals;
   }
 
+  public Game(Game game) {
+    this.player = game.player;
+    this.story = game.story;
+    this.goals = game.goals;
+  }
 
+  public Player getPlayer() {
+    return player;
+  }
+
+  public Story getStory() {
+    return story;
+  }
+
+  public List<Goal> getGoals() {
+    return goals;
+  }
+
+  public Passage begin(){
+    return story.getOpeningPassage();
+  }
+
+  public Passage go(Link link){
+    return story.getPassage(link);
+  }
 }
