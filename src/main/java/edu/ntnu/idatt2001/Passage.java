@@ -1,5 +1,8 @@
 package edu.ntnu.idatt2001;
 
+import java.util.List;
+import java.util.*;
+
 public class Passage {
   private String title;
   private String content;
@@ -24,23 +27,19 @@ public Passage(Passage passage) {
 }
 
   public String getTitle() {
-    return title;
+    return this.title;
   }
 
   public String getContent() {
-    return content;
+    return this.content;
   }
 
   public List<Link> getLinks() {
-    return links;
+    return this.links;
   }
 
-  public boolean addLink(Link link) {
-    return link != null;
-  }
-  public boolean setLinks(List<Link> links) {
-    this.links = links;
-    return false;
+  public void addLink(Link link) {
+    this.links.add(link);
   }
 
   public boolean hasLinks() {
@@ -68,9 +67,6 @@ public Passage(Passage passage) {
   }
 
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + getTitle().hashCode();
-    return result;
-  }
+    return Objects.hash(getTitle(), getContent(), getLinks());  }
 }
 

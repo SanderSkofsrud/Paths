@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added files in class">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Passage.java v1.1 added exceptions and deepcopy constructor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" afterDir="false" />
     </list>
@@ -34,7 +34,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/H22/Java/mappevurdering",
+    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths-fasit",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,7 +58,8 @@
       <workItem from="1675340471287" duration="135000" />
       <workItem from="1675341076096" duration="331000" />
       <workItem from="1675341828334" duration="300000" />
-      <workItem from="1675342203297" duration="402000" />
+      <workItem from="1675342203297" duration="989000" />
+      <workItem from="1675678854160" duration="2353000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -74,7 +75,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675341969290</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Passage.java v1.1 added exceptions and deepcopy constructor">
+      <created>1675342728586</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675342728586</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,7 +103,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added Passage class" />
     <MESSAGE value="Added files in class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added files in class" />
+    <MESSAGE value="Passage.java v1.1 added exceptions and deepcopy constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Passage.java v1.1 added exceptions and deepcopy constructor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
