@@ -18,6 +18,11 @@ public class Story {
     this.openingPassage = openingPassage;
   }
 
+  public Story(Story story) {
+    this.title = story.title;
+    this.openingPassage = story.openingPassage;
+  }
+
   public String getTitle() {
     return title;
   }
