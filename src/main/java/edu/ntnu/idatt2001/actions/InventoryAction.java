@@ -8,5 +8,5 @@ public class InventoryAction implements Action {
   public InventoryAction(String item) {this.item = item;}
 
   @Override
-  public void execute(Player player) { player.addItem(item);}
+  public void execute(Player player) { player.addToInventory(item);}
 }

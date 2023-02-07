@@ -1,11 +1,14 @@
 package edu.ntnu.idatt2001;
 
 import javax.swing.*;
+import edu.ntnu.idatt2001.actions.Action;
+
+import java.util.List;
 
 public class Link {
   private final String text;
   private final String refrence;
-  private Link<Action> actions;
+  private List<Action> actions;
 
   public Link(String text, String refrence) {
     if (text.isBlank()){
@@ -37,7 +40,7 @@ public class Link {
     return action != null;
   }
 
-  public Link<Action> getActions() {
+  public List<Action> getActions() {
     return actions;
   }
 

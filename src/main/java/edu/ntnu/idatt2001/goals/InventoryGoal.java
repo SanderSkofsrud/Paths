@@ -14,5 +14,7 @@ public class InventoryGoal implements Goal {
   }
 
   @Override
-  public boolean isFulfilled(Player player) { player.getInventory().containsAll(this.mandatoryItems); }
+  public boolean isFulfilled(Player player) {
+    return player.getInventory().containsAll(this.mandatoryItems);
+  }
 }
