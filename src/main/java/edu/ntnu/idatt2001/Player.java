@@ -64,4 +64,15 @@ public class Player {
   public List<String> getInventory() {
     return inventory;
   }
+
+  @Override
+  public String toString() {
+    return "Player{" +
+        "name='" + getName() + '\'' +
+        ", health=" + getHealth() +
+        ", score=" + getScore() +
+        ", gold=" + getGold() +
+        ", inventory=" + getInventory() +
+        '}';
+  }
 }
