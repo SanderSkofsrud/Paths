@@ -2,6 +2,7 @@ package edu.ntnu.idatt2001;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Player {
 
@@ -11,7 +12,7 @@ public class Player {
   private int gold;
   private List<String> inventory;
 
-  public Player(String name, int health, int score, int gold) {
+  public Player(String name, int health, int score, int gold) throws IllegalArgumentException, NullPointerException {
 
     if (health < 0) {
       throw new IllegalArgumentException("Health can not be less than 0");
@@ -25,6 +26,7 @@ public class Player {
     if (gold < 0) {
       throw new IllegalArgumentException("Score can not be less than 0");
     }
+    Objects.requireNonNull(name,"The name can´t be null");
 
     this.name = name;
     this.health = health;
