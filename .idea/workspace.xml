@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added PlayerTest as a nested test in MainClassestest test-class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/MainClassesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/MainClassesTest.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Link v1.14 Added NullPointerException">
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/ActionsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/GoalsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/ActionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/GoldActionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/HealthActionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/InventoryActionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/ScoreActionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/GoalTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/GoldGoalTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/HealthGoalTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/InventoryGoalTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/ScoreGoalTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -60,6 +71,8 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="edu.ntnu.idatt2001.goals" />
+      <recent name="edu.ntnu.idatt2001.actions" />
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
@@ -170,7 +183,7 @@
       <workItem from="1675772844636" duration="12000" />
       <workItem from="1675772884057" duration="136000" />
       <workItem from="1675844125043" duration="73000" />
-      <workItem from="1675844236022" duration="3381000" />
+      <workItem from="1675844236022" duration="5745000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -284,7 +297,70 @@
       <option name="project" value="LOCAL" />
       <updated>1675849000044</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="moved StoryTest to MainClassesTest">
+      <created>1675849240096</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1675849240096</updated>
+    </task>
+    <task id="LOCAL-00018" summary="deleted PassageTest.java, PlayerTest.java, StoryTest.java and GameTest.java">
+      <created>1675849377788</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1675849377788</updated>
+    </task>
+    <task id="LOCAL-00019" summary="moved GameTest as a nested class to MainClassesTest test-class">
+      <created>1675849461497</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1675849461497</updated>
+    </task>
+    <task id="LOCAL-00020" summary="added ActionsTest and GoalsTest test-classes">
+      <created>1675849622107</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1675849622107</updated>
+    </task>
+    <task id="LOCAL-00021" summary="deleted ActionsTest and GoalsTest test-classes">
+      <created>1675849867779</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1675849867779</updated>
+    </task>
+    <task id="LOCAL-00022" summary="created test-classes for packages actions and goals">
+      <created>1675849907869</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1675849907869</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Player v1.3 Added NullPointerException">
+      <created>1675850915807</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1675850915807</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Link v1.4 Added NullPointerException">
+      <created>1675850935828</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1675850935828</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Link v1.14 Added NullPointerException">
+      <created>1675850979058</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1675850979058</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +377,14 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="TestClasses" />
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="text">
+                    <value>
+                      <list>
+                        <option value="passage" />
                       </list>
                     </value>
                   </entry>
@@ -331,7 +414,16 @@
     <MESSAGE value="created playerTest test-class" />
     <MESSAGE value="fixed addToInventory and getInventory in playerTest test-class" />
     <MESSAGE value="added PlayerTest as a nested test in MainClassestest test-class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added PlayerTest as a nested test in MainClassestest test-class" />
+    <MESSAGE value="moved StoryTest to MainClassesTest" />
+    <MESSAGE value="deleted PassageTest.java, PlayerTest.java, StoryTest.java and GameTest.java" />
+    <MESSAGE value="moved GameTest as a nested class to MainClassesTest test-class" />
+    <MESSAGE value="added ActionsTest and GoalsTest test-classes" />
+    <MESSAGE value="deleted ActionsTest and GoalsTest test-classes" />
+    <MESSAGE value="created test-classes for packages actions and goals" />
+    <MESSAGE value="Player v1.3 Added NullPointerException" />
+    <MESSAGE value="Link v1.4 Added NullPointerException" />
+    <MESSAGE value="Link v1.14 Added NullPointerException" />
+    <option name="LAST_COMMIT_MESSAGE" value="Link v1.14 Added NullPointerException" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

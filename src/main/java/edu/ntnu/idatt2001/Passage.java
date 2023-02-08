@@ -8,7 +8,7 @@ public class Passage {
   private final String content;
   private List<Link> links;
 
-  public Passage(String title, String content) {
+  public Passage(String title, String content) throws IllegalArgumentException, NullPointerException {
 
     if (title.isBlank()) {
       throw new IllegalArgumentException("Title must not be empty");
@@ -16,6 +16,8 @@ public class Passage {
     if (content.isBlank()) {
       throw new IllegalArgumentException("Content must not be empty");
     }
+    Objects.requireNonNull(title,"The title can´t be null");
+    Objects.requireNonNull(content, "The content can´t be null");
 
     this.title = title;
     this.content = content;

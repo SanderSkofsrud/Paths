@@ -12,13 +12,15 @@ public class Link {
   private final String refrence;
   private List<Action> actions;
 
-  public Link(String text, String refrence) {
+  public Link(String text, String refrence) throws IllegalArgumentException, NullPointerException {
     if (text.isBlank()){
       throw new IllegalArgumentException("The text can´t be empty");
     }
     if(refrence.isBlank()){
       throw new IllegalArgumentException("The reference can´t be empty");
     }
+    Objects.requireNonNull(text,"The text can´t be null");
+    Objects.requireNonNull(refrence, "The reference can´t be null");
 
     this.text = text;
     this.refrence = refrence;
