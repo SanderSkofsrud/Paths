@@ -140,4 +140,28 @@ public class MainClassesTest {
       }
     }
 
-}
+    @Nested
+    class StoryTest {
+
+      @Test
+      void getTitle() {
+      }
+
+      @Test
+      void getPassages() {
+      }
+
+      @Test
+      void getOpeningPassage() {
+      }
+
+      @Test
+      void addPassage() {
+      }
+
+      @Test
+      void getPassage() {
+      }
+    }
+
+    }
