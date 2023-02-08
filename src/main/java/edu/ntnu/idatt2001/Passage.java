@@ -19,11 +19,13 @@ public class Passage {
 
     this.title = title;
     this.content = content;
+    this.links = new ArrayList<Link>();
   }
 
 public Passage(Passage passage) {
     this.title = passage.title;
     this.content = passage.content;
+    this.links = passage.links;
 }
 
   public String getTitle() {
