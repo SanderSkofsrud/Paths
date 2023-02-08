@@ -39,7 +39,7 @@ public Passage(Passage passage) {
   }
 
   public void addLink(Link link) {
-    this.links.add(link);
+    links.add(link);
   }
 
   public boolean hasLinks() {
