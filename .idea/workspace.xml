@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="player class v1.4 filled inn add-methods">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="created playerTest test-class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" afterDir="false" />
     </list>
@@ -63,7 +63,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest.getInventory">
+  <component name="RunManager" selected="JUnit.PlayerTest.addToInventory">
     <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -95,7 +95,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.getHealth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.addToInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -105,7 +105,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="METHOD_NAME" value="getHealth" />
+      <option name="METHOD_NAME" value="addToInventory" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerTest.addToInventory" />
         <item itemvalue="JUnit.PlayerTest.getInventory" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.PlayerTest.getName" />
         <item itemvalue="JUnit.PlayerTest.addHealth" />
-        <item itemvalue="JUnit.PlayerTest.getHealth" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +171,7 @@
       <workItem from="1675772844636" duration="12000" />
       <workItem from="1675772884057" duration="136000" />
       <workItem from="1675844125043" duration="73000" />
-      <workItem from="1675844236022" duration="967000" />
+      <workItem from="1675844236022" duration="3023000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -264,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675844310555</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="created playerTest test-class">
+      <created>1675845520536</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1675845520536</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +315,8 @@
     <MESSAGE value="player class v1.3 defined list in constructor and copy constructor" />
     <MESSAGE value="story class v1.3 defined hashmap in constructor and copy constructor" />
     <MESSAGE value="player class v1.4 filled inn add-methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="player class v1.4 filled inn add-methods" />
+    <MESSAGE value="created playerTest test-class" />
+    <option name="LAST_COMMIT_MESSAGE" value="created playerTest test-class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

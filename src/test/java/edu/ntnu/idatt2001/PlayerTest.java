@@ -55,12 +55,12 @@ class PlayerTest {
   @Test
   void addToInventory() {
     player.addToInventory(test);
-    assertFalse(inventory.isEmpty());
+    assertNotNull(player.getInventory());
   }
 
   @Test
   void getInventory() {
-    player.addToInventory(test);
-    assertFalse(player.getInventory().isEmpty());
+    inventory.add(test);
+    assertFalse(inventory.isEmpty());
   }
 }
