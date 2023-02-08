@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="passage v1.13 defined link list to constructor and copy constructor">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="story class v1.3 defined hashmap in constructor and copy constructor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,6 +170,7 @@
       <workItem from="1675771837654" duration="970000" />
       <workItem from="1675772844636" duration="12000" />
       <workItem from="1675772884057" duration="136000" />
+      <workItem from="1675844125043" duration="73000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -242,7 +242,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675842747224</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="player class v1.3 defined list in constructor and copy constructor">
+      <created>1675843668211</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1675843668211</updated>
+    </task>
+    <task id="LOCAL-00012" summary="story class v1.3 defined hashmap in constructor and copy constructor">
+      <created>1675843692676</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1675843692676</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +297,9 @@
     <MESSAGE value="merge fix" />
     <MESSAGE value="added tests to classes Game, Link, Passage, Player and Story" />
     <MESSAGE value="passage v1.13 defined link list to constructor and copy constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="passage v1.13 defined link list to constructor and copy constructor" />
+    <MESSAGE value="player class v1.3 defined list in constructor and copy constructor" />
+    <MESSAGE value="story class v1.3 defined hashmap in constructor and copy constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="story class v1.3 defined hashmap in constructor and copy constructor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
