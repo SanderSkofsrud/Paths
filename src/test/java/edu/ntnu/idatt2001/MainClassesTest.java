@@ -81,4 +81,111 @@ public class MainClassesTest {
       }
     }
 
-}
+    @Nested
+    class PlayerTest {
+
+      Player player = new Player("Test", 10, 30, 50);
+      List<String> inventory = new ArrayList<>();
+      String test = "Item";
+
+      @Test
+      void getName() {
+        assertEquals(player.getName(), "Test");
+      }
+
+      @Test
+      void addHealth() {
+        player.addHealth(10);
+        assertEquals(player.getHealth(),20);
+
+      }
+
+      @Test
+      void getHealth() {
+        assertEquals(player.getHealth(), 10);
+      }
+
+      @Test
+      void addScore() {
+        player.addScore(10);
+        assertEquals(player.getScore(),40);
+      }
+
+      @Test
+      void getScore() {
+        assertEquals(player.getScore(), 30);
+      }
+
+      @Test
+      void addGold() {
+        player.addGold(10);
+        assertEquals(player.getGold(),60);
+      }
+
+      @Test
+      void getGold() {
+        assertEquals(player.getGold(), 50);
+      }
+
+      @Test
+      void addToInventory() {
+        player.addToInventory(test);
+        assertNotNull(player.getInventory());
+      }
+
+      @Test
+      void getInventory() {
+        inventory.add(test);
+        assertFalse(inventory.isEmpty());
+      }
+    }
+    @Nested
+    class GameTest {
+
+      @org.junit.jupiter.api.Test
+      void getPlayer() {
+      }
+
+      @org.junit.jupiter.api.Test
+      void getStory() {
+      }
+
+      @org.junit.jupiter.api.Test
+      void getGoals() {
+      }
+
+      @org.junit.jupiter.api.Test
+      void begin() {
+      }
+
+      @org.junit.jupiter.api.Test
+      void go() {
+      }
+    }
+
+
+    @Nested
+    class StoryTest {
+
+      @Test
+      void getTitle() {
+      }
+
+      @Test
+      void getPassages() {
+      }
+
+      @Test
+      void getOpeningPassage() {
+      }
+
+      @Test
+      void addPassage() {
+      }
+
+      @Test
+      void getPassage() {
+      }
+    }
+
+    }
