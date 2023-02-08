@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="passage v1.13 defined link list to constructor and copy constructor">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="player class v1.4 filled inn add-methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,8 +63,8 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MainClassesTest$PassageTest.addLink">
-    <configuration name="LinkTest.addAction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PlayerTest.getInventory">
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -75,14 +73,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest" />
-      <option name="METHOD_NAME" value="addAction" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkTest.getActions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.addHealth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -91,14 +88,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest" />
-      <option name="METHOD_NAME" value="getActions" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
+      <option name="METHOD_NAME" value="addHealth" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainClassesTest$LinkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.getHealth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -106,14 +103,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.MainClassesTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.MainClassesTest$LinkTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
+      <option name="METHOD_NAME" value="getHealth" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainClassesTest$PassageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.getInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -121,14 +119,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.MainClassesTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.MainClassesTest$PassageTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
+      <option name="METHOD_NAME" value="getInventory" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainClassesTest$PassageTest.addLink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.getName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -136,9 +135,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.MainClassesTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.MainClassesTest$PassageTest" />
-      <option name="METHOD_NAME" value="addLink" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
+      <option name="METHOD_NAME" value="getName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MainClassesTest$PassageTest.addLink" />
-        <item itemvalue="JUnit.MainClassesTest$PassageTest" />
-        <item itemvalue="JUnit.MainClassesTest$LinkTest" />
-        <item itemvalue="JUnit.LinkTest.getActions" />
-        <item itemvalue="JUnit.LinkTest.addAction" />
+        <item itemvalue="JUnit.PlayerTest.getInventory" />
+        <item itemvalue="JUnit.PlayerTest" />
+        <item itemvalue="JUnit.PlayerTest.getName" />
+        <item itemvalue="JUnit.PlayerTest.addHealth" />
+        <item itemvalue="JUnit.PlayerTest.getHealth" />
       </list>
     </recent_temporary>
   </component>
@@ -171,6 +170,8 @@
       <workItem from="1675771837654" duration="970000" />
       <workItem from="1675772844636" duration="12000" />
       <workItem from="1675772884057" duration="136000" />
+      <workItem from="1675844125043" duration="73000" />
+      <workItem from="1675844236022" duration="967000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -242,7 +243,28 @@
       <option name="project" value="LOCAL" />
       <updated>1675842747224</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="player class v1.3 defined list in constructor and copy constructor">
+      <created>1675843668211</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1675843668211</updated>
+    </task>
+    <task id="LOCAL-00012" summary="story class v1.3 defined hashmap in constructor and copy constructor">
+      <created>1675843692676</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1675843692676</updated>
+    </task>
+    <task id="LOCAL-00013" summary="player class v1.4 filled inn add-methods">
+      <created>1675844310555</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1675844310555</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +305,10 @@
     <MESSAGE value="merge fix" />
     <MESSAGE value="added tests to classes Game, Link, Passage, Player and Story" />
     <MESSAGE value="passage v1.13 defined link list to constructor and copy constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="passage v1.13 defined link list to constructor and copy constructor" />
+    <MESSAGE value="player class v1.3 defined list in constructor and copy constructor" />
+    <MESSAGE value="story class v1.3 defined hashmap in constructor and copy constructor" />
+    <MESSAGE value="player class v1.4 filled inn add-methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="player class v1.4 filled inn add-methods" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
