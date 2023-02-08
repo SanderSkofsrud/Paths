@@ -54,8 +54,7 @@ public class Link {
     public String toString() {
         return "Link{" +
             "text='" + getText() + '\'' +
-            ", refrence='" + getRefrence() + '\'' +
-            ", actions=" + getActions() +
+            ", refrence='" + getRefrence() +
             '}';
     }
 
