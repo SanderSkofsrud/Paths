@@ -1,12 +1,14 @@
 package edu.ntnu.idatt2001;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Story {
 
   private String title;
   private Map<Link, Passage> passages;
-  Passage openingPassage;
+  private Passage openingPassage;
 
   public Story(String title, Passage openingPassage) {
 
@@ -16,11 +18,13 @@ public class Story {
 
     this.title = title;
     this.openingPassage = openingPassage;
+    this.passages = new HashMap<Link, Passage>();
   }
 
   public Story(Story story) {
     this.title = story.title;
     this.openingPassage = story.openingPassage;
+    this.passages = story.passages;
   }
 
   public String getTitle() {
