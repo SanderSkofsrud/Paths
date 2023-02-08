@@ -1,5 +1,6 @@
 package edu.ntnu.idatt2001;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
@@ -29,6 +30,7 @@ public class Player {
     this.health = health;
     this.score = score;
     this.gold = gold;
+    this.inventory = new ArrayList<String>();
   }
 
   public Player(Player player) {
@@ -36,6 +38,7 @@ public class Player {
     this.health = player.health;
     this.score = player.score;
     this.gold = player.gold;
+    this.inventory = player.inventory;
   }
 
   public String getName() {
