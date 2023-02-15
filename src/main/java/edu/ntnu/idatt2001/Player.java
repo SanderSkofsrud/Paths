@@ -12,8 +12,11 @@ public class Player {
   private int gold;
   private List<String> inventory;
 
-  public Player(String name, int health, int score, int gold) throws IllegalArgumentException {
+  public Player(String name, int health, int score, int gold) throws IllegalArgumentException, NullPointerException {
 
+    if (name == null || name.isBlank()) {
+      throw new NullPointerException("Name can not be empty");
+    }
     if (health < 0) {
       throw new IllegalArgumentException("Health can not be less than 0");
     }
@@ -47,7 +50,10 @@ public class Player {
     return name;
   }
 
-  public void addHealth(int health){
+  public void addHealth(int health) throws IllegalArgumentException {
+    if (this.health + health < 0) {
+      throw new IllegalArgumentException("Player health can not be less than 0");
+    }
     this.health += health;
   }
 
@@ -71,6 +77,9 @@ public class Player {
   }
 
   public void addToInventory(String item){
+    if (item == null || item.isBlank()){
+      throw new NullPointerException("Item can not be null");
+    }
     inventory.add(item);
   }
 

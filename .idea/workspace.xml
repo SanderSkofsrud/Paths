@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="temporary finished passage test class">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added exceptions for game class in constructor and go">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -412,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676466648363</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="added exceptions for game class in constructor and go">
+      <created>1676466881946</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1676466881946</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +459,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added tests to classes Game, Link, Passage, Player and Story" />
     <MESSAGE value="passage v1.13 defined link list to constructor and copy constructor" />
     <MESSAGE value="player class v1.3 defined list in constructor and copy constructor" />
     <MESSAGE value="story class v1.3 defined hashmap in constructor and copy constructor" />
@@ -475,7 +483,8 @@
     <MESSAGE value="temporary finished link test class" />
     <MESSAGE value="added new exception to addLink in passage class if link is null" />
     <MESSAGE value="temporary finished passage test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="temporary finished passage test class" />
+    <MESSAGE value="added exceptions for game class in constructor and go" />
+    <option name="LAST_COMMIT_MESSAGE" value="added exceptions for game class in constructor and go" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
