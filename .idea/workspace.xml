@@ -4,26 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Removed action from toString in link">
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/500f846a41a49991e944db02abf18d4c48f0a28e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/a/7a079b76de322dfe084cb1a29a59daa4f522b517" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b620ed4c0dc8918ce85bb893a760c3ac1f63762" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a188fca87629f33a1a6f5c44a78f5f6ef567a26" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8cdcb566510229b111699c7e9f83e47c85e4441b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/7/a7831ec8855e8cf17b44664dedb249288c200193" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae98ca1d59cc0020c0209f9ad60564407805488d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3480ec20db987c5041e8c6b0072af90b81a70b2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bc496870d6a624ba18dd212056d83db90d876031" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f91a7e14b811c4c9dc04d21c56a59908c952845c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/GUIStarter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added individual test-classes for link, passage, player, story and game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/MainClassesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/MainClassesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/ActionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/ActionsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/GoalsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/GoalsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Link.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/exceptions/LinkException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +29,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
   <component name="ProjectId" id="2LBBaNZgst9at1QbyjUwid8xKV6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -64,7 +46,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/idatt1002&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths-fasit&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -72,7 +54,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -81,37 +63,55 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="edu.ntnu.idatt2001.goals" />
+      <recent name="edu.ntnu.idatt2001.actions" />
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.paths [clean,test]">
-    <configuration name="ActionsTest$GoldActionTest.execute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LinkTest.testThatConstructorThrowsIsBlankException">
+    <configuration name="LinkTest.testThatConstructorThrowsIsBlankException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.actions.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.actions.ActionsTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.actions.ActionsTest$GoldActionTest" />
-      <option name="METHOD_NAME" value="execute" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest" />
+      <option name="METHOD_NAME" value="testThatConstructorThrowsIsBlankException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GoalsTest$InventoryGoalTest.isFulfilled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LinkTest.testThatConstructorThrowsNullException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.goals.GoalsTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.goals.GoalsTest$InventoryGoalTest" />
-      <option name="METHOD_NAME" value="isFulfilled" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest" />
+      <option name="METHOD_NAME" value="testThatConstructorThrowsNullException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkTest.testThatExceptionIsThrownWhenActionIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest" />
+      <option name="METHOD_NAME" value="testThatExceptionIsThrownWhenActionIsNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,14 +125,8 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
-        <option name="credential" />
-        <option name="region" />
-        <option name="useCurrentConnection" value="false" />
-      </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.MainClassesTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.MainClassesTest$PlayerTest" />
-      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,131 +148,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.getInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="METHOD_NAME" value="getInventory" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="paths [clean]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-              </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
-        <option name="credential" />
-        <option name="region" />
-        <option name="useCurrentConnection" value="false" />
-      </extension>
-      <method v="2" />
-    </configuration>
-    <configuration name="paths [clean,javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-                <option value="javafx:run" />
-              </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
-        <option name="credential" />
-        <option name="region" />
-        <option name="useCurrentConnection" value="false" />
-      </extension>
-      <method v="2" />
-    </configuration>
-    <configuration name="paths [clean,test]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-                <option value="test" />
-              </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
-        <option name="credential" />
-        <option name="region" />
-        <option name="useCurrentConnection" value="false" />
-      </extension>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="JUnit.ActionsTest$GoldActionTest.execute" />
-      <item itemvalue="JUnit.GoalsTest$InventoryGoalTest.isFulfilled" />
+      <item itemvalue="JUnit.LinkTest.testThatConstructorThrowsIsBlankException" />
+      <item itemvalue="JUnit.LinkTest.testThatConstructorThrowsNullException" />
+      <item itemvalue="JUnit.LinkTest.testThatExceptionIsThrownWhenActionIsNull" />
       <item itemvalue="JUnit.MainClassesTest$PlayerTest" />
       <item itemvalue="JUnit.PlayerTest.addToInventory" />
-      <item itemvalue="JUnit.PlayerTest.getInventory" />
-      <item itemvalue="Maven.paths [clean]" />
-      <item itemvalue="Maven.paths [clean,test]" />
-      <item itemvalue="Maven.paths [clean,javafx:run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GoalsTest$InventoryGoalTest.isFulfilled" />
-        <item itemvalue="JUnit.ActionsTest$GoldActionTest.execute" />
+        <item itemvalue="JUnit.LinkTest.testThatConstructorThrowsIsBlankException" />
+        <item itemvalue="JUnit.LinkTest.testThatConstructorThrowsNullException" />
+        <item itemvalue="JUnit.LinkTest.testThatExceptionIsThrownWhenActionIsNull" />
         <item itemvalue="JUnit.MainClassesTest$PlayerTest" />
         <item itemvalue="JUnit.PlayerTest.addToInventory" />
-        <item itemvalue="JUnit.PlayerTest.getInventory" />
       </list>
     </recent_temporary>
   </component>
@@ -300,15 +183,7 @@
       <workItem from="1675772844636" duration="12000" />
       <workItem from="1675772884057" duration="136000" />
       <workItem from="1675844125043" duration="73000" />
-      <workItem from="1675844236022" duration="3381000" />
-      <workItem from="1675882610566" duration="1578000" />
-      <workItem from="1675933968933" duration="1200000" />
-      <workItem from="1676146220213" duration="643000" />
-      <workItem from="1676147182878" duration="611000" />
-      <workItem from="1676365694003" duration="5493000" />
-      <workItem from="1676445017053" duration="3233000" />
-      <workItem from="1676456214474" duration="644000" />
-      <workItem from="1676460723556" duration="630000" />
+      <workItem from="1675844236022" duration="5745000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -422,14 +297,91 @@
       <option name="project" value="LOCAL" />
       <updated>1675849000044</updated>
     </task>
-    <task id="LOCAL-00017" summary="Removed action from toString in link">
-      <created>1675859527359</created>
+    <task id="LOCAL-00017" summary="moved StoryTest to MainClassesTest">
+      <created>1675849240096</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1675859527359</updated>
+      <updated>1675849240096</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="deleted PassageTest.java, PlayerTest.java, StoryTest.java and GameTest.java">
+      <created>1675849377788</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1675849377788</updated>
+    </task>
+    <task id="LOCAL-00019" summary="moved GameTest as a nested class to MainClassesTest test-class">
+      <created>1675849461497</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1675849461497</updated>
+    </task>
+    <task id="LOCAL-00020" summary="added ActionsTest and GoalsTest test-classes">
+      <created>1675849622107</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1675849622107</updated>
+    </task>
+    <task id="LOCAL-00021" summary="deleted ActionsTest and GoalsTest test-classes">
+      <created>1675849867779</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1675849867779</updated>
+    </task>
+    <task id="LOCAL-00022" summary="created test-classes for packages actions and goals">
+      <created>1675849907869</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1675849907869</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Player v1.3 Added NullPointerException">
+      <created>1675850915807</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1675850915807</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Link v1.4 Added NullPointerException">
+      <created>1675850935828</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1675850935828</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Link v1.14 Added NullPointerException">
+      <created>1675850979058</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1675850979058</updated>
+    </task>
+    <task id="LOCAL-00026" summary="added exceptions for link class in constructor and addlink">
+      <created>1676464683505</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1676464683505</updated>
+    </task>
+    <task id="LOCAL-00027" summary="added exception class for Link">
+      <created>1676464708999</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1676464708999</updated>
+    </task>
+    <task id="LOCAL-00028" summary="added individual test-classes for link, passage, player, story and game">
+      <created>1676464923905</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1676464923905</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,7 +398,14 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="TestClasses" />
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="text">
+                    <value>
+                      <list>
+                        <option value="passage" />
                       </list>
                     </value>
                   </entry>
@@ -460,9 +419,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added Passage class" />
-    <MESSAGE value="Added files in class" />
-    <MESSAGE value="Passage.java v1.1 added exceptions and deepcopy constructor" />
     <MESSAGE value="filled inn story class v1.0" />
     <MESSAGE value="filled inn story class v1.1 added condition to title (can not be empty)" />
     <MESSAGE value="filled in player class v1.0" />
@@ -476,8 +432,19 @@
     <MESSAGE value="created playerTest test-class" />
     <MESSAGE value="fixed addToInventory and getInventory in playerTest test-class" />
     <MESSAGE value="added PlayerTest as a nested test in MainClassestest test-class" />
-    <MESSAGE value="Removed action from toString in link" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed action from toString in link" />
+    <MESSAGE value="moved StoryTest to MainClassesTest" />
+    <MESSAGE value="deleted PassageTest.java, PlayerTest.java, StoryTest.java and GameTest.java" />
+    <MESSAGE value="moved GameTest as a nested class to MainClassesTest test-class" />
+    <MESSAGE value="added ActionsTest and GoalsTest test-classes" />
+    <MESSAGE value="deleted ActionsTest and GoalsTest test-classes" />
+    <MESSAGE value="created test-classes for packages actions and goals" />
+    <MESSAGE value="Player v1.3 Added NullPointerException" />
+    <MESSAGE value="Link v1.4 Added NullPointerException" />
+    <MESSAGE value="Link v1.14 Added NullPointerException" />
+    <MESSAGE value="added exceptions for link class in constructor and addlink" />
+    <MESSAGE value="added exception class for Link" />
+    <MESSAGE value="added individual test-classes for link, passage, player, story and game" />
+    <option name="LAST_COMMIT_MESSAGE" value="added individual test-classes for link, passage, player, story and game" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

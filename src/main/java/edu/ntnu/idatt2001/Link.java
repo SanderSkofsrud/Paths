@@ -13,12 +13,12 @@ public class Link {
   private final String refrence;
   private List<Action> actions;
 
-  public Link(String text, String refrence) throws LinkException, NullPointerException {
+  public Link(String text, String refrence) throws NullPointerException {
     if (text == null || text.isBlank()){
-      throw new LinkException("The text can´t be empty");
+      throw new NullPointerException("The text can´t be empty");
     }
     if(refrence == null || refrence.isBlank()){
-      throw new LinkException("The reference can´t be empty");
+      throw new NullPointerException("The reference can´t be empty");
     }
     Objects.requireNonNull(text,"The text can´t be null");
     Objects.requireNonNull(refrence, "The reference can´t be null");

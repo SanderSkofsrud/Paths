@@ -24,17 +24,17 @@ class LinkTest {
   }
 
   @Test
-  void testThatConstructorThrowsNullException() {
+  void testThatConstructorThrowsNullPointerException() {
     String text = null;
     String refrence = "Test";
-    assertThrows(IllegalArgumentException.class, () -> Link link = new Link(text, refrence));
+    assertThrows(NullPointerException.class, () -> new Link(text, refrence));
 
   }
   @Test
   void testThatConstructorThrowsIsBlankException() {
-    String text = "Test";
+    String text = " ";
     String refrence = null;
-    assertThrows(IllegalArgumentException.class, () -> Link link = new Link(text, refrence));
+    assertThrows(NullPointerException.class, () -> new Link(text, refrence));
 
   }
 
