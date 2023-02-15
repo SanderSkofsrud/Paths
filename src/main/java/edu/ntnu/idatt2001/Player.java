@@ -12,7 +12,7 @@ public class Player {
   private int gold;
   private List<String> inventory;
 
-  public Player(String name, int health, int score, int gold) throws IllegalArgumentException, NullPointerException {
+  public Player(String name, int health, int score, int gold) throws IllegalArgumentException {
 
     if (health < 0) {
       throw new IllegalArgumentException("Health can not be less than 0");
