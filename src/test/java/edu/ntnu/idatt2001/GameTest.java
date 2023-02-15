@@ -11,13 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class GameTest {
 
-  Player player = new Player("name", 50, 10, 30);
-  Passage openingPassage = new Passage("title", "content");
-  Story story = new Story("title", openingPassage);
-  List<Goal> goals = new ArrayList<>();
-
-  Game game = new Game(player, story, goals);
-
   @Test
   void testThatConstructorThrowsNullPointerException() {
     Player player = null;
@@ -27,14 +20,23 @@ public class GameTest {
   }
   @Test
   void testThatBeginReturnsOpeningPassage(){
-    goals.add(new ScoreGoal(20));
+    Player player = new Player("name", 50, 10, 30);
+    Passage openingPassage = new Passage("title", "content");
+    Story story = new Story("title", openingPassage);
+    List<Goal> goals = new ArrayList<>();
+
     Game game = new Game(player, story, goals);
+    goals.add(new ScoreGoal(20));
 
     assertEquals(openingPassage, game.begin());
   }
 
   @Test
   void testThatGoReturnsPassage(){
+    Player player = new Player("name", 50, 10, 30);
+    Passage openingPassage = new Passage("title", "content");
+    Story story = new Story("title", openingPassage);
+    List<Goal> goals = new ArrayList<>();
     Passage passage = new Passage("title2", "content2");
     goals.add(new ScoreGoal(20));
     Game game = new Game(player, story, goals);

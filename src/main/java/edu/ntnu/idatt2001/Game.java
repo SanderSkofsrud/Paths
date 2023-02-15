@@ -12,13 +12,13 @@ public class Game {
   public Game(Player player, Story story, List<Goal> goals) throws NullPointerException {
 
     if (player == null){
-      throw new NullPointerException("The text can´t be null");
+      throw new NullPointerException("The player can´t be null");
     }
     if(story == null){
-      throw new NullPointerException("The reference can´t be null");
+      throw new NullPointerException("The story can´t be null");
     }
     if (goals == null){
-      throw new NullPointerException("The text can´t be null");
+      throw new NullPointerException("The goals can´t be null");
     }
 
     this.player = player;
