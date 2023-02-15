@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added new exception to addLink in passage class if link is null">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="temporary finished passage test class">
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -406,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676466457260</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="temporary finished passage test class">
+      <created>1676466648363</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1676466648363</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +450,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="merge fix" />
     <MESSAGE value="added tests to classes Game, Link, Passage, Player and Story" />
     <MESSAGE value="passage v1.13 defined link list to constructor and copy constructor" />
     <MESSAGE value="player class v1.3 defined list in constructor and copy constructor" />
@@ -469,7 +474,8 @@
     <MESSAGE value="corrected exception throws" />
     <MESSAGE value="temporary finished link test class" />
     <MESSAGE value="added new exception to addLink in passage class if link is null" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new exception to addLink in passage class if link is null" />
+    <MESSAGE value="temporary finished passage test class" />
+    <option name="LAST_COMMIT_MESSAGE" value="temporary finished passage test class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
