@@ -9,5 +9,9 @@ public class HealthAction implements Action {
   public HealthAction(int health) {this.health = health;}
 
   @Override
-  public void execute(Player player) { player.addHealth(health);}
+  public void execute(Player player) {
+    if (player.getHealth() + this.health < 0) {
+      throw new IllegalArgumentException("Health cannot be less than 0");
+    }
+    player.addHealth(health);}
 }
