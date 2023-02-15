@@ -2,6 +2,7 @@ package edu.ntnu.idatt2001;
 
 import javax.swing.*;
 import edu.ntnu.idatt2001.actions.Action;
+import edu.ntnu.idatt2001.exceptions.LinkException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,12 +13,12 @@ public class Link {
   private final String refrence;
   private List<Action> actions;
 
-  public Link(String text, String refrence) throws IllegalArgumentException, NullPointerException {
-    if (text.isBlank()){
-      throw new IllegalArgumentException("The text can´t be empty");
+  public Link(String text, String refrence) throws LinkException, NullPointerException {
+    if (text == null || text.isBlank()){
+      throw new LinkException("The text can´t be empty");
     }
-    if(refrence.isBlank()){
-      throw new IllegalArgumentException("The reference can´t be empty");
+    if(refrence == null || refrence.isBlank()){
+      throw new LinkException("The reference can´t be empty");
     }
     Objects.requireNonNull(text,"The text can´t be null");
     Objects.requireNonNull(refrence, "The reference can´t be null");
@@ -42,7 +43,10 @@ public class Link {
     return refrence;
   }
 
-  public void addAction(Action action) {
+  public void addAction(Action action) throws IllegalArgumentException {
+    if (action == null) {
+      throw new IllegalArgumentException("Link Action can not be null!");
+    }
     actions.add(action);
   }
 
