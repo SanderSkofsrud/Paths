@@ -2,8 +2,6 @@ package edu.ntnu.idatt2001;
 
 import javax.swing.*;
 import edu.ntnu.idatt2001.actions.Action;
-import edu.ntnu.idatt2001.exceptions.LinkException;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

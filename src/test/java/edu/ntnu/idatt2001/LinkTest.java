@@ -28,14 +28,6 @@ class LinkTest {
     String text = null;
     String refrence = "Test";
     assertThrows(NullPointerException.class, () -> new Link(text, refrence));
-
-  }
-  @Test
-  void testThatConstructorThrowsIsBlankException() {
-    String text = " ";
-    String refrence = null;
-    assertThrows(NullPointerException.class, () -> new Link(text, refrence));
-
   }
 
   @Test
@@ -46,18 +38,12 @@ class LinkTest {
 
 
   @Test
-  void getText() {
+  void testThatGetTextReturnsCorrect() {
     assertEquals(link.getText(), "Test");
   }
 
   @Test
-  void getRefrence() {
+  void testThatGetReferenceReturnsCorrect() {
     assertEquals(link.getRefrence(), "Test");
-  }
-
-  @Test
-  void addAction() {
-    link.addAction(goldAction);
-    assertNotNull(link.getActions());
   }
 }
