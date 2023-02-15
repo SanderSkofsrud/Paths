@@ -43,6 +43,9 @@ public Passage(Passage passage) {
   }
 
   public void addLink(Link link) {
+    if (link == null) {
+      throw new IllegalArgumentException ("PassageLink can not be null");
+    }
     links.add(link);
   }
 
