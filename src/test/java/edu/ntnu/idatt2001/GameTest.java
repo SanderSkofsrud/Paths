@@ -1,24 +1,54 @@
 package edu.ntnu.idatt2001;
 
+import edu.ntnu.idatt2001.goals.Goal;
+import edu.ntnu.idatt2001.goals.ScoreGoal;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 public class GameTest {
-  @org.junit.jupiter.api.Test
-  void getPlayer() {
+
+  Player player = new Player("name", 50, 10, 30);
+  Passage openingPassage = new Passage("title", "content");
+  Story story = new Story("title", openingPassage);
+  List<Goal> goals = new ArrayList<>();
+
+  Game game = new Game(player, story, goals);
+
+  @Test
+  void testThatConstructorThrowsNullPointerException() {
+    Player player = null;
+    Story story = new Story("Title", new Passage("title", "content"));
+    List<Goal> goals = new ArrayList<>();
+    assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
+  }
+  @Test
+  void testThatBeginReturnsOpeningPassage(){
+    goals.add(new ScoreGoal(20));
+    Game game = new Game(player, story, goals);
+
+    assertEquals(openingPassage, game.begin());
   }
 
-  @org.junit.jupiter.api.Test
-  void getStory() {
-  }
+  @Test
+  void testThatGoReturnsPassage(){
+    Passage passage = new Passage("title2", "content2");
+    goals.add(new ScoreGoal(20));
+    Game game = new Game(player, story, goals);
+    game.getStory().addPassage(passage);
 
-  @org.junit.jupiter.api.Test
-  void getGoals() {
+    assertEquals(passage, game.go(new Link(passage.getTitle(), passage.getTitle())));
   }
+  @Test
+  void testThatGetStoryReturnsCorrect() {}
 
-  @org.junit.jupiter.api.Test
-  void begin() {
-  }
+  @Test
+  void testThatGetGoalsReturnsCorrect() {}
 
-  @org.junit.jupiter.api.Test
-  void go() {
-  }
+  @Test
+  void testThatGetPlayersReturnsCorrect() {}
 }
 
