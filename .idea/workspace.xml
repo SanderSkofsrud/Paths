@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="temporary finished game test class">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="temporary finished player test class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +66,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StoryTest">
+  <component name="RunManager" selected="JUnit.StoryTest.testThatPassageIsAddedAndFetched">
     <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -98,22 +93,6 @@
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.GameTest" />
       <option name="METHOD_NAME" value="testThatGoReturnsPassage" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PassageTest.testThatConstructorThrowsNullPointerException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest" />
-      <option name="METHOD_NAME" value="testThatConstructorThrowsNullPointerException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -150,20 +129,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StoryTest.testThatPassageIsAddedAndFetched" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="METHOD_NAME" value="testThatPassageIsAddedAndFetched" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.GameTest" />
       <item itemvalue="JUnit.GameTest.testThatGoReturnsPassage" />
-      <item itemvalue="JUnit.PassageTest.testThatConstructorThrowsNullPointerException" />
       <item itemvalue="JUnit.PassageTest.testThatLinksAreAddedToPassage" />
       <item itemvalue="JUnit.StoryTest" />
+      <item itemvalue="JUnit.StoryTest.testThatPassageIsAddedAndFetched" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StoryTest.testThatPassageIsAddedAndFetched" />
+        <item itemvalue="JUnit.PassageTest.testThatLinksAreAddedToPassage" />
         <item itemvalue="JUnit.StoryTest" />
         <item itemvalue="JUnit.GameTest" />
         <item itemvalue="JUnit.GameTest.testThatGoReturnsPassage" />
-        <item itemvalue="JUnit.PassageTest.testThatLinksAreAddedToPassage" />
-        <item itemvalue="JUnit.PassageTest.testThatConstructorThrowsNullPointerException" />
       </list>
     </recent_temporary>
   </component>
@@ -439,7 +434,35 @@
       <option name="project" value="LOCAL" />
       <updated>1676467916906</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="temporary finished game test class">
+      <created>1676469097576</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1676469097576</updated>
+    </task>
+    <task id="LOCAL-00038" summary="changed type of exception">
+      <created>1676469124364</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1676469124364</updated>
+    </task>
+    <task id="LOCAL-00039" summary="temporary finished story test class">
+      <created>1676469139366</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1676469139366</updated>
+    </task>
+    <task id="LOCAL-00040" summary="temporary finished player test class">
+      <created>1676469159603</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1676469159603</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,9 +500,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="story class v1.3 defined hashmap in constructor and copy constructor" />
-    <MESSAGE value="player class v1.4 filled inn add-methods" />
-    <MESSAGE value="created playerTest test-class" />
     <MESSAGE value="fixed addToInventory and getInventory in playerTest test-class" />
     <MESSAGE value="added PlayerTest as a nested test in MainClassestest test-class" />
     <MESSAGE value="moved StoryTest to MainClassesTest" />
@@ -502,7 +522,10 @@
     <MESSAGE value="added exceptions for game class in constructor and go" />
     <MESSAGE value="added exceptions for player class in constructor, addToInventory and addHealth" />
     <MESSAGE value="temporary finished game test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="temporary finished game test class" />
+    <MESSAGE value="changed type of exception" />
+    <MESSAGE value="temporary finished story test class" />
+    <MESSAGE value="temporary finished player test class" />
+    <option name="LAST_COMMIT_MESSAGE" value="temporary finished player test class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

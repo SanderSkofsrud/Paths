@@ -33,6 +33,6 @@ public class PassageTest {
   @Test
   void testThatLinksAreAddedToPassage() {
     p.addLink(link);
-    assertTrue(links.contains(link));
+    assertTrue(p.getLinks().contains(link));
   }
 }
