@@ -11,7 +11,7 @@ public class Passage {
   public Passage(String title, String content) throws NullPointerException {
 
     if (title == null ||title.isBlank()) {
-      throw new IllegalArgumentException("Title must not be empty");
+      throw new NullPointerException("Title must not be empty");
     }
     if (content == null || content.isBlank()) {
       throw new IllegalArgumentException("Content must not be empty");
