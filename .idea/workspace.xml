@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="corrected exception throws">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added new exception to addLink in passage class if link is null">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -392,7 +392,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676465822928</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="temporary finished link test class">
+      <created>1676466123669</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1676466123669</updated>
+    </task>
+    <task id="LOCAL-00032" summary="added new exception to addLink in passage class if link is null">
+      <created>1676466457260</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1676466457260</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,8 +444,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="filled in player class v1.0" />
-    <MESSAGE value="filled in game class v1.0" />
     <MESSAGE value="merge fix" />
     <MESSAGE value="added tests to classes Game, Link, Passage, Player and Story" />
     <MESSAGE value="passage v1.13 defined link list to constructor and copy constructor" />
@@ -455,7 +467,9 @@
     <MESSAGE value="added individual test-classes for link, passage, player, story and game" />
     <MESSAGE value="fixed link exception" />
     <MESSAGE value="corrected exception throws" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected exception throws" />
+    <MESSAGE value="temporary finished link test class" />
+    <MESSAGE value="added new exception to addLink in passage class if link is null" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new exception to addLink in passage class if link is null" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
