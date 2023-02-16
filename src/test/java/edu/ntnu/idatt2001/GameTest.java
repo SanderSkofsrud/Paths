@@ -45,12 +45,39 @@ public class GameTest {
     assertEquals(passage, game.go(new Link(passage.getTitle(), passage.getTitle())));
   }
   @Test
-  void testThatGetStoryReturnsCorrect() {}
+  void testThatGetStoryReturnsCorrect() {
+    Player player = new Player("name", 50, 10, 30);
+    Passage openingPassage = new Passage("title", "content");
+    Story story = new Story("title", openingPassage);
+    List<Goal> goals = new ArrayList<>();
+    goals.add(new ScoreGoal(20));
+    Game game = new Game(player, story, goals);
+
+    assertEquals(story, game.getStory());
+  }
 
   @Test
-  void testThatGetGoalsReturnsCorrect() {}
+  void testThatGetGoalsReturnsCorrect() {
+    Player player = new Player("name", 50, 10, 30);
+    Passage openingPassage = new Passage("title", "content");
+    Story story = new Story("title", openingPassage);
+    List<Goal> goals = new ArrayList<>();
+    goals.add(new ScoreGoal(20));
+    Game game = new Game(player, story, goals);
+
+    assertEquals(goals, game.getGoals());
+  }
 
   @Test
-  void testThatGetPlayersReturnsCorrect() {}
+  void testThatGetPlayersReturnsCorrect() {
+    Player player = new Player("name", 50, 10, 30);
+    Passage openingPassage = new Passage("title", "content");
+    Story story = new Story("title", openingPassage);
+    List<Goal> goals = new ArrayList<>();
+    goals.add(new ScoreGoal(20));
+    Game game = new Game(player, story, goals);
+
+    assertEquals(player, game.getPlayer());
+  }
 }
 
