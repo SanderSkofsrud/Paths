@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="temporary finished player test class">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="temporary finished passage test class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -155,8 +154,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.StoryTest.testThatPassageIsAddedAndFetched" />
-        <item itemvalue="JUnit.PassageTest.testThatLinksAreAddedToPassage" />
         <item itemvalue="JUnit.StoryTest" />
+        <item itemvalue="JUnit.PassageTest.testThatLinksAreAddedToPassage" />
         <item itemvalue="JUnit.GameTest" />
         <item itemvalue="JUnit.GameTest.testThatGoReturnsPassage" />
       </list>
@@ -181,6 +180,7 @@
       <workItem from="1675772884057" duration="136000" />
       <workItem from="1675844125043" duration="73000" />
       <workItem from="1675844236022" duration="5745000" />
+      <workItem from="1676531043457" duration="306000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -462,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676469159603</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="temporary finished passage test class">
+      <created>1676469482919</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1676469482919</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,14 +525,14 @@
     <MESSAGE value="corrected exception throws" />
     <MESSAGE value="temporary finished link test class" />
     <MESSAGE value="added new exception to addLink in passage class if link is null" />
-    <MESSAGE value="temporary finished passage test class" />
     <MESSAGE value="added exceptions for game class in constructor and go" />
     <MESSAGE value="added exceptions for player class in constructor, addToInventory and addHealth" />
     <MESSAGE value="temporary finished game test class" />
     <MESSAGE value="changed type of exception" />
     <MESSAGE value="temporary finished story test class" />
     <MESSAGE value="temporary finished player test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="temporary finished player test class" />
+    <MESSAGE value="temporary finished passage test class" />
+    <option name="LAST_COMMIT_MESSAGE" value="temporary finished passage test class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

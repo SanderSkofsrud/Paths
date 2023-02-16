@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LinkTest {
 
-  Link link = new Link("Test", "Test");
+  Link link = new Link("Test", "reference");
   GoldAction goldAction = new GoldAction(10);
   HealthAction healthAction = new HealthAction(5);
 
@@ -44,6 +44,6 @@ class LinkTest {
 
   @Test
   void testThatGetReferenceReturnsCorrect() {
-    assertEquals(link.getRefrence(), "Test");
+    assertEquals(link.getReference(), "Test");
   }
 }
