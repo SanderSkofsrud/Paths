@@ -46,4 +46,13 @@ class LinkTest {
   void testThatGetReferenceReturnsCorrect() {
     assertEquals(link.getReference(), "Test");
   }
+
+  @Test
+  void testThatGetActionsReturnsCorrect() {
+    actions.add(goldAction);
+    actions.add(healthAction);
+    link.addAction(goldAction);
+    link.addAction(healthAction);
+    assertEquals(link.getActions(), actions);
+  }
 }

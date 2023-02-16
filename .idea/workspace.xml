@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="temporary finished passage test class">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed typo refrence to reference">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StoryTest.testThatPassageIsAddedAndFetched">
+  <component name="RunManager" selected="JUnit.LinkTest.testThatGetActionsReturnsCorrect">
     <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -81,7 +82,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameTest.testThatGoReturnsPassage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LinkTest.testThatGetActionsReturnsCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -90,8 +91,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.GameTest" />
-      <option name="METHOD_NAME" value="testThatGoReturnsPassage" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest" />
+      <option name="METHOD_NAME" value="testThatGetActionsReturnsCorrect" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,19 +146,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.LinkTest.testThatGetActionsReturnsCorrect" />
       <item itemvalue="JUnit.GameTest" />
-      <item itemvalue="JUnit.GameTest.testThatGoReturnsPassage" />
       <item itemvalue="JUnit.PassageTest.testThatLinksAreAddedToPassage" />
       <item itemvalue="JUnit.StoryTest" />
       <item itemvalue="JUnit.StoryTest.testThatPassageIsAddedAndFetched" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LinkTest.testThatGetActionsReturnsCorrect" />
         <item itemvalue="JUnit.StoryTest.testThatPassageIsAddedAndFetched" />
         <item itemvalue="JUnit.StoryTest" />
         <item itemvalue="JUnit.PassageTest.testThatLinksAreAddedToPassage" />
         <item itemvalue="JUnit.GameTest" />
-        <item itemvalue="JUnit.GameTest.testThatGoReturnsPassage" />
       </list>
     </recent_temporary>
   </component>
@@ -181,6 +182,7 @@
       <workItem from="1675844125043" duration="73000" />
       <workItem from="1675844236022" duration="5745000" />
       <workItem from="1676531043457" duration="306000" />
+      <workItem from="1676539269262" duration="966000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -469,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676469482919</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="fixed typo refrence to reference">
+      <created>1676539490350</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1676539490350</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +516,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed addToInventory and getInventory in playerTest test-class" />
     <MESSAGE value="added PlayerTest as a nested test in MainClassestest test-class" />
     <MESSAGE value="moved StoryTest to MainClassesTest" />
     <MESSAGE value="deleted PassageTest.java, PlayerTest.java, StoryTest.java and GameTest.java" />
@@ -532,7 +540,8 @@
     <MESSAGE value="temporary finished story test class" />
     <MESSAGE value="temporary finished player test class" />
     <MESSAGE value="temporary finished passage test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="temporary finished passage test class" />
+    <MESSAGE value="fixed typo refrence to reference" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed typo refrence to reference" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
