@@ -72,7 +72,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StoryTest">
+  <component name="RunManager" selected="JUnit.PlayerTest$ExceptionHandling.testThatAddGoldCanNotSetNegativeValue">
     <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <option name="PACKAGE_NAME" value="" />
@@ -81,7 +81,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PassageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest$ExceptionHandling.testThatAddGoldCanNotSetNegativeValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -89,9 +89,10 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatAddGoldCanNotSetNegativeValue" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -144,18 +145,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All in paths" />
-      <item itemvalue="JUnit.PassageTest" />
       <item itemvalue="JUnit.PlayerTest" />
+      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddGoldCanNotSetNegativeValue" />
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddScoreCanNotSetNegativeValue" />
       <item itemvalue="JUnit.StoryTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddGoldCanNotSetNegativeValue" />
+        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddScoreCanNotSetNegativeValue" />
         <item itemvalue="JUnit.StoryTest" />
         <item itemvalue="JUnit.PlayerTest" />
-        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddScoreCanNotSetNegativeValue" />
         <item itemvalue="JUnit.All in paths" />
-        <item itemvalue="JUnit.PassageTest" />
       </list>
     </recent_temporary>
   </component>

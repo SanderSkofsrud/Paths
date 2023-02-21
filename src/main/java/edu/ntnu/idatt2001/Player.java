@@ -62,7 +62,7 @@ public class Player {
   }
 
   public void addScore(int points){
-    if (this.score + score < 0) {
+    if (this.score + points < 0) {
       throw new IllegalArgumentException("Player points can not be less than 0");
     }
     this.score += points;
