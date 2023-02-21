@@ -103,7 +103,7 @@
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,7 +118,7 @@
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
