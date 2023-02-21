@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="temporary finished link test class">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="temporary finished Game test class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +67,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameTest">
+  <component name="RunManager" selected="JUnit.StoryTest.testThatGetPassagesReturnsCorrectly">
     <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -99,7 +99,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StoryTest.testThatGetOpeningPassageReturnsCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -109,8 +109,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest" />
-      <option name="METHOD_NAME" value="testThatGetOpeningPassageReturnsCorrectly" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,7 +147,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.StoryTest.testThatGetOpeningPassageReturnsCorrectly" />
+      <item itemvalue="JUnit.StoryTest" />
       <item itemvalue="JUnit.StoryTest.testThatGetPassagesReturnsCorrectly" />
       <item itemvalue="JUnit.GameTest" />
       <item itemvalue="JUnit.GameTest.testThatGoReturnsPassage" />
@@ -156,11 +155,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GameTest" />
-        <item itemvalue="JUnit.StoryTest.testThatPassageIsAddedAndFetched" />
-        <item itemvalue="JUnit.GameTest.testThatGoReturnsPassage" />
         <item itemvalue="JUnit.StoryTest.testThatGetPassagesReturnsCorrectly" />
-        <item itemvalue="JUnit.StoryTest.testThatGetOpeningPassageReturnsCorrectly" />
+        <item itemvalue="JUnit.StoryTest.testThatPassageIsAddedAndFetched" />
+        <item itemvalue="JUnit.StoryTest" />
+        <item itemvalue="JUnit.GameTest" />
+        <item itemvalue="JUnit.GameTest.testThatGoReturnsPassage" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +183,12 @@
       <workItem from="1675844125043" duration="73000" />
       <workItem from="1675844236022" duration="5745000" />
       <workItem from="1676531043457" duration="306000" />
-      <workItem from="1676539269262" duration="1686000" />
+      <workItem from="1676539269262" duration="1764000" />
+      <workItem from="1676542173253" duration="61000" />
+      <workItem from="1676970772965" duration="635000" />
+      <workItem from="1676973259361" duration="620000" />
+      <workItem from="1676975330191" duration="110000" />
+      <workItem from="1676978376647" duration="1418000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -487,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676540332168</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="temporary finished Game test class">
+      <created>1676540982865</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1676540982865</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +536,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added PlayerTest as a nested test in MainClassestest test-class" />
     <MESSAGE value="moved StoryTest to MainClassesTest" />
     <MESSAGE value="deleted PassageTest.java, PlayerTest.java, StoryTest.java and GameTest.java" />
     <MESSAGE value="moved GameTest as a nested class to MainClassesTest test-class" />
@@ -550,7 +560,8 @@
     <MESSAGE value="temporary finished passage test class" />
     <MESSAGE value="fixed typo refrence to reference" />
     <MESSAGE value="temporary finished link test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="temporary finished link test class" />
+    <MESSAGE value="temporary finished Game test class" />
+    <option name="LAST_COMMIT_MESSAGE" value="temporary finished Game test class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

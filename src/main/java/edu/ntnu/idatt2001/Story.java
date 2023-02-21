@@ -22,6 +22,7 @@ public class Story {
     this.title = title;
     this.openingPassage = openingPassage;
     this.passages = new HashMap<Link, Passage>();
+    addPassage(openingPassage);
   }
 
   public Story(Story story) {
