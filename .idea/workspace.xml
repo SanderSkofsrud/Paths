@@ -4,26 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Removed action from toString in link">
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/500f846a41a49991e944db02abf18d4c48f0a28e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/a/7a079b76de322dfe084cb1a29a59daa4f522b517" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b620ed4c0dc8918ce85bb893a760c3ac1f63762" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added tests to GoalsTest and ActionsTest">
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a188fca87629f33a1a6f5c44a78f5f6ef567a26" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8cdcb566510229b111699c7e9f83e47c85e4441b" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/7/a7831ec8855e8cf17b44664dedb249288c200193" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae98ca1d59cc0020c0209f9ad60564407805488d" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3480ec20db987c5041e8c6b0072af90b81a70b2" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bc496870d6a624ba18dd212056d83db90d876031" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f91a7e14b811c4c9dc04d21c56a59908c952845c" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/GUIStarter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/GoldActionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/HealthActionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/InventoryActionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/ScoreActionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/GoldGoalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/HealthGoalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/InventoryGoalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/ScoreActionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/HealthAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/HealthAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/InventoryAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/InventoryAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/HealthGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/HealthGoal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/InventoryGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/InventoryGoal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/MainClassesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/MainClassesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/ActionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/ActionsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/GoalsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/GoalsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/ActionsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/GoalsTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +91,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.paths [clean,test]">
+  <component name="RunManager" selected="JUnit.InventoryGoalTest.isFulfilled">
     <configuration name="ActionsTest$GoldActionTest.execute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -117,6 +124,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="InventoryGoalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.goals" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.goals.InventoryGoalTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryGoalTest.isFulfilled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.goals" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.goals.InventoryGoalTest" />
+      <option name="METHOD_NAME" value="isFulfilled" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainClassesTest$PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -134,38 +172,6 @@
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.MainClassesTest$PlayerTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.addToInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="METHOD_NAME" value="addToInventory" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.getInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="METHOD_NAME" value="getInventory" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -263,22 +269,22 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.InventoryGoalTest" />
+      <item itemvalue="JUnit.InventoryGoalTest.isFulfilled" />
       <item itemvalue="JUnit.ActionsTest$GoldActionTest.execute" />
       <item itemvalue="JUnit.GoalsTest$InventoryGoalTest.isFulfilled" />
       <item itemvalue="JUnit.MainClassesTest$PlayerTest" />
-      <item itemvalue="JUnit.PlayerTest.addToInventory" />
-      <item itemvalue="JUnit.PlayerTest.getInventory" />
       <item itemvalue="Maven.paths [clean]" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [clean,javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.InventoryGoalTest.isFulfilled" />
+        <item itemvalue="JUnit.InventoryGoalTest" />
         <item itemvalue="JUnit.GoalsTest$InventoryGoalTest.isFulfilled" />
         <item itemvalue="JUnit.ActionsTest$GoldActionTest.execute" />
         <item itemvalue="JUnit.MainClassesTest$PlayerTest" />
-        <item itemvalue="JUnit.PlayerTest.addToInventory" />
-        <item itemvalue="JUnit.PlayerTest.getInventory" />
       </list>
     </recent_temporary>
   </component>
@@ -308,7 +314,7 @@
       <workItem from="1676365694003" duration="5493000" />
       <workItem from="1676445017053" duration="3233000" />
       <workItem from="1676456214474" duration="644000" />
-      <workItem from="1676460723556" duration="630000" />
+      <workItem from="1676460723556" duration="3949000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -429,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675859527359</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added tests to GoalsTest and ActionsTest">
+      <created>1676464075984</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1676464075984</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +490,8 @@
     <MESSAGE value="fixed addToInventory and getInventory in playerTest test-class" />
     <MESSAGE value="added PlayerTest as a nested test in MainClassestest test-class" />
     <MESSAGE value="Removed action from toString in link" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed action from toString in link" />
+    <MESSAGE value="Added tests to GoalsTest and ActionsTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests to GoalsTest and ActionsTest" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
