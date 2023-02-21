@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added exception throws to addGold and addScore">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added nested class and display names to GameTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameTest">
+  <component name="RunManager" selected="JUnit.LinkTest">
     <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -87,16 +87,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GoldActionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LinkTest$ReturnValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.actions.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.actions" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.actions.GoldActionTest" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.LinkTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest$ReturnValues" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,19 +149,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.GoldActionTest" />
       <item itemvalue="JUnit.LinkTest" />
+      <item itemvalue="JUnit.LinkTest$ReturnValues" />
       <item itemvalue="JUnit.LinkTest.testThatGetReferenceReturnsCorrect" />
       <item itemvalue="JUnit.StoryTest" />
       <item itemvalue="JUnit.GameTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LinkTest" />
+        <item itemvalue="JUnit.LinkTest$ReturnValues" />
         <item itemvalue="JUnit.GameTest" />
         <item itemvalue="JUnit.LinkTest.testThatGetReferenceReturnsCorrect" />
-        <item itemvalue="JUnit.LinkTest" />
         <item itemvalue="JUnit.StoryTest" />
-        <item itemvalue="JUnit.GoldActionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -190,14 +190,7 @@
       <workItem from="1676970772965" duration="635000" />
       <workItem from="1676973259361" duration="620000" />
       <workItem from="1676975330191" duration="110000" />
-      <workItem from="1676978376647" duration="4244000" />
-    </task>
-    <task id="LOCAL-00001" summary="Added Passage class">
-      <created>1675341123222</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1675341123222</updated>
+      <workItem from="1676978376647" duration="4525000" />
     </task>
     <task id="LOCAL-00002" summary="Added files in class">
       <created>1675341969290</created>
@@ -535,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676982214504</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="added nested class and display names to GameTest">
+      <created>1676982646984</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1676982646984</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="deleted ActionsTest and GoalsTest test-classes" />
     <MESSAGE value="created test-classes for packages actions and goals" />
     <MESSAGE value="Player v1.3 Added NullPointerException" />
     <MESSAGE value="Link v1.4 Added NullPointerException" />
@@ -598,7 +597,8 @@
     <MESSAGE value="fixed error in link test" />
     <MESSAGE value="fixed typo in Passage class" />
     <MESSAGE value="added exception throws to addGold and addScore" />
-    <option name="LAST_COMMIT_MESSAGE" value="added exception throws to addGold and addScore" />
+    <MESSAGE value="added nested class and display names to GameTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="added nested class and display names to GameTest" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
