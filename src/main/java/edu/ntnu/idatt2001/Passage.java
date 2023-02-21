@@ -8,12 +8,12 @@ public class Passage {
   private final String content;
   private List<Link> links;
 
-  public Passage(String title, String content) throws IllegalArgumentException, NullPointerException {
+  public Passage(String title, String content) throws NullPointerException {
 
-    if (title.isBlank()) {
-      throw new IllegalArgumentException("Title must not be empty");
+    if (title == null ||title.isBlank()) {
+      throw new NullPointerException("Title must not be empty");
     }
-    if (content.isBlank()) {
+    if (content == null || content.isBlank()) {
       throw new IllegalArgumentException("Content must not be empty");
     }
     Objects.requireNonNull(title,"The title can´t be null");
@@ -43,6 +43,9 @@ public Passage(Passage passage) {
   }
 
   public void addLink(Link link) {
+    if (link == null) {
+      throw new IllegalArgumentException ("PassageLink can not be null");
+    }
     links.add(link);
   }
 

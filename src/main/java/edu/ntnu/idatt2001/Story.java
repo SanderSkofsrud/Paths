@@ -10,15 +10,19 @@ public class Story {
   private Map<Link, Passage> passages;
   private Passage openingPassage;
 
-  public Story(String title, Passage openingPassage) {
+  public Story(String title, Passage openingPassage) throws NullPointerException {
 
-    if (title.isEmpty()) {
-      throw new IllegalArgumentException("Title must not be empty");
+    if (title == null ||title.isEmpty()) {
+      throw new NullPointerException("Title must not be empty");
+    }
+    if (openingPassage == null) {
+      throw new NullPointerException("Opening passage must not be empty");
     }
 
     this.title = title;
     this.openingPassage = openingPassage;
     this.passages = new HashMap<Link, Passage>();
+    addPassage(openingPassage);
   }
 
   public Story(Story story) {
@@ -40,9 +44,16 @@ public class Story {
   }
 
   public void addPassage(Passage passage){
+    if (passage == null){
+      throw new IllegalArgumentException("Passage can not be null");
+    }
+    passages.put(new Link(passage.getTitle(), passage.getTitle()), passage);
   }
 
-  public Passage getPassage(Link link){
+  public Passage getPassage(Link link) throws NullPointerException {
+    if (link == null){
+      throw new NullPointerException("Story-Link cannot be null");
+    }
     return passages.get(link);
   }
 
