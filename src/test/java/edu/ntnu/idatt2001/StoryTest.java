@@ -15,28 +15,33 @@ public class StoryTest {
 
   @Test
   void testThatPassageIsAddedAndFetched(){
-    Passage passage = new Passage("Title", "Content");
-    Story story = new Story("Title", passage);
-
-
-    assertEquals(passage, story.getPassage(new Link("Title", "Title")));
-  }
-
-  @Test
-  void testThatPassageValuesAreFetched(){
-    Passage openingPassage = new Passage("Title", "Content");
-    Story story = new Story("Title", openingPassage);
-    Passage passage = new Passage("Another title", "More content");
-    story.addPassage(passage);
-
-    assertEquals(2, story.getPassages().size());
+    Passage passage = new Passage("title", "content");
+    Story story = new Story("title", passage);
+    assertEquals(passage, story.getOpeningPassage());
   }
 
   @Test
   void testThatGetStoryReturnsCorrectly(){
-    Passage openingPassage = new Passage("Title", "Content");
-    Story story = new Story("Title", openingPassage);
+    Passage openingPassage = new Passage("title", "content");
+    Story story = new Story("title", openingPassage);
 
-    assertEquals("Title", story.getTitle());
+    assertEquals("title", story.getTitle());
+  }
+
+  @Test
+  void testThatGetOpeningPassageReturnsCorrectly(){
+    Passage openingPassage = new Passage("title", "content");
+    Story story = new Story("title", openingPassage);
+
+    assertEquals(openingPassage, story.getOpeningPassage());
+  }
+
+  @Test
+  void testThatGetPassagesReturnsCorrectly(){
+    Passage openingPassage = new Passage("title", "content");
+    Story story = new Story("title", openingPassage);
+    Passage passage = new Passage("title2", "content2");
+    story.addPassage(passage);
+    assertEquals(2, story.getPassages().size());
   }
 }
