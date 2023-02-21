@@ -44,7 +44,7 @@ class LinkTest {
 
   @Test
   void testThatGetReferenceReturnsCorrect() {
-    assertEquals(link.getReference(), "Test");
+    assertEquals(link.getReference(), "reference");
   }
 
   @Test
