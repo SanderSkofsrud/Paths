@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added nested class and display names to GameTest">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added nested class and display names to LinkTest">
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,22 +70,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LinkTest">
-    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.GameTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PassageTest">
     <configuration name="LinkTest$ReturnValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -117,7 +101,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkTest.testThatGetReferenceReturnsCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PassageTest$Constructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$Constructor" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassageTest$ExceptionHandling" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$ExceptionHandling" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -126,23 +140,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest" />
-      <option name="METHOD_NAME" value="testThatGetReferenceReturnsCorrect" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,17 +149,17 @@
     <list>
       <item itemvalue="JUnit.LinkTest" />
       <item itemvalue="JUnit.LinkTest$ReturnValues" />
-      <item itemvalue="JUnit.LinkTest.testThatGetReferenceReturnsCorrect" />
-      <item itemvalue="JUnit.StoryTest" />
-      <item itemvalue="JUnit.GameTest" />
+      <item itemvalue="JUnit.PassageTest" />
+      <item itemvalue="JUnit.PassageTest$Constructor" />
+      <item itemvalue="JUnit.PassageTest$ExceptionHandling" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PassageTest" />
+        <item itemvalue="JUnit.PassageTest$ExceptionHandling" />
+        <item itemvalue="JUnit.PassageTest$Constructor" />
         <item itemvalue="JUnit.LinkTest" />
         <item itemvalue="JUnit.LinkTest$ReturnValues" />
-        <item itemvalue="JUnit.GameTest" />
-        <item itemvalue="JUnit.LinkTest.testThatGetReferenceReturnsCorrect" />
-        <item itemvalue="JUnit.StoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -190,14 +188,7 @@
       <workItem from="1676970772965" duration="635000" />
       <workItem from="1676973259361" duration="620000" />
       <workItem from="1676975330191" duration="110000" />
-      <workItem from="1676978376647" duration="4525000" />
-    </task>
-    <task id="LOCAL-00002" summary="Added files in class">
-      <created>1675341969290</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1675341969290</updated>
+      <workItem from="1676978376647" duration="4659000" />
     </task>
     <task id="LOCAL-00003" summary="Passage.java v1.1 added exceptions and deepcopy constructor">
       <created>1675342728586</created>
@@ -535,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676982646984</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="added nested class and display names to LinkTest">
+      <created>1676982936758</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1676982936758</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +571,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="created test-classes for packages actions and goals" />
     <MESSAGE value="Player v1.3 Added NullPointerException" />
     <MESSAGE value="Link v1.4 Added NullPointerException" />
     <MESSAGE value="Link v1.14 Added NullPointerException" />
@@ -598,7 +595,8 @@
     <MESSAGE value="fixed typo in Passage class" />
     <MESSAGE value="added exception throws to addGold and addScore" />
     <MESSAGE value="added nested class and display names to GameTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="added nested class and display names to GameTest" />
+    <MESSAGE value="added nested class and display names to LinkTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="added nested class and display names to LinkTest" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
