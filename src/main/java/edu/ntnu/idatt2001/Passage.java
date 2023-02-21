@@ -52,8 +52,8 @@ public Passage(Passage passage) {
   public boolean hasLinks() {
     return links != null;
   }
-  @java.lang.Override
-  public java.lang.String toString() {
+  @Override
+  public String toString() {
     return "Passage{" +
             "title='" + getTitle() + '\'' +
             ", content='" + getContent() + '\'' +
@@ -61,6 +61,7 @@ public Passage(Passage passage) {
             '}';
   }
 
+  @Override
   public boolean equals(Object object) {
     if (this == object) return true;
     if (!(object instanceof Passage)) return false;
@@ -73,6 +74,7 @@ public Passage(Passage passage) {
     return true;
   }
 
+  @Override
   public int hashCode() {
     return Objects.hash(getTitle(), getContent(), getLinks());  }
 }

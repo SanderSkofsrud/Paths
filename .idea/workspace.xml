@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="temporary finished story test class">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed error in link test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="TestClasses" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -186,7 +191,7 @@
       <workItem from="1676970772965" duration="635000" />
       <workItem from="1676973259361" duration="620000" />
       <workItem from="1676975330191" duration="110000" />
-      <workItem from="1676978376647" duration="2338000" />
+      <workItem from="1676978376647" duration="3706000" />
     </task>
     <task id="LOCAL-00001" summary="Added Passage class">
       <created>1675341123222</created>
@@ -510,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676979905467</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="fixed error in link test">
+      <created>1676980774096</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1676980774096</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +539,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="feedbackFixes" />
                       </list>
                     </value>
                   </entry>
@@ -548,7 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="deleted PassageTest.java, PlayerTest.java, StoryTest.java and GameTest.java" />
     <MESSAGE value="moved GameTest as a nested class to MainClassesTest test-class" />
     <MESSAGE value="added ActionsTest and GoalsTest test-classes" />
     <MESSAGE value="deleted ActionsTest and GoalsTest test-classes" />
@@ -573,7 +584,8 @@
     <MESSAGE value="temporary finished Game test class" />
     <MESSAGE value="added addPassage in constructor" />
     <MESSAGE value="temporary finished story test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="temporary finished story test class" />
+    <MESSAGE value="fixed error in link test" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed error in link test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
