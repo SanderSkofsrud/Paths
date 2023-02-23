@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added a few more tests and beforeEach">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added a exceptionHandling test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameTest">
+  <component name="RunManager" selected="JUnit.PassageTest">
     <configuration name="GameTest$ReturnValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -102,39 +103,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest$ExceptionHandling.testThatAddGoldCanNotSetNegativeValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ExceptionHandling" />
-      <option name="METHOD_NAME" value="testThatAddGoldCanNotSetNegativeValue" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest$ExceptionHandling.testThatAddScoreCanNotSetNegativeValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ExceptionHandling" />
-      <option name="METHOD_NAME" value="testThatAddScoreCanNotSetNegativeValue" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LinkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -143,7 +112,38 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassageTest$ExceptionHandling.testThatConstructorThrowsNullPointerExceptionWhenContentIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatConstructorThrowsNullPointerExceptionWhenContentIsNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,17 +152,17 @@
     <list>
       <item itemvalue="JUnit.GameTest" />
       <item itemvalue="JUnit.GameTest$ReturnValues" />
-      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddGoldCanNotSetNegativeValue" />
-      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddScoreCanNotSetNegativeValue" />
-      <item itemvalue="JUnit.StoryTest" />
+      <item itemvalue="JUnit.LinkTest" />
+      <item itemvalue="JUnit.PassageTest" />
+      <item itemvalue="JUnit.PassageTest$ExceptionHandling.testThatConstructorThrowsNullPointerExceptionWhenContentIsNull" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PassageTest" />
+        <item itemvalue="JUnit.PassageTest$ExceptionHandling.testThatConstructorThrowsNullPointerExceptionWhenContentIsNull" />
+        <item itemvalue="JUnit.LinkTest" />
         <item itemvalue="JUnit.GameTest" />
         <item itemvalue="JUnit.GameTest$ReturnValues" />
-        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddGoldCanNotSetNegativeValue" />
-        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddScoreCanNotSetNegativeValue" />
-        <item itemvalue="JUnit.StoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -192,14 +192,7 @@
       <workItem from="1676973259361" duration="620000" />
       <workItem from="1676975330191" duration="110000" />
       <workItem from="1676978376647" duration="5876000" />
-      <workItem from="1677154378704" duration="1381000" />
-    </task>
-    <task id="LOCAL-00007" summary="filled in game class v1.0">
-      <created>1675769322130</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1675769322130</updated>
+      <workItem from="1677154378704" duration="1593000" />
     </task>
     <task id="LOCAL-00008" summary="merge fix">
       <created>1675769766168</created>
@@ -537,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677155476834</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="added a exceptionHandling test">
+      <created>1677155783708</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1677155783708</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +575,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added exception class for Link" />
     <MESSAGE value="added individual test-classes for link, passage, player, story and game" />
     <MESSAGE value="fixed link exception" />
     <MESSAGE value="corrected exception throws" />
@@ -600,7 +599,8 @@
     <MESSAGE value="added nested class and display names to StoryTest" />
     <MESSAGE value="added nested class and display names to PlayerTest" />
     <MESSAGE value="added a few more tests and beforeEach" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a few more tests and beforeEach" />
+    <MESSAGE value="added a exceptionHandling test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a exceptionHandling test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

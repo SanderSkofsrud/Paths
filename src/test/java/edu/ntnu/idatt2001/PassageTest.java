@@ -21,14 +21,6 @@ public class PassageTest {
     void testThatConstructorConstructsObject() {
       assertEquals(Passage.class, p.getClass());
     }
-
-    @Test
-    @DisplayName("Test that constructor throws NullPointerException when title is null")
-    void testThatConstructorThrowsNullPointerException() {
-      String title = null;
-      String content = "Test";
-      assertThrows(NullPointerException.class, () -> new Passage(title, content));
-    }
   }
 
   @Nested
@@ -37,7 +29,22 @@ public class PassageTest {
     @DisplayName("Test that addLink throws IllegalArgumentException when link is null")
     void testThatExceptionIsThrownWhenLinkIsNull() {
       Link link = null;
-      assertThrows(IllegalArgumentException.class, () -> p.addLink(link));
+      assertThrows(NullPointerException.class, () -> p.addLink(link));
+    }
+    @Test
+    @DisplayName("Test that constructor throws NullPointerException when title is null")
+    void testThatConstructorThrowsNullPointerException() {
+      String title = null;
+      String content = "Test";
+      assertThrows(NullPointerException.class, () -> new Passage(title, content));
+    }
+
+    @Test
+    @DisplayName("Test that constructor throws NullPointerException when content is null")
+    void testThatConstructorThrowsNullPointerExceptionWhenContentIsNull() {
+      String title = "Test";
+      String content = null;
+      assertThrows(NullPointerException.class, () -> new Passage(title, content));
     }
 
   }
@@ -51,10 +58,30 @@ public class PassageTest {
     }
 
     @Test
+    @DisplayName("Test that getTitle returns correct")
+    void testThatGetTitleReturnsCorrect() {
+      assertEquals("Test", p.getTitle());
+    }
+
+    @Test
     @DisplayName("Test that getLinks returns correct")
-    void testThatLinksAreAddedToPassage() {
+    void testThatGetLinksReturnsCorrect() {
+      assertEquals(links, p.getLinks());
+    }
+
+    @Test
+    @DisplayName("Test that addLink adds link")
+    void testThatAddLinkAddsLink() {
       p.addLink(link);
-      assertTrue(p.getLinks().contains(link));
+      links.add(link);
+      assertEquals(links, p.getLinks());
+    }
+
+    @Test
+    @DisplayName("Test that hasLinks returns correct")
+    void testThatHasLinksReturnsCorrect() {
+      p.addLink(link);
+      assertTrue(p.hasLinks());
     }
   }
 }
