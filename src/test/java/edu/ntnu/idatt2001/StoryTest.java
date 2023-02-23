@@ -12,11 +12,49 @@ public class StoryTest {
   @Nested
   public class Constructor {
     @Test
-    @DisplayName("Test that constructor throws NullPointerExceptions")
-    void testThatConstructorThrowsNullPointerExceptions(){
+    @DisplayName("Test that constructor constructs correctly")
+    void testThatConstructorConstructsCorrectly() {
+      Passage passage = new Passage("title", "content");
+      Story story = new Story("title", passage);
+      assertEquals("title", story.getTitle());
+      assertEquals(passage, story.getOpeningPassage());
+    }
+  }
+
+  @Nested
+  public class ExceptionHandling {
+    @Test
+    @DisplayName("Test that constructor throws NullPointerExceptions when passage null")
+    void testThatConstructorThrowsNullPointerExceptionsWhenPassageNull() {
       Passage passage = null;
       assertThrows(NullPointerException.class, () ->
-          new Story("Title", passage));
+          new Story("title", passage));
+    }
+
+    @Test
+    @DisplayName("Test that constructor throws NullPointerException when title is null")
+    void testThatConstructorThrowsNullPointerExceptionWhenTitleIsNull(){
+      Passage passage = new Passage("title", "content");
+      assertThrows(NullPointerException.class, () ->
+          new Story(null, passage));
+    }
+
+    @Test
+    @DisplayName("Test that addPassage throws IllegalArgumentException")
+    void testThatAddPassageThrowsIllegalArgumentException(){
+      Passage passage = null;
+      Story story = new Story("title", new Passage("title", "content"));
+      assertThrows(IllegalArgumentException.class, () ->
+          story.addPassage(passage));
+    }
+
+    @Test
+    @DisplayName("Test that getPassage throws NullPointerException")
+    void testThatGetPassageThrowsNullPointerException(){
+      Link link = null;
+      Story story = new Story("title", new Passage("title", "content"));
+      assertThrows(NullPointerException.class, () ->
+          story.getPassage(link));
     }
   }
 
@@ -57,6 +95,15 @@ public class StoryTest {
       Passage passage = new Passage("title2", "content2");
       story.addPassage(passage);
       assertEquals(2, story.getPassages().size());
+    }
+
+    @Test
+    @DisplayName("Test that getTitle returns correctly")
+    void testThatGetTitleReturnsCorrectly() {
+      Passage openingPassage = new Passage("title", "content");
+      Story story = new Story("title", openingPassage);
+
+      assertEquals("title", story.getTitle());
     }
   }
 }
