@@ -62,6 +62,9 @@ public class Player {
   }
 
   public void addScore(int points){
+    if (this.score + points < 0) {
+      throw new IllegalArgumentException("Player points can not be less than 0");
+    }
     this.score += points;
   }
 
@@ -70,6 +73,9 @@ public class Player {
   }
 
   public void addGold(int gold){
+    if (this.gold + gold < 0) {
+      throw new IllegalArgumentException("Player gold can not be less than 0");
+    }
     this.gold += gold;
   }
   public int getGold() {

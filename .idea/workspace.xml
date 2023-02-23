@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="temporary finished story test class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added some test to ExceptionHandling and returnValues">
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="TestClasses" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -66,23 +70,8 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LinkTest.testThatGetReferenceReturnsCorrect">
-    <configuration name="GoldActionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.actions.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.actions" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.actions.GoldActionTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LinkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StoryTest">
+    <configuration name="PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -90,25 +79,57 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LinkTest.testThatGetReferenceReturnsCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest" />
-      <option name="METHOD_NAME" value="testThatGetReferenceReturnsCorrect" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatConstructorThrowsIllegalArgumentException" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsEmpty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest$ReturnValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ReturnValues" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -117,7 +138,7 @@
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,36 +149,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StoryTest.testThatGetPassagesReturnsCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest" />
-      <option name="METHOD_NAME" value="testThatGetPassagesReturnsCorrectly" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.GoldActionTest" />
-      <item itemvalue="JUnit.LinkTest" />
-      <item itemvalue="JUnit.LinkTest.testThatGetReferenceReturnsCorrect" />
+      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentException" />
+      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsEmpty" />
+      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull" />
+      <item itemvalue="JUnit.PlayerTest$ReturnValues" />
       <item itemvalue="JUnit.StoryTest" />
-      <item itemvalue="JUnit.StoryTest.testThatGetPassagesReturnsCorrectly" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LinkTest.testThatGetReferenceReturnsCorrect" />
-        <item itemvalue="JUnit.LinkTest" />
         <item itemvalue="JUnit.StoryTest" />
-        <item itemvalue="JUnit.GoldActionTest" />
-        <item itemvalue="JUnit.StoryTest.testThatGetPassagesReturnsCorrectly" />
+        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull" />
+        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsEmpty" />
+        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentException" />
+        <item itemvalue="JUnit.PlayerTest$ReturnValues" />
       </list>
     </recent_temporary>
   </component>
@@ -186,77 +191,8 @@
       <workItem from="1676970772965" duration="635000" />
       <workItem from="1676973259361" duration="620000" />
       <workItem from="1676975330191" duration="110000" />
-      <workItem from="1676978376647" duration="2338000" />
-    </task>
-    <task id="LOCAL-00001" summary="Added Passage class">
-      <created>1675341123222</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1675341123222</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added files in class">
-      <created>1675341969290</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1675341969290</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Passage.java v1.1 added exceptions and deepcopy constructor">
-      <created>1675342728586</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1675342728586</updated>
-    </task>
-    <task id="LOCAL-00004" summary="filled inn story class v1.0">
-      <created>1675767758252</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1675767758252</updated>
-    </task>
-    <task id="LOCAL-00005" summary="filled inn story class v1.1 added condition to title (can not be empty)">
-      <created>1675768165867</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1675768165867</updated>
-    </task>
-    <task id="LOCAL-00006" summary="filled in player class v1.0">
-      <created>1675768310153</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1675768310153</updated>
-    </task>
-    <task id="LOCAL-00007" summary="filled in game class v1.0">
-      <created>1675769322130</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1675769322130</updated>
-    </task>
-    <task id="LOCAL-00008" summary="merge fix">
-      <created>1675769766168</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1675769766168</updated>
-    </task>
-    <task id="LOCAL-00009" summary="added tests to classes Game, Link, Passage, Player and Story">
-      <created>1675770696550</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1675770696550</updated>
-    </task>
-    <task id="LOCAL-00010" summary="passage v1.13 defined link list to constructor and copy constructor">
-      <created>1675842747224</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1675842747224</updated>
+      <workItem from="1676978376647" duration="5876000" />
+      <workItem from="1677154378704" duration="2297000" />
     </task>
     <task id="LOCAL-00011" summary="player class v1.3 defined list in constructor and copy constructor">
       <created>1675843668211</created>
@@ -510,7 +446,98 @@
       <option name="project" value="LOCAL" />
       <updated>1676979905467</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="fixed error in link test">
+      <created>1676980774096</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1676980774096</updated>
+    </task>
+    <task id="LOCAL-00048" summary="fixed typo in Passage class">
+      <created>1676982115614</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1676982115614</updated>
+    </task>
+    <task id="LOCAL-00049" summary="added exception throws to addGold and addScore">
+      <created>1676982214504</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1676982214504</updated>
+    </task>
+    <task id="LOCAL-00050" summary="added nested class and display names to GameTest">
+      <created>1676982646984</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1676982646984</updated>
+    </task>
+    <task id="LOCAL-00051" summary="added nested class and display names to LinkTest">
+      <created>1676982936758</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1676982936758</updated>
+    </task>
+    <task id="LOCAL-00052" summary="added nested class and display names to Passagetest">
+      <created>1676983183839</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1676983183839</updated>
+    </task>
+    <task id="LOCAL-00053" summary="added nested class and display names to StoryTest">
+      <created>1676983928764</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1676983928764</updated>
+    </task>
+    <task id="LOCAL-00054" summary="added nested class and display names to PlayerTest">
+      <created>1676984235730</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1676984235730</updated>
+    </task>
+    <task id="LOCAL-00055" summary="added a few more tests and beforeEach">
+      <created>1677155476833</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1677155476834</updated>
+    </task>
+    <task id="LOCAL-00056" summary="added a exceptionHandling test">
+      <created>1677155783708</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1677155783708</updated>
+    </task>
+    <task id="LOCAL-00057" summary="fixed thrown exception">
+      <created>1677156115157</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1677156115157</updated>
+    </task>
+    <task id="LOCAL-00058" summary="added some test to returnValues and exception">
+      <created>1677156144091</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1677156144091</updated>
+    </task>
+    <task id="LOCAL-00059" summary="added some test to ExceptionHandling and returnValues">
+      <created>1677156635906</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1677156635906</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +554,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="feedbackFixes" />
                       </list>
                     </value>
                   </entry>
@@ -548,19 +575,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="deleted PassageTest.java, PlayerTest.java, StoryTest.java and GameTest.java" />
-    <MESSAGE value="moved GameTest as a nested class to MainClassesTest test-class" />
-    <MESSAGE value="added ActionsTest and GoalsTest test-classes" />
-    <MESSAGE value="deleted ActionsTest and GoalsTest test-classes" />
-    <MESSAGE value="created test-classes for packages actions and goals" />
-    <MESSAGE value="Player v1.3 Added NullPointerException" />
-    <MESSAGE value="Link v1.4 Added NullPointerException" />
-    <MESSAGE value="Link v1.14 Added NullPointerException" />
-    <MESSAGE value="added exceptions for link class in constructor and addlink" />
-    <MESSAGE value="added exception class for Link" />
-    <MESSAGE value="added individual test-classes for link, passage, player, story and game" />
-    <MESSAGE value="fixed link exception" />
-    <MESSAGE value="corrected exception throws" />
     <MESSAGE value="added new exception to addLink in passage class if link is null" />
     <MESSAGE value="added exceptions for game class in constructor and go" />
     <MESSAGE value="added exceptions for player class in constructor, addToInventory and addHealth" />
@@ -573,7 +587,32 @@
     <MESSAGE value="temporary finished Game test class" />
     <MESSAGE value="added addPassage in constructor" />
     <MESSAGE value="temporary finished story test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="temporary finished story test class" />
+    <MESSAGE value="fixed error in link test" />
+    <MESSAGE value="fixed typo in Passage class" />
+    <MESSAGE value="added exception throws to addGold and addScore" />
+    <MESSAGE value="added nested class and display names to GameTest" />
+    <MESSAGE value="added nested class and display names to LinkTest" />
+    <MESSAGE value="added nested class and display names to Passagetest" />
+    <MESSAGE value="added nested class and display names to StoryTest" />
+    <MESSAGE value="added nested class and display names to PlayerTest" />
+    <MESSAGE value="added a few more tests and beforeEach" />
+    <MESSAGE value="added a exceptionHandling test" />
+    <MESSAGE value="fixed thrown exception" />
+    <MESSAGE value="added some test to returnValues and exception" />
+    <MESSAGE value="added some test to ExceptionHandling and returnValues" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some test to ExceptionHandling and returnValues" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java</url>
+          <line>10</line>
+          <properties field="score" class="edu.ntnu.idatt2001.Player" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

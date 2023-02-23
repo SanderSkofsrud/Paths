@@ -14,7 +14,7 @@ public class Passage {
       throw new NullPointerException("Title must not be empty");
     }
     if (content == null || content.isBlank()) {
-      throw new IllegalArgumentException("Content must not be empty");
+      throw new NullPointerException("Content must not be empty");
     }
     Objects.requireNonNull(title,"The title can´t be null");
     Objects.requireNonNull(content, "The content can´t be null");
@@ -44,7 +44,7 @@ public Passage(Passage passage) {
 
   public void addLink(Link link) {
     if (link == null) {
-      throw new IllegalArgumentException ("PassageLink can not be null");
+      throw new NullPointerException ("PassageLink can not be null");
     }
     links.add(link);
   }
@@ -52,8 +52,8 @@ public Passage(Passage passage) {
   public boolean hasLinks() {
     return links != null;
   }
-  @java.lang.Override
-  public java.lang.String toString() {
+  @Override
+  public String toString() {
     return "Passage{" +
             "title='" + getTitle() + '\'' +
             ", content='" + getContent() + '\'' +
@@ -61,6 +61,7 @@ public Passage(Passage passage) {
             '}';
   }
 
+  @Override
   public boolean equals(Object object) {
     if (this == object) return true;
     if (!(object instanceof Passage)) return false;
@@ -73,6 +74,7 @@ public Passage(Passage passage) {
     return true;
   }
 
+  @Override
   public int hashCode() {
     return Objects.hash(getTitle(), getContent(), getLinks());  }
 }
