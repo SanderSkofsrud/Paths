@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added some test to ExceptionHandling and returnValues">
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Link.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +71,15 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StoryTest">
+  <component name="RunManager" selected="JUnit.All in paths">
+    <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -119,21 +128,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest$ReturnValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ReturnValues" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="StoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -153,16 +147,16 @@
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentException" />
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsEmpty" />
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull" />
-      <item itemvalue="JUnit.PlayerTest$ReturnValues" />
+      <item itemvalue="JUnit.All in paths" />
       <item itemvalue="JUnit.StoryTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in paths" />
         <item itemvalue="JUnit.StoryTest" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsEmpty" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatConstructorThrowsIllegalArgumentException" />
-        <item itemvalue="JUnit.PlayerTest$ReturnValues" />
       </list>
     </recent_temporary>
   </component>
@@ -192,14 +186,11 @@
       <workItem from="1676973259361" duration="620000" />
       <workItem from="1676975330191" duration="110000" />
       <workItem from="1676978376647" duration="5876000" />
-      <workItem from="1677154378704" duration="2297000" />
-    </task>
-    <task id="LOCAL-00011" summary="player class v1.3 defined list in constructor and copy constructor">
-      <created>1675843668211</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1675843668211</updated>
+      <workItem from="1677154378704" duration="3178000" />
+      <workItem from="1677158878100" duration="4000" />
+      <workItem from="1677158991928" duration="10000" />
+      <workItem from="1677160888788" duration="27000" />
+      <workItem from="1677160987849" duration="271000" />
     </task>
     <task id="LOCAL-00012" summary="story class v1.3 defined hashmap in constructor and copy constructor">
       <created>1675843692676</created>
@@ -537,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677156635906</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="added some test to ExceptionHandling and returnValues">
+      <created>1677156914657</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1677156914657</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
