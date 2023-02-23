@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added nested class and display names to Passagetest">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added nested class and display names to PlayerTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +71,33 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest$ExceptionHandling.testThatAddGoldCanNotSetNegativeValue">
-    <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GameTest">
+    <configuration name="GameTest$ReturnValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.GameTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.GameTest$ReturnValues" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.GameTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -113,21 +134,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="StoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -144,19 +150,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.All in paths" />
-      <item itemvalue="JUnit.PlayerTest" />
+      <item itemvalue="JUnit.GameTest" />
+      <item itemvalue="JUnit.GameTest$ReturnValues" />
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddGoldCanNotSetNegativeValue" />
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddScoreCanNotSetNegativeValue" />
       <item itemvalue="JUnit.StoryTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GameTest" />
+        <item itemvalue="JUnit.GameTest$ReturnValues" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddGoldCanNotSetNegativeValue" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddScoreCanNotSetNegativeValue" />
         <item itemvalue="JUnit.StoryTest" />
-        <item itemvalue="JUnit.PlayerTest" />
-        <item itemvalue="JUnit.All in paths" />
       </list>
     </recent_temporary>
   </component>
@@ -185,21 +191,8 @@
       <workItem from="1676970772965" duration="635000" />
       <workItem from="1676973259361" duration="620000" />
       <workItem from="1676975330191" duration="110000" />
-      <workItem from="1676978376647" duration="5526000" />
-    </task>
-    <task id="LOCAL-00004" summary="filled inn story class v1.0">
-      <created>1675767758252</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1675767758252</updated>
-    </task>
-    <task id="LOCAL-00005" summary="filled inn story class v1.1 added condition to title (can not be empty)">
-      <created>1675768165867</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1675768165867</updated>
+      <workItem from="1676978376647" duration="5876000" />
+      <workItem from="1677154378704" duration="1046000" />
     </task>
     <task id="LOCAL-00006" summary="filled in player class v1.0">
       <created>1675768310153</created>
@@ -530,7 +523,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676983183839</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="added nested class and display names to StoryTest">
+      <created>1676983928764</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1676983928764</updated>
+    </task>
+    <task id="LOCAL-00054" summary="added nested class and display names to PlayerTest">
+      <created>1676984235730</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1676984235730</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,8 +575,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Link v1.4 Added NullPointerException" />
-    <MESSAGE value="Link v1.14 Added NullPointerException" />
     <MESSAGE value="added exceptions for link class in constructor and addlink" />
     <MESSAGE value="added exception class for Link" />
     <MESSAGE value="added individual test-classes for link, passage, player, story and game" />
@@ -593,7 +598,9 @@
     <MESSAGE value="added nested class and display names to GameTest" />
     <MESSAGE value="added nested class and display names to LinkTest" />
     <MESSAGE value="added nested class and display names to Passagetest" />
-    <option name="LAST_COMMIT_MESSAGE" value="added nested class and display names to Passagetest" />
+    <MESSAGE value="added nested class and display names to StoryTest" />
+    <MESSAGE value="added nested class and display names to PlayerTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="added nested class and display names to PlayerTest" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
