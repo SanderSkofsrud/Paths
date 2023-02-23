@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added nested class and display names to PlayerTest">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added a few more tests and beforeEach">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,14 +192,7 @@
       <workItem from="1676973259361" duration="620000" />
       <workItem from="1676975330191" duration="110000" />
       <workItem from="1676978376647" duration="5876000" />
-      <workItem from="1677154378704" duration="1046000" />
-    </task>
-    <task id="LOCAL-00006" summary="filled in player class v1.0">
-      <created>1675768310153</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1675768310153</updated>
+      <workItem from="1677154378704" duration="1381000" />
     </task>
     <task id="LOCAL-00007" summary="filled in game class v1.0">
       <created>1675769322130</created>
@@ -537,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676984235730</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="added a few more tests and beforeEach">
+      <created>1677155476833</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1677155476834</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +575,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added exceptions for link class in constructor and addlink" />
     <MESSAGE value="added exception class for Link" />
     <MESSAGE value="added individual test-classes for link, passage, player, story and game" />
     <MESSAGE value="fixed link exception" />
@@ -600,7 +599,8 @@
     <MESSAGE value="added nested class and display names to Passagetest" />
     <MESSAGE value="added nested class and display names to StoryTest" />
     <MESSAGE value="added nested class and display names to PlayerTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="added nested class and display names to PlayerTest" />
+    <MESSAGE value="added a few more tests and beforeEach" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a few more tests and beforeEach" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

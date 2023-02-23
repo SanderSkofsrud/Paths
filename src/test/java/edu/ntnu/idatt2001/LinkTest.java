@@ -3,6 +3,7 @@ package edu.ntnu.idatt2001;
 import edu.ntnu.idatt2001.actions.Action;
 import edu.ntnu.idatt2001.actions.GoldAction;
 import edu.ntnu.idatt2001.actions.HealthAction;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -28,13 +29,6 @@ class LinkTest {
       assertEquals(Link.class, link.getClass());
     }
 
-    @Test
-    @DisplayName("Test that constructor throws NullPointerException when text is null")
-    void testThatConstructorThrowsNullPointerException() {
-      String text = null;
-      String refrence = "Test";
-      assertThrows(NullPointerException.class, () -> new Link(text, refrence));
-    }
   }
 
   @Nested
@@ -44,6 +38,21 @@ class LinkTest {
     void testThatExceptionIsThrownWhenActionIsNull() {
       Action action = null;
       assertThrows(IllegalArgumentException.class, () -> link.addAction(action));
+    }
+    @Test
+    @DisplayName("Test that constructor throws NullPointerException when text is null")
+    void testThatConstructorThrowsNullPointerException() {
+      String text = null;
+      String refrence = "Test";
+      assertThrows(NullPointerException.class, () -> new Link(text, refrence));
+    }
+
+    @Test
+    @DisplayName("Test that constructor throws NullPointerException when reference is null")
+    void testThatConstructorThrowsNullPointerExceptionWhenReferenceIsNull() {
+      String text = "Test";
+      String refrence = null;
+      assertThrows(NullPointerException.class, () -> new Link(text, refrence));
     }
   }
 
