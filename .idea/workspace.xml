@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added some test to ExceptionHandling and returnValues">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Link.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added Javadoc to Story class">
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="TestClasses" />
+        <entry key="$PROJECT_DIR$" value="feedbackFixes" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -190,21 +189,7 @@
       <workItem from="1677158878100" duration="4000" />
       <workItem from="1677158991928" duration="10000" />
       <workItem from="1677160888788" duration="27000" />
-      <workItem from="1677160987849" duration="271000" />
-    </task>
-    <task id="LOCAL-00012" summary="story class v1.3 defined hashmap in constructor and copy constructor">
-      <created>1675843692676</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1675843692676</updated>
-    </task>
-    <task id="LOCAL-00013" summary="player class v1.4 filled inn add-methods">
-      <created>1675844310555</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1675844310555</updated>
+      <workItem from="1677160987849" duration="696000" />
     </task>
     <task id="LOCAL-00014" summary="created playerTest test-class">
       <created>1675845520536</created>
@@ -535,7 +520,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677156914657</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="added Javadoc to Link class">
+      <created>1677161463771</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1677161463771</updated>
+    </task>
+    <task id="LOCAL-00062" summary="added Javadoc to Story class">
+      <created>1677161550382</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1677161550382</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +551,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feedbackFixes" />
+                        <option value="Javadoc" />
                       </list>
                     </value>
                   </entry>
@@ -573,8 +572,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added new exception to addLink in passage class if link is null" />
-    <MESSAGE value="added exceptions for game class in constructor and go" />
     <MESSAGE value="added exceptions for player class in constructor, addToInventory and addHealth" />
     <MESSAGE value="temporary finished game test class" />
     <MESSAGE value="changed type of exception" />
@@ -598,7 +595,9 @@
     <MESSAGE value="fixed thrown exception" />
     <MESSAGE value="added some test to returnValues and exception" />
     <MESSAGE value="added some test to ExceptionHandling and returnValues" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some test to ExceptionHandling and returnValues" />
+    <MESSAGE value="added Javadoc to Link class" />
+    <MESSAGE value="added Javadoc to Story class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Javadoc to Story class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
