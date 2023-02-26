@@ -9,9 +9,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test class for GoldGoal
+ * Test class for ScoreGoal
  */
-class GoldGoalTest {
+class ScoreGoalTest {
   String name;
   int health;
   int score;
@@ -36,8 +36,8 @@ class GoldGoalTest {
     @Test
     @DisplayName("Test that constructor constructs object")
     void testThatConstructorConstructsObject() {
-      GoldGoal goldGoal = new GoldGoal(10);
-      assertEquals(GoldGoal.class, goldGoal.getClass());
+      ScoreGoal scoreGoal = new ScoreGoal(10);
+      assertEquals(ScoreGoal.class, scoreGoal.getClass());
     }
   }
 
@@ -50,8 +50,8 @@ class GoldGoalTest {
     @DisplayName("Test that goal gets marked as completed when completed")
     void testThatGoalGetsMarkedAsCompletedWhenCompleted() {
       Player player = new Player(name, health, score, gold);
-      GoldGoal goldGoal = new GoldGoal(10);
-      assertTrue(goldGoal.isFulfilled(player));
+      ScoreGoal scoreGoal = new ScoreGoal(10);
+      assertTrue(scoreGoal.isFulfilled(player));
     }
 
     /**
@@ -61,8 +61,8 @@ class GoldGoalTest {
     @DisplayName("Test that goal does not get marked as completed when not completed")
     void testThatGoalDoesNotGetMarkedAsCompletedWhenNotCompleted() {
       Player player = new Player(name, health, score, gold);
-      GoldGoal goldGoal = new GoldGoal(100);
-      assertFalse(goldGoal.isFulfilled(player));
+      ScoreGoal scoreGoal = new ScoreGoal(100);
+      assertFalse(scoreGoal.isFulfilled(player));
     }
 
     /**
@@ -71,7 +71,7 @@ class GoldGoalTest {
     @Test
     @DisplayName("Test that exception is thrown when goal is less than 0")
     void testThatExceptionIsThrownWhenGoalIsLessThanZero() {
-      assertThrows(IllegalArgumentException.class, () -> new GoldGoal(-10));
+      assertThrows(IllegalArgumentException.class, () -> new ScoreGoal(-10));
     }
   }
 }
