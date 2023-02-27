@@ -13,6 +13,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test class for Link
+ */
 class LinkTest {
 
   Link link = new Link("Test", "reference");
@@ -21,8 +24,14 @@ class LinkTest {
 
   List<Action> actions = new ArrayList<>();
 
+  /**
+   * Test class for constructor
+   */
   @Nested
   public class Constructor {
+    /**
+     * Test that constructor constructs object
+     */
     @Test
     @DisplayName("Test that constructor constructs object")
     void testThatConstructorConstructsObject() {
@@ -31,14 +40,23 @@ class LinkTest {
 
   }
 
+  /**
+   * Test class for exception handling
+   */
   @Nested
   public class ExceptionHandling {
+    /**
+     * Test that addAction throws IllegalArgumentException when action is null
+     */
     @Test
     @DisplayName("Test that addAction throws IllegalArgumentException when action is null")
     void testThatExceptionIsThrownWhenActionIsNull() {
       Action action = null;
       assertThrows(IllegalArgumentException.class, () -> link.addAction(action));
     }
+    /**
+     * Test that constructor throws NullPointerException when text is null
+     */
     @Test
     @DisplayName("Test that constructor throws NullPointerException when text is null")
     void testThatConstructorThrowsNullPointerException() {
@@ -47,6 +65,9 @@ class LinkTest {
       assertThrows(NullPointerException.class, () -> new Link(text, refrence));
     }
 
+    /**
+     * Test that constructor throws NullPointerException when reference is null
+     */
     @Test
     @DisplayName("Test that constructor throws NullPointerException when reference is null")
     void testThatConstructorThrowsNullPointerExceptionWhenReferenceIsNull() {
@@ -57,20 +78,32 @@ class LinkTest {
   }
 
 
+  /**
+   * Test class for return values
+   */
   @Nested
   public class ReturnValues {
+    /**
+     * Test that getText returns correct
+     */
     @Test
     @DisplayName("Test that getText returns correct")
     void testThatGetTextReturnsCorrect() {
       assertEquals(link.getText(), "Test");
     }
 
+    /**
+     * Test that getReference returns correct
+     */
     @Test
     @DisplayName("Test that getReference returns correct")
     void testThatGetReferenceReturnsCorrect() {
       assertEquals(link.getReference(), "reference");
     }
 
+    /**
+     * Test that getActions returns correct
+     */
     @Test
     @DisplayName("Test that getActions returns correct")
     void testThatGetActionsReturnsCorrect() {
