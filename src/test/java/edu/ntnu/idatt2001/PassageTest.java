@@ -22,6 +22,9 @@ public class PassageTest {
    */
   @Nested
   public class Constructor {
+    /**
+     * Test that constructor constructs object
+     */
     @Test
     @DisplayName("Test that constructor constructs object")
     void testThatConstructorConstructsObject() {
