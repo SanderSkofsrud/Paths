@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+/**
+ * Test class for Game
+ */
 
 public class GameTest {
   String name = "";
@@ -29,8 +32,14 @@ public class GameTest {
     content = "content";
   }
 
+  /**
+   * Test class for constructor
+   */
   @Nested
   public class constructor {
+    /**
+     * Test that constructor constructs object
+     */
     @Test
     @DisplayName("Test that constructor constructs object")
     void testThatConstructorConstructsObject() {
@@ -41,8 +50,14 @@ public class GameTest {
       assertEquals(Game.class, game.getClass());
     }
   }
+  /**
+   * Test class for exception handling
+   */
   @Nested
   public class ExceptionHandling {
+    /**
+     * Test that constructor throws NullPointerException when player is null
+     */
     @Test
     @DisplayName("Test that constructor throws NullPointerException when player is null")
     void testThatConstructorThrowsNullPointerException() {
@@ -51,6 +66,9 @@ public class GameTest {
       List<Goal> goals = new ArrayList<>();
       assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
     }
+    /**
+     * Test that constructor throws NullPointerException when story is null
+     */
     @Test
     @DisplayName("Test that constructor throws NullPointerException when story is null")
     void testThatBeginReturnsOpeningPassage(){
@@ -64,6 +82,9 @@ public class GameTest {
 
       assertEquals(openingPassage, game.begin());
     }
+    /**
+     * Test that constructor throws NullPointerException when goals is null
+     */
     @Test
     @DisplayName("Test that constructor throws NullPointerException when goals is null")
     void testThatConstructorThrowsNullPointerExceptionWhenGoalsIsNull() {
@@ -73,6 +94,9 @@ public class GameTest {
       assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
     }
 
+    /**
+     * Test that go throws NullPointerException when link is null
+     */
     @Test
     @DisplayName("Test that go throws NullPointerException when link is null")
     void testThatGoThrowsNullPointerException() {
@@ -87,9 +111,15 @@ public class GameTest {
     }
   }
 
+  /**
+   * Test class for return values
+   */
  @Nested
  public class ReturnValues {
 
+   /**
+    * Test that go returns passage
+    */
    @Test
    @DisplayName("Test that go returns passage")
    void testThatGoReturnsPassage() {
@@ -105,6 +135,9 @@ public class GameTest {
      assertEquals(passage, game.go(new Link(passage.getTitle(), passage.getTitle())));
    }
 
+    /**
+      * Test that begin returns opening passage
+      */
    @Test
    @DisplayName("Test that begin returns opening passage")
     void testThatBeginReturnsOpeningPassage() {
@@ -118,6 +151,9 @@ public class GameTest {
       assertEquals(openingPassage, game.begin());
     }
 
+    /**
+     * Test that getStory returns correct player
+     */
    @Test
    @DisplayName("Test that getStory returns correct story")
    void testThatGetStoryReturnsCorrect() {
@@ -130,7 +166,9 @@ public class GameTest {
 
      assertEquals(story, game.getStory());
    }
-
+   /**
+    * Test that getGoals returns correct player
+    */
    @Test
    @DisplayName("Test that getGoals returns correct goals")
    void testThatGetGoalsReturnsCorrect() {
@@ -144,6 +182,9 @@ public class GameTest {
      assertEquals(goals, game.getGoals());
    }
 
+    /**
+      * Test that getPlayers returns correct player
+      */
    @Test
    @DisplayName("Test that getPlayers returns correct player")
    void testThatGetPlayersReturnsCorrect() {

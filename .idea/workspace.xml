@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added Javadoc to PlayerTest">
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added Javadoc to LinkTest">
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,35 +190,7 @@
       <workItem from="1677158991928" duration="10000" />
       <workItem from="1677160888788" duration="27000" />
       <workItem from="1677160987849" duration="1066000" />
-      <workItem from="1677505014216" duration="372000" />
-    </task>
-    <task id="LOCAL-00017" summary="moved StoryTest to MainClassesTest">
-      <created>1675849240096</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849240096</updated>
-    </task>
-    <task id="LOCAL-00018" summary="deleted PassageTest.java, PlayerTest.java, StoryTest.java and GameTest.java">
-      <created>1675849377788</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849377788</updated>
-    </task>
-    <task id="LOCAL-00019" summary="moved GameTest as a nested class to MainClassesTest test-class">
-      <created>1675849461497</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849461497</updated>
-    </task>
-    <task id="LOCAL-00020" summary="added ActionsTest and GoalsTest test-classes">
-      <created>1675849622107</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849622107</updated>
+      <workItem from="1677505014216" duration="687000" />
     </task>
     <task id="LOCAL-00021" summary="deleted ActionsTest and GoalsTest test-classes">
       <created>1675849867779</created>
@@ -535,7 +507,35 @@
       <option name="project" value="LOCAL" />
       <updated>1677505303544</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="added Javadoc to StoryTest">
+      <created>1677505396666</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1677505396666</updated>
+    </task>
+    <task id="LOCAL-00067" summary="added Javadoc to Passagetest">
+      <created>1677505489791</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1677505489791</updated>
+    </task>
+    <task id="LOCAL-00068" summary="added Javadoc to Passagetest">
+      <created>1677505529539</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1677505529539</updated>
+    </task>
+    <task id="LOCAL-00069" summary="added Javadoc to LinkTest">
+      <created>1677505581738</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1677505581738</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,9 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="temporary finished player test class" />
-    <MESSAGE value="temporary finished passage test class" />
-    <MESSAGE value="fixed typo refrence to reference" />
     <MESSAGE value="temporary finished link test class" />
     <MESSAGE value="temporary finished Game test class" />
     <MESSAGE value="added addPassage in constructor" />
@@ -598,7 +595,10 @@
     <MESSAGE value="added Javadoc to Game class" />
     <MESSAGE value="added Javadoc to Passage class" />
     <MESSAGE value="added Javadoc to PlayerTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Javadoc to PlayerTest" />
+    <MESSAGE value="added Javadoc to StoryTest" />
+    <MESSAGE value="added Javadoc to Passagetest" />
+    <MESSAGE value="added Javadoc to LinkTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Javadoc to LinkTest" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
