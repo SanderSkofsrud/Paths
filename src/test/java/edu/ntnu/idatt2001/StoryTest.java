@@ -7,10 +7,20 @@ import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
+/**
+ * Test class for Story
+ */
+
 public class StoryTest {
 
+  /**
+   * Test class for constructor
+   */
   @Nested
   public class Constructor {
+    /**
+     * Test that constructor constructs correctly
+     */
     @Test
     @DisplayName("Test that constructor constructs correctly")
     void testThatConstructorConstructsCorrectly() {
@@ -21,8 +31,14 @@ public class StoryTest {
     }
   }
 
+  /**
+   * Test class for exception handling
+   */
   @Nested
   public class ExceptionHandling {
+    /**
+     * Test that constructor throws NullPointerExceptions when passage null
+     */
     @Test
     @DisplayName("Test that constructor throws NullPointerExceptions when passage null")
     void testThatConstructorThrowsNullPointerExceptionsWhenPassageNull() {
@@ -31,6 +47,9 @@ public class StoryTest {
           new Story("title", passage));
     }
 
+    /**
+     * Test that constructor throws NullPointerException when title is null
+     */
     @Test
     @DisplayName("Test that constructor throws NullPointerException when title is null")
     void testThatConstructorThrowsNullPointerExceptionWhenTitleIsNull(){
@@ -39,6 +58,9 @@ public class StoryTest {
           new Story(null, passage));
     }
 
+    /**
+     * Test that constructor throws NullPointerException when openingPassage is null
+     */
     @Test
     @DisplayName("Test that addPassage throws IllegalArgumentException")
     void testThatAddPassageThrowsIllegalArgumentException(){
@@ -48,6 +70,9 @@ public class StoryTest {
           story.addPassage(passage));
     }
 
+    /**
+     * Test that getPassage throws NullPointerException when link is null
+     */
     @Test
     @DisplayName("Test that getPassage throws NullPointerException")
     void testThatGetPassageThrowsNullPointerException(){
@@ -58,9 +83,16 @@ public class StoryTest {
     }
   }
 
+  /**
+   * Test class for return values
+   */
+
   @Nested
   public class ReturnValues {
 
+    /**
+     * Test that passage is added and fetched
+     */
     @Test
     @DisplayName("Test that passage is added and fetched")
     void testThatPassageIsAddedAndFetched() {
@@ -69,6 +101,9 @@ public class StoryTest {
       assertEquals(passage, story.getOpeningPassage());
     }
 
+    /**
+     * Test that getPassage returns correctly
+     */
     @Test
     @DisplayName("Test that getStory returns correctly")
     void testThatGetStoryReturnsCorrectly() {
@@ -78,6 +113,9 @@ public class StoryTest {
       assertEquals("title", story.getTitle());
     }
 
+    /**
+     * Test that getPassage returns correctly
+     */
     @Test
     @DisplayName("Test that getOpeningPassage returns correctly")
     void testThatGetOpeningPassageReturnsCorrectly() {
@@ -87,6 +125,9 @@ public class StoryTest {
       assertEquals(openingPassage, story.getOpeningPassage());
     }
 
+    /**
+     * Test that getPassage returns correctly
+     */
     @Test
     @DisplayName("Test that getPassages returns correctly")
     void testThatGetPassagesReturnsCorrectly() {
@@ -97,6 +138,9 @@ public class StoryTest {
       assertEquals(2, story.getPassages().size());
     }
 
+    /**
+     * Test that getPassage returns correctly
+     */
     @Test
     @DisplayName("Test that getTitle returns correctly")
     void testThatGetTitleReturnsCorrectly() {

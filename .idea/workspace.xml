@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added Javadoc to Player class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added Javadoc to PlayerTest">
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,13 +190,7 @@
       <workItem from="1677158991928" duration="10000" />
       <workItem from="1677160888788" duration="27000" />
       <workItem from="1677160987849" duration="1066000" />
-    </task>
-    <task id="LOCAL-00016" summary="added PlayerTest as a nested test in MainClassestest test-class">
-      <created>1675849000044</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849000044</updated>
+      <workItem from="1677505014216" duration="372000" />
     </task>
     <task id="LOCAL-00017" summary="moved StoryTest to MainClassesTest">
       <created>1675849240096</created>
@@ -534,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677161860160</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="added Javadoc to PlayerTest">
+      <created>1677505303544</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1677505303544</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +552,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="Javadoc" />
                       </list>
                     </value>
                   </entry>
@@ -572,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="changed type of exception" />
     <MESSAGE value="temporary finished player test class" />
     <MESSAGE value="temporary finished passage test class" />
     <MESSAGE value="fixed typo refrence to reference" />
@@ -597,7 +597,8 @@
     <MESSAGE value="added Javadoc to Story class" />
     <MESSAGE value="added Javadoc to Game class" />
     <MESSAGE value="added Javadoc to Passage class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Javadoc to Passage class" />
+    <MESSAGE value="added Javadoc to PlayerTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Javadoc to PlayerTest" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
