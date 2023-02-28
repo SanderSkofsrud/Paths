@@ -2,6 +2,7 @@ package edu.ntnu.idatt2001;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -103,6 +104,39 @@ public class Story {
       throw new NullPointerException("Story-Link cannot be null");
     }
     return passages.get(link);
+  }
+
+  // TODO "Det skal ikke være mulig å fjerne passasjen hvis det finnes andre passasjer som linker til den"
+  // TODO "Dere skal bruke funksjonell programmering og streams for å løse denne oppgaven"
+
+  public void removePassage(Passage passage) {
+    if (passage == null) {
+      throw new IllegalArgumentException("Passage can not be null");
+    }
+    passages.remove(new Link(passage.getTitle(), passage.getTitle()));
+  }
+
+  // TODO Denne Copilot foreslår, men SonarLint er ingen fan
+  public List<Link> getBrokenLinks() {
+    List<Link> brokenLinks = new ArrayList<>();
+    for (Link link : passages.keySet()) {
+      if (passages.get(link) == null) {
+        brokenLinks.add(link);
+      }
+    }
+    return brokenLinks;
+  }
+
+  // TODO Denne SonarLint foreslår, men inneholder casting...
+  public List<Link> getBrokenLinks2() {
+    List<Link> brokenLinks = new ArrayList<>();
+    for (Map.Entry<Link, Passage> link : passages.entrySet()) {
+      Object value = link.getValue();
+      if (passages.get(value) == null) {
+        brokenLinks.add((Link) link);
+      }
+    }
+    return brokenLinks;
   }
 
   /**
