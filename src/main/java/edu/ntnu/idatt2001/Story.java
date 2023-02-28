@@ -106,36 +106,32 @@ public class Story {
     return passages.get(link);
   }
 
-  // TODO "Det skal ikke være mulig å fjerne passasjen hvis det finnes andre passasjer som linker til den"
-  // TODO "Dere skal bruke funksjonell programmering og streams for å løse denne oppgaven"
-
+  /**
+   * Removes a passage from the story.
+   *
+   * @param passage The passage to be removed.
+   * @throws IllegalArgumentException if passage is null or if other passages has links to this passage.
+   */
   public void removePassage(Passage passage) {
-    if (passage == null) {
-      throw new IllegalArgumentException("Passage can not be null");
+    if (!passages.containsKey(passage)) {
+      throw new IllegalArgumentException("Can not find passage");
     }
-    passages.remove(new Link(passage.getTitle(), passage.getTitle()));
+    if (passage.hasLinks()) {
+      throw new IllegalArgumentException("Other passages has links to this passage");
+    }
+    passages.entrySet().removeIf(entry -> entry.getValue().equals(passage));
   }
 
-  // TODO Denne Copilot foreslår, men SonarLint er ingen fan
-  public List<Link> getBrokenLinks() {
-    List<Link> brokenLinks = new ArrayList<>();
-    for (Link link : passages.keySet()) {
-      if (passages.get(link) == null) {
-        brokenLinks.add(link);
-      }
-    }
-    return brokenLinks;
-  }
-
-  // TODO Denne SonarLint foreslår, men inneholder casting...
-  public List<Link> getBrokenLinks2() {
-    List<Link> brokenLinks = new ArrayList<>();
-    for (Map.Entry<Link, Passage> link : passages.entrySet()) {
-      Object value = link.getValue();
-      if (passages.get(value) == null) {
-        brokenLinks.add((Link) link);
-      }
-    }
+  /**
+   * Returns a list of broken links.
+   *
+   * @return An ArrayList of broken links.
+   */
+  public ArrayList<Link> getBrokenLinks() {
+    ArrayList<Link> brokenLinks = passages.entrySet().stream()
+        .filter(entry -> entry.getValue() == null)
+        .map(Map.Entry::getKey)
+        .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
     return brokenLinks;
   }
 
