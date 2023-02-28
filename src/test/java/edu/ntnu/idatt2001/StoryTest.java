@@ -81,6 +81,29 @@ public class StoryTest {
       assertThrows(NullPointerException.class, () ->
           story.getPassage(link));
     }
+
+    /**
+     * Test that removePassage throws IllegalArgumentException if passage does not exist in Story
+     */
+    @Test
+    @DisplayName("Test that removePassage throws IllegalArgumentException if passage does not exist in Story")
+    void testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist(){
+      Passage passage = new Passage("title", "content");
+      Story story = new Story("title", passage);
+      Passage passage2 = new Passage("title2", "content2");
+      assertThrows(IllegalArgumentException.class, () ->
+          story.removePassage(passage2));
+    }
+
+    @Test
+    void testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks() {
+      Passage passage = new Passage("title", "content");
+      passage.addLink(new Link("title", "refrence"));
+      Story story = new Story("title", passage);
+      story.addPassage(passage);
+      assertThrows(IllegalArgumentException.class, () ->
+          story.removePassage(passage));
+    }
   }
 
   /**
@@ -148,6 +171,17 @@ public class StoryTest {
       Story story = new Story("title", openingPassage);
 
       assertEquals("title", story.getTitle());
+    }
+
+    @Test
+    @DisplayName("Test that getPassage returns correctly")
+    void testThatRemovePassageRemovesPassage() {
+      Passage passage = new Passage("title", "content");
+      Passage passage2 = new Passage("title2", "content2");
+      Story story = new Story("title", passage);
+      story.addPassage(passage2);
+      story.removePassage(passage2);
+      assertEquals(1, story.getPassages().size());
     }
   }
 }
