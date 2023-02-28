@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added Javadoc to Gametest">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added removePassage and getBrokenLinks methods to Story">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
     </list>
@@ -73,37 +74,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks">
-    <configuration name="InventoryGoalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.goals" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.goals.InventoryGoalTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ScoreGoalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.goals" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.goals.ScoreGoalTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.StoryTest">
     <configuration name="StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -152,6 +123,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$ReturnValues" />
+      <option name="METHOD_NAME" value="testThatRemovePassageRemovesPassage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="paths [clean,test]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -184,20 +186,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.StoryTest" />
       <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" />
       <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
       <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageIsNull" />
-      <item itemvalue="JUnit.InventoryGoalTest" />
-      <item itemvalue="JUnit.ScoreGoalTest" />
+      <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
       <item itemvalue="Maven.paths [clean,test]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StoryTest" />
+        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
         <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
         <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" />
         <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageIsNull" />
-        <item itemvalue="JUnit.ScoreGoalTest" />
-        <item itemvalue="JUnit.InventoryGoalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -229,14 +231,8 @@
       <workItem from="1676978376647" duration="5876000" />
       <workItem from="1677154378704" duration="2297000" />
       <workItem from="1677417913347" duration="1742000" />
-      <workItem from="1677581528906" duration="2875000" />
-    </task>
-    <task id="LOCAL-00011" summary="player class v1.3 defined list in constructor and copy constructor">
-      <created>1675843668211</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1675843668211</updated>
+      <workItem from="1677581528906" duration="4626000" />
+      <workItem from="1677586238988" duration="978000" />
     </task>
     <task id="LOCAL-00012" summary="story class v1.3 defined hashmap in constructor and copy constructor">
       <created>1675843692676</created>
@@ -574,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677156635906</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="added removePassage and getBrokenLinks methods to Story">
+      <created>1677584785714</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1677584785715</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +615,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added new exception to addLink in passage class if link is null" />
     <MESSAGE value="added exceptions for game class in constructor and go" />
     <MESSAGE value="added exceptions for player class in constructor, addToInventory and addHealth" />
     <MESSAGE value="temporary finished game test class" />
@@ -637,7 +639,8 @@
     <MESSAGE value="fixed thrown exception" />
     <MESSAGE value="added some test to returnValues and exception" />
     <MESSAGE value="added some test to ExceptionHandling and returnValues" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some test to ExceptionHandling and returnValues" />
+    <MESSAGE value="added removePassage and getBrokenLinks methods to Story" />
+    <option name="LAST_COMMIT_MESSAGE" value="added removePassage and getBrokenLinks methods to Story" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

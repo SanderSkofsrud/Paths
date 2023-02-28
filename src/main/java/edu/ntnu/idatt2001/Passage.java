@@ -95,7 +95,7 @@ public class Passage {
    * @return True if the passage has links.
    */
   public boolean hasLinks() {
-    return links != null;
+    return !links.isEmpty();
   }
 
   /**
