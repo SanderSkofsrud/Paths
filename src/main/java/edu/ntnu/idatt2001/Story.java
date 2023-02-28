@@ -113,7 +113,7 @@ public class Story {
    * @throws IllegalArgumentException if passage is null or if other passages has links to this passage.
    */
   public void removePassage(Passage passage) {
-    if (!passages.containsKey(passage)) {
+    if (!passages.containsKey(new Link(passage.getTitle(), passage.getTitle()))) {
       throw new IllegalArgumentException("Can not find passage");
     }
     if (passage.hasLinks()) {
