@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * A class that represents a story.
@@ -128,11 +129,24 @@ public class Story {
    * @return An ArrayList of broken links.
    */
   public ArrayList<Link> getBrokenLinks() {
-    ArrayList<Link> brokenLinks = passages.entrySet().stream()
-        .filter(entry -> entry.getValue() == null)
-        .map(Map.Entry::getKey)
-        .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+
+    //TODO: for-løkke jeg tror fungerer
+    ArrayList<Link> brokenLinks = new ArrayList<Link>();
+    for (Passage passage : passages.values()) {
+      for (Link link : passage.getLinks()) {
+        if (!passages.containsKey(link)) {
+          brokenLinks.add(link);
+        }
+      }
+    }
+    //TODO: Denne streamen er inne på noe, men ikke helt riktig
+//    ArrayList<Link> brokenLinks = passages.entrySet().stream()
+//            .filter(entry -> !entry.getValue().getTitle().equals(entry.getKey().getReference()))
+//            .map(Map.Entry::getKey)
+//            .collect(Collectors.toCollection(ArrayList::new));
+//    return brokenLinks;
     return brokenLinks;
+
   }
 
   /**
@@ -142,13 +156,9 @@ public class Story {
    */
   @Override
   public String toString() {
-    return "Story{"
-        + "title='"
-        + getTitle() + '\''
-        + ", passages="
-        + getPassages()
-        + ", openingPassage="
+    return getTitle()
+        + "\n"
         + getOpeningPassage()
-        + '}';
+        + getPassages();
   }
 }
