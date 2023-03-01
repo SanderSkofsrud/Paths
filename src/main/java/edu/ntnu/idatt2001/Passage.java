@@ -105,16 +105,12 @@ public class Passage {
    */
   @Override
   public String toString() {
-    return "Passage{"
-        + "title='"
+    return ":: "
         + getTitle()
-        + '\''
-        + ", content='"
+        + "\n"
         + getContent()
-        + '\''
-        + ", links="
-        + getLinks()
-        + '}';
+        + "\n"
+        + getLinks();
   }
 
   /**
