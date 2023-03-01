@@ -183,5 +183,16 @@ public class StoryTest {
       story.removePassage(passage2);
       assertEquals(1, story.getPassages().size());
     }
+
+    @Test
+    @DisplayName("Test that getBrokenLinks returns correctly")
+    void testThatGetBrokenLinksReturnsCorrectly() {
+      Link link = new Link("title", "reference");
+      Passage openingPassage = new Passage("title", "content");
+      openingPassage.addLink(link);
+      Story story = new Story("title", openingPassage);
+      story.getBrokenLinks();
+      assertEquals(1, story.getBrokenLinks().size());
+    }
   }
 }
