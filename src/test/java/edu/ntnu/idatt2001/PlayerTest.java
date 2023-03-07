@@ -15,9 +15,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PlayerTest {
 
-  Player player = new Player("test", 10, 30, 50);
-  List<String> inventory = new ArrayList<>();
-  String test = "Item";
+  Player player;
+  List<String> inventory;
+  String test;
+
+  @BeforeEach
+  void setUp() {
+    player = new Player("test", 10, 30, 50);
+    inventory = new ArrayList<>();
+    test = "Item";
+  }
 
   /**
    * Test constructor
@@ -28,10 +35,57 @@ public class PlayerTest {
      * Test that constructor constructs object
      */
     @Test
+    void testThatConstructorConstructsObject() {
+      assertEquals(Player.class, player.getClass());
+    }
+
+    /**
+     * Test that constructor throws NullPointerException when health is less than zero
+     */
+    @Test
     @DisplayName("Test that constructor throws NullPointerException")
     void testThatConstructorThrowsNullPointerException() {
       int health = -1;
       assertThrows(IllegalArgumentException.class, () -> new Player("name", health, 10,20));
+    }
+    /**
+     * Test that throws IllegalArgumentException when health is less than zero
+     */
+    @Test
+    @DisplayName("Test that constructor throws IllegalArgumentException when health is less than zero")
+    void testThatConstructorThrowsIllegalArgumentException() {
+      int health = -1;
+      assertThrows(IllegalArgumentException.class, () -> new Player("test", health,10,10));
+    }
+
+    /**
+     * Test that constructor throws IllegalArgumentException when name is null
+     */
+    @Test
+    @DisplayName("Test that constructor throws IllegalArgumentException when name is null")
+    void testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull() {
+      String name = null;
+      assertThrows(NullPointerException.class, () -> new Player(name, 10,10,10));
+    }
+
+    /**
+     * Test that constructor throws IllegalArgumentException when score is less than zero
+     */
+    @Test
+    @DisplayName("Test that constructor throws IllegalArgumentException when score is less than zero")
+    void testThatConstructorThrowsIllegalArgumentExceptionWhenScoreIsLessThanZero() {
+      int score = -1;
+      assertThrows(IllegalArgumentException.class, () -> new Player("name", 10, score,10));
+    }
+
+    /**
+     * Test that constructor throws IllegalArgumentException when gold is less than zero
+     */
+    @Test
+    @DisplayName("Test that constructor throws IllegalArgumentException when gold is less than zero")
+    void testThatConstructorThrowsIllegalArgumentExceptionWhenGoldIsLessThanZero() {
+      int gold = -1;
+      assertThrows(IllegalArgumentException.class, () -> new Player("name", 10, 10,gold));
     }
   }
 
@@ -75,46 +129,6 @@ public class PlayerTest {
     @DisplayName("Test that addToInventory can not set null value")
     void testThatAddToInventoryCanNotSetNullValue() {
       assertThrows(NullPointerException.class, () -> player.addToInventory(null));
-    }
-
-    /**
-     * Test that removeFromInventory can not set null value
-     */
-    @Test
-    @DisplayName("Test that constructor throws IllegalArgumentException when health is less than zero")
-    void testThatConstructorThrowsIllegalArgumentException() {
-      int health = -1;
-      assertThrows(IllegalArgumentException.class, () -> new Player("test", health,10,10));
-    }
-
-    /**
-     * Test that constructor throws IllegalArgumentException when name is null
-     */
-    @Test
-    @DisplayName("Test that constructor throws IllegalArgumentException when name is null")
-    void testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull() {
-      String name = null;
-      assertThrows(NullPointerException.class, () -> new Player(name, 10,10,10));
-    }
-
-    /**
-     * Test that constructor throws IllegalArgumentException when health is less than zero
-     */
-    @Test
-    @DisplayName("Test that constructor throws IllegalArgumentException when score is less than zero")
-    void testThatConstructorThrowsIllegalArgumentExceptionWhenScoreIsLessThanZero() {
-      int score = -1;
-      assertThrows(IllegalArgumentException.class, () -> new Player("name", 10, score,10));
-    }
-
-    /**
-     * Test that constructor throws IllegalArgumentException when gold is less than zero
-     */
-    @Test
-    @DisplayName("Test that constructor throws IllegalArgumentException when gold is less than zero")
-    void testThatConstructorThrowsIllegalArgumentExceptionWhenGoldIsLessThanZero() {
-      int gold = -1;
-      assertThrows(IllegalArgumentException.class, () -> new Player("name", 10, 10,gold));
     }
   }
 
@@ -164,7 +178,6 @@ public class PlayerTest {
       assertEquals(player.getHealth(), 20);
     }
   }
-
 
   /**
    * Test that return values are correct

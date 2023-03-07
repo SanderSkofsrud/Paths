@@ -17,12 +17,18 @@ import static org.junit.jupiter.api.Assertions.*;
  * Test class for Link
  */
 class LinkTest {
+  Link link;
+  GoldAction goldAction;
+  HealthAction healthAction;
+  List<Action> actions;
 
-  Link link = new Link("Test", "reference");
-  GoldAction goldAction = new GoldAction(10);
-  HealthAction healthAction = new HealthAction(5);
-
-  List<Action> actions = new ArrayList<>();
+  @BeforeEach
+  void setUp() {
+    link = new Link("Test", "reference");
+    goldAction = new GoldAction(10);
+    healthAction = new HealthAction(5);
+    actions = new ArrayList<>();
+  }
 
   /**
    * Test class for constructor
@@ -38,22 +44,6 @@ class LinkTest {
       assertEquals(Link.class, link.getClass());
     }
 
-  }
-
-  /**
-   * Test class for exception handling
-   */
-  @Nested
-  public class ExceptionHandling {
-    /**
-     * Test that addAction throws IllegalArgumentException when action is null
-     */
-    @Test
-    @DisplayName("Test that addAction throws IllegalArgumentException when action is null")
-    void testThatExceptionIsThrownWhenActionIsNull() {
-      Action action = null;
-      assertThrows(IllegalArgumentException.class, () -> link.addAction(action));
-    }
     /**
      * Test that constructor throws NullPointerException when text is null
      */
@@ -74,6 +64,23 @@ class LinkTest {
       String text = "Test";
       String refrence = null;
       assertThrows(NullPointerException.class, () -> new Link(text, refrence));
+    }
+
+  }
+
+  /**
+   * Test class for exception handling
+   */
+  @Nested
+  public class ExceptionHandling {
+    /**
+     * Test that addAction throws IllegalArgumentException when action is null
+     */
+    @Test
+    @DisplayName("Test that addAction throws IllegalArgumentException when action is null")
+    void testThatExceptionIsThrownWhenActionIsNull() {
+      Action action = null;
+      assertThrows(IllegalArgumentException.class, () -> link.addAction(action));
     }
   }
 
