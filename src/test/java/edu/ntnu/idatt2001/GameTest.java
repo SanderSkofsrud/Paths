@@ -13,13 +13,13 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 public class GameTest {
-  String name = "";
+  String name;
   int score;
   int health;
   int gold;
   int minimumScore;
-  String title = "";
-  String content = "";
+  String title;
+  String content;
 
   @BeforeEach
   void setUp() {
@@ -49,12 +49,7 @@ public class GameTest {
       Game game = new Game(player, story, goals);
       assertEquals(Game.class, game.getClass());
     }
-  }
-  /**
-   * Test class for exception handling
-   */
-  @Nested
-  public class ExceptionHandling {
+
     /**
      * Test that constructor throws NullPointerException when player is null
      */
@@ -66,22 +61,7 @@ public class GameTest {
       List<Goal> goals = new ArrayList<>();
       assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
     }
-    /**
-     * Test that constructor throws NullPointerException when story is null
-     */
-    @Test
-    @DisplayName("Test that constructor throws NullPointerException when story is null")
-    void testThatBeginReturnsOpeningPassage(){
-      Player player = new Player(name, health, score, gold);
-      Passage openingPassage = new Passage(title, content);
-      Story story = new Story(title, openingPassage);
-      List<Goal> goals = new ArrayList<>();
 
-      Game game = new Game(player, story, goals);
-      goals.add(new ScoreGoal(minimumScore));
-
-      assertEquals(openingPassage, game.begin());
-    }
     /**
      * Test that constructor throws NullPointerException when goals is null
      */
@@ -93,6 +73,41 @@ public class GameTest {
       List<Goal> goals = null;
       assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
     }
+    /**
+     * Test that constructor throws NullPointerException when story is null
+     */
+    @Test
+    @DisplayName("Test that constructor throws NullPointerException when story is null")
+    void testThatConstructorThrowsNullPointerExceptionWhenStoryIsNull() {
+      Player player = new Player(name, health, score, gold);
+      Story story = null;
+      List<Goal> goals = new ArrayList<>();
+      assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
+    }
+  }
+  /**
+   * Test class for exception handling
+   */
+  @Nested
+  public class ExceptionHandling {
+
+    /**
+     * Test that begin returns openingPassage
+     */
+    @Test
+    @DisplayName("Test that begin return openingPassage")
+    void testThatBeginReturnsOpeningPassage(){
+      Player player = new Player(name, health, score, gold);
+      Passage openingPassage = new Passage(title, content);
+      Story story = new Story(title, openingPassage);
+      List<Goal> goals = new ArrayList<>();
+
+      Game game = new Game(player, story, goals);
+      goals.add(new ScoreGoal(minimumScore));
+
+      assertEquals(openingPassage, game.begin());
+    }
+
 
     /**
      * Test that go throws NullPointerException when link is null
