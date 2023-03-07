@@ -95,7 +95,7 @@ public class Passage {
    * @return True if the passage has links.
    */
   public boolean hasLinks() {
-    return links != null;
+    return !links.isEmpty();
   }
 
   /**
@@ -105,16 +105,12 @@ public class Passage {
    */
   @Override
   public String toString() {
-    return "Passage{"
-        + "title='"
+    return ":: "
         + getTitle()
-        + '\''
-        + ", content='"
+        + "\n"
         + getContent()
-        + '\''
-        + ", links="
-        + getLinks()
-        + '}';
+        + "\n"
+        + getLinks();
   }
 
   /**

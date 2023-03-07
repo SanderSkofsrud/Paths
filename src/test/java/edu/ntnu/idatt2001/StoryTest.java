@@ -1,28 +1,54 @@
 package edu.ntnu.idatt2001;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.*;
+
+/**
+ * Test class for Story
+ */
 
 public class StoryTest {
 
+  Story story;
+  Passage passage;
+  Passage passage2;
+  Story story2;
+  Link link;
+
+  Link link2;
+
+  @BeforeEach
+  void setUp() {
+    passage = new Passage("passage", "content");
+    passage2 = new Passage("passage2", "content2");
+    story = new Story("story", passage);
+    story2 = new Story("story2",new Passage("title", "content"));
+    link = new Link("passage2", "passage2");
+    link2 = new Link("test", "test");
+  }
+
+  /**
+   * Test class for constructor
+   */
   @Nested
   public class Constructor {
+    /**
+     * Test that constructor constructs correctly
+     */
     @Test
     @DisplayName("Test that constructor constructs correctly")
     void testThatConstructorConstructsCorrectly() {
-      Passage passage = new Passage("title", "content");
-      Story story = new Story("title", passage);
-      assertEquals("title", story.getTitle());
+      assertEquals("story", story.getTitle());
       assertEquals(passage, story.getOpeningPassage());
     }
-  }
 
-  @Nested
-  public class ExceptionHandling {
+    /**
+     * Test that constructor throws NullPointerExceptions when passage null
+     */
     @Test
     @DisplayName("Test that constructor throws NullPointerExceptions when passage null")
     void testThatConstructorThrowsNullPointerExceptionsWhenPassageNull() {
@@ -31,79 +57,130 @@ public class StoryTest {
           new Story("title", passage));
     }
 
+    /**
+     * Test that constructor throws NullPointerException when title is null
+     */
     @Test
     @DisplayName("Test that constructor throws NullPointerException when title is null")
     void testThatConstructorThrowsNullPointerExceptionWhenTitleIsNull(){
-      Passage passage = new Passage("title", "content");
       assertThrows(NullPointerException.class, () ->
           new Story(null, passage));
     }
+  }
 
+  /**
+   * Test class for exception handling
+   */
+  @Nested
+  public class ExceptionHandling {
+    /**
+     * Test that constructor throws NullPointerException when openingPassage is null
+     */
     @Test
     @DisplayName("Test that addPassage throws IllegalArgumentException")
     void testThatAddPassageThrowsIllegalArgumentException(){
       Passage passage = null;
-      Story story = new Story("title", new Passage("title", "content"));
       assertThrows(IllegalArgumentException.class, () ->
-          story.addPassage(passage));
+          story2.addPassage(passage));
     }
 
+    /**
+     * Test that getPassage throws NullPointerException when link is null
+     */
     @Test
     @DisplayName("Test that getPassage throws NullPointerException")
     void testThatGetPassageThrowsNullPointerException(){
       Link link = null;
-      Story story = new Story("title", new Passage("title", "content"));
       assertThrows(NullPointerException.class, () ->
-          story.getPassage(link));
+          story2.getPassage(link));
+    }
+
+    /**
+     * Test that removePassage throws IllegalArgumentException if passage does not exist in Story
+     */
+    @Test
+    @DisplayName("Test that removePassage throws IllegalArgumentException if passage does not exist in Story")
+    void testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist(){
+      passage2.addLink(link);
+      assertThrows(IllegalArgumentException.class, () ->
+          story.removePassage(link));
+    }
+
+    @Test
+    void testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks() {
+      passage.addLink(link);
+      story.addPassage(passage2);
+      assertThrows(IllegalArgumentException.class, () ->
+          story.removePassage(link));
     }
   }
+
+  /**
+   * Test class for return values
+   */
 
   @Nested
   public class ReturnValues {
 
+    /**
+     * Test that passage is added and fetched
+     */
     @Test
     @DisplayName("Test that passage is added and fetched")
     void testThatPassageIsAddedAndFetched() {
-      Passage passage = new Passage("title", "content");
-      Story story = new Story("title", passage);
       assertEquals(passage, story.getOpeningPassage());
     }
 
-    @Test
-    @DisplayName("Test that getStory returns correctly")
-    void testThatGetStoryReturnsCorrectly() {
-      Passage openingPassage = new Passage("title", "content");
-      Story story = new Story("title", openingPassage);
-
-      assertEquals("title", story.getTitle());
-    }
-
+    /**
+     * Test that getOpeningPassage returns correctly
+     */
     @Test
     @DisplayName("Test that getOpeningPassage returns correctly")
     void testThatGetOpeningPassageReturnsCorrectly() {
-      Passage openingPassage = new Passage("title", "content");
-      Story story = new Story("title", openingPassage);
-
-      assertEquals(openingPassage, story.getOpeningPassage());
+      assertEquals(passage, story.getOpeningPassage());
     }
 
+    /**
+     * Test that getPassage returns correctly
+     */
     @Test
     @DisplayName("Test that getPassages returns correctly")
     void testThatGetPassagesReturnsCorrectly() {
-      Passage openingPassage = new Passage("title", "content");
-      Story story = new Story("title", openingPassage);
-      Passage passage = new Passage("title2", "content2");
-      story.addPassage(passage);
+      story.addPassage(passage2);
       assertEquals(2, story.getPassages().size());
     }
 
+    /**
+     * Test that getTitle returns correctly
+     */
     @Test
     @DisplayName("Test that getTitle returns correctly")
     void testThatGetTitleReturnsCorrectly() {
-      Passage openingPassage = new Passage("title", "content");
-      Story story = new Story("title", openingPassage);
+      assertEquals("story", story.getTitle());
+    }
 
-      assertEquals("title", story.getTitle());
+    /**
+     * Test that removePassage returns correctly
+     */
+    @Test
+    @DisplayName("Test that removePassage returns correctly")
+    void testThatRemovePassageRemovesPassage() {
+      assertTrue(story.getPassages().size() == 1);
+      story.addPassage(passage2);
+      story.removePassage(link);
+      assertEquals(1, story.getPassages().size());
+    }
+
+    /**
+     * Test that getBrokenLinks returns correctly
+     */
+    @Test
+    @DisplayName("Test that getBrokenLinks returns correctly")
+    void testThatGetBrokenLinksReturnsCorrectly() {
+      assertEquals(0, story.getBrokenLinks().size());
+      passage2.addLink(link2);
+      story.addPassage(passage2);
+      assertEquals(1, story.getBrokenLinks().size());
     }
   }
 }

@@ -9,13 +9,22 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test class for Passage
+ */
 public class PassageTest {
   Passage p = new Passage("Test", "Test");
   Link link = new Link("Test1", "Test1");
   List<Link> links = new ArrayList<>();
 
+  /**
+   * Test class for constructor
+   */
   @Nested
   public class Constructor {
+    /**
+     * Test that constructor constructs object
+     */
     @Test
     @DisplayName("Test that constructor constructs object")
     void testThatConstructorConstructsObject() {
@@ -23,14 +32,24 @@ public class PassageTest {
     }
   }
 
+  /**
+   * Test class for exception handling
+   */
   @Nested
   public class ExceptionHandling {
+
+    /**
+     * Test that addLink throws IllegalArgumentException when link is null
+     */
     @Test
     @DisplayName("Test that addLink throws IllegalArgumentException when link is null")
     void testThatExceptionIsThrownWhenLinkIsNull() {
       Link link = null;
       assertThrows(NullPointerException.class, () -> p.addLink(link));
     }
+    /**
+     * Test that constructor throws NullPointerException when title is null
+     */
     @Test
     @DisplayName("Test that constructor throws NullPointerException when title is null")
     void testThatConstructorThrowsNullPointerException() {
@@ -39,6 +58,9 @@ public class PassageTest {
       assertThrows(NullPointerException.class, () -> new Passage(title, content));
     }
 
+    /**
+     * Test that constructor throws NullPointerException when content is null
+     */
     @Test
     @DisplayName("Test that constructor throws NullPointerException when content is null")
     void testThatConstructorThrowsNullPointerExceptionWhenContentIsNull() {
@@ -48,27 +70,42 @@ public class PassageTest {
     }
 
   }
+  /**
+   * Test class for return values
+   */
   @Nested
   public class ReturnValues {
 
+    /**
+     * Test that getContent returns correct
+     */
     @Test
     @DisplayName("Test that getContent returns correct")
     void testThatGetContentReturnsCorrect() {
       assertEquals("Test", p.getContent());
     }
 
+    /**
+     * Test that getTitle returns correct
+     */
     @Test
     @DisplayName("Test that getTitle returns correct")
     void testThatGetTitleReturnsCorrect() {
       assertEquals("Test", p.getTitle());
     }
 
+    /**
+     * Test that getLinks returns correct
+     */
     @Test
     @DisplayName("Test that getLinks returns correct")
     void testThatGetLinksReturnsCorrect() {
       assertEquals(links, p.getLinks());
     }
 
+    /**
+     * Test that addLink adds link
+     */
     @Test
     @DisplayName("Test that addLink adds link")
     void testThatAddLinkAddsLink() {
@@ -77,6 +114,9 @@ public class PassageTest {
       assertEquals(links, p.getLinks());
     }
 
+    /**
+     * Test that hasLinks returns correct
+     */
     @Test
     @DisplayName("Test that hasLinks returns correct")
     void testThatHasLinksReturnsCorrect() {

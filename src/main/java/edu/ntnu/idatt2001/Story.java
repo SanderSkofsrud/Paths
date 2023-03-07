@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * A class that represents a story.
@@ -106,37 +107,29 @@ public class Story {
     return passages.get(link);
   }
 
-  // TODO "Det skal ikke være mulig å fjerne passasjen hvis det finnes andre passasjer som linker til den"
-  // TODO "Dere skal bruke funksjonell programmering og streams for å løse denne oppgaven"
-
-  public void removePassage(Passage passage) {
-    if (passage == null) {
-      throw new IllegalArgumentException("Passage can not be null");
+  /**
+   * Removes a passage from the story.
+   * @param link The link to the passage.
+   * @throws IllegalArgumentException if link is null or if other passages has links to this passage.
+   */
+  public void removePassage(Link link) {
+    List<Passage> passagesWithLinks = passages.values().stream().filter(passage -> passage.getLinks().contains(link)).toList();
+    if (!passages.containsKey(link)) {
+      throw new IllegalArgumentException("Can not find passage");
     }
-    passages.remove(new Link(passage.getTitle(), passage.getTitle()));
+    if (passagesWithLinks.size() > 0) {
+      throw new IllegalArgumentException("Other passages has links to this passage");
+    }
+    passages.remove(link);
   }
 
-  // TODO Denne Copilot foreslår, men SonarLint er ingen fan
+  /**
+   * Returns a list of broken links.
+   *
+   * @return A List of broken links.
+   */
   public List<Link> getBrokenLinks() {
-    List<Link> brokenLinks = new ArrayList<>();
-    for (Link link : passages.keySet()) {
-      if (passages.get(link) == null) {
-        brokenLinks.add(link);
-      }
-    }
-    return brokenLinks;
-  }
-
-  // TODO Denne SonarLint foreslår, men inneholder casting...
-  public List<Link> getBrokenLinks2() {
-    List<Link> brokenLinks = new ArrayList<>();
-    for (Map.Entry<Link, Passage> link : passages.entrySet()) {
-      Object value = link.getValue();
-      if (passages.get(value) == null) {
-        brokenLinks.add((Link) link);
-      }
-    }
-    return brokenLinks;
+    return passages.values().stream().flatMap(passage -> passage.getLinks().stream()).filter(link -> !passages.containsKey(link)).toList();
   }
 
   /**
@@ -146,13 +139,9 @@ public class Story {
    */
   @Override
   public String toString() {
-    return "Story{"
-        + "title='"
-        + getTitle() + '\''
-        + ", passages="
-        + getPassages()
-        + ", openingPassage="
+    return getTitle()
+        + "\n"
         + getOpeningPassage()
-        + '}';
+        + getPassages();
   }
 }

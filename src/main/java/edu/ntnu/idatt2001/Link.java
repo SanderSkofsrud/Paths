@@ -101,11 +101,12 @@ public class Link {
 
   @Override
   public String toString() {
-    return "Link{"
-        + "text='"
-        + getText() + '\''
-        + ", refrence='" + getReference()
-        + '}';
+    return "["
+        + getText()
+        + "]("
+        + getReference()
+        + ") \n";
+
   }
 
   /**
