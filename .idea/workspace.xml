@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added javadoc to tests">
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="refactored and renamed tests">
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,22 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PassageTest$ReturnValues">
+  <component name="RunManager" selected="JUnit.LinkTest">
+    <configuration name="LinkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PassageTest$Constructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -83,22 +98,6 @@
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$Constructor" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PassageTest$Constructor.testThatConstructorConstructsObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$Constructor" />
-      <option name="METHOD_NAME" value="testThatConstructorConstructsObject" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -206,9 +205,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.LinkTest" />
       <item itemvalue="JUnit.PassageTest" />
       <item itemvalue="JUnit.PassageTest$Constructor" />
-      <item itemvalue="JUnit.PassageTest$Constructor.testThatConstructorConstructsObject" />
       <item itemvalue="JUnit.PassageTest$ExceptionHandling.testThatExceptionIsThrownWhenLinkIsNull" />
       <item itemvalue="JUnit.PassageTest$ReturnValues" />
       <item itemvalue="Maven.paths [clean,test]" />
@@ -216,11 +215,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LinkTest" />
         <item itemvalue="JUnit.PassageTest$ReturnValues" />
         <item itemvalue="JUnit.PassageTest$Constructor" />
         <item itemvalue="JUnit.PassageTest" />
         <item itemvalue="JUnit.PassageTest$ExceptionHandling.testThatExceptionIsThrownWhenLinkIsNull" />
-        <item itemvalue="JUnit.PassageTest$Constructor.testThatConstructorConstructsObject" />
       </list>
     </recent_temporary>
   </component>
@@ -275,20 +274,6 @@
       <workItem from="1677763057829" duration="2433000" />
       <workItem from="1677766703393" duration="124000" />
       <workItem from="1678186891418" duration="5015000" />
-    </task>
-    <task id="LOCAL-00022" summary="created test-classes for packages actions and goals">
-      <created>1675849907869</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849907869</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Player v1.3 Added NullPointerException">
-      <created>1675850915807</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1675850915807</updated>
     </task>
     <task id="LOCAL-00024" summary="Link v1.4 Added NullPointerException">
       <created>1675850935828</created>
@@ -619,7 +604,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678191724283</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="refactored and renamed tests">
+      <created>1678193155542</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1678193155543</updated>
+    </task>
+    <task id="LOCAL-00072" summary="refactored and renamed tests">
+      <created>1678193337305</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1678193337305</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,7 +672,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added addPassage in constructor" />
     <MESSAGE value="temporary finished story test class" />
     <MESSAGE value="fixed error in link test" />
     <MESSAGE value="fixed typo in Passage class" />
@@ -698,7 +696,8 @@
     <MESSAGE value="fixed removePassage method" />
     <MESSAGE value="added tests to removePassage and getBrokenLinks" />
     <MESSAGE value="added javadoc to tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added javadoc to tests" />
+    <MESSAGE value="refactored and renamed tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored and renamed tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
