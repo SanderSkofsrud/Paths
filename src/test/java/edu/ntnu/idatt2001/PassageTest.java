@@ -1,5 +1,6 @@
 package edu.ntnu.idatt2001;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -13,9 +14,16 @@ import static org.junit.jupiter.api.Assertions.*;
  * Test class for Passage
  */
 public class PassageTest {
-  Passage p = new Passage("Test", "Test");
-  Link link = new Link("Test1", "Test1");
-  List<Link> links = new ArrayList<>();
+  Passage passage;
+  Link link;
+  List<Link> links;
+
+  @BeforeEach
+  void setUp() {
+    passage = new Passage("title", "content");
+    link = new Link("link", "link");
+    links = new ArrayList<>();
+  }
 
   /**
    * Test class for constructor
@@ -28,24 +36,7 @@ public class PassageTest {
     @Test
     @DisplayName("Test that constructor constructs object")
     void testThatConstructorConstructsObject() {
-      assertEquals(Passage.class, p.getClass());
-    }
-  }
-
-  /**
-   * Test class for exception handling
-   */
-  @Nested
-  public class ExceptionHandling {
-
-    /**
-     * Test that addLink throws IllegalArgumentException when link is null
-     */
-    @Test
-    @DisplayName("Test that addLink throws IllegalArgumentException when link is null")
-    void testThatExceptionIsThrownWhenLinkIsNull() {
-      Link link = null;
-      assertThrows(NullPointerException.class, () -> p.addLink(link));
+      assertEquals(Passage.class, passage.getClass());
     }
     /**
      * Test that constructor throws NullPointerException when title is null
@@ -68,6 +59,23 @@ public class PassageTest {
       String content = null;
       assertThrows(NullPointerException.class, () -> new Passage(title, content));
     }
+  }
+
+  /**
+   * Test class for exception handling
+   */
+  @Nested
+  public class ExceptionHandling {
+
+    /**
+     * Test that addLink throws IllegalArgumentException when link is null
+     */
+    @Test
+    @DisplayName("Test that addLink throws IllegalArgumentException when link is null")
+    void testThatExceptionIsThrownWhenLinkIsNull() {
+      Link link = null;
+      assertThrows(NullPointerException.class, () -> passage.addLink(link));
+    }
 
   }
   /**
@@ -82,7 +90,7 @@ public class PassageTest {
     @Test
     @DisplayName("Test that getContent returns correct")
     void testThatGetContentReturnsCorrect() {
-      assertEquals("Test", p.getContent());
+      assertEquals("content", passage.getContent());
     }
 
     /**
@@ -91,7 +99,7 @@ public class PassageTest {
     @Test
     @DisplayName("Test that getTitle returns correct")
     void testThatGetTitleReturnsCorrect() {
-      assertEquals("Test", p.getTitle());
+      assertEquals("title", passage.getTitle());
     }
 
     /**
@@ -100,7 +108,7 @@ public class PassageTest {
     @Test
     @DisplayName("Test that getLinks returns correct")
     void testThatGetLinksReturnsCorrect() {
-      assertEquals(links, p.getLinks());
+      assertEquals(links, passage.getLinks());
     }
 
     /**
@@ -109,9 +117,9 @@ public class PassageTest {
     @Test
     @DisplayName("Test that addLink adds link")
     void testThatAddLinkAddsLink() {
-      p.addLink(link);
+      passage.addLink(link);
       links.add(link);
-      assertEquals(links, p.getLinks());
+      assertEquals(links, passage.getLinks());
     }
 
     /**
@@ -120,8 +128,8 @@ public class PassageTest {
     @Test
     @DisplayName("Test that hasLinks returns correct")
     void testThatHasLinksReturnsCorrect() {
-      p.addLink(link);
-      assertTrue(p.hasLinks());
+      passage.addLink(link);
+      assertTrue(passage.hasLinks());
     }
   }
 }
