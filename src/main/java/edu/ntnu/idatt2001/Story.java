@@ -114,7 +114,6 @@ public class Story {
    */
   public void removePassage(Link link) {
     List<Passage> passagesWithLinks = passages.values().stream().filter(passage -> passage.getLinks().contains(link)).toList();
-
     if (!passages.containsKey(link)) {
       throw new IllegalArgumentException("Can not find passage");
     }

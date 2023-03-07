@@ -109,7 +109,7 @@ public class StoryTest {
     @Test
     void testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks() {
       passage.addLink(link);
-      story.addPassage(passage);
+      story.addPassage(passage2);
       assertThrows(IllegalArgumentException.class, () ->
           story.removePassage(link));
     }
