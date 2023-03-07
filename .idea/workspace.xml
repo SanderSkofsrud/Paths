@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added test to method getBrokenLinks">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed removePassage method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +72,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StoryTest$ReturnValues.testThatGetTitleReturnsCorrectly">
+  <component name="RunManager" selected="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly">
     <configuration name="StoryTest$Constructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -219,11 +218,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly" />
         <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetTitleReturnsCorrectly" />
         <item itemvalue="JUnit.StoryTest$Constructor" />
         <item itemvalue="JUnit.StoryTest" />
         <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
-        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly" />
       </list>
     </recent_temporary>
   </component>
@@ -277,14 +276,7 @@
       <workItem from="1677762483403" duration="377000" />
       <workItem from="1677763057829" duration="2433000" />
       <workItem from="1677766703393" duration="124000" />
-      <workItem from="1678186891418" duration="3968000" />
-    </task>
-    <task id="LOCAL-00019" summary="moved GameTest as a nested class to MainClassesTest test-class">
-      <created>1675849461497</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849461497</updated>
+      <workItem from="1678186891418" duration="4687000" />
     </task>
     <task id="LOCAL-00020" summary="added ActionsTest and GoalsTest test-classes">
       <created>1675849622107</created>
@@ -622,7 +614,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677677806101</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="fixed removePassage method">
+      <created>1678191159940</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1678191159940</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -695,13 +694,13 @@
     <MESSAGE value="added some test to ExceptionHandling and returnValues" />
     <MESSAGE value="added removePassage and getBrokenLinks methods to Story" />
     <MESSAGE value="fixed hasLinks method" />
-    <MESSAGE value="fixed removePassage method" />
     <MESSAGE value="added test for RemovePassage in Story class" />
     <MESSAGE value="modified link toString" />
     <MESSAGE value="modified passage toString" />
     <MESSAGE value="modified story toString" />
     <MESSAGE value="added test to method getBrokenLinks" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test to method getBrokenLinks" />
+    <MESSAGE value="fixed removePassage method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed removePassage method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
