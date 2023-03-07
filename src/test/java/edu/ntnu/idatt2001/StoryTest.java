@@ -29,7 +29,6 @@ public class StoryTest {
     story2 = new Story("story2",new Passage("title", "content"));
     link = new Link("passage2", "passage2");
     link2 = new Link("test", "test");
-
   }
 
   /**
@@ -133,7 +132,7 @@ public class StoryTest {
     }
 
     /**
-     * Test that getPassage returns correctly
+     * Test that getOpeningPassage returns correctly
      */
     @Test
     @DisplayName("Test that getOpeningPassage returns correctly")
@@ -152,7 +151,7 @@ public class StoryTest {
     }
 
     /**
-     * Test that getPassage returns correctly
+     * Test that getTitle returns correctly
      */
     @Test
     @DisplayName("Test that getTitle returns correctly")
@@ -160,8 +159,11 @@ public class StoryTest {
       assertEquals("story", story.getTitle());
     }
 
+    /**
+     * Test that removePassage returns correctly
+     */
     @Test
-    @DisplayName("Test that getPassage returns correctly")
+    @DisplayName("Test that removePassage returns correctly")
     void testThatRemovePassageRemovesPassage() {
       assertTrue(story.getPassages().size() == 1);
       story.addPassage(passage2);
@@ -169,6 +171,9 @@ public class StoryTest {
       assertEquals(1, story.getPassages().size());
     }
 
+    /**
+     * Test that getBrokenLinks returns correctly
+     */
     @Test
     @DisplayName("Test that getBrokenLinks returns correctly")
     void testThatGetBrokenLinksReturnsCorrectly() {
