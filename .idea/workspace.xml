@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added test for RemovePassage in Story class">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added test to method getBrokenLinks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Link.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
     </list>
@@ -52,16 +50,16 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths-fasit&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hellerosenlind/Desktop/V23/java/paths&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -75,8 +73,8 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly">
-    <configuration name="StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StoryTest$ReturnValues.testThatGetTitleReturnsCorrectly">
+    <configuration name="StoryTest$Constructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -85,9 +83,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.StoryTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$ExceptionHandling" />
-      <option name="METHOD_NAME" value="testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$Constructor" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -108,7 +105,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest$ReturnValues.testThatGetTitleReturnsCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -118,7 +115,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.StoryTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$ReturnValues" />
-      <option name="METHOD_NAME" value="testThatGetBrokenLinksReturnsCorrectly2" />
+      <option name="METHOD_NAME" value="testThatGetTitleReturnsCorrectly" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -186,21 +183,47 @@
       </extension>
       <method v="2" />
     </configuration>
+    <configuration name="paths [javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly2" />
+      <item itemvalue="JUnit.StoryTest$Constructor" />
+      <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetTitleReturnsCorrectly" />
       <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly" />
       <item itemvalue="JUnit.StoryTest" />
-      <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
       <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
       <item itemvalue="Maven.paths [clean,test]" />
+      <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly" />
-        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
-        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly2" />
+        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetTitleReturnsCorrectly" />
+        <item itemvalue="JUnit.StoryTest$Constructor" />
         <item itemvalue="JUnit.StoryTest" />
-        <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
+        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
+        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly" />
       </list>
     </recent_temporary>
   </component>
@@ -242,35 +265,19 @@
       <workItem from="1677588069883" duration="73000" />
       <workItem from="1677588151568" duration="4471000" />
       <workItem from="1677670455153" duration="2287000" />
-      <workItem from="1677672786937" duration="4884000" />
-    </task>
-    <task id="LOCAL-00015" summary="fixed addToInventory and getInventory in playerTest test-class">
-      <created>1675848891324</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1675848891324</updated>
-    </task>
-    <task id="LOCAL-00016" summary="added PlayerTest as a nested test in MainClassestest test-class">
-      <created>1675849000044</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849000044</updated>
-    </task>
-    <task id="LOCAL-00017" summary="moved StoryTest to MainClassesTest">
-      <created>1675849240096</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849240096</updated>
-    </task>
-    <task id="LOCAL-00018" summary="deleted PassageTest.java, PlayerTest.java, StoryTest.java and GameTest.java">
-      <created>1675849377788</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849377788</updated>
+      <workItem from="1677672786937" duration="5680000" />
+      <workItem from="1677692634232" duration="62000" />
+      <workItem from="1677697108009" duration="30000" />
+      <workItem from="1677749844381" duration="1377000" />
+      <workItem from="1677751232672" duration="20000" />
+      <workItem from="1677751258987" duration="2245000" />
+      <workItem from="1677759532133" duration="1598000" />
+      <workItem from="1677761234519" duration="4000" />
+      <workItem from="1677761436810" duration="557000" />
+      <workItem from="1677762483403" duration="377000" />
+      <workItem from="1677763057829" duration="2433000" />
+      <workItem from="1677766703393" duration="124000" />
+      <workItem from="1678186891418" duration="3968000" />
     </task>
     <task id="LOCAL-00019" summary="moved GameTest as a nested class to MainClassesTest test-class">
       <created>1675849461497</created>
@@ -587,7 +594,35 @@
       <option name="project" value="LOCAL" />
       <updated>1677589184915</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="modified link toString">
+      <created>1677677763040</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1677677763041</updated>
+    </task>
+    <task id="LOCAL-00065" summary="modified passage toString">
+      <created>1677677770984</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1677677770984</updated>
+    </task>
+    <task id="LOCAL-00066" summary="modified story toString">
+      <created>1677677788889</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1677677788889</updated>
+    </task>
+    <task id="LOCAL-00067" summary="added test to method getBrokenLinks">
+      <created>1677677806101</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1677677806101</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,6 +631,17 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="0db7eeae-e9b5-4c72-bf05-81bf53d24cf6">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -622,13 +668,14 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="0db7eeae-e9b5-4c72-bf05-81bf53d24cf6" value="TOOL_WINDOW" />
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="changed type of exception" />
-    <MESSAGE value="temporary finished player test class" />
-    <MESSAGE value="temporary finished passage test class" />
-    <MESSAGE value="fixed typo refrence to reference" />
     <MESSAGE value="temporary finished link test class" />
     <MESSAGE value="temporary finished Game test class" />
     <MESSAGE value="added addPassage in constructor" />
@@ -650,7 +697,11 @@
     <MESSAGE value="fixed hasLinks method" />
     <MESSAGE value="fixed removePassage method" />
     <MESSAGE value="added test for RemovePassage in Story class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test for RemovePassage in Story class" />
+    <MESSAGE value="modified link toString" />
+    <MESSAGE value="modified passage toString" />
+    <MESSAGE value="modified story toString" />
+    <MESSAGE value="added test to method getBrokenLinks" />
+    <option name="LAST_COMMIT_MESSAGE" value="added test to method getBrokenLinks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

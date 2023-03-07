@@ -109,44 +109,28 @@ public class Story {
 
   /**
    * Removes a passage from the story.
-   *
-   * @param passage The passage to be removed.
-   * @throws IllegalArgumentException if passage is null or if other passages has links to this passage.
+   * @param link The link to the passage.
+   * @throws IllegalArgumentException if link is null or if other passages has links to this passage.
    */
-  public void removePassage(Passage passage) {
-    if (!passages.containsKey(new Link(passage.getTitle(), passage.getTitle()))) {
+  public void removePassage(Link link) {
+    List<Passage> passagesWithLinks = passages.values().stream().filter(passage -> passage.getLinks().contains(link)).toList();
+
+    if (!passages.containsKey(link)) {
       throw new IllegalArgumentException("Can not find passage");
     }
-    if (passage.hasLinks()) {
+    if (passagesWithLinks.size() > 0) {
       throw new IllegalArgumentException("Other passages has links to this passage");
     }
-    passages.entrySet().removeIf(entry -> entry.getValue().equals(passage));
+    passages.remove(link);
   }
 
   /**
    * Returns a list of broken links.
    *
-   * @return An ArrayList of broken links.
+   * @return A List of broken links.
    */
-  public ArrayList<Link> getBrokenLinks() {
-
-    //TODO: for-løkke jeg tror fungerer
-    ArrayList<Link> brokenLinks = new ArrayList<Link>();
-    for (Passage passage : passages.values()) {
-      for (Link link : passage.getLinks()) {
-        if (!passages.containsKey(link)) {
-          brokenLinks.add(link);
-        }
-      }
-    }
-    //TODO: Denne streamen er inne på noe, men ikke helt riktig
-//    ArrayList<Link> brokenLinks = passages.entrySet().stream()
-//            .filter(entry -> !entry.getValue().getTitle().equals(entry.getKey().getReference()))
-//            .map(Map.Entry::getKey)
-//            .collect(Collectors.toCollection(ArrayList::new));
-//    return brokenLinks;
-    return brokenLinks;
-
+  public List<Link> getBrokenLinks() {
+    return passages.values().stream().flatMap(passage -> passage.getLinks().stream()).filter(link -> !passages.containsKey(link)).toList();
   }
 
   /**
