@@ -90,5 +90,14 @@ class InventoryGoalTest {
     void testThatInventoryGoalThrowsExceptionWhenMandatoryItemsIsNull() {
       assertThrows(IllegalArgumentException.class, () -> new InventoryGoal(null));
     }
+
+    /**
+     * Test that inventory goal throws exception when mandatory items is empty
+     */
+    @Test
+    @DisplayName("Test that inventory goal throws exception when mandatory items is empty")
+    void testThatInventoryGoalThrowsExceptionWhenMandatoryItemsIsEmpty() {
+      assertThrows(IllegalArgumentException.class, () -> new InventoryGoal(new ArrayList<>()));
+    }
   }
 }
