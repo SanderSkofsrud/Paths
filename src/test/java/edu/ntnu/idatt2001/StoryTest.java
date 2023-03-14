@@ -183,4 +183,20 @@ public class StoryTest {
       assertEquals(1, story.getBrokenLinks().size());
     }
   }
+
+  @Nested
+  class fileHandling {
+    @Test
+    @DisplayName("Test toString")
+    void testToString() {
+      story.addPassage(passage2);
+      passage2.addLink(link);
+      passage2.addLink(link2);
+      assertEquals("story"
+              + "\n"
+              + passage.toString()
+              + passage.toString()
+              + passage2.toString(), story.toString());
+    }
+  }
 }

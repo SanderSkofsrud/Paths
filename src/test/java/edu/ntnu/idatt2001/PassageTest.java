@@ -38,6 +38,7 @@ public class PassageTest {
     void testThatConstructorConstructsObject() {
       assertEquals(Passage.class, passage.getClass());
     }
+
     /**
      * Test that constructor throws NullPointerException when title is null
      */
@@ -78,6 +79,7 @@ public class PassageTest {
     }
 
   }
+
   /**
    * Test class for return values
    */
@@ -130,6 +132,25 @@ public class PassageTest {
     void testThatHasLinksReturnsCorrect() {
       passage.addLink(link);
       assertTrue(passage.hasLinks());
+    }
+  }
+
+  @Nested
+  class fileHandling {
+    @Test
+    @DisplayName("Test that toString returns correct")
+    void testThatToStringReturnsCorrect() {
+      passage.addLink(link);
+      assertEquals("\n::"
+              + "title"
+              + "\n"
+              + "content"
+              + "\n"
+              + "["
+              + "link"
+              + "]("
+              + "link"
+              + ") \n", passage.toString());
     }
   }
 }

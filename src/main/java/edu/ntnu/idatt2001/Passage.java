@@ -105,12 +105,16 @@ public class Passage {
    */
   @Override
   public String toString() {
-    return ":: "
-        + getTitle()
-        + "\n"
-        + getContent()
-        + "\n"
-        + getLinks();
+    StringBuilder sb = new StringBuilder();
+    for (Link link : links) {
+      sb.append(link.toString());
+    }
+    return "\n::"
+            + getTitle()
+            + "\n"
+            + getContent()
+            + "\n"
+            + sb;
   }
 
   /**

@@ -18,22 +18,21 @@ import java.util.Objects;
 
 public class Main extends Application {
 
+  StackPane stackPaneA = new StackPane();
+  StackPane stackPaneR = new StackPane();
+  StackPane root = new StackPane();
+  BorderPane borderPane = new BorderPane();
+  HBox hBox = new HBox();
+  HBox hBoxImages = new HBox();
+  VBox vBox = new VBox();
+  VBox vBoxA = new VBox();
+  VBox vBoxR = new VBox();
+  BorderPane borderPane1 = new BorderPane();
   @Override
   public void start(Stage stage) throws FileNotFoundException {
     stage.setTitle("Paths");
     stage.setWidth(500);
     stage.setHeight(500);
-
-    StackPane stackPaneA = new StackPane();
-    StackPane stackPaneR = new StackPane();
-    StackPane root = new StackPane();
-    BorderPane borderPane = new BorderPane();
-    HBox hBox = new HBox();
-    HBox hBoxImages = new HBox();
-    VBox vBox = new VBox();
-    VBox vBoxA = new VBox();
-    VBox vBoxR = new VBox();
-    BorderPane borderPane1 = new BorderPane();
 
     Text text = new Text("You see a troll, what do you do?");
     Text textA = new Text("Are you stupid? You tried to attack the troll? It destroyed you easily. You died");
