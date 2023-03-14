@@ -139,9 +139,13 @@ public class Story {
    */
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    for (Passage passage : passages.values()) {
+      sb.append(passage.toString());
+    }
     return getTitle()
-        + "\n"
-        + getOpeningPassage()
-        + getPassages();
+            + "\n"
+            + getOpeningPassage()
+            + sb;
   }
 }

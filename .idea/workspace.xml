@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes">
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bc496870d6a624ba18dd212056d83db90d876031" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/GUIStarter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/steve.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/troll.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Updated gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="TestClasses" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,11 +54,12 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/EksemplerFraTimen/file-handling-master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -78,78 +77,85 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ScoreGoalTest">
-    <configuration name="GoldGoalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn test" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.StoryTest$fileHandling">
+    <configuration name="LinkTest$fileHandling" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.goals" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.goals.GoldGoalTest" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.LinkTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest$fileHandling" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HealthGoalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PassageTest$fileHandling" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.goals" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.goals.HealthGoalTest" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$fileHandling" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryGoalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PassageTest$fileHandling.testThatToStringReturnsCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.goals" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.goals.InventoryGoalTest" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$fileHandling" />
+      <option name="METHOD_NAME" value="testThatToStringReturnsCorrect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StoryTest$fileHandling" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$fileHandling" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScoreActionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest$fileHandling.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.actions.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.actions" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.actions.ScoreActionTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ScoreGoalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.goals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.goals" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.goals.ScoreGoalTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$fileHandling" />
+      <option name="METHOD_NAME" value="testToString" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -186,20 +192,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.GoldGoalTest" />
-      <item itemvalue="JUnit.HealthGoalTest" />
-      <item itemvalue="JUnit.InventoryGoalTest" />
-      <item itemvalue="JUnit.ScoreActionTest" />
-      <item itemvalue="JUnit.ScoreGoalTest" />
+      <item itemvalue="JUnit.StoryTest$fileHandling.testToString" />
+      <item itemvalue="JUnit.LinkTest$fileHandling" />
+      <item itemvalue="JUnit.PassageTest$fileHandling" />
+      <item itemvalue="JUnit.PassageTest$fileHandling.testThatToStringReturnsCorrect" />
+      <item itemvalue="JUnit.StoryTest$fileHandling" />
       <item itemvalue="Maven.paths [clean,test]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ScoreGoalTest" />
-        <item itemvalue="JUnit.InventoryGoalTest" />
-        <item itemvalue="JUnit.HealthGoalTest" />
-        <item itemvalue="JUnit.GoldGoalTest" />
-        <item itemvalue="JUnit.ScoreActionTest" />
+        <item itemvalue="JUnit.StoryTest$fileHandling" />
+        <item itemvalue="JUnit.StoryTest$fileHandling.testToString" />
+        <item itemvalue="JUnit.PassageTest$fileHandling" />
+        <item itemvalue="JUnit.PassageTest$fileHandling.testThatToStringReturnsCorrect" />
+        <item itemvalue="JUnit.LinkTest$fileHandling" />
       </list>
     </recent_temporary>
   </component>
@@ -232,27 +238,7 @@
       <workItem from="1677154378704" duration="2297000" />
       <workItem from="1677417913347" duration="2181000" />
       <workItem from="1677485568242" duration="3166000" />
-    </task>
-    <task id="LOCAL-00012" summary="story class v1.3 defined hashmap in constructor and copy constructor">
-      <created>1675843692676</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1675843692676</updated>
-    </task>
-    <task id="LOCAL-00013" summary="player class v1.4 filled inn add-methods">
-      <created>1675844310555</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1675844310555</updated>
-    </task>
-    <task id="LOCAL-00014" summary="created playerTest test-class">
-      <created>1675845520536</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1675845520536</updated>
+      <workItem from="1678797705044" duration="1223000" />
     </task>
     <task id="LOCAL-00015" summary="fixed addToInventory and getInventory in playerTest test-class">
       <created>1675848891324</created>
@@ -576,7 +562,28 @@
       <option name="project" value="LOCAL" />
       <updated>1677419886263</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Updated gitignore file">
+      <created>1678791440029</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1678791440030</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Added isEmpty test to InventoryGoalTest and changed isEmpty to isBlank in InventoryAction">
+      <created>1678791810421</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1678791810421</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Updated gitignore">
+      <created>1678791870884</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1678791870884</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,9 +621,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added exceptions for game class in constructor and go" />
-    <MESSAGE value="added exceptions for player class in constructor, addToInventory and addHealth" />
-    <MESSAGE value="temporary finished game test class" />
     <MESSAGE value="changed type of exception" />
     <MESSAGE value="temporary finished player test class" />
     <MESSAGE value="temporary finished passage test class" />
@@ -639,7 +643,10 @@
     <MESSAGE value="added some test to returnValues and exception" />
     <MESSAGE value="added some test to ExceptionHandling and returnValues" />
     <MESSAGE value="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes" />
+    <MESSAGE value="Updated gitignore file" />
+    <MESSAGE value="Added isEmpty test to InventoryGoalTest and changed isEmpty to isBlank in InventoryAction" />
+    <MESSAGE value="Updated gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -652,6 +659,11 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="edu.ntnu.idatt2001.Passage" memberName="links" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

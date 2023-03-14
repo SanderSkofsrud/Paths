@@ -121,5 +121,19 @@ class LinkTest {
       assertEquals(link.getActions(), actions);
     }
   }
-
+  @Nested
+  class fileHandling {
+    /**
+     * Test that toString returns correct string
+     */
+    @Test
+    @DisplayName("Test that toString returns correct string")
+    void testThatToStringReturnsCorrectString() {
+      assertEquals("["
+              + "Test"
+              + "]("
+              + "reference"
+              + ") \n", link.toString());
+    }
+  }
 }
