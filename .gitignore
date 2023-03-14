@@ -40,10 +40,10 @@ build/
 .DS_Store
 
 ### Checkstyle ###
-checkstyle.xml
+.checkstyle.xml
 
 ### Workspace ###
-workspace.xml
+.workspace.xml
 
 ### Sonarlint ###
 .sonarlint/
