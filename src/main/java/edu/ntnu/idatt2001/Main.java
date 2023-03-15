@@ -1,5 +1,8 @@
 package edu.ntnu.idatt2001;
 
+import edu.ntnu.idatt2001.actions.GoldAction;
+import edu.ntnu.idatt2001.goals.Goal;
+import edu.ntnu.idatt2001.goals.GoldGoal;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,6 +17,8 @@ import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Main extends Application {
@@ -40,6 +45,23 @@ public class Main extends Application {
 
     Button buttonRun = new Button("Run");
     buttonRun.setOnAction(e -> {
+      Passage openingpassage = new Passage("Beginnings", "You are in a small room");
+      Story story = new Story("Haunted House", openingpassage);
+      Link link = new Link ("Try open the door", "Another room");
+      openingpassage.addLink(link);
+      Passage passage = new Passage("Another room", "The door opens to another room");
+      Link link1 = new Link ("Open the book", "The book of spells");
+      Link link2 = new Link ("Go back", "Beginnings");
+      passage.addLink(link1);
+      passage.addLink(link2);
+      story.addPassage(passage);
+      Player player = new Player("testPlayer", 10,10,10);
+      List<Goal> goals = new ArrayList<>();
+      GoldGoal goldGoal = new GoldGoal(10);
+      goals.add(goldGoal);
+      Game game = new Game(player, story,goals);
+      game.saveGame();
+
       borderPane.setVisible(false);
       stackPaneR.setVisible(true);
       stackPaneA.setVisible(false);

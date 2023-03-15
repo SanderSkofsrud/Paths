@@ -1,6 +1,11 @@
 package edu.ntnu.idatt2001;
 
 import edu.ntnu.idatt2001.goals.Goal;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -100,5 +105,21 @@ public class Game {
       throw new NullPointerException("Game-Link can not be null");
     }
     return story.getPassage(link);
+  }
+
+  public void saveGame() {
+    try (FileWriter fileWriter = new FileWriter("src/main/resources/story.paths", true)) {
+      fileWriter.write(story.toString());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void loadGame() {
+    try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/resources/story.paths"))) {
+      bufferedReader.read();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }

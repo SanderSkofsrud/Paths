@@ -16,6 +16,7 @@ public class StoryTest {
   Story story;
   Passage passage;
   Passage passage2;
+  Passage openingPassage;
   Story story2;
   Link link;
 
@@ -25,8 +26,9 @@ public class StoryTest {
   void setUp() {
     passage = new Passage("passage", "content");
     passage2 = new Passage("passage2", "content2");
-    story = new Story("story", passage);
-    story2 = new Story("story2",new Passage("title", "content"));
+    openingPassage = new Passage("openingPassage", "content");
+    story = new Story("story", openingPassage);
+    story2 = new Story("story2",openingPassage);
     link = new Link("passage2", "passage2");
     link2 = new Link("test", "test");
   }
@@ -43,7 +45,7 @@ public class StoryTest {
     @DisplayName("Test that constructor constructs correctly")
     void testThatConstructorConstructsCorrectly() {
       assertEquals("story", story.getTitle());
-      assertEquals(passage, story.getOpeningPassage());
+      assertEquals(openingPassage, story.getOpeningPassage());
     }
 
     /**
@@ -108,7 +110,7 @@ public class StoryTest {
 
     @Test
     void testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks() {
-      passage.addLink(link);
+      passage2.addLink(link2);
       story.addPassage(passage2);
       assertThrows(IllegalArgumentException.class, () ->
           story.removePassage(link));
@@ -126,9 +128,10 @@ public class StoryTest {
      * Test that passage is added and fetched
      */
     @Test
-    @DisplayName("Test that passage is added and fetched")
-    void testThatPassageIsAddedAndFetched() {
-      assertEquals(passage, story.getOpeningPassage());
+    @DisplayName("Test that passage is added to Story")
+    void testThatPassageIsAdded() {
+      story.addPassage(passage);
+      assertEquals(1, story.getPassages().size());
     }
 
     /**
@@ -137,7 +140,7 @@ public class StoryTest {
     @Test
     @DisplayName("Test that getOpeningPassage returns correctly")
     void testThatGetOpeningPassageReturnsCorrectly() {
-      assertEquals(passage, story.getOpeningPassage());
+      assertEquals(openingPassage, story.getOpeningPassage());
     }
 
     /**
@@ -147,7 +150,10 @@ public class StoryTest {
     @DisplayName("Test that getPassages returns correctly")
     void testThatGetPassagesReturnsCorrectly() {
       story.addPassage(passage2);
-      assertEquals(2, story.getPassages().size());
+      assertEquals(story.getTitle()
+          + "\n"
+          + story.getOpeningPassage()
+          + passage2.toString(), story.toString());
     }
 
     /**
@@ -165,8 +171,9 @@ public class StoryTest {
     @Test
     @DisplayName("Test that removePassage returns correctly")
     void testThatRemovePassageRemovesPassage() {
-      assertTrue(story.getPassages().size() == 1);
+      assertTrue(story.getPassages().size() == 0);
       story.addPassage(passage2);
+      story.addPassage(passage);
       story.removePassage(link);
       assertEquals(1, story.getPassages().size());
     }
@@ -189,14 +196,13 @@ public class StoryTest {
     @Test
     @DisplayName("Test toString")
     void testToString() {
-      story.addPassage(passage2);
-      passage2.addLink(link);
-      passage2.addLink(link2);
-      assertEquals("story"
+      passage.addLink(link);
+      passage.addLink(link2);
+      story.addPassage(passage);
+      assertEquals(story.getTitle()
               + "\n"
-              + passage.toString()
-              + passage.toString()
-              + passage2.toString(), story.toString());
+              + story.getOpeningPassage()
+              + passage.toString(), story.toString());
     }
   }
 }

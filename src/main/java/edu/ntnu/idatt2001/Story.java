@@ -35,7 +35,6 @@ public class Story {
     this.title = title;
     this.openingPassage = openingPassage;
     this.passages = new HashMap<Link, Passage>();
-    addPassage(openingPassage);
   }
 
   /**
@@ -113,7 +112,7 @@ public class Story {
    * @throws IllegalArgumentException if link is null or if other passages has links to this passage.
    */
   public void removePassage(Link link) {
-    List<Passage> passagesWithLinks = passages.values().stream().filter(passage -> passage.getLinks().contains(link)).toList();
+    List<Passage> passagesWithLinks = passages.values().stream().filter(passage -> passage.getLinks().size() > 0).toList();
     if (!passages.containsKey(link)) {
       throw new IllegalArgumentException("Can not find passage");
     }
