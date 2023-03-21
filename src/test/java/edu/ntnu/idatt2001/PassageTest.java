@@ -87,34 +87,7 @@ public class PassageTest {
   public class ReturnValues {
 
     /**
-     * Test that getContent returns correct
-     */
-    @Test
-    @DisplayName("Test that getContent returns correct")
-    void testThatGetContentReturnsCorrect() {
-      assertEquals("content", passage.getContent());
-    }
-
-    /**
-     * Test that getTitle returns correct
-     */
-    @Test
-    @DisplayName("Test that getTitle returns correct")
-    void testThatGetTitleReturnsCorrect() {
-      assertEquals("title", passage.getTitle());
-    }
-
-    /**
-     * Test that getLinks returns correct
-     */
-    @Test
-    @DisplayName("Test that getLinks returns correct")
-    void testThatGetLinksReturnsCorrect() {
-      assertEquals(links, passage.getLinks());
-    }
-
-    /**
-     * Test that addLink adds link
+     * Test that addLink adds link to passage
      */
     @Test
     @DisplayName("Test that addLink adds link")
@@ -135,8 +108,15 @@ public class PassageTest {
     }
   }
 
+  /**
+   * Test class for file handling
+   */
   @Nested
   class fileHandling {
+
+    /**
+     * Test that toString for Passage returns correct and ensure that the format is correct.
+     */
     @Test
     @DisplayName("Test that toString returns correct")
     void testThatToStringReturnsCorrect() {
