@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added a game-scenario to main">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="removed test for get-methods, specified some javadoc comments and refactored addAction test class">
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,34 +255,6 @@
       <workItem from="1678811644329" duration="31000" />
       <workItem from="1678868228764" duration="300000" />
       <workItem from="1678889886657" duration="4652000" />
-    </task>
-    <task id="LOCAL-00012" summary="story class v1.3 defined hashmap in constructor and copy constructor">
-      <created>1675843692676</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1675843692676</updated>
-    </task>
-    <task id="LOCAL-00013" summary="player class v1.4 filled inn add-methods">
-      <created>1675844310555</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1675844310555</updated>
-    </task>
-    <task id="LOCAL-00014" summary="created playerTest test-class">
-      <created>1675845520536</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1675845520536</updated>
-    </task>
-    <task id="LOCAL-00015" summary="fixed addToInventory and getInventory in playerTest test-class">
-      <created>1675848891324</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1675848891324</updated>
     </task>
     <task id="LOCAL-00016" summary="added PlayerTest as a nested test in MainClassestest test-class">
       <created>1675849000044</created>
@@ -602,7 +571,35 @@
       <option name="project" value="LOCAL" />
       <updated>1677419886263</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="removed test for get-methods and specified some javadoc comments">
+      <created>1679400598667</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400598667</updated>
+    </task>
+    <task id="LOCAL-00062" summary="removed test for get-methods and specified some javadoc comments">
+      <created>1679400608256</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400608256</updated>
+    </task>
+    <task id="LOCAL-00063" summary="removed test for get-methods and specified some javadoc comments">
+      <created>1679400614339</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400614339</updated>
+    </task>
+    <task id="LOCAL-00064" summary="removed test for get-methods, specified some javadoc comments and refactored addAction test class">
+      <created>1679400844265</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400844265</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,8 +637,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added exceptions for player class in constructor, addToInventory and addHealth" />
-    <MESSAGE value="temporary finished game test class" />
     <MESSAGE value="changed type of exception" />
     <MESSAGE value="temporary finished player test class" />
     <MESSAGE value="temporary finished passage test class" />
@@ -665,7 +660,9 @@
     <MESSAGE value="added some test to ExceptionHandling and returnValues" />
     <MESSAGE value="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes" />
     <MESSAGE value="corrected lambda stream in removePassage" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected lambda stream in removePassage" />
+    <MESSAGE value="removed test for get-methods and specified some javadoc comments" />
+    <MESSAGE value="removed test for get-methods, specified some javadoc comments and refactored addAction test class" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed test for get-methods, specified some javadoc comments and refactored addAction test class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
