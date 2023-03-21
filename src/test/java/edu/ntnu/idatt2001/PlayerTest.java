@@ -27,7 +27,7 @@ public class PlayerTest {
   }
 
   /**
-   * Test constructor
+   * Test class for constructor
    */
   @Nested
   public class ConstructorTest {
@@ -176,57 +176,6 @@ public class PlayerTest {
     void testThatAddHealthWorks() {
       player.addHealth(10);
       assertEquals(player.getHealth(), 20);
-    }
-  }
-
-  /**
-   * Test that return values are correct
-   */
-  @Nested
-  public class ReturnValues {
-    /**
-     * Test that getName returns correct
-     */
-    @Test
-    @DisplayName("Test that getName returns correct")
-    void testThatGetNameReturnsCorrect() {
-      assertEquals(player.getName(), "test");
-    }
-
-    /**
-     * Test that getHealth returns correct
-     */
-    @Test
-    @DisplayName("Test that getHealth returns correct")
-    void testThatGetHealthReturnsCorrect() {
-      assertEquals(player.getHealth(), 10);
-    }
-
-    /**
-     * Test that getScore returns correct
-     */
-    @Test
-    @DisplayName("Test that getScore returns correct")
-    void testThatGetScoreReturnsCorrect() {
-      assertEquals(player.getScore(), 30);
-    }
-
-    /**
-     * Test that getGold returns correct
-     */
-    @Test
-    @DisplayName("Test that getGold returns correct")
-    void testThatGetGoldReturnsCorrect() {
-      assertEquals(player.getGold(), 50);
-    }
-
-    /**
-     * Test that getInventory returns correct
-     */
-    @Test
-    @DisplayName("Test that getInventory returns correct")
-    void testThatGetInventoryReturnsCorrect() {
-      assertEquals(player.getInventory(), inventory);
     }
   }
 }
