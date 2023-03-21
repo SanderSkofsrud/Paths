@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added description to Game class">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed getPassage, removePassage and getBrokenLinks methods so they return correctly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +71,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist">
+  <component name="RunManager" selected="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage">
     <configuration name="StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -137,7 +136,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="edu.ntnu.idatt2001 in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -146,7 +145,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -210,19 +210,19 @@
     <list>
       <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" />
       <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly" />
+      <item itemvalue="JUnit.StoryTest" />
       <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
       <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
-      <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
+        <item itemvalue="JUnit.StoryTest" />
         <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" />
         <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly" />
         <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
-        <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
-        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
       </list>
     </recent_temporary>
   </component>
@@ -258,13 +258,6 @@
       <workItem from="1678811644329" duration="31000" />
       <workItem from="1678868228764" duration="300000" />
       <workItem from="1678889886657" duration="4652000" />
-    </task>
-    <task id="LOCAL-00022" summary="created test-classes for packages actions and goals">
-      <created>1675849907869</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849907869</updated>
     </task>
     <task id="LOCAL-00023" summary="Player v1.3 Added NullPointerException">
       <created>1675850915807</created>
@@ -602,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679401960456</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="fixed getPassage, removePassage and getBrokenLinks methods so they return correctly">
+      <created>1679403968394</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1679403968394</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +633,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added addPassage in constructor" />
     <MESSAGE value="temporary finished story test class" />
     <MESSAGE value="fixed error in link test" />
     <MESSAGE value="fixed typo in Passage class" />
@@ -658,7 +657,8 @@
     <MESSAGE value="added description to Story class" />
     <MESSAGE value="added description to Player class" />
     <MESSAGE value="added description to Game class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added description to Game class" />
+    <MESSAGE value="fixed getPassage, removePassage and getBrokenLinks methods so they return correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed getPassage, removePassage and getBrokenLinks methods so they return correctly" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
