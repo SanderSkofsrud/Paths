@@ -29,8 +29,9 @@ public class StoryTest {
     openingPassage = new Passage("openingPassage", "content");
     story = new Story("story", openingPassage);
     story2 = new Story("story2",openingPassage);
-    link = new Link("passage2", "passage2");
-    link2 = new Link("test", "test");
+    link = new Link("passage", "passage2");
+    link2 = new Link("testhg", "test");
+    passage.addLink(link);
   }
 
   /**
@@ -103,18 +104,17 @@ public class StoryTest {
     @Test
     @DisplayName("Test that removePassage throws IllegalArgumentException if passage does not exist in Story")
     void testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist(){
-      passage2.addLink(link);
       assertThrows(IllegalArgumentException.class, () ->
           story.removePassage(link));
     }
 
     /**
-     * Test that removePassage throws IllegalArgumentException if passage has links
+     * Test that removePassage throws IllegalArgumentException if other passage has links to the passage
      */
     @Test
     void testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks() {
-      passage2.addLink(link2);
       story.addPassage(passage2);
+      story.addPassage(passage);
       assertThrows(IllegalArgumentException.class, () ->
           story.removePassage(link));
     }
@@ -145,7 +145,6 @@ public class StoryTest {
     void testThatRemovePassageRemovesPassage() {
       assertTrue(story.getPassages().size() == 0);
       story.addPassage(passage2);
-      story.addPassage(passage);
       story.removePassage(link);
       assertEquals(1, story.getPassages().size());
     }
@@ -157,8 +156,7 @@ public class StoryTest {
     @DisplayName("Test that getBrokenLinks returns correctly")
     void testThatGetBrokenLinksReturnsCorrectly() {
       assertEquals(0, story.getBrokenLinks().size());
-      passage2.addLink(link2);
-      story.addPassage(passage2);
+      story.addPassage(passage);
       assertEquals(1, story.getBrokenLinks().size());
     }
   }
