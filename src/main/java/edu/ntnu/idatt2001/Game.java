@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * A class that represents a game.
+ * A class that represents a game. A game connects a player to a story and have methods to start and manage the game.
  */
 
 public class Game {
