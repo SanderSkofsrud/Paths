@@ -7,7 +7,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * A class that represents a story.
+ * A class that represents a story. A story is interactive, and non-linear and exist of a collection of passages.
+ * The story also has a title and an opening passage.
  */
 
 public class Story {

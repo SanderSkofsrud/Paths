@@ -5,12 +5,13 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * A class that represents a player in a game.
+ * A class that represents a player in a game. A player has different attributes that can be affected by a story
+ * A player has a name, health, score, gold and an inventory.
  */
 
 public class Player {
 
-  private String name;
+  private final String name;
   private int health;
   private int score;
   private int gold;

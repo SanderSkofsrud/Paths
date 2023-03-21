@@ -65,14 +65,26 @@ class LinkTest {
       String refrence = null;
       assertThrows(NullPointerException.class, () -> new Link(text, refrence));
     }
-
   }
 
   /**
    * Test class for exception handling
    */
   @Nested
-  public class ExceptionHandling {
+  public class addAction {
+
+    /**
+     * Test that actions are added to link
+     */
+    @Test
+    @DisplayName("Test that getActions returns correct")
+    void testThatGetActionsReturnsCorrect() {
+      actions.add(goldAction);
+      actions.add(healthAction);
+      link.addAction(goldAction);
+      link.addAction(healthAction);
+      assertEquals(link.getActions(), actions);
+    }
     /**
      * Test that addAction throws IllegalArgumentException when action is null
      */
@@ -84,47 +96,13 @@ class LinkTest {
     }
   }
 
-
   /**
-   * Test class for return values
+   * Test class for file handling
    */
-  @Nested
-  public class ReturnValues {
-    /**
-     * Test that getText returns correct
-     */
-    @Test
-    @DisplayName("Test that getText returns correct")
-    void testThatGetTextReturnsCorrect() {
-      assertEquals(link.getText(), "Test");
-    }
-
-    /**
-     * Test that getReference returns correct
-     */
-    @Test
-    @DisplayName("Test that getReference returns correct")
-    void testThatGetReferenceReturnsCorrect() {
-      assertEquals(link.getReference(), "reference");
-    }
-
-    /**
-     * Test that getActions returns correct
-     */
-    @Test
-    @DisplayName("Test that getActions returns correct")
-    void testThatGetActionsReturnsCorrect() {
-      actions.add(goldAction);
-      actions.add(healthAction);
-      link.addAction(goldAction);
-      link.addAction(healthAction);
-      assertEquals(link.getActions(), actions);
-    }
-  }
   @Nested
   class fileHandling {
     /**
-     * Test that toString returns correct string
+     * Test that toString returns correct string and ensure ensure that the format is correct.
      */
     @Test
     @DisplayName("Test that toString returns correct string")

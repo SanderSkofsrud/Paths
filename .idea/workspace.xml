@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added a game-scenario to main">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added description to Player class">
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.paths [javafx:run]">
+  <component name="RunManager" selected="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly">
     <configuration name="StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -89,7 +87,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StoryTest$ReturnValues.testThatGetPassagesReturnsCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -99,7 +97,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.StoryTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$ReturnValues" />
-      <option name="METHOD_NAME" value="testThatGetPassagesReturnsCorrectly" />
+      <option name="METHOD_NAME" value="testThatGetBrokenLinksReturnsCorrectly" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -207,9 +205,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly" />
       <item itemvalue="JUnit.StoryTest" />
       <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
-      <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetPassagesReturnsCorrectly" />
       <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
       <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
       <item itemvalue="Maven.paths [clean,test]" />
@@ -217,11 +215,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly" />
         <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
         <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
         <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
         <item itemvalue="JUnit.StoryTest" />
-        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetPassagesReturnsCorrectly" />
       </list>
     </recent_temporary>
   </component>
@@ -257,69 +255,6 @@
       <workItem from="1678811644329" duration="31000" />
       <workItem from="1678868228764" duration="300000" />
       <workItem from="1678889886657" duration="4652000" />
-    </task>
-    <task id="LOCAL-00012" summary="story class v1.3 defined hashmap in constructor and copy constructor">
-      <created>1675843692676</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1675843692676</updated>
-    </task>
-    <task id="LOCAL-00013" summary="player class v1.4 filled inn add-methods">
-      <created>1675844310555</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1675844310555</updated>
-    </task>
-    <task id="LOCAL-00014" summary="created playerTest test-class">
-      <created>1675845520536</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1675845520536</updated>
-    </task>
-    <task id="LOCAL-00015" summary="fixed addToInventory and getInventory in playerTest test-class">
-      <created>1675848891324</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1675848891324</updated>
-    </task>
-    <task id="LOCAL-00016" summary="added PlayerTest as a nested test in MainClassestest test-class">
-      <created>1675849000044</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849000044</updated>
-    </task>
-    <task id="LOCAL-00017" summary="moved StoryTest to MainClassesTest">
-      <created>1675849240096</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849240096</updated>
-    </task>
-    <task id="LOCAL-00018" summary="deleted PassageTest.java, PlayerTest.java, StoryTest.java and GameTest.java">
-      <created>1675849377788</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849377788</updated>
-    </task>
-    <task id="LOCAL-00019" summary="moved GameTest as a nested class to MainClassesTest test-class">
-      <created>1675849461497</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849461497</updated>
-    </task>
-    <task id="LOCAL-00020" summary="added ActionsTest and GoalsTest test-classes">
-      <created>1675849622107</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849622107</updated>
     </task>
     <task id="LOCAL-00021" summary="deleted ActionsTest and GoalsTest test-classes">
       <created>1675849867779</created>
@@ -601,7 +536,70 @@
       <option name="project" value="LOCAL" />
       <updated>1677419886263</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="removed test for get-methods and specified some javadoc comments">
+      <created>1679400598667</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400598667</updated>
+    </task>
+    <task id="LOCAL-00062" summary="removed test for get-methods and specified some javadoc comments">
+      <created>1679400608256</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400608256</updated>
+    </task>
+    <task id="LOCAL-00063" summary="removed test for get-methods and specified some javadoc comments">
+      <created>1679400614339</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400614339</updated>
+    </task>
+    <task id="LOCAL-00064" summary="removed test for get-methods, specified some javadoc comments and refactored addAction test class">
+      <created>1679400844265</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400844265</updated>
+    </task>
+    <task id="LOCAL-00065" summary="removed test for get-methods and specified javadoc comments">
+      <created>1679401098889</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401098889</updated>
+    </task>
+    <task id="LOCAL-00066" summary="added description to Link class">
+      <created>1679401354627</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401354627</updated>
+    </task>
+    <task id="LOCAL-00067" summary="added description to Passage class">
+      <created>1679401528514</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401528514</updated>
+    </task>
+    <task id="LOCAL-00068" summary="added description to Story class">
+      <created>1679401652127</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401652127</updated>
+    </task>
+    <task id="LOCAL-00069" summary="added description to Player class">
+      <created>1679401900354</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401900354</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,7 +616,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -639,13 +637,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added exceptions for player class in constructor, addToInventory and addHealth" />
-    <MESSAGE value="temporary finished game test class" />
-    <MESSAGE value="changed type of exception" />
-    <MESSAGE value="temporary finished player test class" />
-    <MESSAGE value="temporary finished passage test class" />
-    <MESSAGE value="fixed typo refrence to reference" />
-    <MESSAGE value="temporary finished link test class" />
     <MESSAGE value="temporary finished Game test class" />
     <MESSAGE value="added addPassage in constructor" />
     <MESSAGE value="temporary finished story test class" />
@@ -664,24 +655,16 @@
     <MESSAGE value="added some test to ExceptionHandling and returnValues" />
     <MESSAGE value="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes" />
     <MESSAGE value="corrected lambda stream in removePassage" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected lambda stream in removePassage" />
+    <MESSAGE value="removed test for get-methods and specified some javadoc comments" />
+    <MESSAGE value="removed test for get-methods, specified some javadoc comments and refactored addAction test class" />
+    <MESSAGE value="removed test for get-methods and specified javadoc comments" />
+    <MESSAGE value="added description to Link class" />
+    <MESSAGE value="added description to Passage class" />
+    <MESSAGE value="added description to Story class" />
+    <MESSAGE value="added description to Player class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added description to Player class" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java</url>
-          <line>10</line>
-          <properties field="score" class="edu.ntnu.idatt2001.Player" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="edu.ntnu.idatt2001.Passage" memberName="links" />

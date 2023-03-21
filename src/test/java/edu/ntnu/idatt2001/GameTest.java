@@ -132,29 +132,29 @@ public class GameTest {
  @Nested
  public class ReturnValues {
 
-   /**
-    * Test that go returns passage
-    */
-   @Test
-   @DisplayName("Test that go returns passage")
-   void testThatGoReturnsPassage() {
-     Player player = new Player(name, health, score, gold);
-     Passage openingPassage = new Passage(title, content);
-     Story story = new Story(title, openingPassage);
-     List<Goal> goals = new ArrayList<>();
-     Passage passage = new Passage("title2", "content2");
-     goals.add(new ScoreGoal(minimumScore));
-     Game game = new Game(player, story, goals);
-     game.getStory().addPassage(passage);
+    /**
+     * Test that go returns passage
+     */
+    @Test
+    @DisplayName("Test that go returns passage")
+    void testThatGoReturnsPassage() {
+      Player player = new Player(name, health, score, gold);
+      Passage openingPassage = new Passage(title, content);
+      Story story = new Story(title, openingPassage);
+      List<Goal> goals = new ArrayList<>();
+      Passage passage = new Passage("title2", "content2");
+      goals.add(new ScoreGoal(minimumScore));
+      Game game = new Game(player, story, goals);
+      game.getStory().addPassage(passage);
 
-     assertEquals(passage, game.go(new Link(passage.getTitle(), passage.getTitle())));
-   }
+      assertEquals(passage, game.go(new Link(passage.getTitle(), passage.getTitle())));
+    }
 
     /**
-      * Test that begin returns opening passage
-      */
-   @Test
-   @DisplayName("Test that begin returns opening passage")
+     * Test that begin returns opening passage
+     */
+    @Test
+    @DisplayName("Test that begin returns opening passage")
     void testThatBeginReturnsOpeningPassage() {
       Player player = new Player(name, health, score, gold);
       Passage openingPassage = new Passage(title, content);
@@ -165,53 +165,6 @@ public class GameTest {
 
       assertEquals(openingPassage, game.begin());
     }
-
-    /**
-     * Test that getStory returns correct player
-     */
-   @Test
-   @DisplayName("Test that getStory returns correct story")
-   void testThatGetStoryReturnsCorrect() {
-     Player player = new Player(name, health, score, gold);
-     Passage openingPassage = new Passage(title, content);
-     Story story = new Story(title, openingPassage);
-     List<Goal> goals = new ArrayList<>();
-     goals.add(new ScoreGoal(minimumScore));
-     Game game = new Game(player, story, goals);
-
-     assertEquals(story, game.getStory());
-   }
-   /**
-    * Test that getGoals returns correct player
-    */
-   @Test
-   @DisplayName("Test that getGoals returns correct goals")
-   void testThatGetGoalsReturnsCorrect() {
-     Player player = new Player(name, health, score, gold);
-     Passage openingPassage = new Passage(title, content);
-     Story story = new Story(title, openingPassage);
-     List<Goal> goals = new ArrayList<>();
-     goals.add(new ScoreGoal(minimumScore));
-     Game game = new Game(player, story, goals);
-
-     assertEquals(goals, game.getGoals());
-   }
-
-    /**
-      * Test that getPlayers returns correct player
-      */
-   @Test
-   @DisplayName("Test that getPlayers returns correct player")
-   void testThatGetPlayersReturnsCorrect() {
-     Player player = new Player(name, health, score, gold);
-     Passage openingPassage = new Passage(title, content);
-     Story story = new Story(title, openingPassage);
-     List<Goal> goals = new ArrayList<>();
-     goals.add(new ScoreGoal(minimumScore));
-     Game game = new Game(player, story, goals);
-
-     assertEquals(player, game.getPlayer());
-   }
- }
+  }
 }
 

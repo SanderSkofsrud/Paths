@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * A class that represents a link between two passages.
+ * A class that represents a link. The link makes it possible to navigate from one passage to another.
+ * The links connect the different parts of the story.
+ * A link has a text, a reference to the passage that the link will lead to and a list of actions
  */
 
 public class Link {

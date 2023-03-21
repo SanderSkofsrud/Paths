@@ -108,6 +108,9 @@ public class StoryTest {
           story.removePassage(link));
     }
 
+    /**
+     * Test that removePassage throws IllegalArgumentException if passage has links
+     */
     @Test
     void testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks() {
       passage2.addLink(link2);
@@ -125,7 +128,7 @@ public class StoryTest {
   public class ReturnValues {
 
     /**
-     * Test that passage is added and fetched
+     * Test that passage is added to story
      */
     @Test
     @DisplayName("Test that passage is added to Story")
@@ -135,41 +138,10 @@ public class StoryTest {
     }
 
     /**
-     * Test that getOpeningPassage returns correctly
+     * Test that removePassage removes passage from story
      */
     @Test
-    @DisplayName("Test that getOpeningPassage returns correctly")
-    void testThatGetOpeningPassageReturnsCorrectly() {
-      assertEquals(openingPassage, story.getOpeningPassage());
-    }
-
-    /**
-     * Test that getPassage returns correctly
-     */
-    @Test
-    @DisplayName("Test that getPassages returns correctly")
-    void testThatGetPassagesReturnsCorrectly() {
-      story.addPassage(passage2);
-      assertEquals(story.getTitle()
-          + "\n"
-          + story.getOpeningPassage()
-          + passage2.toString(), story.toString());
-    }
-
-    /**
-     * Test that getTitle returns correctly
-     */
-    @Test
-    @DisplayName("Test that getTitle returns correctly")
-    void testThatGetTitleReturnsCorrectly() {
-      assertEquals("story", story.getTitle());
-    }
-
-    /**
-     * Test that removePassage returns correctly
-     */
-    @Test
-    @DisplayName("Test that removePassage returns correctly")
+    @DisplayName("Test that removePassage removes passage")
     void testThatRemovePassageRemovesPassage() {
       assertTrue(story.getPassages().size() == 0);
       story.addPassage(passage2);
@@ -179,7 +151,7 @@ public class StoryTest {
     }
 
     /**
-     * Test that getBrokenLinks returns correctly
+     * Test that the Arraylist BrokenLinks returns the correct size
      */
     @Test
     @DisplayName("Test that getBrokenLinks returns correctly")
@@ -191,8 +163,15 @@ public class StoryTest {
     }
   }
 
+  /**
+   * Test class for file handling
+   */
   @Nested
   class fileHandling {
+
+    /**
+     * Test that toString for Story returns correctly and ensure that the format is correct.
+     */
     @Test
     @DisplayName("Test toString")
     void testToString() {
