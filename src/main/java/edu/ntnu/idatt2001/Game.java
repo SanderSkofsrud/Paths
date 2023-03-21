@@ -2,11 +2,9 @@ package edu.ntnu.idatt2001;
 
 import edu.ntnu.idatt2001.goals.Goal;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * A class that represents a game.
@@ -115,10 +113,14 @@ public class Game {
     }
   }
 
-  public void loadGame() {
-    try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/resources/story.paths"))) {
-      bufferedReader.read();
+  public void loadGame(File file) {
+    try (Scanner scanner = new Scanner(file)) {
+      while (scanner.hasNext()) {
+        String line = scanner.nextLine();
+        System.out.println(line);
+      }
     } catch (IOException e) {
+      System.out.println("File not found");
       e.printStackTrace();
     }
   }

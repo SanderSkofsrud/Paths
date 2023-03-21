@@ -15,6 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -61,6 +62,7 @@ public class Main extends Application {
       goals.add(goldGoal);
       Game game = new Game(player, story,goals);
       game.saveGame();
+      game.loadGame(new File("src/main/resources/story.paths"));
 
       borderPane.setVisible(false);
       stackPaneR.setVisible(true);
