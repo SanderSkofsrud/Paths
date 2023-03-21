@@ -104,7 +104,8 @@ public class Story {
     if (link == null) {
       throw new NullPointerException("Story-Link cannot be null");
     }
-    return passages.get(link);
+    Link mapLink = new Link(link.getReference(), link.getReference());
+    return passages.get(mapLink);
   }
 
   /**
@@ -114,7 +115,7 @@ public class Story {
    */
   public void removePassage(Link link) {
     List<Passage> passagesWithLinks = passages.values().stream().filter(passage -> passage.getLinks().size() > 0).toList();
-    if (!passages.containsKey(link)) {
+    if (getPassage(link) == null) {
       throw new IllegalArgumentException("Can not find passage");
     }
     if (passagesWithLinks.size() > 0) {
@@ -129,7 +130,10 @@ public class Story {
    * @return A List of broken links.
    */
   public List<Link> getBrokenLinks() {
-    return passages.values().stream().flatMap(passage -> passage.getLinks().stream()).filter(link -> !passages.containsKey(link)).toList();
+    return passages.values().stream()
+        .flatMap(passage -> passage.getLinks().stream())
+        .filter(link -> getPassage(link) == null)
+        .toList();
   }
 
   /**
