@@ -81,7 +81,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PassageTest$Constructor.testThatConstructorConstructsObject">
+  <component name="RunManager" selected="JUnit.PlayerTest$ConstructorTest.testThatConstructorConstructsObject">
     <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <option name="PACKAGE_NAME" value="" />
@@ -122,6 +122,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayerTest$ConstructorTest.testThatConstructorConstructsObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ConstructorTest" />
+      <option name="METHOD_NAME" value="testThatConstructorConstructsObject" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PlayerTest$ExceptionHandling.testThatAddMethodsWorksWhenValidValuesAreUsed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -133,22 +149,6 @@
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ExceptionHandling" />
       <option name="METHOD_NAME" value="testThatAddMethodsWorksWhenValidValuesAreUsed" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest$ExceptionHandling.testThatExceptionAreNotThrownWhenValidValuesAreUsed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ExceptionHandling" />
-      <option name="METHOD_NAME" value="testThatExceptionAreNotThrownWhenValidValuesAreUsed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -214,18 +214,18 @@
       <item itemvalue="JUnit.All in paths" />
       <item itemvalue="JUnit.LinkTest$Constructor.testThatConstructorConstructsObject" />
       <item itemvalue="JUnit.PassageTest$Constructor.testThatConstructorConstructsObject" />
+      <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorConstructsObject" />
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddMethodsWorksWhenValidValuesAreUsed" />
-      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatExceptionAreNotThrownWhenValidValuesAreUsed" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorConstructsObject" />
         <item itemvalue="JUnit.PassageTest$Constructor.testThatConstructorConstructsObject" />
         <item itemvalue="JUnit.LinkTest$Constructor.testThatConstructorConstructsObject" />
         <item itemvalue="JUnit.All in paths" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddMethodsWorksWhenValidValuesAreUsed" />
-        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatExceptionAreNotThrownWhenValidValuesAreUsed" />
       </list>
     </recent_temporary>
   </component>

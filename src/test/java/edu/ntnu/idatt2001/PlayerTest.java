@@ -32,11 +32,16 @@ public class PlayerTest {
   @Nested
   public class ConstructorTest {
     /**
-     * Test that constructor constructs object
+     * Test that constructor constructs object and indirectly test that getters work
      */
     @Test
     void testThatConstructorConstructsObject() {
-      assertEquals(Player.class, player.getClass());
+      assertEquals("test", player.getName());
+      assertEquals(10, player.getHealth());
+      assertEquals(10, player.getHealth());
+      assertEquals(30, player.getScore());
+      assertEquals(50, player.getGold());
+      assertEquals(inventory, player.getInventory());
     }
 
     /**
