@@ -26,7 +26,7 @@ public class Story {
    */
   public Story(String title, Passage openingPassage) throws NullPointerException {
 
-    if (title == null || title.isEmpty()) {
+    if (title == null || title.isBlank()) {
       throw new NullPointerException("Title must not be empty");
     }
     if (openingPassage == null) {
