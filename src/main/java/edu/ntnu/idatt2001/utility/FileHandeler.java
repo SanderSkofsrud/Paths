@@ -9,7 +9,32 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * The type File handeler.
+ */
 public class FileHandeler {
+
+  /**
+   * Save game.
+   *
+   * @param story    the story
+   * @param fileName the file name
+   */
+  public static void saveGame(Story story, String fileName) {
+    try (FileWriter fileWriter = new FileWriter(fileName, true)) {
+      fileWriter.write(story.toString());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  /**
+   * Load game story.
+   *
+   * @param fileName the file name
+   * @return the story
+   * @throws FileNotFoundException the file not found exception
+   */
   public static Story loadGame(String fileName) throws FileNotFoundException {
     File file = new File(fileName);
     Scanner scanner = new Scanner(file);

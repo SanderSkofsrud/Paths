@@ -105,14 +105,6 @@ public class Game {
     return story.getPassage(link);
   }
 
-  public void saveGame() {
-    try (FileWriter fileWriter = new FileWriter("src/main/resources/story.paths", true)) {
-      fileWriter.write(story.toString());
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
   public void loadGame(File file) {
 
   }

@@ -63,7 +63,7 @@ public class Main extends Application {
       GoldGoal goldGoal = new GoldGoal(10);
       goals.add(goldGoal);
       Game game = new Game(player, story, goals);
-      game.saveGame();
+      FileHandeler.saveGame(game.getStory(), "src/main/resources/story.paths");
       Story story1;
       try {
         story1 = FileHandeler.loadGame("src/main/resources/story.paths");
@@ -72,7 +72,7 @@ public class Main extends Application {
       }
       System.out.println(story1.getPassages());
       Game game1 = new Game(player, story1, goals);
-      game1.saveGame();
+      FileHandeler.saveGame(game1.getStory(), "src/main/resources/story1.paths");
       //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)));
       //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)).getLinks());
       //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)).getLinks().get(0));
