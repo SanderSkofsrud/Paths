@@ -38,7 +38,7 @@ public class GameTest {
   @Nested
   public class constructor {
     /**
-     * Test that constructor constructs object
+     * Test that constructor constructs object with valid values and indirectly test that getters work
      */
     @Test
     @DisplayName("Test that constructor constructs object")
@@ -47,7 +47,9 @@ public class GameTest {
       Story story = new Story(title, new Passage(title, content));
       List<Goal> goals = new ArrayList<>();
       Game game = new Game(player, story, goals);
-      assertEquals(Game.class, game.getClass());
+      assertEquals(player, game.getPlayer());
+      assertEquals(story, game.getStory());
+      assertEquals(goals, game.getGoals());
     }
 
     /**
@@ -57,7 +59,7 @@ public class GameTest {
     @DisplayName("Test that constructor throws NullPointerException when player is null")
     void testThatConstructorThrowsNullPointerException() {
       Player player = null;
-      Story story = new Story("Title", new Passage("title", "content"));
+      Story story = new Story(title, new Passage(title, content));
       List<Goal> goals = new ArrayList<>();
       assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
     }
@@ -86,10 +88,10 @@ public class GameTest {
     }
   }
   /**
-   * Test class for exception handling
+   * Test class for begin method
    */
   @Nested
-  public class ExceptionHandling {
+  public class begin {
 
     /**
      * Test that begin returns openingPassage
@@ -107,30 +109,13 @@ public class GameTest {
 
       assertEquals(openingPassage, game.begin());
     }
-
-
-    /**
-     * Test that go throws NullPointerException when link is null
-     */
-    @Test
-    @DisplayName("Test that go throws NullPointerException when link is null")
-    void testThatGoThrowsNullPointerException() {
-      Player player = new Player(name, health, score, gold);
-      Passage openingPassage = new Passage(title, content);
-      Story story = new Story(title, openingPassage);
-      List<Goal> goals = new ArrayList<>();
-      goals.add(new ScoreGoal(minimumScore));
-      Game game = new Game(player, story, goals);
-
-      assertThrows(NullPointerException.class, () -> game.go(null));
-    }
   }
 
   /**
-   * Test class for return values
+   * Test class for go method
    */
  @Nested
- public class ReturnValues {
+ public class go {
 
     /**
      * Test that go returns passage
@@ -149,13 +134,12 @@ public class GameTest {
 
       assertEquals(passage, game.go(new Link(passage.getTitle(), passage.getTitle())));
     }
-
     /**
-     * Test that begin returns opening passage
+     * Test that go throws NullPointerException when link is null
      */
     @Test
-    @DisplayName("Test that begin returns opening passage")
-    void testThatBeginReturnsOpeningPassage() {
+    @DisplayName("Test that go throws NullPointerException when link is null")
+    void testThatGoThrowsNullPointerException() {
       Player player = new Player(name, health, score, gold);
       Passage openingPassage = new Passage(title, content);
       Story story = new Story(title, openingPassage);
@@ -163,8 +147,9 @@ public class GameTest {
       goals.add(new ScoreGoal(minimumScore));
       Game game = new Game(player, story, goals);
 
-      assertEquals(openingPassage, game.begin());
+      assertThrows(NullPointerException.class, () -> game.go(null));
     }
+
   }
 }
 
