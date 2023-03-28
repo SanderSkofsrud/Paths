@@ -96,12 +96,14 @@ public class PlayerTest {
   public class ExceptionHandling {
 
     /**
-     * Test that exception are not thrown when valid values are used
+     * Test that exception is not thrown when valid values are used
      */
     @Test
-    @DisplayName("Test that exception are not thrown when valid values are used")
-    void testThatExceptionAreNotThrownWhenValidValuesAreUsed() {
-      assertDoesNotThrow(() -> new Player("name", 10, 10,10));
+    @DisplayName("Test that exception is not thrown when valid values are used")
+    void testThatAddMethodsWorksWhenValidValuesAreUsed() {
+      assertDoesNotThrow(() -> player.addHealth(10));
+      assertDoesNotThrow(() -> player.addScore(10));
+      assertDoesNotThrow(() -> player.addGold(10));
     }
 
     /**
@@ -158,33 +160,18 @@ public class PlayerTest {
     }
 
     /**
-     * Test that gold will be added
+     * Test that add methods work and indirectly test getters
      */
     @Test
-    @DisplayName("Test that addGold works")
-    void testThatAddGoldWorks() {
+    @DisplayName("Test that add methods work")
+    void testThatAddMethodsWork() {
       player.addGold(10);
-      assertEquals(player.getGold(), 60);
-    }
-
-    /**
-     * Test that addScore works
-     */
-    @Test
-    @DisplayName("Test that addScore works")
-    void testThatAddScoreWorks() {
-      player.addScore(10);
-      assertEquals(player.getScore(), 40);
-    }
-
-    /**
-     * Test that addHealth works
-     */
-    @Test
-    @DisplayName("Test that addHealth works")
-    void testThatAddHealthWorks() {
       player.addHealth(10);
-      assertEquals(player.getHealth(), 20);
+      player.addScore(10);
+      assertEquals("test", player.getName());
+      assertEquals(20, player.getHealth());
+      assertEquals(40, player.getScore());
+      assertEquals(60, player.getGold());
     }
   }
 }
