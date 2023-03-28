@@ -10,9 +10,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * The type File handeler.
+ * The type File handler.
  */
-public class FileHandeler {
+public class FileHandler {
 
   /**
    * Save game.

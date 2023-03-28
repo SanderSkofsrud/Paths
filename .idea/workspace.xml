@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Fixed regex in FileHandeler to work for links">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/story1.paths" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/utility/FileHandelerTest.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Moved save game to FileHandeler class, and created tests for the class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/utility/FileHandeler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/utility/FileHandeler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/utility/FileHandeler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/utility/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/story.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/story.paths" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/story1.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/story1.paths" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/utility/FileHandelerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/utility/FileHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FileHandelerTest">
+  <component name="RunManager" selected="Maven.paths [javafx:run]">
     <configuration name="FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -115,7 +114,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileHandelerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -124,7 +123,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -216,9 +215,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.FileHandelerTest" />
       <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" />
       <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" />
+      <item itemvalue="JUnit.FileHandlerTest" />
       <item itemvalue="JUnit.StoryTest" />
       <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
       <item itemvalue="Maven.paths [clean,test]" />
@@ -226,7 +225,7 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileHandelerTest" />
+        <item itemvalue="JUnit.FileHandlerTest" />
         <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" />
         <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" />
         <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
@@ -268,14 +267,7 @@
       <workItem from="1678889886657" duration="4652000" />
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
-      <workItem from="1679949851713" duration="7340000" />
-    </task>
-    <task id="LOCAL-00023" summary="Player v1.3 Added NullPointerException">
-      <created>1675850915807</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1675850915807</updated>
+      <workItem from="1679949851713" duration="7966000" />
     </task>
     <task id="LOCAL-00024" summary="Link v1.4 Added NullPointerException">
       <created>1675850935828</created>
@@ -613,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679983245289</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Moved save game to FileHandeler class, and created tests for the class">
+      <created>1679990268118</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1679990268118</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,7 +650,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="temporary finished story test class" />
     <MESSAGE value="fixed error in link test" />
     <MESSAGE value="fixed typo in Passage class" />
     <MESSAGE value="added exception throws to addGold and addScore" />
@@ -676,7 +674,8 @@
     <MESSAGE value="added description to Player class" />
     <MESSAGE value="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links" />
     <MESSAGE value="Fixed regex in FileHandeler to work for links" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed regex in FileHandeler to work for links" />
+    <MESSAGE value="Moved save game to FileHandeler class, and created tests for the class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved save game to FileHandeler class, and created tests for the class" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
