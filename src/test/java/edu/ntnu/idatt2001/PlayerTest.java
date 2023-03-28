@@ -30,7 +30,7 @@ public class PlayerTest {
    * Test class for constructor
    */
   @Nested
-  public class ConstructorTest {
+  class ConstructorTest {
     /**
      * Test that constructor constructs object with valid values and indirectly test that getters work
      */
@@ -98,7 +98,7 @@ public class PlayerTest {
    * Test that exception is thrown when invalid values are used
    */
   @Nested
-  public class ExceptionHandling {
+  class ExceptionHandling {
 
     /**
      * Test that exception is not thrown when valid values are used
@@ -152,7 +152,7 @@ public class PlayerTest {
    * Test that add-methods work
    */
   @Nested
-  public class addMethods {
+  class addMethods {
 
     /**
      * Test that Items will be added to inventory

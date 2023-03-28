@@ -29,7 +29,7 @@ public class PassageTest {
    * Test class for constructor
    */
   @Nested
-  public class Constructor {
+  class Constructor {
     /**
      * Test that constructor constructs object with valid values and indirectly test that getters work
      */
@@ -68,7 +68,7 @@ public class PassageTest {
    * Test class for exception handling
    */
   @Nested
-  public class addLinks {
+  class addLinks {
 
     /**
      * Test that addLinks adds link to passage without exceptions when link is not null
@@ -97,7 +97,7 @@ public class PassageTest {
    * Test class for return values
    */
   @Nested
-  public class hasLinks {
+  class hasLinks {
 
     @Test
     @DisplayName("Test that hasLinks returns false when no links")

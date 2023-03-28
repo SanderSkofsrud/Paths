@@ -34,7 +34,7 @@ class LinkTest {
    * Test class for constructor
    */
   @Nested
-  public class Constructor {
+  class Constructor {
     /**
      * Test that constructor constructs object with valid values and indirectly test that getters work
      */
@@ -73,7 +73,7 @@ class LinkTest {
    * Test class addAction
    */
   @Nested
-  public class addAction {
+  class addAction {
 
     /**
      * Test that addAction adds action without exceptions when a valid action is added

@@ -38,7 +38,7 @@ public class StoryTest {
    * Test class for constructor
    */
   @Nested
-  public class Constructor {
+  class Constructor {
     /**
      * Test that constructor constructs correctly with valid values and indirectly test that getters work
      */
@@ -85,7 +85,7 @@ public class StoryTest {
    * Test class for exception handling
    */
   @Nested
-  public class addPassage {
+  class addPassage {
 
     /**
      * Test that addPassage adds passage correctly when valid values
@@ -114,7 +114,7 @@ public class StoryTest {
    * Test class for getPassage
    */
   @Nested
-  public class getPassage {
+  class getPassage {
     /**
      * Test that getPassage returns passage correctly when valid link
      */
@@ -141,7 +141,7 @@ public class StoryTest {
    * Test class for removePassage
    */
   @Nested
-  public class removePassage {
+  class removePassage {
     /**
      * Test that removePassage removes passage from story when passage exists and no other passages have links to it
      */
@@ -181,7 +181,7 @@ public class StoryTest {
    */
 
   @Nested
-  public class brokenLinks {
+  class brokenLinks {
 
 
     /**
