@@ -74,7 +74,7 @@ class LinkTest {
   public class addAction {
 
     /**
-     * Test that addAction adds action without exceptions
+     * Test that addAction adds action without exceptions when a valid action is added
      */
     @Test
     @DisplayName("Test that addAction adds action without exceptions")
