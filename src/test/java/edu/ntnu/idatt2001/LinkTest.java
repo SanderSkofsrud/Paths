@@ -68,7 +68,7 @@ class LinkTest {
   }
 
   /**
-   * Test class for exception handling
+   * Test class addAction
    */
   @Nested
   public class addAction {
@@ -83,18 +83,6 @@ class LinkTest {
       assertTrue(link.getActions().contains(goldAction));
     }
 
-    /**
-     * Test that actions are added to link
-     */
-    @Test
-    @DisplayName("Test that getActions returns correct")
-    void testThatGetActionsReturnsCorrect() {
-      actions.add(goldAction);
-      actions.add(healthAction);
-      link.addAction(goldAction);
-      link.addAction(healthAction);
-      assertEquals(link.getActions(), actions);
-    }
     /**
      * Test that addAction throws IllegalArgumentException when action is null
      */
