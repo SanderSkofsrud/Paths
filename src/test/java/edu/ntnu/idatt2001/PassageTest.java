@@ -66,7 +66,18 @@ public class PassageTest {
    * Test class for exception handling
    */
   @Nested
-  public class ExceptionHandling {
+  public class addLinks {
+
+    /**
+     * Test that addLinks adds link to passage without exceptions
+     */
+    @Test
+    @DisplayName("Test that addLinks works without exceptions")
+    void testThatAddLinksWorks() {
+      assertTrue(!passage.hasLinks());
+      passage.addLink(link);
+      assertTrue(passage.hasLinks());
+    }
 
     /**
      * Test that addLink throws IllegalArgumentException when link is null
@@ -84,17 +95,12 @@ public class PassageTest {
    * Test class for return values
    */
   @Nested
-  public class ReturnValues {
+  public class hasLinks {
 
-    /**
-     * Test that addLink adds link to passage
-     */
     @Test
-    @DisplayName("Test that addLink adds link")
-    void testThatAddLinkAddsLink() {
-      passage.addLink(link);
-      links.add(link);
-      assertEquals(links, passage.getLinks());
+    @DisplayName("Test that hasLinks returns false when no links")
+    void testThatHasLinksReturnsFalseWhenNoLinks() {
+      assertFalse(passage.hasLinks());
     }
 
     /**

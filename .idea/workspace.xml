@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added new exception to filehandler for empty file">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added positive test for addAction">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,58 +81,11 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LinkTest$addAction.testThatAddActionAddsAction">
+  <component name="RunManager" selected="JUnit.PassageTest$hasLinks">
     <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest$readFromFile" />
-      <option name="METHOD_NAME" value="testThatReadFromFileReturnsAStory" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest$readFromFile" />
-      <option name="METHOD_NAME" value="testThatReadFromFileReturnsAString" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,6 +102,52 @@
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest$addAction" />
       <option name="METHOD_NAME" value="testThatAddActionAddsAction" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassageTest$ExceptionHandling.testThatAddLinksWorks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatAddLinksWorks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassageTest$addLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$addLinks" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassageTest$hasLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$hasLinks" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -212,19 +211,19 @@
     <list>
       <item itemvalue="JUnit.All in paths" />
       <item itemvalue="JUnit.LinkTest$addAction.testThatAddActionAddsAction" />
-      <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" />
-      <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" />
-      <item itemvalue="JUnit.FileHandlerTest" />
+      <item itemvalue="JUnit.PassageTest$ExceptionHandling.testThatAddLinksWorks" />
+      <item itemvalue="JUnit.PassageTest$addLinks" />
+      <item itemvalue="JUnit.PassageTest$hasLinks" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PassageTest$hasLinks" />
+        <item itemvalue="JUnit.PassageTest$addLinks" />
+        <item itemvalue="JUnit.PassageTest$ExceptionHandling.testThatAddLinksWorks" />
         <item itemvalue="JUnit.LinkTest$addAction.testThatAddActionAddsAction" />
         <item itemvalue="JUnit.All in paths" />
-        <item itemvalue="JUnit.FileHandlerTest" />
-        <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" />
-        <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" />
       </list>
     </recent_temporary>
   </component>
@@ -263,13 +262,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00028" summary="added individual test-classes for link, passage, player, story and game">
-      <created>1676464923905</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1676464923905</updated>
     </task>
     <task id="LOCAL-00029" summary="fixed link exception">
       <created>1676465575600</created>
@@ -607,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680001073534</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="added positive test for addAction">
+      <created>1680001678478</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1680001678478</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,7 +637,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added nested class and display names to LinkTest" />
     <MESSAGE value="added nested class and display names to Passagetest" />
     <MESSAGE value="added nested class and display names to StoryTest" />
     <MESSAGE value="added nested class and display names to PlayerTest" />
@@ -663,7 +661,8 @@
     <MESSAGE value="added javadoc to getBrokenLinks method" />
     <MESSAGE value="changed groupId" />
     <MESSAGE value="added new exception to filehandler for empty file" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new exception to filehandler for empty file" />
+    <MESSAGE value="added positive test for addAction" />
+    <option name="LAST_COMMIT_MESSAGE" value="added positive test for addAction" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
