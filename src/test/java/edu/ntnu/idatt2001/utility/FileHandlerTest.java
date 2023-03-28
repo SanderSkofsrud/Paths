@@ -63,7 +63,7 @@ public class FileHandlerTest {
     @DisplayName("Test that readFromFile returns a story")
     void testThatReadFromFileReturnsAStory() throws FileNotFoundException {
       FileHandler fileHandler = new FileHandler();
-      Story story = fileHandler.loadGame("src/main/resources/story.paths");
+      Story story = fileHandler.loadGame("src/main/resources/paths/story.paths");
       assertEquals(Story.class, story.getClass());
     }
 
@@ -95,9 +95,9 @@ public class FileHandlerTest {
     @DisplayName("Test that saveGame returns a story")
     void testThatSaveGameReturnsAStory() throws FileNotFoundException {
       FileHandler fileHandler = new FileHandler();
-      Story story = fileHandler.loadGame("src/main/resources/story.paths");
-      fileHandler.saveGame(story, "src/main/resources/story1.paths");
-      Story story1 = fileHandler.loadGame("src/main/resources/story1.paths");
+      Story story = fileHandler.loadGame("src/main/resources/paths/story.paths");
+      fileHandler.saveGame(story, "src/main/resources/paths/story1.paths");
+      Story story1 = fileHandler.loadGame("src/main/resources/paths/story1.paths");
       assertEquals(Story.class, story1.getClass());
     }
 

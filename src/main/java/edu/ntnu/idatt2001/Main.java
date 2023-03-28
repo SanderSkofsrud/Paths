@@ -61,16 +61,16 @@ public class Main extends Application {
       GoldGoal goldGoal = new GoldGoal(10);
       goals.add(goldGoal);
       Game game = new Game(player, story, goals);
-      FileHandler.saveGame(game.getStory(), "src/main/resources/story.paths");
+      FileHandler.saveGame(game.getStory(), "src/main/resources/paths/story.paths");
       Story story1;
       try {
-        story1 = FileHandler.loadGame("src/main/resources/story.paths");
+        story1 = FileHandler.loadGame("src/main/resources/paths/story.paths");
       } catch (IOException ex) {
         throw new RuntimeException(ex);
       }
       System.out.println(story1.getPassages());
       Game game1 = new Game(player, story1, goals);
-      FileHandler.saveGame(game1.getStory(), "src/main/resources/story1.paths");
+      FileHandler.saveGame(game1.getStory(), "src/main/resources/paths/story1.paths");
       //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)));
       //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)).getLinks());
       //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)).getLinks().get(0));
