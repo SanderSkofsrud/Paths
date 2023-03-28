@@ -25,7 +25,7 @@ public class FileHandlerTest {
    * The type Constructor.
    */
   @Nested
-  public class constructor {
+  class constructor {
     /**
      * Test that constructor constructs object.
      */
@@ -53,7 +53,29 @@ public class FileHandlerTest {
    * The type Load game.
    */
   @Nested
-  public class loadGame {
+  class loadGame {
+
+    /**
+     * Test that load game throws illegal argument exception when file is not empty.
+     */
+    @Test
+    @DisplayName("Test that loadGame throws IllegalArgumentException when file is empty")
+    void testThatLoadGameThrowsIllegalArgumentException() {
+      FileHandler fileHandler = new FileHandler();
+      String file = "";
+      assertThrows(IllegalArgumentException.class, () -> {
+        fileHandler.loadGame(file);
+      });
+    }
+    @Test
+    @DisplayName("Test that loadGame throws IllegalArgumentException when file has wrong format")
+    void testThatLoadGameThrowsIllegalArgumentException2() {
+      FileHandler fileHandler = new FileHandler();
+      String file = "src/main/resources/paths/story1.path";
+      assertThrows(IllegalArgumentException.class, () -> {
+        fileHandler.loadGame(file);
+      });
+    }
     /**
      * Test that read from file returns a story.
      *
@@ -85,7 +107,7 @@ public class FileHandlerTest {
    * The type Save game.
    */
   @Nested
-  public class saveGame {
+  class saveGame {
     /**
      * Test that save game returns a story.
      *

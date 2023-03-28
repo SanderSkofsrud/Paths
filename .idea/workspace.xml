@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added positive test and refactored nested test classes. Removed savegame">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="removed public from nested classes">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/story1.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/story1.paths" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/story.paths" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/story1.paths" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/utility/FileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/utility/FileHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +83,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2">
+  <component name="RunManager" selected="Maven.paths [javafx:run]">
     <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <option name="PACKAGE_NAME" value="" />
@@ -262,13 +264,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00042" summary="fixed typo refrence to reference">
-      <created>1676539490350</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1676539490350</updated>
     </task>
     <task id="LOCAL-00043" summary="temporary finished link test class">
       <created>1676540332168</created>
@@ -606,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680007958121</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="removed public from nested classes">
+      <created>1680008582164</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1680008582164</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +639,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="removed test for get-methods, specified some javadoc comments and refactored addAction test class" />
     <MESSAGE value="removed test for get-methods and specified javadoc comments" />
     <MESSAGE value="added description to Link class" />
     <MESSAGE value="added description to Passage class" />
@@ -662,7 +663,8 @@
     <MESSAGE value="changed isEmpty to isBlank" />
     <MESSAGE value="added positive test and refactored nested test classes" />
     <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
-    <option name="LAST_COMMIT_MESSAGE" value="added positive test and refactored nested test classes. Removed savegame" />
+    <MESSAGE value="removed public from nested classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed public from nested classes" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
