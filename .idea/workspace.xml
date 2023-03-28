@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed typo in method">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="changed isEmpty to isBlank">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,16 +81,8 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest$ConstructorTest.testThatConstructorConstructsObject">
-    <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LinkTest$Constructor.testThatConstructorConstructsObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StoryTest">
+    <configuration name="StoryTest$ExceptionHandling.testThatAddPassageAddsPassageCorrectlyWhenValidValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -98,15 +90,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.LinkTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest$Constructor" />
-      <option name="METHOD_NAME" value="testThatConstructorConstructsObject" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatAddPassageAddsPassageCorrectlyWhenValidValues" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PassageTest$Constructor.testThatConstructorConstructsObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest$ExceptionHandling.testThatGetPassageReturnsPassageCorrectlyWhenValidLink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -114,15 +106,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$Constructor" />
-      <option name="METHOD_NAME" value="testThatConstructorConstructsObject" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatGetPassageReturnsPassageCorrectlyWhenValidLink" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest$ConstructorTest.testThatConstructorConstructsObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest$ExceptionHandling.testThatGetPassageWorksCorrectlyWhenValidValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -130,15 +122,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ConstructorTest" />
-      <option name="METHOD_NAME" value="testThatConstructorConstructsObject" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatGetPassageWorksCorrectlyWhenValidValues" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest$ExceptionHandling.testThatAddMethodsWorksWhenValidValuesAreUsed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest$ExceptionHandling.testThatRemovePassageRemovesPassage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -146,10 +138,25 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ExceptionHandling" />
-      <option name="METHOD_NAME" value="testThatAddMethodsWorksWhenValidValuesAreUsed" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatRemovePassageRemovesPassage" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -211,21 +218,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.All in paths" />
-      <item itemvalue="JUnit.LinkTest$Constructor.testThatConstructorConstructsObject" />
-      <item itemvalue="JUnit.PassageTest$Constructor.testThatConstructorConstructsObject" />
-      <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorConstructsObject" />
-      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddMethodsWorksWhenValidValuesAreUsed" />
+      <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatAddPassageAddsPassageCorrectlyWhenValidValues" />
+      <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatGetPassageReturnsPassageCorrectlyWhenValidLink" />
+      <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatGetPassageWorksCorrectlyWhenValidValues" />
+      <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageRemovesPassage" />
+      <item itemvalue="JUnit.StoryTest" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorConstructsObject" />
-        <item itemvalue="JUnit.PassageTest$Constructor.testThatConstructorConstructsObject" />
-        <item itemvalue="JUnit.LinkTest$Constructor.testThatConstructorConstructsObject" />
-        <item itemvalue="JUnit.All in paths" />
-        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddMethodsWorksWhenValidValuesAreUsed" />
+        <item itemvalue="JUnit.StoryTest" />
+        <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageRemovesPassage" />
+        <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatGetPassageReturnsPassageCorrectlyWhenValidLink" />
+        <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatGetPassageWorksCorrectlyWhenValidValues" />
+        <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatAddPassageAddsPassageCorrectlyWhenValidValues" />
       </list>
     </recent_temporary>
   </component>
@@ -264,13 +271,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00039" summary="temporary finished story test class">
-      <created>1676469139366</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1676469139366</updated>
     </task>
     <task id="LOCAL-00040" summary="temporary finished player test class">
       <created>1676469159603</created>
@@ -608,7 +608,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680005190642</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="changed isEmpty to isBlank">
+      <created>1680005473278</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1680005473278</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +646,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes" />
     <MESSAGE value="corrected lambda stream in removePassage" />
     <MESSAGE value="removed test for get-methods and specified some javadoc comments" />
     <MESSAGE value="removed test for get-methods, specified some javadoc comments and refactored addAction test class" />
@@ -664,7 +670,8 @@
     <MESSAGE value="fixed typo" />
     <MESSAGE value="fixed testThatCOnstructorConstructsObject method" />
     <MESSAGE value="fixed typo in method" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed typo in method" />
+    <MESSAGE value="changed isEmpty to isBlank" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed isEmpty to isBlank" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
