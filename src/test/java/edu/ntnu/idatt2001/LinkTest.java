@@ -77,7 +77,7 @@ class LinkTest {
      * Test that addAction adds action without exceptions when a valid action is added
      */
     @Test
-    @DisplayName("Test that addAction adds action without exceptions")
+    @DisplayName("Test that addAction adds action without exceptions when a valid action is added")
     void testThatAddActionAddsAction() {
       link.addAction(goldAction);
       assertTrue(link.getActions().contains(goldAction));

@@ -69,10 +69,10 @@ public class PassageTest {
   public class addLinks {
 
     /**
-     * Test that addLinks adds link to passage without exceptions
+     * Test that addLinks adds link to passage without exceptions when link is not null
      */
     @Test
-    @DisplayName("Test that addLinks works without exceptions")
+    @DisplayName("Test that addLinks works without exceptions when link is not null")
     void testThatAddLinksWorks() {
       assertTrue(!passage.hasLinks());
       passage.addLink(link);
