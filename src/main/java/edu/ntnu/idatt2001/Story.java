@@ -26,7 +26,7 @@ public class Story {
    */
   public Story(String title, Passage openingPassage) throws NullPointerException {
 
-    if (title == null || title.isEmpty()) {
+    if (title == null || title.isBlank()) {
       throw new NullPointerException("Title must not be empty");
     }
     if (openingPassage == null) {
@@ -126,6 +126,7 @@ public class Story {
 
   /**
    * Returns a list of broken links.
+   * A broken link is a link that does not lead to a passage in the story.
    *
    * @return A List of broken links.
    */

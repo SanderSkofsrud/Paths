@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed test for remove passage">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/story1.paths" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="removed public from nested classes">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/story.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/story.paths" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/story1.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/paths/story.paths" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/story.paths" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/story1.paths" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/utility/FileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/utility/FileHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="refactor-test-classes" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,79 +83,73 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FileHandlerTest">
-    <configuration name="FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Maven.paths [javafx:run]">
+    <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest$readFromFile" />
-      <option name="METHOD_NAME" value="testThatReadFromFileReturnsAStory" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest$readFromFile" />
-      <option name="METHOD_NAME" value="testThatReadFromFileReturnsAString" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="edu.ntnu.idatt2001 in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest$loadGame" />
+      <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest$loadGame" />
+      <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest$go" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.GameTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.GameTest$go" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.GameTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -218,21 +211,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" />
-      <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" />
-      <item itemvalue="JUnit.FileHandlerTest" />
-      <item itemvalue="JUnit.StoryTest" />
-      <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
+      <item itemvalue="JUnit.All in paths" />
+      <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException" />
+      <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" />
+      <item itemvalue="JUnit.GameTest" />
+      <item itemvalue="JUnit.GameTest$go" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileHandlerTest" />
-        <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" />
-        <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" />
-        <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
-        <item itemvalue="JUnit.StoryTest" />
+        <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" />
+        <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException" />
+        <item itemvalue="JUnit.All in paths" />
+        <item itemvalue="JUnit.GameTest" />
+        <item itemvalue="JUnit.GameTest$go" />
       </list>
     </recent_temporary>
   </component>
@@ -271,139 +264,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00024" summary="Link v1.4 Added NullPointerException">
-      <created>1675850935828</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1675850935828</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Link v1.14 Added NullPointerException">
-      <created>1675850979058</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1675850979058</updated>
-    </task>
-    <task id="LOCAL-00026" summary="added exceptions for link class in constructor and addlink">
-      <created>1676464683505</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1676464683505</updated>
-    </task>
-    <task id="LOCAL-00027" summary="added exception class for Link">
-      <created>1676464708999</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1676464708999</updated>
-    </task>
-    <task id="LOCAL-00028" summary="added individual test-classes for link, passage, player, story and game">
-      <created>1676464923905</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1676464923905</updated>
-    </task>
-    <task id="LOCAL-00029" summary="fixed link exception">
-      <created>1676465575600</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1676465575600</updated>
-    </task>
-    <task id="LOCAL-00030" summary="corrected exception throws">
-      <created>1676465822928</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1676465822928</updated>
-    </task>
-    <task id="LOCAL-00031" summary="temporary finished link test class">
-      <created>1676466123669</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1676466123669</updated>
-    </task>
-    <task id="LOCAL-00032" summary="added new exception to addLink in passage class if link is null">
-      <created>1676466457260</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1676466457260</updated>
-    </task>
-    <task id="LOCAL-00033" summary="temporary finished passage test class">
-      <created>1676466648363</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1676466648363</updated>
-    </task>
-    <task id="LOCAL-00034" summary="added exceptions for game class in constructor and go">
-      <created>1676466881946</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1676466881946</updated>
-    </task>
-    <task id="LOCAL-00035" summary="added exceptions for player class in constructor, addToInventory and addHealth">
-      <created>1676467897150</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1676467897150</updated>
-    </task>
-    <task id="LOCAL-00036" summary="temporary finished game test class">
-      <created>1676467916906</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1676467916906</updated>
-    </task>
-    <task id="LOCAL-00037" summary="temporary finished game test class">
-      <created>1676469097576</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1676469097576</updated>
-    </task>
-    <task id="LOCAL-00038" summary="changed type of exception">
-      <created>1676469124364</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1676469124364</updated>
-    </task>
-    <task id="LOCAL-00039" summary="temporary finished story test class">
-      <created>1676469139366</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1676469139366</updated>
-    </task>
-    <task id="LOCAL-00040" summary="temporary finished player test class">
-      <created>1676469159603</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1676469159603</updated>
-    </task>
-    <task id="LOCAL-00041" summary="temporary finished passage test class">
-      <created>1676469482919</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1676469482919</updated>
-    </task>
-    <task id="LOCAL-00042" summary="fixed typo refrence to reference">
-      <created>1676539490350</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1676539490350</updated>
     </task>
     <task id="LOCAL-00043" summary="temporary finished link test class">
       <created>1676540332168</created>
@@ -615,7 +475,140 @@
       <option name="project" value="LOCAL" />
       <updated>1679990268118</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="created paths folder for paths files">
+      <created>1679993637060</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1679993637061</updated>
+    </task>
+    <task id="LOCAL-00074" summary="added javadoc to getBrokenLinks method">
+      <created>1680001013938</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1680001013939</updated>
+    </task>
+    <task id="LOCAL-00075" summary="changed groupId">
+      <created>1680001038752</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1680001038752</updated>
+    </task>
+    <task id="LOCAL-00076" summary="added new exception to filehandler for empty file">
+      <created>1680001073534</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1680001073534</updated>
+    </task>
+    <task id="LOCAL-00077" summary="added positive test for addAction">
+      <created>1680001678478</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1680001678478</updated>
+    </task>
+    <task id="LOCAL-00078" summary="added positive test for addLink and hasLinks">
+      <created>1680002018749</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1680002018749</updated>
+    </task>
+    <task id="LOCAL-00079" summary="removed get-method test">
+      <created>1680002660819</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1680002660819</updated>
+    </task>
+    <task id="LOCAL-00080" summary="fixed typo in test and added positive test for valid values">
+      <created>1680002788702</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1680002788702</updated>
+    </task>
+    <task id="LOCAL-00081" summary="added positive test for add-methods and refactored addmethod tests">
+      <created>1680004102507</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1680004102507</updated>
+    </task>
+    <task id="LOCAL-00082" summary="specified test name">
+      <created>1680004234139</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1680004234139</updated>
+    </task>
+    <task id="LOCAL-00083" summary="fixed typo">
+      <created>1680004282048</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1680004282048</updated>
+    </task>
+    <task id="LOCAL-00084" summary="fixed testThatCOnstructorConstructsObject method">
+      <created>1680004689090</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1680004689090</updated>
+    </task>
+    <task id="LOCAL-00085" summary="fixed testThatCOnstructorConstructsObject method">
+      <created>1680005001735</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1680005001735</updated>
+    </task>
+    <task id="LOCAL-00086" summary="fixed testThatCOnstructorConstructsObject method">
+      <created>1680005082761</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1680005082761</updated>
+    </task>
+    <task id="LOCAL-00087" summary="fixed typo in method">
+      <created>1680005190642</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1680005190642</updated>
+    </task>
+    <task id="LOCAL-00088" summary="changed isEmpty to isBlank">
+      <created>1680005473278</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1680005473278</updated>
+    </task>
+    <task id="LOCAL-00089" summary="added positive test and refactored nested test classes">
+      <created>1680006988179</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1680006988179</updated>
+    </task>
+    <task id="LOCAL-00090" summary="added positive test and refactored nested test classes. Removed savegame">
+      <created>1680007958121</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1680007958121</updated>
+    </task>
+    <task id="LOCAL-00091" summary="removed public from nested classes">
+      <created>1680008582164</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1680008582164</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,13 +629,6 @@
                       </list>
                     </value>
                   </entry>
-                  <entry key="text">
-                    <value>
-                      <list>
-                        <option value="passage" />
-                      </list>
-                    </value>
-                  </entry>
                 </map>
               </option>
             </State>
@@ -653,23 +639,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed error in link test" />
-    <MESSAGE value="fixed typo in Passage class" />
-    <MESSAGE value="added exception throws to addGold and addScore" />
-    <MESSAGE value="added nested class and display names to GameTest" />
-    <MESSAGE value="added nested class and display names to LinkTest" />
-    <MESSAGE value="added nested class and display names to Passagetest" />
-    <MESSAGE value="added nested class and display names to StoryTest" />
-    <MESSAGE value="added nested class and display names to PlayerTest" />
-    <MESSAGE value="added a few more tests and beforeEach" />
-    <MESSAGE value="added a exceptionHandling test" />
-    <MESSAGE value="fixed thrown exception" />
-    <MESSAGE value="added some test to returnValues and exception" />
-    <MESSAGE value="added some test to ExceptionHandling and returnValues" />
-    <MESSAGE value="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes" />
-    <MESSAGE value="corrected lambda stream in removePassage" />
-    <MESSAGE value="removed test for get-methods and specified some javadoc comments" />
-    <MESSAGE value="removed test for get-methods, specified some javadoc comments and refactored addAction test class" />
     <MESSAGE value="removed test for get-methods and specified javadoc comments" />
     <MESSAGE value="added description to Link class" />
     <MESSAGE value="added description to Passage class" />
@@ -678,7 +647,24 @@
     <MESSAGE value="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links" />
     <MESSAGE value="Fixed regex in FileHandeler to work for links" />
     <MESSAGE value="Moved save game to FileHandeler class, and created tests for the class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved save game to FileHandeler class, and created tests for the class" />
+    <MESSAGE value="created paths folder for paths files" />
+    <MESSAGE value="added javadoc to getBrokenLinks method" />
+    <MESSAGE value="changed groupId" />
+    <MESSAGE value="added new exception to filehandler for empty file" />
+    <MESSAGE value="added positive test for addAction" />
+    <MESSAGE value="added positive test for addLink and hasLinks" />
+    <MESSAGE value="removed get-method test" />
+    <MESSAGE value="fixed typo in test and added positive test for valid values" />
+    <MESSAGE value="added positive test for add-methods and refactored addmethod tests" />
+    <MESSAGE value="specified test name" />
+    <MESSAGE value="fixed typo" />
+    <MESSAGE value="fixed testThatCOnstructorConstructsObject method" />
+    <MESSAGE value="fixed typo in method" />
+    <MESSAGE value="changed isEmpty to isBlank" />
+    <MESSAGE value="added positive test and refactored nested test classes" />
+    <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
+    <MESSAGE value="removed public from nested classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed public from nested classes" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -690,5 +676,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680007855672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -29,14 +29,16 @@ public class PassageTest {
    * Test class for constructor
    */
   @Nested
-  public class Constructor {
+  class Constructor {
     /**
-     * Test that constructor constructs object
+     * Test that constructor constructs object with valid values and indirectly test that getters work
      */
     @Test
     @DisplayName("Test that constructor constructs object")
     void testThatConstructorConstructsObject() {
-      assertEquals(Passage.class, passage.getClass());
+      assertEquals("title", passage.getTitle());
+      assertEquals("content", passage.getContent());
+      assertEquals(links, passage.getLinks());
     }
 
     /**
@@ -66,7 +68,18 @@ public class PassageTest {
    * Test class for exception handling
    */
   @Nested
-  public class ExceptionHandling {
+  class addLinks {
+
+    /**
+     * Test that addLinks adds link to passage without exceptions when link is not null
+     */
+    @Test
+    @DisplayName("Test that addLinks works without exceptions when link is not null")
+    void testThatAddLinksWorks() {
+      assertTrue(!passage.hasLinks());
+      passage.addLink(link);
+      assertTrue(passage.hasLinks());
+    }
 
     /**
      * Test that addLink throws IllegalArgumentException when link is null
@@ -84,17 +97,12 @@ public class PassageTest {
    * Test class for return values
    */
   @Nested
-  public class ReturnValues {
+  class hasLinks {
 
-    /**
-     * Test that addLink adds link to passage
-     */
     @Test
-    @DisplayName("Test that addLink adds link")
-    void testThatAddLinkAddsLink() {
-      passage.addLink(link);
-      links.add(link);
-      assertEquals(links, passage.getLinks());
+    @DisplayName("Test that hasLinks returns false when no links")
+    void testThatHasLinksReturnsFalseWhenNoLinks() {
+      assertFalse(passage.hasLinks());
     }
 
     /**

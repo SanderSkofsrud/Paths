@@ -30,41 +30,46 @@ public class PlayerTest {
    * Test class for constructor
    */
   @Nested
-  public class ConstructorTest {
+  class ConstructorTest {
     /**
-     * Test that constructor constructs object
+     * Test that constructor constructs object with valid values and indirectly test that getters work
      */
     @Test
     void testThatConstructorConstructsObject() {
-      assertEquals(Player.class, player.getClass());
+      assertEquals("test", player.getName());
+      assertEquals(10, player.getHealth());
+      assertEquals(10, player.getHealth());
+      assertEquals(30, player.getScore());
+      assertEquals(50, player.getGold());
+      assertEquals(inventory, player.getInventory());
     }
 
     /**
-     * Test that constructor throws NullPointerException when health is less than zero
+     * Test that constructor throws IllegalArgumentException when health is less than zero
      */
     @Test
-    @DisplayName("Test that constructor throws NullPointerException")
+    @DisplayName("Test that constructor throws IllegalArgumentException when health is less than zero")
     void testThatConstructorThrowsNullPointerException() {
       int health = -1;
       assertThrows(IllegalArgumentException.class, () -> new Player("name", health, 10,20));
     }
     /**
-     * Test that throws IllegalArgumentException when health is less than zero
+     * Test that constructor throws NullPointerException when name is null
      */
     @Test
-    @DisplayName("Test that constructor throws IllegalArgumentException when health is less than zero")
+    @DisplayName("Test that constructor throws NullPointerException when name is null")
     void testThatConstructorThrowsIllegalArgumentException() {
-      int health = -1;
-      assertThrows(IllegalArgumentException.class, () -> new Player("test", health,10,10));
+      String name = null;
+      assertThrows(NullPointerException.class, () -> new Player(name,10,10,10));
     }
 
     /**
-     * Test that constructor throws IllegalArgumentException when name is null
+     * Test that constructor throws IllegalArgumentException when name is blank
      */
     @Test
-    @DisplayName("Test that constructor throws IllegalArgumentException when name is null")
-    void testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull() {
-      String name = null;
+    @DisplayName("Test that constructor throws NullPointerException when name is blank")
+    void testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull() {
+      String name = "";
       assertThrows(NullPointerException.class, () -> new Player(name, 10,10,10));
     }
 
@@ -93,7 +98,18 @@ public class PlayerTest {
    * Test that exception is thrown when invalid values are used
    */
   @Nested
-  public class ExceptionHandling {
+  class ExceptionHandling {
+
+    /**
+     * Test that exception is not thrown when valid values are used
+     */
+    @Test
+    @DisplayName("Test that exception is not thrown when valid values are used")
+    void testThatAddMethodsWorksWhenValidValuesAreUsed() {
+      assertDoesNotThrow(() -> player.addHealth(10));
+      assertDoesNotThrow(() -> player.addScore(10));
+      assertDoesNotThrow(() -> player.addGold(10));
+    }
 
     /**
      * Test that addHealth can not set negative value
@@ -136,7 +152,7 @@ public class PlayerTest {
    * Test that add-methods work
    */
   @Nested
-  public class addMethods {
+  class addMethods {
 
     /**
      * Test that Items will be added to inventory
@@ -149,33 +165,18 @@ public class PlayerTest {
     }
 
     /**
-     * Test that gold will be added
+     * Test that add methods work and indirectly test getters
      */
     @Test
-    @DisplayName("Test that addGold works")
-    void testThatAddGoldWorks() {
+    @DisplayName("Test that add methods work")
+    void testThatAddMethodsWork() {
       player.addGold(10);
-      assertEquals(player.getGold(), 60);
-    }
-
-    /**
-     * Test that addScore works
-     */
-    @Test
-    @DisplayName("Test that addScore works")
-    void testThatAddScoreWorks() {
-      player.addScore(10);
-      assertEquals(player.getScore(), 40);
-    }
-
-    /**
-     * Test that addHealth works
-     */
-    @Test
-    @DisplayName("Test that addHealth works")
-    void testThatAddHealthWorks() {
       player.addHealth(10);
-      assertEquals(player.getHealth(), 20);
+      player.addScore(10);
+      assertEquals("test", player.getName());
+      assertEquals(20, player.getHealth());
+      assertEquals(40, player.getScore());
+      assertEquals(60, player.getGold());
     }
   }
 }

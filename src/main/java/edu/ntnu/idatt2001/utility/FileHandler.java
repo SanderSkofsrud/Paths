@@ -35,9 +35,15 @@ public class FileHandler {
    * @return the story
    * @throws FileNotFoundException the file not found exception
    */
-  public static Story loadGame(String fileName) throws FileNotFoundException {
+  public static Story loadGame(String fileName) throws IllegalArgumentException, FileNotFoundException {
+    if (fileName.isBlank()){
+      throw new IllegalArgumentException("The file name can´t be empty");
+    }
+
     File file = new File(fileName);
     Scanner scanner = new Scanner(file);
+
+
 
     String title = scanner.nextLine();
     Passage openingPassage = null;
@@ -71,6 +77,9 @@ public class FileHandler {
         String linkReference = linkMatcher.group(2);
         Link link = new Link(linkDescription, linkReference);
         currentPassage.addLink(link);
+      }
+      else {
+        throw new IllegalArgumentException("The file is not in the correct format");
       }
     }
 

@@ -104,8 +104,4 @@ public class Game {
     }
     return story.getPassage(link);
   }
-
-  public void loadGame(File file) {
-
-  }
 }

@@ -34,14 +34,16 @@ class LinkTest {
    * Test class for constructor
    */
   @Nested
-  public class Constructor {
+  class Constructor {
     /**
-     * Test that constructor constructs object
+     * Test that constructor constructs object with valid values and indirectly test that getters work
      */
     @Test
     @DisplayName("Test that constructor constructs object")
     void testThatConstructorConstructsObject() {
-      assertEquals(Link.class, link.getClass());
+      assertEquals("Test", link.getText());
+      assertEquals("reference", link.getReference());
+      assertEquals(actions, link.getActions());
     }
 
     /**
@@ -68,23 +70,21 @@ class LinkTest {
   }
 
   /**
-   * Test class for exception handling
+   * Test class addAction
    */
   @Nested
-  public class addAction {
+  class addAction {
 
     /**
-     * Test that actions are added to link
+     * Test that addAction adds action without exceptions when a valid action is added
      */
     @Test
-    @DisplayName("Test that getActions returns correct")
-    void testThatGetActionsReturnsCorrect() {
-      actions.add(goldAction);
-      actions.add(healthAction);
+    @DisplayName("Test that addAction adds action without exceptions when a valid action is added")
+    void testThatAddActionAddsAction() {
       link.addAction(goldAction);
-      link.addAction(healthAction);
-      assertEquals(link.getActions(), actions);
+      assertTrue(link.getActions().contains(goldAction));
     }
+
     /**
      * Test that addAction throws IllegalArgumentException when action is null
      */
