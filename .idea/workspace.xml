@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed typo">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed testThatCOnstructorConstructsObject method">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +81,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LinkTest$Constructor.testThatConstructorConstructsObject">
+  <component name="RunManager" selected="JUnit.PassageTest$Constructor.testThatConstructorConstructsObject">
     <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <option name="PACKAGE_NAME" value="" />
@@ -104,7 +106,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PassageTest$Constructor.testThatConstructorConstructsObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -112,9 +114,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ConstructorTest" />
-      <option name="METHOD_NAME" value="testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$Constructor" />
+      <option name="METHOD_NAME" value="testThatConstructorConstructsObject" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -211,7 +213,7 @@
     <list>
       <item itemvalue="JUnit.All in paths" />
       <item itemvalue="JUnit.LinkTest$Constructor.testThatConstructorConstructsObject" />
-      <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
+      <item itemvalue="JUnit.PassageTest$Constructor.testThatConstructorConstructsObject" />
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddMethodsWorksWhenValidValuesAreUsed" />
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatExceptionAreNotThrownWhenValidValuesAreUsed" />
       <item itemvalue="Maven.paths [clean,test]" />
@@ -219,11 +221,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PassageTest$Constructor.testThatConstructorConstructsObject" />
         <item itemvalue="JUnit.LinkTest$Constructor.testThatConstructorConstructsObject" />
         <item itemvalue="JUnit.All in paths" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddMethodsWorksWhenValidValuesAreUsed" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatExceptionAreNotThrownWhenValidValuesAreUsed" />
-        <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
       </list>
     </recent_temporary>
   </component>
@@ -262,13 +264,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00035" summary="added exceptions for player class in constructor, addToInventory and addHealth">
-      <created>1676467897150</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1676467897150</updated>
     </task>
     <task id="LOCAL-00036" summary="temporary finished game test class">
       <created>1676467916906</created>
@@ -606,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680004282048</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="fixed testThatCOnstructorConstructsObject method">
+      <created>1680004689090</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1680004689090</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +639,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added some test to returnValues and exception" />
     <MESSAGE value="added some test to ExceptionHandling and returnValues" />
     <MESSAGE value="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes" />
     <MESSAGE value="corrected lambda stream in removePassage" />
@@ -662,7 +663,8 @@
     <MESSAGE value="added positive test for add-methods and refactored addmethod tests" />
     <MESSAGE value="specified test name" />
     <MESSAGE value="fixed typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed typo" />
+    <MESSAGE value="fixed testThatCOnstructorConstructsObject method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed testThatCOnstructorConstructsObject method" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

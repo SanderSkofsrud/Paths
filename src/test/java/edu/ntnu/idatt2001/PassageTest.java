@@ -31,12 +31,14 @@ public class PassageTest {
   @Nested
   public class Constructor {
     /**
-     * Test that constructor constructs object
+     * Test that constructor constructs object and indirectly test that getters work
      */
     @Test
     @DisplayName("Test that constructor constructs object")
     void testThatConstructorConstructsObject() {
-      assertEquals(Passage.class, passage.getClass());
+      assertEquals("title", passage.getTitle());
+      assertEquals("content", passage.getContent());
+      assertEquals(links, passage.getLinks());
     }
 
     /**
