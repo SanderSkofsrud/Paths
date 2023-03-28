@@ -36,7 +36,7 @@ class LinkTest {
   @Nested
   public class Constructor {
     /**
-     * Test that constructor constructs object and indirectly test that getters work
+     * Test that constructor constructs object with valid values and indirectly test that getters work
      */
     @Test
     @DisplayName("Test that constructor constructs object")

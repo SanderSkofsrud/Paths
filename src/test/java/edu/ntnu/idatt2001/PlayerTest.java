@@ -32,7 +32,7 @@ public class PlayerTest {
   @Nested
   public class ConstructorTest {
     /**
-     * Test that constructor constructs object and indirectly test that getters work
+     * Test that constructor constructs object with valid values and indirectly test that getters work
      */
     @Test
     void testThatConstructorConstructsObject() {

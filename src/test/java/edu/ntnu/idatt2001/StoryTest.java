@@ -40,7 +40,7 @@ public class StoryTest {
   @Nested
   public class Constructor {
     /**
-     * Test that constructor constructs correctly
+     * Test that constructor constructs correctly with valid values and indirectly test that getters work
      */
     @Test
     @DisplayName("Test that constructor constructs correctly")
