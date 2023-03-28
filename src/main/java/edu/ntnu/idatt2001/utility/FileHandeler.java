@@ -20,7 +20,7 @@ public class FileHandeler {
     Story story = null;
 
     Pattern passagePattern = Pattern.compile("^::(.+)$");
-    Pattern linkPattern = Pattern.compile("^\\[(.+)\\]\\((.+)\\)$");
+    Pattern linkPattern = Pattern.compile("\\[(.*?)\\]\\((.*?)\\)");
 
     while (scanner.hasNextLine()) {
       String line = scanner.nextLine();
