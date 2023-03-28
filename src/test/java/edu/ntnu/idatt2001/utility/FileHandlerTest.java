@@ -9,9 +9,9 @@ import java.io.FileNotFoundException;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * The type File handeler test.
+ * The type File handler test.
  */
-public class FileHandelerTest {
+public class FileHandlerTest {
 
   /**
    * Sets up.
@@ -32,8 +32,8 @@ public class FileHandelerTest {
     @Test
     @DisplayName("Test that constructor constructs object")
     void testThatConstructorConstructsObject() {
-      FileHandeler fileHandeler = new FileHandeler();
-      assertEquals(FileHandeler.class, fileHandeler.getClass());
+      FileHandler fileHandler = new FileHandler();
+      assertEquals(FileHandler.class, fileHandler.getClass());
     }
 
     /**
@@ -42,9 +42,9 @@ public class FileHandelerTest {
     @Test
     @DisplayName("Test that constructor throws NullPointerException when player is null")
     void testThatConstructorThrowsNullPointerException() {
-      FileHandeler fileHandeler = null;
+      FileHandler fileHandler = null;
       assertThrows(NullPointerException.class, () -> {
-        fileHandeler.getClass();
+        fileHandler.getClass();
       });
     }
   }
@@ -62,8 +62,8 @@ public class FileHandelerTest {
     @Test
     @DisplayName("Test that readFromFile returns a story")
     void testThatReadFromFileReturnsAStory() throws FileNotFoundException {
-      FileHandeler fileHandeler = new FileHandeler();
-      Story story = fileHandeler.loadGame("src/main/resources/story.paths");
+      FileHandler fileHandler = new FileHandler();
+      Story story = fileHandler.loadGame("src/main/resources/story.paths");
       assertEquals(Story.class, story.getClass());
     }
 
@@ -73,10 +73,10 @@ public class FileHandelerTest {
     @Test
     @DisplayName("Test that readFromFile throws NullPointerException when player is null")
     void testThatReadFromFileThrowsNullPointerException() {
-      FileHandeler fileHandeler = new FileHandeler();
+      FileHandler fileHandler = new FileHandler();
       String string = null;
       assertThrows(NullPointerException.class, () -> {
-        fileHandeler.loadGame(string);
+        fileHandler.loadGame(string);
       });
     }
   }
@@ -94,10 +94,10 @@ public class FileHandelerTest {
     @Test
     @DisplayName("Test that saveGame returns a story")
     void testThatSaveGameReturnsAStory() throws FileNotFoundException {
-      FileHandeler fileHandeler = new FileHandeler();
-      Story story = fileHandeler.loadGame("src/main/resources/story.paths");
-      fileHandeler.saveGame(story, "src/main/resources/story1.paths");
-      Story story1 = fileHandeler.loadGame("src/main/resources/story1.paths");
+      FileHandler fileHandler = new FileHandler();
+      Story story = fileHandler.loadGame("src/main/resources/story.paths");
+      fileHandler.saveGame(story, "src/main/resources/story1.paths");
+      Story story1 = fileHandler.loadGame("src/main/resources/story1.paths");
       assertEquals(Story.class, story1.getClass());
     }
 
@@ -107,10 +107,10 @@ public class FileHandelerTest {
     @Test
     @DisplayName("Test that saveGame throws NullPointerException when player is null")
     void testThatSaveGameThrowsNullPointerException() {
-      FileHandeler fileHandeler = new FileHandeler();
+      FileHandler fileHandler = new FileHandler();
       Story story = null;
       assertThrows(NullPointerException.class, () -> {
-        fileHandeler.saveGame(story, "src/main/resources/story1.paths");
+        fileHandler.saveGame(story, "src/main/resources/story1.paths");
       });
     }
 
@@ -120,11 +120,11 @@ public class FileHandelerTest {
     @Test
     @DisplayName("Test that saveGame throws NullPointerException when player is null")
     void testThatSaveGameThrowsNullPointerException2() {
-      FileHandeler fileHandeler = new FileHandeler();
+      FileHandler fileHandler = new FileHandler();
       Story story = new Story("Title", new Passage("title", "content"));
       String string = null;
       assertThrows(NullPointerException.class, () -> {
-        fileHandeler.saveGame(story, string);
+        fileHandler.saveGame(story, string);
       });
     }
   }

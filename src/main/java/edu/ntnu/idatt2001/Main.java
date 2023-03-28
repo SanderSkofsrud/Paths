@@ -1,9 +1,8 @@
 package edu.ntnu.idatt2001;
 
-import edu.ntnu.idatt2001.actions.GoldAction;
 import edu.ntnu.idatt2001.goals.Goal;
 import edu.ntnu.idatt2001.goals.GoldGoal;
-import edu.ntnu.idatt2001.utility.FileHandeler;
+import edu.ntnu.idatt2001.utility.FileHandler;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -16,7 +15,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -63,16 +61,16 @@ public class Main extends Application {
       GoldGoal goldGoal = new GoldGoal(10);
       goals.add(goldGoal);
       Game game = new Game(player, story, goals);
-      FileHandeler.saveGame(game.getStory(), "src/main/resources/story.paths");
+      FileHandler.saveGame(game.getStory(), "src/main/resources/story.paths");
       Story story1;
       try {
-        story1 = FileHandeler.loadGame("src/main/resources/story.paths");
+        story1 = FileHandler.loadGame("src/main/resources/story.paths");
       } catch (IOException ex) {
         throw new RuntimeException(ex);
       }
       System.out.println(story1.getPassages());
       Game game1 = new Game(player, story1, goals);
-      FileHandeler.saveGame(game1.getStory(), "src/main/resources/story1.paths");
+      FileHandler.saveGame(game1.getStory(), "src/main/resources/story1.paths");
       //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)));
       //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)).getLinks());
       //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)).getLinks().get(0));
