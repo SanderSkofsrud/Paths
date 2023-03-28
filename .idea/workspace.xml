@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed test for remove passage">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="created paths folder for paths files">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/story.paths" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/paths/story1.paths" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/story.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/story.paths" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/story1.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/paths/story.paths" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/utility/FileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/utility/FileHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/utility/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/utility/FileHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="refactor-test-classes" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,7 +84,15 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FileHandlerTest">
+  <component name="RunManager" selected="Maven.paths [javafx:run]">
+    <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -127,21 +135,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -218,21 +211,21 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.All in paths" />
       <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" />
       <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" />
       <item itemvalue="JUnit.FileHandlerTest" />
-      <item itemvalue="JUnit.StoryTest" />
       <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in paths" />
         <item itemvalue="JUnit.FileHandlerTest" />
         <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" />
         <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" />
         <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
-        <item itemvalue="JUnit.StoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -271,13 +264,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00024" summary="Link v1.4 Added NullPointerException">
-      <created>1675850935828</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1675850935828</updated>
     </task>
     <task id="LOCAL-00025" summary="Link v1.14 Added NullPointerException">
       <created>1675850979058</created>
@@ -615,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679990268118</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="created paths folder for paths files">
+      <created>1679993637060</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1679993637061</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,13 +629,6 @@
                       </list>
                     </value>
                   </entry>
-                  <entry key="text">
-                    <value>
-                      <list>
-                        <option value="passage" />
-                      </list>
-                    </value>
-                  </entry>
                 </map>
               </option>
             </State>
@@ -653,7 +639,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed error in link test" />
     <MESSAGE value="fixed typo in Passage class" />
     <MESSAGE value="added exception throws to addGold and addScore" />
     <MESSAGE value="added nested class and display names to GameTest" />
@@ -678,7 +663,8 @@
     <MESSAGE value="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links" />
     <MESSAGE value="Fixed regex in FileHandeler to work for links" />
     <MESSAGE value="Moved save game to FileHandeler class, and created tests for the class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved save game to FileHandeler class, and created tests for the class" />
+    <MESSAGE value="created paths folder for paths files" />
+    <option name="LAST_COMMIT_MESSAGE" value="created paths folder for paths files" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -690,5 +676,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1679999710174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

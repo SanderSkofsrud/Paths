@@ -126,6 +126,7 @@ public class Story {
 
   /**
    * Returns a list of broken links.
+   * A broken link is a link that does not lead to a passage in the story.
    *
    * @return A List of broken links.
    */
