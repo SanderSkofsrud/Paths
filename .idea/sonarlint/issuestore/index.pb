@@ -1,5 +1,19 @@
 
 >
 .gitlab-ci.yml,5\8\587d266bb27a4dc3022bbed44dfa19849df3044c
+\
+,src/main/java/edu/ntnu/idatt2001/Player.java,3\b\3b3102a388d47099acfb3ca0fdb0da955319506a
+a
+1src/test/java/edu/ntnu/idatt2001/PassageTest.java,9\d\9d75e3e3bb77d6ababe7adfcd9ce767b75accf99
+_
+/src/test/java/edu/ntnu/idatt2001/StoryTest.java,1\3\13b5f5e5e6df4f30b3e45d8f7b725ea8ec4ad92f
+^
+.src/test/java/edu/ntnu/idatt2001/LinkTest.java,b\e\be90b5c9088996a68050ca6af12252a973856ae7
 d
-4src/main/java/edu/ntnu/idatt2001/actions/Action.java,8\a\8a188fca87629f33a1a6f5c44a78f5f6ef567a26
+4src/main/java/edu/ntnu/idatt2001/goals/GoldGoal.java,7\a\7a54d55d620ddc12fd17b4599ed6c85b1099172d
+f
+6src/main/java/edu/ntnu/idatt2001/goals/HealthGoal.java,8\c\8cdcb566510229b111699c7e9f83e47c85e4441b
+j
+:src/main/java/edu/ntnu/idatt2001/actions/HealthAction.java,5\0\500f846a41a49991e944db02abf18d4c48f0a28e
+m
+=src/main/java/edu/ntnu/idatt2001/actions/InventoryAction.java,f\9\f91a7e14b811c4c9dc04d21c56a59908c952845c

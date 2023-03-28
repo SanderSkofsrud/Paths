@@ -3,6 +3,7 @@ package edu.ntnu.idatt2001;
 import edu.ntnu.idatt2001.actions.GoldAction;
 import edu.ntnu.idatt2001.goals.Goal;
 import edu.ntnu.idatt2001.goals.GoldGoal;
+import edu.ntnu.idatt2001.utility.FileHandeler;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,6 +19,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -48,21 +50,32 @@ public class Main extends Application {
     buttonRun.setOnAction(e -> {
       Passage openingpassage = new Passage("Beginnings", "You are in a small room");
       Story story = new Story("Haunted House", openingpassage);
-      Link link = new Link ("Try open the door", "Another room");
+      Link link = new Link("Try open the door", "Another room");
       openingpassage.addLink(link);
       Passage passage = new Passage("Another room", "The door opens to another room");
-      Link link1 = new Link ("Open the book", "The book of spells");
-      Link link2 = new Link ("Go back", "Beginnings");
+      Link link1 = new Link("Open the book", "The book of spells");
+      Link link2 = new Link("Go back", "Beginnings");
       passage.addLink(link1);
       passage.addLink(link2);
       story.addPassage(passage);
-      Player player = new Player("testPlayer", 10,10,10);
+      Player player = new Player("testPlayer", 10, 10, 10);
       List<Goal> goals = new ArrayList<>();
       GoldGoal goldGoal = new GoldGoal(10);
       goals.add(goldGoal);
-      Game game = new Game(player, story,goals);
+      Game game = new Game(player, story, goals);
       game.saveGame();
-      game.loadGame(new File("src/main/resources/story.paths"));
+      Story story1;
+      try {
+        story1 = FileHandeler.loadGame("src/main/resources/story.paths");
+      } catch (IOException ex) {
+        throw new RuntimeException(ex);
+      }
+      System.out.println(story1.getPassages());
+      Game game1 = new Game(player, story1, goals);
+      game1.saveGame();
+      //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)));
+      //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)).getLinks());
+      //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)).getLinks().get(0));
 
       borderPane.setVisible(false);
       stackPaneR.setVisible(true);

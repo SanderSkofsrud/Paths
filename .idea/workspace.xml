@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed getPassage, removePassage and getBrokenLinks methods so they return correctly">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/utility/FileHandeler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/utility/FileHandeler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/story.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/story.paths" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="filehandling" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,23 +72,7 @@
       <recent name="edu.ntnu.idatt2001" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage">
-    <configuration name="StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.StoryTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$ExceptionHandling" />
-      <option name="METHOD_NAME" value="testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Maven.paths [javafx:run]">
     <configuration name="StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -151,6 +136,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="edu.ntnu.idatt2001 in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="paths [clean,test]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -208,19 +207,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" />
       <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly" />
       <item itemvalue="JUnit.StoryTest" />
       <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
       <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
+      <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
+        <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
         <item itemvalue="JUnit.StoryTest" />
-        <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" />
+        <item itemvalue="JUnit.StoryTest$ReturnValues.testThatRemovePassageRemovesPassage" />
         <item itemvalue="JUnit.StoryTest$ReturnValues.testThatGetBrokenLinksReturnsCorrectly" />
         <item itemvalue="JUnit.StoryTest$ExceptionHandling.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
       </list>
@@ -258,6 +257,16 @@
       <workItem from="1678811644329" duration="31000" />
       <workItem from="1678868228764" duration="300000" />
       <workItem from="1678889886657" duration="4652000" />
+      <workItem from="1679468333271" duration="1798000" />
+      <workItem from="1679555120466" duration="303000" />
+      <workItem from="1679949851713" duration="5855000" />
+    </task>
+    <task id="LOCAL-00022" summary="created test-classes for packages actions and goals">
+      <created>1675849907869</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1675849907869</updated>
     </task>
     <task id="LOCAL-00023" summary="Player v1.3 Added NullPointerException">
       <created>1675850915807</created>
@@ -588,21 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679401900354</updated>
     </task>
-    <task id="LOCAL-00070" summary="added description to Game class">
-      <created>1679401960456</created>
+    <task id="LOCAL-00070" summary="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links">
+      <created>1679982695369</created>
       <option name="number" value="00070" />
       <option name="presentableId" value="LOCAL-00070" />
       <option name="project" value="LOCAL" />
-      <updated>1679401960456</updated>
+      <updated>1679982695369</updated>
     </task>
-    <task id="LOCAL-00071" summary="fixed getPassage, removePassage and getBrokenLinks methods so they return correctly">
-      <created>1679403968394</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1679403968394</updated>
-    </task>
-    <option name="localTasksCounter" value="72" />
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -623,6 +625,13 @@
                       </list>
                     </value>
                   </entry>
+                  <entry key="text">
+                    <value>
+                      <list>
+                        <option value="passage" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>
@@ -633,6 +642,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added addPassage in constructor" />
     <MESSAGE value="temporary finished story test class" />
     <MESSAGE value="fixed error in link test" />
     <MESSAGE value="fixed typo in Passage class" />
@@ -656,11 +666,19 @@
     <MESSAGE value="added description to Passage class" />
     <MESSAGE value="added description to Story class" />
     <MESSAGE value="added description to Player class" />
-    <MESSAGE value="added description to Game class" />
-    <MESSAGE value="fixed getPassage, removePassage and getBrokenLinks methods so they return correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed getPassage, removePassage and getBrokenLinks methods so they return correctly" />
+    <MESSAGE value="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="edu.ntnu.idatt2001.Passage" memberName="links" />

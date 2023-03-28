@@ -114,14 +114,6 @@ public class Game {
   }
 
   public void loadGame(File file) {
-    try (Scanner scanner = new Scanner(file)) {
-      while (scanner.hasNext()) {
-        String line = scanner.nextLine();
-        System.out.println(line);
-      }
-    } catch (IOException e) {
-      System.out.println("File not found");
-      e.printStackTrace();
-    }
+
   }
 }
