@@ -36,12 +36,14 @@ class LinkTest {
   @Nested
   public class Constructor {
     /**
-     * Test that constructor constructs object
+     * Test that constructor constructs object and indirectly test that getters work
      */
     @Test
     @DisplayName("Test that constructor constructs object")
     void testThatConstructorConstructsObject() {
-      assertEquals(Link.class, link.getClass());
+      assertEquals("Test", link.getText());
+      assertEquals("reference", link.getReference());
+      assertEquals(actions, link.getActions());
     }
 
     /**

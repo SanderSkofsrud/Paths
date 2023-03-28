@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added positive test for add-methods and refactored addmethod tests">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed typo">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +79,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in paths">
+  <component name="RunManager" selected="JUnit.LinkTest$Constructor.testThatConstructorConstructsObject">
     <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <option name="PACKAGE_NAME" value="" />
@@ -89,7 +88,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest$ConstructorTest.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LinkTest$Constructor.testThatConstructorConstructsObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -97,9 +96,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ConstructorTest" />
-      <option name="METHOD_NAME" value="testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.LinkTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest$Constructor" />
+      <option name="METHOD_NAME" value="testThatConstructorConstructsObject" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -211,7 +210,7 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All in paths" />
-      <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull" />
+      <item itemvalue="JUnit.LinkTest$Constructor.testThatConstructorConstructsObject" />
       <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddMethodsWorksWhenValidValuesAreUsed" />
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatExceptionAreNotThrownWhenValidValuesAreUsed" />
@@ -220,11 +219,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LinkTest$Constructor.testThatConstructorConstructsObject" />
         <item itemvalue="JUnit.All in paths" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddMethodsWorksWhenValidValuesAreUsed" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatExceptionAreNotThrownWhenValidValuesAreUsed" />
         <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
-        <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull" />
       </list>
     </recent_temporary>
   </component>
@@ -263,20 +262,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00033" summary="temporary finished passage test class">
-      <created>1676466648363</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1676466648363</updated>
-    </task>
-    <task id="LOCAL-00034" summary="added exceptions for game class in constructor and go">
-      <created>1676466881946</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1676466881946</updated>
     </task>
     <task id="LOCAL-00035" summary="added exceptions for player class in constructor, addToInventory and addHealth">
       <created>1676467897150</created>
@@ -607,7 +592,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680004102507</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="specified test name">
+      <created>1680004234139</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1680004234139</updated>
+    </task>
+    <task id="LOCAL-00083" summary="fixed typo">
+      <created>1680004282048</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1680004282048</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,8 +637,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added a exceptionHandling test" />
-    <MESSAGE value="fixed thrown exception" />
     <MESSAGE value="added some test to returnValues and exception" />
     <MESSAGE value="added some test to ExceptionHandling and returnValues" />
     <MESSAGE value="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes" />
@@ -663,7 +660,9 @@
     <MESSAGE value="removed get-method test" />
     <MESSAGE value="fixed typo in test and added positive test for valid values" />
     <MESSAGE value="added positive test for add-methods and refactored addmethod tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added positive test for add-methods and refactored addmethod tests" />
+    <MESSAGE value="specified test name" />
+    <MESSAGE value="fixed typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed typo" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
