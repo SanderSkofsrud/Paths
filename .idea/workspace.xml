@@ -81,7 +81,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull">
+  <component name="RunManager" selected="JUnit.PlayerTest$ExceptionHandling.testThatExceptionAreNotThrownWhenValidValuesAreUsed">
     <configuration name="PassageTest$Constructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -92,21 +92,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$Constructor" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PassageTest$hasLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$hasLinks" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,6 +140,22 @@
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ConstructorTest" />
       <option name="METHOD_NAME" value="testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest$ExceptionHandling.testThatExceptionAreNotThrownWhenValidValuesAreUsed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PlayerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PlayerTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatExceptionAreNotThrownWhenValidValuesAreUsed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -218,20 +219,20 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PassageTest$Constructor" />
-      <item itemvalue="JUnit.PassageTest$hasLinks" />
       <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsIllegalArgumentException" />
       <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull" />
       <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
+      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatExceptionAreNotThrownWhenValidValuesAreUsed" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatExceptionAreNotThrownWhenValidValuesAreUsed" />
         <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
         <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull" />
         <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsIllegalArgumentException" />
         <item itemvalue="JUnit.PassageTest$Constructor" />
-        <item itemvalue="JUnit.PassageTest$hasLinks" />
       </list>
     </recent_temporary>
   </component>

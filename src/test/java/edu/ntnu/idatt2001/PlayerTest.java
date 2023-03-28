@@ -40,31 +40,31 @@ public class PlayerTest {
     }
 
     /**
-     * Test that constructor throws NullPointerException when health is less than zero
+     * Test that constructor throws IllegalArgumentException when health is less than zero
      */
     @Test
-    @DisplayName("Test that constructor throws NullPointerException")
+    @DisplayName("Test that constructor throws IllegalArgumentException when health is less than zero")
     void testThatConstructorThrowsNullPointerException() {
       int health = -1;
       assertThrows(IllegalArgumentException.class, () -> new Player("name", health, 10,20));
     }
     /**
-     * Test that throws IllegalArgumentException when health is less than zero
+     * Test that constructor throws NullPointerException when name is null
      */
     @Test
-    @DisplayName("Test that constructor throws IllegalArgumentException when health is less than zero")
+    @DisplayName("Test that constructor throws NullPointerException when name is null")
     void testThatConstructorThrowsIllegalArgumentException() {
-      int health = -1;
-      assertThrows(IllegalArgumentException.class, () -> new Player("test", health,10,10));
+      String name = null;
+      assertThrows(NullPointerException.class, () -> new Player(name,10,10,10));
     }
 
     /**
-     * Test that constructor throws IllegalArgumentException when name is null
+     * Test that constructor throws IllegalArgumentException when name is blank
      */
     @Test
-    @DisplayName("Test that constructor throws IllegalArgumentException when name is null")
-    void testThatConstructorThrowsIllegalArgumentExceptionWhenNameIsNull() {
-      String name = null;
+    @DisplayName("Test that constructor throws NullPointerException when name is blank")
+    void testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull() {
+      String name = "";
       assertThrows(NullPointerException.class, () -> new Player(name, 10,10,10));
     }
 
@@ -94,6 +94,15 @@ public class PlayerTest {
    */
   @Nested
   public class ExceptionHandling {
+
+    /**
+     * Test that exception are not thrown when valid values are used
+     */
+    @Test
+    @DisplayName("Test that exception are not thrown when valid values are used")
+    void testThatExceptionAreNotThrownWhenValidValuesAreUsed() {
+      assertDoesNotThrow(() -> new Player("name", 10, 10,10));
+    }
 
     /**
      * Test that addHealth can not set negative value
