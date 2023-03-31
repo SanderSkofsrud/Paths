@@ -50,7 +50,7 @@ public class FileHandler {
     Passage currentPassage = null;
     Story story = null;
 
-    Pattern passagePattern = Pattern.compile("^::(.+)$");
+    Pattern passagePattern = Pattern.compile("^(::)(.*)");
     Pattern linkPattern = Pattern.compile("\\[(.*?)\\]\\((.*?)\\)");
 
     while (scanner.hasNextLine()) {
@@ -60,7 +60,7 @@ public class FileHandler {
       Matcher linkMatcher = linkPattern.matcher(line);
 
       if (passageMatcher.find()) {
-        String passageTitle = passageMatcher.group(1);
+        String passageTitle = passageMatcher.group(2);
         String content = scanner.nextLine();
         Passage newPassage = new Passage(passageTitle, content);
 
@@ -77,6 +77,8 @@ public class FileHandler {
         String linkReference = linkMatcher.group(2);
         Link link = new Link(linkDescription, linkReference);
         currentPassage.addLink(link);
+      } else if (line.isBlank()) {
+        continue;
       }
       else {
         throw new IllegalArgumentException("The file is not in the correct format");
