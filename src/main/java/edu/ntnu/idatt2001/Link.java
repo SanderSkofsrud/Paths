@@ -119,14 +119,14 @@ public class Link {
    */
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
     Link link = (Link) o;
-
-    if (!text.equals(link.text)) return false;
-    if (!reference.equals(link.reference)) return false;
-    return actions.equals(link.actions);
+    return reference != null ? reference.equals(link.reference) : link.reference == null;
   }
 
   /**
@@ -136,7 +136,7 @@ public class Link {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(getText(), getReference(), getActions());
+    return reference != null ? reference.hashCode() : 0;
   }
 
 }
