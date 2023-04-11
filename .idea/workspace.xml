@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added exception when link already exist in passage in addLink and test">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Passage.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added remaining javadoc to Passage">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,31 +80,8 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PassageTest$addLinks.testThatExceptionIsThrownWhenLinkAlreadyExists">
-    <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InventoryActionTest$Execute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.actions.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.actions.InventoryActionTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.actions.InventoryActionTest$Execute" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LinkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GameTest$constructor.testThatConstructorThrowsNullPointerExceptionWhenGoalsContainsNull">
+    <configuration name="GameTest$constructor.testThatConstructorThrowsIllegalArgumentExceptionWhenGoalsIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -111,9 +89,42 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.LinkTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.GameTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.GameTest$constructor" />
+      <option name="METHOD_NAME" value="testThatConstructorThrowsIllegalArgumentExceptionWhenGoalsIsEmpty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest$constructor.testThatConstructorThrowsNullPointerExceptionWhenGoalsContainsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.GameTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.GameTest$constructor" />
+      <option name="METHOD_NAME" value="testThatConstructorThrowsNullPointerExceptionWhenGoalsContainsNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest$constructor.testThatConstructorThrowsNullPointerExceptionWhenGoalsIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.GameTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.GameTest$constructor" />
+      <option name="METHOD_NAME" value="testThatConstructorThrowsNullPointerExceptionWhenGoalsIsEmpty" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -206,9 +217,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.All in paths" />
-      <item itemvalue="JUnit.InventoryActionTest$Execute" />
-      <item itemvalue="JUnit.LinkTest" />
+      <item itemvalue="JUnit.GameTest$constructor.testThatConstructorThrowsIllegalArgumentExceptionWhenGoalsIsEmpty" />
+      <item itemvalue="JUnit.GameTest$constructor.testThatConstructorThrowsNullPointerExceptionWhenGoalsContainsNull" />
+      <item itemvalue="JUnit.GameTest$constructor.testThatConstructorThrowsNullPointerExceptionWhenGoalsIsEmpty" />
       <item itemvalue="JUnit.PassageTest" />
       <item itemvalue="JUnit.PassageTest$addLinks.testThatExceptionIsThrownWhenLinkAlreadyExists" />
       <item itemvalue="Maven.paths [clean,test]" />
@@ -216,11 +227,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GameTest$constructor.testThatConstructorThrowsNullPointerExceptionWhenGoalsContainsNull" />
+        <item itemvalue="JUnit.GameTest$constructor.testThatConstructorThrowsIllegalArgumentExceptionWhenGoalsIsEmpty" />
+        <item itemvalue="JUnit.GameTest$constructor.testThatConstructorThrowsNullPointerExceptionWhenGoalsIsEmpty" />
         <item itemvalue="JUnit.PassageTest$addLinks.testThatExceptionIsThrownWhenLinkAlreadyExists" />
         <item itemvalue="JUnit.PassageTest" />
-        <item itemvalue="JUnit.LinkTest" />
-        <item itemvalue="JUnit.InventoryActionTest$Execute" />
-        <item itemvalue="JUnit.All in paths" />
       </list>
     </recent_temporary>
   </component>
@@ -259,13 +270,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00058" summary="added some test to returnValues and exception">
-      <created>1677156144091</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1677156144091</updated>
     </task>
     <task id="LOCAL-00059" summary="added some test to ExceptionHandling and returnValues">
       <created>1677156635906</created>
@@ -603,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681212644931</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="added remaining javadoc to Passage">
+      <created>1681213001825</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1681213001825</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +645,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed typo in test and added positive test for valid values" />
     <MESSAGE value="added positive test for add-methods and refactored addmethod tests" />
     <MESSAGE value="specified test name" />
     <MESSAGE value="fixed typo" />
@@ -659,7 +669,8 @@
     <MESSAGE value="added author and version to link" />
     <MESSAGE value="divided null and blank exceptions and changed test in passage" />
     <MESSAGE value="added exception when link already exist in passage in addLink and test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added exception when link already exist in passage in addLink and test" />
+    <MESSAGE value="added remaining javadoc to Passage" />
+    <option name="LAST_COMMIT_MESSAGE" value="added remaining javadoc to Passage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

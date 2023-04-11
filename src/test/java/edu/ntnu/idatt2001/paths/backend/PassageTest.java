@@ -65,6 +65,9 @@ public class PassageTest {
       assertThrows(NullPointerException.class, () -> new Passage(title, content));
     }
 
+    /**
+     * Test that constructor throws IllegalArgumentException when title is empty
+     */
     @Test
     @DisplayName("Test that constructor throws IllegalArgumentException when title is empty")
     void testThatConstructorThrowsIllegalArgumentExceptionWhenTitleIsEmpty() {
@@ -73,6 +76,9 @@ public class PassageTest {
       assertThrows(IllegalArgumentException.class, () -> new Passage(title, content));
     }
 
+    /**
+     * Test that constructor throws IllegalArgumentException when content is empty
+     */
     @Test
     @DisplayName("Test that constructor throws IllegalArgumentException when content is empty")
     void testThatConstructorThrowsIllegalArgumentExceptionWhenContentIsEmpty() {
