@@ -49,7 +49,7 @@ class ScoreGoalTest {
     @Test
     @DisplayName("Test that goal gets marked as completed when completed")
     void testThatGoalGetsMarkedAsCompletedWhenCompleted() {
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(100).gold(gold).build();
       ScoreGoal scoreGoal = new ScoreGoal(10);
       assertTrue(scoreGoal.isFulfilled(player));
     }
@@ -60,7 +60,7 @@ class ScoreGoalTest {
     @Test
     @DisplayName("Test that goal does not get marked as completed when not completed")
     void testThatGoalDoesNotGetMarkedAsCompletedWhenNotCompleted() {
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(50).gold(gold).build();
       ScoreGoal scoreGoal = new ScoreGoal(100);
       assertFalse(scoreGoal.isFulfilled(player));
     }

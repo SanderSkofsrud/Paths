@@ -57,7 +57,7 @@ class GoldActionTest {
     @Test
     @DisplayName("Test that gold is added to player")
     void testGoldActionAddsGoldToPlayer() {
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
       GoldAction goldAction = new GoldAction(10);
       goldAction.execute(player);
       assertEquals(60, player.getGold());
@@ -69,7 +69,7 @@ class GoldActionTest {
     @Test
     @DisplayName("Test that exception is thrown when gold is less than 0")
     void testGoldActionThrowsExceptionWhenGoldIsLessThanZero() {
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
       GoldAction goldAction = new GoldAction(-60);
       assertThrows(IllegalArgumentException.class, () -> goldAction.execute(player));
     }
