@@ -20,7 +20,7 @@ public class ScoreAction implements Action {
   }
 
   /**
-   * Executes a score action.
+   * Executes a score action on a player.
    *
    * @param player the player
    */
