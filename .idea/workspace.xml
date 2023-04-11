@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added remaining javadoc to Passage">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added missing javadoc">
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/GameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,20 +270,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00059" summary="added some test to ExceptionHandling and returnValues">
-      <created>1677156635906</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1677156635906</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes">
-      <created>1677419886263</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1677419886263</updated>
     </task>
     <task id="LOCAL-00061" summary="removed test for get-methods and specified some javadoc comments">
       <created>1679400598667</created>
@@ -614,7 +600,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681213001825</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="added missing javadoc">
+      <created>1681213740982</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1681213740982</updated>
+    </task>
+    <task id="LOCAL-00109" summary="added missing javadoc">
+      <created>1681213745911</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1681213745911</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +645,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added positive test for add-methods and refactored addmethod tests" />
     <MESSAGE value="specified test name" />
     <MESSAGE value="fixed typo" />
     <MESSAGE value="fixed testThatCOnstructorConstructsObject method" />
@@ -670,7 +669,8 @@
     <MESSAGE value="divided null and blank exceptions and changed test in passage" />
     <MESSAGE value="added exception when link already exist in passage in addLink and test" />
     <MESSAGE value="added remaining javadoc to Passage" />
-    <option name="LAST_COMMIT_MESSAGE" value="added remaining javadoc to Passage" />
+    <MESSAGE value="added missing javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added missing javadoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
