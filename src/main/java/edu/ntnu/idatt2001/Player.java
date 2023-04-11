@@ -6,7 +6,11 @@ import java.util.Objects;
 
 /**
  * A class that represents a player in a game. A player has different attributes that can be affected by a story
- * A player has a name, health, score, gold and an inventory.
+ * A player has a name, health, score, gold and an inventory and represent who is playing the game.
+ * When a player has 0 or less health, the player is dead and the game is over.
+ *
+ * @author Helle R. & Sander S.
+ * @version 0.2 - 11.04.2023
  */
 
 public class Player {
@@ -19,6 +23,8 @@ public class Player {
 
   /**
    * Constructor for Player.
+   * Name can not be null or blank, score and gold can not be negative and health can not be zero og negative.
+   * A player can have zero health, but can not start with zero or less than zero health.
    *
    * @param name The name of the player.
    * @param health The health of the player.
@@ -34,7 +40,7 @@ public class Player {
     if (name == null || name.isBlank()) {
       throw new NullPointerException("Name can not be empty");
     }
-    if (health < 0) {
+    if (health <= 0) {
       throw new IllegalArgumentException("Health can not be less than 0");
     }
     if (name.isEmpty()) {
@@ -67,6 +73,42 @@ public class Player {
     this.score = player.score;
     this.gold = player.gold;
     this.inventory = player.inventory;
+  }
+
+  public static class Builder {
+    private String name;
+    private int health;
+    private int score;
+    private int gold;
+    private List<String> inventory;
+
+    public Builder(String name) {
+      this.name = name;
+    }
+
+    public Builder health(int health) {
+      this.health = health;
+      return this;
+    }
+
+    public Builder score(int score) {
+      this.score = score;
+      return this;
+    }
+
+    public Builder gold(int gold) {
+      this.gold = gold;
+      return this;
+    }
+
+    public Builder inventory(List<String> inventory) {
+      this.inventory = inventory;
+      return this;
+    }
+
+    public Player build() {
+      return new Player(this);
+    }
   }
 
   /**
