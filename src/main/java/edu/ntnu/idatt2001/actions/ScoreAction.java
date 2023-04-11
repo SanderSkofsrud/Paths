@@ -29,4 +29,9 @@ public class ScoreAction implements Action {
     }
     player.addScore(points);
   }
+
+  @Override
+  public String toString() {
+    return "{ScoreAction}(" + this.points + ")";
+  }
 }
