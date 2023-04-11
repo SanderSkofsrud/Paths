@@ -112,7 +112,8 @@ public class Link {
         + "]("
         + getReference()
         + ")["
-        + sb + "]\n";
+        + sb
+        + "]\n";
 
   }
 
