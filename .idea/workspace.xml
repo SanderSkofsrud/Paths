@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="changed Player constructor to private and changed parameter to builder">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="changed player instances to builder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/ScoreGoalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/ScoreGoalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +80,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest$ConstructorTest.testThatConstructorConstructsObject">
+  <component name="RunManager" selected="JUnit.PlayerTest">
     <configuration name="FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -96,21 +93,6 @@
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest$loadGame" />
       <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException2" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,6 +140,21 @@
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest$ConstructorTest" />
       <option name="METHOD_NAME" value="testThatConstructorThrowsNullPointerException" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -219,21 +216,21 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.PlayerTest" />
       <item itemvalue="JUnit.PlayerTest$ConstructorTest" />
       <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorConstructsObject" />
       <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNullPointerException" />
-      <item itemvalue="JUnit.FileHandlerTest" />
       <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerTest" />
+        <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNullPointerException" />
         <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorConstructsObject" />
         <item itemvalue="JUnit.PlayerTest$ConstructorTest" />
-        <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNullPointerException" />
         <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" />
-        <item itemvalue="JUnit.FileHandlerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -272,13 +269,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00048" summary="fixed typo in Passage class">
-      <created>1676982115614</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1676982115614</updated>
     </task>
     <task id="LOCAL-00049" summary="added exception throws to addGold and addScore">
       <created>1676982214504</created>
@@ -616,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681206920291</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="changed player instances to builder">
+      <created>1681209089000</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1681209089000</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +644,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links" />
     <MESSAGE value="Fixed regex in FileHandeler to work for links" />
     <MESSAGE value="Moved save game to FileHandeler class, and created tests for the class" />
     <MESSAGE value="created paths folder for paths files" />
@@ -672,7 +668,8 @@
     <MESSAGE value="changed addhealth and added isAlive method. Added throws notation to methods" />
     <MESSAGE value="changed constructor and method so that inventory is lowercase" />
     <MESSAGE value="added builder constructor to player" />
-    <option name="LAST_COMMIT_MESSAGE" value="added builder constructor to player" />
+    <MESSAGE value="changed player instances to builder" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed player instances to builder" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
