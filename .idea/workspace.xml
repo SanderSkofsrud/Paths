@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="divided null and blank exceptions and changed test in passage" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added exception when link already exist in passage in addLink and test">
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Passage.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -257,13 +259,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00057" summary="fixed thrown exception">
-      <created>1677156115157</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1677156115157</updated>
     </task>
     <task id="LOCAL-00058" summary="added some test to returnValues and exception">
       <created>1677156144091</created>
@@ -601,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681212365207</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="added exception when link already exist in passage in addLink and test">
+      <created>1681212644931</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1681212644931</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +634,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="removed get-method test" />
     <MESSAGE value="fixed typo in test and added positive test for valid values" />
     <MESSAGE value="added positive test for add-methods and refactored addmethod tests" />
     <MESSAGE value="specified test name" />
@@ -657,7 +658,8 @@
     <MESSAGE value="divided null and empty text and reference exceptions and changed tests" />
     <MESSAGE value="added author and version to link" />
     <MESSAGE value="divided null and blank exceptions and changed test in passage" />
-    <option name="LAST_COMMIT_MESSAGE" value="divided null and blank exceptions and changed test in passage" />
+    <MESSAGE value="added exception when link already exist in passage in addLink and test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added exception when link already exist in passage in addLink and test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

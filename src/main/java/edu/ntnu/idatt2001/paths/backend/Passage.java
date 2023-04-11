@@ -88,6 +88,8 @@ public class Passage {
 
   /**
    * Adds a link to the passage.
+   * Checks if the link already exists in the passage.
+   * The link can´t be null.
    *
    * @param link The link to be added.
    * @throws NullPointerException if link is null.
@@ -101,16 +103,26 @@ public class Passage {
   }
 
   /**
-   * Returns true if the passage has links.
+   * Checks if the passage has links.
    *
-   * @return True if the passage has links.
+   * @return True if the passage has at least one link.
    */
   public boolean hasLinks() {
     return !links.isEmpty();
   }
 
   /**
-   * Returns a string representation of the passage.
+   * Returns a string representation of the passage with the title, content and links.
+   * Uses the toString method from the Link class and string builder to create the string.
+   * The string will be formatted as follows:
+   * <p>
+   *    ::title <br>
+   *    content <br>
+   *    link1 <br>
+   *    link2 <br>
+   *    linkN
+   * </p>
+   *
    *
    * @return A string representation of the passage.
    */
@@ -129,12 +141,12 @@ public class Passage {
   }
 
   /**
-   * Returns true if the passage is equal to the object.
+   * Returns true if the passage is equal to the object passed as parameter.
+   * The passage is equal to another passage if the titles are equal.
    *
    * @param object The object to be compared.
    * @return True if the passage is equal to the object.
    */
-
   @Override
   public boolean equals(Object object) {
     if (this == object) return true;
