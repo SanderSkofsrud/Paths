@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added toString to Action and it's subclasses">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/story.paths" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/story1.paths" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Changed how toString was formatted to match other files">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Link.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/utility/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/utility/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/story.paths" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,55 +83,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.paths [javafx:run]">
-    <configuration name="FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest$readFromFile" />
-      <option name="METHOD_NAME" value="testThatReadFromFileReturnsAStory" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandelerTest$readFromFile" />
-      <option name="METHOD_NAME" value="testThatReadFromFileReturnsAString" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest$loadGame" />
-      <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.LinkTest$fileHandling.testThatToStringReturnsCorrectString">
     <configuration name="FileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -152,7 +99,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="edu.ntnu.idatt2001 in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LinkTest$Constructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -160,8 +107,57 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.LinkTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest$Constructor" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkTest$Constructor.testThatConstructorConstructsObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.LinkTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest$Constructor" />
+      <option name="METHOD_NAME" value="testThatConstructorConstructsObject" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkTest$fileHandling.testThatToStringReturnsCorrectString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.LinkTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.LinkTest$fileHandling" />
+      <option name="METHOD_NAME" value="testThatToStringReturnsCorrectString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassageTest$fileHandling.testThatToStringReturnsCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.PassageTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.PassageTest$fileHandling" />
+      <option name="METHOD_NAME" value="testThatToStringReturnsCorrect" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -223,21 +219,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" />
-      <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" />
-      <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" />
+      <item itemvalue="JUnit.LinkTest$Constructor" />
+      <item itemvalue="JUnit.LinkTest$Constructor.testThatConstructorConstructsObject" />
+      <item itemvalue="JUnit.LinkTest$fileHandling.testThatToStringReturnsCorrectString" />
+      <item itemvalue="JUnit.PassageTest$fileHandling.testThatToStringReturnsCorrect" />
       <item itemvalue="JUnit.FileHandlerTest" />
-      <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" />
+        <item itemvalue="JUnit.LinkTest$fileHandling.testThatToStringReturnsCorrectString" />
+        <item itemvalue="JUnit.PassageTest$fileHandling.testThatToStringReturnsCorrect" />
+        <item itemvalue="JUnit.LinkTest$Constructor.testThatConstructorConstructsObject" />
+        <item itemvalue="JUnit.LinkTest$Constructor" />
         <item itemvalue="JUnit.FileHandlerTest" />
-        <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAStory" />
-        <item itemvalue="JUnit.FileHandelerTest$readFromFile.testThatReadFromFileReturnsAString" />
-        <item itemvalue="JUnit.edu.ntnu.idatt2001 in paths" />
       </list>
     </recent_temporary>
   </component>
@@ -282,35 +278,7 @@
       <workItem from="1680371257945" duration="93000" />
       <workItem from="1680371369461" duration="410000" />
       <workItem from="1680596973103" duration="1041000" />
-      <workItem from="1681113263103" duration="2768000" />
-    </task>
-    <task id="LOCAL-00027" summary="added exception class for Link">
-      <created>1676464708999</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1676464708999</updated>
-    </task>
-    <task id="LOCAL-00028" summary="added individual test-classes for link, passage, player, story and game">
-      <created>1676464923905</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1676464923905</updated>
-    </task>
-    <task id="LOCAL-00029" summary="fixed link exception">
-      <created>1676465575600</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1676465575600</updated>
-    </task>
-    <task id="LOCAL-00030" summary="corrected exception throws">
-      <created>1676465822928</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1676465822928</updated>
+      <workItem from="1681113263103" duration="3936000" />
     </task>
     <task id="LOCAL-00031" summary="temporary finished link test class">
       <created>1676466123669</created>
@@ -627,7 +595,35 @@
       <option name="project" value="LOCAL" />
       <updated>1681200214322</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Changed append to false in saveGame, as it does not make sense to append when parts of the story already exists">
+      <created>1681200307820</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1681200307820</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Added stringbuilder to toString in link, to support the addition of actions">
+      <created>1681200339497</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1681200339497</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Added action to file, to check if it works">
+      <created>1681200381382</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1681200381382</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Changed how toString was formatted to match other files">
+      <created>1681200550075</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1681200550075</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,10 +661,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added nested class and display names to GameTest" />
-    <MESSAGE value="added nested class and display names to LinkTest" />
-    <MESSAGE value="added nested class and display names to Passagetest" />
-    <MESSAGE value="added nested class and display names to StoryTest" />
     <MESSAGE value="added nested class and display names to PlayerTest" />
     <MESSAGE value="added a few more tests and beforeEach" />
     <MESSAGE value="added a exceptionHandling test" />
@@ -690,7 +682,11 @@
     <MESSAGE value="updated equals and hashCode in link to only take the reference-string into account" />
     <MESSAGE value="Fixed bug in FileHandler where it would throw exceptions if the line was blank" />
     <MESSAGE value="Added toString to Action and it's subclasses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added toString to Action and it's subclasses" />
+    <MESSAGE value="Changed append to false in saveGame, as it does not make sense to append when parts of the story already exists" />
+    <MESSAGE value="Added stringbuilder to toString in link, to support the addition of actions" />
+    <MESSAGE value="Added action to file, to check if it works" />
+    <MESSAGE value="Changed how toString was formatted to match other files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed how toString was formatted to match other files" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
