@@ -29,6 +29,7 @@ public class App extends Application {
   private Scene frontPageScene = new Scene(frontPage);
   protected ScreenController screenController = new ScreenController(frontPageScene);
   private NewGameView newGameView = new NewGameView(screenController);
+  private ChooseGoalsView ChooseGoalsView = new ChooseGoalsView(screenController);
   public static Stage primaryStage;
 
   @Override
@@ -36,6 +37,7 @@ public class App extends Application {
     App.primaryStage = primaryStage;
 
     screenController.addScreen("NewGame", newGameView);
+    screenController.addScreen("ChooseGoals", ChooseGoalsView);
 
     primaryStage.setTitle("Paths");
     primaryStage.setWidth(500);
@@ -50,14 +52,15 @@ public class App extends Application {
 
   private void setup() {
     ImageView logo = new ImageView(new Image("logo.png"));
+    logo.preserveRatioProperty().set(true);
     logo.setFitWidth(500);
-    logo.setFitHeight(500);
     ImageView tagline = new ImageView(new Image("tagline.png"));
-    tagline.setFitWidth(200);
-    tagline.setFitHeight(200);
+    tagline.preserveRatioProperty().set(true);
+    tagline.setFitWidth(300);
     VBox vBox = new VBox();
     vBox.getChildren().addAll(logo, tagline);
     vBox.setAlignment(Pos.CENTER);
+    vBox.setSpacing(25);
     frontPage.setCenter(vBox);
 
     Button newGame = new Button("New Game");
@@ -65,9 +68,7 @@ public class App extends Application {
     newGame.setId("mainMenuButton");
     loadGame.setId("mainMenuButton");
 
-    newGame.setOnAction(e -> {
-      screenController.activate("NewGame");
-    });
+    newGame.setOnAction(e -> screenController.activate("NewGame"));
 
     loadGame.setOnAction(e -> {
       // TODO screenController.activate("LoadGame");

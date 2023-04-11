@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="removed public from nested classes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/NewGameView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/ScreenController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/View.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tagline.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Changed App to work with the updated GUI to match the wireframe. App contains mostly the homepage/main menu">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/ChooseGoalsView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/create.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/female.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/male.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/NewGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tagline.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tagline.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,29 +48,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "GUI",
-    "last_opened_file_path": "C:/Users/sande/Downloads/scene-change-JavaFX 17 Swapping Scenes Demo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GUI&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/Downloads/scene-change-JavaFX 17 Swapping Scenes Demo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -279,56 +277,8 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-      <workItem from="1681206272034" duration="3690000" />
-    </task>
-    <task id="LOCAL-00043" summary="temporary finished link test class">
-      <created>1676540332168</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1676540332168</updated>
-    </task>
-    <task id="LOCAL-00044" summary="temporary finished Game test class">
-      <created>1676540982865</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1676540982865</updated>
-    </task>
-    <task id="LOCAL-00045" summary="added addPassage in constructor">
-      <created>1676979888905</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1676979888905</updated>
-    </task>
-    <task id="LOCAL-00046" summary="temporary finished story test class">
-      <created>1676979905467</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1676979905467</updated>
-    </task>
-    <task id="LOCAL-00047" summary="fixed error in link test">
-      <created>1676980774096</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1676980774096</updated>
-    </task>
-    <task id="LOCAL-00048" summary="fixed typo in Passage class">
-      <created>1676982115614</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1676982115614</updated>
-    </task>
-    <task id="LOCAL-00049" summary="added exception throws to addGold and addScore">
-      <created>1676982214504</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1676982214504</updated>
+      <workItem from="1681206272034" duration="4031000" />
+      <workItem from="1681210322370" duration="4278000" />
     </task>
     <task id="LOCAL-00050" summary="added nested class and display names to GameTest">
       <created>1676982646984</created>
@@ -624,7 +574,56 @@
       <option name="project" value="LOCAL" />
       <updated>1680008582164</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Added images that will be used in the GUI">
+      <created>1681209994274</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1681209994274</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Created the abstract view class that will define the rest of the &quot;views&quot; or &quot;pages&quot; in the GUI">
+      <created>1681210031219</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1681210031219</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Created ScreenController that will be used to navigate between the different &quot;views&quot; or &quot;pages&quot;">
+      <created>1681210062411</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1681210062411</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Created NewGameView, which will be the page where you can create a new game">
+      <created>1681210094943</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1681210094943</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Created a stylesheet.css that will be used to format all javafx objects">
+      <created>1681210122376</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1681210122376</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Changed mainClass to match the previous refactoring">
+      <created>1681210154789</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1681210154789</updated>
+    </task>
+    <task id="LOCAL-00098" summary="Changed App to work with the updated GUI to match the wireframe. App contains mostly the homepage/main menu">
+      <created>1681210291656</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1681210291656</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -655,13 +654,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="removed test for get-methods and specified javadoc comments" />
-    <MESSAGE value="added description to Link class" />
-    <MESSAGE value="added description to Passage class" />
-    <MESSAGE value="added description to Story class" />
-    <MESSAGE value="added description to Player class" />
-    <MESSAGE value="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links" />
-    <MESSAGE value="Fixed regex in FileHandeler to work for links" />
     <MESSAGE value="Moved save game to FileHandeler class, and created tests for the class" />
     <MESSAGE value="created paths folder for paths files" />
     <MESSAGE value="added javadoc to getBrokenLinks method" />
@@ -680,7 +672,14 @@
     <MESSAGE value="added positive test and refactored nested test classes" />
     <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
     <MESSAGE value="removed public from nested classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed public from nested classes" />
+    <MESSAGE value="Added images that will be used in the GUI" />
+    <MESSAGE value="Created the abstract view class that will define the rest of the &quot;views&quot; or &quot;pages&quot; in the GUI" />
+    <MESSAGE value="Created ScreenController that will be used to navigate between the different &quot;views&quot; or &quot;pages&quot;" />
+    <MESSAGE value="Created NewGameView, which will be the page where you can create a new game" />
+    <MESSAGE value="Created a stylesheet.css that will be used to format all javafx objects" />
+    <MESSAGE value="Changed mainClass to match the previous refactoring" />
+    <MESSAGE value="Changed App to work with the updated GUI to match the wireframe. App contains mostly the homepage/main menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed App to work with the updated GUI to match the wireframe. App contains mostly the homepage/main menu" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
