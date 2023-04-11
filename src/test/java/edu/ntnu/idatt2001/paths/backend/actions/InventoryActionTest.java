@@ -50,7 +50,7 @@ class InventoryActionTest {
     @Test
     @DisplayName("Test that item is added to inventory")
     void testInventoryActionAddsItemToInventory() {
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
       InventoryAction inventoryAction = new InventoryAction("Item");
       inventoryAction.execute(player);
       assertEquals("Item", player.getInventory().get(0));

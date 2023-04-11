@@ -22,7 +22,7 @@ public class PlayerTest {
 
   @BeforeEach
   void setUp() {
-    player = new Player("test", 10, 30, 50);
+    player = new Player.Builder("test").health(10).score(30).gold(50).build();
     inventory = new ArrayList<>();
     test = "Item";
   }
@@ -52,7 +52,7 @@ public class PlayerTest {
     @DisplayName("Test that constructor throws IllegalArgumentException when health is less than zero")
     void testThatConstructorThrowsNullPointerException() {
       int health = -1;
-      assertThrows(IllegalArgumentException.class, () -> new Player("name", health, 10,20));
+      assertThrows(IllegalArgumentException.class, () -> new Player.Builder("name").health(health));
     }
     /**
      * Test that constructor throws NullPointerException when name is null
@@ -61,7 +61,7 @@ public class PlayerTest {
     @DisplayName("Test that constructor throws NullPointerException when name is null")
     void testThatConstructorThrowsIllegalArgumentException() {
       String name = null;
-      assertThrows(NullPointerException.class, () -> new Player(name,10,10,10));
+      assertThrows(NullPointerException.class, () -> new Player.Builder(name));
     }
 
     /**
@@ -71,7 +71,7 @@ public class PlayerTest {
     @DisplayName("Test that constructor throws NullPointerException when name is blank")
     void testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull() {
       String name = "";
-      assertThrows(NullPointerException.class, () -> new Player(name, 10,10,10));
+      assertThrows(NullPointerException.class, () -> new Player.Builder(name));
     }
 
     /**
@@ -81,7 +81,7 @@ public class PlayerTest {
     @DisplayName("Test that constructor throws IllegalArgumentException when score is less than zero")
     void testThatConstructorThrowsIllegalArgumentExceptionWhenScoreIsLessThanZero() {
       int score = -1;
-      assertThrows(IllegalArgumentException.class, () -> new Player("name", 10, score,10));
+      assertThrows(IllegalArgumentException.class, () -> new Player.Builder("name").score(score));
     }
 
     /**
@@ -91,7 +91,7 @@ public class PlayerTest {
     @DisplayName("Test that constructor throws IllegalArgumentException when gold is less than zero")
     void testThatConstructorThrowsIllegalArgumentExceptionWhenGoldIsLessThanZero() {
       int gold = -1;
-      assertThrows(IllegalArgumentException.class, () -> new Player("name", 10, 10,gold));
+      assertThrows(IllegalArgumentException.class, () -> new Player.Builder("name").gold(gold));
     }
   }
 

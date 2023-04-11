@@ -56,7 +56,7 @@ class InventoryGoalTest {
     @Test
     @DisplayName("Test that inventory goal returns expected result when correct")
     void testThatInventoryGoalReturnsExpectedResultWhenCorrect() {
-      Player player = new Player("Test", 20, 30, 50);
+      Player player = new Player.Builder("Test").health(20).score(30).gold(50).build();
       List<String> mandatoryItems = new ArrayList<>();
       mandatoryItems.add("Test1");
       mandatoryItems.add("Test2");
@@ -72,7 +72,7 @@ class InventoryGoalTest {
     @Test
     @DisplayName("Test that inventory goal returns expected result when incorrect")
     void testThatInventoryGoalReturnsExpectedResultWhenIncorrect() {
-      Player player = new Player("Test", 20, 30, 50);
+      Player player = new Player.Builder("Test").health(20).score(30).gold(50).build();
       List<String> mandatoryItems = new ArrayList<>();
       mandatoryItems.add("Test1");
       mandatoryItems.add("Test2");

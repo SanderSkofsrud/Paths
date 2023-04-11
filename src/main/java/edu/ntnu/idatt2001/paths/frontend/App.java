@@ -59,7 +59,7 @@ public class App extends Application {
       passage.addLink(link2);
       link1.addAction(new GoldAction(10));
       story.addPassage(passage);
-      Player player = new Player("testPlayer", 10, 10, 10);
+      Player player = new Player.Builder("testPlayer").build();
       List<Goal> goals = new ArrayList<>();
       GoldGoal goldGoal = new GoldGoal(10);
       goals.add(goldGoal);
