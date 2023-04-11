@@ -82,18 +82,18 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StoryTest$addPassage.testThatAddPassageThrowsIllegalArgumentExceptionWhenPassageIsAlreadyInStory">
-    <configuration name="GameTest$constructor.testThatConstructorThrowsNullPointerExceptionWhenGoalsContainsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.InventoryActionTest$Execute.testInventoryActionThrowsExceptionWhenItemIsBlank">
+    <configuration name="InventoryActionTest$Execute.testInventoryActionThrowsExceptionWhenItemIsBlank" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.actions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.GameTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.GameTest$constructor" />
-      <option name="METHOD_NAME" value="testThatConstructorThrowsNullPointerExceptionWhenGoalsContainsNull" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.actions.InventoryActionTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.actions.InventoryActionTest$Execute" />
+      <option name="METHOD_NAME" value="testInventoryActionThrowsExceptionWhenItemIsBlank" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -219,7 +219,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.GameTest$constructor.testThatConstructorThrowsNullPointerExceptionWhenGoalsContainsNull" />
+      <item itemvalue="JUnit.InventoryActionTest$Execute.testInventoryActionThrowsExceptionWhenItemIsBlank" />
       <item itemvalue="JUnit.StoryTest" />
       <item itemvalue="JUnit.StoryTest$addPassage.testThatAddPassageThrowsIllegalArgumentExceptionWhenPassageIsAlreadyInStory" />
       <item itemvalue="JUnit.StoryTest$addPassage.testThatAddPassageThrowsNullPointerExceptionWhenPassageIsNull" />
@@ -229,11 +229,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.InventoryActionTest$Execute.testInventoryActionThrowsExceptionWhenItemIsBlank" />
         <item itemvalue="JUnit.StoryTest$addPassage.testThatAddPassageThrowsIllegalArgumentExceptionWhenPassageIsAlreadyInStory" />
         <item itemvalue="JUnit.StoryTest$addPassage.testThatAddPassageThrowsNullPointerExceptionWhenPassageIsNull" />
         <item itemvalue="JUnit.StoryTest$fileHandling.testToString" />
         <item itemvalue="JUnit.StoryTest" />
-        <item itemvalue="JUnit.GameTest$constructor.testThatConstructorThrowsNullPointerExceptionWhenGoalsContainsNull" />
       </list>
     </recent_temporary>
   </component>

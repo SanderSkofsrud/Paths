@@ -17,10 +17,10 @@ public class InventoryAction implements Action {
    * Trims the item and converts it to lowercase.
    *
    * @param item the item - a string representing of the item of the item to add
-   * @throws IllegalArgumentException if the item is null or blank
+   * @throws NullPointerException if the item is null
    * @throws IllegalArgumentException if the item is already in the player´s inventory
    */
-  public InventoryAction(String item) throws IllegalArgumentException, NullPointerException{
+  public InventoryAction(String item) throws IllegalArgumentException, NullPointerException {
     Objects.requireNonNull(item, "Item cannot be null");
     if (item.isBlank()) throw new IllegalArgumentException("Item cannot be blank");
     this.item = item.trim().toLowerCase();
