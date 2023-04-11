@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Changed App to work with the updated GUI to match the wireframe. App contains mostly the homepage/main menu">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/ChooseGoalsView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/create.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/female.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/male.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/NewGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tagline.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tagline.png" afterDir="false" />
-    </list>
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Created ChooseGoalsView where you will be able to select which goals you want to include in your game" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -278,35 +267,7 @@
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
       <workItem from="1681206272034" duration="4031000" />
-      <workItem from="1681210322370" duration="4278000" />
-    </task>
-    <task id="LOCAL-00050" summary="added nested class and display names to GameTest">
-      <created>1676982646984</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1676982646984</updated>
-    </task>
-    <task id="LOCAL-00051" summary="added nested class and display names to LinkTest">
-      <created>1676982936758</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1676982936758</updated>
-    </task>
-    <task id="LOCAL-00052" summary="added nested class and display names to Passagetest">
-      <created>1676983183839</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1676983183839</updated>
-    </task>
-    <task id="LOCAL-00053" summary="added nested class and display names to StoryTest">
-      <created>1676983928764</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1676983928764</updated>
+      <workItem from="1681210322370" duration="4625000" />
     </task>
     <task id="LOCAL-00054" summary="added nested class and display names to PlayerTest">
       <created>1676984235730</created>
@@ -623,7 +584,35 @@
       <option name="project" value="LOCAL" />
       <updated>1681210291656</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Added new images, both for logos and for characters">
+      <created>1681214838165</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1681214838166</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Changed size of images">
+      <created>1681214847826</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1681214847826</updated>
+    </task>
+    <task id="LOCAL-00101" summary="Added functionality to page. You can choose both the name of your character, and the difficulty of the game. Also added some animations">
+      <created>1681214902115</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1681214902115</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Created ChooseGoalsView where you will be able to select which goals you want to include in your game">
+      <created>1681214947954</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1681214947954</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,10 +643,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Moved save game to FileHandeler class, and created tests for the class" />
-    <MESSAGE value="created paths folder for paths files" />
-    <MESSAGE value="added javadoc to getBrokenLinks method" />
-    <MESSAGE value="changed groupId" />
     <MESSAGE value="added new exception to filehandler for empty file" />
     <MESSAGE value="added positive test for addAction" />
     <MESSAGE value="added positive test for addLink and hasLinks" />
@@ -679,7 +664,11 @@
     <MESSAGE value="Created a stylesheet.css that will be used to format all javafx objects" />
     <MESSAGE value="Changed mainClass to match the previous refactoring" />
     <MESSAGE value="Changed App to work with the updated GUI to match the wireframe. App contains mostly the homepage/main menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed App to work with the updated GUI to match the wireframe. App contains mostly the homepage/main menu" />
+    <MESSAGE value="Added new images, both for logos and for characters" />
+    <MESSAGE value="Changed size of images" />
+    <MESSAGE value="Added functionality to page. You can choose both the name of your character, and the difficulty of the game. Also added some animations" />
+    <MESSAGE value="Created ChooseGoalsView where you will be able to select which goals you want to include in your game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created ChooseGoalsView where you will be able to select which goals you want to include in your game" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

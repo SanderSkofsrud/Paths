@@ -5,10 +5,25 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
+/**
+ * The type Choose goals view.
+ */
 public class ChooseGoalsView extends View {
+  /**
+   * The Border pane.
+   */
   protected BorderPane borderPane;
+  /**
+   * The Stack pane.
+   */
   protected StackPane stackPane;
   private ScreenController screenController;
+
+  /**
+   * Instantiates a new Choose goals view.
+   *
+   * @param screenController the screen controller
+   */
   public ChooseGoalsView(ScreenController screenController) {
     borderPane = new BorderPane();
     stackPane = new StackPane();

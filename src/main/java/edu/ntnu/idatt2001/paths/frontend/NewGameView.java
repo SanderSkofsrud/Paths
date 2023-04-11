@@ -10,10 +10,25 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
+/**
+ * The type New game view.
+ */
 public class NewGameView extends View {
+  /**
+   * The Border pane.
+   */
   protected BorderPane borderPane;
+  /**
+   * The Stack pane.
+   */
   protected StackPane stackPane;
   private ScreenController screenController;
+
+  /**
+   * Instantiates a new New game view.
+   *
+   * @param screenController the screen controller
+   */
   public NewGameView(ScreenController screenController) {
     borderPane = new BorderPane();
     stackPane = new StackPane();

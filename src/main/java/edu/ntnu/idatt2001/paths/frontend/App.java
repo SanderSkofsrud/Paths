@@ -23,13 +23,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The type App.
+ */
 public class App extends Application {
 
   private BorderPane frontPage = new BorderPane();
   private Scene frontPageScene = new Scene(frontPage);
+  /**
+   * The Screen controller.
+   */
   protected ScreenController screenController = new ScreenController(frontPageScene);
   private NewGameView newGameView = new NewGameView(screenController);
   private ChooseGoalsView ChooseGoalsView = new ChooseGoalsView(screenController);
+  /**
+   * The constant primaryStage.
+   */
   public static Stage primaryStage;
 
   @Override
@@ -114,6 +123,11 @@ public class App extends Application {
     frontPage.setBackground(new Background(backgroundImage));
   }
 
+  /**
+   * The entry point of application.
+   *
+   * @param args the input arguments
+   */
   public static void main(String[] args) {
     launch(args);
   }
