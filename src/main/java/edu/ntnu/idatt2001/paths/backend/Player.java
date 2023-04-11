@@ -19,26 +19,27 @@ public class Player {
   private int health;
   private int score;
   private int gold;
-  private List<String> inventory;
+  private final List<String> inventory;
 
   /**
    * Constructor for Player.
    * Name can not be null or blank, score and gold can not be negative and health can not be zero og negative.
    * A player can have zero health, but can not start with zero or less than zero health.
+   * Inventory
    *
    * @param name The name of the player.
    * @param health The health of the player.
    * @param score The score of the player.
    * @param gold The gold of the player.
    * @throws NullPointerException if name is null.
-   * @throws IllegalArgumentException if health, score or gold is less than 0.
+   * @throws IllegalArgumentException if name is blank, health is zero or less, score or gold is negative
    */
 
-  public Player(String name, int health, int score, int gold)
+  public Player(String name, int health, int score, int gold, List<String> inventory)
       throws IllegalArgumentException, NullPointerException {
-
-    if (name == null || name.isBlank()) {
-      throw new NullPointerException("Name can not be empty");
+    Objects.requireNonNull(name, "The name can´t be null");
+    if (name.isBlank()) {
+      throw new IllegalArgumentException("Name can not be empty");
     }
     if (health <= 0) {
       throw new IllegalArgumentException("Health can not be less than 0");
@@ -52,13 +53,13 @@ public class Player {
     if (gold < 0) {
       throw new IllegalArgumentException("Score can not be less than 0");
     }
-    Objects.requireNonNull(name, "The name can´t be null");
 
     this.name = name;
     this.health = health;
     this.score = score;
     this.gold = gold;
-    this.inventory = new ArrayList<String>();
+    (this.inventory = new ArrayList<>()).addAll
+        (inventory.stream().map(String::trim).map(String::toLowerCase).toList());
   }
 
   /**
@@ -127,7 +128,7 @@ public class Player {
    * @param health Number to add to health of the player - can be positive or negative.
    */
 
-  public void addHealth(int health) throws IllegalArgumentException {
+  public void addHealth(int health) {
     this.health += health;
     if (this.health + health < 0) {
       this.health = 0;
@@ -200,15 +201,18 @@ public class Player {
 
   /**
    * Adds an item to the inventory of the player.
+   * Trims to lower case when adding to inventory, as the inventory is stored in lower case.
    *
    * @param item The item to be added to the inventory.
    * @throws NullPointerException if item is null.
+   * @throws IllegalArgumentException if item is blank.
    */
-  public void addToInventory(String item) throws NullPointerException{
-    if (item == null || item.isBlank()) {
-      throw new NullPointerException("Item can not be null");
+  public void addToInventory(String item) throws NullPointerException, IllegalArgumentException {
+    Objects.requireNonNull(item, "Item can not be null");
+    if (item.isBlank()) {
+      throw new IllegalArgumentException("Item can not be empty");
     }
-    inventory.add(item);
+    inventory.add(item.trim().toLowerCase());
   }
 
   /**
