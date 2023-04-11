@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="changed addhealth and added isAlive method. Added throws notation to methods">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="changed constructor and method so that inventory is lowercase">
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -270,13 +269,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00046" summary="temporary finished story test class">
-      <created>1676979905467</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1676979905467</updated>
     </task>
     <task id="LOCAL-00047" summary="fixed error in link test">
       <created>1676980774096</created>
@@ -614,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681205763298</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="changed constructor and method so that inventory is lowercase">
+      <created>1681206624766</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1681206624766</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +644,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added description to Story class" />
     <MESSAGE value="added description to Player class" />
     <MESSAGE value="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links" />
     <MESSAGE value="Fixed regex in FileHandeler to work for links" />
@@ -670,7 +668,8 @@
     <MESSAGE value="fixed bug in testThatRemovePassageRemovesPassage test" />
     <MESSAGE value="changed append to false in saveGame" />
     <MESSAGE value="changed addhealth and added isAlive method. Added throws notation to methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed addhealth and added isAlive method. Added throws notation to methods" />
+    <MESSAGE value="changed constructor and method so that inventory is lowercase" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed constructor and method so that inventory is lowercase" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

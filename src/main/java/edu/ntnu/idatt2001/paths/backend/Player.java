@@ -77,11 +77,15 @@ public class Player {
   }
 
   public static class Builder {
-    private String name;
-    private int health;
-    private int score;
-    private int gold;
-    private List<String> inventory;
+
+    //Required parameters
+    private final String name;
+
+    //Optional parameters - default health is set to 100, score and gold to 0 and inventory to an empty list
+    private int health = 100;
+    private int score = 0;
+    private int gold = 0;
+    private List<String> inventory = new ArrayList<>();
 
     public Builder(String name) {
       this.name = name;
@@ -108,7 +112,7 @@ public class Player {
     }
 
     public Player build() {
-      return new Player(this);
+      return new Player(name, health, score, gold, inventory);
     }
   }
 
