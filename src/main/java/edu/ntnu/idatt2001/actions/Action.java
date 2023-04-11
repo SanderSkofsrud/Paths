@@ -12,4 +12,7 @@ public interface Action {
    * @param player the player
    */
   void execute(Player player);
+
+  @Override
+  String toString();
 }

@@ -29,4 +29,9 @@ public class GoldAction implements Action {
     }
     player.addGold(this.gold);
   }
+
+  @Override
+  public String toString() {
+    return "{GoldAction}(" + this.gold + ")";
+  }
 }

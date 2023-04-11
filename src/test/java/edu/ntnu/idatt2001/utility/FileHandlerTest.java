@@ -132,7 +132,7 @@ public class FileHandlerTest {
       FileHandler fileHandler = new FileHandler();
       Story story = null;
       assertThrows(NullPointerException.class, () -> {
-        fileHandler.saveGame(story, "src/main/resources/story1.paths");
+        fileHandler.saveGame(story, "src/main/resources/paths/story1.paths");
       });
     }
 

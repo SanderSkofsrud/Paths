@@ -138,7 +138,7 @@ public class PassageTest {
               + "link"
               + "]("
               + "link"
-              + ") \n", passage.toString());
+              + ")\n", passage.toString());
     }
   }
 }

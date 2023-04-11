@@ -30,4 +30,9 @@ public class HealthAction implements Action {
     }
     player.addHealth(health);
   }
+
+  @Override
+  public String toString() {
+    return "{HealthAction}(" + this.health + ")";
+  }
 }

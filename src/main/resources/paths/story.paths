@@ -2,9 +2,9 @@ Haunted House
 
 ::Beginnings
 You are in a small room
-[Try open the door](Another room) 
+[Try open the door](Another room)[]
 
 ::Another room
 The door opens to another room
-[Open the book](The book of spells) 
-[Go back](Beginnings) 
+[Open the book](The book of spells)[{GoldAction}(10)]
+[Go back](Beginnings)[]

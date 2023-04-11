@@ -103,11 +103,21 @@ public class Link {
 
   @Override
   public String toString() {
+    StringBuilder sb = new StringBuilder();
+    if (!actions.isEmpty()) {
+      sb.append("[");
+      for (Action action : actions) {
+        sb.append(action.toString());
+      }
+      sb.append("]");
+    }
     return "["
         + getText()
         + "]("
         + getReference()
-        + ") \n";
+        + ")"
+        + sb
+        + "\n";
 
   }
 

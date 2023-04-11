@@ -28,6 +28,7 @@ class LinkTest {
     goldAction = new GoldAction(10);
     healthAction = new HealthAction(5);
     actions = new ArrayList<>();
+    link.addAction(goldAction);
   }
 
   /**
@@ -43,7 +44,7 @@ class LinkTest {
     void testThatConstructorConstructsObject() {
       assertEquals("Test", link.getText());
       assertEquals("reference", link.getReference());
-      assertEquals(actions, link.getActions());
+      assertEquals("[{GoldAction}(10)]", link.getActions().toString());
     }
 
     /**
@@ -111,7 +112,9 @@ class LinkTest {
               + "Test"
               + "]("
               + "reference"
-              + ") \n", link.toString());
+              + ")["
+              + "{GoldAction}(10)"
+              + "]\n", link.toString());
     }
   }
 }
