@@ -113,13 +113,14 @@ public class PlayerTest {
     }
 
     /**
-     * Test that addHealth can not set negative value
+     * Test that negative value in health will set the player´s health to zero and check if isAlive works
      */
     @Test
-    @DisplayName("Test negative value in health will set health to zero")
-    void testThatNegativeValueInHealthWillSetHealthToZero() {
+    @DisplayName("Test negative value in health will set health to zero and check if isAlive works")
+    void testThatNegativeValueInHealthWillSetHealthToZeroAndCheckIfIsAliveWorks() {
       player.addHealth(-20);
       assertEquals(0, player.getHealth());
+      assertFalse(player.isAlive());
     }
 
     /**
