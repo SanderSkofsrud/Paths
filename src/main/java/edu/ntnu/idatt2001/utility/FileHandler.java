@@ -21,7 +21,7 @@ public class FileHandler {
    * @param fileName the file name
    */
   public static void saveGame(Story story, String fileName) {
-    try (FileWriter fileWriter = new FileWriter(fileName, true)) {
+    try (FileWriter fileWriter = new FileWriter(fileName, false)) {
       fileWriter.write(story.toString());
     } catch (IOException e) {
       e.printStackTrace();
