@@ -93,8 +93,9 @@ public class Passage {
    * @throws NullPointerException if link is null.
    */
   public void addLink(Link link) {
-    if (link == null) {
-      throw new NullPointerException("PassageLink can not be null");
+    Objects.requireNonNull(link, "Link can not be null");
+    if (getLinks().contains(link)) {
+      throw new IllegalArgumentException("Link already exists in passage!");
     }
     links.add(link);
   }

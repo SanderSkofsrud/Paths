@@ -109,6 +109,13 @@ public class PassageTest {
       assertThrows(NullPointerException.class, () -> passage.addLink(link));
     }
 
+    @Test
+    @DisplayName("Test that addLink throws IllegalArgumentException when link already exists")
+    void testThatExceptionIsThrownWhenLinkAlreadyExists() {
+      passage.addLink(link);
+      assertThrows(IllegalArgumentException.class, () -> passage.addLink(link));
+    }
+
   }
 
   /**

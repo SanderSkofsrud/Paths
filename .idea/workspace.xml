@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="divided null and empty text and reference exceptions and changed tests">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Passage.java" afterDir="false" />
-    </list>
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="divided null and blank exceptions and changed test in passage" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +77,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PassageTest">
+  <component name="RunManager" selected="JUnit.PassageTest$addLinks.testThatExceptionIsThrownWhenLinkAlreadyExists">
     <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <option name="PACKAGE_NAME" value="" />
@@ -104,22 +101,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.goals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.goals.InventoryGoalTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.goals.InventoryGoalTest$IsFulfilled" />
-      <option name="METHOD_NAME" value="testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LinkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -131,6 +112,22 @@
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.LinkTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassageTest$addLinks.testThatExceptionIsThrownWhenLinkAlreadyExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.PassageTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PassageTest$addLinks" />
+      <option name="METHOD_NAME" value="testThatExceptionIsThrownWhenLinkAlreadyExists" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -209,19 +206,19 @@
     <list>
       <item itemvalue="JUnit.All in paths" />
       <item itemvalue="JUnit.InventoryActionTest$Execute" />
-      <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
       <item itemvalue="JUnit.LinkTest" />
       <item itemvalue="JUnit.PassageTest" />
+      <item itemvalue="JUnit.PassageTest$addLinks.testThatExceptionIsThrownWhenLinkAlreadyExists" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PassageTest$addLinks.testThatExceptionIsThrownWhenLinkAlreadyExists" />
         <item itemvalue="JUnit.PassageTest" />
         <item itemvalue="JUnit.LinkTest" />
         <item itemvalue="JUnit.InventoryActionTest$Execute" />
         <item itemvalue="JUnit.All in paths" />
-        <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
       </list>
     </recent_temporary>
   </component>
@@ -260,20 +257,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00055" summary="added a few more tests and beforeEach">
-      <created>1677155476833</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1677155476834</updated>
-    </task>
-    <task id="LOCAL-00056" summary="added a exceptionHandling test">
-      <created>1677155783708</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1677155783708</updated>
     </task>
     <task id="LOCAL-00057" summary="fixed thrown exception">
       <created>1677156115157</created>
@@ -604,7 +587,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681211965689</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="added author and version to link">
+      <created>1681212150459</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1681212150459</updated>
+    </task>
+    <task id="LOCAL-00105" summary="divided null and blank exceptions and changed test in passage">
+      <created>1681212365207</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1681212365207</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,8 +632,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added positive test for addAction" />
-    <MESSAGE value="added positive test for addLink and hasLinks" />
     <MESSAGE value="removed get-method test" />
     <MESSAGE value="fixed typo in test and added positive test for valid values" />
     <MESSAGE value="added positive test for add-methods and refactored addmethod tests" />
@@ -660,7 +655,9 @@
     <MESSAGE value="added toLowerStream to InventoryGoal" />
     <MESSAGE value="added toLowerStream to InventoryAction" />
     <MESSAGE value="divided null and empty text and reference exceptions and changed tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="divided null and empty text and reference exceptions and changed tests" />
+    <MESSAGE value="added author and version to link" />
+    <MESSAGE value="divided null and blank exceptions and changed test in passage" />
+    <option name="LAST_COMMIT_MESSAGE" value="divided null and blank exceptions and changed test in passage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
