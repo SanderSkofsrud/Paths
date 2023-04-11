@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added javadoc">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/ScoreGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/ScoreGoal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,20 +270,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00074" summary="added javadoc to getBrokenLinks method">
-      <created>1680001013938</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1680001013939</updated>
-    </task>
-    <task id="LOCAL-00075" summary="changed groupId">
-      <created>1680001038752</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1680001038752</updated>
     </task>
     <task id="LOCAL-00076" summary="added new exception to filehandler for empty file">
       <created>1680001073534</created>
@@ -614,7 +600,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681218126666</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="changed to NullPointerException instead of IllegalArgument">
+      <created>1681218405223</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1681218405223</updated>
+    </task>
+    <task id="LOCAL-00124" summary="added javadoc">
+      <created>1681218424813</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1681218424813</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +645,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed bug in testThatRemovePassageRemovesPassage test" />
     <MESSAGE value="changed append to false in saveGame" />
     <MESSAGE value="changed addhealth and added isAlive method. Added throws notation to methods" />
     <MESSAGE value="changed constructor and method so that inventory is lowercase" />
@@ -669,19 +668,11 @@
     <MESSAGE value="added test to when item is blank" />
     <MESSAGE value="added minor javadoc" />
     <MESSAGE value="added author and version" />
+    <MESSAGE value="changed to NullPointerException instead of IllegalArgument" />
     <MESSAGE value="added javadoc" />
     <option name="LAST_COMMIT_MESSAGE" value="added javadoc" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoalTest.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="edu.ntnu.idatt2001.Passage" memberName="links" />
