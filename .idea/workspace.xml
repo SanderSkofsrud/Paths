@@ -80,7 +80,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect">
+  <component name="RunManager" selected="JUnit.InventoryActionTest$Execute">
     <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <option name="PACKAGE_NAME" value="" />
@@ -104,6 +104,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="InventoryActionTest$Execute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.actions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.actions.InventoryActionTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.actions.InventoryActionTest$Execute" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -115,22 +130,6 @@
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.goals.InventoryGoalTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.goals.InventoryGoalTest$IsFulfilled" />
       <option name="METHOD_NAME" value="testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest$ExceptionHandling.testThatNegativeValueInHealthWillSetHealthToZeroAndCheckIfIsAliveWorks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest$ExceptionHandling" />
-      <option name="METHOD_NAME" value="testThatNegativeValueInHealthWillSetHealthToZeroAndCheckIfIsAliveWorks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -210,19 +209,19 @@
     <list>
       <item itemvalue="JUnit.All in paths" />
       <item itemvalue="JUnit.GameTest" />
+      <item itemvalue="JUnit.InventoryActionTest$Execute" />
       <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
       <item itemvalue="JUnit.PlayerTest" />
-      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatNegativeValueInHealthWillSetHealthToZeroAndCheckIfIsAliveWorks" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
+        <item itemvalue="JUnit.InventoryActionTest$Execute" />
         <item itemvalue="JUnit.All in paths" />
+        <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
         <item itemvalue="JUnit.GameTest" />
         <item itemvalue="JUnit.PlayerTest" />
-        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatNegativeValueInHealthWillSetHealthToZeroAndCheckIfIsAliveWorks" />
       </list>
     </recent_temporary>
   </component>
