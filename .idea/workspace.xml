@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed test after implementing builder">
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/PlayerTest.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added test for isAlive">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,24 +80,16 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest">
-    <configuration name="PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect">
+    <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest$ConstructorTest" />
-      <option name="METHOD_NAME" value="testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest$ExceptionHandling.testThatAddHealthCanNotSetNegativeValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -104,25 +97,24 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest$ExceptionHandling" />
-      <option name="METHOD_NAME" value="testThatAddHealthCanNotSetNegativeValue" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.GameTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest$ExceptionHandling.testThatNegativeValueInHealthWillSetHealthToZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.goals.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest$ExceptionHandling" />
-      <option name="METHOD_NAME" value="testThatNegativeValueInHealthWillSetHealthToZero" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.goals.InventoryGoalTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.goals.InventoryGoalTest$IsFulfilled" />
+      <option name="METHOD_NAME" value="testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -216,21 +208,21 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.All in paths" />
+      <item itemvalue="JUnit.GameTest" />
+      <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
       <item itemvalue="JUnit.PlayerTest" />
-      <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
-      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddHealthCanNotSetNegativeValue" />
-      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatNegativeValueInHealthWillSetHealthToZero" />
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatNegativeValueInHealthWillSetHealthToZeroAndCheckIfIsAliveWorks" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
+        <item itemvalue="JUnit.All in paths" />
+        <item itemvalue="JUnit.GameTest" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatNegativeValueInHealthWillSetHealthToZeroAndCheckIfIsAliveWorks" />
-        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatNegativeValueInHealthWillSetHealthToZero" />
-        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddHealthCanNotSetNegativeValue" />
-        <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
       </list>
     </recent_temporary>
   </component>
@@ -269,13 +261,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00051" summary="added nested class and display names to LinkTest">
-      <created>1676982936758</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1676982936758</updated>
     </task>
     <task id="LOCAL-00052" summary="added nested class and display names to Passagetest">
       <created>1676983183839</created>
@@ -613,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681210204015</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="added test for isAlive">
+      <created>1681210408556</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1681210408556</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +636,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="created paths folder for paths files" />
     <MESSAGE value="added javadoc to getBrokenLinks method" />
     <MESSAGE value="changed groupId" />
     <MESSAGE value="added new exception to filehandler for empty file" />
@@ -669,9 +660,19 @@
     <MESSAGE value="changed player instances to builder" />
     <MESSAGE value="added javadoc and moved exceptions to builder" />
     <MESSAGE value="fixed test after implementing builder" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed test after implementing builder" />
+    <MESSAGE value="added test for isAlive" />
+    <option name="LAST_COMMIT_MESSAGE" value="added test for isAlive" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoalTest.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="edu.ntnu.idatt2001.Passage" memberName="links" />

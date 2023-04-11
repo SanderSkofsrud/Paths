@@ -2,6 +2,7 @@ package edu.ntnu.idatt2001.paths.backend.goals;
 
 import edu.ntnu.idatt2001.paths.backend.Player;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,7 +23,8 @@ public class InventoryGoal implements Goal {
     if (mandatoryItems.isEmpty()) {
       throw new IllegalArgumentException("Mandatory items cannot be empty");
     }
-    this.mandatoryItems = mandatoryItems;
+    (this.mandatoryItems = new ArrayList<>()).addAll
+        (mandatoryItems.stream().map(String::trim).map(String::toLowerCase).toList());
   }
 
   /**
