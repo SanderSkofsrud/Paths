@@ -81,23 +81,7 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.PlayerTest">
-    <configuration name="FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest$loadGame" />
-      <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest$ConstructorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -107,22 +91,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest$ConstructorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest$ConstructorTest.testThatConstructorConstructsObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest$ConstructorTest" />
-      <option name="METHOD_NAME" value="testThatConstructorConstructsObject" />
+      <option name="METHOD_NAME" value="testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,6 +108,38 @@
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest$ConstructorTest" />
       <option name="METHOD_NAME" value="testThatConstructorThrowsNullPointerException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest$ExceptionHandling.testThatAddHealthCanNotSetNegativeValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatAddHealthCanNotSetNegativeValue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest$ExceptionHandling.testThatNegativeValueInHealthWillSetHealthToZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest$ExceptionHandling" />
+      <option name="METHOD_NAME" value="testThatNegativeValueInHealthWillSetHealthToZero" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -217,20 +218,20 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PlayerTest" />
-      <item itemvalue="JUnit.PlayerTest$ConstructorTest" />
-      <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorConstructsObject" />
+      <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
       <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNullPointerException" />
-      <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" />
+      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddHealthCanNotSetNegativeValue" />
+      <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatNegativeValueInHealthWillSetHealthToZero" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.PlayerTest" />
+        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatNegativeValueInHealthWillSetHealthToZero" />
+        <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddHealthCanNotSetNegativeValue" />
+        <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull" />
         <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorThrowsNullPointerException" />
-        <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatConstructorConstructsObject" />
-        <item itemvalue="JUnit.PlayerTest$ConstructorTest" />
-        <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" />
       </list>
     </recent_temporary>
   </component>

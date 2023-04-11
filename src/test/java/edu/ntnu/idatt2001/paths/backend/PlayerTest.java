@@ -71,7 +71,7 @@ public class PlayerTest {
     @DisplayName("Test that constructor throws NullPointerException when name is blank")
     void testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull() {
       String name = "";
-      assertThrows(NullPointerException.class, () -> new Player.Builder(name));
+      assertThrows(IllegalArgumentException.class, () -> new Player.Builder(name));
     }
 
     /**
@@ -116,9 +116,10 @@ public class PlayerTest {
      * Test that addHealth can not set negative value
      */
     @Test
-    @DisplayName("Test that addHealth can not set negative value")
-    void testThatAddHealthCanNotSetNegativeValue() {
-      assertThrows(IllegalArgumentException.class, () -> player.addHealth(-20));
+    @DisplayName("Test negative value in health will set health to zero")
+    void testThatNegativeValueInHealthWillSetHealthToZero() {
+      player.addHealth(-20);
+      assertEquals(0, player.getHealth());
     }
 
     /**
