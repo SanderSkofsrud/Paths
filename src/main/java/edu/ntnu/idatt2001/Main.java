@@ -1,5 +1,6 @@
 package edu.ntnu.idatt2001;
 
+import edu.ntnu.idatt2001.actions.GoldAction;
 import edu.ntnu.idatt2001.goals.Goal;
 import edu.ntnu.idatt2001.goals.GoldGoal;
 import edu.ntnu.idatt2001.utility.FileHandler;
@@ -55,6 +56,7 @@ public class Main extends Application {
       Link link2 = new Link("Go back", "Beginnings");
       passage.addLink(link1);
       passage.addLink(link2);
+      link1.addAction(new GoldAction(10));
       story.addPassage(passage);
       Player player = new Player("testPlayer", 10, 10, 10);
       List<Goal> goals = new ArrayList<>();
@@ -71,9 +73,6 @@ public class Main extends Application {
       System.out.println(story1.getPassages());
       Game game1 = new Game(player, story1, goals);
       FileHandler.saveGame(game1.getStory(), "src/main/resources/paths/story1.paths");
-      //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)));
-      //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)).getLinks());
-      //System.out.println(story1.getPassage(story1.getOpeningPassage().getLinks().get(0)).getLinks().get(0));
 
       borderPane.setVisible(false);
       stackPaneR.setVisible(true);
