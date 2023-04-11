@@ -70,6 +70,9 @@ class LinkTest {
       assertThrows(NullPointerException.class, () -> new Link(text, reference));
     }
 
+    /**
+     * Test that constructor throws IllegalArgumentException when text is empty
+     */
     @Test
     @DisplayName("Test that constructor throws IllegalArgumentException when text is empty")
     void testThatConstructorThrowsIllegalArgumentExceptionWhenTextIsEmpty() {
@@ -77,6 +80,10 @@ class LinkTest {
       String reference = "Test";
       assertThrows(IllegalArgumentException.class, () -> new Link(text, reference));
     }
+
+    /**
+     * Test that constructor throws IllegalArgumentException when reference is empty
+     */
     @Test
     @DisplayName("Test that constructor throws IllegalArgumentException when reference is empty")
     void testThatConstructorThrowsIllegalArgumentExceptionWhenReferenceIsEmpty() {
