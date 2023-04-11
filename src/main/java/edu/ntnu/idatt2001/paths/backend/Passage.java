@@ -5,9 +5,14 @@ import java.util.List;
 
 
 /**
- * A class that represents a passage. A passage is a part of a story and it´s possible to navigate from one
- * passage to another by using a link.
+ * A class that represents a passage.
+ * A passage is a part of a story and it´s possible to navigate from one passage
+ * to another by using a link. A passage can have multiple links leading to other passages.
  * A passage has a title, content of the passage and a list of links.
+ * The title describes the passage and the content is the text that will be displayed to the user.
+ *
+ * @author Helle R. & Sander S.
+ * @version 0.3 - 11.04.2023
  */
 
 public class Passage {
