@@ -25,41 +25,37 @@ public class Player {
    * Constructor for Player.
    * Name can not be null or blank, score and gold can not be negative and health can not be zero og negative.
    * A player can have zero health, but can not start with zero or less than zero health.
-   * Inventory
+   * Loops through inventory and trims the strings to lowercase.
+   * The builder is used to create a player and will use this constructor to create a player.
    *
-   * @param name The name of the player.
-   * @param health The health of the player.
-   * @param score The score of the player.
-   * @param gold The gold of the player.
    * @throws NullPointerException if name is null.
    * @throws IllegalArgumentException if name is blank, health is zero or less, score or gold is negative
    */
 
-  public Player(String name, int health, int score, int gold, List<String> inventory)
+  private Player(Builder builder)
       throws IllegalArgumentException, NullPointerException {
-    Objects.requireNonNull(name, "The name can´t be null");
-    if (name.isBlank()) {
+    Objects.requireNonNull(builder.name, "The name can´t be null");
+    if (builder.name.isBlank()) {
       throw new IllegalArgumentException("Name can not be empty");
     }
-    if (health <= 0) {
+    if (builder.health <= 0) {
       throw new IllegalArgumentException("Health can not be less than 0");
     }
-    if (name.isEmpty()) {
+    if (builder.name.isEmpty()) {
       throw new IllegalArgumentException("Name must not be empty");
     }
-    if (score < 0) {
+    if (builder.score < 0) {
       throw new IllegalArgumentException("Score can not be less than 0");
     }
-    if (gold < 0) {
+    if (builder.gold < 0) {
       throw new IllegalArgumentException("Score can not be less than 0");
     }
 
-    this.name = name;
-    this.health = health;
-    this.score = score;
-    this.gold = gold;
-    (this.inventory = new ArrayList<>()).addAll
-        (inventory.stream().map(String::trim).map(String::toLowerCase).toList());
+    name = builder.name;
+    health = builder.health;
+    score = builder.score;
+    gold = builder.gold;
+    inventory = builder.inventory;
   }
 
   /**
@@ -76,6 +72,11 @@ public class Player {
     this.inventory = player.inventory;
   }
 
+  /**
+   * Builder class for Player.
+   * Name is required and can not be null or blank.
+   * Health, score and gold is optional - default health is set to 100, score and gold to 0.
+   */
   public static class Builder {
 
     //Required parameters
@@ -107,12 +108,13 @@ public class Player {
     }
 
     public Builder inventory(List<String> inventory) {
-      this.inventory = inventory;
+      (this.inventory = new ArrayList<>()).addAll
+          (inventory.stream().map(String::trim).map(String::toLowerCase).toList());
       return this;
     }
 
     public Player build() {
-      return new Player(name, health, score, gold, inventory);
+      return new Player(this);
     }
   }
 

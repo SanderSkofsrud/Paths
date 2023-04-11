@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="changed constructor and method so that inventory is lowercase">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added builder constructor to player">
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -269,13 +269,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00047" summary="fixed error in link test">
-      <created>1676980774096</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1676980774096</updated>
     </task>
     <task id="LOCAL-00048" summary="fixed typo in Passage class">
       <created>1676982115614</created>
@@ -613,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681206624766</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="added builder constructor to player">
+      <created>1681206920291</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1681206920291</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +644,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added description to Player class" />
     <MESSAGE value="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links" />
     <MESSAGE value="Fixed regex in FileHandeler to work for links" />
     <MESSAGE value="Moved save game to FileHandeler class, and created tests for the class" />
@@ -669,7 +668,8 @@
     <MESSAGE value="changed append to false in saveGame" />
     <MESSAGE value="changed addhealth and added isAlive method. Added throws notation to methods" />
     <MESSAGE value="changed constructor and method so that inventory is lowercase" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed constructor and method so that inventory is lowercase" />
+    <MESSAGE value="added builder constructor to player" />
+    <option name="LAST_COMMIT_MESSAGE" value="added builder constructor to player" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
