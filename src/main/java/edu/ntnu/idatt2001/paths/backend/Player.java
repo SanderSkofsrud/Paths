@@ -121,17 +121,26 @@ public class Player {
   }
 
   /**
-   * Sets the health of the player.
+   * Adds a positive or negative number to the health of the player.
+   * If the health is less than 0, the health is set to 0.
    *
-   * @param health The health of the player.
-   * @throws IllegalArgumentException if health is less than 0.
+   * @param health Number to add to health of the player - can be positive or negative.
    */
 
   public void addHealth(int health) throws IllegalArgumentException {
-    if (this.health + health < 0) {
-      throw new IllegalArgumentException("Player health can not be less than 0");
-    }
     this.health += health;
+    if (this.health + health < 0) {
+      this.health = 0;
+    }
+  }
+
+  /**
+   * Checks if the player has health above 0.
+   *
+   * @return True if the player is alive, false if the player is dead.
+   */
+  public boolean isAlive() {
+    return health > 0;
   }
 
   /**
@@ -151,7 +160,7 @@ public class Player {
    * @throws IllegalArgumentException if score is less than 0.
    */
 
-  public void addScore(int points) {
+  public void addScore(int points) throws IllegalArgumentException{
     if (this.score + points < 0) {
       throw new IllegalArgumentException("Player points can not be less than 0");
     }
@@ -173,7 +182,7 @@ public class Player {
    * @param gold The gold of the player.
    * @throws IllegalArgumentException if gold is less than 0.
    */
-  public void addGold(int gold) {
+  public void addGold(int gold) throws IllegalArgumentException{
     if (this.gold + gold < 0) {
       throw new IllegalArgumentException("Player gold can not be less than 0");
     }
@@ -195,7 +204,7 @@ public class Player {
    * @param item The item to be added to the inventory.
    * @throws NullPointerException if item is null.
    */
-  public void addToInventory(String item) {
+  public void addToInventory(String item) throws NullPointerException{
     if (item == null || item.isBlank()) {
       throw new NullPointerException("Item can not be null");
     }

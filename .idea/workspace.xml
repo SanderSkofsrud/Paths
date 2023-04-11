@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="removed public from nested classes">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed bug in testThatLoadGameThrowsIllegalArgumentException2 test and created storyWrong for tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/story.paths" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/story1.paths" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/utility/FileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/utility/FileHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="refactor-test-classes" />
+        <entry key="$PROJECT_DIR$" value="implement-builder-player" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,31 +80,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.paths [javafx:run]">
-    <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest$loadGame" />
-      <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Maven.paths [clean,test]">
     <configuration name="FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -124,22 +97,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameTest$go" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.GameTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.GameTest$go" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest$saveGame" />
+      <option name="METHOD_NAME" value="testThatSaveGameThrowsNullPointerException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest$saveGame" />
+      <option name="METHOD_NAME" value="testThatSaveGameThrowsNullPointerException2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest$removePassage.testThatRemovePassageRemovesPassage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -147,9 +152,10 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.GameTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.StoryTest$removePassage" />
+      <option name="METHOD_NAME" value="testThatRemovePassageRemovesPassage" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -211,21 +217,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.All in paths" />
-      <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException" />
+      <item itemvalue="JUnit.FileHandlerTest" />
+      <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException" />
+      <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException2" />
+      <item itemvalue="JUnit.StoryTest$removePassage.testThatRemovePassageRemovesPassage" />
       <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" />
-      <item itemvalue="JUnit.GameTest" />
-      <item itemvalue="JUnit.GameTest$go" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" />
-        <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException" />
-        <item itemvalue="JUnit.All in paths" />
-        <item itemvalue="JUnit.GameTest" />
-        <item itemvalue="JUnit.GameTest$go" />
+        <item itemvalue="JUnit.FileHandlerTest" />
+        <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException" />
+        <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException2" />
+        <item itemvalue="JUnit.StoryTest$removePassage.testThatRemovePassageRemovesPassage" />
       </list>
     </recent_temporary>
   </component>
@@ -264,20 +270,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00043" summary="temporary finished link test class">
-      <created>1676540332168</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1676540332168</updated>
-    </task>
-    <task id="LOCAL-00044" summary="temporary finished Game test class">
-      <created>1676540982865</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1676540982865</updated>
     </task>
     <task id="LOCAL-00045" summary="added addPassage in constructor">
       <created>1676979888905</created>
@@ -608,7 +600,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680008582164</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="fixed bug in testThatRemovePassageRemovesPassage test">
+      <created>1681202733022</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1681202733022</updated>
+    </task>
+    <task id="LOCAL-00093" summary="changed append to false in saveGame">
+      <created>1681202747545</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1681202747545</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,8 +645,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="removed test for get-methods and specified javadoc comments" />
-    <MESSAGE value="added description to Link class" />
     <MESSAGE value="added description to Passage class" />
     <MESSAGE value="added description to Story class" />
     <MESSAGE value="added description to Player class" />
@@ -664,7 +668,9 @@
     <MESSAGE value="added positive test and refactored nested test classes" />
     <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
     <MESSAGE value="removed public from nested classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed public from nested classes" />
+    <MESSAGE value="fixed bug in testThatRemovePassageRemovesPassage test" />
+    <MESSAGE value="changed append to false in saveGame" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed append to false in saveGame" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -678,6 +684,6 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680007855672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680193708824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
