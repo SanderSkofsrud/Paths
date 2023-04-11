@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added minor javadoc">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/InventoryAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/InventoryAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/ScoreAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/ScoreAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/Goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/Goal.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added javadoc">
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/GoldGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/GoldGoal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,20 +269,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00070" summary="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links">
-      <created>1679982695369</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1679982695369</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Fixed regex in FileHandeler to work for links">
-      <created>1679983245289</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1679983245289</updated>
     </task>
     <task id="LOCAL-00072" summary="Moved save game to FileHandeler class, and created tests for the class">
       <created>1679990268118</created>
@@ -615,7 +599,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681217423580</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="added author and version">
+      <created>1681217532607</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1681217532607</updated>
+    </task>
+    <task id="LOCAL-00120" summary="added javadoc">
+      <created>1681217659942</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1681217659942</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,7 +644,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="removed public from nested classes" />
     <MESSAGE value="fixed bug in testThatRemovePassageRemovesPassage test" />
     <MESSAGE value="changed append to false in saveGame" />
     <MESSAGE value="changed addhealth and added isAlive method. Added throws notation to methods" />
@@ -665,13 +662,14 @@
     <MESSAGE value="added remaining javadoc to Passage" />
     <MESSAGE value="added missing javadoc" />
     <MESSAGE value="added javadoc and changed to isEmpty in method" />
-    <MESSAGE value="added javadoc" />
     <MESSAGE value="added missing sentence" />
     <MESSAGE value="changed execute method after changing addHealth method in Player and added javadoc" />
     <MESSAGE value="added missing javadoc to subclasses" />
     <MESSAGE value="added test to when item is blank" />
     <MESSAGE value="added minor javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="added minor javadoc" />
+    <MESSAGE value="added author and version" />
+    <MESSAGE value="added javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added javadoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
