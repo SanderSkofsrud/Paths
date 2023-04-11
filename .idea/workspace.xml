@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added javadoc">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="changed execute method after changing addHealth method in Player and added javadoc">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/GoldAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/GoldAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/HealthAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/HealthAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/InventoryAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/InventoryAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/ScoreAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/ScoreAction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,20 +272,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00065" summary="removed test for get-methods and specified javadoc comments">
-      <created>1679401098889</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1679401098889</updated>
-    </task>
-    <task id="LOCAL-00066" summary="added description to Link class">
-      <created>1679401354627</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1679401354627</updated>
     </task>
     <task id="LOCAL-00067" summary="added description to Passage class">
       <created>1679401528514</created>
@@ -614,7 +602,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681216395099</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="added missing sentence">
+      <created>1681216817668</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1681216817668</updated>
+    </task>
+    <task id="LOCAL-00115" summary="changed execute method after changing addHealth method in Player and added javadoc">
+      <created>1681216861781</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1681216861781</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,8 +647,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed testThatCOnstructorConstructsObject method" />
-    <MESSAGE value="fixed typo in method" />
     <MESSAGE value="changed isEmpty to isBlank" />
     <MESSAGE value="added positive test and refactored nested test classes" />
     <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
@@ -670,7 +670,9 @@
     <MESSAGE value="added missing javadoc" />
     <MESSAGE value="added javadoc and changed to isEmpty in method" />
     <MESSAGE value="added javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="added javadoc" />
+    <MESSAGE value="added missing sentence" />
+    <MESSAGE value="changed execute method after changing addHealth method in Player and added javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed execute method after changing addHealth method in Player and added javadoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
