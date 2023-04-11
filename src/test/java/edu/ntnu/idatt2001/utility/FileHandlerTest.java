@@ -71,7 +71,7 @@ public class FileHandlerTest {
     @DisplayName("Test that loadGame throws IllegalArgumentException when file has wrong format")
     void testThatLoadGameThrowsIllegalArgumentException2() {
       FileHandler fileHandler = new FileHandler();
-      String file = "src/main/resources/paths/story1.path";
+      String file = "src/main/resources/paths/storyWrong.paths";
       assertThrows(IllegalArgumentException.class, () -> {
         fileHandler.loadGame(file);
       });

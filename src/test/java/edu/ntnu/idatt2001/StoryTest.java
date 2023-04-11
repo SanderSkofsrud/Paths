@@ -148,10 +148,10 @@ public class StoryTest {
     @Test
     @DisplayName("Test that removePassage removes passage from story when passage exists and no other passages have links to it")
     void testThatRemovePassageRemovesPassage() {
-      assertTrue(story.getPassages().size() == 0);
       story.addPassage(passage2);
+      assertTrue(story.getPassages().size() == 1);
       story.removePassage(link);
-      assertEquals(1, story.getPassages().size());
+      assertEquals(0, story.getPassages().size());
     }
 
     /**
