@@ -80,26 +80,11 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LinkTest">
+  <component name="RunManager" selected="JUnit.PassageTest">
     <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.GameTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,6 +130,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.LinkTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PassageTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -208,20 +208,20 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All in paths" />
-      <item itemvalue="JUnit.GameTest" />
       <item itemvalue="JUnit.InventoryActionTest$Execute" />
       <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
       <item itemvalue="JUnit.LinkTest" />
+      <item itemvalue="JUnit.PassageTest" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PassageTest" />
         <item itemvalue="JUnit.LinkTest" />
         <item itemvalue="JUnit.InventoryActionTest$Execute" />
         <item itemvalue="JUnit.All in paths" />
         <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
-        <item itemvalue="JUnit.GameTest" />
       </list>
     </recent_temporary>
   </component>

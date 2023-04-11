@@ -64,6 +64,22 @@ public class PassageTest {
       String content = null;
       assertThrows(NullPointerException.class, () -> new Passage(title, content));
     }
+
+    @Test
+    @DisplayName("Test that constructor throws IllegalArgumentException when title is empty")
+    void testThatConstructorThrowsIllegalArgumentExceptionWhenTitleIsEmpty() {
+      String title = "";
+      String content = "Test";
+      assertThrows(IllegalArgumentException.class, () -> new Passage(title, content));
+    }
+
+    @Test
+    @DisplayName("Test that constructor throws IllegalArgumentException when content is empty")
+    void testThatConstructorThrowsIllegalArgumentExceptionWhenContentIsEmpty() {
+      String title = "Test";
+      String content = "";
+      assertThrows(IllegalArgumentException.class, () -> new Passage(title, content));
+    }
   }
 
   /**

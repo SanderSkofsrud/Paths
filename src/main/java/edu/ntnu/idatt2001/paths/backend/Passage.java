@@ -22,22 +22,25 @@ public class Passage {
 
   /**
    * Constructor for Passage.
+   * The title and content of the passage can´t be null or empty.
+   * The list of links will be initialized as an empty list.
    *
    * @param title The title of the passage.
    * @param content The content of the passage.
    * @throws NullPointerException if title or content is null.
+   * @throws IllegalArgumentException if title or content is empty.
    */
 
   public Passage(String title, String content) throws NullPointerException {
-
-    if (title == null || title.isBlank()) {
-      throw new NullPointerException("Title must not be empty");
-    }
-    if (content == null || content.isBlank()) {
-      throw new NullPointerException("Content must not be empty");
-    }
     Objects.requireNonNull(title, "The title can´t be null");
     Objects.requireNonNull(content, "The content can´t be null");
+
+    if (title.isBlank()) {
+      throw new IllegalArgumentException("Title must not be empty");
+    }
+    if (content.isBlank()) {
+      throw new IllegalArgumentException("Content must not be empty");
+    }
 
     this.title = title;
     this.content = content;
