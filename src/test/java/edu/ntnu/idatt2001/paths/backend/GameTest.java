@@ -44,7 +44,7 @@ public class GameTest {
     @Test
     @DisplayName("Test that constructor constructs object")
     void testThatConstructorConstructsObject() {
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
       Story story = new Story(title, new Passage(title, content));
       List<Goal> goals = new ArrayList<>();
       Game game = new Game(player, story, goals);
@@ -71,7 +71,7 @@ public class GameTest {
     @Test
     @DisplayName("Test that constructor throws NullPointerException when goals is null")
     void testThatConstructorThrowsNullPointerExceptionWhenGoalsIsNull() {
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
       Story story = new Story(title, new Passage(title, content));
       List<Goal> goals = null;
       assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
@@ -82,7 +82,7 @@ public class GameTest {
     @Test
     @DisplayName("Test that constructor throws NullPointerException when story is null")
     void testThatConstructorThrowsNullPointerExceptionWhenStoryIsNull() {
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
       Story story = null;
       List<Goal> goals = new ArrayList<>();
       assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
@@ -100,7 +100,7 @@ public class GameTest {
     @Test
     @DisplayName("Test that begin return openingPassage")
     void testThatBeginReturnsOpeningPassage(){
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
       Passage openingPassage = new Passage(title, content);
       Story story = new Story(title, openingPassage);
       List<Goal> goals = new ArrayList<>();
@@ -124,7 +124,7 @@ public class GameTest {
     @Test
     @DisplayName("Test that go returns passage")
     void testThatGoReturnsPassage() {
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
       Passage openingPassage = new Passage(title, content);
       Story story = new Story(title, openingPassage);
       List<Goal> goals = new ArrayList<>();
@@ -141,7 +141,7 @@ public class GameTest {
     @Test
     @DisplayName("Test that go throws NullPointerException when link is null")
     void testThatGoThrowsNullPointerException() {
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
       Passage openingPassage = new Passage(title, content);
       Story story = new Story(title, openingPassage);
       List<Goal> goals = new ArrayList<>();

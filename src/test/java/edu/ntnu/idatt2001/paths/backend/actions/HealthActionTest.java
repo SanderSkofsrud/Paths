@@ -50,7 +50,7 @@ class HealthActionTest {
     @Test
     @DisplayName("Test that health is added to player")
     void testHealthActionAddsHealthToPlayer() {
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
       HealthAction healthAction = new HealthAction(10);
       healthAction.execute(player);
       assertEquals(20, player.getHealth());
@@ -62,7 +62,7 @@ class HealthActionTest {
     @Test
     @DisplayName("Test that exception is thrown when health is less than 0")
     void testHealthActionThrowsExceptionWhenHealthIsLessThanZero() {
-      Player player = new Player(name, health, score, gold);
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
       HealthAction healthAction = new HealthAction(-20);
       assertThrows(IllegalArgumentException.class, () -> healthAction.execute(player));
     }
