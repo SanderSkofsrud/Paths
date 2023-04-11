@@ -104,16 +104,20 @@ public class Link {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    for (Action action : actions) {
-      sb.append(action.toString());
+    if (!actions.isEmpty()) {
+      sb.append("[");
+      for (Action action : actions) {
+        sb.append(action.toString());
+      }
+      sb.append("]");
     }
     return "["
         + getText()
         + "]("
         + getReference()
-        + ")["
+        + ")"
         + sb
-        + "]\n";
+        + "\n";
 
   }
 
