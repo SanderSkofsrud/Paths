@@ -15,7 +15,7 @@ public class GoldAction implements Action {
   /**
    * Instantiates a new Gold action which adds or removes gold to the player.
    *
-   * @param gold the gold
+   * @param gold the amount of gold to add or remove
    */
   public GoldAction(int gold) {
     this.gold = gold;
