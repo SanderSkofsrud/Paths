@@ -1,8 +1,6 @@
 
 >
 .gitlab-ci.yml,5\8\587d266bb27a4dc3022bbed44dfa19849df3044c
-\
-,src/main/java/edu/ntnu/idatt2001/Player.java,3\b\3b3102a388d47099acfb3ca0fdb0da955319506a
 d
 4src/main/java/edu/ntnu/idatt2001/goals/GoldGoal.java,7\a\7a54d55d620ddc12fd17b4599ed6c85b1099172d
 f
