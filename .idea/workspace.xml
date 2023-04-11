@@ -5,41 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="removed public from nested classes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/NewGameView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/ScreenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/View.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tagline.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/GUIStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Link.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Passage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Story.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/GoldAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/GoldAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/HealthAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/HealthAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/InventoryAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/InventoryAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/actions/ScoreAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/ScoreAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/Goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/Goal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/GoldGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/GoldGoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/HealthGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/HealthGoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/InventoryGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/goals/ScoreGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/ScoreGoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/utility/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/utility/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/LinkTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PassageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/StoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/GoldActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/actions/GoldActionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/HealthActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/actions/HealthActionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/InventoryActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/actions/InventoryActionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/actions/ScoreActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/actions/ScoreActionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/GoldGoalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/GoldGoalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/HealthGoalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/HealthGoalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/InventoryGoalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/goals/ScoreGoalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/ScoreGoalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/utility/FileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/utility/FileHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +28,6 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Class" />
-        <option value="module-info" />
       </list>
     </option>
   </component>
@@ -83,8 +59,8 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "fileRefactoring",
-    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths",
+    "git-widget-placeholder": "GUI",
+    "last_opened_file_path": "C:/Users/sande/Downloads/scene-change-JavaFX 17 Swapping Scenes Demo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,7 +78,12 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources" />
+      <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources\images" />
       <recent name="$PROJECT_DIR$/src/main/resources/paths" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="edu.ntnu.idatt2001.paths.backend" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="edu.ntnu.idatt2001.goals" />
@@ -113,9 +94,10 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn test" />
+      <command value="mvn clean javafx:run" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Maven.paths [clean,javafx:run]">
     <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <option name="PACKAGE_NAME" value="" />
@@ -124,11 +106,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest$loadGame" />
+      <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.utility.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest$loadGame" />
+      <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GameTest$go" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -143,7 +157,7 @@
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -154,37 +168,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="loadGame.testThatLoadGameThrowsIllegalArgumentException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.utility.FileHandlerTest.loadGame" />
-      <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="loadGame.testThatLoadGameThrowsIllegalArgumentException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.utility.FileHandlerTest.loadGame" />
-      <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="paths [clean,javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
     </configuration>
     <configuration name="paths [clean,test]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
@@ -217,31 +225,6 @@
       </extension>
       <method v="2" />
     </configuration>
-    <configuration name="paths [javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="javafx:run" />
-              </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="JUnit.All in paths" />
       <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatLoadGameThrowsIllegalArgumentException" />
@@ -249,7 +232,7 @@
       <item itemvalue="JUnit.GameTest" />
       <item itemvalue="JUnit.GameTest$go" />
       <item itemvalue="Maven.paths [clean,test]" />
-      <item itemvalue="Maven.paths [javafx:run]" />
+      <item itemvalue="Maven.paths [clean,javafx:run]" />
     </list>
     <recent_temporary>
       <list>
@@ -296,6 +279,7 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
+      <workItem from="1681206272034" duration="3690000" />
     </task>
     <task id="LOCAL-00043" summary="temporary finished link test class">
       <created>1676540332168</created>

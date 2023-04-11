@@ -6,14 +6,13 @@ import edu.ntnu.idatt2001.paths.backend.goals.Goal;
 import edu.ntnu.idatt2001.paths.backend.goals.GoldGoal;
 import edu.ntnu.idatt2001.paths.backend.utility.FileHandler;
 import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -26,28 +25,53 @@ import java.util.Objects;
 
 public class App extends Application {
 
-  StackPane stackPaneA = new StackPane();
-  StackPane stackPaneR = new StackPane();
-  StackPane root = new StackPane();
-  BorderPane borderPane = new BorderPane();
-  HBox hBox = new HBox();
-  HBox hBoxImages = new HBox();
-  VBox vBox = new VBox();
-  VBox vBoxA = new VBox();
-  VBox vBoxR = new VBox();
-  BorderPane borderPane1 = new BorderPane();
+  private BorderPane frontPage = new BorderPane();
+  private Scene frontPageScene = new Scene(frontPage);
+  protected ScreenController screenController = new ScreenController(frontPageScene);
+  private NewGameView newGameView = new NewGameView(screenController);
+  public static Stage primaryStage;
+
   @Override
-  public void start(Stage stage) throws FileNotFoundException {
-    stage.setTitle("Paths");
-    stage.setWidth(500);
-    stage.setHeight(500);
+  public void start(Stage primaryStage) {
+    App.primaryStage = primaryStage;
 
-    Text text = new Text("You see a troll, what do you do?");
-    Text textA = new Text("Are you stupid? You tried to attack the troll? It destroyed you easily. You died");
-    Text textR = new Text("You tried to run away from the troll, but you slipped and fell down a cliff. You died");
+    screenController.addScreen("NewGame", newGameView);
 
-    Button buttonRun = new Button("Run");
-    buttonRun.setOnAction(e -> {
+    primaryStage.setTitle("Paths");
+    primaryStage.setWidth(500);
+    primaryStage.setHeight(500);
+    primaryStage.setMaximized(true);
+
+    primaryStage.setScene(frontPageScene);
+    primaryStage.show();
+
+    this.setup();
+  }
+
+  private void setup() {
+    ImageView logo = new ImageView(new Image("logo.png"));
+    logo.setFitWidth(500);
+    logo.setFitHeight(500);
+    ImageView tagline = new ImageView(new Image("tagline.png"));
+    tagline.setFitWidth(200);
+    tagline.setFitHeight(200);
+    VBox vBox = new VBox();
+    vBox.getChildren().addAll(logo, tagline);
+    vBox.setAlignment(Pos.CENTER);
+    frontPage.setCenter(vBox);
+
+    Button newGame = new Button("New Game");
+    Button loadGame = new Button("Load Game");
+    newGame.setId("mainMenuButton");
+    loadGame.setId("mainMenuButton");
+
+    newGame.setOnAction(e -> {
+      screenController.activate("NewGame");
+    });
+
+    loadGame.setOnAction(e -> {
+      // TODO screenController.activate("LoadGame");
+
       Passage openingpassage = new Passage("Beginnings", "You are in a small room");
       Story story = new Story("Haunted House", openingpassage);
       Link link = new Link("Try open the door", "Another room");
@@ -74,57 +98,19 @@ public class App extends Application {
       System.out.println(story1.getPassages());
       Game game1 = new Game(player, story1, goals);
       FileHandler.saveGame(game1.getStory(), "src/main/resources/paths/story1.paths");
-
-      borderPane.setVisible(false);
-      stackPaneR.setVisible(true);
-      stackPaneA.setVisible(false);
     });
 
-    Button buttonAttack = new Button("Attack");
-    buttonAttack.setOnAction(e -> {
-      borderPane.setVisible(false);
-      stackPaneR.setVisible(false);
-      stackPaneA.setVisible(true);
-    });
+    HBox hBox = new HBox();
+    hBox.getChildren().addAll(newGame, loadGame);
+    hBox.setAlignment(Pos.CENTER);
+    hBox.getStylesheets().add("stylesheet.css");
+    hBox.setSpacing(20);
+    hBox.setPadding(new Insets(0, 0, 150, 0));
+    frontPage.setBottom(hBox);
 
-    Button buttonRestartA = new Button("Restart");
-    buttonRestartA.setOnAction(e -> {
-      borderPane.setVisible(true);
-      stackPaneR.setVisible(false);
-      stackPaneA.setVisible(false);
-    });
-
-    Button buttonRestartR = new Button("Restart");
-    buttonRestartR.setOnAction(e -> {
-      borderPane.setVisible(true);
-      stackPaneR.setVisible(false);
-      stackPaneA.setVisible(false);
-    });
-
-
-    Image troll = new Image(new FileInputStream(Objects.requireNonNull(getClass().getClassLoader().getResource("troll.png")).getFile()),150,150,true,true);
-    Image steve = new Image(new FileInputStream(Objects.requireNonNull(getClass().getClassLoader().getResource("steve.png")).getFile()),150,150,true,true);
-    ImageView imageViewTroll = new ImageView(troll);
-    ImageView imageViewSteve = new ImageView(steve);
-    hBox.getChildren().addAll(buttonRun, buttonAttack);
-    hBoxImages.getChildren().addAll(imageViewSteve, imageViewTroll);
-    vBox.getChildren().addAll(text, hBoxImages, hBox);
-    borderPane1.setCenter(vBox);
-    hBox.setAlignment(javafx.geometry.Pos.CENTER);
-    hBoxImages.setAlignment(javafx.geometry.Pos.CENTER);
-    vBox.setAlignment(javafx.geometry.Pos.CENTER);
-    vBoxA.setAlignment(javafx.geometry.Pos.CENTER);
-    vBoxR.setAlignment(javafx.geometry.Pos.CENTER);
-    borderPane.setCenter(borderPane1);
-    vBoxR.getChildren().addAll(textR, buttonRestartR);
-    stackPaneR.getChildren().addAll(vBoxR);
-    vBoxA.getChildren().addAll(textA, buttonRestartA);
-    stackPaneA.getChildren().addAll(vBoxA);
-    root.getChildren().addAll(borderPane, stackPaneA, stackPaneR);
-    stackPaneA.setVisible(false);
-    stackPaneR.setVisible(false);
-    stage.setScene(new Scene(root));
-    stage.show();
+    Image background = new Image("background.png");
+    BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
+    frontPage.setBackground(new Background(backgroundImage));
   }
 
   public static void main(String[] args) {
