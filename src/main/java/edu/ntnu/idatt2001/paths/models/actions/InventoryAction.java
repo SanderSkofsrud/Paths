@@ -1,6 +1,6 @@
-package edu.ntnu.idatt2001.paths.backend.actions;
+package edu.ntnu.idatt2001.paths.models.actions;
 
-import edu.ntnu.idatt2001.paths.backend.Player;
+import edu.ntnu.idatt2001.paths.models.Player;
 
 import java.util.ArrayList;
 import java.util.Objects;
