@@ -3,22 +3,26 @@ package edu.ntnu.idatt2001.paths.backend.actions;
 import edu.ntnu.idatt2001.paths.backend.Player;
 
 /**
- * The interface Action.
+ * Inventory action.
+ * An action that adds or removes score to the player when executed.
+ *
+ * @author Helle R. & Sander S.
+ * @version 0.1 - 11.04.2023
  */
 public class ScoreAction implements Action {
   private final int points;
 
   /**
-   * Instantiates a new Score action.
+   * Instantiates a new Score action which adds or removes score to the player.
    *
-   * @param points the points
+   * @param points the amount of points to add or remove
    */
   public ScoreAction(int points) {
     this.points = points;
   }
 
   /**
-   * Executes a score action.
+   * Executes a score action on a player.
    *
    * @param player the player
    */
@@ -30,6 +34,11 @@ public class ScoreAction implements Action {
     player.addScore(points);
   }
 
+  /**
+   * Returns a string representation of the ScoreAction object.
+   *
+   * @return a string representation of the ScoreAction object.
+   */
   @Override
   public String toString() {
     return "{ScoreAction}(" + this.points + ")";

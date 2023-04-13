@@ -64,6 +64,28 @@ public class PassageTest {
       String content = null;
       assertThrows(NullPointerException.class, () -> new Passage(title, content));
     }
+
+    /**
+     * Test that constructor throws IllegalArgumentException when title is empty
+     */
+    @Test
+    @DisplayName("Test that constructor throws IllegalArgumentException when title is empty")
+    void testThatConstructorThrowsIllegalArgumentExceptionWhenTitleIsEmpty() {
+      String title = "";
+      String content = "Test";
+      assertThrows(IllegalArgumentException.class, () -> new Passage(title, content));
+    }
+
+    /**
+     * Test that constructor throws IllegalArgumentException when content is empty
+     */
+    @Test
+    @DisplayName("Test that constructor throws IllegalArgumentException when content is empty")
+    void testThatConstructorThrowsIllegalArgumentExceptionWhenContentIsEmpty() {
+      String title = "Test";
+      String content = "";
+      assertThrows(IllegalArgumentException.class, () -> new Passage(title, content));
+    }
   }
 
   /**
@@ -91,6 +113,13 @@ public class PassageTest {
     void testThatExceptionIsThrownWhenLinkIsNull() {
       Link link = null;
       assertThrows(NullPointerException.class, () -> passage.addLink(link));
+    }
+
+    @Test
+    @DisplayName("Test that addLink throws IllegalArgumentException when link already exists")
+    void testThatExceptionIsThrownWhenLinkAlreadyExists() {
+      passage.addLink(link);
+      assertThrows(IllegalArgumentException.class, () -> passage.addLink(link));
     }
 
   }

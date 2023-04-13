@@ -55,8 +55,8 @@ class LinkTest {
     @DisplayName("Test that constructor throws NullPointerException when text is null")
     void testThatConstructorThrowsNullPointerException() {
       String text = null;
-      String refrence = "Test";
-      assertThrows(NullPointerException.class, () -> new Link(text, refrence));
+      String reference = "Test";
+      assertThrows(NullPointerException.class, () -> new Link(text, reference));
     }
 
     /**
@@ -66,8 +66,30 @@ class LinkTest {
     @DisplayName("Test that constructor throws NullPointerException when reference is null")
     void testThatConstructorThrowsNullPointerExceptionWhenReferenceIsNull() {
       String text = "Test";
-      String refrence = null;
-      assertThrows(NullPointerException.class, () -> new Link(text, refrence));
+      String reference = null;
+      assertThrows(NullPointerException.class, () -> new Link(text, reference));
+    }
+
+    /**
+     * Test that constructor throws IllegalArgumentException when text is empty
+     */
+    @Test
+    @DisplayName("Test that constructor throws IllegalArgumentException when text is empty")
+    void testThatConstructorThrowsIllegalArgumentExceptionWhenTextIsEmpty() {
+      String text = "";
+      String reference = "Test";
+      assertThrows(IllegalArgumentException.class, () -> new Link(text, reference));
+    }
+
+    /**
+     * Test that constructor throws IllegalArgumentException when reference is empty
+     */
+    @Test
+    @DisplayName("Test that constructor throws IllegalArgumentException when reference is empty")
+    void testThatConstructorThrowsIllegalArgumentExceptionWhenReferenceIsEmpty() {
+      String text = "Test";
+      String reference = "";
+      assertThrows(IllegalArgumentException.class, () -> new Link(text, reference));
     }
   }
 
