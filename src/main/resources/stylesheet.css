@@ -1,0 +1,30 @@
+#mainMenuButton {
+    -fx-font-size: 30px;
+    -fx-min-width: 150px;
+    -fx-min-height: 40px;
+    -fx-background-color: #adec49;
+    /*-fx-background-color: #8c08c5;*/
+    -fx-border-width: 2;
+    -fx-background-radius: 5em;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0.5, 0.0, 0.0);
+}
+
+#mainMenuButton:hover {
+    -fx-background-color: #6d7c71;
+    /*-fx-background-color: #5b4061;*/
+    -fx-text-fill: #e7e4e3;
+    -fx-cursor: hand;
+}
+
+#mainMenuButton:focused {
+    -fx-background-color: #6d7c71;
+    /*-fx-background-color: #5b4061;*/
+    -fx-text-fill: #e7e4e3;
+    -fx-cursor: hand;
+}
+
+#mainMenuButton:pressed {
+    -fx-background-color: #6d7c71;
+    /*-fx-background-color: #5b4061;*/
+    -fx-text-fill: #e7e4e3;
+}

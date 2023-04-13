@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added javadoc">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/ScoreGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/ScoreGoal.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added test for isAlive">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="implement-builder" />
+        <entry key="$PROJECT_DIR$" value="implement-builder-player" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,8 +80,31 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalThrowsExceptionWhenMandatoryItemsIsEmpty">
-    <configuration name="InventoryActionTest$Execute.testInventoryActionThrowsExceptionWhenItemIsBlank" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.InventoryActionTest$Execute">
+    <configuration name="All in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.GameTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryActionTest$Execute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -90,8 +114,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.actions.InventoryActionTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.actions.InventoryActionTest$Execute" />
-      <option name="METHOD_NAME" value="testInventoryActionThrowsExceptionWhenItemIsBlank" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,39 +135,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryGoalTest$IsFulfilled.testThatInventoryGoalThrowsExceptionWhenMandatoryItemsIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.goals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.goals.InventoryGoalTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.goals.InventoryGoalTest$IsFulfilled" />
-      <option name="METHOD_NAME" value="testThatInventoryGoalThrowsExceptionWhenMandatoryItemsIsEmpty" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InventoryGoalTest$IsFulfilled.testThatInventoryGoalThrowsExceptionWhenMandatoryItemsIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.goals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.goals.InventoryGoalTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.goals.InventoryGoalTest$IsFulfilled" />
-      <option name="METHOD_NAME" value="testThatInventoryGoalThrowsExceptionWhenMandatoryItemsIsNull" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StoryTest$addPassage.testThatAddPassageThrowsIllegalArgumentExceptionWhenPassageIsAlreadyInStory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -152,10 +143,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.StoryTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.StoryTest$addPassage" />
-      <option name="METHOD_NAME" value="testThatAddPassageThrowsIllegalArgumentExceptionWhenPassageIsAlreadyInStory" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.PlayerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -217,21 +207,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.InventoryActionTest$Execute.testInventoryActionThrowsExceptionWhenItemIsBlank" />
+      <item itemvalue="JUnit.All in paths" />
+      <item itemvalue="JUnit.GameTest" />
+      <item itemvalue="JUnit.InventoryActionTest$Execute" />
       <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
-      <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalThrowsExceptionWhenMandatoryItemsIsEmpty" />
-      <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalThrowsExceptionWhenMandatoryItemsIsNull" />
-      <item itemvalue="JUnit.StoryTest$addPassage.testThatAddPassageThrowsIllegalArgumentExceptionWhenPassageIsAlreadyInStory" />
+      <item itemvalue="JUnit.PlayerTest" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalThrowsExceptionWhenMandatoryItemsIsEmpty" />
-        <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalThrowsExceptionWhenMandatoryItemsIsNull" />
+        <item itemvalue="JUnit.InventoryActionTest$Execute" />
+        <item itemvalue="JUnit.All in paths" />
         <item itemvalue="JUnit.InventoryGoalTest$IsFulfilled.testThatInventoryGoalReturnsExpectedResultWhenCorrect" />
-        <item itemvalue="JUnit.InventoryActionTest$Execute.testInventoryActionThrowsExceptionWhenItemIsBlank" />
-        <item itemvalue="JUnit.StoryTest$addPassage.testThatAddPassageThrowsIllegalArgumentExceptionWhenPassageIsAlreadyInStory" />
+        <item itemvalue="JUnit.GameTest" />
+        <item itemvalue="JUnit.PlayerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -270,6 +260,174 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
+    </task>
+    <task id="LOCAL-00052" summary="added nested class and display names to Passagetest">
+      <created>1676983183839</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1676983183839</updated>
+    </task>
+    <task id="LOCAL-00053" summary="added nested class and display names to StoryTest">
+      <created>1676983928764</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1676983928764</updated>
+    </task>
+    <task id="LOCAL-00054" summary="added nested class and display names to PlayerTest">
+      <created>1676984235730</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1676984235730</updated>
+    </task>
+    <task id="LOCAL-00055" summary="added a few more tests and beforeEach">
+      <created>1677155476833</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1677155476834</updated>
+    </task>
+    <task id="LOCAL-00056" summary="added a exceptionHandling test">
+      <created>1677155783708</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1677155783708</updated>
+    </task>
+    <task id="LOCAL-00057" summary="fixed thrown exception">
+      <created>1677156115157</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1677156115157</updated>
+    </task>
+    <task id="LOCAL-00058" summary="added some test to returnValues and exception">
+      <created>1677156144091</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1677156144091</updated>
+    </task>
+    <task id="LOCAL-00059" summary="added some test to ExceptionHandling and returnValues">
+      <created>1677156635906</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1677156635906</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes">
+      <created>1677419886263</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1677419886263</updated>
+    </task>
+    <task id="LOCAL-00061" summary="removed test for get-methods and specified some javadoc comments">
+      <created>1679400598667</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400598667</updated>
+    </task>
+    <task id="LOCAL-00062" summary="removed test for get-methods and specified some javadoc comments">
+      <created>1679400608256</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400608256</updated>
+    </task>
+    <task id="LOCAL-00063" summary="removed test for get-methods and specified some javadoc comments">
+      <created>1679400614339</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400614339</updated>
+    </task>
+    <task id="LOCAL-00064" summary="removed test for get-methods, specified some javadoc comments and refactored addAction test class">
+      <created>1679400844265</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400844265</updated>
+    </task>
+    <task id="LOCAL-00065" summary="removed test for get-methods and specified javadoc comments">
+      <created>1679401098889</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401098889</updated>
+    </task>
+    <task id="LOCAL-00066" summary="added description to Link class">
+      <created>1679401354627</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401354627</updated>
+    </task>
+    <task id="LOCAL-00067" summary="added description to Passage class">
+      <created>1679401528514</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401528514</updated>
+    </task>
+    <task id="LOCAL-00068" summary="added description to Story class">
+      <created>1679401652127</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401652127</updated>
+    </task>
+    <task id="LOCAL-00069" summary="added description to Player class">
+      <created>1679401900354</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401900354</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links">
+      <created>1679982695369</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1679982695369</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Fixed regex in FileHandeler to work for links">
+      <created>1679983245289</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1679983245289</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Moved save game to FileHandeler class, and created tests for the class">
+      <created>1679990268118</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1679990268118</updated>
+    </task>
+    <task id="LOCAL-00073" summary="created paths folder for paths files">
+      <created>1679993637060</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1679993637061</updated>
+    </task>
+    <task id="LOCAL-00074" summary="added javadoc to getBrokenLinks method">
+      <created>1680001013938</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1680001013939</updated>
+    </task>
+    <task id="LOCAL-00075" summary="changed groupId">
+      <created>1680001038752</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1680001038752</updated>
     </task>
     <task id="LOCAL-00076" summary="added new exception to filehandler for empty file">
       <created>1680001073534</created>
@@ -446,175 +604,7 @@
       <option name="project" value="LOCAL" />
       <updated>1681210408556</updated>
     </task>
-    <task id="LOCAL-00101" summary="added toLowerStream to InventoryGoal">
-      <created>1681210774171</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1681210774171</updated>
-    </task>
-    <task id="LOCAL-00102" summary="added toLowerStream to InventoryAction">
-      <created>1681210909379</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1681210909379</updated>
-    </task>
-    <task id="LOCAL-00103" summary="divided null and empty text and reference exceptions and changed tests">
-      <created>1681211965689</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1681211965689</updated>
-    </task>
-    <task id="LOCAL-00104" summary="added author and version to link">
-      <created>1681212150459</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1681212150459</updated>
-    </task>
-    <task id="LOCAL-00105" summary="divided null and blank exceptions and changed test in passage">
-      <created>1681212365207</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1681212365207</updated>
-    </task>
-    <task id="LOCAL-00106" summary="added exception when link already exist in passage in addLink and test">
-      <created>1681212644931</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1681212644931</updated>
-    </task>
-    <task id="LOCAL-00107" summary="added remaining javadoc to Passage">
-      <created>1681213001825</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1681213001825</updated>
-    </task>
-    <task id="LOCAL-00108" summary="added missing javadoc">
-      <created>1681213740982</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1681213740982</updated>
-    </task>
-    <task id="LOCAL-00109" summary="added missing javadoc">
-      <created>1681213745911</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1681213745911</updated>
-    </task>
-    <task id="LOCAL-00110" summary="added javadoc">
-      <created>1681214012000</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1681214012001</updated>
-    </task>
-    <task id="LOCAL-00111" summary="added javadoc and changed to isEmpty in method">
-      <created>1681215323648</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1681215323648</updated>
-    </task>
-    <task id="LOCAL-00112" summary="added javadoc">
-      <created>1681215730336</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1681215730336</updated>
-    </task>
-    <task id="LOCAL-00113" summary="added javadoc">
-      <created>1681216395099</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1681216395099</updated>
-    </task>
-    <task id="LOCAL-00114" summary="added missing sentence">
-      <created>1681216817668</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1681216817668</updated>
-    </task>
-    <task id="LOCAL-00115" summary="changed execute method after changing addHealth method in Player and added javadoc">
-      <created>1681216861781</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1681216861781</updated>
-    </task>
-    <task id="LOCAL-00116" summary="added missing javadoc to subclasses">
-      <created>1681217300650</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1681217300650</updated>
-    </task>
-    <task id="LOCAL-00117" summary="added test to when item is blank">
-      <created>1681217376383</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1681217376383</updated>
-    </task>
-    <task id="LOCAL-00118" summary="added minor javadoc">
-      <created>1681217423580</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1681217423580</updated>
-    </task>
-    <task id="LOCAL-00119" summary="added author and version">
-      <created>1681217532607</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1681217532607</updated>
-    </task>
-    <task id="LOCAL-00120" summary="added javadoc">
-      <created>1681217659942</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1681217659942</updated>
-    </task>
-    <task id="LOCAL-00121" summary="added javadoc">
-      <created>1681217948190</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1681217948190</updated>
-    </task>
-    <task id="LOCAL-00122" summary="added javadoc">
-      <created>1681218126666</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1681218126666</updated>
-    </task>
-    <task id="LOCAL-00123" summary="changed to NullPointerException instead of IllegalArgument">
-      <created>1681218405223</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1681218405223</updated>
-    </task>
-    <task id="LOCAL-00124" summary="added javadoc">
-      <created>1681218424813</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1681218424813</updated>
-    </task>
-    <option name="localTasksCounter" value="125" />
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,6 +635,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added javadoc to getBrokenLinks method" />
+    <MESSAGE value="changed groupId" />
+    <MESSAGE value="added new exception to filehandler for empty file" />
+    <MESSAGE value="added positive test for addAction" />
+    <MESSAGE value="added positive test for addLink and hasLinks" />
+    <MESSAGE value="removed get-method test" />
+    <MESSAGE value="fixed typo in test and added positive test for valid values" />
+    <MESSAGE value="added positive test for add-methods and refactored addmethod tests" />
+    <MESSAGE value="specified test name" />
+    <MESSAGE value="fixed typo" />
+    <MESSAGE value="fixed testThatCOnstructorConstructsObject method" />
+    <MESSAGE value="fixed typo in method" />
+    <MESSAGE value="changed isEmpty to isBlank" />
+    <MESSAGE value="added positive test and refactored nested test classes" />
+    <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
+    <MESSAGE value="removed public from nested classes" />
+    <MESSAGE value="fixed bug in testThatRemovePassageRemovesPassage test" />
     <MESSAGE value="changed append to false in saveGame" />
     <MESSAGE value="changed addhealth and added isAlive method. Added throws notation to methods" />
     <MESSAGE value="changed constructor and method so that inventory is lowercase" />
@@ -653,26 +660,18 @@
     <MESSAGE value="added javadoc and moved exceptions to builder" />
     <MESSAGE value="fixed test after implementing builder" />
     <MESSAGE value="added test for isAlive" />
-    <MESSAGE value="added toLowerStream to InventoryGoal" />
-    <MESSAGE value="added toLowerStream to InventoryAction" />
-    <MESSAGE value="divided null and empty text and reference exceptions and changed tests" />
-    <MESSAGE value="added author and version to link" />
-    <MESSAGE value="divided null and blank exceptions and changed test in passage" />
-    <MESSAGE value="added exception when link already exist in passage in addLink and test" />
-    <MESSAGE value="added remaining javadoc to Passage" />
-    <MESSAGE value="added missing javadoc" />
-    <MESSAGE value="added javadoc and changed to isEmpty in method" />
-    <MESSAGE value="added missing sentence" />
-    <MESSAGE value="changed execute method after changing addHealth method in Player and added javadoc" />
-    <MESSAGE value="added missing javadoc to subclasses" />
-    <MESSAGE value="added test to when item is blank" />
-    <MESSAGE value="added minor javadoc" />
-    <MESSAGE value="added author and version" />
-    <MESSAGE value="changed to NullPointerException instead of IllegalArgument" />
-    <MESSAGE value="added javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="added javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added test for isAlive" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoalTest.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="edu.ntnu.idatt2001.Passage" memberName="links" />
