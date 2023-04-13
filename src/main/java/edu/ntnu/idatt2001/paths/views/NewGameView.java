@@ -1,5 +1,6 @@
 package edu.ntnu.idatt2001.paths.views;
 
+import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.Player;
 import javafx.animation.TranslateTransition;
@@ -151,16 +152,10 @@ public class NewGameView extends View {
         labelGold.setText("Select gold (Normal difficulty = 100)");
         return;
       }
-      List<String> inventory = new ArrayList<>();
-      if (toggleGroupDifficulty.getSelectedToggle().equals(easy)) {
-        player = new Player.Builder(textFieldName.getText()).health(250).gold(250).inventory(inventory).build();
-        inventory.add("Sword");
-      } else if (toggleGroupDifficulty.getSelectedToggle().equals(medium)) {
-        player = new Player.Builder(textFieldName.getText()).build();
-      } else if (toggleGroupDifficulty.getSelectedToggle().equals(hard)) {
-        player = new Player.Builder(textFieldName.getText()).health(25).gold(0).build();
-      } else if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
-        player = new Player.Builder(textFieldName.getText()).health(Integer.parseInt(textFieldHealth.getText())).gold(Integer.parseInt(textFieldGold.getText())).build();
+      if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
+        player = PlayerController.addCusomPlayer(textFieldName.getText(), Integer.parseInt(textFieldHealth.getText()), Integer.parseInt(textFieldGold.getText()));
+      } else {
+        player = PlayerController.addDefaultPlayer(toggleGroupDifficulty.getSelectedToggle().toString());
       }
       System.out.printf("Player created: %s%n", player.toString());
       screenController.activate("ChooseGoals");
