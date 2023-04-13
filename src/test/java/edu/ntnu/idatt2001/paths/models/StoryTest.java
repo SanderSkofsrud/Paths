@@ -12,7 +12,6 @@ import static org.junit.Assert.*;
  */
 
 public class StoryTest {
-
   Story story;
   Passage passage;
   Passage passage2;
@@ -50,11 +49,11 @@ public class StoryTest {
     }
 
     /**
-     * Test that constructor throws NullPointerExceptions when passage null
+     * Test that constructor throws NullPointerExceptions when openingPassage null
      */
     @Test
-    @DisplayName("Test that constructor throws NullPointerExceptions when openingPassage null")
-    void testThatConstructorThrowsNullPointerExceptionsWhenPassageNull() {
+    @DisplayName("Test that constructor throws NullPointerExceptions when openingPassage is null")
+    void testThatConstructorThrowsNullPointerExceptionsWhenOpeningPassageNull() {
       Passage passage = null;
       assertThrows(NullPointerException.class, () ->
           new Story("title", passage));
@@ -76,7 +75,7 @@ public class StoryTest {
     @Test
     @DisplayName("Test that constructor throws NullPointerException when title is empty")
     void testThatConstructorThrowsNullPointerExceptionWhenTitleIsEmpty(){
-      assertThrows(NullPointerException.class, () ->
+      assertThrows(IllegalArgumentException.class, () ->
           new Story("", passage));
     }
   }
@@ -103,10 +102,21 @@ public class StoryTest {
      */
     @Test
     @DisplayName("Test that addPassage throws IllegalArgumentException when passage is null")
-    void testThatAddPassageThrowsIllegalArgumentException(){
+    void testThatAddPassageThrowsNullPointerExceptionWhenPassageIsNull(){
       Passage passage = null;
-      assertThrows(IllegalArgumentException.class, () ->
+      assertThrows(NullPointerException.class, () ->
           story2.addPassage(passage));
+    }
+
+    /**
+     * Test that addPassage throws IllegalArgumentException when passage is already in story
+     */
+    @Test
+    @DisplayName("Test that addPassage throws IllegalArgumentException when passage is already in story")
+    void testThatAddPassageThrowsIllegalArgumentExceptionWhenPassageIsAlreadyInStory(){
+      story.addPassage(passage);
+      assertThrows(IllegalArgumentException.class, () ->
+          story.addPassage(passage));
     }
   }
 
@@ -208,7 +218,6 @@ public class StoryTest {
     @Test
     @DisplayName("Test toString")
     void testToString() {
-      passage.addLink(link);
       passage.addLink(link2);
       story.addPassage(passage);
       assertEquals(story.getTitle()

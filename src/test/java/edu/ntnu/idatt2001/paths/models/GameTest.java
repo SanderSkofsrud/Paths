@@ -86,6 +86,31 @@ public class GameTest {
       List<Goal> goals = new ArrayList<>();
       assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
     }
+
+    /**
+     * Test that constructor throws IllegalArgumentException when goals is empty
+     */
+    @Test
+    @DisplayName("Test that constructor throws IllegalArgumentException when goals is empty")
+    void testThatConstructorThrowsIllegalArgumentExceptionWhenGoalsIsEmpty() {
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
+      Story story = new Story(title, new Passage(title, content));
+      List<Goal> goals = new ArrayList<>();
+      assertThrows(IllegalArgumentException.class, () -> new Game(player,story,goals));
+    }
+
+    /**
+     * Test that constructor throws NullPointerException when goals contains null
+     */
+    @Test
+    @DisplayName("Test that constructor throws NullPointerException when goals contains null")
+    void testThatConstructorThrowsNullPointerExceptionWhenGoalsContainsNull() {
+      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
+      Story story = new Story(title, new Passage(title, content));
+      List<Goal> goals = new ArrayList<>();
+      goals.add(null);
+      assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
+    }
   }
   /**
    * Test class for begin method

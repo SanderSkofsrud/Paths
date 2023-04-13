@@ -64,5 +64,14 @@ class InventoryActionTest {
     void testInventoryActionThrowsExceptionWhenItemIsNull() {
       assertThrows(IllegalArgumentException.class, () -> new InventoryAction(null));
     }
+
+    /**
+     * Test that exception is thrown when item is blank
+     */
+    @Test
+    @DisplayName("Test that exception is thrown when item is blank")
+    void testInventoryActionThrowsExceptionWhenItemIsBlank() {
+      assertThrows(IllegalArgumentException.class, () -> new InventoryAction(""));
+    }
   }
 }

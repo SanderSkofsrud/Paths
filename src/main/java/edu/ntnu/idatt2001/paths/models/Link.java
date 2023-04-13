@@ -9,6 +9,9 @@ import java.util.Objects;
  * A class that represents a link. The link makes it possible to navigate from one passage to another.
  * The links connect the different parts of the story.
  * A link has a text, a reference to the passage that the link will lead to and a list of actions
+ *
+ * @author Helle R. & Sander S.
+ * @version 0.5 - 11.04.2023
  */
 
 public class Link {
@@ -22,17 +25,19 @@ public class Link {
    * @param text The text that will be displayed to the user.
    * @param reference The reference to the passage that the link will lead to.
    * @throws NullPointerException if text or reference is null.
+   * @throws IllegalArgumentException if text or reference is empty.
    */
 
-  public Link(String text, String reference) throws NullPointerException {
-    if (text == null || text.isBlank()) {
-      throw new NullPointerException("The text can´t be empty");
-    }
-    if (reference == null || reference.isBlank()) {
-      throw new NullPointerException("The reference can´t be empty");
-    }
+  public Link(String text, String reference) throws NullPointerException, IllegalArgumentException {
     Objects.requireNonNull(text, "The text can´t be null");
     Objects.requireNonNull(reference, "The reference can´t be null");
+    if (text.isBlank()) {
+      throw new IllegalArgumentException("The text can´t be empty");
+    }
+    if (reference.isBlank()) {
+      throw new IllegalArgumentException("The reference can´t be empty");
+    }
+
 
     this.text = text;
     this.reference = reference;
@@ -97,6 +102,9 @@ public class Link {
 
   /**
    * Returns a string representation of the link.
+   * Uses the text, reference and actions to the link with a given format.
+   * The format is [text](reference)[action1][action2]...[actionN]
+   * Uses string builder to create the string.
    *
    * @return A string representation of the link.
    */
@@ -123,6 +131,7 @@ public class Link {
 
   /**
    * Returns true if the link is equal to the object passed as parameter.
+   * Two links are equal if they have the same reference.
    *
    * @param o The object to be compared with the link.
    * @return True if the link is equal to the object passed as parameter.
@@ -140,7 +149,7 @@ public class Link {
   }
 
   /**
-   * Returns the hashcode of the link.
+   * Returns the hashcode of the link based on the text and reference.
    *
    * @return The hashcode of the link.
    */

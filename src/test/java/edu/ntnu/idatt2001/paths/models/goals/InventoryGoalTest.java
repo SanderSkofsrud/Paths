@@ -88,7 +88,7 @@ class InventoryGoalTest {
     @Test
     @DisplayName("Test that inventory goal throws exception when mandatory items is null")
     void testThatInventoryGoalThrowsExceptionWhenMandatoryItemsIsNull() {
-      assertThrows(IllegalArgumentException.class, () -> new InventoryGoal(null));
+      assertThrows(NullPointerException.class, () -> new InventoryGoal(null));
     }
 
     /**
