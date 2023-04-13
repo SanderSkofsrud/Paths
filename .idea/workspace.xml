@@ -4,9 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Fixed merge-issue">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Made it so you create a player if you fill in all the needed information">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/NewGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Link.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Passage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Passage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/GoldAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/GoldAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/HealthAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/HealthAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/InventoryAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/InventoryAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/actions/ScoreAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/ScoreAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/Goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/Goal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/GoldGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoldGoal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/HealthGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/HealthGoal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/InventoryGoal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/goals/ScoreGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/ScoreGoal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/backend/utility/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/ChooseGoalsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/ScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/ScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/frontend/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/LinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/LinkTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/PassageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/PassageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/StoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/actions/GoldActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/actions/GoldActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/actions/HealthActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/actions/HealthActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/actions/InventoryActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/actions/InventoryActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/actions/ScoreActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/actions/ScoreActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/GoldGoalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/goals/GoldGoalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/HealthGoalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/goals/HealthGoalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/goals/InventoryGoalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/ScoreGoalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/goals/ScoreGoalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/utility/FileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/FileHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,29 +78,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "GUI",
-    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GUI&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -95,7 +132,7 @@
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,7 +147,7 @@
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,12 +162,12 @@
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.utility.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.utility.FileHandlerTest.loadGame" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest.loadGame" />
       <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -141,12 +178,12 @@
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.utility.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.utility.FileHandlerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.utility.FileHandlerTest.loadGame" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest.loadGame" />
       <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -261,13 +298,7 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00044" summary="temporary finished Game test class">
-      <created>1676540982865</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1676540982865</updated>
+      <workItem from="1681284456756" duration="3793000" />
     </task>
     <task id="LOCAL-00045" summary="added addPassage in constructor">
       <created>1676979888905</created>
@@ -605,7 +636,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681215388460</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Made it so you create a player if you fill in all the needed information">
+      <created>1681216433790</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1681216433790</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,7 +674,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added description to Link class" />
     <MESSAGE value="added description to Passage class" />
     <MESSAGE value="added description to Story class" />
     <MESSAGE value="added description to Player class" />
@@ -661,7 +698,8 @@
     <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
     <MESSAGE value="removed public from nested classes" />
     <MESSAGE value="Fixed merge-issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed merge-issue" />
+    <MESSAGE value="Made it so you create a player if you fill in all the needed information" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made it so you create a player if you fill in all the needed information" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

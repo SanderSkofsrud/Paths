@@ -1,6 +1,6 @@
 package edu.ntnu.idatt2001.paths;
 
-import edu.ntnu.idatt2001.paths.frontend.App;
+import edu.ntnu.idatt2001.paths.views.App;
 
 public class Main {
 
