@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added endingPassage field and get method">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed typo in message">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/GameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,23 +81,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.java in paths">
-    <configuration name="GameTest$begin.testThatBeginReturnsOpeningPassage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.GameTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.GameTest$begin" />
-      <option name="METHOD_NAME" value="testThatBeginReturnsOpeningPassage" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.GameTest$go.testThatGoReturnsEndingPassage">
     <configuration name="GameTest$constructor.testThatConstructorConstructsObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -113,6 +98,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GameTest$go.testThatGoReturnsEndingPassage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.GameTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.GameTest$go" />
+      <option name="METHOD_NAME" value="testThatGoReturnsEndingPassage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest$go.testThatGoThrowsNullPointerException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.GameTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.GameTest$go" />
+      <option name="METHOD_NAME" value="testThatGoThrowsNullPointerException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -123,21 +140,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.GameTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InventoryActionTest$Execute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.backend.actions.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.backend.actions.InventoryActionTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.backend.actions.InventoryActionTest$Execute" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -231,22 +233,22 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.GameTest$begin.testThatBeginReturnsOpeningPassage" />
+      <item itemvalue="JUnit.GameTest$go.testThatGoReturnsEndingPassage" />
+      <item itemvalue="JUnit.GameTest$go.testThatGoThrowsNullPointerException" />
       <item itemvalue="JUnit.GameTest$constructor.testThatConstructorConstructsObject" />
       <item itemvalue="JUnit.java in paths" />
       <item itemvalue="JUnit.GameTest" />
-      <item itemvalue="JUnit.InventoryActionTest$Execute" />
       <item itemvalue="Maven.paths" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GameTest$go.testThatGoReturnsEndingPassage" />
+        <item itemvalue="JUnit.GameTest$go.testThatGoThrowsNullPointerException" />
+        <item itemvalue="JUnit.GameTest" />
         <item itemvalue="JUnit.java in paths" />
         <item itemvalue="JUnit.GameTest$constructor.testThatConstructorConstructsObject" />
-        <item itemvalue="JUnit.GameTest" />
-        <item itemvalue="JUnit.GameTest$begin.testThatBeginReturnsOpeningPassage" />
-        <item itemvalue="JUnit.InventoryActionTest$Execute" />
       </list>
     </recent_temporary>
   </component>
@@ -289,20 +291,6 @@
       <workItem from="1681805154023" duration="165000" />
       <workItem from="1681805411503" duration="2000" />
       <workItem from="1681805427402" duration="777000" />
-    </task>
-    <task id="LOCAL-00053" summary="added nested class and display names to StoryTest">
-      <created>1676983928764</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1676983928764</updated>
-    </task>
-    <task id="LOCAL-00054" summary="added nested class and display names to PlayerTest">
-      <created>1676984235730</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1676984235730</updated>
     </task>
     <task id="LOCAL-00055" summary="added a few more tests and beforeEach">
       <created>1677155476833</created>
@@ -633,7 +621,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681809289580</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="added checkGoals and changed go method so that player will be sent to endingpassage if won">
+      <created>1681809696992</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1681809696992</updated>
+    </task>
+    <task id="LOCAL-00103" summary="fixed typo in message">
+      <created>1681809801077</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1681809801077</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,8 +666,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="changed groupId" />
-    <MESSAGE value="added new exception to filehandler for empty file" />
     <MESSAGE value="added positive test for addAction" />
     <MESSAGE value="added positive test for addLink and hasLinks" />
     <MESSAGE value="removed get-method test" />
@@ -689,7 +689,9 @@
     <MESSAGE value="fixed test after implementing builder" />
     <MESSAGE value="added test for isAlive" />
     <MESSAGE value="added endingPassage field and get method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added endingPassage field and get method" />
+    <MESSAGE value="added checkGoals and changed go method so that player will be sent to endingpassage if won" />
+    <MESSAGE value="fixed typo in message" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed typo in message" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
