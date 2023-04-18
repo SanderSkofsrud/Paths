@@ -77,12 +77,12 @@ class InventoryActionTest {
 
 
   /**
-   * Test class for toString
+   * Test class for file handling
    */
   @Nested
-  class toString {
+  class fileHandling {
     /**
-     * Test that toString returns correct string
+     * Test that toString returns correct format
      */
     @Test
     @DisplayName("Test that toString returns correct string")

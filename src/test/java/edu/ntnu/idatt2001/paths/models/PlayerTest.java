@@ -207,10 +207,10 @@ public class PlayerTest {
   }
 
   /**
-   * Test that toString works
+   * Test class for file handling
    */
   @Nested
-  class toString {
+  class fileHandling {
 
     /**
      * Test that toString works and has correct format

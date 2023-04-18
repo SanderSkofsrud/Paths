@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added test for toString">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added javadoc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/PlayerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/actions/GoldActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/actions/GoldActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/actions/InventoryActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/actions/InventoryActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/goals/GoldGoalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/goals/GoldGoalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/goals/InventoryGoalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/goals/InventoryGoalTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,23 +85,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InventoryActionTest$toString">
-    <configuration name="GoldActionTest$Execute.testToStringReturnsCorrectString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.actions.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.actions.GoldActionTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.actions.GoldActionTest$Execute" />
-      <option name="METHOD_NAME" value="testToStringReturnsCorrectString" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult">
     <configuration name="GoldActionTest$toString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -109,6 +97,37 @@
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.actions.GoldActionTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.actions.GoldActionTest$toString" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoldGoalTest$toString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.goals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.goals.GoldGoalTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.goals.GoldGoalTest$toString" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoldGoalTest$toString.testThatToStringReturnsCorrectString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.goals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.goals.GoldGoalTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.goals.GoldGoalTest$toString" />
+      <option name="METHOD_NAME" value="testThatToStringReturnsCorrectString" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,26 +147,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest$toString.testThatToStringWorks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.goals.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.PlayerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.PlayerTest$toString" />
-      <option name="METHOD_NAME" value="testThatToStringWorks" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.goals.InventoryGoalTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.goals.InventoryGoalTest$fileHandling" />
+      <option name="METHOD_NAME" value="testThatToStringReturnsExpectedResult" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="java in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -232,22 +243,22 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.GoldActionTest$Execute.testToStringReturnsCorrectString" />
       <item itemvalue="JUnit.GoldActionTest$toString" />
+      <item itemvalue="JUnit.GoldGoalTest$toString" />
+      <item itemvalue="JUnit.GoldGoalTest$toString.testThatToStringReturnsCorrectString" />
       <item itemvalue="JUnit.InventoryActionTest$toString" />
-      <item itemvalue="JUnit.PlayerTest$toString.testThatToStringWorks" />
-      <item itemvalue="JUnit.java in paths" />
+      <item itemvalue="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" />
       <item itemvalue="Maven.paths" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" />
+        <item itemvalue="JUnit.GoldGoalTest$toString" />
+        <item itemvalue="JUnit.GoldGoalTest$toString.testThatToStringReturnsCorrectString" />
         <item itemvalue="JUnit.InventoryActionTest$toString" />
         <item itemvalue="JUnit.GoldActionTest$toString" />
-        <item itemvalue="JUnit.GoldActionTest$Execute.testToStringReturnsCorrectString" />
-        <item itemvalue="JUnit.PlayerTest$toString.testThatToStringWorks" />
-        <item itemvalue="JUnit.java in paths" />
       </list>
     </recent_temporary>
   </component>
@@ -290,27 +301,6 @@
       <workItem from="1681805154023" duration="165000" />
       <workItem from="1681805411503" duration="2000" />
       <workItem from="1681805427402" duration="777000" />
-    </task>
-    <task id="LOCAL-00063" summary="removed test for get-methods and specified some javadoc comments">
-      <created>1679400614339</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1679400614339</updated>
-    </task>
-    <task id="LOCAL-00064" summary="removed test for get-methods, specified some javadoc comments and refactored addAction test class">
-      <created>1679400844265</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1679400844265</updated>
-    </task>
-    <task id="LOCAL-00065" summary="removed test for get-methods and specified javadoc comments">
-      <created>1679401098889</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1679401098889</updated>
     </task>
     <task id="LOCAL-00066" summary="added description to Link class">
       <created>1679401354627</created>
@@ -634,7 +624,28 @@
       <option name="project" value="LOCAL" />
       <updated>1681812479233</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="added test for toString">
+      <created>1681812850668</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1681812850668</updated>
+    </task>
+    <task id="LOCAL-00113" summary="added test for toString">
+      <created>1681812854087</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1681812854087</updated>
+    </task>
+    <task id="LOCAL-00114" summary="added javadoc">
+      <created>1681813019530</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1681813019530</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,7 +676,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed testThatCOnstructorConstructsObject method" />
     <MESSAGE value="fixed typo in method" />
     <MESSAGE value="changed isEmpty to isBlank" />
     <MESSAGE value="added positive test and refactored nested test classes" />
@@ -690,7 +700,8 @@
     <MESSAGE value="added javadoc to toString" />
     <MESSAGE value="formatted inventory items in toString" />
     <MESSAGE value="added test for toString" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test for toString" />
+    <MESSAGE value="added javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added javadoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

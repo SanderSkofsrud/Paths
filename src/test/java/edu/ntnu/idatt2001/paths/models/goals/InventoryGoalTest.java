@@ -100,4 +100,23 @@ class InventoryGoalTest {
       assertThrows(IllegalArgumentException.class, () -> new InventoryGoal(new ArrayList<>()));
     }
   }
+
+  /**
+   * Test class for file handling
+   */
+  @Nested
+  class fileHandling {
+    /**
+     * Test that toString returns expected format
+     */
+    @Test
+    @DisplayName("Test that toString returns expected result")
+    void testThatToStringReturnsExpectedResult() {
+      List<String> mandatoryItems = new ArrayList<>();
+      mandatoryItems.add("Test1");
+      mandatoryItems.add("Test2");
+      InventoryGoal inventoryGoal = new InventoryGoal(mandatoryItems);
+      assertEquals("(InventoryGoal)([test1, test2])", inventoryGoal.toString());
+    }
+  }
 }

@@ -76,12 +76,12 @@ class GoldActionTest {
   }
 
   /**
-   * Test class for toString
+   * Test class for file handling
    */
   @Nested
-  class toString {
+  class fileHandling {
     /**
-     * Test that toString returns correct string
+     * Test that toString returns correct format
      * The toString in gold, health and score is identical. Therefore, this test should cover them all.
      */
     @Test
