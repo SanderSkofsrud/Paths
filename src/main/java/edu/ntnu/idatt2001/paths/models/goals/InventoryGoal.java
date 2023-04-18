@@ -49,4 +49,14 @@ public class InventoryGoal implements Goal {
     // Alternative solution:
     //return new HashSet<>(player.getInventory()).containsAll(this.mandatoryItems);
   }
+
+  /**
+   * Returns a string representation of the InventoryGoal object.
+   *
+   * @return a string representation of the InventoryGoal object.
+   */
+  @Override
+  public String toString() {
+    return "(InventoryGoal)(" + this.mandatoryItems + ")";
+  }
 }

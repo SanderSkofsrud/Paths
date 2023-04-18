@@ -253,18 +253,19 @@ public class Player {
    */
   @Override
   public String toString() {
-    return "Player{"
-        + "name='"
+    StringBuilder sb = new StringBuilder();
+    for (String item : inventory) {
+      sb.append(item).append(", ");
+    }
+    return ";;"
         + getName()
-        + '\''
-        + ", health="
+        + ";"
         + getHealth()
-        + ", score="
+        + ";"
         + getScore()
-        + ", gold="
+        + ";"
         + getGold()
-        + ", inventory="
-        + getInventory()
-        + '}';
+        + ";"
+        + sb;
   }
 }

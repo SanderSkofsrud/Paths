@@ -19,4 +19,7 @@ public interface Goal {
    * @return the boolean - true if the goal is fulfilled, false if not
    */
   boolean isFulfilled(Player player);
+
+  @Override
+  String toString();
 }

@@ -124,4 +124,10 @@ public class Game {
   public boolean checkGoals() {
     return goals.stream().anyMatch(goal -> goal.isFulfilled(player));
   }
+
+  /**
+   * Returns a string representation of the game.
+   *
+   * @return A string representation of the game.
+   */
 }
