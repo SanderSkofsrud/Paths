@@ -19,6 +19,11 @@ public interface Action {
    */
   void execute(Player player);
 
+  /**
+   * Returns a string representation of the Action object.
+   *
+   * @return a string representation of the Action object.
+   */
   @Override
   String toString();
 }
