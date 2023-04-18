@@ -74,4 +74,20 @@ class GoldActionTest {
       assertThrows(IllegalArgumentException.class, () -> goldAction.execute(player));
     }
   }
+
+  /**
+   * Test class for toString
+   */
+  @Nested
+  class toString {
+    /**
+     * Test that toString returns correct string
+     */
+    @Test
+    @DisplayName("Test that toString returns correct string")
+    void testToStringReturnsCorrectString() {
+      GoldAction goldAction = new GoldAction(10);
+      assertEquals("{GoldAction}(10)", goldAction.toString());
+    }
+  }
 }
