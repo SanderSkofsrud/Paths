@@ -130,4 +130,18 @@ public class Game {
    *
    * @return A string representation of the game.
    */
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    for (Goal goal : goals) {
+      sb.append(goal.toString());
+      sb.append("\n");
+    }
+    return story
+            + "\n"
+            + sb
+            + "\n"
+            + player;
+  }
 }

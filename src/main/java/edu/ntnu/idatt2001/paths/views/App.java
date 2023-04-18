@@ -79,32 +79,32 @@ public class App extends Application {
     loadGame.setOnAction(e -> {
       // TODO screenController.activate("LoadGame");
 
-      Passage openingpassage = new Passage("Beginnings", "You are in a small room");
-      Story story = new Story("Haunted House", openingpassage);
-      Link link = new Link("Try open the door", "Another room");
-      openingpassage.addLink(link);
-      Passage passage = new Passage("Another room", "The door opens to another room");
-      Link link1 = new Link("Open the book", "The book of spells");
-      Link link2 = new Link("Go back", "Beginnings");
-      passage.addLink(link1);
-      passage.addLink(link2);
-      link1.addAction(new GoldAction(10));
-      story.addPassage(passage);
-      Player player = new Player.Builder("testPlayer").build();
-      List<Goal> goals = new ArrayList<>();
-      GoldGoal goldGoal = new GoldGoal(10);
-      goals.add(goldGoal);
-      Game game = new Game(player, story, goals);
-      FileHandler.saveGame(game.getStory(), "src/main/resources/paths/story.paths");
-      Story story1;
-      try {
-        story1 = FileHandler.loadGame("src/main/resources/paths/story.paths");
-      } catch (IOException ex) {
-        throw new RuntimeException(ex);
-      }
-      System.out.println(story1.getPassages());
-      Game game1 = new Game(player, story1, goals);
-      FileHandler.saveGame(game1.getStory(), "src/main/resources/paths/story1.paths");
+//      Passage openingpassage = new Passage("Beginnings", "You are in a small room");
+//      Story story = new Story("Haunted House", openingpassage);
+//      Link link = new Link("Try open the door", "Another room");
+//      openingpassage.addLink(link);
+//      Passage passage = new Passage("Another room", "The door opens to another room");
+//      Link link1 = new Link("Open the book", "The book of spells");
+//      Link link2 = new Link("Go back", "Beginnings");
+//      passage.addLink(link1);
+//      passage.addLink(link2);
+//      link1.addAction(new GoldAction(10));
+//      story.addPassage(passage);
+//      Player player = new Player.Builder("testPlayer").build();
+//      List<Goal> goals = new ArrayList<>();
+//      GoldGoal goldGoal = new GoldGoal(10);
+//      goals.add(goldGoal);
+//      Game game = new Game(player, story, goals);
+//      FileHandler.saveGame(game.getStory(), "src/main/resources/paths/story.paths");
+//      Story story1;
+//      try {
+//        story1 = FileHandler.loadGame("src/main/resources/paths/story.paths");
+//      } catch (IOException ex) {
+//        throw new RuntimeException(ex);
+//      }
+//      System.out.println(story1.getPassages());
+//      Game game1 = new Game(player, story1, goals);
+//      FileHandler.saveGame(game1.getStory(), "src/main/resources/paths/story1.paths");
     });
 
     HBox hBox = new HBox();

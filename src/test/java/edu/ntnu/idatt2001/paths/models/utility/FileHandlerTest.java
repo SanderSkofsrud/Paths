@@ -1,11 +1,17 @@
 package edu.ntnu.idatt2001.paths.models.utility;
 
+import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Passage;
+import edu.ntnu.idatt2001.paths.models.Player;
 import edu.ntnu.idatt2001.paths.models.Story;
+import edu.ntnu.idatt2001.paths.models.goals.Goal;
+import edu.ntnu.idatt2001.paths.models.goals.HealthGoal;
 import edu.ntnu.idatt2001.paths.utility.FileHandler;
 import org.junit.jupiter.api.*;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -86,8 +92,8 @@ public class FileHandlerTest {
     @DisplayName("Test that readFromFile returns a story")
     void testThatReadFromFileReturnsAStory() throws FileNotFoundException {
       FileHandler fileHandler = new FileHandler();
-      Story story = fileHandler.loadGame("src/main/resources/paths/story.paths");
-      assertEquals(Story.class, story.getClass());
+      Game game = fileHandler.loadGame("src/main/resources/paths/story.paths");
+      assertEquals(Game.class, game.getClass());
     }
 
     /**
@@ -118,10 +124,10 @@ public class FileHandlerTest {
     @DisplayName("Test that saveGame returns a story")
     void testThatSaveGameReturnsAStory() throws FileNotFoundException {
       FileHandler fileHandler = new FileHandler();
-      Story story = fileHandler.loadGame("src/main/resources/paths/story.paths");
-      fileHandler.saveGame(story, "src/main/resources/paths/story1.paths");
-      Story story1 = fileHandler.loadGame("src/main/resources/paths/story1.paths");
-      assertEquals(Story.class, story1.getClass());
+      Game game = fileHandler.loadGame("src/main/resources/paths/story.paths");
+      fileHandler.saveGame(game, "src/main/resources/paths/story1.paths");
+      Game game1 = fileHandler.loadGame("src/main/resources/paths/story1.paths");
+      assertEquals(Game.class, game1.getClass());
     }
 
     /**
@@ -131,9 +137,9 @@ public class FileHandlerTest {
     @DisplayName("Test that saveGame throws NullPointerException when player is null")
     void testThatSaveGameThrowsNullPointerException() {
       FileHandler fileHandler = new FileHandler();
-      Story story = null;
+      Game game = null;
       assertThrows(NullPointerException.class, () -> {
-        fileHandler.saveGame(story, "src/main/resources/paths/story1.paths");
+        fileHandler.saveGame(game, "src/main/resources/paths/story1.paths");
       });
     }
 
@@ -144,10 +150,14 @@ public class FileHandlerTest {
     @DisplayName("Test that saveGame throws NullPointerException when player is null")
     void testThatSaveGameThrowsNullPointerException2() {
       FileHandler fileHandler = new FileHandler();
+      Player player = new Player.Builder("name").build();
       Story story = new Story("Title", new Passage("title", "content"));
+      List<Goal> goals = new ArrayList<>();
+      goals.add(new HealthGoal(10));
+      Game game = new Game(player, story, goals);
       String string = null;
       assertThrows(NullPointerException.class, () -> {
-        fileHandler.saveGame(story, string);
+        fileHandler.saveGame(game, string);
       });
     }
   }
