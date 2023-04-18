@@ -59,4 +59,8 @@ public class InventoryGoal implements Goal {
   public String toString() {
     return "(InventoryGoal)(" + this.mandatoryItems + ")";
   }
+
+  public List<String> getMandatoryItems() {
+    return mandatoryItems;
+  }
 }

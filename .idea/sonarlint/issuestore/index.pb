@@ -5,5 +5,3 @@ T
 $src/main/resources/paths/story.paths,9\e\9ea54599c332ed5d238538a19a431f42720cc572
 `
 0src/main/java/edu/ntnu/idatt2001/paths/Main.java,a/e/aead04c5dcb5647b417ad32c9f7d563e8d0e543f
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec

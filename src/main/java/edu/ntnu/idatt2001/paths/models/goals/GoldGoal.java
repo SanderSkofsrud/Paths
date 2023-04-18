@@ -47,4 +47,8 @@ public class GoldGoal implements Goal {
   public String toString() {
     return "(GoldGoal)(" + this.minimumGold + ")";
   }
+
+  public int getMinimumGold() {
+    return minimumGold;
+  }
 }
