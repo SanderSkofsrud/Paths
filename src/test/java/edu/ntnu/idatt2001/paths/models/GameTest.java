@@ -37,7 +37,7 @@ public class GameTest {
    * Test class for constructor
    */
   @Nested
-  public class constructor {
+  class constructor {
     /**
      * Test that constructor constructs object with valid values and indirectly test that getters work
      */
@@ -143,7 +143,7 @@ public class GameTest {
    * Test class for go method
    */
  @Nested
- public class go {
+ class go {
 
     /**
      * Test that go returns passage

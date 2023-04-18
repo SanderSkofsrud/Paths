@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added test to check if player is sent to endingPassage">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added test to check if builder constructs with default values">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +80,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest$ConstructorTest.testThatBuilderConstructsObjectWithGivenValues">
+  <component name="RunManager" selected="JUnit.java in paths">
     <configuration name="GameTest$go.testThatGoReturnsEndingPassage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -245,9 +244,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in paths" />
         <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatBuilderConstructsObjectWithGivenValues" />
         <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatBuilderConstructsObjectWithDefaultValues" />
-        <item itemvalue="JUnit.java in paths" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddToInventoryCanNotSetBlankValue" />
         <item itemvalue="JUnit.GameTest$go.testThatGoReturnsEndingPassage" />
       </list>
@@ -292,13 +291,6 @@
       <workItem from="1681805154023" duration="165000" />
       <workItem from="1681805411503" duration="2000" />
       <workItem from="1681805427402" duration="777000" />
-    </task>
-    <task id="LOCAL-00056" summary="added a exceptionHandling test">
-      <created>1677155783708</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1677155783708</updated>
     </task>
     <task id="LOCAL-00057" summary="fixed thrown exception">
       <created>1677156115157</created>
@@ -636,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681810018731</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="added test to check if builder constructs with default values">
+      <created>1681810458370</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1681810458370</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -667,7 +666,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added positive test for addLink and hasLinks" />
     <MESSAGE value="removed get-method test" />
     <MESSAGE value="fixed typo in test and added positive test for valid values" />
     <MESSAGE value="added positive test for add-methods and refactored addmethod tests" />
@@ -692,7 +690,8 @@
     <MESSAGE value="added checkGoals and changed go method so that player will be sent to endingpassage if won" />
     <MESSAGE value="fixed typo in message" />
     <MESSAGE value="added test to check if player is sent to endingPassage" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test to check if player is sent to endingPassage" />
+    <MESSAGE value="added test to check if builder constructs with default values" />
+    <option name="LAST_COMMIT_MESSAGE" value="added test to check if builder constructs with default values" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -716,6 +715,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680193708824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681810176535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681810472673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
