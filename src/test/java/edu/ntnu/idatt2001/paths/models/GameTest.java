@@ -1,6 +1,7 @@
 package edu.ntnu.idatt2001.paths.models;
 
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
+import edu.ntnu.idatt2001.paths.models.goals.HealthGoal;
 import edu.ntnu.idatt2001.paths.models.goals.ScoreGoal;
 import org.junit.jupiter.api.*;
 
@@ -46,6 +47,7 @@ public class GameTest {
       Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
       Story story = new Story(title, new Passage(title, content));
       List<Goal> goals = new ArrayList<>();
+      goals.add(new ScoreGoal(minimumScore));
       Game game = new Game(player, story, goals);
       assertEquals(player, game.getPlayer());
       assertEquals(story, game.getStory());
@@ -128,9 +130,10 @@ public class GameTest {
       Passage openingPassage = new Passage(title, content);
       Story story = new Story(title, openingPassage);
       List<Goal> goals = new ArrayList<>();
+      goals.add(new ScoreGoal(minimumScore));
 
       Game game = new Game(player, story, goals);
-      goals.add(new ScoreGoal(minimumScore));
+      goals.add(new HealthGoal(20));
 
       assertEquals(openingPassage, game.begin());
     }

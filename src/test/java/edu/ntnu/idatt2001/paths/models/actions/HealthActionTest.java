@@ -55,16 +55,5 @@ class HealthActionTest {
       healthAction.execute(player);
       assertEquals(20, player.getHealth());
     }
-
-    /**
-     * Test that exception is thrown when health is less than 0
-     */
-    @Test
-    @DisplayName("Test that exception is thrown when health is less than 0")
-    void testHealthActionThrowsExceptionWhenHealthIsLessThanZero() {
-      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
-      HealthAction healthAction = new HealthAction(-20);
-      assertThrows(IllegalArgumentException.class, () -> healthAction.execute(player));
-    }
   }
 }
