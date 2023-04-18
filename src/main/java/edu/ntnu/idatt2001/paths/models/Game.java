@@ -100,15 +100,28 @@ public class Game {
   /**
    * Returns the passage that is linked to the given link and
    * moves the player to the new passage through the link.
+   * If the player has fulfilled any of the goals, the ending passage is returned.
    *
    * @param link The link to the passage.
-   * @return The passage that is linked to by the given link.
+   * @return The passage that is linked to by the given link or the ending passage if the player has fulfilled any of the goals.
    * @throws NullPointerException if link is null.
    */
   public Passage go(Link link) throws NullPointerException {
     if (link == null) {
       throw new NullPointerException("Game-Link can not be null");
     }
+    if (checkGoals()) {
+      return story.getEndingPassage();
+    }
     return story.getPassage(link);
+  }
+
+  /**
+   * Checks if the player has fulfilled any of the goals.
+   *
+   * @return True if the player has fulfilled any of the goals, false otherwise.
+   */
+  public boolean checkGoals() {
+    return goals.stream().anyMatch(goal -> goal.isFulfilled(player));
   }
 }

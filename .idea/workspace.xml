@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added test for isAlive">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added endingPassage field and get method">
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,13 +289,6 @@
       <workItem from="1681805154023" duration="165000" />
       <workItem from="1681805411503" duration="2000" />
       <workItem from="1681805427402" duration="777000" />
-    </task>
-    <task id="LOCAL-00052" summary="added nested class and display names to Passagetest">
-      <created>1676983183839</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1676983183839</updated>
     </task>
     <task id="LOCAL-00053" summary="added nested class and display names to StoryTest">
       <created>1676983928764</created>
@@ -634,7 +626,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681210408556</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="added endingPassage field and get method">
+      <created>1681809289579</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1681809289580</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,7 +664,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added javadoc to getBrokenLinks method" />
     <MESSAGE value="changed groupId" />
     <MESSAGE value="added new exception to filehandler for empty file" />
     <MESSAGE value="added positive test for addAction" />
@@ -690,7 +688,8 @@
     <MESSAGE value="added javadoc and moved exceptions to builder" />
     <MESSAGE value="fixed test after implementing builder" />
     <MESSAGE value="added test for isAlive" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test for isAlive" />
+    <MESSAGE value="added endingPassage field and get method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added endingPassage field and get method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
