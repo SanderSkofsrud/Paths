@@ -205,5 +205,35 @@ public class PlayerTest {
       assertEquals(60, player.getGold());
     }
   }
+
+  /**
+   * Test that toString works
+   */
+  @Nested
+  class toString {
+
+    /**
+     * Test that toString works and has correct format
+     * The correct format is:
+     * ;;name;health;score;gold;[item1, item2, item3, ...]
+     */
+    @Test
+    @DisplayName("Test that toString works")
+    void testThatToStringWorks() {
+      player.addToInventory("Stick");
+      player.addToInventory("Sword");
+      assertEquals(";;"
+          + "test"
+          + ";"
+          + 10
+          + ";"
+          + 30
+          + ";"
+          + 50
+          + ";"
+          + "[stick, sword]"
+          ,player.toString());
+    }
+  }
 }
 
