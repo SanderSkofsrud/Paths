@@ -46,4 +46,8 @@ public class HealthGoal implements Goal {
   public String toString() {
     return "(HealthGoal)(" + this.minimumHealth + ")";
   }
+
+  public int getMinimumHealth() {
+    return minimumHealth;
+  }
 }

@@ -47,4 +47,8 @@ public class ScoreGoal implements Goal {
   public String toString() {
     return "(ScoreGoal)(" + this.minimumScore + ")";
   }
+
+  public int getMinimumScore() {
+    return minimumScore;
+  }
 }
