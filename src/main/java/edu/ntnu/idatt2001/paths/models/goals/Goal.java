@@ -20,6 +20,11 @@ public interface Goal {
    */
   boolean isFulfilled(Player player);
 
+  /**
+   * Returns a string representation of the Goal object.
+   *
+   * @return a string representation of the Goal object.
+   */
   @Override
   String toString();
 }
