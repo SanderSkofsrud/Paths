@@ -7,7 +7,13 @@
     <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added javadoc">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/story.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/paths/story.paths" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/story1.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/paths/story1.paths" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/FileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/FileHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="toString-and-finish-game-method" />
+        <entry key="$PROJECT_DIR$" value="FileHandling" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,29 +47,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "GUI",
-    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.customizations",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GUI&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -82,63 +88,65 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.paths [javafx:run]">
-    <configuration name="GoldActionTest$toString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FileHandlerTest$saveGame.testThatSaveGameReturnsAStory">
+    <configuration name="FileHandlerTest$loadGame.testThatReadFromFileReturnsAStory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.actions.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.actions.GoldActionTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.actions.GoldActionTest$toString" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GoldGoalTest$toString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.goals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.goals.GoldGoalTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.goals.GoldGoalTest$toString" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GoldGoalTest$toString.testThatToStringReturnsCorrectString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.goals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.goals.GoldGoalTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.goals.GoldGoalTest$toString" />
-      <option name="METHOD_NAME" value="testThatToStringReturnsCorrectString" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest$loadGame" />
+      <option name="METHOD_NAME" value="testThatReadFromFileReturnsAStory" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryActionTest$toString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileHandlerTest$saveGame.testThatSaveGameReturnsAStory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.actions.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.actions.InventoryActionTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.actions.InventoryActionTest$toString" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest$saveGame" />
+      <option name="METHOD_NAME" value="testThatSaveGameReturnsAStory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest$saveGame" />
+      <option name="METHOD_NAME" value="testThatSaveGameThrowsNullPointerException2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -240,10 +248,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.GoldActionTest$toString" />
-      <item itemvalue="JUnit.GoldGoalTest$toString" />
-      <item itemvalue="JUnit.GoldGoalTest$toString.testThatToStringReturnsCorrectString" />
-      <item itemvalue="JUnit.InventoryActionTest$toString" />
+      <item itemvalue="JUnit.FileHandlerTest" />
+      <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatReadFromFileReturnsAStory" />
+      <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameReturnsAStory" />
+      <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException2" />
       <item itemvalue="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" />
       <item itemvalue="Maven.paths" />
       <item itemvalue="Maven.paths [clean,test]" />
@@ -251,11 +259,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameReturnsAStory" />
+        <item itemvalue="JUnit.FileHandlerTest" />
         <item itemvalue="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" />
-        <item itemvalue="JUnit.GoldGoalTest$toString" />
-        <item itemvalue="JUnit.GoldGoalTest$toString.testThatToStringReturnsCorrectString" />
-        <item itemvalue="JUnit.InventoryActionTest$toString" />
-        <item itemvalue="JUnit.GoldActionTest$toString" />
+        <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException2" />
+        <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatReadFromFileReturnsAStory" />
       </list>
     </recent_temporary>
   </component>
@@ -648,6 +656,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -721,7 +740,7 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680193708824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681810472673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681805884296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680007855672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
