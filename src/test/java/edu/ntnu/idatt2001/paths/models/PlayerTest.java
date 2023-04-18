@@ -35,12 +35,27 @@ public class PlayerTest {
      * Test that constructor constructs object with valid values and indirectly test that getters work
      */
     @Test
-    void testThatConstructorConstructsObject() {
+    @DisplayName("Test that builder constructs object with given values")
+    void testThatBuilderConstructsObjectWithGivenValues() {
       assertEquals("test", player.getName());
       assertEquals(10, player.getHealth());
       assertEquals(10, player.getHealth());
       assertEquals(30, player.getScore());
       assertEquals(50, player.getGold());
+      assertEquals(inventory, player.getInventory());
+    }
+
+    /**
+     * Test that builder constructs object with default values and indirectly test that getters work
+     */
+    @Test
+    @DisplayName("Test that builder constructs object with default values")
+    void testThatBuilderConstructsObjectWithDefaultValues() {
+      Player player = new Player.Builder("test").build();
+      assertEquals("test", player.getName());
+      assertEquals(100, player.getHealth());
+      assertEquals(0, player.getScore());
+      assertEquals(0, player.getGold());
       assertEquals(inventory, player.getInventory());
     }
 
@@ -147,6 +162,15 @@ public class PlayerTest {
     @DisplayName("Test that addToInventory can not set null value")
     void testThatAddToInventoryCanNotSetNullValue() {
       assertThrows(NullPointerException.class, () -> player.addToInventory(null));
+    }
+
+    /**
+     * Test that addToInventory can not set blank value
+     */
+    @Test
+    @DisplayName("Test that addToInventory can not set blank value")
+    void testThatAddToInventoryCanNotSetBlankValue() {
+      assertThrows(IllegalArgumentException.class, () -> player.addToInventory(""));
     }
   }
 
