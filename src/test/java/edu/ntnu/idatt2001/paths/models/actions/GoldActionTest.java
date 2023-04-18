@@ -82,6 +82,7 @@ class GoldActionTest {
   class toString {
     /**
      * Test that toString returns correct string
+     * The toString in gold, health and score is identical. Therefore, this test should cover them all.
      */
     @Test
     @DisplayName("Test that toString returns correct string")
