@@ -37,4 +37,14 @@ public class GoldGoal implements Goal {
   public boolean isFulfilled(Player player) {
     return player.getGold() >= minimumGold;
   }
+
+  /**
+   * Returns a string representation of the GoldGoal object.
+   *
+   * @return a string representation of the GoldGoal object.
+   */
+  @Override
+  public String toString() {
+    return "(GoldGoal)(" + this.minimumGold + ")";
+  }
 }

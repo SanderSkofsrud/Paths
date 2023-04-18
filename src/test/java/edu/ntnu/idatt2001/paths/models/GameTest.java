@@ -28,7 +28,7 @@ public class GameTest {
     score = 50;
     health = 10;
     gold = 30;
-    minimumScore = 20;
+    minimumScore = 60;
     title = "title";
     content = "content";
   }
@@ -37,7 +37,7 @@ public class GameTest {
    * Test class for constructor
    */
   @Nested
-  public class constructor {
+  class constructor {
     /**
      * Test that constructor constructs object with valid values and indirectly test that getters work
      */
@@ -143,7 +143,7 @@ public class GameTest {
    * Test class for go method
    */
  @Nested
- public class go {
+ class go {
 
     /**
      * Test that go returns passage
@@ -162,6 +162,25 @@ public class GameTest {
 
       assertEquals(passage, game.go(new Link(passage.getTitle(), passage.getTitle())));
     }
+
+    /**
+     * Test that go returns endingPassage when a goal is reached
+     */
+    @Test
+    @DisplayName("Test that go returns endingPassage when goal is reached")
+    void testThatGoReturnsEndingPassage(){
+      Player player = new Player.Builder(name).health(health).score(minimumScore).gold(gold).build();
+      Passage openingPassage = new Passage(title, content);
+      Story story = new Story(title, openingPassage);
+      List<Goal> goals = new ArrayList<>();
+      Passage passage = new Passage("title2", "content2");
+      goals.add(new ScoreGoal(minimumScore));
+      Game game = new Game(player, story, goals);
+      game.getStory().addPassage(passage);
+      game.go(new Link(passage.getTitle(), passage.getTitle()));
+      assertEquals(story.getEndingPassage(), game.go(new Link(passage.getTitle(), passage.getTitle())));
+    }
+
     /**
      * Test that go throws NullPointerException when link is null
      */

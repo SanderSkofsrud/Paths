@@ -37,4 +37,14 @@ public class ScoreGoal implements Goal {
   public boolean isFulfilled(Player player) {
     return player.getScore() >= minimumScore;
   }
+
+  /**
+   * Returns a string representation of the ScoreGoal object.
+   *
+   * @return a string representation of the ScoreGoal object.
+   */
+  @Override
+  public String toString() {
+    return "(ScoreGoal)(" + this.minimumScore + ")";
+  }
 }

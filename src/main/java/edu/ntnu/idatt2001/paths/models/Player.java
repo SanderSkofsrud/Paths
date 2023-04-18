@@ -253,18 +253,24 @@ public class Player {
    */
   @Override
   public String toString() {
-    return "Player{"
-        + "name='"
+    StringBuilder sb = new StringBuilder();
+    int count = inventory.size();
+    for (int i = 0; i < count; i++) {
+      sb.append(inventory.get(i));
+      if (i < count - 1) {
+        sb.append(", ");
+      }
+    }
+    return ";;"
         + getName()
-        + '\''
-        + ", health="
+        + ";"
         + getHealth()
-        + ", score="
+        + ";"
         + getScore()
-        + ", gold="
+        + ";"
         + getGold()
-        + ", inventory="
-        + getInventory()
-        + '}';
+        + ";["
+        + sb
+        + "]";
   }
 }

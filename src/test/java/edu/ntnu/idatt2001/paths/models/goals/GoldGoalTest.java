@@ -74,4 +74,21 @@ class GoldGoalTest {
       assertThrows(IllegalArgumentException.class, () -> new GoldGoal(-10));
     }
   }
+
+  /**
+   * Test class for file handling
+   */
+  @Nested
+  class fileHandling {
+    /**
+     * Test that toString returns correct format
+     * The toString in gold, health and score is identical. Therefore, this test should cover them all.
+     */
+    @Test
+    @DisplayName("Test that toString returns correct string")
+    void testThatToStringReturnsCorrectString() {
+      GoldGoal goldGoal = new GoldGoal(10);
+      assertEquals("(GoldGoal)(10)", goldGoal.toString());
+    }
+  }
 }

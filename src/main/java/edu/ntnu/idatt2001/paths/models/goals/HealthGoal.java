@@ -36,4 +36,14 @@ public class HealthGoal implements Goal {
   public boolean isFulfilled(Player player) {
     return player.getHealth() >= minimumHealth;
   }
+
+  /**
+   * Returns a string representation of the HealthGoal object.
+   *
+   * @return a string representation of the HealthGoal object.
+   */
+  @Override
+  public String toString() {
+    return "(HealthGoal)(" + this.minimumHealth + ")";
+  }
 }

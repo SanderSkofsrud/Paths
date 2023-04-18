@@ -74,4 +74,21 @@ class InventoryActionTest {
       assertThrows(IllegalArgumentException.class, () -> new InventoryAction(""));
     }
   }
+
+
+  /**
+   * Test class for file handling
+   */
+  @Nested
+  class fileHandling {
+    /**
+     * Test that toString returns correct format
+     */
+    @Test
+    @DisplayName("Test that toString returns correct string")
+    void testToStringReturnsCorrectString() {
+      InventoryAction inventoryAction = new InventoryAction("Item");
+      assertEquals("{InventoryAction}(item)", inventoryAction.toString());
+    }
+  }
 }

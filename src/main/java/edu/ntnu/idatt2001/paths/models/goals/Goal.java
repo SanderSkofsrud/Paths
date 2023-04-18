@@ -19,4 +19,12 @@ public interface Goal {
    * @return the boolean - true if the goal is fulfilled, false if not
    */
   boolean isFulfilled(Player player);
+
+  /**
+   * Returns a string representation of the Goal object.
+   *
+   * @return a string representation of the Goal object.
+   */
+  @Override
+  String toString();
 }

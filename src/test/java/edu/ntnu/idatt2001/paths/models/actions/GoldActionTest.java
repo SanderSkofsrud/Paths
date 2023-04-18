@@ -74,4 +74,21 @@ class GoldActionTest {
       assertThrows(IllegalArgumentException.class, () -> goldAction.execute(player));
     }
   }
+
+  /**
+   * Test class for file handling
+   */
+  @Nested
+  class fileHandling {
+    /**
+     * Test that toString returns correct format
+     * The toString in gold, health and score is identical. Therefore, this test should cover them all.
+     */
+    @Test
+    @DisplayName("Test that toString returns correct string")
+    void testToStringReturnsCorrectString() {
+      GoldAction goldAction = new GoldAction(10);
+      assertEquals("{GoldAction}(10)", goldAction.toString());
+    }
+  }
 }

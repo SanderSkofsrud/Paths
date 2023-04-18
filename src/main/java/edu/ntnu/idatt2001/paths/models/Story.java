@@ -20,6 +20,8 @@ public class Story {
   private Map<Link, Passage> passages;
   private Passage openingPassage;
 
+  private Passage endingPassage;
+
   /**
    * Constructor for Story.
    * The title of the story must not be null or empty.
@@ -41,6 +43,7 @@ public class Story {
     this.title = title;
     this.openingPassage = openingPassage;
     this.passages = new HashMap<Link, Passage>();
+    this.endingPassage = new Passage("The End", "Congratulations! You won the game");
   }
 
   /**
@@ -53,6 +56,7 @@ public class Story {
     this.title = story.title;
     this.openingPassage = story.openingPassage;
     this.passages = story.passages;
+    this.endingPassage = story.endingPassage;
   }
 
   /**
@@ -145,6 +149,16 @@ public class Story {
         .flatMap(passage -> passage.getLinks().stream())
         .filter(link -> getPassage(link) == null)
         .toList();
+  }
+
+  /**
+   * Returns the ending passage of the story.
+   * A player will reach the ending passage when it has fulfilled all goals.
+   *
+   * @return The ending passage of the story.
+   */
+  public Passage getEndingPassage() {
+    return endingPassage;
   }
 
   /**
