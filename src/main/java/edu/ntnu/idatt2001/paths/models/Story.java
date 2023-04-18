@@ -43,7 +43,7 @@ public class Story {
     this.title = title;
     this.openingPassage = openingPassage;
     this.passages = new HashMap<Link, Passage>();
-    this.endingPassage = new Passage("The End", "Congratulations! You wom the game");
+    this.endingPassage = new Passage("The End", "Congratulations! You won the game");
   }
 
   /**
