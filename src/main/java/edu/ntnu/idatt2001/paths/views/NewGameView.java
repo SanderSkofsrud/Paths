@@ -175,6 +175,7 @@ public class NewGameView extends View {
     stackPane.setBackground(new Background(backgroundImage));
 
     stackPane.getChildren().add(borderPane);
+    stackPane.getStylesheets().add("stylesheet.css");
   }
 
   public void resetPane() {
