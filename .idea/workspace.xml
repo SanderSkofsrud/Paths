@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="removed unnecessary public from class">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added javadoc to toString">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/Goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/Goal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoldGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoldGoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/HealthGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/HealthGoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/InventoryGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/InventoryGoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/ScoreGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/ScoreGoal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,23 +82,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.java in paths">
-    <configuration name="GameTest$go.testThatGoReturnsEndingPassage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.GameTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.GameTest$go" />
-      <option name="METHOD_NAME" value="testThatGoReturnsEndingPassage" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PlayerTest$toString.testThatToStringWorks">
     <configuration name="PlayerTest$ConstructorTest.testThatBuilderConstructsObjectWithDefaultValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -147,6 +126,22 @@
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.PlayerTest" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.PlayerTest$ExceptionHandling" />
       <option name="METHOD_NAME" value="testThatAddToInventoryCanNotSetBlankValue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest$toString.testThatToStringWorks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.PlayerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.PlayerTest$toString" />
+      <option name="METHOD_NAME" value="testThatToStringWorks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -240,10 +235,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.GameTest$go.testThatGoReturnsEndingPassage" />
       <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatBuilderConstructsObjectWithDefaultValues" />
       <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatBuilderConstructsObjectWithGivenValues" />
       <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddToInventoryCanNotSetBlankValue" />
+      <item itemvalue="JUnit.PlayerTest$toString.testThatToStringWorks" />
       <item itemvalue="JUnit.java in paths" />
       <item itemvalue="Maven.paths" />
       <item itemvalue="Maven.paths [clean,test]" />
@@ -251,11 +246,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerTest$toString.testThatToStringWorks" />
         <item itemvalue="JUnit.java in paths" />
         <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatBuilderConstructsObjectWithGivenValues" />
         <item itemvalue="JUnit.PlayerTest$ConstructorTest.testThatBuilderConstructsObjectWithDefaultValues" />
         <item itemvalue="JUnit.PlayerTest$ExceptionHandling.testThatAddToInventoryCanNotSetBlankValue" />
-        <item itemvalue="JUnit.GameTest$go.testThatGoReturnsEndingPassage" />
       </list>
     </recent_temporary>
   </component>
@@ -298,27 +293,6 @@
       <workItem from="1681805154023" duration="165000" />
       <workItem from="1681805411503" duration="2000" />
       <workItem from="1681805427402" duration="777000" />
-    </task>
-    <task id="LOCAL-00058" summary="added some test to returnValues and exception">
-      <created>1677156144091</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1677156144091</updated>
-    </task>
-    <task id="LOCAL-00059" summary="added some test to ExceptionHandling and returnValues">
-      <created>1677156635906</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1677156635906</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes">
-      <created>1677419886263</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1677419886263</updated>
     </task>
     <task id="LOCAL-00061" summary="removed test for get-methods and specified some javadoc comments">
       <created>1679400598667</created>
@@ -642,7 +616,28 @@
       <option name="project" value="LOCAL" />
       <updated>1681811172270</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="added toString to goals">
+      <created>1681811669593</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1681811669593</updated>
+    </task>
+    <task id="LOCAL-00108" summary="added javadoc to toString">
+      <created>1681811679316</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1681811679316</updated>
+    </task>
+    <task id="LOCAL-00109" summary="added javadoc to toString">
+      <created>1681811691152</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1681811691152</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,8 +668,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed typo in test and added positive test for valid values" />
-    <MESSAGE value="added positive test for add-methods and refactored addmethod tests" />
     <MESSAGE value="specified test name" />
     <MESSAGE value="fixed typo" />
     <MESSAGE value="fixed testThatCOnstructorConstructsObject method" />
@@ -698,7 +691,9 @@
     <MESSAGE value="added test to check if player is sent to endingPassage" />
     <MESSAGE value="added test to check if builder constructs with default values" />
     <MESSAGE value="removed unnecessary public from class" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed unnecessary public from class" />
+    <MESSAGE value="added toString to goals" />
+    <MESSAGE value="added javadoc to toString" />
+    <option name="LAST_COMMIT_MESSAGE" value="added javadoc to toString" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

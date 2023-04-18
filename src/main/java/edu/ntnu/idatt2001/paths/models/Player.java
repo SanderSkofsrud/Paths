@@ -254,8 +254,12 @@ public class Player {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    for (String item : inventory) {
-      sb.append(item).append(", ");
+    int count = inventory.size();
+    for (int i = 0; i < count; i++) {
+      sb.append(inventory.get(i));
+      if (i < count - 1) {
+        sb.append(", ");
+      }
     }
     return ";;"
         + getName()
@@ -265,7 +269,8 @@ public class Player {
         + getScore()
         + ";"
         + getGold()
-        + ";"
-        + sb;
+        + ";["
+        + sb
+        + "]";
   }
 }
