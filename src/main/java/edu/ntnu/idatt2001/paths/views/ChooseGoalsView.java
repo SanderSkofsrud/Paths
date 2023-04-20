@@ -1,6 +1,9 @@
 package edu.ntnu.idatt2001.paths.views;
 
+import edu.ntnu.idatt2001.paths.controllers.FileHandlerController;
+import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
+import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.goals.*;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -14,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -168,13 +172,22 @@ public class ChooseGoalsView extends View {
             goals.add(new HealthGoal(1000));
           }
         }
-        //setGoals(goals);
-        screenController.activate("Game");
+
+        Game game;
+        try {
+          game = new Game(PlayerController.getPlayer(), FileHandlerController.loadGame("story.paths").getStory(), goals);
+        } catch (FileNotFoundException ex) {
+          throw new RuntimeException(ex);
+        }
+
+        FileHandlerController.saveGame(PlayerController.getPlayer().getName(), game);
+
+        screenController.activate("MainGame");
       }
     });
 
     hBox.getChildren().addAll(predefinedGoals, customGoals);
-    vBox.getChildren().addAll(imageView, hBox);
+    vBox.getChildren().addAll(imageView, hBox, startButton);
 
     Image background = new Image("background.png");
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
