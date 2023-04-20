@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="New paths files from to match new FileHandler" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Updated FileHandler">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="module-info" />
         <option value="Class" />
       </list>
     </option>
@@ -21,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="FileHandling" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,7 +68,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.customizations",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -76,6 +88,8 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn test" />
+      <command value="mvn clean validate javafx:run7" />
+      <command value="mvn clean validate javafx:run" />
     </option>
   </component>
   <component name="RunManager" selected="Maven.paths [javafx:run]">
@@ -200,31 +214,10 @@
             </option>
             <option name="goals">
               <list>
+                <option value="clean" />
+                <option value="validate" />
                 <option value="javafx:run" />
               </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
-    <configuration name="paths" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list />
             </option>
             <option name="pomFileName" />
             <option name="profilesMap">
@@ -243,17 +236,16 @@
       <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameReturnsAStory" />
       <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException2" />
       <item itemvalue="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" />
-      <item itemvalue="Maven.paths" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameReturnsAStory" />
-        <item itemvalue="JUnit.FileHandlerTest" />
         <item itemvalue="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" />
         <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException2" />
+        <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameReturnsAStory" />
         <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatReadFromFileReturnsAStory" />
+        <item itemvalue="JUnit.FileHandlerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -292,10 +284,202 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-      <workItem from="1681652853668" duration="600000" />
-      <workItem from="1681805154023" duration="165000" />
-      <workItem from="1681805411503" duration="2000" />
-      <workItem from="1681805427402" duration="777000" />
+    </task>
+    <task id="LOCAL-00043" summary="temporary finished link test class">
+      <created>1676540332168</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1676540332168</updated>
+    </task>
+    <task id="LOCAL-00044" summary="temporary finished Game test class">
+      <created>1676540982865</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1676540982865</updated>
+    </task>
+    <task id="LOCAL-00045" summary="added addPassage in constructor">
+      <created>1676979888905</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1676979888905</updated>
+    </task>
+    <task id="LOCAL-00046" summary="temporary finished story test class">
+      <created>1676979905467</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1676979905467</updated>
+    </task>
+    <task id="LOCAL-00047" summary="fixed error in link test">
+      <created>1676980774096</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1676980774096</updated>
+    </task>
+    <task id="LOCAL-00048" summary="fixed typo in Passage class">
+      <created>1676982115614</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1676982115614</updated>
+    </task>
+    <task id="LOCAL-00049" summary="added exception throws to addGold and addScore">
+      <created>1676982214504</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1676982214504</updated>
+    </task>
+    <task id="LOCAL-00050" summary="added nested class and display names to GameTest">
+      <created>1676982646984</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1676982646984</updated>
+    </task>
+    <task id="LOCAL-00051" summary="added nested class and display names to LinkTest">
+      <created>1676982936758</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1676982936758</updated>
+    </task>
+    <task id="LOCAL-00052" summary="added nested class and display names to Passagetest">
+      <created>1676983183839</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1676983183839</updated>
+    </task>
+    <task id="LOCAL-00053" summary="added nested class and display names to StoryTest">
+      <created>1676983928764</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1676983928764</updated>
+    </task>
+    <task id="LOCAL-00054" summary="added nested class and display names to PlayerTest">
+      <created>1676984235730</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1676984235730</updated>
+    </task>
+    <task id="LOCAL-00055" summary="added a few more tests and beforeEach">
+      <created>1677155476833</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1677155476834</updated>
+    </task>
+    <task id="LOCAL-00056" summary="added a exceptionHandling test">
+      <created>1677155783708</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1677155783708</updated>
+    </task>
+    <task id="LOCAL-00057" summary="fixed thrown exception">
+      <created>1677156115157</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1677156115157</updated>
+    </task>
+    <task id="LOCAL-00058" summary="added some test to returnValues and exception">
+      <created>1677156144091</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1677156144091</updated>
+    </task>
+    <task id="LOCAL-00059" summary="added some test to ExceptionHandling and returnValues">
+      <created>1677156635906</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1677156635906</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes">
+      <created>1677419886263</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1677419886263</updated>
+    </task>
+    <task id="LOCAL-00061" summary="removed test for get-methods and specified some javadoc comments">
+      <created>1679400598667</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400598667</updated>
+    </task>
+    <task id="LOCAL-00062" summary="removed test for get-methods and specified some javadoc comments">
+      <created>1679400608256</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400608256</updated>
+    </task>
+    <task id="LOCAL-00063" summary="removed test for get-methods and specified some javadoc comments">
+      <created>1679400614339</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400614339</updated>
+    </task>
+    <task id="LOCAL-00064" summary="removed test for get-methods, specified some javadoc comments and refactored addAction test class">
+      <created>1679400844265</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1679400844265</updated>
+    </task>
+    <task id="LOCAL-00065" summary="removed test for get-methods and specified javadoc comments">
+      <created>1679401098889</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401098889</updated>
+    </task>
+    <task id="LOCAL-00066" summary="added description to Link class">
+      <created>1679401354627</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401354627</updated>
+    </task>
+    <task id="LOCAL-00067" summary="added description to Passage class">
+      <created>1679401528514</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401528514</updated>
+    </task>
+    <task id="LOCAL-00068" summary="added description to Story class">
+      <created>1679401652127</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401652127</updated>
+    </task>
+    <task id="LOCAL-00069" summary="added description to Player class">
+      <created>1679401900354</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401900354</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links">
+      <created>1679982695369</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1679982695369</updated>
     </task>
     <task id="LOCAL-00071" summary="Fixed regex in FileHandeler to work for links">
       <created>1679983245289</created>
@@ -444,218 +628,11 @@
       <option name="project" value="LOCAL" />
       <updated>1680008582164</updated>
     </task>
-    <task id="LOCAL-00092" summary="fixed bug in testThatRemovePassageRemovesPassage test">
-      <created>1681202733022</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1681202733022</updated>
-    </task>
-    <task id="LOCAL-00093" summary="changed append to false in saveGame">
-      <created>1681202747545</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1681202747545</updated>
-    </task>
-    <task id="LOCAL-00094" summary="changed addhealth and added isAlive method. Added throws notation to methods">
-      <created>1681205763298</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1681205763298</updated>
-    </task>
-    <task id="LOCAL-00095" summary="changed constructor and method so that inventory is lowercase">
-      <created>1681206624766</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1681206624766</updated>
-    </task>
-    <task id="LOCAL-00096" summary="added builder constructor to player">
-      <created>1681206920291</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1681206920291</updated>
-    </task>
-    <task id="LOCAL-00097" summary="changed player instances to builder">
-      <created>1681209089000</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1681209089000</updated>
-    </task>
-    <task id="LOCAL-00098" summary="added javadoc and moved exceptions to builder">
-      <created>1681209994793</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1681209994793</updated>
-    </task>
-    <task id="LOCAL-00099" summary="fixed test after implementing builder">
-      <created>1681210204015</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1681210204015</updated>
-    </task>
-    <task id="LOCAL-00100" summary="added test for isAlive">
-      <created>1681210408556</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1681210408556</updated>
-    </task>
-    <task id="LOCAL-00101" summary="added endingPassage field and get method">
-      <created>1681809289579</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1681809289580</updated>
-    </task>
-    <task id="LOCAL-00102" summary="added checkGoals and changed go method so that player will be sent to endingpassage if won">
-      <created>1681809696992</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1681809696992</updated>
-    </task>
-    <task id="LOCAL-00103" summary="fixed typo in message">
-      <created>1681809801077</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1681809801077</updated>
-    </task>
-    <task id="LOCAL-00104" summary="added test to check if player is sent to endingPassage">
-      <created>1681810018731</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1681810018731</updated>
-    </task>
-    <task id="LOCAL-00105" summary="added test to check if builder constructs with default values">
-      <created>1681810458370</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1681810458370</updated>
-    </task>
-    <task id="LOCAL-00106" summary="removed unnecessary public from class">
-      <created>1681811172270</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1681811172270</updated>
-    </task>
-    <task id="LOCAL-00107" summary="added toString to goals">
-      <created>1681811669593</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1681811669593</updated>
-    </task>
-    <task id="LOCAL-00108" summary="added javadoc to toString">
-      <created>1681811679316</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1681811679316</updated>
-    </task>
-    <task id="LOCAL-00109" summary="added javadoc to toString">
-      <created>1681811691152</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1681811691152</updated>
-    </task>
-    <task id="LOCAL-00110" summary="formatted inventory items in toString">
-      <created>1681812470239</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1681812470239</updated>
-    </task>
-    <task id="LOCAL-00111" summary="added test for toString">
-      <created>1681812479233</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1681812479233</updated>
-    </task>
-    <task id="LOCAL-00112" summary="added test for toString">
-      <created>1681812850668</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1681812850668</updated>
-    </task>
-    <task id="LOCAL-00113" summary="added test for toString">
-      <created>1681812854087</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1681812854087</updated>
-    </task>
-    <task id="LOCAL-00114" summary="added javadoc">
-      <created>1681813019530</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1681813019530</updated>
-    </task>
-    <task id="LOCAL-00115" summary="Fixed FileHandler to read and write game instead of story, as it now stores player and goals">
-      <created>1681827137588</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1681827137588</updated>
-    </task>
-    <task id="LOCAL-00116" summary="Remade FileHandlerTest to match new solution">
-      <created>1681827160369</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1681827160369</updated>
-    </task>
-    <task id="LOCAL-00117" summary="Added toString to Game">
-      <created>1681827173265</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1681827173265</updated>
-    </task>
-    <task id="LOCAL-00118" summary="Commented out code that might be needed later">
-      <created>1681827198661</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1681827198661</updated>
-    </task>
-    <task id="LOCAL-00119" summary="New paths files from to match new FileHandler">
-      <created>1681827309173</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1681827309173</updated>
-    </task>
-    <option name="localTasksCounter" value="120" />
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ID_ORDER">
-      <list>
-        <option value="Default.Root" />
-        <option value="Default.Author" />
-        <option value="Default.Date" />
-        <option value="Default.Subject" />
-        <option value="Space.CommitStatus" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -682,32 +659,32 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed bug in testThatRemovePassageRemovesPassage test" />
-    <MESSAGE value="changed append to false in saveGame" />
-    <MESSAGE value="changed addhealth and added isAlive method. Added throws notation to methods" />
-    <MESSAGE value="changed constructor and method so that inventory is lowercase" />
-    <MESSAGE value="added builder constructor to player" />
-    <MESSAGE value="changed player instances to builder" />
-    <MESSAGE value="added javadoc and moved exceptions to builder" />
-    <MESSAGE value="fixed test after implementing builder" />
-    <MESSAGE value="added test for isAlive" />
-    <MESSAGE value="added endingPassage field and get method" />
-    <MESSAGE value="added checkGoals and changed go method so that player will be sent to endingpassage if won" />
-    <MESSAGE value="fixed typo in message" />
-    <MESSAGE value="added test to check if player is sent to endingPassage" />
-    <MESSAGE value="added test to check if builder constructs with default values" />
-    <MESSAGE value="removed unnecessary public from class" />
-    <MESSAGE value="added toString to goals" />
-    <MESSAGE value="added javadoc to toString" />
-    <MESSAGE value="formatted inventory items in toString" />
-    <MESSAGE value="added test for toString" />
-    <MESSAGE value="added javadoc" />
-    <MESSAGE value="Fixed FileHandler to read and write game instead of story, as it now stores player and goals" />
-    <MESSAGE value="Remade FileHandlerTest to match new solution" />
-    <MESSAGE value="Added toString to Game" />
-    <MESSAGE value="Commented out code that might be needed later" />
-    <MESSAGE value="New paths files from to match new FileHandler" />
-    <option name="LAST_COMMIT_MESSAGE" value="New paths files from to match new FileHandler" />
+    <MESSAGE value="removed test for get-methods and specified javadoc comments" />
+    <MESSAGE value="added description to Link class" />
+    <MESSAGE value="added description to Passage class" />
+    <MESSAGE value="added description to Story class" />
+    <MESSAGE value="added description to Player class" />
+    <MESSAGE value="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links" />
+    <MESSAGE value="Fixed regex in FileHandeler to work for links" />
+    <MESSAGE value="Moved save game to FileHandeler class, and created tests for the class" />
+    <MESSAGE value="created paths folder for paths files" />
+    <MESSAGE value="added javadoc to getBrokenLinks method" />
+    <MESSAGE value="changed groupId" />
+    <MESSAGE value="added new exception to filehandler for empty file" />
+    <MESSAGE value="added positive test for addAction" />
+    <MESSAGE value="added positive test for addLink and hasLinks" />
+    <MESSAGE value="removed get-method test" />
+    <MESSAGE value="fixed typo in test and added positive test for valid values" />
+    <MESSAGE value="added positive test for add-methods and refactored addmethod tests" />
+    <MESSAGE value="specified test name" />
+    <MESSAGE value="fixed typo" />
+    <MESSAGE value="fixed testThatCOnstructorConstructsObject method" />
+    <MESSAGE value="fixed typo in method" />
+    <MESSAGE value="changed isEmpty to isBlank" />
+    <MESSAGE value="added positive test and refactored nested test classes" />
+    <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
+    <MESSAGE value="removed public from nested classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed public from nested classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
