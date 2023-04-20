@@ -7,14 +7,22 @@ import edu.ntnu.idatt2001.paths.utility.FileHandler;
 import java.io.FileNotFoundException;
 
 public class FileHandlerController {
-  static Player player;
-  static String path = "src/main/resources/paths/";
+  private static FileHandlerController instance;
+  String path = "src/main/resources/paths/";
+  private FileHandlerController() {
+  }
+  public static FileHandlerController getInstance() {
+    if (instance == null) {
+      instance = new FileHandlerController();
+    }
+    return instance;
+  }
 
-  public static void saveGame(String name, Game game) {
+  public void saveGame(String name, Game game) {
     FileHandler.saveGame(game, path + name + ".paths");
   }
 
-  public static Game loadGame(String name) throws FileNotFoundException {
+  public Game loadGame(String name) throws FileNotFoundException {
     return FileHandler.loadGame(path + name);
   }
 }

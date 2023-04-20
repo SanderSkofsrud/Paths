@@ -27,6 +27,7 @@ public class MainGameView extends View{
 
   @Override
   public void setup() {
+    Text game = new Text();
     Text text = new Text("Main game view");
     stackPane.getChildren().add(text);
   }

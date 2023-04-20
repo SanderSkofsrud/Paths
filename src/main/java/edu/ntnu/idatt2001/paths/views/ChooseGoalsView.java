@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,6 +38,8 @@ public class ChooseGoalsView extends View {
   protected StackPane stackPane;
   private ScreenController screenController;
   private ObservableList<Goal> goals;
+  FileHandlerController fileHandlerController = FileHandlerController.getInstance();
+  PlayerController playerController = PlayerController.getInstance();
 
   /**
    * Instantiates a new Choose goals view.
@@ -175,12 +178,12 @@ public class ChooseGoalsView extends View {
 
         Game game;
         try {
-          game = new Game(PlayerController.getPlayer(), FileHandlerController.loadGame("story.paths").getStory(), goals);
+          game = new Game(playerController.getPlayer(), fileHandlerController.loadGame("story.paths").getStory(), goals);
         } catch (FileNotFoundException ex) {
           throw new RuntimeException(ex);
         }
 
-        FileHandlerController.saveGame(PlayerController.getPlayer().getName(), game);
+        fileHandlerController.saveGame(playerController.getPlayer().getName(), game);
 
         screenController.activate("MainGame");
       }
