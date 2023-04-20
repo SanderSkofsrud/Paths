@@ -155,7 +155,8 @@ public class NewGameView extends View {
       if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
         player = PlayerController.addCusomPlayer(textFieldName.getText(), Integer.parseInt(textFieldHealth.getText()), Integer.parseInt(textFieldGold.getText()));
       } else {
-        player = PlayerController.addDefaultPlayer(toggleGroupDifficulty.getSelectedToggle().toString());
+        ToggleButton selected = (ToggleButton) toggleGroupDifficulty.getSelectedToggle();
+        player = PlayerController.addDefaultPlayer(textFieldName.getText(), selected.getText());
       }
       System.out.printf("Player created: %s%n", player.toString());
       screenController.activate("ChooseGoals");

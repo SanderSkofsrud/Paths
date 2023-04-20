@@ -107,7 +107,7 @@ public class FileHandler {
       }
     }
     scanner.close();
-    if (inventoryGoals.size() > 0) {
+    if (!inventoryGoals.isEmpty()) {
       goals.add(new InventoryGoal(inventoryGoals));
     }
     return new Game(player, story, goals);
