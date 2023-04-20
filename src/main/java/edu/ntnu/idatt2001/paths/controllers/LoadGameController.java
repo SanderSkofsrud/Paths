@@ -12,9 +12,17 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-
 public class LoadGameController {
-  public static ObservableList<FileEntry> getSavedGames() {
+  private static LoadGameController instance;
+  private LoadGameController() {
+  }
+  public static LoadGameController getInstance() {
+    if (instance == null) {
+      instance = new LoadGameController();
+    }
+    return instance;
+  }
+  public ObservableList<FileEntry> getSavedGames() {
     ObservableList<FileEntry> filesList = FXCollections.observableArrayList();
     URL resource = LoadGameController.class.getResource("/paths");
     if (resource != null) {

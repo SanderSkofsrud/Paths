@@ -3,6 +3,7 @@ package edu.ntnu.idatt2001.paths.views;
 import edu.ntnu.idatt2001.paths.controllers.FileHandlerController;
 import edu.ntnu.idatt2001.paths.controllers.LoadGameController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
+import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.utility.FileEntry;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Hyperlink;
@@ -21,6 +22,9 @@ public class LoadGameView extends View{
   protected BorderPane borderPane;
   protected StackPane stackPane;
   private ScreenController screenController;
+  protected Game game;
+  FileHandlerController fileHandlerController = FileHandlerController.getInstance();
+  LoadGameController loadGameController = LoadGameController.getInstance();
   public LoadGameView(ScreenController screenController) {
     borderPane = new BorderPane();
     stackPane = new StackPane();
@@ -50,7 +54,7 @@ public class LoadGameView extends View{
           FileEntry fileEntry = getTableView().getItems().get(getIndex());
           System.out.println("Clicked on file: " + fileEntry.getFileName());
           try {
-            FileHandlerController.loadGame(fileEntry.getFileName());
+            game = fileHandlerController.loadGame(fileEntry.getFileName());
           } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
           }
@@ -70,7 +74,7 @@ public class LoadGameView extends View{
     });
 
     tableView.getColumns().addAll(fileNameColumn, clickableTextColumn);
-    tableView.setItems(LoadGameController.getSavedGames());
+    tableView.setItems(loadGameController.getSavedGames());
     tableView.setMaxWidth(400);
 
     stackPane.getChildren().add(tableView);

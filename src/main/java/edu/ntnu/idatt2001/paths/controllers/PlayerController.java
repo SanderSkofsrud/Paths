@@ -6,10 +6,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerController {
-  static Player player;
-  static List<String> inventory = new ArrayList<>();
+  private static PlayerController instance;
+  Player player;
+  List<String> inventory = new ArrayList<>();
+  PlayerController() {
+  }
 
-  public static Player addDefaultPlayer(String name, String dificulty) {
+  public static PlayerController getInstance() {
+    if (instance == null) {
+      instance = new PlayerController();
+    }
+    return instance;
+  }
+
+  public Player addDefaultPlayer(String name, String dificulty) {
     System.out.println(dificulty.trim().toLowerCase());
     switch (dificulty.trim().toLowerCase()) {
       case "easy" -> {
@@ -22,12 +32,12 @@ public class PlayerController {
     return player;
   }
 
-  public static Player addCusomPlayer(String name, int health, int gold) {
+  public Player addCusomPlayer(String name, int health, int gold) {
     player = new Player.Builder(name).health(health).gold(gold).inventory(inventory).build();
     return player;
   }
 
-  public static Player getPlayer() {
+  public Player getPlayer() {
     return player;
   }
 }

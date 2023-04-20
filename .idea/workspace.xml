@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Updated FileHandler">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added MainGameView and LoadGameView to the controller so they work">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/test.paths" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/PlayerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,29 +48,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "FileHandling",
-    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;FileHandling&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -284,69 +283,6 @@
       <workItem from="1679468333271" duration="1798000" />
       <workItem from="1679555120466" duration="303000" />
       <workItem from="1679949851713" duration="7966000" />
-    </task>
-    <task id="LOCAL-00043" summary="temporary finished link test class">
-      <created>1676540332168</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1676540332168</updated>
-    </task>
-    <task id="LOCAL-00044" summary="temporary finished Game test class">
-      <created>1676540982865</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1676540982865</updated>
-    </task>
-    <task id="LOCAL-00045" summary="added addPassage in constructor">
-      <created>1676979888905</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1676979888905</updated>
-    </task>
-    <task id="LOCAL-00046" summary="temporary finished story test class">
-      <created>1676979905467</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1676979905467</updated>
-    </task>
-    <task id="LOCAL-00047" summary="fixed error in link test">
-      <created>1676980774096</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1676980774096</updated>
-    </task>
-    <task id="LOCAL-00048" summary="fixed typo in Passage class">
-      <created>1676982115614</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1676982115614</updated>
-    </task>
-    <task id="LOCAL-00049" summary="added exception throws to addGold and addScore">
-      <created>1676982214504</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1676982214504</updated>
-    </task>
-    <task id="LOCAL-00050" summary="added nested class and display names to GameTest">
-      <created>1676982646984</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1676982646984</updated>
-    </task>
-    <task id="LOCAL-00051" summary="added nested class and display names to LinkTest">
-      <created>1676982936758</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1676982936758</updated>
     </task>
     <task id="LOCAL-00052" summary="added nested class and display names to Passagetest">
       <created>1676983183839</created>
@@ -628,7 +564,70 @@
       <option name="project" value="LOCAL" />
       <updated>1680008582164</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Made ChooseGoalsView create and save games">
+      <created>1681978700358</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1681978700358</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Made new FileEntry class that makes working with files easier, used for the tabelview in LoadGameView">
+      <created>1681978760493</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1681978760493</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Made FileHandlerController that is a controller used for saving and loading games">
+      <created>1681978799414</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1681978799414</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Made LoadGameController that is used for getting all savegames">
+      <created>1681978836723</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1681978836723</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Made LoadGameView that is used to show the load game page, where you can choose to load into a previously created game">
+      <created>1681978899775</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1681978899775</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Made MainGameView, that will be used to show the main game, but is currently empty">
+      <created>1681978932256</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1681978932256</updated>
+    </task>
+    <task id="LOCAL-00098" summary="Updated NewGameView to return the correct text containing the difficulty">
+      <created>1681978992980</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1681978992980</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Fixed error in PlayerController where it used the builder wrong and did not return the difficulty in the correct way">
+      <created>1681979083911</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1681979083911</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Added MainGameView and LoadGameView to the controller so they work">
+      <created>1681979125329</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1681979125329</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -659,15 +658,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="removed test for get-methods and specified javadoc comments" />
-    <MESSAGE value="added description to Link class" />
-    <MESSAGE value="added description to Passage class" />
-    <MESSAGE value="added description to Story class" />
-    <MESSAGE value="added description to Player class" />
-    <MESSAGE value="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links" />
-    <MESSAGE value="Fixed regex in FileHandeler to work for links" />
-    <MESSAGE value="Moved save game to FileHandeler class, and created tests for the class" />
-    <MESSAGE value="created paths folder for paths files" />
     <MESSAGE value="added javadoc to getBrokenLinks method" />
     <MESSAGE value="changed groupId" />
     <MESSAGE value="added new exception to filehandler for empty file" />
@@ -684,7 +674,16 @@
     <MESSAGE value="added positive test and refactored nested test classes" />
     <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
     <MESSAGE value="removed public from nested classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed public from nested classes" />
+    <MESSAGE value="Made ChooseGoalsView create and save games" />
+    <MESSAGE value="Made new FileEntry class that makes working with files easier, used for the tabelview in LoadGameView" />
+    <MESSAGE value="Made FileHandlerController that is a controller used for saving and loading games" />
+    <MESSAGE value="Made LoadGameController that is used for getting all savegames" />
+    <MESSAGE value="Made LoadGameView that is used to show the load game page, where you can choose to load into a previously created game" />
+    <MESSAGE value="Made MainGameView, that will be used to show the main game, but is currently empty" />
+    <MESSAGE value="Updated NewGameView to return the correct text containing the difficulty" />
+    <MESSAGE value="Fixed error in PlayerController where it used the builder wrong and did not return the difficulty in the correct way" />
+    <MESSAGE value="Added MainGameView and LoadGameView to the controller so they work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added MainGameView and LoadGameView to the controller so they work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

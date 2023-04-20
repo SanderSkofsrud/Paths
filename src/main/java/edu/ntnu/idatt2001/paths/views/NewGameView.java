@@ -29,6 +29,7 @@ public class NewGameView extends View {
   protected StackPane stackPane;
   private ScreenController screenController;
   Player player;
+  PlayerController playerController = PlayerController.getInstance();
 
   /**
    * Instantiates a new New game view.
@@ -153,10 +154,10 @@ public class NewGameView extends View {
         return;
       }
       if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
-        player = PlayerController.addCusomPlayer(textFieldName.getText(), Integer.parseInt(textFieldHealth.getText()), Integer.parseInt(textFieldGold.getText()));
+        player = playerController.addCusomPlayer(textFieldName.getText(), Integer.parseInt(textFieldHealth.getText()), Integer.parseInt(textFieldGold.getText()));
       } else {
         ToggleButton selected = (ToggleButton) toggleGroupDifficulty.getSelectedToggle();
-        player = PlayerController.addDefaultPlayer(textFieldName.getText(), selected.getText());
+        player = playerController.addDefaultPlayer(textFieldName.getText(), selected.getText());
       }
       System.out.printf("Player created: %s%n", player.toString());
       screenController.activate("ChooseGoals");
