@@ -1,11 +1,6 @@
 package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
-import edu.ntnu.idatt2001.paths.models.*;
-import edu.ntnu.idatt2001.paths.models.actions.GoldAction;
-import edu.ntnu.idatt2001.paths.models.goals.Goal;
-import edu.ntnu.idatt2001.paths.models.goals.GoldGoal;
-import edu.ntnu.idatt2001.paths.utility.FileHandler;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,10 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The type App.
@@ -61,10 +52,10 @@ public class App extends Application {
   }
 
   private void setup() {
-    ImageView logo = new ImageView(new Image("logo.png"));
+    ImageView logo = new ImageView(new Image("images/logo.png"));
     logo.preserveRatioProperty().set(true);
     logo.setFitWidth(500);
-    ImageView tagline = new ImageView(new Image("tagline.png"));
+    ImageView tagline = new ImageView(new Image("images/tagline.png"));
     tagline.preserveRatioProperty().set(true);
     tagline.setFitWidth(300);
     VBox vBox = new VBox();
@@ -85,12 +76,12 @@ public class App extends Application {
     HBox hBox = new HBox();
     hBox.getChildren().addAll(newGame, loadGame);
     hBox.setAlignment(Pos.CENTER);
-    hBox.getStylesheets().add("stylesheet.css");
+    hBox.getStylesheets().add("stylesheets/stylesheet.css");
     hBox.setSpacing(20);
     hBox.setPadding(new Insets(0, 0, 150, 0));
     frontPage.setBottom(hBox);
 
-    Image background = new Image("background.png");
+    Image background = new Image("images/background.png");
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
     frontPage.setBackground(new Background(backgroundImage));
   }

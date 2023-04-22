@@ -23,8 +23,8 @@ public class PlayerController {
     System.out.println(dificulty.trim().toLowerCase());
     switch (dificulty.trim().toLowerCase()) {
       case "easy" -> {
-        player = new Player.Builder(name).health(250).gold(250).inventory(inventory).build();
         inventory.add("Sword");
+        player = new Player.Builder(name).health(250).gold(250).inventory(inventory).build();
       }
       case "medium" -> player = new Player.Builder(name).build();
       default -> player = new Player.Builder(name).health(25).gold(0).build();

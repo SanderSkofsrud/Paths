@@ -6,5 +6,5 @@ You are in a small room
 
 ::Another room
 The door opens to another room
-[Open the book](The book of spells)
+[Open the book](The book of spells)[{GoldAction}(10)]
 [Go back](Beginnings)

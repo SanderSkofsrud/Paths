@@ -22,23 +22,25 @@ public class LoadGameController {
     }
     return instance;
   }
-  public ObservableList<FileEntry> getSavedGames() {
+  public ObservableList<FileEntry> getSavedGames(String fileType) {
     ObservableList<FileEntry> filesList = FXCollections.observableArrayList();
-    URL resource = LoadGameController.class.getResource("/paths");
-    if (resource != null) {
-      try {
+    URL resource = LoadGameController.class.getResource("/" + fileType);
+    try {
+      if (resource != null) {
         Path path = Paths.get(resource.toURI());
-        try (Stream<Path> filesStream = Files.list(path)) {
-          filesStream.forEach(file -> {
-            if (Files.isRegularFile(file)) {
+        try (Stream<Path> stream = Files.list(path)) {
+          stream.forEach(file -> {
+            if (Files.isRegularFile(file) && file.toString().endsWith(fileType)) {
               filesList.add(new FileEntry(file.getFileName().toString()));
             }
           });
         }
-      } catch (IOException | URISyntaxException e) {
-        e.printStackTrace();
       }
+    } catch (IOException | URISyntaxException e) {
+      e.printStackTrace();
     }
     return filesList;
   }
+
+
 }
