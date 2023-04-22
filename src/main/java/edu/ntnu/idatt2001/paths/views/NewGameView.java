@@ -12,9 +12,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.util.Duration;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * The type New game view.
  */
@@ -47,7 +44,7 @@ public class NewGameView extends View {
   }
 
   public void setup() {
-    ImageView imageView = new ImageView(new Image("create.png"));
+    ImageView imageView = new ImageView(new Image("images/create.png"));
 
     Label labelName = new Label("Select name");
     TextField textFieldName = new TextField();
@@ -107,8 +104,8 @@ public class NewGameView extends View {
     });
 
     Label labelCharacter = new Label("Select character model");
-    Image male = new Image("male.png");
-    Image female = new Image("female.png");
+    Image male = new Image("images/male.png");
+    Image female = new Image("images/female.png");
     ImageView characterMale = new ImageView(male);
     ImageView characterFemale = new ImageView(female);
     characterFemale.setVisible(false);
@@ -172,12 +169,12 @@ public class NewGameView extends View {
     BorderPane borderPane = new BorderPane();
     borderPane.setCenter(vBox);
 
-    Image background = new Image("background.png");
+    Image background = new Image("images/background.png");
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
     stackPane.setBackground(new Background(backgroundImage));
 
     stackPane.getChildren().add(borderPane);
-    stackPane.getStylesheets().add("stylesheet.css");
+    stackPane.getStylesheets().add("stylesheets/stylesheet.css");
   }
 
   public void resetPane() {

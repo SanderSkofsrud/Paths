@@ -11,15 +11,11 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.text.Text;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -57,7 +53,7 @@ public class ChooseGoalsView extends View {
     return this.borderPane;
   }
   public void setup() {
-    ImageView imageView = new ImageView(new Image("goals.png"));
+    ImageView imageView = new ImageView(new Image("images/goals.png"));
     HBox hBox = new HBox();
     hBox.setSpacing(25);
     hBox.setAlignment(Pos.CENTER);
@@ -159,7 +155,6 @@ public class ChooseGoalsView extends View {
 
     Button startButton = new Button("Start");
     startButton.setOnAction(e -> {
-      if (!goals.isEmpty()) {
         for (int i = 1; i < 7; i++) {
           if (i == 1 && checkBox1.isSelected()) {
             goals.add(new GoldGoal(100));
@@ -174,7 +169,6 @@ public class ChooseGoalsView extends View {
           } else if (i == 6 && checkBox6.isSelected()) {
             goals.add(new HealthGoal(1000));
           }
-        }
 
         Game game;
         try {
@@ -183,7 +177,8 @@ public class ChooseGoalsView extends View {
           throw new RuntimeException(ex);
         }
 
-        fileHandlerController.saveGame(playerController.getPlayer().getName(), game);
+        fileHandlerController.saveGame(playerController.getPlayer().getName(), game.getStory());
+        fileHandlerController.saveGameJson(playerController.getPlayer().getName(), game);
 
         screenController.activate("MainGame");
       }
@@ -192,12 +187,12 @@ public class ChooseGoalsView extends View {
     hBox.getChildren().addAll(predefinedGoals, customGoals);
     vBox.getChildren().addAll(imageView, hBox, startButton);
 
-    Image background = new Image("background.png");
+    Image background = new Image("images/background.png");
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
     stackPane.setBackground(new Background(backgroundImage));
 
     stackPane.getChildren().add(vBox);
-    stackPane.getStylesheets().add("stylesheet.css");
+    stackPane.getStylesheets().add("stylesheets/stylesheet.css");
   }
 
   public void resetPane() {

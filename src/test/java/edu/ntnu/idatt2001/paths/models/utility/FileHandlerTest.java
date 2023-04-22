@@ -124,10 +124,10 @@ public class FileHandlerTest {
     @DisplayName("Test that saveGame returns a story")
     void testThatSaveGameReturnsAStory() throws FileNotFoundException {
       FileHandler fileHandler = new FileHandler();
-      Game game = fileHandler.loadGame("src/main/resources/paths/story.paths");
-      fileHandler.saveGame(game, "src/main/resources/paths/story1.paths");
-      Game game1 = fileHandler.loadGame("src/main/resources/paths/story1.paths");
-      assertEquals(Game.class, game1.getClass());
+      Story story = fileHandler.loadStory("src/main/resources/paths/storyNoGame.paths");
+      fileHandler.saveGame(story, "src/main/resources/paths/story1.paths");
+      Story story1 = fileHandler.loadStory("src/main/resources/paths/story1.paths");
+      assertEquals(Story.class, story1.getClass());
     }
 
     /**
@@ -137,9 +137,9 @@ public class FileHandlerTest {
     @DisplayName("Test that saveGame throws NullPointerException when player is null")
     void testThatSaveGameThrowsNullPointerException() {
       FileHandler fileHandler = new FileHandler();
-      Game game = null;
+      Story story = null;
       assertThrows(NullPointerException.class, () -> {
-        fileHandler.saveGame(game, "src/main/resources/paths/story1.paths");
+        fileHandler.saveGame(story, "src/main/resources/paths/story1.paths");
       });
     }
 
@@ -152,12 +152,9 @@ public class FileHandlerTest {
       FileHandler fileHandler = new FileHandler();
       Player player = new Player.Builder("name").build();
       Story story = new Story("Title", new Passage("title", "content"));
-      List<Goal> goals = new ArrayList<>();
-      goals.add(new HealthGoal(10));
-      Game game = new Game(player, story, goals);
       String string = null;
       assertThrows(NullPointerException.class, () -> {
-        fileHandler.saveGame(game, string);
+        fileHandler.saveGame(story, string);
       });
     }
   }

@@ -5,17 +5,17 @@ import edu.ntnu.idatt2001.paths.controllers.LoadGameController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.utility.FileEntry;
-import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 
 public class LoadGameView extends View{
@@ -38,15 +38,17 @@ public class LoadGameView extends View{
 
   @Override
   public void setup() {
-    TableView<FileEntry> tableView = new TableView<>();
+    // Create the TableView for .paths files
+    TableView<FileEntry> pathsTableView = new TableView<>();
 
-    TableColumn<FileEntry, String> fileNameColumn = new TableColumn<>("File Name");
-    fileNameColumn.setCellValueFactory(new PropertyValueFactory<>("fileName"));
-    fileNameColumn.setPrefWidth(300);
+    TableColumn<FileEntry, String> pathsFileNameColumn = new TableColumn<>("File Name");
+    pathsFileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getFileName()));
 
-    TableColumn<FileEntry, String> clickableTextColumn = new TableColumn<>("Load game");
-    clickableTextColumn.setPrefWidth(100);
-    clickableTextColumn.setCellFactory(tc -> new TableCell<>() {
+    pathsFileNameColumn.setPrefWidth(300);
+
+    TableColumn<FileEntry, String> pathsClickableTextColumn = new TableColumn<>("Load game");
+    pathsClickableTextColumn.setPrefWidth(100);
+    pathsClickableTextColumn.setCellFactory(tc -> new TableCell<>() {
       private final Hyperlink hyperlink = new Hyperlink("Load game");
 
       {
@@ -73,12 +75,63 @@ public class LoadGameView extends View{
       }
     });
 
-    tableView.getColumns().addAll(fileNameColumn, clickableTextColumn);
-    tableView.setItems(loadGameController.getSavedGames());
-    tableView.setMaxWidth(400);
+    pathsTableView.getColumns().addAll(pathsFileNameColumn, pathsClickableTextColumn);
+    pathsTableView.setItems(loadGameController.getSavedGames("paths"));
+    pathsTableView.setMaxWidth(400);
 
-    stackPane.getChildren().add(tableView);
+    // Create the TableView for .json files
+    TableView<FileEntry> jsonTableView = new TableView<>();
+
+    TableColumn<FileEntry, String> jsonFileNameColumn = new TableColumn<>("File Name");
+    jsonFileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getFileName()));
+
+    jsonFileNameColumn.setPrefWidth(300);
+
+    TableColumn<FileEntry, String> jsonClickableTextColumn = new TableColumn<>("Load game");
+    jsonClickableTextColumn.setPrefWidth(100);
+    jsonClickableTextColumn.setCellFactory(tc -> new TableCell<>() {
+      private final Hyperlink hyperlink = new Hyperlink("Load game");
+
+      {
+        hyperlink.setOnAction(event -> {
+          FileEntry fileEntry = getTableView().getItems().get(getIndex());
+          System.out.println("Clicked on file: " + fileEntry.getFileName());
+          try {
+            game = fileHandlerController.loadGameJson(fileEntry.getFileName());
+          } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+          }
+          screenController.activate("MainGame");
+        });
+      }
+
+      @Override
+      protected void updateItem(String item, boolean empty) {
+        super.updateItem(item, empty);
+        if (empty) {
+          setGraphic(null);
+        } else {
+          setGraphic(hyperlink);
+        }
+      }
+    });
+
+    jsonTableView.getColumns().addAll(jsonFileNameColumn, jsonClickableTextColumn);
+    jsonTableView.setItems(loadGameController.getSavedGames("json"));
+    jsonTableView.setMaxWidth(400);
+
+    // Add both tables to the stack pane
+    HBox hBox = new HBox();
+    Image background = new Image("images/background.png");
+    hBox.getChildren().addAll(pathsTableView, jsonTableView);
+    hBox.setSpacing(20);
+    hBox.setPadding(new Insets(20, 20, 20, 20));
+    hBox.setBackground(new Background(new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true))));
+    hBox.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+    hBox.setAlignment(Pos.CENTER);
+    stackPane.getChildren().add(hBox);
   }
+
 
   @Override
   void resetPane() {
