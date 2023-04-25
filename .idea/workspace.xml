@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added reset to buttons">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="changed default colors in css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
     </list>
@@ -257,13 +257,6 @@
       <workItem from="1678811644329" duration="31000" />
       <workItem from="1678868228764" duration="300000" />
       <workItem from="1678889886657" duration="4652000" />
-    </task>
-    <task id="LOCAL-00016" summary="added PlayerTest as a nested test in MainClassestest test-class">
-      <created>1675849000044</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1675849000044</updated>
     </task>
     <task id="LOCAL-00017" summary="moved StoryTest to MainClassesTest">
       <created>1675849240096</created>
@@ -601,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682422247658</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="changed default colors in css">
+      <created>1682424712290</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1682424712290</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +639,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="temporary finished passage test class" />
     <MESSAGE value="fixed typo refrence to reference" />
     <MESSAGE value="temporary finished link test class" />
     <MESSAGE value="temporary finished Game test class" />
@@ -664,7 +663,8 @@
     <MESSAGE value="added back-button to NewGameView" />
     <MESSAGE value="added css to check-buttons" />
     <MESSAGE value="added reset to buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="added reset to buttons" />
+    <MESSAGE value="changed default colors in css" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed default colors in css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
