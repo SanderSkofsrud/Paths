@@ -1,4 +1,4 @@
-package edu.ntnu.idatt2001.paths.utility;
+package edu.ntnu.idatt2001.paths.utility.json;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -11,7 +11,7 @@ import edu.ntnu.idatt2001.paths.models.Story;
 import java.lang.reflect.Type;
 import java.util.Map;
 
-class StorySerializer implements JsonSerializer<Story> {
+public class StorySerializer implements JsonSerializer<Story> {
   @Override
   public JsonElement serialize(Story story, Type typeOfSrc, JsonSerializationContext context) {
     JsonObject jsonObject = new JsonObject();

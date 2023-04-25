@@ -1,6 +1,7 @@
 package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.FileHandlerController;
+import edu.ntnu.idatt2001.paths.controllers.GameController;
 import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.Game;
@@ -34,6 +35,7 @@ public class ChooseGoalsView extends View {
   protected StackPane stackPane;
   private ScreenController screenController;
   private ObservableList<Goal> goals;
+  private GameController gameController = GameController.getInstance();
   FileHandlerController fileHandlerController = FileHandlerController.getInstance();
   PlayerController playerController = PlayerController.getInstance();
 
@@ -53,7 +55,7 @@ public class ChooseGoalsView extends View {
     return this.borderPane;
   }
   public void setup() {
-    ImageView imageView = new ImageView(new Image("images/goals.png"));
+    ImageView imageView = new ImageView(new Image("goals.png"));
     HBox hBox = new HBox();
     hBox.setSpacing(25);
     hBox.setAlignment(Pos.CENTER);
@@ -180,6 +182,8 @@ public class ChooseGoalsView extends View {
         fileHandlerController.saveGame(playerController.getPlayer().getName(), game.getStory());
         fileHandlerController.saveGameJson(playerController.getPlayer().getName(), game);
 
+        gameController.setGame(game);
+
         screenController.activate("MainGame");
       }
     });
@@ -187,12 +191,12 @@ public class ChooseGoalsView extends View {
     hBox.getChildren().addAll(predefinedGoals, customGoals);
     vBox.getChildren().addAll(imageView, hBox, startButton);
 
-    Image background = new Image("images/background.png");
+    Image background = new Image("background.png");
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
     stackPane.setBackground(new Background(backgroundImage));
 
     stackPane.getChildren().add(vBox);
-    stackPane.getStylesheets().add("stylesheets/stylesheet.css");
+    stackPane.getStylesheets().add("stylesheet.css");
   }
 
   public void resetPane() {
