@@ -102,6 +102,7 @@ public class ChooseGoalsView extends View {
       }
     });
     Button button = new Button("Add goal");
+    button.setId("subMenuButton");
     button.setOnAction(e -> {
       if (comboBox.getValue() != null && !textField.getText().isEmpty()) {
         switch (comboBox.getValue().toString()) {
@@ -157,6 +158,7 @@ public class ChooseGoalsView extends View {
     customGoals.getChildren().addAll(customGoalsLabel, comboBox, textField, button, tableView);
 
     Button startButton = new Button("Start");
+    startButton.setId("subMenuButton");
     startButton.setOnAction(e -> {
         for (int i = 1; i < 7; i++) {
           if (i == 1 && checkBox1.isSelected()) {
@@ -204,7 +206,10 @@ public class ChooseGoalsView extends View {
     backButton.setId("seeThroughButton");
     backButton.setGraphic(backImage);
     backButton.setPadding(new Insets(10, 10, 10, 10));
-    backButton.setOnAction(e -> screenController.activate("NewGame"));
+    backButton.setOnAction(e -> {
+      screenController.activate("NewGame");
+      resetPane();
+    });
 
     borderPane.setTop(backButton);
     borderPane.getStylesheets().add("stylesheet.css");
