@@ -75,6 +75,7 @@ public class NewGameView extends View {
     hBoxDifficulty.setAlignment(Pos.CENTER);
     hBoxDifficulty.setPadding(new Insets(10, 10, 10, 10));
 
+
     Label labelHealth = new Label("Select health (Normal difficulty = 100)");
     TextField textFieldHealth = new TextField();
     textFieldHealth.setPromptText("Enter health");
@@ -164,6 +165,7 @@ public class NewGameView extends View {
         player = playerController.addDefaultPlayer(textFieldName.getText(), selected.getText());
       }
       System.out.printf("Player created: %s%n", player.toString());
+      resetPane();
       screenController.activate("ChooseGoals");
     });
 
@@ -182,6 +184,19 @@ public class NewGameView extends View {
 
     stackPane.getChildren().add(borderPane);
     stackPane.getStylesheets().add("stylesheet.css");
+
+    ImageView backImage = new ImageView(new Image("back.png"));
+    Button backButton = new Button();
+    backButton.setId("seeThroughButton");
+    backButton.setGraphic(backImage);
+    backButton.setPadding(new Insets(10, 10, 10, 10));
+    backButton.setOnAction(e -> {
+      screenController.activate("MainMenu");
+      resetPane();
+    });
+
+    borderPane.setTop(backButton);
+    borderPane.getStylesheets().add("stylesheet.css");
   }
 
   public void resetPane() {
