@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added a game-scenario to main">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added back-button to NewGameView">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,20 +259,6 @@
       <workItem from="1678811644329" duration="31000" />
       <workItem from="1678868228764" duration="300000" />
       <workItem from="1678889886657" duration="4652000" />
-    </task>
-    <task id="LOCAL-00012" summary="story class v1.3 defined hashmap in constructor and copy constructor">
-      <created>1675843692676</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1675843692676</updated>
-    </task>
-    <task id="LOCAL-00013" summary="player class v1.4 filled inn add-methods">
-      <created>1675844310555</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1675844310555</updated>
     </task>
     <task id="LOCAL-00014" summary="created playerTest test-class">
       <created>1675845520536</created>
@@ -603,7 +589,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677419886263</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="added back-button to ChooseGoalsView">
+      <created>1682415101019</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1682415101020</updated>
+    </task>
+    <task id="LOCAL-00062" summary="added back-button to NewGameView">
+      <created>1682415113453</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1682415113453</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -641,8 +641,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added exceptions for player class in constructor, addToInventory and addHealth" />
-    <MESSAGE value="temporary finished game test class" />
     <MESSAGE value="changed type of exception" />
     <MESSAGE value="temporary finished player test class" />
     <MESSAGE value="temporary finished passage test class" />
@@ -666,7 +664,9 @@
     <MESSAGE value="added some test to ExceptionHandling and returnValues" />
     <MESSAGE value="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes" />
     <MESSAGE value="corrected lambda stream in removePassage" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected lambda stream in removePassage" />
+    <MESSAGE value="added back-button to ChooseGoalsView" />
+    <MESSAGE value="added back-button to NewGameView" />
+    <option name="LAST_COMMIT_MESSAGE" value="added back-button to NewGameView" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
