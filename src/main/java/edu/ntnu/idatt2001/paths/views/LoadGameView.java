@@ -9,11 +9,9 @@ import edu.ntnu.idatt2001.paths.utility.FileEntry;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
@@ -124,16 +122,24 @@ public class LoadGameView extends View{
     jsonTableView.setItems(loadGameController.getSavedGames("json"));
     jsonTableView.setMaxWidth(400);
 
+    ImageView backImage = new ImageView(new Image("back.png"));
+    Button backButton = new Button();
+    backButton.setId("seeThroughButton");
+    backButton.setGraphic(backImage);
+    backButton.setPadding(new Insets(10, 10, 10, 10));
+    backButton.setOnAction(e -> screenController.activate("MainMenu"));
+
     // Add both tables to the stack pane
     HBox hBox = new HBox();
     Image background = new Image("background.png");
     hBox.getChildren().addAll(pathsTableView, jsonTableView);
     hBox.setSpacing(20);
     hBox.setPadding(new Insets(20, 20, 20, 20));
-    hBox.setBackground(new Background(new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true))));
-    hBox.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
     hBox.setAlignment(Pos.CENTER);
     stackPane.getChildren().add(hBox);
+    borderPane.setBackground(new Background(new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true))));
+    borderPane.setTop(backButton);
+    borderPane.getStylesheets().add("stylesheet.css");
   }
 
 
