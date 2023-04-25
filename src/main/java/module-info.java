@@ -12,4 +12,5 @@ module paths {
 
     opens edu.ntnu.idatt2001.paths.models to com.google.gson;
     opens edu.ntnu.idatt2001.paths.models.goals to com.google.gson;
+    exports edu.ntnu.idatt2001.paths.utility.json;
 }

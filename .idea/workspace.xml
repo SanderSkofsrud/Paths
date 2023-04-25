@@ -4,36 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Implemented singleton functionality to all controllers to remove the need of static methods. Also updated the usages in all the view classes to match this change">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/GoalDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/StoryDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/StorySerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/storyNoGame.paths" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added functionality to work with .json files. Added serializers and deserializers for the classes that did not have the proper methods or that were not built up in the proper way. Updated the module-info and pom to include the newly added functionality.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/JsonReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/JsonWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/sss.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/test.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/sss.paths" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/test.paths" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/json/JsonFileHandlerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/paths/PathsFileHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/GoalDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/GoalDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/StoryDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/StoryDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/StorySerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/StorySerializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/create.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/create.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/female.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/female.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/goals.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/goals.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/male.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/male.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/story.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/paths/story.paths" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/story1.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/paths/story1.paths" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/steve.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/steve.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheets/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tagline.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/tagline.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/troll.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/troll.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/FileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/FileHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/create.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/create.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/female.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/female.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/goals.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/goals.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/male.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/male.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/steve.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/steve.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/tagline.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tagline.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/troll.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/troll.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheets/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/StoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/FileHandlerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,34 +76,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;FileHandling&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "FileHandling",
+    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources" />
+      <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources\icons" />
+      <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources\stylesheets" />
+      <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources\images" />
       <recent name="$PROJECT_DIR$/src/main/resources/paths" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -107,79 +119,85 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean validate javafx:run7" />
-      <command value="mvn test" />
       <command value="mvn clean validate javafx:run" />
+      <command value="mvn test" />
     </option>
   </component>
   <component name="RunManager" selected="Maven.paths [javafx:run]">
-    <configuration name="FileHandlerTest$loadGame.testThatReadFromFileReturnsAStory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameLoadsAGameAndReturnsIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.json.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest$loadGame" />
-      <option name="METHOD_NAME" value="testThatReadFromFileReturnsAStory" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.json.JsonFileHandlerTest.jsonReader" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.json.JsonFileHandlerTest$jsonReader$loadGame" />
+      <option name="METHOD_NAME" value="testThatLoadGameLoadsAGameAndReturnsIt" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileHandlerTest$saveGame.testThatSaveGameReturnsAStory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameThrowsFileNotFoundException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.json.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest$saveGame" />
-      <option name="METHOD_NAME" value="testThatSaveGameReturnsAStory" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.json.JsonFileHandlerTest.jsonReader" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.json.JsonFileHandlerTest$jsonReader$loadGame" />
+      <option name="METHOD_NAME" value="testThatLoadGameThrowsFileNotFoundException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest$addPassage.testThatAddPassageAddsPassageCorrectlyWhenValidValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.FileHandlerTest$saveGame" />
-      <option name="METHOD_NAME" value="testThatSaveGameThrowsNullPointerException2" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.StoryTest$addPassage" />
+      <option name="METHOD_NAME" value="testThatAddPassageAddsPassageCorrectlyWhenValidValues" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest$removePassage.testThatRemovePassageRemovesPassage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.goals.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.goals.InventoryGoalTest" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.goals.InventoryGoalTest$fileHandling" />
-      <option name="METHOD_NAME" value="testThatToStringReturnsExpectedResult" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.StoryTest$removePassage" />
+      <option name="METHOD_NAME" value="testThatRemovePassageRemovesPassage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="edu.ntnu.idatt2001.paths.models in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -243,21 +261,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.java in paths" />
-      <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatReadFromFileReturnsAStory" />
-      <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameReturnsAStory" />
-      <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException2" />
-      <item itemvalue="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" />
+      <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameLoadsAGameAndReturnsIt" />
+      <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameThrowsFileNotFoundException" />
+      <item itemvalue="JUnit.StoryTest$addPassage.testThatAddPassageAddsPassageCorrectlyWhenValidValues" />
+      <item itemvalue="JUnit.StoryTest$removePassage.testThatRemovePassageRemovesPassage" />
+      <item itemvalue="JUnit.edu.ntnu.idatt2001.paths.models in paths" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameReturnsAStory" />
-        <item itemvalue="JUnit.java in paths" />
-        <item itemvalue="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" />
-        <item itemvalue="JUnit.FileHandlerTest$saveGame.testThatSaveGameThrowsNullPointerException2" />
-        <item itemvalue="JUnit.FileHandlerTest$loadGame.testThatReadFromFileReturnsAStory" />
+        <item itemvalue="JUnit.edu.ntnu.idatt2001.paths.models in paths" />
+        <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameThrowsFileNotFoundException" />
+        <item itemvalue="JUnit.StoryTest$addPassage.testThatAddPassageAddsPassageCorrectlyWhenValidValues" />
+        <item itemvalue="JUnit.StoryTest$removePassage.testThatRemovePassageRemovesPassage" />
+        <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameLoadsAGameAndReturnsIt" />
       </list>
     </recent_temporary>
   </component>
@@ -298,21 +316,7 @@
       <workItem from="1679949851713" duration="7966000" />
       <workItem from="1681982566498" duration="3543000" />
       <workItem from="1681987313847" duration="1305000" />
-      <workItem from="1682074673475" duration="6447000" />
-    </task>
-    <task id="LOCAL-00053" summary="added nested class and display names to StoryTest">
-      <created>1676983928764</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1676983928764</updated>
-    </task>
-    <task id="LOCAL-00054" summary="added nested class and display names to PlayerTest">
-      <created>1676984235730</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1676984235730</updated>
+      <workItem from="1682074673475" duration="18611000" />
     </task>
     <task id="LOCAL-00055" summary="added a few more tests and beforeEach">
       <created>1677155476833</created>
@@ -643,7 +647,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681980772352</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Added more directories in resources">
+      <created>1682151359367</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1682151359367</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Added functionality to work with .json files. Added serializers and deserializers for the classes that did not have the proper methods or that were not built up in the proper way. Updated the module-info and pom to include the newly added functionality.">
+      <created>1682151486449</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1682151486451</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,8 +692,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="changed groupId" />
-    <MESSAGE value="added new exception to filehandler for empty file" />
     <MESSAGE value="added positive test for addAction" />
     <MESSAGE value="added positive test for addLink and hasLinks" />
     <MESSAGE value="removed get-method test" />
@@ -699,7 +715,9 @@
     <MESSAGE value="Fixed error in PlayerController where it used the builder wrong and did not return the difficulty in the correct way" />
     <MESSAGE value="Added MainGameView and LoadGameView to the controller so they work" />
     <MESSAGE value="Implemented singleton functionality to all controllers to remove the need of static methods. Also updated the usages in all the view classes to match this change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented singleton functionality to all controllers to remove the need of static methods. Also updated the usages in all the view classes to match this change" />
+    <MESSAGE value="Added more directories in resources" />
+    <MESSAGE value="Added functionality to work with .json files. Added serializers and deserializers for the classes that did not have the proper methods or that were not built up in the proper way. Updated the module-info and pom to include the newly added functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added functionality to work with .json files. Added serializers and deserializers for the classes that did not have the proper methods or that were not built up in the proper way. Updated the module-info and pom to include the newly added functionality." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

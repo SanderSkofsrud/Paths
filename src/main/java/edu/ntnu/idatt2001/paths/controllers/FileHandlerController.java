@@ -3,7 +3,10 @@ package edu.ntnu.idatt2001.paths.controllers;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Player;
 import edu.ntnu.idatt2001.paths.models.Story;
-import edu.ntnu.idatt2001.paths.utility.FileHandler;
+import edu.ntnu.idatt2001.paths.utility.json.JsonReader;
+import edu.ntnu.idatt2001.paths.utility.json.JsonWriter;
+import edu.ntnu.idatt2001.paths.utility.paths.PathsReader;
+import edu.ntnu.idatt2001.paths.utility.paths.PathsWriter;
 
 import java.io.FileNotFoundException;
 
@@ -21,18 +24,18 @@ public class FileHandlerController {
   }
 
   public void saveGame(String name, Story story) {
-    FileHandler.saveGame(story, path + name + ".paths");
+    PathsWriter.saveGame(story, path + name + ".paths");
   }
 
   public Game loadGame(String name) throws FileNotFoundException {
-    return FileHandler.loadGame(path + name);
+    return PathsReader.loadGame(path + name);
   }
 
   public void saveGameJson(String name, Game game) {
-    FileHandler.gameSaveJSON(game, jsonPath + name + ".json");
+    JsonWriter.saveGameJSON(game, jsonPath + name + ".json");
   }
 
 public Game loadGameJson(String name) throws FileNotFoundException {
-    return FileHandler.loadGameJSON(jsonPath + name);
+    return JsonReader.loadGameJSON(jsonPath + name);
   }
 }

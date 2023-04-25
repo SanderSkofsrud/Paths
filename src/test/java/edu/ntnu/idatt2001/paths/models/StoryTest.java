@@ -92,9 +92,9 @@ public class StoryTest {
     @Test
     @DisplayName("Test that addPassage adds passage correctly when valid values")
     void testThatAddPassageAddsPassageCorrectlyWhenValidValues(){
-      assertTrue(story.getPassages().isEmpty());
-      story.addPassage(passage);
       assertEquals(1, story.getPassages().size());
+      story.addPassage(passage);
+      assertEquals(2, story.getPassages().size());
     }
 
     /**
@@ -159,9 +159,9 @@ public class StoryTest {
     @DisplayName("Test that removePassage removes passage from story when passage exists and no other passages have links to it")
     void testThatRemovePassageRemovesPassage() {
       story.addPassage(passage2);
-      assertTrue(story.getPassages().size() == 1);
+      assertTrue(story.getPassages().size() == 2);
       story.removePassage(link);
-      assertEquals(0, story.getPassages().size());
+      assertEquals(1, story.getPassages().size());
     }
 
     /**

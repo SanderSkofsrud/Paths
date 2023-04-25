@@ -43,6 +43,7 @@ public class Story {
     this.title = title;
     this.openingPassage = openingPassage;
     this.passages = new HashMap<Link, Passage>();
+    addPassage(openingPassage);
     this.endingPassage = new Passage("The End", "Congratulations! You won the game");
   }
 
@@ -115,7 +116,6 @@ public class Story {
 
   public Passage getPassage(Link link) throws NullPointerException {
     Objects.requireNonNull(link, "Link can not be null");
-
     Link mapLink = new Link(link.getReference(), link.getReference());
     return passages.get(mapLink);
   }
@@ -172,6 +172,9 @@ public class Story {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     for (Passage passage : passages.values()) {
+      if (passage.equals(openingPassage)) {
+        break;
+      }
       sb.append(passage.toString());
     }
     return getTitle()
