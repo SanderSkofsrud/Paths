@@ -58,6 +58,17 @@
             "actions": []
           }
         ]
+      },
+      "Beginnings": {
+        "title": "Beginnings",
+        "content": "You are in a small room",
+        "links": [
+          {
+            "text": "Try open the door",
+            "reference": "Another room",
+            "actions": []
+          }
+        ]
       }
     }
   },
@@ -66,7 +77,12 @@
       "minimumGold": 100
     },
     {
-      "minimumScore": 100
+      "minimumGold": 100
+    },
+    {
+      "mandatoryItems": [
+        "sword"
+      ]
     }
   ]
 }
