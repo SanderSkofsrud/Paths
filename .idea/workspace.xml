@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added back-button to NewGameView">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added reset to buttons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -259,20 +257,6 @@
       <workItem from="1678811644329" duration="31000" />
       <workItem from="1678868228764" duration="300000" />
       <workItem from="1678889886657" duration="4652000" />
-    </task>
-    <task id="LOCAL-00014" summary="created playerTest test-class">
-      <created>1675845520536</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1675845520536</updated>
-    </task>
-    <task id="LOCAL-00015" summary="fixed addToInventory and getInventory in playerTest test-class">
-      <created>1675848891324</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1675848891324</updated>
     </task>
     <task id="LOCAL-00016" summary="added PlayerTest as a nested test in MainClassestest test-class">
       <created>1675849000044</created>
@@ -603,7 +587,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682415113453</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="added css to check-buttons">
+      <created>1682422234695</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1682422234695</updated>
+    </task>
+    <task id="LOCAL-00064" summary="added reset to buttons">
+      <created>1682422247658</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1682422247658</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -641,8 +639,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="changed type of exception" />
-    <MESSAGE value="temporary finished player test class" />
     <MESSAGE value="temporary finished passage test class" />
     <MESSAGE value="fixed typo refrence to reference" />
     <MESSAGE value="temporary finished link test class" />
@@ -666,7 +662,9 @@
     <MESSAGE value="corrected lambda stream in removePassage" />
     <MESSAGE value="added back-button to ChooseGoalsView" />
     <MESSAGE value="added back-button to NewGameView" />
-    <option name="LAST_COMMIT_MESSAGE" value="added back-button to NewGameView" />
+    <MESSAGE value="added css to check-buttons" />
+    <MESSAGE value="added reset to buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="added reset to buttons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
