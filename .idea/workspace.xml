@@ -4,44 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added functionality to work with .json files. Added serializers and deserializers for the classes that did not have the proper methods or that were not built up in the proper way. Updated the module-info and pom to include the newly added functionality.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/JsonReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/JsonWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/sss.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/sss.paths" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/test.paths" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/json/JsonFileHandlerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/paths/PathsFileHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Updated files to match the new changes">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/back.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/GoalDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/GoalDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/StoryDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/StoryDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/StorySerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/StorySerializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/create.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/create.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/female.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/female.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/goals.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/goals.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/male.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/male.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/steve.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/steve.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/tagline.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tagline.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/troll.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/troll.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheets/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/StoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/FileHandlerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +53,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "FileHandling",
-    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths",
+    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -100,6 +67,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -316,56 +286,7 @@
       <workItem from="1679949851713" duration="7966000" />
       <workItem from="1681982566498" duration="3543000" />
       <workItem from="1681987313847" duration="1305000" />
-      <workItem from="1682074673475" duration="18611000" />
-    </task>
-    <task id="LOCAL-00055" summary="added a few more tests and beforeEach">
-      <created>1677155476833</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1677155476834</updated>
-    </task>
-    <task id="LOCAL-00056" summary="added a exceptionHandling test">
-      <created>1677155783708</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1677155783708</updated>
-    </task>
-    <task id="LOCAL-00057" summary="fixed thrown exception">
-      <created>1677156115157</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1677156115157</updated>
-    </task>
-    <task id="LOCAL-00058" summary="added some test to returnValues and exception">
-      <created>1677156144091</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1677156144091</updated>
-    </task>
-    <task id="LOCAL-00059" summary="added some test to ExceptionHandling and returnValues">
-      <created>1677156635906</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1677156635906</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Added javadoc to interface-classes, as well as their test-classes. Added BeforeEach to the test-classes for the interfaces, as well as nested classes">
-      <created>1677419886263</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1677419886263</updated>
-    </task>
-    <task id="LOCAL-00061" summary="removed test for get-methods and specified some javadoc comments">
-      <created>1679400598667</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1679400598667</updated>
+      <workItem from="1682074673475" duration="21122000" />
     </task>
     <task id="LOCAL-00062" summary="removed test for get-methods and specified some javadoc comments">
       <created>1679400608256</created>
@@ -661,7 +582,56 @@
       <option name="project" value="LOCAL" />
       <updated>1682151486451</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Reorganized structure in resources again, when the previous one did not work">
+      <created>1682411671735</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1682411671735</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Updated view classes to match the restructuring of the resources directory">
+      <created>1682411737849</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1682411737849</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Created new files to split ut the readers and writers">
+      <created>1682411780751</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1682411780751</updated>
+    </task>
+    <task id="LOCAL-00107" summary="Moved all that has to do with serialization and deserialization into new json package">
+      <created>1682411811471</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1682411811471</updated>
+    </task>
+    <task id="LOCAL-00108" summary="Made GameController to work with the now functioning mainGame">
+      <created>1682411850753</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1682411850753</updated>
+    </task>
+    <task id="LOCAL-00109" summary="Made tests to match the new separation of paths and json file handling">
+      <created>1682411886533</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1682411886533</updated>
+    </task>
+    <task id="LOCAL-00110" summary="Updated files to match the new changes">
+      <created>1682411898920</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1682411898920</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -692,13 +662,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added positive test for addAction" />
-    <MESSAGE value="added positive test for addLink and hasLinks" />
-    <MESSAGE value="removed get-method test" />
-    <MESSAGE value="fixed typo in test and added positive test for valid values" />
-    <MESSAGE value="added positive test for add-methods and refactored addmethod tests" />
-    <MESSAGE value="specified test name" />
-    <MESSAGE value="fixed typo" />
     <MESSAGE value="fixed testThatCOnstructorConstructsObject method" />
     <MESSAGE value="fixed typo in method" />
     <MESSAGE value="changed isEmpty to isBlank" />
@@ -717,7 +680,14 @@
     <MESSAGE value="Implemented singleton functionality to all controllers to remove the need of static methods. Also updated the usages in all the view classes to match this change" />
     <MESSAGE value="Added more directories in resources" />
     <MESSAGE value="Added functionality to work with .json files. Added serializers and deserializers for the classes that did not have the proper methods or that were not built up in the proper way. Updated the module-info and pom to include the newly added functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added functionality to work with .json files. Added serializers and deserializers for the classes that did not have the proper methods or that were not built up in the proper way. Updated the module-info and pom to include the newly added functionality." />
+    <MESSAGE value="Reorganized structure in resources again, when the previous one did not work" />
+    <MESSAGE value="Updated view classes to match the restructuring of the resources directory" />
+    <MESSAGE value="Created new files to split ut the readers and writers" />
+    <MESSAGE value="Moved all that has to do with serialization and deserialization into new json package" />
+    <MESSAGE value="Made GameController to work with the now functioning mainGame" />
+    <MESSAGE value="Made tests to match the new separation of paths and json file handling" />
+    <MESSAGE value="Updated files to match the new changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated files to match the new changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

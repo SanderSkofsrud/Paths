@@ -82,3 +82,7 @@
     -fx-max-width: 20px;;
     -fx-cursor: hand;
 }
+
+#seeThroughButton {
+    -fx-background-color: transparent;
+}

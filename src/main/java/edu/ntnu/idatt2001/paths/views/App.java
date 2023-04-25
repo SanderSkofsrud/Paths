@@ -35,6 +35,18 @@ public class App extends Application {
   public void start(Stage primaryStage) {
     App.primaryStage = primaryStage;
 
+    screenController.addScreen("MainMenu", new View() {
+      @Override
+      public Pane getPane() {
+        return frontPage;
+      }
+      @Override
+      public void setup() {
+      }
+      @Override
+      void resetPane() {
+      }
+    });
     screenController.addScreen("NewGame", newGameView);
     screenController.addScreen("ChooseGoals", ChooseGoalsView);
     screenController.addScreen("MainGame", mainGameView);
