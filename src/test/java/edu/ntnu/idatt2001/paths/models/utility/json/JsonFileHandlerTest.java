@@ -84,7 +84,7 @@ public class JsonFileHandlerTest {
                 + "Beginnings"
                 + ")\n", anotherRoom.toString());
         assertEquals("test", player.getName());
-        assertEquals(2, goals.size());
+        assertEquals(3, goals.size());
       }
 
 
