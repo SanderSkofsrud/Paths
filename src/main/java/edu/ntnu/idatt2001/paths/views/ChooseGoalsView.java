@@ -10,6 +10,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -193,10 +194,20 @@ public class ChooseGoalsView extends View {
 
     Image background = new Image("background.png");
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
-    stackPane.setBackground(new Background(backgroundImage));
+    borderPane.setBackground(new Background(backgroundImage));
 
     stackPane.getChildren().add(vBox);
     stackPane.getStylesheets().add("stylesheet.css");
+
+    ImageView backImage = new ImageView(new Image("back.png"));
+    Button backButton = new Button();
+    backButton.setId("seeThroughButton");
+    backButton.setGraphic(backImage);
+    backButton.setPadding(new Insets(10, 10, 10, 10));
+    backButton.setOnAction(e -> screenController.activate("NewGame"));
+
+    borderPane.setTop(backButton);
+    borderPane.getStylesheets().add("stylesheet.css");
   }
 
   public void resetPane() {
