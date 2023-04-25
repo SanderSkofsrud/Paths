@@ -1,6 +1,7 @@
 package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.FileHandlerController;
+import edu.ntnu.idatt2001.paths.controllers.GameController;
 import edu.ntnu.idatt2001.paths.controllers.LoadGameController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.Game;
@@ -22,7 +23,8 @@ public class LoadGameView extends View{
   protected BorderPane borderPane;
   protected StackPane stackPane;
   private ScreenController screenController;
-  protected Game game;
+  private Game game;
+  private GameController gameController = GameController.getInstance();
   FileHandlerController fileHandlerController = FileHandlerController.getInstance();
   LoadGameController loadGameController = LoadGameController.getInstance();
   public LoadGameView(ScreenController screenController) {
@@ -57,6 +59,7 @@ public class LoadGameView extends View{
           System.out.println("Clicked on file: " + fileEntry.getFileName());
           try {
             game = fileHandlerController.loadGame(fileEntry.getFileName());
+            gameController.setGame(game);
           } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
           }
@@ -98,6 +101,7 @@ public class LoadGameView extends View{
           System.out.println("Clicked on file: " + fileEntry.getFileName());
           try {
             game = fileHandlerController.loadGameJson(fileEntry.getFileName());
+            gameController.setGame(game);
           } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
           }
@@ -122,7 +126,7 @@ public class LoadGameView extends View{
 
     // Add both tables to the stack pane
     HBox hBox = new HBox();
-    Image background = new Image("images/background.png");
+    Image background = new Image("background.png");
     hBox.getChildren().addAll(pathsTableView, jsonTableView);
     hBox.setSpacing(20);
     hBox.setPadding(new Insets(20, 20, 20, 20));

@@ -44,7 +44,7 @@ public class NewGameView extends View {
   }
 
   public void setup() {
-    ImageView imageView = new ImageView(new Image("images/create.png"));
+    ImageView imageView = new ImageView(new Image("create.png"));
 
     Label labelName = new Label("Select name");
     TextField textFieldName = new TextField();
@@ -65,6 +65,10 @@ public class NewGameView extends View {
     medium.setToggleGroup(toggleGroupDifficulty);
     hard.setToggleGroup(toggleGroupDifficulty);
     custom.setToggleGroup(toggleGroupDifficulty);
+    easy.setId("subMenuButton");
+    medium.setId("subMenuButton");
+    hard.setId("subMenuButton");
+    custom.setId("subMenuButton");
     HBox hBoxDifficulty = new HBox();
     hBoxDifficulty.getChildren().addAll(labelDifficulty, easy, medium, hard, custom);
     hBoxDifficulty.setSpacing(10);
@@ -104,8 +108,8 @@ public class NewGameView extends View {
     });
 
     Label labelCharacter = new Label("Select character model");
-    Image male = new Image("images/male.png");
-    Image female = new Image("images/female.png");
+    Image male = new Image("male.png");
+    Image female = new Image("female.png");
     ImageView characterMale = new ImageView(male);
     ImageView characterFemale = new ImageView(female);
     characterFemale.setVisible(false);
@@ -116,6 +120,8 @@ public class NewGameView extends View {
 
     Button right = new Button(">");
     Button left = new Button("<");
+    right.setId("squareButton");
+    left.setId("squareButton");
 
     right.setOnAction(e -> {
       ImageView current = characterMale.isVisible() ? characterMale : characterFemale;
@@ -138,6 +144,7 @@ public class NewGameView extends View {
     hBoxCharacter.setPadding(new Insets(10, 10, 10, 10));
 
     Button button = new Button("Create Character");
+    button.setId("subMenuButton");
     button.setOnAction(e -> {
       if (textFieldName.getText().isEmpty()) {
         textFieldName.setPromptText("Enter name");
@@ -169,12 +176,12 @@ public class NewGameView extends View {
     BorderPane borderPane = new BorderPane();
     borderPane.setCenter(vBox);
 
-    Image background = new Image("images/background.png");
+    Image background = new Image("background.png");
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
     stackPane.setBackground(new Background(backgroundImage));
 
     stackPane.getChildren().add(borderPane);
-    stackPane.getStylesheets().add("stylesheets/stylesheet.css");
+    stackPane.getStylesheets().add("stylesheet.css");
   }
 
   public void resetPane() {

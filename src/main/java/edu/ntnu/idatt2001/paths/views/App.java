@@ -52,10 +52,10 @@ public class App extends Application {
   }
 
   private void setup() {
-    ImageView logo = new ImageView(new Image("images/logo.png"));
+    ImageView logo = new ImageView(new Image("logo.png"));
     logo.preserveRatioProperty().set(true);
     logo.setFitWidth(500);
-    ImageView tagline = new ImageView(new Image("images/tagline.png"));
+    ImageView tagline = new ImageView(new Image("tagline.png"));
     tagline.preserveRatioProperty().set(true);
     tagline.setFitWidth(300);
     VBox vBox = new VBox();
@@ -76,12 +76,12 @@ public class App extends Application {
     HBox hBox = new HBox();
     hBox.getChildren().addAll(newGame, loadGame);
     hBox.setAlignment(Pos.CENTER);
-    hBox.getStylesheets().add("stylesheets/stylesheet.css");
+    hBox.getStylesheets().add("stylesheet.css");
     hBox.setSpacing(20);
     hBox.setPadding(new Insets(0, 0, 150, 0));
     frontPage.setBottom(hBox);
 
-    Image background = new Image("images/background.png");
+    Image background = new Image("background.png");
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
     frontPage.setBackground(new Background(backgroundImage));
   }
