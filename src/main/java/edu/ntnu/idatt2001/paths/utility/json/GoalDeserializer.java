@@ -1,4 +1,4 @@
-package edu.ntnu.idatt2001.paths.utility;
+package edu.ntnu.idatt2001.paths.utility.json;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;

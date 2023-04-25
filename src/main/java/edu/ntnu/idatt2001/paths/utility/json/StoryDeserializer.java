@@ -1,4 +1,4 @@
-package edu.ntnu.idatt2001.paths.utility;
+package edu.ntnu.idatt2001.paths.utility.json;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-  class StoryDeserializer implements JsonDeserializer<Story> {
+public class StoryDeserializer implements JsonDeserializer<Story> {
     @Override
     public Story deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
       JsonObject jsonObject = json.getAsJsonObject();
@@ -42,6 +42,8 @@ import java.util.Map;
           for (Action action : actions) {
             link.addAction(action);
           }
+
+          passage.addLink(link);
         }
 
         story.addPassage(passage);
