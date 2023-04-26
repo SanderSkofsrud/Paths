@@ -21,6 +21,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -29,6 +31,7 @@ import javafx.scene.text.TextFlow;
 import javafx.util.Duration;
 import javafx.util.Pair;
 
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 
@@ -167,9 +170,26 @@ public class MainGameView extends View{
     playerInventoryLabel.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
     playerInventoryLabel.setPadding(new Insets(10, 10, 10, 10));
 
-    Button questionButton = new Button("Question");
+    Image exitImage = new Image("exit.png");
+    Image questionImage = new Image("question.png");
 
-    Button exitButton = new Button("Exit");
+// Create an ImageView with the desired width and height
+    ImageView exitImageView = new ImageView(exitImage);
+    exitImageView.setFitWidth(30);
+    exitImageView.setFitHeight(30);
+
+    ImageView questionImageView = new ImageView(questionImage);
+    questionImageView.setFitWidth(30);
+    questionImageView.setFitHeight(30);
+
+    Button exitButton = new Button();
+    exitButton.setGraphic(exitImageView);
+    exitButton.setStyle("-fx-background-color: transparent;");
+
+    Button questionButton = new Button();
+    questionButton.setGraphic(questionImageView);
+    questionButton.setStyle("-fx-background-color: transparent;");
+
 
     HBox topRightBox = new HBox();
     topRightBox.setAlignment(Pos.TOP_RIGHT);
