@@ -98,45 +98,53 @@ public class NewGameView extends View {
 
     toggleGroupDifficulty.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
       if (toggleGroupDifficulty.getSelectedToggle() != null) {
-        if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
-          labelHealth.setText("Select health (Normal difficulty = 100)");
-          labelGold.setText("Select gold (Normal difficulty = 100)");
-          hBoxHealth.getChildren().add(textFieldHealth);
-          hBoxGold.getChildren().add(textFieldGold);
-          hBoxGold.setAlignment(Pos.CENTER);
-          hBoxHealth.setVisible(true);
-          hBoxGold.setVisible(true);
-        } else if (toggleGroupDifficulty.getSelectedToggle().equals(easy)) {
-          labelHealth.setText("Health = 250 (Normal difficulty = 100)");
-          labelGold.setText("Gold = 250 (Normal difficulty = 100) \n\n* Sword added to inventory");
-          hBoxHealth.getChildren().remove(textFieldHealth);
-          hBoxGold.getChildren().remove(textFieldGold);
-          hBoxGold.setAlignment(Pos.CENTER);
-          hBoxHealth.setVisible(true);
-          hBoxGold.setVisible(true);
-        } else if (toggleGroupDifficulty.getSelectedToggle().equals(hard)) {
-          labelHealth.setText("Health = 50 (Normal difficulty = 100)");
-          labelGold.setText("Gold = 0 (Normal difficulty = 100)");
-          hBoxHealth.getChildren().remove(textFieldHealth);
-          hBoxGold.getChildren().remove(textFieldGold);
-          hBoxGold.setAlignment(Pos.CENTER);
-          hBoxHealth.setVisible(true);
-          hBoxGold.setVisible(true);
-        } else if (toggleGroupDifficulty.getSelectedToggle().equals(standard)) {
-          labelHealth.setText("Health = 100");
-          labelGold.setText("Gold = 100");
-          hBoxHealth.getChildren().remove(textFieldHealth);
-          hBoxGold.getChildren().remove(textFieldGold);
-          hBoxGold.setAlignment(Pos.CENTER);
-          hBoxHealth.setVisible(true);
-          hBoxGold.setVisible(true);
-        } else {
-          hBoxHealth.setVisible(false);
-          hBoxGold.setVisible(false);
+        ToggleButton selectedButton = (ToggleButton) toggleGroupDifficulty.getSelectedToggle();
+        String difficulty = selectedButton.getText();
+
+        switch (difficulty) {
+          case "Custom":
+            labelHealth.setText("Select health (Normal difficulty = 100)");
+            labelGold.setText("Select gold (Normal difficulty = 100)");
+            hBoxHealth.getChildren().add(textFieldHealth);
+            hBoxGold.getChildren().add(textFieldGold);
+            hBoxGold.setAlignment(Pos.CENTER);
+            hBoxHealth.setVisible(true);
+            hBoxGold.setVisible(true);
+            break;
+          case "Easy":
+            labelHealth.setText("Health = 250 (Normal difficulty = 100)");
+            labelGold.setText("Gold = 250 (Normal difficulty = 100) \n\n* Sword added to inventory");
+            hBoxHealth.getChildren().remove(textFieldHealth);
+            hBoxGold.getChildren().remove(textFieldGold);
+            hBoxGold.setAlignment(Pos.CENTER);
+            hBoxHealth.setVisible(true);
+            hBoxGold.setVisible(true);
+            break;
+          case "Hard":
+            labelHealth.setText("Health = 50 (Normal difficulty = 100)");
+            labelGold.setText("Gold = 0 (Normal difficulty = 100)");
+            hBoxHealth.getChildren().remove(textFieldHealth);
+            hBoxGold.getChildren().remove(textFieldGold);
+            hBoxGold.setAlignment(Pos.CENTER);
+            hBoxHealth.setVisible(true);
+            hBoxGold.setVisible(true);
+            break;
+          case "Standard":
+            labelHealth.setText("Health = 100");
+            labelGold.setText("Gold = 100");
+            hBoxHealth.getChildren().remove(textFieldHealth);
+            hBoxGold.getChildren().remove(textFieldGold);
+            hBoxGold.setAlignment(Pos.CENTER);
+            hBoxHealth.setVisible(true);
+            hBoxGold.setVisible(true);
+            break;
+          default:
+            hBoxHealth.setVisible(false);
+            hBoxGold.setVisible(false);
+            break;
         }
       }
     });
-
 
 
     Label labelCharacter = new Label("Select character model");
