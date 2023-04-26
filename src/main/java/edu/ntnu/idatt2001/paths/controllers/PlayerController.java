@@ -19,15 +19,15 @@ public class PlayerController {
     return instance;
   }
 
-  public Player addDefaultPlayer(String name, String dificulty) {
-    System.out.println(dificulty.trim().toLowerCase());
-    switch (dificulty.trim().toLowerCase()) {
+  public Player addDefaultPlayer(String name, String difficulty) {
+    System.out.println(difficulty.trim().toLowerCase());
+    switch (difficulty.trim().toLowerCase()) {
       case "easy" -> {
         inventory.add("Sword");
         player = new Player.Builder(name).health(250).gold(250).inventory(inventory).build();
       }
-      case "medium" -> player = new Player.Builder(name).build();
-      default -> player = new Player.Builder(name).health(25).gold(0).build();
+      case "hard" -> player = new Player.Builder(name).health(50).gold(0).build();
+      default -> player = new Player.Builder(name).health(100).gold(100).build();
     }
     return player;
   }
