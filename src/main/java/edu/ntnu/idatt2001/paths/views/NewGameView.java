@@ -58,39 +58,39 @@ public class NewGameView extends View {
     Label labelDifficulty = new Label("Select difficulty");
     ToggleGroup toggleGroupDifficulty = new ToggleGroup();
     ToggleButton easy = new ToggleButton("Easy");
-    ToggleButton medium = new ToggleButton("Medium");
+    ToggleButton standard = new ToggleButton("Standard");
     ToggleButton hard = new ToggleButton("Hard");
     ToggleButton custom = new ToggleButton("Custom");
     easy.setToggleGroup(toggleGroupDifficulty);
-    medium.setToggleGroup(toggleGroupDifficulty);
+    standard.setToggleGroup(toggleGroupDifficulty);
     hard.setToggleGroup(toggleGroupDifficulty);
     custom.setToggleGroup(toggleGroupDifficulty);
     easy.setId("subMenuButton");
-    medium.setId("subMenuButton");
+    standard.setId("subMenuButton");
     hard.setId("subMenuButton");
     custom.setId("subMenuButton");
     HBox hBoxDifficulty = new HBox();
-    hBoxDifficulty.getChildren().addAll(labelDifficulty, easy, medium, hard, custom);
+    hBoxDifficulty.getChildren().addAll(labelDifficulty, easy, standard, hard, custom);
     hBoxDifficulty.setSpacing(10);
     hBoxDifficulty.setAlignment(Pos.CENTER);
     hBoxDifficulty.setPadding(new Insets(10, 10, 10, 10));
 
 
-    Label labelHealth = new Label("Select health (Normal difficulty = 100)");
+    Label labelHealth = new Label("");
     TextField textFieldHealth = new TextField();
     textFieldHealth.setPromptText("Enter health");
     HBox hBoxHealth = new HBox();
-    hBoxHealth.getChildren().addAll(labelHealth, textFieldHealth);
+    hBoxHealth.getChildren().addAll(labelHealth);
     hBoxHealth.setSpacing(10);
     hBoxHealth.setAlignment(Pos.CENTER);
     hBoxHealth.setPadding(new Insets(10, 10, 10, 10));
     hBoxHealth.setVisible(false);
 
-    Label labelGold = new Label("Select gold (Normal difficulty = 100)");
+    Label labelGold = new Label("");
     TextField textFieldGold = new TextField();
     textFieldGold.setPromptText("Enter gold");
     HBox hBoxGold = new HBox();
-    hBoxGold.getChildren().addAll(labelGold, textFieldGold);
+    hBoxGold.getChildren().addAll(labelGold);
     hBoxGold.setSpacing(10);
     hBoxGold.setAlignment(Pos.CENTER);
     hBoxGold.setPadding(new Insets(10, 10, 10, 10));
@@ -99,6 +99,35 @@ public class NewGameView extends View {
     toggleGroupDifficulty.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
       if (toggleGroupDifficulty.getSelectedToggle() != null) {
         if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
+          labelHealth.setText("Select health (Normal difficulty = 100)");
+          labelGold.setText("Select gold (Normal difficulty = 100)");
+          hBoxHealth.getChildren().add(textFieldHealth);
+          hBoxGold.getChildren().add(textFieldGold);
+          hBoxGold.setAlignment(Pos.CENTER);
+          hBoxHealth.setVisible(true);
+          hBoxGold.setVisible(true);
+        } else if (toggleGroupDifficulty.getSelectedToggle().equals(easy)) {
+          labelHealth.setText("Health = 250 (Normal difficulty = 100)");
+          labelGold.setText("Gold = 250 (Normal difficulty = 100) \n\n* Sword added to inventory");
+          hBoxHealth.getChildren().remove(textFieldHealth);
+          hBoxGold.getChildren().remove(textFieldGold);
+          hBoxGold.setAlignment(Pos.CENTER);
+          hBoxHealth.setVisible(true);
+          hBoxGold.setVisible(true);
+        } else if (toggleGroupDifficulty.getSelectedToggle().equals(hard)) {
+          labelHealth.setText("Health = 50 (Normal difficulty = 100)");
+          labelGold.setText("Gold = 0 (Normal difficulty = 100)");
+          hBoxHealth.getChildren().remove(textFieldHealth);
+          hBoxGold.getChildren().remove(textFieldGold);
+          hBoxGold.setAlignment(Pos.CENTER);
+          hBoxHealth.setVisible(true);
+          hBoxGold.setVisible(true);
+        } else if (toggleGroupDifficulty.getSelectedToggle().equals(standard)) {
+          labelHealth.setText("Health = 100");
+          labelGold.setText("Gold = 100");
+          hBoxHealth.getChildren().remove(textFieldHealth);
+          hBoxGold.getChildren().remove(textFieldGold);
+          hBoxGold.setAlignment(Pos.CENTER);
           hBoxHealth.setVisible(true);
           hBoxGold.setVisible(true);
         } else {
@@ -107,6 +136,8 @@ public class NewGameView extends View {
         }
       }
     });
+
+
 
     Label labelCharacter = new Label("Select character model");
     Image male = new Image("male.png");
@@ -153,14 +184,15 @@ public class NewGameView extends View {
       } else if (toggleGroupDifficulty.getSelectedToggle() == null) {
         labelDifficulty.setText("Select difficulty");
         return;
-      } else if (toggleGroupDifficulty.getSelectedToggle().equals(custom) && (textFieldHealth.getText().isEmpty() || textFieldGold.getText().isEmpty())) {
-        labelHealth.setText("Select health (Normal difficulty = 100)");
-        labelGold.setText("Select gold (Normal difficulty = 100)");
-        return;
       }
       if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
         player = playerController.addCusomPlayer(textFieldName.getText(), Integer.parseInt(textFieldHealth.getText()), Integer.parseInt(textFieldGold.getText()));
-      } else {
+      }  else if (toggleGroupDifficulty.getSelectedToggle().equals(easy)) {
+        player = playerController.addDefaultPlayer(textFieldName.getText(),"Easy");
+      } else if (toggleGroupDifficulty.getSelectedToggle().equals(hard)) {
+        player = playerController.addDefaultPlayer(textFieldName.getText(),"Hard");
+      }
+      else {
         ToggleButton selected = (ToggleButton) toggleGroupDifficulty.getSelectedToggle();
         player = playerController.addDefaultPlayer(textFieldName.getText(), selected.getText());
       }
