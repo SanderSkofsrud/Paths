@@ -102,7 +102,7 @@ public class MainGameView extends View{
     HBox buttonsBox = new HBox();
     borderPane.setBottom(buttonsBox);
 
-    setupPlayerAttributes();
+    setupTopBar();
 
     textFlow.setUserData(updateUIWithPassage(textFlow, game.begin()));
   }
@@ -146,9 +146,7 @@ public class MainGameView extends View{
     return new Pair<>(timeline, passage);
   }
 
-
-
-  private void setupPlayerAttributes() {
+  private void setupTopBar() {
     HBox attributesBox = new HBox();
     attributesBox.setAlignment(Pos.TOP_LEFT);
     attributesBox.setPadding(new Insets(10, 10, 10, 10));
@@ -169,11 +167,25 @@ public class MainGameView extends View{
     playerInventoryLabel.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
     playerInventoryLabel.setPadding(new Insets(10, 10, 10, 10));
 
+    Button questionButton = new Button("Question");
+
+    Button exitButton = new Button("Exit");
+
+    HBox topRightBox = new HBox();
+    topRightBox.setAlignment(Pos.TOP_RIGHT);
+    topRightBox.setPadding(new Insets(10, 10, 10, 10));
+    topRightBox.getChildren().addAll(questionButton, exitButton);
 
     attributesBox.getChildren().addAll(playerHealthLabel, playerGoldLabel, playerScoreLabel, playerInventoryLabel);
 
-    borderPane.setTop(attributesBox);
+    HBox topBox = new HBox();
+    topBox.getChildren().addAll(attributesBox, topRightBox);
+    topBox.setHgrow(attributesBox, Priority.ALWAYS);
+
+    borderPane.setTop(topBox);
   }
+
+
 
   private void updatePlayerAttributes() {
     playerHealthLabel = new Label("Health: " + player.getHealth());
