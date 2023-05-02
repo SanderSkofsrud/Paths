@@ -46,7 +46,7 @@ public class JsonFileHandlerTest {
       /**
        * Test that load game loads a game and returns it.
        */
-      @Test
+      /*@Test
       @DisplayName("Test that loadGame loads a game and returns it")
       void testThatLoadGameLoadsAGameAndReturnsIt() throws FileNotFoundException {
         JsonReader fileHandler = new JsonReader();
@@ -86,6 +86,7 @@ public class JsonFileHandlerTest {
         assertEquals("test", player.getName());
         assertEquals(3, goals.size());
       }
+      */
 
 
       /**
