@@ -7,7 +7,7 @@ import edu.ntnu.idatt2001.paths.models.Link;
 import edu.ntnu.idatt2001.paths.models.Passage;
 import edu.ntnu.idatt2001.paths.models.Player;
 import edu.ntnu.idatt2001.paths.models.actions.Action;
-import edu.ntnu.idatt2001.paths.models.goals.Goal;
+import edu.ntnu.idatt2001.paths.models.goals.*;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -17,17 +17,12 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
-import javafx.scene.text.TextFlow;
+import javafx.scene.text.*;
 import javafx.util.Duration;
 import javafx.util.Pair;
 
@@ -196,7 +191,6 @@ public class MainGameView extends View{
     Image exitImage = new Image("exit.png");
     Image questionImage = new Image("question.png");
 
-// Create an ImageView with the desired width and height
     ImageView exitImageView = new ImageView(exitImage);
     exitImageView.setFitWidth(30);
     exitImageView.setFitHeight(30);
@@ -213,13 +207,14 @@ public class MainGameView extends View{
     questionButton.setGraphic(questionImageView);
     questionButton.setStyle("-fx-background-color: transparent;");
 
-
     HBox topRightBox = new HBox();
     topRightBox.setAlignment(Pos.TOP_RIGHT);
     topRightBox.setPadding(new Insets(10, 10, 10, 10));
     topRightBox.getChildren().addAll(questionButton, exitButton);
 
-    attributesBox.getChildren().addAll(playerHealthLabel, playerGoldLabel, playerScoreLabel, playerInventoryLabel);
+    VBox goalsVbox = goalsVbox();
+
+    attributesBox.getChildren().addAll(playerHealthLabel, playerGoldLabel, playerScoreLabel, playerInventoryLabel, goalsVbox);
 
     HBox topBox = new HBox();
     topBox.getChildren().addAll(attributesBox, topRightBox);
@@ -233,5 +228,44 @@ public class MainGameView extends View{
     playerGoldLabel = new Label("Gold: " + player.getGold());
     playerScoreLabel = new Label("Score: " + player.getScore());
     playerInventoryLabel = new Label("Inventory: " + player.getInventory());
+  }
+
+  private VBox goalsVbox() {
+    VBox goalsVbox = new VBox();
+    goalsVbox.setPadding(new Insets(10, 10, 10, 10));
+    goalsVbox.setSpacing(10);
+    goalsVbox.setAlignment(Pos.TOP_CENTER);
+
+    Label goalsLabel = new Label("Goals");
+    goalsLabel.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+
+    goalsVbox.getChildren().add(goalsLabel);
+
+    for (Goal goal : game.getGoals()) {
+      HBox goalHbox = new HBox();
+      Label goalLabel = new Label(goal.toString());
+      goalLabel.setFont(Font.font("Arial", FontWeight.BOLD, 15));
+      ProgressBar goalProgressBar = new ProgressBar();
+      goalProgressBar.setProgress(0);
+      double progress = 0.0;
+      if (goal.getClass() == ScoreGoal.class) {
+        progress = (double) player.getScore() / ((ScoreGoal) goal).getMinimumScore();
+      } else if (goal.getClass() == HealthGoal.class) {
+        progress = (double) player.getHealth() / ((HealthGoal) goal).getMinimumHealth();
+      } else if (goal.getClass() == InventoryGoal.class) {
+        progress = (double) player.getInventory().size() / ((InventoryGoal) goal).getMandatoryItems().size();
+      } else if (goal.getClass() == GoldGoal.class) {
+        progress = (double) player.getGold() / ((GoldGoal) goal).getMinimumGold();
+      }
+      if (progress != 0.0) {
+        goalProgressBar.setProgress(progress);
+      } else {
+        goalProgressBar.setProgress(0.0);
+      }
+      goalHbox.getChildren().addAll(goalLabel, goalProgressBar);
+      goalsVbox.getChildren().add(goalHbox);
+    }
+
+    return goalsVbox;
   }
 }
