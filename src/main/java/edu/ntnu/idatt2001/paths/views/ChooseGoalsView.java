@@ -177,7 +177,7 @@ public class ChooseGoalsView extends View {
 
         Game game;
         try {
-          game = new Game(playerController.getPlayer(), fileHandlerController.loadGame("story.paths").getStory(), goals);
+          game = new Game(playerController.getPlayer(), fileHandlerController.loadGame("template1.paths").getStory(), goals);
         } catch (FileNotFoundException ex) {
           throw new RuntimeException(ex);
         }

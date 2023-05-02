@@ -2,6 +2,7 @@ package edu.ntnu.idatt2001.paths.utility.paths;
 
 import edu.ntnu.idatt2001.paths.models.*;
 import edu.ntnu.idatt2001.paths.models.goals.*;
+import edu.ntnu.idatt2001.paths.utility.GameData;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -72,7 +73,7 @@ public class PathsReader {
     return story;
   }
 
-  public static Game loadGame(String fileName) throws IllegalArgumentException, FileNotFoundException {
+  public static GameData loadGame(String fileName) throws IllegalArgumentException, FileNotFoundException {
     if (fileName.isBlank()) {
       throw new IllegalArgumentException("The file name can´t be empty");
     }
@@ -146,7 +147,11 @@ public class PathsReader {
     if (!inventoryGoals.isEmpty()) {
       goals.add(new InventoryGoal(inventoryGoals));
     }
-    return new Game(player, story, goals);
+
+    if (story == null) {
+      throw new IllegalArgumentException("The file is not in the correct format");
+    }
+    return new GameData(story, player, goals);
   }
 
 

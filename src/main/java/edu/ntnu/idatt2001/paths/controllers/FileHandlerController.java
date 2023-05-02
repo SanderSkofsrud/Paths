@@ -3,6 +3,7 @@ package edu.ntnu.idatt2001.paths.controllers;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Player;
 import edu.ntnu.idatt2001.paths.models.Story;
+import edu.ntnu.idatt2001.paths.utility.GameData;
 import edu.ntnu.idatt2001.paths.utility.json.JsonReader;
 import edu.ntnu.idatt2001.paths.utility.json.JsonWriter;
 import edu.ntnu.idatt2001.paths.utility.paths.PathsReader;
@@ -14,6 +15,7 @@ public class FileHandlerController {
   private static FileHandlerController instance;
   String path = "src/main/resources/paths/";
   String jsonPath = "src/main/resources/json/";
+  private GameData currentGameData;
   private FileHandlerController() {
   }
   public static FileHandlerController getInstance() {
@@ -27,8 +29,13 @@ public class FileHandlerController {
     PathsWriter.saveGame(story, path + name + ".paths");
   }
 
-  public Game loadGame(String name) throws FileNotFoundException {
-    return PathsReader.loadGame(path + name);
+  public void saveGame(String name, Game game) {
+    PathsWriter.saveGame(game, path + name + ".paths");
+  }
+
+  public GameData loadGame(String name) throws FileNotFoundException {
+    currentGameData = PathsReader.loadGame(path + name);
+    return currentGameData;
   }
 
   public void saveGameJson(String name, Game game) {
@@ -37,5 +44,13 @@ public class FileHandlerController {
 
 public Game loadGameJson(String name) throws FileNotFoundException {
     return JsonReader.loadGameJSON(jsonPath + name);
+  }
+
+  public GameData getCurrentGameData() {
+    return currentGameData;
+  }
+
+  public void setCurrentGame(GameData currentGameData) {
+    this.currentGameData = currentGameData;
   }
 }

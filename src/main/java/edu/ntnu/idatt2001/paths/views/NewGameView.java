@@ -1,7 +1,10 @@
 package edu.ntnu.idatt2001.paths.views;
 
+import edu.ntnu.idatt2001.paths.controllers.FileHandlerController;
+import edu.ntnu.idatt2001.paths.controllers.GameController;
 import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
+import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Player;
 import javafx.animation.TranslateTransition;
 import javafx.geometry.Insets;
@@ -27,6 +30,8 @@ public class NewGameView extends View {
   private ScreenController screenController;
   Player player;
   PlayerController playerController = PlayerController.getInstance();
+  FileHandlerController fileHandlerController = FileHandlerController.getInstance();
+  GameController gameController = GameController.getInstance();
 
   /**
    * Instantiates a new New game view.
@@ -206,7 +211,15 @@ public class NewGameView extends View {
       }
       System.out.printf("Player created: %s%n", player.toString());
       resetPane();
-      screenController.activate("ChooseGoals");
+      if (fileHandlerController.getCurrentGameData().getGoals() != null) {
+        Game game = new Game(player, fileHandlerController.getCurrentGameData().getStory(), fileHandlerController.getCurrentGameData().getGoals());
+        fileHandlerController.saveGame(player.getName(),game);
+        fileHandlerController.saveGameJson(player.getName(), game);
+        gameController.setGame(game);
+        screenController.activate("MainGame");
+      } else {
+        screenController.activate("ChooseGoals");
+      }
     });
 
     VBox vBox = new VBox();
