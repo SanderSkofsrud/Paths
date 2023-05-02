@@ -51,6 +51,8 @@ public class MainGameView extends View{
   private Label playerScoreLabel;
   private Label playerInventoryLabel;
   private Label playerGoldLabel;
+  private HBox buttonsBox;
+  private HBox attributesBox;
 
   public MainGameView(ScreenController screenController) {
     borderPane = new BorderPane();
@@ -64,11 +66,28 @@ public class MainGameView extends View{
     return this.borderPane;
   }
 
+  private void setupButtonsBox() {
+    buttonsBox = new HBox();
+    borderPane.setBottom(buttonsBox);
+    buttonsBox.setAlignment(Pos.BOTTOM_CENTER);
+  }
+
+  private void setupAttributesBox() {
+    attributesBox = new HBox();
+    attributesBox.setAlignment(Pos.TOP_LEFT);
+    attributesBox.setPadding(new Insets(10, 10, 10, 10));
+    borderPane.setTop(attributesBox);
+  }
+
+
   @Override
   public void setup() {
     game = gameController.getGame();
     player = game.getPlayer();
     goals = game.getGoals();
+
+    setupButtonsBox();
+    setupAttributesBox();
 
     passageContent = new TextArea();
     passageContent.setWrapText(true);
@@ -95,6 +114,10 @@ public class MainGameView extends View{
         passageContent.appendText(remainingText);
       }
     });
+
+    VBox scrollPaneAndButtonsBox = new VBox(scrollPane, buttonsBox);
+    scrollPaneAndButtonsBox.setAlignment(Pos.BOTTOM_CENTER);
+    borderPane.setBottom(scrollPaneAndButtonsBox);
 
     VBox.setVgrow(scrollPane, Priority.ALWAYS);
     stackPane.getChildren().add(scrollPane);
@@ -204,8 +227,6 @@ public class MainGameView extends View{
 
     borderPane.setTop(topBox);
   }
-
-
 
   private void updatePlayerAttributes() {
     playerHealthLabel = new Label("Health: " + player.getHealth());

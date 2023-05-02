@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added questions and exit buttons to main game">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/exit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/question.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
-    </list>
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Updated functionality to work with new FileEntry class. The program now works as this. If you try to load a paths file that is missing a player or goals, the program makes you add these things to your files before the game can be loaded" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="GUI" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,29 +38,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "generate-player",
-    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;FileHandling&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.intentionPowerPack&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources" />
@@ -94,23 +88,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.paths [javafx:run]">
-    <configuration name="JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameLoadsAGameAndReturnsIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.json.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.json.JsonFileHandlerTest.jsonReader" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.json.JsonFileHandlerTest$jsonReader$loadGame" />
-      <option name="METHOD_NAME" value="testThatLoadGameLoadsAGameAndReturnsIt" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.JsonFileHandlerTest">
     <configuration name="JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameThrowsFileNotFoundException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -123,6 +101,21 @@
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.json.JsonFileHandlerTest$jsonReader$loadGame" />
       <option name="METHOD_NAME" value="testThatLoadGameThrowsFileNotFoundException" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonFileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.json.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.json" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.json.JsonFileHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -232,7 +225,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameLoadsAGameAndReturnsIt" />
+      <item itemvalue="JUnit.JsonFileHandlerTest" />
       <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameThrowsFileNotFoundException" />
       <item itemvalue="JUnit.StoryTest$addPassage.testThatAddPassageAddsPassageCorrectlyWhenValidValues" />
       <item itemvalue="JUnit.StoryTest$removePassage.testThatRemovePassageRemovesPassage" />
@@ -242,11 +235,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JsonFileHandlerTest" />
         <item itemvalue="JUnit.edu.ntnu.idatt2001.paths.models in paths" />
         <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameThrowsFileNotFoundException" />
         <item itemvalue="JUnit.StoryTest$addPassage.testThatAddPassageAddsPassageCorrectlyWhenValidValues" />
         <item itemvalue="JUnit.StoryTest$removePassage.testThatRemovePassageRemovesPassage" />
-        <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameLoadsAGameAndReturnsIt" />
       </list>
     </recent_temporary>
   </component>
@@ -288,8 +281,13 @@
       <workItem from="1681982566498" duration="3543000" />
       <workItem from="1681987313847" duration="1305000" />
       <workItem from="1682074673475" duration="21122000" />
-      <workItem from="1682497776360" duration="79000" />
-      <workItem from="1682502858708" duration="9278000" />
+    </task>
+    <task id="LOCAL-00065" summary="removed test for get-methods and specified javadoc comments">
+      <created>1679401098889</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401098889</updated>
     </task>
     <task id="LOCAL-00066" summary="added description to Link class">
       <created>1679401354627</created>
@@ -606,35 +604,28 @@
       <option name="project" value="LOCAL" />
       <updated>1682411898920</updated>
     </task>
-    <task id="LOCAL-00111" summary="changed defaultplayer method. Now possible is easy, hard and standard">
-      <created>1682508430774</created>
+    <task id="LOCAL-00111" summary="Added template paths file to base new stories from">
+      <created>1683015959272</created>
       <option name="number" value="00111" />
       <option name="presentableId" value="LOCAL-00111" />
       <option name="project" value="LOCAL" />
-      <updated>1682508430774</updated>
+      <updated>1683015959273</updated>
     </task>
-    <task id="LOCAL-00112" summary="added displayed text for chosen difficulty">
-      <created>1682508449025</created>
+    <task id="LOCAL-00112" summary="Added new GameData class to store all data about a game but that still can be null">
+      <created>1683016009030</created>
       <option name="number" value="00112" />
       <option name="presentableId" value="LOCAL-00112" />
       <option name="project" value="LOCAL" />
-      <updated>1682508449025</updated>
+      <updated>1683016009031</updated>
     </task>
-    <task id="LOCAL-00113" summary="refactored code to switch-cases">
-      <created>1682509714111</created>
+    <task id="LOCAL-00113" summary="Updated functionality to work with new FileEntry class. The program now works as this. If you try to load a paths file that is missing a player or goals, the program makes you add these things to your files before the game can be loaded">
+      <created>1683016116563</created>
       <option name="number" value="00113" />
       <option name="presentableId" value="LOCAL-00113" />
       <option name="project" value="LOCAL" />
-      <updated>1682509714111</updated>
+      <updated>1683016116563</updated>
     </task>
-    <task id="LOCAL-00114" summary="added questions and exit buttons to main game">
-      <created>1682510428982</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1682510428982</updated>
-    </task>
-    <option name="localTasksCounter" value="115" />
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,6 +656,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added positive test and refactored nested test classes" />
     <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
     <MESSAGE value="removed public from nested classes" />
     <MESSAGE value="Made ChooseGoalsView create and save games" />
@@ -686,11 +678,10 @@
     <MESSAGE value="Made GameController to work with the now functioning mainGame" />
     <MESSAGE value="Made tests to match the new separation of paths and json file handling" />
     <MESSAGE value="Updated files to match the new changes" />
-    <MESSAGE value="changed defaultplayer method. Now possible is easy, hard and standard" />
-    <MESSAGE value="added displayed text for chosen difficulty" />
-    <MESSAGE value="refactored code to switch-cases" />
-    <MESSAGE value="added questions and exit buttons to main game" />
-    <option name="LAST_COMMIT_MESSAGE" value="added questions and exit buttons to main game" />
+    <MESSAGE value="Added template paths file to base new stories from" />
+    <MESSAGE value="Added new GameData class to store all data about a game but that still can be null" />
+    <MESSAGE value="Updated functionality to work with new FileEntry class. The program now works as this. If you try to load a paths file that is missing a player or goals, the program makes you add these things to your files before the game can be loaded" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated functionality to work with new FileEntry class. The program now works as this. If you try to load a paths file that is missing a player or goals, the program makes you add these things to your files before the game can be loaded" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -713,7 +704,7 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680193708824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681810472673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681805884296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680007855672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -74,15 +74,7 @@
   },
   "goals": [
     {
-      "minimumGold": 100
-    },
-    {
-      "minimumGold": 100
-    },
-    {
-      "mandatoryItems": [
-        "sword"
-      ]
+      "minimumGold": 10
     }
   ]
 }

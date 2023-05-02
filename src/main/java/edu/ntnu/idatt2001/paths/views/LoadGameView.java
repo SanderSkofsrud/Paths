@@ -5,7 +5,12 @@ import edu.ntnu.idatt2001.paths.controllers.GameController;
 import edu.ntnu.idatt2001.paths.controllers.LoadGameController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.Game;
+import edu.ntnu.idatt2001.paths.models.Player;
+import edu.ntnu.idatt2001.paths.models.Story;
+import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.utility.FileEntry;
+import edu.ntnu.idatt2001.paths.utility.GameData;
+import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -14,8 +19,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
 
 public class LoadGameView extends View{
   protected BorderPane borderPane;
@@ -25,6 +34,9 @@ public class LoadGameView extends View{
   private GameController gameController = GameController.getInstance();
   FileHandlerController fileHandlerController = FileHandlerController.getInstance();
   LoadGameController loadGameController = LoadGameController.getInstance();
+  TableView<FileEntry> pathsTableView;
+  TableView<FileEntry> jsonTableView;
+
   public LoadGameView(ScreenController screenController) {
     borderPane = new BorderPane();
     stackPane = new StackPane();
@@ -39,7 +51,7 @@ public class LoadGameView extends View{
   @Override
   public void setup() {
     // Create the TableView for .paths files
-    TableView<FileEntry> pathsTableView = new TableView<>();
+    pathsTableView = new TableView<>();
 
     TableColumn<FileEntry, String> pathsFileNameColumn = new TableColumn<>("File Name");
     pathsFileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getFileName()));
@@ -56,12 +68,11 @@ public class LoadGameView extends View{
           FileEntry fileEntry = getTableView().getItems().get(getIndex());
           System.out.println("Clicked on file: " + fileEntry.getFileName());
           try {
-            game = fileHandlerController.loadGame(fileEntry.getFileName());
-            gameController.setGame(game);
+            GameData gameData = fileHandlerController.loadGame(fileEntry.getFileName());
+            loadGameController.handleGameData(gameData, gameController, screenController);
           } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
           }
-          screenController.activate("MainGame");
         });
       }
 
@@ -81,7 +92,7 @@ public class LoadGameView extends View{
     pathsTableView.setMaxWidth(400);
 
     // Create the TableView for .json files
-    TableView<FileEntry> jsonTableView = new TableView<>();
+    jsonTableView = new TableView<>();
 
     TableColumn<FileEntry, String> jsonFileNameColumn = new TableColumn<>("File Name");
     jsonFileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getFileName()));
@@ -136,7 +147,54 @@ public class LoadGameView extends View{
     hBox.setSpacing(20);
     hBox.setPadding(new Insets(20, 20, 20, 20));
     hBox.setAlignment(Pos.CENTER);
-    stackPane.getChildren().add(hBox);
+
+    Button uploadButton = new Button("Upload File");
+
+    uploadButton.setOnAction(event -> {
+      FileChooser fileChooser = new FileChooser();
+      fileChooser.setTitle("Upload Game File");
+      fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+
+      fileChooser.getExtensionFilters().addAll(
+              new FileChooser.ExtensionFilter("PATHS Files", "*.paths"),
+              new FileChooser.ExtensionFilter("JSON Files", "*.json")
+      );
+
+      File selectedFile = fileChooser.showOpenDialog(null);
+
+      if (selectedFile != null) {
+        System.out.println("Selected file: " + selectedFile.getName());
+        String extension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf(".") + 1);
+
+        if (extension.equals("paths")) {
+          try {
+            loadGameController.addSavedGame(selectedFile.getName(), "paths", selectedFile);
+            Platform.runLater(this::refreshTables);
+          } catch (IOException e) {
+            throw new RuntimeException(e);
+          }
+        } else if (extension.equals("json")) {
+          try {
+            loadGameController.addSavedGame(selectedFile.getName(), "json", selectedFile);
+            Platform.runLater(this::refreshTables);
+          } catch (IOException e) {
+            throw new RuntimeException(e);
+          }
+        }
+
+        pathsTableView.setItems(loadGameController.getSavedGames("paths"));
+        jsonTableView.setItems(loadGameController.getSavedGames("json"));
+        refreshTables();
+      }
+    });
+
+    VBox vBox = new VBox();
+    vBox.getChildren().addAll(hBox, uploadButton);
+    vBox.setSpacing(20);
+    vBox.setPadding(new Insets(20, 20, 20, 20));
+    vBox.setAlignment(Pos.CENTER);
+
+    stackPane.getChildren().add(vBox);
     borderPane.setBackground(new Background(new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true))));
     borderPane.setTop(backButton);
     borderPane.getStylesheets().add("stylesheet.css");
@@ -147,4 +205,16 @@ public class LoadGameView extends View{
   void resetPane() {
     stackPane.getChildren().clear();
   }
+
+  private void refreshTables() {
+    pathsTableView.getItems().clear();
+    pathsTableView.setItems(loadGameController.getSavedGames("paths"));
+    pathsTableView.refresh();
+
+    jsonTableView.getItems().clear();
+    jsonTableView.setItems(loadGameController.getSavedGames("json"));
+    jsonTableView.refresh();
+  }
+
+
 }
