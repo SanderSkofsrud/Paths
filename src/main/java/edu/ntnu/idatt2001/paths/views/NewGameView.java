@@ -6,6 +6,7 @@ import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Player;
+import edu.ntnu.idatt2001.paths.utility.GameData;
 import javafx.animation.TranslateTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -198,6 +199,7 @@ public class NewGameView extends View {
         labelDifficulty.setText("Select difficulty");
         return;
       }
+
       if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
         player = playerController.addCusomPlayer(textFieldName.getText(), Integer.parseInt(textFieldHealth.getText()), Integer.parseInt(textFieldGold.getText()));
       }  else if (toggleGroupDifficulty.getSelectedToggle().equals(easy)) {
@@ -209,17 +211,21 @@ public class NewGameView extends View {
         ToggleButton selected = (ToggleButton) toggleGroupDifficulty.getSelectedToggle();
         player = playerController.addDefaultPlayer(textFieldName.getText(), selected.getText());
       }
+
+      GameData currentGameData = fileHandlerController.getCurrentGameData();
+      if (currentGameData == null || currentGameData.getGoals().isEmpty()) {
+        screenController.activate("ChooseGoals");
+        return;
+      }
+
       System.out.printf("Player created: %s%n", player.toString());
       resetPane();
-      if (fileHandlerController.getCurrentGameData().getGoals() != null) {
-        Game game = new Game(player, fileHandlerController.getCurrentGameData().getStory(), fileHandlerController.getCurrentGameData().getGoals());
-        fileHandlerController.saveGame(player.getName(),game);
-        fileHandlerController.saveGameJson(player.getName(), game);
-        gameController.setGame(game);
-        screenController.activate("MainGame");
-      } else {
-        screenController.activate("ChooseGoals");
-      }
+
+      Game game = new Game(player, currentGameData.getStory(), currentGameData.getGoals());
+      fileHandlerController.saveGame(player.getName(),game);
+      fileHandlerController.saveGameJson(player.getName(), game);
+      gameController.setGame(game);
+      screenController.activate("MainGame");
     });
 
     VBox vBox = new VBox();
