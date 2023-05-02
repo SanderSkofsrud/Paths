@@ -6,15 +6,11 @@ import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Link;
 import edu.ntnu.idatt2001.paths.models.Passage;
 import edu.ntnu.idatt2001.paths.models.Player;
-import edu.ntnu.idatt2001.paths.models.actions.Action;
 import edu.ntnu.idatt2001.paths.models.goals.*;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
-import javafx.beans.binding.Bindings;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -26,13 +22,10 @@ import javafx.scene.text.*;
 import javafx.util.Duration;
 import javafx.util.Pair;
 
-import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 
-
 public class MainGameView extends View{
-
   protected BorderPane borderPane;
   protected StackPane stackPane;
   private ScreenController screenController;
@@ -48,6 +41,8 @@ public class MainGameView extends View{
   private Label playerGoldLabel;
   private HBox buttonsBox;
   private HBox attributesBox;
+  private String[] words;
+  private Timeline timeline;
 
   public MainGameView(ScreenController screenController) {
     borderPane = new BorderPane();
@@ -89,17 +84,20 @@ public class MainGameView extends View{
     passageContent.setEditable(false);
 
     TextFlow textFlow = new TextFlow(passageContent);
-    textFlow.setStyle("-fx-border-color: black; -fx-border-radius: 10;");
 
     ScrollPane scrollPane = new ScrollPane(textFlow);
     scrollPane.setFitToWidth(true);
     scrollPane.setMaxWidth(500);
+    scrollPane.setMaxHeight(197);
     scrollPane.setPrefViewportHeight(200);
-    scrollPane.setStyle("-fx-padding: 0; -fx-background-color: transparent;");
+
+    scrollPane.setStyle("-fx-background-color: transparent;");
+    passageContent.setStyle("-fx-background-color: transparent;");
+    textFlow.setStyle("-fx-background-color: transparent;");
 
     textFlow.setOnMouseClicked(event -> {
       Pair<Timeline, Passage> timelineAndPassage = (Pair<Timeline, Passage>) textFlow.getUserData();
-      Timeline timeline = timelineAndPassage.getKey();
+      timeline = timelineAndPassage.getKey();
       Passage passage = timelineAndPassage.getValue();
       if (timeline != null && timeline.getStatus() == Animation.Status.RUNNING) {
         timeline.stop();
@@ -116,6 +114,7 @@ public class MainGameView extends View{
 
     VBox.setVgrow(scrollPane, Priority.ALWAYS);
     stackPane.getChildren().add(scrollPane);
+    stackPane.setStyle("-fx-background-color: transparent;");
     stackPane.setAlignment(scrollPane, Pos.CENTER);
 
     borderPane.setCenter(stackPane);
@@ -126,21 +125,30 @@ public class MainGameView extends View{
     setupTopBar();
 
     textFlow.setUserData(updateUIWithPassage(textFlow, game.begin()));
+
+    Image background = new Image("gameBackground.png");
+    BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
+    borderPane.setBackground(new Background(backgroundImage));
   }
 
 
   @Override
   void resetPane() {
     stackPane.getChildren().clear();
+    borderPane.setTop(null);
+    borderPane.setBottom(null);
+    borderPane.setCenter(null);
+    words = null;
+    timeline.stop();
   }
 
   private Pair<Timeline, Passage> updateUIWithPassage(TextFlow textFlow, Passage passage) {
     passageContent.clear();
     updatePlayerAttributes();
 
-    String[] words = passage.getContent().split("\\s+");
+    words = passage.getContent().split("\\s+");
 
-    Timeline timeline = new Timeline();
+    timeline = new Timeline();
     timeline.getKeyFrames().clear();
     for (int i = 0; i < words.length; i++) {
       int wordIndex = i;
@@ -189,28 +197,53 @@ public class MainGameView extends View{
     playerInventoryLabel.setPadding(new Insets(10, 10, 10, 10));
 
     Image exitImage = new Image("exit.png");
-    Image questionImage = new Image("question.png");
+    Image helpImage = new Image("help.png");
+    Image homeImage = new Image("home.png");
 
     ImageView exitImageView = new ImageView(exitImage);
     exitImageView.setFitWidth(30);
     exitImageView.setFitHeight(30);
 
-    ImageView questionImageView = new ImageView(questionImage);
-    questionImageView.setFitWidth(30);
-    questionImageView.setFitHeight(30);
+    ImageView helpImageView= new ImageView(helpImage);
+    helpImageView.setFitWidth(30);
+    helpImageView.setFitHeight(30);
+
+    ImageView homeImageView = new ImageView(homeImage);
+    homeImageView.setFitWidth(30);
+    homeImageView.setFitHeight(30);
 
     Button exitButton = new Button();
     exitButton.setGraphic(exitImageView);
     exitButton.setStyle("-fx-background-color: transparent;");
+    exitButton.setOnAction(event -> {
+      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+      alert.setTitle("Exit");
+      alert.setHeaderText("Are you sure you want to exit?");
+      alert.setContentText("You will lose all progress.");
+      alert.showAndWait();
+      if (alert.getResult() == ButtonType.OK) {
+        Platform.exit();
+      } else {
+        alert.close();
+      }
+    });
 
     Button questionButton = new Button();
-    questionButton.setGraphic(questionImageView);
+    questionButton.setGraphic(helpImageView);
     questionButton.setStyle("-fx-background-color: transparent;");
+
+    Button homeButton = new Button();
+    homeButton.setGraphic(homeImageView);
+    homeButton.setStyle("-fx-background-color: transparent;");
+    homeButton.setOnAction(event -> {
+      resetPane();
+      screenController.activate("MainMenu");
+    });
 
     HBox topRightBox = new HBox();
     topRightBox.setAlignment(Pos.TOP_RIGHT);
     topRightBox.setPadding(new Insets(10, 10, 10, 10));
-    topRightBox.getChildren().addAll(questionButton, exitButton);
+    topRightBox.getChildren().addAll(homeButton, questionButton, exitButton);
 
     VBox goalsVbox = goalsVbox();
 
