@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Updated files to match the new changes">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/back.png" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added questions and exit buttons to main game">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/exit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/question.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="GUI" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,7 +53,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "FileHandling",
+    "git-widget-placeholder": "generate-player",
     "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -287,34 +288,8 @@
       <workItem from="1681982566498" duration="3543000" />
       <workItem from="1681987313847" duration="1305000" />
       <workItem from="1682074673475" duration="21122000" />
-    </task>
-    <task id="LOCAL-00062" summary="removed test for get-methods and specified some javadoc comments">
-      <created>1679400608256</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1679400608256</updated>
-    </task>
-    <task id="LOCAL-00063" summary="removed test for get-methods and specified some javadoc comments">
-      <created>1679400614339</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1679400614339</updated>
-    </task>
-    <task id="LOCAL-00064" summary="removed test for get-methods, specified some javadoc comments and refactored addAction test class">
-      <created>1679400844265</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1679400844265</updated>
-    </task>
-    <task id="LOCAL-00065" summary="removed test for get-methods and specified javadoc comments">
-      <created>1679401098889</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1679401098889</updated>
+      <workItem from="1682497776360" duration="79000" />
+      <workItem from="1682502858708" duration="9278000" />
     </task>
     <task id="LOCAL-00066" summary="added description to Link class">
       <created>1679401354627</created>
@@ -631,7 +606,35 @@
       <option name="project" value="LOCAL" />
       <updated>1682411898920</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="changed defaultplayer method. Now possible is easy, hard and standard">
+      <created>1682508430774</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1682508430774</updated>
+    </task>
+    <task id="LOCAL-00112" summary="added displayed text for chosen difficulty">
+      <created>1682508449025</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1682508449025</updated>
+    </task>
+    <task id="LOCAL-00113" summary="refactored code to switch-cases">
+      <created>1682509714111</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1682509714111</updated>
+    </task>
+    <task id="LOCAL-00114" summary="added questions and exit buttons to main game">
+      <created>1682510428982</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1682510428982</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -662,10 +665,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed testThatCOnstructorConstructsObject method" />
-    <MESSAGE value="fixed typo in method" />
-    <MESSAGE value="changed isEmpty to isBlank" />
-    <MESSAGE value="added positive test and refactored nested test classes" />
     <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
     <MESSAGE value="removed public from nested classes" />
     <MESSAGE value="Made ChooseGoalsView create and save games" />
@@ -687,7 +686,11 @@
     <MESSAGE value="Made GameController to work with the now functioning mainGame" />
     <MESSAGE value="Made tests to match the new separation of paths and json file handling" />
     <MESSAGE value="Updated files to match the new changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated files to match the new changes" />
+    <MESSAGE value="changed defaultplayer method. Now possible is easy, hard and standard" />
+    <MESSAGE value="added displayed text for chosen difficulty" />
+    <MESSAGE value="refactored code to switch-cases" />
+    <MESSAGE value="added questions and exit buttons to main game" />
+    <option name="LAST_COMMIT_MESSAGE" value="added questions and exit buttons to main game" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -710,7 +713,7 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681805884296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680007855672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680193708824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681810472673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
