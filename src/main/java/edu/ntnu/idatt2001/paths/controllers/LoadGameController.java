@@ -93,29 +93,28 @@ public class LoadGameController {
     Files.copy(sourcePath, destPath, StandardCopyOption.REPLACE_EXISTING);
   }
 
-  public void handleGameData(GameData gameData, GameController gameController, ScreenController screenController) {
+  public String handleGameData(GameData gameData, GameController gameController, ScreenController screenController) {
     Story story = gameData.getStory();
     Player player = gameData.getPlayer();
     List<Goal> goals = gameData.getGoals();
+    StringBuilder missingDataBuilder = null;
 
     if (story != null && player != null && !goals.isEmpty()) {
       Game game = new Game(player, story, goals);
       gameController.setGame(game);
       screenController.activate("MainGame");
     } else {
-      missingData = new StringBuilder("Missing data:");
+      missingDataBuilder = new StringBuilder("Missing data:");
       if (player == null) {
-        missingData.append(" Player");
+        missingDataBuilder.append(" Player");
       }
       if (goals.isEmpty()) {
-        missingData.append(" Goals");
-      }
-      switch (missingData.toString()) {
-        case "Missing data: Player Goals", "Missing data: Player" -> screenController.activate("NewGame");
-        case "Missing data: Goals" -> screenController.activate("ChooseGoals");
-        default -> screenController.activate("MainGame");
+        missingDataBuilder.append(" Goals");
       }
     }
+
+    return missingDataBuilder != null ? missingDataBuilder.toString() : "";
   }
+
 
 }

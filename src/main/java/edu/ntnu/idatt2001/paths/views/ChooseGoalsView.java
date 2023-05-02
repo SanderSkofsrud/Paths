@@ -34,9 +34,9 @@ public class ChooseGoalsView extends View {
    * The Stack pane.
    */
   protected StackPane stackPane;
-  private ScreenController screenController;
-  private ObservableList<Goal> goals;
-  private GameController gameController = GameController.getInstance();
+  private final ScreenController screenController;
+  private final ObservableList<Goal> goals;
+  private final GameController gameController = GameController.getInstance();
   FileHandlerController fileHandlerController = FileHandlerController.getInstance();
   PlayerController playerController = PlayerController.getInstance();
 
@@ -52,9 +52,11 @@ public class ChooseGoalsView extends View {
     this.screenController = screenController;
     this.goals = FXCollections.observableArrayList();
   }
+
   public Pane getPane() {
     return this.borderPane;
   }
+
   public void setup() {
     ImageView imageView = new ImageView(new Image("goals.png"));
     HBox hBox = new HBox();
@@ -125,17 +127,13 @@ public class ChooseGoalsView extends View {
     tableColumn2.setCellValueFactory(cellData -> {
       Goal goal = cellData.getValue();
       String goalValueString = "";
-      if (goal instanceof GoldGoal) {
-        GoldGoal goldGoal = (GoldGoal) goal;
+      if (goal instanceof GoldGoal goldGoal) {
         goalValueString = Integer.toString(goldGoal.getMinimumGold());
-      } else if (goal instanceof HealthGoal) {
-        HealthGoal healthGoal = (HealthGoal) goal;
+      } else if (goal instanceof HealthGoal healthGoal) {
         goalValueString = Integer.toString(healthGoal.getMinimumHealth());
-      } else if (goal instanceof ScoreGoal) {
-        ScoreGoal scoreGoal = (ScoreGoal) goal;
+      } else if (goal instanceof ScoreGoal scoreGoal) {
         goalValueString = Integer.toString(scoreGoal.getMinimumScore());
-      } else if (goal instanceof InventoryGoal) {
-        InventoryGoal inventoryGoal = (InventoryGoal) goal;
+      } else if (goal instanceof InventoryGoal inventoryGoal) {
         StringBuilder stringBuilder = new StringBuilder();
         for (String item : inventoryGoal.getMandatoryItems()) {
           stringBuilder.append(item).append(", ");
@@ -160,26 +158,32 @@ public class ChooseGoalsView extends View {
     Button startButton = new Button("Start");
     startButton.setId("subMenuButton");
     startButton.setOnAction(e -> {
-        for (int i = 1; i < 7; i++) {
-          if (i == 1 && checkBox1.isSelected()) {
-            goals.add(new GoldGoal(100));
-          } else if (i == 2 && checkBox2.isSelected()) {
-            goals.add(new HealthGoal(100));
-          } else if (i == 3 && checkBox3.isSelected()) {
-            goals.add(new InventoryGoal(Collections.singletonList("Sword")));
-          } else if (i == 4 && checkBox4.isSelected()) {
-            goals.add(new ScoreGoal(100));
-          } else if (i == 5 && checkBox5.isSelected()) {
-            goals.add(new GoldGoal(1000));
-          } else if (i == 6 && checkBox6.isSelected()) {
-            goals.add(new HealthGoal(1000));
-          }
+      for (int i = 1; i < 7; i++) {
+        if (i == 1 && checkBox1.isSelected()) {
+          goals.add(new GoldGoal(100));
+        } else if (i == 2 && checkBox2.isSelected()) {
+          goals.add(new HealthGoal(100));
+        } else if (i == 3 && checkBox3.isSelected()) {
+          goals.add(new InventoryGoal(Collections.singletonList("Sword")));
+        } else if (i == 4 && checkBox4.isSelected()) {
+          goals.add(new ScoreGoal(100));
+        } else if (i == 5 && checkBox5.isSelected()) {
+          goals.add(new GoldGoal(1000));
+        } else if (i == 6 && checkBox6.isSelected()) {
+          goals.add(new HealthGoal(1000));
+        }
+      }
 
+      if (!goals.isEmpty()) {
         Game game;
-        try {
-          game = new Game(playerController.getPlayer(), fileHandlerController.loadGame("template1.paths").getStory(), goals);
-        } catch (FileNotFoundException ex) {
-          throw new RuntimeException(ex);
+        if (fileHandlerController.getCurrentGameData() != null && fileHandlerController.getCurrentGameData().getStory() != null) {
+          game = new Game(playerController.getPlayer(), fileHandlerController.getCurrentGameData().getStory(), goals);
+        } else {
+          try {
+            game = new Game(playerController.getPlayer(), fileHandlerController.loadGame("template1.paths").getStory(), goals);
+          } catch (FileNotFoundException ex) {
+            throw new RuntimeException(ex);
+          }
         }
 
         fileHandlerController.saveGame(playerController.getPlayer().getName(), game.getStory());
@@ -188,8 +192,11 @@ public class ChooseGoalsView extends View {
         gameController.setGame(game);
 
         screenController.activate("MainGame");
+      } else {
+        // Show an error message stating that at least one goal must be selected
       }
     });
+
 
     hBox.getChildren().addAll(predefinedGoals, customGoals);
     vBox.getChildren().addAll(imageView, hBox, startButton);
