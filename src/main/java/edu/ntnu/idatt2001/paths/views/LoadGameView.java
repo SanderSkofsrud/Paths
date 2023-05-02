@@ -69,7 +69,12 @@ public class LoadGameView extends View{
           System.out.println("Clicked on file: " + fileEntry.getFileName());
           try {
             GameData gameData = fileHandlerController.loadGame(fileEntry.getFileName());
-            loadGameController.handleGameData(gameData, gameController, screenController);
+            String missingData = loadGameController.handleGameData(gameData, gameController, screenController);
+            if (!missingData.isEmpty()) {
+              showAlertWindow(missingData);
+            } else {
+              screenController.activate("MainGame");
+            }
           } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
           }
@@ -199,6 +204,29 @@ public class LoadGameView extends View{
     borderPane.setTop(backButton);
     borderPane.getStylesheets().add("stylesheet.css");
   }
+
+  private void showAlertWindow(String missingData) {
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Missing Data");
+    alert.setHeaderText("Some data is missing in the file:");
+    alert.setContentText(missingData + "\nDo you want to continue and add this to the file?");
+
+    ButtonType buttonTypeContinue = new ButtonType("Continue", ButtonBar.ButtonData.OK_DONE);
+    ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+    alert.getButtonTypes().setAll(buttonTypeContinue, buttonTypeCancel);
+
+    alert.showAndWait().ifPresent(response -> {
+      if (response == buttonTypeContinue && missingData.equals("Missing data: Player Goals") || missingData.equals("Missing data: Player")) {
+        screenController.activate("NewGame");
+      } else if (response == buttonTypeContinue && missingData.equals("Missing data: Goals")) {
+        screenController.activate("ChooseGoals");
+      } else {
+        alert.close();
+      }
+    });
+  }
+
 
 
   @Override
