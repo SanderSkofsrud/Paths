@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="moved placement of buttons">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added CSS styling to buttons">
       <change afterPath="$PROJECT_DIR$/src/main/resources/paths/43.paths" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/paths/768.paths" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,13 +286,6 @@
       <workItem from="1681982566498" duration="3543000" />
       <workItem from="1681987313847" duration="1305000" />
       <workItem from="1682074673475" duration="21122000" />
-    </task>
-    <task id="LOCAL-00075" summary="changed groupId">
-      <created>1680001038752</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1680001038752</updated>
     </task>
     <task id="LOCAL-00076" summary="added new exception to filehandler for empty file">
       <created>1680001073534</created>
@@ -630,7 +623,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683109601340</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="added CSS styling to buttons">
+      <created>1683110081238</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1683110081238</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,7 +661,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed error in PlayerController where it used the builder wrong and did not return the difficulty in the correct way" />
     <MESSAGE value="Added MainGameView and LoadGameView to the controller so they work" />
     <MESSAGE value="Implemented singleton functionality to all controllers to remove the need of static methods. Also updated the usages in all the view classes to match this change" />
     <MESSAGE value="Added more directories in resources" />
@@ -686,7 +685,8 @@
     <MESSAGE value="customized alert-boxes" />
     <MESSAGE value="added specified javadoc to toString" />
     <MESSAGE value="moved placement of buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved placement of buttons" />
+    <MESSAGE value="added CSS styling to buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="added CSS styling to buttons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
