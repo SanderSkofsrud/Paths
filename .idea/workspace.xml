@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Made JsonFileHandlerTest work">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/helle.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/t.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/helle.paths" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/t.paths" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added exit-save button in mainGame">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/template2.paths" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/json/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/test.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/paths/test.paths" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,14 +286,7 @@
       <workItem from="1681987313847" duration="1305000" />
       <workItem from="1682074673475" duration="21122000" />
       <workItem from="1683044751592" duration="300000" />
-      <workItem from="1683093782171" duration="2178000" />
-    </task>
-    <task id="LOCAL-00066" summary="added description to Link class">
-      <created>1679401354627</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1679401354627</updated>
+      <workItem from="1683093782171" duration="3555000" />
     </task>
     <task id="LOCAL-00067" summary="added description to Passage class">
       <created>1679401528514</created>
@@ -637,7 +624,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683016295167</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="added exit-save button in mainGame">
+      <created>1683096926264</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1683096926265</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,7 +662,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
     <MESSAGE value="removed public from nested classes" />
     <MESSAGE value="Made ChooseGoalsView create and save games" />
     <MESSAGE value="Made new FileEntry class that makes working with files easier, used for the tabelview in LoadGameView" />
@@ -693,7 +686,8 @@
     <MESSAGE value="Added new GameData class to store all data about a game but that still can be null" />
     <MESSAGE value="Updated functionality to work with new FileEntry class. The program now works as this. If you try to load a paths file that is missing a player or goals, the program makes you add these things to your files before the game can be loaded" />
     <MESSAGE value="Made JsonFileHandlerTest work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made JsonFileHandlerTest work" />
+    <MESSAGE value="added exit-save button in mainGame" />
+    <option name="LAST_COMMIT_MESSAGE" value="added exit-save button in mainGame" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
