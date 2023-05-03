@@ -24,6 +24,7 @@ import java.util.stream.Stream;
 
 public class LoadGameController {
   private static LoadGameController instance;
+  private String fileType;
   private StringBuilder missingData;
   private LoadGameController() {
   }
@@ -34,6 +35,7 @@ public class LoadGameController {
     return instance;
   }
   public ObservableList<FileEntry> getSavedGames(String fileType) {
+    this.fileType = fileType;
     ObservableList<FileEntry> filesList = FXCollections.observableArrayList();
     Set<String> fileNames = new HashSet<>();
 
@@ -72,7 +74,7 @@ public class LoadGameController {
 
     // Add unique file names to the filesList
     for (String fileName : fileNames) {
-      filesList.add(new FileEntry(fileName));
+      filesList.add(new FileEntry(fileName, "src/main/resources/" + fileType + "/" + fileName));
     }
 
     return filesList;
@@ -116,5 +118,8 @@ public class LoadGameController {
     return missingDataBuilder != null ? missingDataBuilder.toString() : "";
   }
 
+  public String getFileType() {
+    return fileType;
+  }
 
 }

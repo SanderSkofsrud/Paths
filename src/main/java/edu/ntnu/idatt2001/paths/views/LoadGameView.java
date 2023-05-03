@@ -5,16 +5,19 @@ import edu.ntnu.idatt2001.paths.controllers.GameController;
 import edu.ntnu.idatt2001.paths.controllers.LoadGameController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.Game;
+import edu.ntnu.idatt2001.paths.models.Link;
 import edu.ntnu.idatt2001.paths.models.Player;
 import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.utility.FileEntry;
 import edu.ntnu.idatt2001.paths.utility.GameData;
 import javafx.application.Platform;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -25,6 +28,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LoadGameView extends View{
   protected BorderPane borderPane;
@@ -54,9 +58,79 @@ public class LoadGameView extends View{
     pathsTableView = new TableView<>();
 
     TableColumn<FileEntry, String> pathsFileNameColumn = new TableColumn<>("File Name");
-    pathsFileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getFileName()));
+    pathsFileNameColumn.setCellValueFactory(new PropertyValueFactory<>("fileName"));
 
-    pathsFileNameColumn.setPrefWidth(300);
+    TableColumn<FileEntry, FileEntry> pathsFileLocationColumn = new TableColumn<>("File Location");
+    pathsFileLocationColumn.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
+    pathsFileLocationColumn.setCellFactory(column -> new TableCell<FileEntry, FileEntry>() {
+      @Override
+      protected void updateItem(FileEntry item, boolean empty) {
+        super.updateItem(item, empty);
+
+        if (empty || item == null) {
+          setText(null);
+          setGraphic(null);
+        } else {
+          setText(item.getFileLocation());
+          setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+              String fileName = item.getFileLocation();
+
+              Story story = null;
+
+              try {
+                story = fileHandlerController.loadGame(fileName).getStory();
+              } catch (FileNotFoundException e) {
+                e.printStackTrace();
+              } catch (IllegalArgumentException e) {
+                System.err.println("Incorrect file format: " + e.getMessage());
+              }
+
+              if (story != null) {
+                String fileType = loadGameController.getFileType();
+                setText("src/main/resources/" + fileType + "/" + item.getFileName());
+              }
+            }
+          });
+        }
+      }
+    });
+
+    TableColumn<FileEntry, FileEntry> pathsBrokenLinksColumn = new TableColumn<>("Broken Links");
+    pathsBrokenLinksColumn.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
+    pathsBrokenLinksColumn.setCellFactory(column -> {
+      return new TableCell<FileEntry, FileEntry>() {
+        @Override
+        protected void updateItem(FileEntry item, boolean empty) {
+          super.updateItem(item, empty);
+
+          if (item == null || empty) {
+            setText(null);
+          } else {
+            String fileName = item.getFileName();
+            Story story = null;
+            try {
+              story = fileHandlerController.loadGame(fileName).getStory();
+            } catch (FileNotFoundException e) {
+              e.printStackTrace();
+            } catch (IllegalArgumentException e) {
+              // handle the IllegalArgumentException here
+              e.printStackTrace();
+            }
+            List<Link> brokenLinks = null;
+            if (story != null) {
+              brokenLinks = story.getBrokenLinks();
+            }
+
+            if (brokenLinks != null && !brokenLinks.isEmpty()) {
+              setText(brokenLinks.stream().map(Link::getReference).collect(Collectors.joining(", ")));
+            } else {
+              setText("No broken links");
+            }
+          }
+        }
+      };
+    });
 
     TableColumn<FileEntry, String> pathsClickableTextColumn = new TableColumn<>("Load game");
     pathsClickableTextColumn.setPrefWidth(100);
@@ -79,22 +153,20 @@ public class LoadGameView extends View{
             throw new RuntimeException(e);
           }
         });
+
       }
 
       @Override
       protected void updateItem(String item, boolean empty) {
         super.updateItem(item, empty);
-        if (empty) {
-          setGraphic(null);
-        } else {
-          setGraphic(hyperlink);
-        }
+        setGraphic(empty ? null : hyperlink);
       }
     });
 
-    pathsTableView.getColumns().addAll(pathsFileNameColumn, pathsClickableTextColumn);
+    pathsTableView.getColumns().addAll(pathsFileNameColumn, pathsFileLocationColumn, pathsBrokenLinksColumn, pathsClickableTextColumn);
+
     pathsTableView.setItems(loadGameController.getSavedGames("paths"));
-    pathsTableView.setMaxWidth(400);
+    pathsTableView.setPrefWidth(650);
 
     // Create the TableView for .json files
     jsonTableView = new TableView<>();
