@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added progressbar to show the progress of each goal">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/gameBackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/home.png" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Made JsonFileHandlerTest work">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/helle.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/t.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/helle.paths" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/t.paths" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/exit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/json/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/test.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/paths/test.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/paths/test.paths" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +57,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;FileHandling&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GUI&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -73,7 +74,6 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources" />
-      <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources\paths" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -291,6 +291,36 @@
       <workItem from="1681982566498" duration="3543000" />
       <workItem from="1681987313847" duration="1305000" />
       <workItem from="1682074673475" duration="21122000" />
+      <workItem from="1683044751592" duration="300000" />
+      <workItem from="1683093782171" duration="2178000" />
+    </task>
+    <task id="LOCAL-00066" summary="added description to Link class">
+      <created>1679401354627</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401354627</updated>
+    </task>
+    <task id="LOCAL-00067" summary="added description to Passage class">
+      <created>1679401528514</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401528514</updated>
+    </task>
+    <task id="LOCAL-00068" summary="added description to Story class">
+      <created>1679401652127</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401652127</updated>
+    </task>
+    <task id="LOCAL-00069" summary="added description to Player class">
+      <created>1679401900354</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401900354</updated>
     </task>
     <task id="LOCAL-00070" summary="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links">
       <created>1679982695369</created>
@@ -607,35 +637,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683016295167</updated>
     </task>
-    <task id="LOCAL-00115" summary="Updated ChooseGoalsView to work with new functionality of loading a game without player and/or goals">
-      <created>1683032652804</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1683032652804</updated>
-    </task>
-    <task id="LOCAL-00116" summary="Added alert in LoadGameView to show what is missing when loading a game. Made handleGameData return string to work with alert shown in LoadGameView.">
-      <created>1683032712741</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1683032712741</updated>
-    </task>
-    <task id="LOCAL-00117" summary="Updated NewGameView to work with new implementation of load game without story and/or goals">
-      <created>1683032827777</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1683032827777</updated>
-    </task>
-    <task id="LOCAL-00118" summary="Added progressbar to show the progress of each goal">
-      <created>1683032860493</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1683032860493</updated>
-    </task>
-    <option name="localTasksCounter" value="119" />
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,6 +668,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added positive test and refactored nested test classes. Removed savegame" />
+    <MESSAGE value="removed public from nested classes" />
+    <MESSAGE value="Made ChooseGoalsView create and save games" />
+    <MESSAGE value="Made new FileEntry class that makes working with files easier, used for the tabelview in LoadGameView" />
     <MESSAGE value="Made FileHandlerController that is a controller used for saving and loading games" />
     <MESSAGE value="Made LoadGameController that is used for getting all savegames" />
     <MESSAGE value="Made LoadGameView that is used to show the load game page, where you can choose to load into a previously created game" />
@@ -687,11 +693,7 @@
     <MESSAGE value="Added new GameData class to store all data about a game but that still can be null" />
     <MESSAGE value="Updated functionality to work with new FileEntry class. The program now works as this. If you try to load a paths file that is missing a player or goals, the program makes you add these things to your files before the game can be loaded" />
     <MESSAGE value="Made JsonFileHandlerTest work" />
-    <MESSAGE value="Updated ChooseGoalsView to work with new functionality of loading a game without player and/or goals" />
-    <MESSAGE value="Added alert in LoadGameView to show what is missing when loading a game. Made handleGameData return string to work with alert shown in LoadGameView." />
-    <MESSAGE value="Updated NewGameView to work with new implementation of load game without story and/or goals" />
-    <MESSAGE value="Added progressbar to show the progress of each goal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added progressbar to show the progress of each goal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made JsonFileHandlerTest work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -714,7 +716,7 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681805884296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680007855672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680193708824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681810472673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

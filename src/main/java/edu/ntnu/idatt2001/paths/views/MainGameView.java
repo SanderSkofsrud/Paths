@@ -1,12 +1,13 @@
 package edu.ntnu.idatt2001.paths.views;
 
+import edu.ntnu.idatt2001.paths.controllers.FileHandlerController;
 import edu.ntnu.idatt2001.paths.controllers.GameController;
+import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
-import edu.ntnu.idatt2001.paths.models.Game;
-import edu.ntnu.idatt2001.paths.models.Link;
-import edu.ntnu.idatt2001.paths.models.Passage;
-import edu.ntnu.idatt2001.paths.models.Player;
+import edu.ntnu.idatt2001.paths.models.*;
 import edu.ntnu.idatt2001.paths.models.goals.*;
+import edu.ntnu.idatt2001.paths.utility.json.JsonWriter;
+import edu.ntnu.idatt2001.paths.utility.paths.PathsWriter;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -24,6 +25,7 @@ import javafx.util.Pair;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class MainGameView extends View{
   protected BorderPane borderPane;
@@ -43,6 +45,11 @@ public class MainGameView extends View{
   private HBox attributesBox;
   private String[] words;
   private Timeline timeline;
+
+  private Story story;
+  FileHandlerController fileHandlerController = FileHandlerController.getInstance();
+
+  PlayerController playerController = PlayerController.getInstance();
 
   public MainGameView(ScreenController screenController) {
     borderPane = new BorderPane();
@@ -215,18 +222,33 @@ public class MainGameView extends View{
     Button exitButton = new Button();
     exitButton.setGraphic(exitImageView);
     exitButton.setStyle("-fx-background-color: transparent;");
+
     exitButton.setOnAction(event -> {
       Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
       alert.setTitle("Exit");
-      alert.setHeaderText("Are you sure you want to exit?");
-      alert.setContentText("You will lose all progress.");
-      alert.showAndWait();
-      if (alert.getResult() == ButtonType.OK) {
-        Platform.exit();
-      } else {
-        alert.close();
+      alert.setHeaderText("Choose an option:");
+      alert.setContentText("You will lose all progress if you exit without saving.");
+
+      ButtonType cancel = new ButtonType("Cancel");
+      ButtonType saveAndExit = new ButtonType("Save and Exit");
+      ButtonType exitWithoutSaving = new ButtonType("Exit without Saving");
+
+      alert.getButtonTypes().setAll(saveAndExit,exitWithoutSaving, cancel);
+
+      Optional<ButtonType> result = alert.showAndWait();
+      if (result.isPresent()) {
+        if (result.get() == cancel) {
+          alert.close();
+        } else if (result.get() == saveAndExit) {
+          FileHandlerController.getInstance().saveGame(playerController.getPlayer().getName(), story);
+          FileHandlerController.getInstance().saveGameJson(playerController.getPlayer().getName(),game);
+          Platform.exit();
+        } else if (result.get() == exitWithoutSaving) {
+          Platform.exit();
+        }
       }
     });
+
 
     Button questionButton = new Button();
     questionButton.setGraphic(helpImageView);
