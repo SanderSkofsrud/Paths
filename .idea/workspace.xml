@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added new template for game">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed exit and save method">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/lordoftherings.paths" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/paths/template3.paths" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,14 +287,7 @@
       <workItem from="1681987313847" duration="1305000" />
       <workItem from="1682074673475" duration="21122000" />
       <workItem from="1683044751592" duration="300000" />
-      <workItem from="1683093782171" duration="5400000" />
-    </task>
-    <task id="LOCAL-00068" summary="added description to Story class">
-      <created>1679401652127</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1679401652127</updated>
+      <workItem from="1683093782171" duration="8247000" />
     </task>
     <task id="LOCAL-00069" summary="added description to Player class">
       <created>1679401900354</created>
@@ -632,7 +625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683098020408</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="fixed exit and save method">
+      <created>1683099939009</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1683099939009</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -663,7 +663,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Made ChooseGoalsView create and save games" />
     <MESSAGE value="Made new FileEntry class that makes working with files easier, used for the tabelview in LoadGameView" />
     <MESSAGE value="Made FileHandlerController that is a controller used for saving and loading games" />
     <MESSAGE value="Made LoadGameController that is used for getting all savegames" />
@@ -688,7 +687,8 @@
     <MESSAGE value="Made JsonFileHandlerTest work" />
     <MESSAGE value="added exit-save button in mainGame" />
     <MESSAGE value="added new template for game" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new template for game" />
+    <MESSAGE value="fixed exit and save method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed exit and save method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
