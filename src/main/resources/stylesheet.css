@@ -140,7 +140,45 @@
     -fx-border-color: white;
     -fx-text-fill: black;
     -fx-alignment: CENTER_LEFT;
-
 }
+.alert .button {
+    -fx-background-color: #6d7c71;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 120px;
+    -fx-font-family:"Trebuchet MS";
+    -fx-border-color: white;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+}
+
+.alert .button:hover {
+    -fx-background-color: #414d44;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+}
+
+.alert .button:pressed {
+    -fx-background-color: #414d44;
+}
+
+.alert .column-header-background {
+    -fx-background-color: #6d7c71;
+}
+.alert {
+    -fx-background-color: #6d7c71;
+}
+.alert .header-panel {
+    -fx-background-color: #6d7c71;
+}
+.alert .label {
+    -fx-text-fill: white;
+}
+
+
+
+
+
 
 
