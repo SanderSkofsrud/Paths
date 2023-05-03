@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Updated som images, and added background to MainGameView. Still need to make textFlow transparent.">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added progressbar to show the progress of each goal">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/gameBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/help.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/home.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/exit.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/paths/test.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/paths/test.paths" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +57,6 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;FileHandling&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -246,11 +245,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.edu.ntnu.idatt2001.paths.models in paths" />
-        <item itemvalue="JUnit.StoryTest$removePassage.testThatRemovePassageRemovesPassage" />
-        <item itemvalue="JUnit.StoryTest$addPassage.testThatAddPassageAddsPassageCorrectlyWhenValidValues" />
         <item itemvalue="JUnit.JsonFileHandlerTest" />
+        <item itemvalue="JUnit.edu.ntnu.idatt2001.paths.models in paths" />
         <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameThrowsFileNotFoundException" />
+        <item itemvalue="JUnit.StoryTest$addPassage.testThatAddPassageAddsPassageCorrectlyWhenValidValues" />
+        <item itemvalue="JUnit.StoryTest$removePassage.testThatRemovePassageRemovesPassage" />
       </list>
     </recent_temporary>
   </component>
@@ -292,8 +291,13 @@
       <workItem from="1681982566498" duration="3543000" />
       <workItem from="1681987313847" duration="1305000" />
       <workItem from="1682074673475" duration="21122000" />
-      <workItem from="1683093879014" duration="293000" />
-      <workItem from="1683094282167" duration="6307000" />
+    </task>
+    <task id="LOCAL-00070" summary="Created FileHandeler class and a loadGame() method. Correctly reads name of story and passage, but not links">
+      <created>1679982695369</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1679982695369</updated>
     </task>
     <task id="LOCAL-00071" summary="Fixed regex in FileHandeler to work for links">
       <created>1679983245289</created>
@@ -631,14 +635,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683032860493</updated>
     </task>
-    <task id="LOCAL-00119" summary="Updated som images, and added background to MainGameView. Still need to make textFlow transparent.">
-      <created>1683037203934</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1683037203934</updated>
-    </task>
-    <option name="localTasksCounter" value="120" />
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,6 +666,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Made FileHandlerController that is a controller used for saving and loading games" />
     <MESSAGE value="Made LoadGameController that is used for getting all savegames" />
     <MESSAGE value="Made LoadGameView that is used to show the load game page, where you can choose to load into a previously created game" />
     <MESSAGE value="Made MainGameView, that will be used to show the main game, but is currently empty" />
@@ -693,8 +691,7 @@
     <MESSAGE value="Added alert in LoadGameView to show what is missing when loading a game. Made handleGameData return string to work with alert shown in LoadGameView." />
     <MESSAGE value="Updated NewGameView to work with new implementation of load game without story and/or goals" />
     <MESSAGE value="Added progressbar to show the progress of each goal" />
-    <MESSAGE value="Updated som images, and added background to MainGameView. Still need to make textFlow transparent." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated som images, and added background to MainGameView. Still need to make textFlow transparent." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added progressbar to show the progress of each goal" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
