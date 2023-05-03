@@ -231,10 +231,13 @@ public class MainGameView extends View{
       alert.setContentText("You will lose all progress if you exit without saving.");
 
       ButtonType cancel = new ButtonType("Cancel");
-      ButtonType saveAndExit = new ButtonType("Save and Exit");
-      ButtonType exitWithoutSaving = new ButtonType("Exit without Saving");
+      ButtonType saveAndExit = new ButtonType("Save & Exit");
+      ButtonType exitWithoutSaving = new ButtonType("Exit");
 
       alert.getButtonTypes().setAll(saveAndExit,exitWithoutSaving, cancel);
+
+      DialogPane dialogPane = alert.getDialogPane();
+      dialogPane.getStylesheets().add("stylesheet.css");
 
       Optional<ButtonType> result = alert.showAndWait();
       if (result.isPresent()) {
@@ -248,19 +251,64 @@ public class MainGameView extends View{
           Platform.exit();
         }
       }
+      borderPane.getStylesheets().add("stylesheet.css");
     });
 
 
     Button questionButton = new Button();
     questionButton.setGraphic(helpImageView);
     questionButton.setStyle("-fx-background-color: transparent;");
+    questionButton.setOnAction(actionEvent -> {
+      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+      alert.setTitle("Game help");
+      alert.setHeaderText("Game help");
+      alert.setContentText("*The top left bar shows your current health, gold, score and inventory \n\n" +
+          "*The goals progress bar shows your current progress in the game according to your goals \n\n" +
+          "*The information bar describes the current passage you are in \n\n" +
+          "*To play the game you must choose one of the options that appear in the bottom of the screen \n\n" +
+          "*You can exit the game at any time by clicking the exit button \n\n" +
+          "*You can return to home by clicking on the home button \n\n");
+
+      DialogPane dialogPane = alert.getDialogPane();
+      dialogPane.getStylesheets().add("stylesheet.css");
+
+      alert.showAndWait();
+
+        });
 
     Button homeButton = new Button();
     homeButton.setGraphic(homeImageView);
     homeButton.setStyle("-fx-background-color: transparent;");
     homeButton.setOnAction(event -> {
-      resetPane();
-      screenController.activate("MainMenu");
+      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+      alert.setTitle("Home");
+      alert.setHeaderText("Choose an option:");
+      alert.setContentText("You will lose all progress if you return to home without saving.");
+
+      ButtonType cancel = new ButtonType("Cancel");
+      ButtonType saveAndGoHome = new ButtonType("Save & home");
+      ButtonType goHomeWithoutSaving = new ButtonType("Home");
+
+      alert.getButtonTypes().setAll(saveAndGoHome,goHomeWithoutSaving, cancel);
+
+      DialogPane dialogPane = alert.getDialogPane();
+      dialogPane.getStylesheets().add("stylesheet.css");
+
+      Optional<ButtonType> result = alert.showAndWait();
+      if (result.isPresent()) {
+        if (result.get() == cancel) {
+          alert.close();
+        } else if (result.get() == saveAndGoHome) {
+          FileHandlerController.getInstance().saveGame(player.getName(), story);
+          FileHandlerController.getInstance().saveGameJson(player.getName(),game);
+          resetPane();
+          screenController.activate("MainMenu");
+        } else if (result.get() == goHomeWithoutSaving) {
+          resetPane();
+          screenController.activate("MainMenu");
+        }
+      }
+      stackPane.getStylesheets().add("stylesheet.css");
     });
 
     HBox topRightBox = new HBox();

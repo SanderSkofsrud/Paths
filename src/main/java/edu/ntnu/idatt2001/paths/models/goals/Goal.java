@@ -22,6 +22,8 @@ public interface Goal {
 
   /**
    * Returns a string representation of the Goal object.
+   * The string representation is formatted as follows:
+   * (GoalType)(GoalValue)
    *
    * @return a string representation of the Goal object.
    */
