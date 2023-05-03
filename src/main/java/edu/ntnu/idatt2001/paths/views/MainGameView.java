@@ -232,9 +232,14 @@ public class MainGameView extends View{
 
       ButtonType cancel = new ButtonType("Cancel");
       ButtonType saveAndExit = new ButtonType("Save and Exit");
-      ButtonType exitWithoutSaving = new ButtonType("Exit without Saving");
+      ButtonType exitWithoutSaving = new ButtonType("Exit");
 
       alert.getButtonTypes().setAll(saveAndExit,exitWithoutSaving, cancel);
+
+      DialogPane dialogPane = alert.getDialogPane();
+      dialogPane.getStylesheets().add("stylesheet.css");
+
+
 
       Optional<ButtonType> result = alert.showAndWait();
       if (result.isPresent()) {
@@ -248,6 +253,7 @@ public class MainGameView extends View{
           Platform.exit();
         }
       }
+      borderPane.getStylesheets().add("stylesheet.css");
     });
 
 
@@ -259,8 +265,32 @@ public class MainGameView extends View{
     homeButton.setGraphic(homeImageView);
     homeButton.setStyle("-fx-background-color: transparent;");
     homeButton.setOnAction(event -> {
-      resetPane();
-      screenController.activate("MainMenu");
+      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+      alert.setTitle("Home");
+      alert.setHeaderText("Choose an option:");
+      alert.setContentText("You will lose all progress if you return to home without saving.");
+
+      ButtonType cancel = new ButtonType("Cancel");
+      ButtonType saveAndGoHome = new ButtonType("Save and go home");
+      ButtonType goHomeWithoutSaving = new ButtonType("Go home");
+
+      alert.getButtonTypes().setAll(saveAndGoHome,goHomeWithoutSaving, cancel);
+
+      Optional<ButtonType> result = alert.showAndWait();
+      if (result.isPresent()) {
+        if (result.get() == cancel) {
+          alert.close();
+        } else if (result.get() == saveAndGoHome) {
+          FileHandlerController.getInstance().saveGame(player.getName(), story);
+          FileHandlerController.getInstance().saveGameJson(player.getName(),game);
+          resetPane();
+          screenController.activate("MainMenu");
+        } else if (result.get() == goHomeWithoutSaving) {
+          resetPane();
+          screenController.activate("MainMenu");
+        }
+      }
+      stackPane.getStylesheets().add("stylesheet.css");
     });
 
     HBox topRightBox = new HBox();
