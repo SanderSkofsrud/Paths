@@ -168,6 +168,9 @@ public class MainGameView extends View{
 
     HBox buttonsBox = (HBox) borderPane.getBottom();
     buttonsBox.getChildren().clear();
+    buttonsBox.setAlignment(Pos.CENTER);
+    buttonsBox.setPadding(new Insets(10, 0, 100, 0));
+    buttonsBox.setSpacing(10);
 
     for (Link link : passage.getLinks()) {
       Button button = new Button(link.getText());
