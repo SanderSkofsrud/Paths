@@ -288,6 +288,9 @@ public class LoadGameView extends View{
 
     alert.getButtonTypes().setAll(buttonTypeContinue, buttonTypeCancel);
 
+    DialogPane dialogPane = alert.getDialogPane();
+    dialogPane.getStylesheets().add("stylesheet.css");
+
     alert.showAndWait().ifPresent(response -> {
       if (response == buttonTypeContinue && missingData.equals("Missing data: Player Goals") || missingData.equals("Missing data: Player")) {
         screenController.activate("NewGame");
@@ -296,6 +299,8 @@ public class LoadGameView extends View{
       } else {
         alert.close();
       }
+      stackPane.getStylesheets().add("stylesheet.css");
+
     });
   }
 

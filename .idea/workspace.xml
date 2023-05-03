@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="customized alert-boxes">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added CSS styling to buttons">
       <change afterPath="$PROJECT_DIR$/src/main/resources/paths/43.paths" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/paths/768.paths" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,29 +42,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "GUI",
-    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GUI&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.intentionPowerPack&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources" />
@@ -287,27 +286,6 @@
       <workItem from="1681982566498" duration="3543000" />
       <workItem from="1681987313847" duration="1305000" />
       <workItem from="1682074673475" duration="21122000" />
-    </task>
-    <task id="LOCAL-00073" summary="created paths folder for paths files">
-      <created>1679993637060</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1679993637061</updated>
-    </task>
-    <task id="LOCAL-00074" summary="added javadoc to getBrokenLinks method">
-      <created>1680001013938</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1680001013939</updated>
-    </task>
-    <task id="LOCAL-00075" summary="changed groupId">
-      <created>1680001038752</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1680001038752</updated>
     </task>
     <task id="LOCAL-00076" summary="added new exception to filehandler for empty file">
       <created>1680001073534</created>
@@ -631,7 +609,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683107562166</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="added specified javadoc to toString">
+      <created>1683108209153</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1683108209153</updated>
+    </task>
+    <task id="LOCAL-00123" summary="moved placement of buttons">
+      <created>1683109601340</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1683109601340</updated>
+    </task>
+    <task id="LOCAL-00124" summary="added CSS styling to buttons">
+      <created>1683110081238</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1683110081238</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -662,9 +661,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Made MainGameView, that will be used to show the main game, but is currently empty" />
-    <MESSAGE value="Updated NewGameView to return the correct text containing the difficulty" />
-    <MESSAGE value="Fixed error in PlayerController where it used the builder wrong and did not return the difficulty in the correct way" />
     <MESSAGE value="Added MainGameView and LoadGameView to the controller so they work" />
     <MESSAGE value="Implemented singleton functionality to all controllers to remove the need of static methods. Also updated the usages in all the view classes to match this change" />
     <MESSAGE value="Added more directories in resources" />
@@ -687,7 +683,10 @@
     <MESSAGE value="added dialog box to alert to style it" />
     <MESSAGE value="added gamehelp" />
     <MESSAGE value="customized alert-boxes" />
-    <option name="LAST_COMMIT_MESSAGE" value="customized alert-boxes" />
+    <MESSAGE value="added specified javadoc to toString" />
+    <MESSAGE value="moved placement of buttons" />
+    <MESSAGE value="added CSS styling to buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="added CSS styling to buttons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
