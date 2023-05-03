@@ -82,6 +82,7 @@ public class MainGameView extends View{
     game = gameController.getGame();
     player = game.getPlayer();
     goals = game.getGoals();
+    story = game.getStory();
 
     setupButtonsBox();
     setupAttributesBox();
@@ -240,8 +241,8 @@ public class MainGameView extends View{
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == saveAndExit) {
-          FileHandlerController.getInstance().saveGame(playerController.getPlayer().getName(), story);
-          FileHandlerController.getInstance().saveGameJson(playerController.getPlayer().getName(),game);
+          FileHandlerController.getInstance().saveGame(player.getName(), story);
+          FileHandlerController.getInstance().saveGameJson(player.getName(),game);
           Platform.exit();
         } else if (result.get() == exitWithoutSaving) {
           Platform.exit();
