@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added dialog box to alert to style it">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="customized alert-boxes">
       <change afterPath="$PROJECT_DIR$/src/main/resources/paths/43.paths" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/paths/768.paths" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,20 +287,6 @@
       <workItem from="1681982566498" duration="3543000" />
       <workItem from="1681987313847" duration="1305000" />
       <workItem from="1682074673475" duration="21122000" />
-    </task>
-    <task id="LOCAL-00071" summary="Fixed regex in FileHandeler to work for links">
-      <created>1679983245289</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1679983245289</updated>
-    </task>
-    <task id="LOCAL-00072" summary="Moved save game to FileHandeler class, and created tests for the class">
-      <created>1679990268118</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1679990268118</updated>
     </task>
     <task id="LOCAL-00073" summary="created paths folder for paths files">
       <created>1679993637060</created>
@@ -633,7 +617,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683104883246</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="added gamehelp">
+      <created>1683107548537</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1683107548537</updated>
+    </task>
+    <task id="LOCAL-00121" summary="customized alert-boxes">
+      <created>1683107562166</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1683107562166</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,8 +662,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Made LoadGameController that is used for getting all savegames" />
-    <MESSAGE value="Made LoadGameView that is used to show the load game page, where you can choose to load into a previously created game" />
     <MESSAGE value="Made MainGameView, that will be used to show the main game, but is currently empty" />
     <MESSAGE value="Updated NewGameView to return the correct text containing the difficulty" />
     <MESSAGE value="Fixed error in PlayerController where it used the builder wrong and did not return the difficulty in the correct way" />
@@ -689,7 +685,9 @@
     <MESSAGE value="Updated NewGameView to work with new implementation of load game without story and/or goals" />
     <MESSAGE value="Added progressbar to show the progress of each goal" />
     <MESSAGE value="added dialog box to alert to style it" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dialog box to alert to style it" />
+    <MESSAGE value="added gamehelp" />
+    <MESSAGE value="customized alert-boxes" />
+    <option name="LAST_COMMIT_MESSAGE" value="customized alert-boxes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -248,6 +248,8 @@ public class Player {
 
   /**
    * Returns a string representation of the player.
+   * The string representation is formatted as follows:
+   * ;;name;health;score;gold;[inventory]
    *
    * @return A string representation of the player.
    */
