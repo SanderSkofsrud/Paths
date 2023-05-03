@@ -137,6 +137,7 @@ public class MainGameView extends View{
     Image background = new Image("gameBackground.png");
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
     borderPane.setBackground(new Background(backgroundImage));
+    borderPane.getStylesheets().add("stylesheet.css");
   }
 
 
@@ -180,6 +181,7 @@ public class MainGameView extends View{
         updateUIWithPassage(textFlow, nextPassage);
       });
       buttonsBox.getChildren().add(button);
+      button.setId("subMenuButton");
     }
 
     textFlow.setUserData(new Pair<>(timeline, passage)); // Store the Pair object in userData
