@@ -23,4 +23,8 @@ public class GameController {
   public void setGame(Game game) {
     this.game = game;
   }
+
+  public void resetGame() {
+    this.game = null;
+  }
 }
