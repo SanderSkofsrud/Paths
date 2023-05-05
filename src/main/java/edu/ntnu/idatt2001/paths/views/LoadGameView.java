@@ -6,9 +6,7 @@ import edu.ntnu.idatt2001.paths.controllers.LoadGameController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Link;
-import edu.ntnu.idatt2001.paths.models.Player;
 import edu.ntnu.idatt2001.paths.models.Story;
-import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.utility.FileEntry;
 import edu.ntnu.idatt2001.paths.utility.GameData;
 import javafx.application.Platform;
@@ -21,7 +19,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -111,11 +108,8 @@ public class LoadGameView extends View{
             Story story = null;
             try {
               story = fileHandlerController.loadGame(fileName).getStory();
-            } catch (FileNotFoundException e) {
-              e.printStackTrace();
-            } catch (IllegalArgumentException e) {
-              // handle the IllegalArgumentException here
-              e.printStackTrace();
+            } catch (FileNotFoundException | IllegalArgumentException e) {
+              System.out.println("Incorrect file format: " + e.getMessage());
             }
             List<Link> brokenLinks = null;
             if (story != null) {

@@ -85,12 +85,12 @@ public class App extends Application {
 
     newGame.setOnAction(e -> {
       screenController.activate("NewGame");
-      soundPlayer.play("src/main/resources/sounds/confirm.wav");
+      soundPlayer.play("sounds/confirm.wav");
     });
 
     loadGame.setOnAction(e -> {
       screenController.activate("LoadGame");
-      soundPlayer.play("src/main/resources/sounds/confirm.wav");
+      soundPlayer.play("sounds/confirm.wav");
     });
 
     HBox hBox = new HBox();

@@ -5,9 +5,11 @@ import edu.ntnu.idatt2001.paths.controllers.GameController;
 import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.*;
+import edu.ntnu.idatt2001.paths.models.actions.Action;
 import edu.ntnu.idatt2001.paths.models.goals.*;
-import edu.ntnu.idatt2001.paths.utility.json.JsonWriter;
-import edu.ntnu.idatt2001.paths.utility.paths.PathsWriter;
+import edu.ntnu.idatt2001.paths.models.player.Item;
+import edu.ntnu.idatt2001.paths.models.player.Player;
+import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -23,6 +25,9 @@ import javafx.scene.text.*;
 import javafx.util.Duration;
 import javafx.util.Pair;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -37,12 +42,14 @@ public class MainGameView extends View{
   private Player player;
   private List<Goal> goals;
   private TextArea passageContent;
-  private Label playerHealthLabel;
-  private Label playerScoreLabel;
-  private Label playerInventoryLabel;
-  private Label playerGoldLabel;
+  private Label playerHealthLabel = new Label();
+  private Label playerScoreLabel = new Label();
+  private Label playerInventoryLabel = new Label();
+  private Label playerGoldLabel = new Label();
   private HBox buttonsBox;
-  private HBox attributesBox;
+  private HBox attributesBox = new HBox();
+  private HBox inventoryImageBox = new HBox();
+  private HBox inventoryBox = new HBox();
   private String[] words;
   private Timeline timeline;
 
@@ -73,18 +80,21 @@ public class MainGameView extends View{
     attributesBox = new HBox();
     attributesBox.setAlignment(Pos.TOP_LEFT);
     attributesBox.setPadding(new Insets(10, 10, 10, 10));
-    borderPane.setTop(attributesBox);
+    //borderPane.setTop(attributesBox);
   }
 
 
   @Override
   public void setup() {
+    SoundPlayer soundPlayer = new SoundPlayer();
+    soundPlayer.playOnLoop("src/main/resources/sounds/ambiance.wav");
     game = gameController.getGame();
     player = game.getPlayer();
     goals = game.getGoals();
     story = game.getStory();
 
     setupButtonsBox();
+    setupTopBar();
     setupAttributesBox();
 
     passageContent = new TextArea();
@@ -130,8 +140,6 @@ public class MainGameView extends View{
     HBox buttonsBox = new HBox();
     borderPane.setBottom(buttonsBox);
 
-    setupTopBar();
-
     textFlow.setUserData(updateUIWithPassage(textFlow, game.begin()));
 
     Image background = new Image("gameBackground.png");
@@ -147,6 +155,8 @@ public class MainGameView extends View{
     borderPane.setTop(null);
     borderPane.setBottom(null);
     borderPane.setCenter(null);
+    inventoryBox.getChildren().clear();
+    inventoryImageBox.getChildren().clear();
     words = null;
     timeline.stop();
   }
@@ -176,38 +186,63 @@ public class MainGameView extends View{
     for (Link link : passage.getLinks()) {
       Button button = new Button(link.getText());
       button.setOnAction(event -> {
+        for (Action action : link.getActions()) {
+          System.out.println(action);
+          action.execute(player);
+        }
         Passage nextPassage = game.go(link);
         timeline.stop();
         updateUIWithPassage(textFlow, nextPassage);
+        updatePlayerInfo();
       });
+
       buttonsBox.getChildren().add(button);
       button.setId("subMenuButton");
     }
 
+    updatePlayerInfo();
+    System.out.println(player);
     textFlow.setUserData(new Pair<>(timeline, passage)); // Store the Pair object in userData
     return new Pair<>(timeline, passage);
   }
 
   private void setupTopBar() {
-    HBox attributesBox = new HBox();
+    attributesBox.getChildren().clear();
+
     attributesBox.setAlignment(Pos.TOP_LEFT);
     attributesBox.setPadding(new Insets(10, 10, 10, 10));
 
-    playerHealthLabel = new Label("Health: " + player.getHealth());
+    playerHealthLabel.setText("Health: " + player.getHealth());
     playerHealthLabel.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
     playerHealthLabel.setPadding(new Insets(10, 10, 10, 10));
 
-    playerGoldLabel = new Label("Gold: " + player.getGold());
+    playerGoldLabel.setText("Gold: " + player.getGold());
     playerGoldLabel.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
     playerGoldLabel.setPadding(new Insets(10, 10, 10, 10));
 
-    playerScoreLabel = new Label("Score: " + player.getScore());
+    playerScoreLabel.setText("Score: " + player.getScore());
     playerScoreLabel.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
     playerScoreLabel.setPadding(new Insets(10, 10, 10, 10));
 
-    playerInventoryLabel = new Label("Inventory: " + player.getInventory());
-    playerInventoryLabel.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
-    playerInventoryLabel.setPadding(new Insets(10, 10, 10, 10));
+    inventoryImageBox = new HBox();
+    inventoryImageBox.setSpacing(7);
+    for (String item : player.getInventory()) {
+      Path imagePath = Paths.get("src/main/resources/" + item + ".png");
+      if (Files.exists(imagePath)) {
+        ImageView itemImageView = new ImageView(new Image(item + ".png"));
+        itemImageView.setFitWidth(20);
+        itemImageView.setFitHeight(20);
+        inventoryImageBox.getChildren().add(itemImageView);
+      } else {
+        inventoryImageBox.getChildren().add(new Label(item));
+      }
+    }
+
+    playerInventoryLabel.setText("Inventory: ");
+
+    inventoryBox = new HBox(playerInventoryLabel, inventoryImageBox);
+    inventoryBox.setPadding(new Insets(10, 10, 0, 10));
+    inventoryBox.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
 
     Image exitImage = new Image("exit.png");
     Image helpImage = new Image("help.png");
@@ -267,12 +302,19 @@ public class MainGameView extends View{
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setTitle("Game help");
       alert.setHeaderText("Game help");
-      alert.setContentText("*The top left bar shows your current health, gold, score and inventory \n\n" +
-          "*The goals progress bar shows your current progress in the game according to your goals \n\n" +
-          "*The information bar describes the current passage you are in \n\n" +
-          "*To play the game you must choose one of the options that appear in the bottom of the screen \n\n" +
-          "*You can exit the game at any time by clicking the exit button \n\n" +
-          "*You can return to home by clicking on the home button \n\n");
+      alert.setContentText("""
+          The top left bar shows your current health, gold, score and inventory
+          
+          *The goals progress bar shows your current progress in the game according to your goals
+          
+          *The information bar describes the current passage you are in
+          
+          *To play the game you must choose one of the options that appear in the bottom of the screen
+          
+          *You can exit the game at any time by clicking the exit button
+          
+          *You can return to home by clicking on the home button
+          """);
 
       DialogPane dialogPane = alert.getDialogPane();
       dialogPane.getStylesheets().add("stylesheet.css");
@@ -288,7 +330,7 @@ public class MainGameView extends View{
       Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
       alert.setTitle("Home");
       alert.setHeaderText("Choose an option:");
-      alert.setContentText("You will lose all progress if you return to home without saving.");
+      alert.setContentText("You will lose all progress if you return \nto home without saving.");
 
       ButtonType cancel = new ButtonType("Cancel");
       ButtonType saveAndGoHome = new ButtonType("Save & home");
@@ -306,9 +348,11 @@ public class MainGameView extends View{
         } else if (result.get() == saveAndGoHome) {
           FileHandlerController.getInstance().saveGame(player.getName(), story);
           FileHandlerController.getInstance().saveGameJson(player.getName(),game);
+          gameController.resetGame(); // Add this line
           resetPane();
           screenController.activate("MainMenu");
         } else if (result.get() == goHomeWithoutSaving) {
+          gameController.resetGame(); // Add this line
           resetPane();
           screenController.activate("MainMenu");
         }
@@ -323,7 +367,7 @@ public class MainGameView extends View{
 
     VBox goalsVbox = goalsVbox();
 
-    attributesBox.getChildren().addAll(playerHealthLabel, playerGoldLabel, playerScoreLabel, playerInventoryLabel, goalsVbox);
+    attributesBox.getChildren().addAll(playerHealthLabel, playerGoldLabel, playerScoreLabel, inventoryBox, goalsVbox);
 
     HBox topBox = new HBox();
     topBox.getChildren().addAll(attributesBox, topRightBox);
@@ -377,4 +421,11 @@ public class MainGameView extends View{
 
     return goalsVbox;
   }
+
+  private void updatePlayerInfo() {
+    updatePlayerAttributes();
+    VBox goalsVbox = goalsVbox();
+    attributesBox.getChildren().setAll(playerHealthLabel, playerGoldLabel, playerScoreLabel, playerInventoryLabel, goalsVbox);
+  }
+
 }
