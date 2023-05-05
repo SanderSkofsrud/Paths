@@ -1,6 +1,6 @@
 package edu.ntnu.idatt2001.paths.models.goals;
 
-import edu.ntnu.idatt2001.paths.models.Player;
+import edu.ntnu.idatt2001.paths.models.player.Player;
 
 /**
  * The interface Goal.
