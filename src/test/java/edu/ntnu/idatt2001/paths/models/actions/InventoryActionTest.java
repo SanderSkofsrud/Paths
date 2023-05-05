@@ -1,6 +1,7 @@
 package edu.ntnu.idatt2001.paths.models.actions;
 
-import edu.ntnu.idatt2001.paths.models.Player;
+import edu.ntnu.idatt2001.paths.models.player.Player;
+import edu.ntnu.idatt2001.paths.models.player.PlayerBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -50,7 +51,7 @@ class InventoryActionTest {
     @Test
     @DisplayName("Test that item is added to inventory")
     void testInventoryActionAddsItemToInventory() {
-      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
+      Player player = new PlayerBuilder(name).health(health).score(score).gold(gold).build();
       InventoryAction inventoryAction = new InventoryAction("Item");
       inventoryAction.execute(player);
       assertEquals("item", player.getInventory().get(0));

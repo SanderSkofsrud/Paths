@@ -1,6 +1,7 @@
 package edu.ntnu.idatt2001.paths.models.goals;
 
-import edu.ntnu.idatt2001.paths.models.Player;
+import edu.ntnu.idatt2001.paths.models.player.Player;
+import edu.ntnu.idatt2001.paths.models.player.PlayerBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -49,7 +50,7 @@ class ScoreGoalTest {
     @Test
     @DisplayName("Test that goal gets marked as completed when completed")
     void testThatGoalGetsMarkedAsCompletedWhenCompleted() {
-      Player player = new Player.Builder(name).health(health).score(100).gold(gold).build();
+      Player player = new PlayerBuilder(name).health(health).score(100).gold(gold).build();
       ScoreGoal scoreGoal = new ScoreGoal(10);
       assertTrue(scoreGoal.isFulfilled(player));
     }
@@ -60,7 +61,7 @@ class ScoreGoalTest {
     @Test
     @DisplayName("Test that goal does not get marked as completed when not completed")
     void testThatGoalDoesNotGetMarkedAsCompletedWhenNotCompleted() {
-      Player player = new Player.Builder(name).health(health).score(50).gold(gold).build();
+      Player player = new PlayerBuilder(name).health(health).score(50).gold(gold).build();
       ScoreGoal scoreGoal = new ScoreGoal(100);
       assertFalse(scoreGoal.isFulfilled(player));
     }

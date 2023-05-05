@@ -1,6 +1,7 @@
 package edu.ntnu.idatt2001.paths.models.actions;
 
-import edu.ntnu.idatt2001.paths.models.Player;
+import edu.ntnu.idatt2001.paths.models.player.Player;
+import edu.ntnu.idatt2001.paths.models.player.PlayerBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -50,7 +51,7 @@ class ScoreActionTest {
     @Test
     @DisplayName("Test that score is added to player")
     void testScoreActionAddsScoreToPlayer() {
-      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
+      Player player = new PlayerBuilder(name).health(health).score(score).gold(gold).build();
       ScoreAction scoreAction = new ScoreAction(10);
       scoreAction.execute(player);
       assertEquals(40, player.getScore());
@@ -62,7 +63,7 @@ class ScoreActionTest {
     @Test
     @DisplayName("Test that exception is thrown when score is less than 0")
     void testScoreActionThrowsExceptionWhenScoreIsLessThanZero() {
-      Player player = new Player.Builder(name).health(health).score(score).gold(gold).build();
+      Player player = new PlayerBuilder(name).health(health).score(score).gold(gold).build();
       ScoreAction scoreAction = new ScoreAction(-40);
       assertThrows(IllegalArgumentException.class, () -> scoreAction.execute(player));
     }
