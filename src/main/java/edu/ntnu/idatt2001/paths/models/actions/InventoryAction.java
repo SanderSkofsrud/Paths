@@ -1,10 +1,8 @@
 package edu.ntnu.idatt2001.paths.models.actions;
 
-import edu.ntnu.idatt2001.paths.models.Player;
+import edu.ntnu.idatt2001.paths.models.player.Player;
 
-import java.util.ArrayList;
 import java.util.Objects;
-import edu.ntnu.idatt2001.paths.models.Player;
 
 /**
  * Inventory action.
