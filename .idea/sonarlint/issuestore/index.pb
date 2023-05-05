@@ -9,8 +9,6 @@ h
 8src/main/java/edu/ntnu/idatt2001/paths/models/Story.java,c\d\cd97993989de53b4c672cdef60b5a7b9fcf26dcd
 j
 :src/main/java/edu/ntnu/idatt2001/paths/models/Passage.java,9\9\99409ceeae041d5f7cc53d5e7376c0c0e8674e9a
-u
-Esrc/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java,7\0\70dc9c35c6a502a5677e492176ef82b056231457
 g
 7src/main/java/edu/ntnu/idatt2001/paths/models/Game.java,2\b\2bec362a47225d07fe2aab29974842a57a8a9b7c
 w

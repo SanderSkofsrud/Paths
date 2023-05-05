@@ -3,6 +3,7 @@ module paths {
     requires javafx.graphics;
     requires javafx.base;
     requires com.google.gson;
+    requires java.desktop;
 
     exports edu.ntnu.idatt2001.paths;
     exports edu.ntnu.idatt2001.paths.models;
