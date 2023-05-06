@@ -7,7 +7,6 @@ import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.*;
 import edu.ntnu.idatt2001.paths.models.actions.Action;
 import edu.ntnu.idatt2001.paths.models.goals.*;
-import edu.ntnu.idatt2001.paths.models.player.Item;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
 import javafx.animation.Animation;
@@ -25,6 +24,7 @@ import javafx.scene.text.*;
 import javafx.util.Duration;
 import javafx.util.Pair;
 
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -87,7 +87,7 @@ public class MainGameView extends View{
   @Override
   public void setup() {
     SoundPlayer soundPlayer = new SoundPlayer();
-    soundPlayer.playOnLoop("src/main/resources/sounds/ambiance.wav");
+    soundPlayer.playOnLoop("/sounds/ambiance.wav");
     game = gameController.getGame();
     player = game.getPlayer();
     goals = game.getGoals();
@@ -142,7 +142,7 @@ public class MainGameView extends View{
 
     textFlow.setUserData(updateUIWithPassage(textFlow, game.begin()));
 
-    Image background = new Image("gameBackground.png");
+    Image background = new Image(getClass().getResourceAsStream("/images/gameBackground.png"));
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
     borderPane.setBackground(new Background(backgroundImage));
     borderPane.getStylesheets().add("stylesheet.css");
@@ -227,9 +227,11 @@ public class MainGameView extends View{
     inventoryImageBox = new HBox();
     inventoryImageBox.setSpacing(7);
     for (String item : player.getInventory()) {
-      Path imagePath = Paths.get("src/main/resources/" + item + ".png");
-      if (Files.exists(imagePath)) {
-        ImageView itemImageView = new ImageView(new Image(item + ".png"));
+      String resourcePath = "/images/" + item + ".png";
+      InputStream imageStream = getClass().getResourceAsStream(resourcePath);
+
+      if (imageStream != null) {
+        ImageView itemImageView = new ImageView(new Image(imageStream));
         itemImageView.setFitWidth(20);
         itemImageView.setFitHeight(20);
         inventoryImageBox.getChildren().add(itemImageView);
@@ -238,15 +240,16 @@ public class MainGameView extends View{
       }
     }
 
+
     playerInventoryLabel.setText("Inventory: ");
 
     inventoryBox = new HBox(playerInventoryLabel, inventoryImageBox);
     inventoryBox.setPadding(new Insets(10, 10, 0, 10));
     inventoryBox.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
 
-    Image exitImage = new Image("exit.png");
-    Image helpImage = new Image("help.png");
-    Image homeImage = new Image("home.png");
+    Image exitImage = new Image(getClass().getResourceAsStream("/images/exit.png"));
+    Image helpImage = new Image(getClass().getResourceAsStream("/images/help.png"));
+    Image homeImage = new Image(getClass().getResourceAsStream("/images/home.png"));
 
     ImageView exitImageView = new ImageView(exitImage);
     exitImageView.setFitWidth(30);

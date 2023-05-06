@@ -20,7 +20,6 @@ import javafx.scene.layout.*;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
@@ -63,7 +62,7 @@ public class ChooseGoalsView extends View {
   }
 
   public void setup() {
-    ImageView imageView = new ImageView(new Image("goals.png"));
+    ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/images/goals.png")));
     HBox hBox = new HBox();
     hBox.setSpacing(25);
     hBox.setAlignment(Pos.CENTER);
@@ -211,14 +210,14 @@ public class ChooseGoalsView extends View {
     hBox.getChildren().addAll(predefinedGoals, customGoals);
     vBox.getChildren().addAll(imageView, hBox, startButton);
 
-    Image background = new Image("background.png");
+    Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
     borderPane.setBackground(new Background(backgroundImage));
 
     stackPane.getChildren().add(vBox);
     stackPane.getStylesheets().add("stylesheet.css");
 
-    ImageView backImage = new ImageView(new Image("back.png"));
+    ImageView backImage = new ImageView(new Image(getClass().getResourceAsStream("/images/back.png")));
     Button backButton = new Button();
     backButton.setId("seeThroughButton");
     backButton.setGraphic(backImage);

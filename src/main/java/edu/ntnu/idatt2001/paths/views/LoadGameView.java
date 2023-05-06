@@ -204,7 +204,7 @@ public class LoadGameView extends View{
     jsonTableView.setItems(loadGameController.getSavedGames("json"));
     jsonTableView.setMaxWidth(400);
 
-    ImageView backImage = new ImageView(new Image("back.png"));
+    ImageView backImage = new ImageView(new Image(getClass().getResourceAsStream("/images/back.png")));
     Button backButton = new Button();
     backButton.setId("seeThroughButton");
     backButton.setGraphic(backImage);
@@ -213,7 +213,7 @@ public class LoadGameView extends View{
 
     // Add both tables to the stack pane
     HBox hBox = new HBox();
-    Image background = new Image("background.png");
+    Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
     hBox.getChildren().addAll(pathsTableView, jsonTableView);
     hBox.setSpacing(20);
     hBox.setPadding(new Insets(20, 20, 20, 20));
