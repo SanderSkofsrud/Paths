@@ -5,7 +5,6 @@ import edu.ntnu.idatt2001.paths.controllers.GameController;
 import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.Game;
-import edu.ntnu.idatt2001.paths.models.player.Difficulty;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.GameData;
 import javafx.animation.TranslateTransition;
@@ -53,7 +52,7 @@ public class NewGameView extends View {
   }
 
   public void setup() {
-    ImageView imageView = new ImageView(new Image("create.png"));
+    ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/images/create.png")));
 
     Label labelName = new Label("Select name");
     TextField textFieldName = new TextField();
@@ -157,8 +156,8 @@ public class NewGameView extends View {
 
 
     Label labelCharacter = new Label("Select character model");
-    Image male = new Image("male.png");
-    Image female = new Image("female.png");
+    Image male = new Image(getClass().getResourceAsStream("/images/male.png"));
+    Image female = new Image(getClass().getResourceAsStream("/images/female.png"));
     ImageView characterMale = new ImageView(male);
     ImageView characterFemale = new ImageView(female);
     characterFemale.setVisible(false);
@@ -238,14 +237,14 @@ public class NewGameView extends View {
     BorderPane borderPane = new BorderPane();
     borderPane.setCenter(vBox);
 
-    Image background = new Image("background.png");
+    Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
     stackPane.setBackground(new Background(backgroundImage));
 
     stackPane.getChildren().add(borderPane);
     stackPane.getStylesheets().add("stylesheet.css");
 
-    ImageView backImage = new ImageView(new Image("back.png"));
+    ImageView backImage = new ImageView(new Image(getClass().getResourceAsStream("/images/back.png")));
     Button backButton = new Button();
     backButton.setId("seeThroughButton");
     backButton.setGraphic(backImage);
