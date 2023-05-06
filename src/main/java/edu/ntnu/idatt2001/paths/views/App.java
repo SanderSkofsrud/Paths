@@ -66,10 +66,10 @@ public class App extends Application {
 
   private void setup() {
     SoundPlayer soundPlayer = new SoundPlayer();
-    ImageView logo = new ImageView(new Image("logo.png"));
+    ImageView logo = new ImageView(new Image(getClass().getResourceAsStream("/images/logo.png")));
     logo.preserveRatioProperty().set(true);
     logo.setFitWidth(500);
-    ImageView tagline = new ImageView(new Image("tagline.png"));
+    ImageView tagline = new ImageView(new Image(getClass().getResourceAsStream("/images/tagline.png")));
     tagline.preserveRatioProperty().set(true);
     tagline.setFitWidth(300);
     VBox vBox = new VBox();
@@ -85,12 +85,12 @@ public class App extends Application {
 
     newGame.setOnAction(e -> {
       screenController.activate("NewGame");
-      soundPlayer.play("sounds/confirm.wav");
+      soundPlayer.play("/sounds/confirm.wav");
     });
 
     loadGame.setOnAction(e -> {
       screenController.activate("LoadGame");
-      soundPlayer.play("sounds/confirm.wav");
+      soundPlayer.play("/sounds/confirm.wav");
     });
 
     HBox hBox = new HBox();
@@ -101,7 +101,7 @@ public class App extends Application {
     hBox.setPadding(new Insets(0, 0, 150, 0));
     frontPage.setBottom(hBox);
 
-    Image background = new Image("background.png");
+    Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
     frontPage.setBackground(new Background(backgroundImage));
   }

@@ -1,6 +1,4 @@
 
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 x
 Hsrc/main/java/edu/ntnu/idatt2001/paths/controllers/ScreenController.java,7\a\7ab844675e328c691956a9635c640e66d86b4501
 f
