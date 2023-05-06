@@ -2,7 +2,7 @@ Haunted house
 
 ::Beginnings
 You are standing in front of a creepy old house, its windows boarded up and the roof caving in. The yard is overgrown with weeds and the paint on the door is peeling. You hesitate for a moment before taking a step towards the door.
-[Try the doorknob](The entrance)[{ScoreAction}(-5)]
+[Try the doorknob](The entrance)[{ScoreAction}(5)]
 
 ::The entrance
 You turn the doorknob and push the door open. You step inside and the door slams shut behind you. You find yourself in a small room with one door leading out.
@@ -10,7 +10,7 @@ You turn the doorknob and push the door open. You step inside and the door slams
 
 ::The hallway
 You open the door and step into a long, dimly lit hallway. The air is musty and the walls are covered in cobwebs. As you make your way down the hallway, you see several doors lining the walls.
-[Open one of the doors](The bedroom)[{ScoreAction}(-5)]
+[Open one of the doors](The bedroom)[{ScoreAction}(5)]
 [Keep walking down the hallway](The staircase)
 
 ::The bedroom
@@ -21,7 +21,7 @@ You push open the door and enter a small bedroom. The furniture is old and dusty
 ::The book of spells
 You open the book and read the spells. Some of them seem harmless, but others make your blood run cold. You hear a creaking noise and quickly close the book.
 [Go back](The bedroom)
-[Cast the spell](The spell)[{GoldAction}(10){ScoreAction}(-10)]
+[Cast the spell](The spell)[{GoldAction}(10){ScoreAction}(10)]
 
 ::The spell
 You recite the incantation and suddenly the room begins to shake. The bed levitates off the ground and the doors slam shut. You hear a ghostly voice whisper in your ear.

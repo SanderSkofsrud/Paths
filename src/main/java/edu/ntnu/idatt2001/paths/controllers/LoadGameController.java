@@ -1,7 +1,7 @@
 package edu.ntnu.idatt2001.paths.controllers;
 
 import edu.ntnu.idatt2001.paths.models.Game;
-import edu.ntnu.idatt2001.paths.models.Player;
+import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.utility.FileEntry;

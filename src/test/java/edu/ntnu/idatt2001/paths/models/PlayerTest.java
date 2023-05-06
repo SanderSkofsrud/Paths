@@ -1,5 +1,7 @@
 package edu.ntnu.idatt2001.paths.models;
 
+import edu.ntnu.idatt2001.paths.models.player.Player;
+import edu.ntnu.idatt2001.paths.models.player.PlayerBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -21,7 +23,7 @@ public class PlayerTest {
 
   @BeforeEach
   void setUp() {
-    player = new Player.Builder("test").health(10).score(30).gold(50).build();
+    player = new PlayerBuilder("test").health(10).score(30).gold(50).build();
     inventory = new ArrayList<>();
     test = "Item";
   }
@@ -51,7 +53,7 @@ public class PlayerTest {
     @Test
     @DisplayName("Test that builder constructs object with default values")
     void testThatBuilderConstructsObjectWithDefaultValues() {
-      Player player = new Player.Builder("test").build();
+      Player player = new PlayerBuilder("test").build();
       assertEquals("test", player.getName());
       assertEquals(100, player.getHealth());
       assertEquals(0, player.getScore());
@@ -66,7 +68,7 @@ public class PlayerTest {
     @DisplayName("Test that constructor throws IllegalArgumentException when health is less than zero")
     void testThatConstructorThrowsNullPointerException() {
       int health = -1;
-      assertThrows(IllegalArgumentException.class, () -> new Player.Builder("name").health(health));
+      assertThrows(IllegalArgumentException.class, () -> new PlayerBuilder("name").health(health));
     }
     /**
      * Test that constructor throws NullPointerException when name is null
@@ -75,7 +77,7 @@ public class PlayerTest {
     @DisplayName("Test that constructor throws NullPointerException when name is null")
     void testThatConstructorThrowsIllegalArgumentException() {
       String name = null;
-      assertThrows(NullPointerException.class, () -> new Player.Builder(name));
+      assertThrows(NullPointerException.class, () -> new PlayerBuilder(name));
     }
 
     /**
@@ -85,7 +87,7 @@ public class PlayerTest {
     @DisplayName("Test that constructor throws NullPointerException when name is blank")
     void testThatConstructorThrowsNUllPointerExceptionWhenNameIsNull() {
       String name = "";
-      assertThrows(IllegalArgumentException.class, () -> new Player.Builder(name));
+      assertThrows(IllegalArgumentException.class, () -> new PlayerBuilder(name));
     }
 
     /**
@@ -95,7 +97,7 @@ public class PlayerTest {
     @DisplayName("Test that constructor throws IllegalArgumentException when score is less than zero")
     void testThatConstructorThrowsIllegalArgumentExceptionWhenScoreIsLessThanZero() {
       int score = -1;
-      assertThrows(IllegalArgumentException.class, () -> new Player.Builder("name").score(score));
+      assertThrows(IllegalArgumentException.class, () -> new PlayerBuilder("name").score(score));
     }
 
     /**
@@ -105,7 +107,7 @@ public class PlayerTest {
     @DisplayName("Test that constructor throws IllegalArgumentException when gold is less than zero")
     void testThatConstructorThrowsIllegalArgumentExceptionWhenGoldIsLessThanZero() {
       int gold = -1;
-      assertThrows(IllegalArgumentException.class, () -> new Player.Builder("name").gold(gold));
+      assertThrows(IllegalArgumentException.class, () -> new PlayerBuilder("name").gold(gold));
     }
   }
 

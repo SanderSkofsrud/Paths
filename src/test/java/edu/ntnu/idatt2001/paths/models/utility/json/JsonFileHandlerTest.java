@@ -2,6 +2,7 @@ package edu.ntnu.idatt2001.paths.models.utility.json;
 
 import edu.ntnu.idatt2001.paths.models.*;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
+import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.json.JsonReader;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -46,11 +47,11 @@ public class JsonFileHandlerTest {
       /**
        * Test that load game loads a game and returns it.
        */
-      /*@Test
+      @Test
       @DisplayName("Test that loadGame loads a game and returns it")
       void testThatLoadGameLoadsAGameAndReturnsIt() throws FileNotFoundException {
         JsonReader fileHandler = new JsonReader();
-        Game game = fileHandler.loadGameJSON("src/main/resources/json/test.json");
+        Game game = fileHandler.loadGameJSON("src/test/resources/json/test.json");
         Story story = game.getStory();
         Passage openingPassage = story.getOpeningPassage();
         Link link = openingPassage.getLinks().get(0);
@@ -83,10 +84,9 @@ public class JsonFileHandlerTest {
                 + "]("
                 + "Beginnings"
                 + ")\n", anotherRoom.toString());
-        assertEquals("test", player.getName());
-        assertEquals(3, goals.size());
+        assertEquals("test", ((Player) player).getName());
+        assertEquals(2, goals.size());
       }
-      */
 
 
       /**
@@ -97,7 +97,7 @@ public class JsonFileHandlerTest {
       void testThatLoadGameThrowsFileNotFoundException() {
         JsonReader fileHandler = new JsonReader();
         assertThrows(FileNotFoundException.class, () -> {
-          fileHandler.loadGameJSON("src/main/resources/json/doesNotExist.json");
+          fileHandler.loadGameJSON("src/test/resources/json/doesNotExist.json");
         });
       }
     }

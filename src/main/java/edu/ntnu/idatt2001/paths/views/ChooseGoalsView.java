@@ -6,6 +6,7 @@ import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.goals.*;
+import edu.ntnu.idatt2001.paths.models.goals.GoalEnum;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
@@ -21,6 +22,10 @@ import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
+import static edu.ntnu.idatt2001.paths.models.goals.GoalFactory.createGoal;
+import static edu.ntnu.idatt2001.paths.models.goals.GoalFactory.createInventoryGoal;
 
 /**
  * The type Choose goals view.
@@ -107,18 +112,23 @@ public class ChooseGoalsView extends View {
     button.setId("subMenuButton");
     button.setOnAction(e -> {
       if (comboBox.getValue() != null && !textField.getText().isEmpty()) {
-        switch (comboBox.getValue().toString()) {
-          case "Gold goal" -> goals.add(new GoldGoal(Integer.parseInt(textField.getText())));
-          case "Health goal" -> goals.add(new HealthGoal(Integer.parseInt(textField.getText())));
-          case "Inventory goal" -> {
+        try {
+          int value = Integer.parseInt(textField.getText());
+          GoalEnum type = GoalEnum.valueOf(comboBox.getValue().toString().toUpperCase().replace(" ", "_"));
+          Goal goal = GoalFactory.createGoal(type, value);
+          goals.add(goal);
+        } catch (IllegalArgumentException ex) {
+          if (comboBox.getValue().toString().equals("Inventory goal")) {
             List<String> itemList = Arrays.asList(textField.getText().split(","));
-            goals.add(new InventoryGoal(itemList));
+            Goal goal = GoalFactory.createInventoryGoal(itemList.toArray(new String[0]));
+            goals.add(goal);
+          } else {
+            System.out.println("Error: " + ex.getMessage());
           }
-          case "Score goal" -> goals.add(new ScoreGoal(Integer.parseInt(textField.getText())));
-          default -> System.out.println("Error");
         }
       }
     });
+
 
     TableView<Goal> tableView = new TableView<>();
     TableColumn<Goal, String> tableColumn1 = new TableColumn<>("Goal type");
@@ -160,17 +170,17 @@ public class ChooseGoalsView extends View {
     startButton.setOnAction(e -> {
       for (int i = 1; i < 7; i++) {
         if (i == 1 && checkBox1.isSelected()) {
-          goals.add(new GoldGoal(100));
+          goals.add(createGoal(GOLD, 100));
         } else if (i == 2 && checkBox2.isSelected()) {
-          goals.add(new HealthGoal(100));
+          goals.add(createGoal(HEALTH, 1000));
         } else if (i == 3 && checkBox3.isSelected()) {
-          goals.add(new InventoryGoal(Collections.singletonList("Sword")));
+          goals.add(createInventoryGoal("Sword", "Shield", "Potion"));
         } else if (i == 4 && checkBox4.isSelected()) {
-          goals.add(new ScoreGoal(100));
+          goals.add(createGoal(SCORE, 100));
         } else if (i == 5 && checkBox5.isSelected()) {
-          goals.add(new GoldGoal(1000));
+          goals.add(createGoal(GOLD, 1000));
         } else if (i == 6 && checkBox6.isSelected()) {
-          goals.add(new HealthGoal(1000));
+          goals.add(createGoal(HEALTH, 1000));
         }
       }
 

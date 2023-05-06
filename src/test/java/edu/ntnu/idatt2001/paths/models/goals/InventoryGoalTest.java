@@ -1,6 +1,7 @@
 package edu.ntnu.idatt2001.paths.models.goals;
 
-import edu.ntnu.idatt2001.paths.models.Player;
+import edu.ntnu.idatt2001.paths.models.player.Player;
+import edu.ntnu.idatt2001.paths.models.player.PlayerBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -56,7 +57,7 @@ class InventoryGoalTest {
     @Test
     @DisplayName("Test that inventory goal returns expected result when correct")
     void testThatInventoryGoalReturnsExpectedResultWhenCorrect() {
-      Player player = new Player.Builder("Test").health(20).score(30).gold(50).build();
+      Player player = new PlayerBuilder("Test").health(20).score(30).gold(50).build();
       List<String> mandatoryItems = new ArrayList<>();
       mandatoryItems.add("Test1");
       mandatoryItems.add("Test2");
@@ -72,7 +73,7 @@ class InventoryGoalTest {
     @Test
     @DisplayName("Test that inventory goal returns expected result when incorrect")
     void testThatInventoryGoalReturnsExpectedResultWhenIncorrect() {
-      Player player = new Player.Builder("Test").health(20).score(30).gold(50).build();
+      Player player = new PlayerBuilder("Test").health(20).score(30).gold(50).build();
       List<String> mandatoryItems = new ArrayList<>();
       mandatoryItems.add("Test1");
       mandatoryItems.add("Test2");

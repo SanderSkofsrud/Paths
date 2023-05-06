@@ -1,6 +1,7 @@
 package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
+import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -64,6 +65,7 @@ public class App extends Application {
   }
 
   private void setup() {
+    SoundPlayer soundPlayer = new SoundPlayer();
     ImageView logo = new ImageView(new Image("logo.png"));
     logo.preserveRatioProperty().set(true);
     logo.setFitWidth(500);
@@ -81,9 +83,15 @@ public class App extends Application {
     newGame.setId("mainMenuButton");
     loadGame.setId("mainMenuButton");
 
-    newGame.setOnAction(e -> screenController.activate("NewGame"));
+    newGame.setOnAction(e -> {
+      screenController.activate("NewGame");
+      soundPlayer.play("sounds/confirm.wav");
+    });
 
-    loadGame.setOnAction(e -> screenController.activate("LoadGame"));
+    loadGame.setOnAction(e -> {
+      screenController.activate("LoadGame");
+      soundPlayer.play("sounds/confirm.wav");
+    });
 
     HBox hBox = new HBox();
     hBox.getChildren().addAll(newGame, loadGame);

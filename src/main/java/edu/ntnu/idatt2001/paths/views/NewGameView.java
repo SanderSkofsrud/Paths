@@ -5,7 +5,8 @@ import edu.ntnu.idatt2001.paths.controllers.GameController;
 import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.Game;
-import edu.ntnu.idatt2001.paths.models.Player;
+import edu.ntnu.idatt2001.paths.models.player.Difficulty;
+import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.GameData;
 import javafx.animation.TranslateTransition;
 import javafx.geometry.Insets;
@@ -15,6 +16,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.util.Duration;
+
+import static edu.ntnu.idatt2001.paths.models.player.Difficulty.*;
 
 /**
  * The type New game view.
@@ -201,15 +204,13 @@ public class NewGameView extends View {
       }
 
       if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
-        player = playerController.addCusomPlayer(textFieldName.getText(), Integer.parseInt(textFieldHealth.getText()), Integer.parseInt(textFieldGold.getText()));
+        player = playerController.addCustomPlayer(textFieldName.getText(), Integer.parseInt(textFieldHealth.getText()), Integer.parseInt(textFieldGold.getText()));
       }  else if (toggleGroupDifficulty.getSelectedToggle().equals(easy)) {
-        player = playerController.addDefaultPlayer(textFieldName.getText(),"Easy");
+        player = playerController.addDefaultPlayer(textFieldName.getText(), EASY);
       } else if (toggleGroupDifficulty.getSelectedToggle().equals(hard)) {
-        player = playerController.addDefaultPlayer(textFieldName.getText(),"Hard");
-      }
-      else {
-        ToggleButton selected = (ToggleButton) toggleGroupDifficulty.getSelectedToggle();
-        player = playerController.addDefaultPlayer(textFieldName.getText(), selected.getText());
+        player = playerController.addDefaultPlayer(textFieldName.getText(),HARD);
+      } else {
+        player = playerController.addDefaultPlayer(textFieldName.getText(), STANDARD);
       }
 
       GameData currentGameData = fileHandlerController.getCurrentGameData();
