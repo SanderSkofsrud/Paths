@@ -28,20 +28,47 @@ import static edu.ntnu.idatt2001.paths.models.goals.GoalFactory.createInventoryG
 
 /**
  * The type Choose goals view.
+ * The class is used to create the view where the player can choose the goals of the game.
+ * The class extends the View class.
+ *
+ * @author Helle R. and Sander S.
+ * @version 0.1 08.05.2023
  */
 public class ChooseGoalsView extends View {
   /**
    * The Border pane.
+   * The borderPane is the main pane of the view.
    */
   protected BorderPane borderPane;
   /**
    * The Stack pane.
+   * The stackPane is used to stack the different panes of the view.
    */
   protected StackPane stackPane;
+  /**
+   * The Screen controller.
+   * The screenController is used to switch between the different views of the GUI.
+   */
   private final ScreenController screenController;
+  /**
+   * The Goals.
+   * The goals is a list of the goals of the game.
+   */
   private final ObservableList<Goal> goals;
+  /**
+   * The Game controller.
+   * The gameController is used to create a new game.
+   */
   private final GameController gameController = GameController.getInstance();
+  /**
+   * The File handler controller.
+   * The fileHandlerController is used to save the game.
+   */
   FileHandlerController fileHandlerController = FileHandlerController.getInstance();
+  /**
+   * The Player controller.
+   * The playerController is used to create the player of the game.
+   */
   PlayerController playerController = PlayerController.getInstance();
 
   /**
@@ -57,10 +84,19 @@ public class ChooseGoalsView extends View {
     this.goals = FXCollections.observableArrayList();
   }
 
+  /**
+   * Gets pane.
+   *
+   * @return the pane
+   */
   public Pane getPane() {
     return this.borderPane;
   }
 
+  /**
+   * Setup.
+   * The setup method is used to create the view.
+   */
   public void setup() {
     ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/images/goals.png")));
     HBox hBox = new HBox();
@@ -202,7 +238,7 @@ public class ChooseGoalsView extends View {
 
         screenController.activate("MainGame");
       } else {
-        // Show an error message stating that at least one goal must be selected
+        //TODO Show an error message stating that at least one goal must be selected
       }
     });
 
@@ -231,6 +267,9 @@ public class ChooseGoalsView extends View {
     borderPane.getStylesheets().add("stylesheet.css");
   }
 
+  /**
+   * Resets the pane to its original state.
+   */
   public void resetPane() {
     stackPane.getChildren().clear();
   }

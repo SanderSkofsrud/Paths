@@ -20,20 +20,47 @@ import static edu.ntnu.idatt2001.paths.models.player.Difficulty.*;
 
 /**
  * The type New game view.
+ * The class is used to create the view of the GUI where the player can create a new game.
+ * The class extends the View class.
+ *
+ * @author Helle R. and Sander S.
+ * @version 0.1 08.05.2023
  */
 public class NewGameView extends View {
   /**
    * The Border pane.
+   * The borderPane is the main pane of the view.
    */
   protected BorderPane borderPane;
   /**
    * The Stack pane.
+   * The stackPane is used to stack the different panes of the view.
    */
   protected StackPane stackPane;
+  /**
+   * The Screen controller.
+   * The screenController is used to switch between the different views of the GUI.
+   */
   private ScreenController screenController;
+  /**
+   * The Player.
+   * The player is used to store the player.
+   */
   Player player;
+  /**
+   * The Player controller.
+   * The playerController is used to get the player.
+   */
   PlayerController playerController = PlayerController.getInstance();
+  /**
+   * The File handler controller.
+   * The fileHandlerController is used to save the game.
+   */
   FileHandlerController fileHandlerController = FileHandlerController.getInstance();
+  /**
+   * The Game controller.
+   * The gameController is used to create a new game.
+   */
   GameController gameController = GameController.getInstance();
 
   /**
@@ -47,10 +74,21 @@ public class NewGameView extends View {
     borderPane.setCenter(stackPane);
     this.screenController = screenController;
   }
+  /**
+   * Gets pane.
+   * The method is used to get the pane of the view.
+   *
+   * @return the pane
+   */
   public Pane getPane() {
     return this.borderPane;
   }
 
+  /**
+   * Setup.
+   * The method is used to setup the view.
+   * The method is used to create the view of the GUI where the player can create a new game.
+   */
   public void setup() {
     ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/images/create.png")));
 
@@ -258,10 +296,20 @@ public class NewGameView extends View {
     borderPane.getStylesheets().add("stylesheet.css");
   }
 
+  /**
+   * Resets the pane.
+   */
   public void resetPane() {
     stackPane.getChildren().clear();
   }
 
+  /**
+   * Swaps the images.
+   *
+   * @param current the current image
+   * @param next    the next image
+   * @param direction the direction
+   */
   private void swapImages(ImageView current, ImageView next, String direction) {
     double currentWidth = current.getFitWidth();
 

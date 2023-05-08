@@ -12,7 +12,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The type Story deserializer.
+ * The StoryDeserializer class is used to deserialize the different types of stories.
+ *
+ * @author Helle R. and Sander S.
+ * @version 0.1 08.05.2023
+ */
 public class StoryDeserializer implements JsonDeserializer<Story> {
+  /*
+   * The deserialize method is used to deserialize the different types of stories.
+   *
+   * @param json    the json
+   * @param typeOfT the type of t
+   * @param context the context
+   * @return the story
+   */
     @Override
     public Story deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
       JsonObject jsonObject = json.getAsJsonObject();

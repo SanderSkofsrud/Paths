@@ -18,15 +18,27 @@ import java.util.regex.Pattern;
 
 import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
 
+/**
+ * The type Paths reader.
+ * The PathsReader class is used to read a file and create a story from the file.
+ *
+ * @author Helle R. and Sander S.
+ * @version 0.1 08.05.2023
+ */
 public class PathsReader {
+  /**
+   * The Inventory goals list that is loaded from the file.
+   */
   static List<String> inventoryGoals = new ArrayList<>();
 
   /**
    * Load game story.
+   * The loadGameStory method is used to read the file and create a story from the file.
    *
-   * @param fileName the file name
-   * @return the story
-   * @throws FileNotFoundException the file not found exception
+   * @param fileName the file name of the file
+   * @return the story object that is loaded from the file
+   * @throws IllegalArgumentException the illegal argument exception if the file name is empty
+   * @throws FileNotFoundException    the file not found exception if the file is not found
    */
   public static Story loadStory(String fileName) throws IllegalArgumentException, FileNotFoundException {
     if (fileName.isBlank()) {
@@ -78,6 +90,17 @@ public class PathsReader {
     return story;
   }
 
+  /**
+   * Load game game data.
+   * The loadGame method is used to read the file and create a game data object from the file.
+   * The game data object contains the story, player and goals.
+   * The method also checks if the file is in the correct format.
+   *
+   * @param fileName the file name of the file
+   * @return the game data object that is loaded from the file
+   * @throws IllegalArgumentException the illegal argument exception
+   * @throws FileNotFoundException    the file not found exception
+   */
   public static GameData loadGame(String fileName) throws IllegalArgumentException, FileNotFoundException {
     if (fileName.isBlank()) {
       throw new IllegalArgumentException("The file name can´t be empty");
@@ -182,6 +205,15 @@ return new GameData(story, player, goals);
 }
 
 
+  /**
+   * Create a goal object from the goal type and goal description.
+   * The createGoal method is used to create a goal object from the goal type and goal description.
+   * The method also checks if the goal type is valid.
+   *
+   * @param goalType        the goal type
+   * @param goalDescription the goal description
+   * @return the goal object that is created
+   */
   private static Goal createGoal(String goalType, String goalDescription) {
     switch (goalType) {
       case "HealthGoal" -> GoalFactory.createGoal(HEALTH, Integer.parseInt(goalDescription));
