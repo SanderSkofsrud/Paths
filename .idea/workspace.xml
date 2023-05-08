@@ -4,40 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Updated actions in templates and files used in tests">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/create.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/goals.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/load.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/sword.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/tagline.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Updated all views and soundplayer, as images and sounds did not load">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MinigameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/ScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/ScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoalEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoalEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoalFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoalFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/player/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/player/Difficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/player/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/player/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/player/PlayerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/player/PlayerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/FileEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/GameData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/SoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/SoundPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/ActionDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/ActionDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/GoalDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/GoalDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/JsonReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/JsonReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/JsonWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/JsonWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/StoryDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/StoryDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/StorySerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/json/StorySerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/create.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/exit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/female.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/female.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gameBackground.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/gameBackground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/goals.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/help.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/help.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/home.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/home.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/json/sss.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/sss.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/json/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/male.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/male.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/sss.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/paths/sss.paths" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/question.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/ambiance.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sounds/ambiance.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/confirm.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sounds/confirm.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tagline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/troll.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +75,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "OverrideImplement.generate.javadoc": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
@@ -318,14 +318,7 @@
       <workItem from="1681987313847" duration="1305000" />
       <workItem from="1682074673475" duration="21122000" />
       <workItem from="1683290057276" duration="3571000" />
-      <workItem from="1683366875197" duration="804000" />
-    </task>
-    <task id="LOCAL-00092" summary="Made ChooseGoalsView create and save games">
-      <created>1681978700358</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1681978700358</updated>
+      <workItem from="1683366875197" duration="8960000" />
     </task>
     <task id="LOCAL-00093" summary="Made new FileEntry class that makes working with files easier, used for the tabelview in LoadGameView">
       <created>1681978760493</created>
@@ -663,7 +656,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683293027438</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="Updated all views and soundplayer, as images and sounds did not load">
+      <created>1683373249387</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1683373249387</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,7 +694,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated ChooseGoalsView to work with new functionality of loading a game without player and/or goals" />
     <MESSAGE value="Added alert in LoadGameView to show what is missing when loading a game. Made handleGameData return string to work with alert shown in LoadGameView." />
     <MESSAGE value="Updated NewGameView to work with new implementation of load game without story and/or goals" />
     <MESSAGE value="Added progressbar to show the progress of each goal" />
@@ -719,7 +718,8 @@
     <MESSAGE value="Fixed error in previous module-info commit" />
     <MESSAGE value="Updated to include new Player and PlayerBuilder" />
     <MESSAGE value="Updated actions in templates and files used in tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated actions in templates and files used in tests" />
+    <MESSAGE value="Updated all views and soundplayer, as images and sounds did not load" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated all views and soundplayer, as images and sounds did not load" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

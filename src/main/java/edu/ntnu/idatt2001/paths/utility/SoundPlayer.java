@@ -8,7 +8,19 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * The type Sound player.
+ * The SoundPlayer class is used to play sound files.
+ *
+ * @author Helle R. and Sander S.
+ * @version 0.1 08.05.2023
+ */
 public class SoundPlayer {
+  /**
+   * A method that plays a sound file.
+   *
+   * @param filename the filename of the sound file
+   */
   public void play(String filename) {
     try (InputStream is = new BufferedInputStream(getClass().getResourceAsStream(filename))) {
       AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(is);
@@ -20,6 +32,11 @@ public class SoundPlayer {
     }
   }
 
+  /**
+   * A method that plays a sound file on loop.
+   *
+   * @param filename the filename of the sound file
+   */
   public void playOnLoop(String filename) {
     try (InputStream is = new BufferedInputStream(getClass().getResourceAsStream(filename))) {
       AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(is);

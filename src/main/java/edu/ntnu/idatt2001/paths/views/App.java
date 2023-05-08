@@ -14,24 +14,60 @@ import javafx.stage.Stage;
 
 /**
  * The type App.
+ * The class is used to create the GUI of the game and to start the game.
+ *
+ * @author Helle R. and Sander S.
+ * @version 0.1 08.05.2023
  */
 public class App extends Application {
-
+  /**
+   * The frontPage is the main pane of the GUI.
+   */
   private BorderPane frontPage = new BorderPane();
+  /**
+   * The frontPageScene is the main scene of the GUI.
+   */
   private Scene frontPageScene = new Scene(frontPage);
   /**
    * The Screen controller.
+   * The screenController is used to switch between the different views of the GUI.
    */
   protected ScreenController screenController = new ScreenController(frontPageScene);
+  /**
+   * The newGameView is the view of the GUI where the player can create a new game.
+   */
   private NewGameView newGameView = new NewGameView(screenController);
+  /**
+   * The ChooseGoalsView is the view of the GUI where the player can choose the goals of the game.
+   */
   private ChooseGoalsView ChooseGoalsView = new ChooseGoalsView(screenController);
+  /**
+   * The mainGameView is the view of the GUI where the player can play the game.
+   */
   private MainGameView mainGameView = new MainGameView(screenController);
+  /**
+   * The loadGameView is the view of the GUI where the player can load a saved game.
+   */
   private LoadGameView loadGameView = new LoadGameView(screenController);
   /**
+   * The minigameView is the view of the GUI where the player can play the minigame.
+   */
+  private MinigameView minigameView = new MinigameView(screenController);
+  /**
    * The constant primaryStage.
+   * The primaryStage is used to set the stage of the GUI.
    */
   public static Stage primaryStage;
 
+  /**
+   * The entry point of the JavaFX application.
+   * The start method is used to start the GUI.
+   * The start method is used to set the title, width, height and scene of the GUI.
+   * The start method is used to add the different views to the screenController.
+   * The start method is used to show the GUI.
+   *
+   * @param primaryStage the primary stage
+   */
   @Override
   public void start(Stage primaryStage) {
     App.primaryStage = primaryStage;
@@ -52,6 +88,7 @@ public class App extends Application {
     screenController.addScreen("ChooseGoals", ChooseGoalsView);
     screenController.addScreen("MainGame", mainGameView);
     screenController.addScreen("LoadGame", loadGameView);
+    screenController.addScreen("Minigame", minigameView);
 
     primaryStage.setTitle("Paths");
     primaryStage.setWidth(500);
@@ -64,6 +101,11 @@ public class App extends Application {
     this.setup();
   }
 
+  /**
+   * The setup method is used to set up the GUI.
+   * The setup method is used to add the logo, tagline, buttons and background to the GUI.
+   * The setup method sets up the frontPage.
+   */
   private void setup() {
     SoundPlayer soundPlayer = new SoundPlayer();
     ImageView logo = new ImageView(new Image(getClass().getResourceAsStream("/images/logo.png")));

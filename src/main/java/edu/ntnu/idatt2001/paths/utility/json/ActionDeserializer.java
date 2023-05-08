@@ -5,7 +5,23 @@ import edu.ntnu.idatt2001.paths.models.actions.*;
 
 import java.lang.reflect.Type;
 
+/**
+ * The type Action deserializer.
+ * The ActionDeserializer class is used to deserialize the different types of actions.
+ *
+ * @author Helle R. and Sander S.
+ * @version 0.1 08.05.2023
+ */
 public class ActionDeserializer implements JsonDeserializer<Action> {
+
+  /*
+   * The deserialize method is used to deserialize the different types of actions.
+   *
+   * @param json    the json
+   * @param typeOfT the type of t
+   * @param context the context
+   * @return the action
+   */
   @Override
   public Action deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
           throws JsonParseException {

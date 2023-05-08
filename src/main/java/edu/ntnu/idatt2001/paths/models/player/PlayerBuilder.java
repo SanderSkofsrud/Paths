@@ -7,18 +7,38 @@ import java.util.Objects;
 /**
  * Builder class for Player.
  * Name is required and can not be null or blank.
- * Health, score and gold is optional - default health is set to 100, score and gold to 0.
+ * Health, score and gold are optional - default health is set to 100, score and gold to 0.
  * A player can have zero health, but can not start with zero or less than zero health.
+ *
+ * @author Helle R. and Sander S.
+ * @version 0.1 08.05.2023
  */
 public class PlayerBuilder {
 
-  // Required parameters
+  /*
+   * Required parameters - name can not be null or blank
+   */
   final String name;
-
-  // Optional parameters - default health is set to 100, score and gold to 0 and inventory to an empty list
+  /*
+   * Optional parameters - initialized to default values
+   * The health of the player.
+   * Health can not be zero or less than zero
+   */
   int health = 100;
+  /*
+   * The score of the player.
+   * The Score can not be less than zero
+   */
   int score = 0;
+  /*
+   * The gold of the player.
+   * Gold can not be less than zero
+   */
   int gold = 0;
+  /*
+   * The inventory of the player.
+   * Inventory can be empty
+   */
   List<String> inventory = new ArrayList<>();
 
   /**

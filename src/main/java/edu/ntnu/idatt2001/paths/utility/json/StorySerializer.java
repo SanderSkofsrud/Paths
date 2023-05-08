@@ -11,7 +11,22 @@ import edu.ntnu.idatt2001.paths.models.Story;
 import java.lang.reflect.Type;
 import java.util.Map;
 
+/**
+ * The type Story serializer.
+ * The StorySerializer class is used to serialize the different types of stories.
+ *
+ * @author Helle R. and Sander S.
+ * @version 0.1 08.05.2023
+ */
 public class StorySerializer implements JsonSerializer<Story> {
+  /*
+   * The serialize method is used to serialize the different types of stories.
+   *
+   * @param story      the story
+   * @param typeOfSrc  the type of src
+   * @param context    the context
+   * @return the json element
+   */
   @Override
   public JsonElement serialize(Story story, Type typeOfSrc, JsonSerializationContext context) {
     JsonObject jsonObject = new JsonObject();

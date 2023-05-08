@@ -14,17 +14,33 @@ import java.util.Objects;
  */
 
 public class Player {
+  /**
+   * The name of the player.
+   */
   private final String name;
+  /**
+   * The health of the player.
+   */
   private int health;
+  /**
+   * The score of the player.
+   */
   private int score;
+  /**
+   * The gold of the player.
+   */
   private int gold;
+  /**
+   * The inventory of the player.
+   */
   private final List<String> inventory;
 
   /**
-   * Constructor for Player.
+   * The constructor of the Player class.
+   * The constructor is used to set the name, health, score, gold and inventory of the player.
+   * The constructor is private and can only be accessed by the PlayerBuilder class.
    *
-   *
-   *
+   * @param builder The PlayerBuilder object that is used to set the attributes of the player.
    */
 
   Player(PlayerBuilder builder) {

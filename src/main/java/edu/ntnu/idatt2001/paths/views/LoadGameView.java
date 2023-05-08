@@ -27,28 +27,81 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * The type Load game view.
+ * The class is used to create the GUI of the load game view.
+ *
+ * @author Helle R. and Sander S.
+ * @version 0.1 08.05.2023
+ */
 public class LoadGameView extends View{
+  /**
+   * The Border pane is the main pane of the GUI.
+   */
   protected BorderPane borderPane;
+  /**
+   * The Stack pane.
+   * The stackPane is used to stack the different components of the GUI on top of each other.
+   */
   protected StackPane stackPane;
+  /**
+   * The Screen controller.
+   * The screenController is used to switch between the different views of the GUI.
+   */
   private ScreenController screenController;
+  /**
+   * The Game.
+   * The game to be loaded.
+   */
   private Game game;
+  /**
+   * The Game controller.
+   * The gameController is used to control the game.
+   */
   private GameController gameController = GameController.getInstance();
+  /**
+   * The File handler controller.
+   */
   FileHandlerController fileHandlerController = FileHandlerController.getInstance();
+  /**
+   * The Load game controller.
+   */
   LoadGameController loadGameController = LoadGameController.getInstance();
+  /**
+   * The Paths table view.
+   */
   TableView<FileEntry> pathsTableView;
+  /**
+   * The Json table view.
+   */
   TableView<FileEntry> jsonTableView;
 
+  /**
+   * Instantiates a new Load game view.
+   *
+   * @param screenController the screen controller
+   */
   public LoadGameView(ScreenController screenController) {
     borderPane = new BorderPane();
     stackPane = new StackPane();
     borderPane.setCenter(stackPane);
     this.screenController = screenController;
   }
+
+  /**
+   * Gets pane.
+   * The method is used to get the pane of the GUI.
+   *
+   * @return the pane
+   */
   @Override
   public Pane getPane() {
     return this.borderPane;
   }
 
+  /**
+   * The method is used to create the GUI of the load game view.
+   */
   @Override
   public void setup() {
     // Create the TableView for .paths files
@@ -271,6 +324,11 @@ public class LoadGameView extends View{
     borderPane.getStylesheets().add("stylesheet.css");
   }
 
+  /**
+   * Show an alert window if the file is missing data.
+   *
+   * @param missingData The missing data.
+   */
   private void showAlertWindow(String missingData) {
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     alert.setTitle("Missing Data");
@@ -299,12 +357,17 @@ public class LoadGameView extends View{
   }
 
 
-
+  /**
+   * Reset the pane.
+   */
   @Override
   void resetPane() {
     stackPane.getChildren().clear();
   }
 
+  /**
+   * Refresh the tables.
+   */
   private void refreshTables() {
     pathsTableView.getItems().clear();
     pathsTableView.setItems(loadGameController.getSavedGames("paths"));
@@ -314,6 +377,4 @@ public class LoadGameView extends View{
     jsonTableView.setItems(loadGameController.getSavedGames("json"));
     jsonTableView.refresh();
   }
-
-
 }
