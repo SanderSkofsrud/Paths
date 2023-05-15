@@ -316,7 +316,6 @@ public class MainGameView extends View{
       Button button = new Button(link.getText());
       button.setOnAction(event -> {
         for (Action action : link.getActions()) {
-          System.out.println(action);
           action.execute(player);
         }
         Passage nextPassage = game.go(link);
