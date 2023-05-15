@@ -79,8 +79,7 @@ public enum Dictionary {
           """),
   HOME("Home"),
   RETURN_TO_HOME("You will lose all progress if you return \nto home without saving."),
-  SAVE_HOME("Save & home"),
-  ;
+  SAVE_HOME("Save & home");
   private final String key;
 
   Dictionary(String key) {
