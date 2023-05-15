@@ -1,5 +1,6 @@
 package edu.ntnu.idatt2001.paths.views;
 
+import edu.ntnu.idatt2001.paths.controllers.LanguageController;
 import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.player.Player;
@@ -44,6 +45,7 @@ public class MinigameView extends View{
    * The playerController is used to get the player.
    */
   PlayerController playerController = PlayerController.getInstance();
+  LanguageController languageController = LanguageController.getInstance();
   /**
    * The button array.
    * The buttons array is used to store the buttons of the gridPane.
@@ -232,15 +234,15 @@ public class MinigameView extends View{
    */
   private void announceWinner(String playerString) {
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    alert.setTitle("Game Over");
+    alert.setTitle(languageController.translate("Game Over"));
     alert.setHeaderText(null);
     Player player = playerController.getPlayer();
     if (playerString.equals("X")) {
       player.addGold(10);
-      alert.setContentText("You win! You gained 10 gold.");
+      alert.setContentText(languageController.translate("You win! You gained 10 gold."));
     } else {
       player.addGold(-10);
-      alert.setContentText("You lost! You lost 10 gold.");
+      alert.setContentText(languageController.translate("You lost! You lost 10 gold."));
     }
     alert.showAndWait();
     hasPlayed = true;
@@ -253,9 +255,9 @@ public class MinigameView extends View{
    */
   private void announceDraw() {
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    alert.setTitle("Game Over");
+    alert.setTitle(languageController.translate("Game Over"));
     alert.setHeaderText(null);
-    alert.setContentText("It's a draw!");
+    alert.setContentText(languageController.translate("It's a draw!"));
     alert.showAndWait();
     hasPlayed = true;
     screenController.activate("MainGame");
