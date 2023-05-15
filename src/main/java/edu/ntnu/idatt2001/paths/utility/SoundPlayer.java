@@ -16,6 +16,7 @@ import java.io.InputStream;
  * @version 0.1 08.05.2023
  */
 public class SoundPlayer {
+  private Clip clip;
   /**
    * A method that plays a sound file.
    *
@@ -24,9 +25,9 @@ public class SoundPlayer {
   public void play(String filename) {
     try (InputStream is = new BufferedInputStream(getClass().getResourceAsStream(filename))) {
       AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(is);
-      Clip clip = AudioSystem.getClip();
-      clip.open(audioInputStream);
-      clip.start();
+      Clip playClip = AudioSystem.getClip();
+      playClip.open(audioInputStream);
+      playClip.start();
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -37,16 +38,29 @@ public class SoundPlayer {
    *
    * @param filename the filename of the sound file
    */
-  public void playOnLoop(String filename) {
+  public void playOnLoop(String filename, double volume) {
     try (InputStream is = new BufferedInputStream(getClass().getResourceAsStream(filename))) {
       AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(is);
-      Clip clip = AudioSystem.getClip();
+      clip = AudioSystem.getClip();
       clip.open(audioInputStream);
-      FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-      gainControl.setValue(-12.5f);
+      setVolume(volume);
       clip.loop(Clip.LOOP_CONTINUOUSLY);
     } catch (Exception e) {
       e.printStackTrace();
+    }
+  }
+
+  public void setVolume(double volume) {
+    if (clip != null) {
+      FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+      float dB = (float) (Math.log(volume) / Math.log(10.0) * 20.0);
+      gainControl.setValue(dB);
+    }
+  }
+
+  public void stop() {
+    if (clip != null && clip.isRunning()) {
+      clip.stop();
     }
   }
 }

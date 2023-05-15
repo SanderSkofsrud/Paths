@@ -1,8 +1,4 @@
 
-x
-Hsrc/main/java/edu/ntnu/idatt2001/paths/controllers/ScreenController.java,7\a\7ab844675e328c691956a9635c640e66d86b4501
-f
-6src/main/java/edu/ntnu/idatt2001/paths/views/View.java,d\5\d5bd45cfdfcc79e3616716e6c50a09237cb30d78
 h
 8src/main/java/edu/ntnu/idatt2001/paths/models/Story.java,c\d\cd97993989de53b4c672cdef60b5a7b9fcf26dcd
 j
@@ -11,5 +7,25 @@ w
 Gsrc/main/java/edu/ntnu/idatt2001/paths/models/player/PlayerBuilder.java,0\8\08af161cf65f701778fc407884e3102a790952aa
 x
 Hsrc/main/java/edu/ntnu/idatt2001/paths/controllers/PlayerController.java,e\3\e3c91851e2dcb14c34e2c4275a38b8c5a4de009c
-p
-@src/main/java/edu/ntnu/idatt2001/paths/models/player/Player.java,d\3\d36069bf9d93a4129c71a46c673971f8b616ec75
+g
+7src/main/java/edu/ntnu/idatt2001/paths/models/Game.java,2\b\2bec362a47225d07fe2aab29974842a57a8a9b7c
+w
+Gsrc/main/java/edu/ntnu/idatt2001/paths/models/actions/HealthAction.java,7\c\7c8895acdb9cd4f5f66457ced6bf65d4993e3107
+v
+Fsrc/main/java/edu/ntnu/idatt2001/paths/models/actions/ScoreAction.java,5\8\58886402eb45a866f8ea07d38500b1eda68a0713
+m
+=src/main/java/edu/ntnu/idatt2001/paths/models/goals/Goal.java,1\c\1c69d1560cbee20629cdc80d31102eca79e4f179
+q
+Asrc/main/java/edu/ntnu/idatt2001/paths/models/goals/GoldGoal.java,d\b\db03606659781994dabb482e8836ec5432258914
+t
+Dsrc/main/java/edu/ntnu/idatt2001/paths/models/player/Difficulty.java,c\c\cc5ed42cf88b911254a37a91eb6c8007c38d5fe9
+n
+>src/main/java/edu/ntnu/idatt2001/paths/models/player/Item.java,8\f\8fea7f2a715a271cbdbe70acbc0376daafa3e3d2
+m
+=src/main/java/edu/ntnu/idatt2001/paths/utility/FileEntry.java,9\6\96116ea54f58e50092d3ead73f43cb2206688c58
+{
+Ksrc/main/java/edu/ntnu/idatt2001/paths/utility/json/ActionDeserializer.java,3\5\35e4e051a209aa8f1bfbfb00fccb99b6679e79a7
+y
+Isrc/main/java/edu/ntnu/idatt2001/paths/utility/json/GoalDeserializer.java,a\b\ab5962e78904dc83bfeb74f7d6504fb1b95cbd37
+u
+Esrc/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsWriter.java,5\c\5c5fa47ed399ebb540f5b6a885dc220ade01f11c
