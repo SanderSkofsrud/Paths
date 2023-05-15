@@ -1,12 +1,10 @@
 package edu.ntnu.idatt2001.paths.views;
 
-import edu.ntnu.idatt2001.paths.controllers.FileHandlerController;
-import edu.ntnu.idatt2001.paths.controllers.GameController;
-import edu.ntnu.idatt2001.paths.controllers.LoadGameController;
-import edu.ntnu.idatt2001.paths.controllers.ScreenController;
+import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Link;
 import edu.ntnu.idatt2001.paths.models.Story;
+import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.utility.FileEntry;
 import edu.ntnu.idatt2001.paths.utility.GameData;
 import javafx.application.Platform;
@@ -67,6 +65,7 @@ public class LoadGameView extends View{
    * The Load game controller.
    */
   LoadGameController loadGameController = LoadGameController.getInstance();
+  LanguageController languageController = LanguageController.getInstance();
   /**
    * The Paths table view.
    */
@@ -107,10 +106,10 @@ public class LoadGameView extends View{
     // Create the TableView for .paths files
     pathsTableView = new TableView<>();
 
-    TableColumn<FileEntry, String> pathsFileNameColumn = new TableColumn<>("File Name");
+    TableColumn<FileEntry, String> pathsFileNameColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_NAME.getKey()));
     pathsFileNameColumn.setCellValueFactory(new PropertyValueFactory<>("fileName"));
 
-    TableColumn<FileEntry, FileEntry> pathsFileLocationColumn = new TableColumn<>("File Location");
+    TableColumn<FileEntry, FileEntry> pathsFileLocationColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_LOCATION.getKey()));
     pathsFileLocationColumn.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
     pathsFileLocationColumn.setCellFactory(column -> new TableCell<FileEntry, FileEntry>() {
       @Override
@@ -146,7 +145,7 @@ public class LoadGameView extends View{
       }
     });
 
-    TableColumn<FileEntry, FileEntry> pathsBrokenLinksColumn = new TableColumn<>("Broken Links");
+    TableColumn<FileEntry, FileEntry> pathsBrokenLinksColumn = new TableColumn<>(languageController.getTranslation(Dictionary.BROKEN_LINKS.getKey()));
     pathsBrokenLinksColumn.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
     pathsBrokenLinksColumn.setCellFactory(column -> {
       return new TableCell<FileEntry, FileEntry>() {
@@ -172,17 +171,17 @@ public class LoadGameView extends View{
             if (brokenLinks != null && !brokenLinks.isEmpty()) {
               setText(brokenLinks.stream().map(Link::getReference).collect(Collectors.joining(", ")));
             } else {
-              setText("No broken links");
+              setText(languageController.getTranslation(Dictionary.NO_BROKEN_LINKS.getKey()));
             }
           }
         }
       };
     });
 
-    TableColumn<FileEntry, String> pathsClickableTextColumn = new TableColumn<>("Load game");
+    TableColumn<FileEntry, String> pathsClickableTextColumn = new TableColumn<>(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
     pathsClickableTextColumn.setPrefWidth(100);
     pathsClickableTextColumn.setCellFactory(tc -> new TableCell<>() {
-      private final Hyperlink hyperlink = new Hyperlink("Load game");
+      private final Hyperlink hyperlink = new Hyperlink(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
 
       {
         hyperlink.setOnAction(event -> {
@@ -218,15 +217,83 @@ public class LoadGameView extends View{
     // Create the TableView for .json files
     jsonTableView = new TableView<>();
 
-    TableColumn<FileEntry, String> jsonFileNameColumn = new TableColumn<>("File Name");
+    TableColumn<FileEntry, String> jsonFileNameColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_NAME.getKey()));
     jsonFileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getFileName()));
 
-    jsonFileNameColumn.setPrefWidth(300);
+    TableColumn<FileEntry, FileEntry> jsonFileLocationColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_LOCATION.getKey()));
+    jsonFileLocationColumn.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
+    jsonFileLocationColumn.setCellFactory(column -> new TableCell<FileEntry, FileEntry>() {
+      @Override
+      protected void updateItem(FileEntry item, boolean empty) {
+        super.updateItem(item, empty);
 
-    TableColumn<FileEntry, String> jsonClickableTextColumn = new TableColumn<>("Load game");
+        if (empty || item == null) {
+          setText(null);
+          setGraphic(null);
+        } else {
+          setText(item.getFileLocation());
+          setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+              String fileName = item.getFileLocation();
+
+              Story story = null;
+
+              try {
+                story = fileHandlerController.loadGame(fileName).getStory();
+              } catch (FileNotFoundException e) {
+                e.printStackTrace();
+              } catch (IllegalArgumentException e) {
+                System.err.println("Incorrect file format: " + e.getMessage());
+              }
+
+              if (story != null) {
+                String fileType = loadGameController.getFileType();
+                setText("src/main/resources/" + fileType + "/" + item.getFileName());
+              }
+            }
+          });
+        }
+      }
+    });
+
+    TableColumn<FileEntry, FileEntry> jsonBrokenLinksColumn = new TableColumn<>(languageController.getTranslation(Dictionary.BROKEN_LINKS.getKey()));
+    jsonBrokenLinksColumn.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
+    jsonBrokenLinksColumn.setCellFactory(column -> {
+      return new TableCell<FileEntry, FileEntry>() {
+        @Override
+        protected void updateItem(FileEntry item, boolean empty) {
+          super.updateItem(item, empty);
+
+          if (item == null || empty) {
+            setText(null);
+          } else {
+            String fileName = item.getFileName();
+            Story story = null;
+            try {
+              story = fileHandlerController.loadGame(fileName).getStory();
+            } catch (FileNotFoundException | IllegalArgumentException e) {
+              System.out.println("Incorrect file format: " + e.getMessage());
+            }
+            List<Link> brokenLinks = null;
+            if (story != null) {
+              brokenLinks = story.getBrokenLinks();
+            }
+
+            if (brokenLinks != null && !brokenLinks.isEmpty()) {
+              setText(brokenLinks.stream().map(Link::getReference).collect(Collectors.joining(", ")));
+            } else {
+              setText(languageController.getTranslation(Dictionary.NO_BROKEN_LINKS.getKey()));
+            }
+          }
+        }
+      };
+    });
+
+
+    TableColumn<FileEntry, String> jsonClickableTextColumn = new TableColumn<>(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
     jsonClickableTextColumn.setPrefWidth(100);
     jsonClickableTextColumn.setCellFactory(tc -> new TableCell<>() {
-      private final Hyperlink hyperlink = new Hyperlink("Load game");
+      private final Hyperlink hyperlink = new Hyperlink(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
 
       {
         hyperlink.setOnAction(event -> {
@@ -253,9 +320,9 @@ public class LoadGameView extends View{
       }
     });
 
-    jsonTableView.getColumns().addAll(jsonFileNameColumn, jsonClickableTextColumn);
+    jsonTableView.getColumns().addAll(jsonFileNameColumn, jsonFileLocationColumn, jsonBrokenLinksColumn, jsonClickableTextColumn);
     jsonTableView.setItems(loadGameController.getSavedGames("json"));
-    jsonTableView.setMaxWidth(400);
+    jsonTableView.setPrefWidth(650);
 
     ImageView backImage = new ImageView(new Image(getClass().getResourceAsStream("/images/back.png")));
     Button backButton = new Button();
@@ -331,12 +398,12 @@ public class LoadGameView extends View{
    */
   private void showAlertWindow(String missingData) {
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-    alert.setTitle("Missing Data");
-    alert.setHeaderText("Some data is missing in the file:");
-    alert.setContentText(missingData + "\nDo you want to continue and add this to the file?");
+    alert.setTitle(languageController.getTranslation(Dictionary.MISSING_DATA.getKey()));
+    alert.setHeaderText(languageController.getTranslation(Dictionary.SOME_DATA_IS_MISSING.getKey()) + ":");
+    alert.setContentText(languageController.translate(missingData) + "\n" + languageController.getTranslation(Dictionary.DO_YOU_WANT_TO_CONTINUE.getKey()) + "?");
 
-    ButtonType buttonTypeContinue = new ButtonType("Continue", ButtonBar.ButtonData.OK_DONE);
-    ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+    ButtonType buttonTypeContinue = new ButtonType(languageController.getTranslation(Dictionary.CONTINUE.getKey()), ButtonBar.ButtonData.OK_DONE);
+    ButtonType buttonTypeCancel = new ButtonType(languageController.getTranslation(Dictionary.CANCEL.getKey()), ButtonBar.ButtonData.CANCEL_CLOSE);
 
     alert.getButtonTypes().setAll(buttonTypeContinue, buttonTypeCancel);
 
@@ -344,7 +411,7 @@ public class LoadGameView extends View{
     dialogPane.getStylesheets().add("stylesheet.css");
 
     alert.showAndWait().ifPresent(response -> {
-      if (response == buttonTypeContinue && missingData.equals("Missing data: Player Goals") || missingData.equals("Missing data: Player")) {
+      if (response == buttonTypeContinue && missingData.equals("Missing data: Player, Goals") || missingData.equals("Missing data: Player")) {
         screenController.activate("NewGame");
       } else if (response == buttonTypeContinue && missingData.equals("Missing data: Goals")) {
         screenController.activate("ChooseGoals");
