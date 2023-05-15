@@ -4,32 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Updated gitignore">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added images for flags for all countries to visualize what countries the language you are translating to are spoken in">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LanguageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Language.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/TranslationDictionary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/Sander.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/dfg.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/Sander.paths" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/dfg.paths" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/sadsfgty.paths" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/SoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/SoundPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MinigameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MinigameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/back.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/back.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/create.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/create.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/exit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/female.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/female.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gameBackground.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/gameBackground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/goals.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/goals.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/help.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/help.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/home.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/home.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/male.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/male.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/question.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/ambiance.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sounds/ambiance.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/confirm.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sounds/confirm.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tagline.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/tagline.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/troll.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/paths/story1.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/paths/story1.paths" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/female.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/json/sss.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/sss.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/json/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/sadsfgty.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +40,8 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="module-info" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -57,6 +56,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2LBBaNZgst9at1QbyjUwid8xKV6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -68,29 +74,31 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "OverrideImplement.generate.javadoc": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "FileHandling",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "Z:/Universitetet/V23/Paths",
+    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths/src/main/resources/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "settings.sync",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources\images" />
       <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources" />
       <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources\paths" />
     </key>
@@ -98,11 +106,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="Z:\Universitetet\V23\Paths\src\main\resources\images" />
-      <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources\sounds" />
       <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources\images" />
+      <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources\sounds" />
       <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources" />
       <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources\icons" />
+      <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources\stylesheets" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="edu.ntnu.idatt2001.goals" />
@@ -113,9 +121,8 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean validate javafx:run7" />
-      <command value="mvn clean validate javafx:run" />
       <command value="mvn test" />
-      <command value="mvn clean install" />
+      <command value="mvn clean validate javafx:run" />
     </option>
   </component>
   <component name="RunManager" selected="Maven.paths [javafx:run]">
@@ -264,11 +271,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameLoadsAGameAndReturnsIt" />
-        <item itemvalue="JUnit.JsonFileHandlerTest" />
-        <item itemvalue="JUnit.PathsFileHandlerTest" />
         <item itemvalue="JUnit.edu.ntnu.idatt2001.paths.models in paths" />
+        <item itemvalue="JUnit.PathsFileHandlerTest" />
         <item itemvalue="JUnit.PathsFileHandlerTest$pathsReader$loadGame.testThatReadFromFileReturnsAStory" />
+        <item itemvalue="JUnit.JsonFileHandlerTest" />
+        <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameLoadsAGameAndReturnsIt" />
       </list>
     </recent_temporary>
   </component>
@@ -310,43 +317,10 @@
       <workItem from="1681982566498" duration="3543000" />
       <workItem from="1681987313847" duration="1305000" />
       <workItem from="1682074673475" duration="21122000" />
-      <workItem from="1683290057276" duration="2846000" />
-      <workItem from="1683368668743" duration="2509000" />
-    </task>
-    <task id="LOCAL-00089" summary="added positive test and refactored nested test classes">
-      <created>1680006988179</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1680006988179</updated>
-    </task>
-    <task id="LOCAL-00090" summary="added positive test and refactored nested test classes. Removed savegame">
-      <created>1680007958121</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1680007958121</updated>
-    </task>
-    <task id="LOCAL-00091" summary="removed public from nested classes">
-      <created>1680008582164</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1680008582164</updated>
-    </task>
-    <task id="LOCAL-00092" summary="Made ChooseGoalsView create and save games">
-      <created>1681978700358</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1681978700358</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Made new FileEntry class that makes working with files easier, used for the tabelview in LoadGameView">
-      <created>1681978760493</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1681978760493</updated>
+      <workItem from="1683290057276" duration="3571000" />
+      <workItem from="1683366875197" duration="8960000" />
+      <workItem from="1683887140503" duration="81000" />
+      <workItem from="1683887243366" duration="39202000" />
     </task>
     <task id="LOCAL-00094" summary="Made FileHandlerController that is a controller used for saving and loading games">
       <created>1681978799414</created>
@@ -649,14 +623,49 @@
       <option name="project" value="LOCAL" />
       <updated>1683292889140</updated>
     </task>
-    <task id="LOCAL-00137" summary="Updated gitignore">
-      <created>1683369031113</created>
+    <task id="LOCAL-00137" summary="Fixed error in previous module-info commit">
+      <created>1683292935257</created>
       <option name="number" value="00137" />
       <option name="presentableId" value="LOCAL-00137" />
       <option name="project" value="LOCAL" />
-      <updated>1683369031114</updated>
+      <updated>1683292935257</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="Updated to include new Player and PlayerBuilder">
+      <created>1683292956650</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1683292956650</updated>
+    </task>
+    <task id="LOCAL-00139" summary="Updated to include new Player and PlayerBuilder">
+      <created>1683292968986</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1683292968986</updated>
+    </task>
+    <task id="LOCAL-00140" summary="Updated actions in templates and files used in tests">
+      <created>1683293027438</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1683293027438</updated>
+    </task>
+    <task id="LOCAL-00141" summary="Updated all views and soundplayer, as images and sounds did not load">
+      <created>1683373249387</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1683373249387</updated>
+    </task>
+    <task id="LOCAL-00142" summary="Added images for flags for all countries to visualize what countries the language you are translating to are spoken in">
+      <created>1684147370614</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1684147370615</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,10 +696,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated functionality to work with new FileEntry class. The program now works as this. If you try to load a paths file that is missing a player or goals, the program makes you add these things to your files before the game can be loaded" />
-    <MESSAGE value="Made JsonFileHandlerTest work" />
-    <MESSAGE value="Updated ChooseGoalsView to work with new functionality of loading a game without player and/or goals" />
-    <MESSAGE value="Added alert in LoadGameView to show what is missing when loading a game. Made handleGameData return string to work with alert shown in LoadGameView." />
     <MESSAGE value="Updated NewGameView to work with new implementation of load game without story and/or goals" />
     <MESSAGE value="Added progressbar to show the progress of each goal" />
     <MESSAGE value="added dialog box to alert to style it" />
@@ -711,8 +716,12 @@
     <MESSAGE value="Updated JsonReader to include new ActionDeserializer class" />
     <MESSAGE value="Added actions to PathsReader" />
     <MESSAGE value="Updated module-info.java to include new changes made" />
-    <MESSAGE value="Updated gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated gitignore" />
+    <MESSAGE value="Fixed error in previous module-info commit" />
+    <MESSAGE value="Updated to include new Player and PlayerBuilder" />
+    <MESSAGE value="Updated actions in templates and files used in tests" />
+    <MESSAGE value="Updated all views and soundplayer, as images and sounds did not load" />
+    <MESSAGE value="Added images for flags for all countries to visualize what countries the language you are translating to are spoken in" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added images for flags for all countries to visualize what countries the language you are translating to are spoken in" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

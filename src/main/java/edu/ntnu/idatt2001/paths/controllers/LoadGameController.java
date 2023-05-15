@@ -166,6 +166,9 @@ public class LoadGameController {
         missingDataBuilder.append(" Player");
       }
       if (goals.isEmpty()) {
+        if (player == null) {
+          missingDataBuilder.append(",");
+        }
         missingDataBuilder.append(" Goals");
       }
     }

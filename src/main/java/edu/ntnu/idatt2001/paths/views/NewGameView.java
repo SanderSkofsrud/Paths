@@ -1,11 +1,9 @@
 package edu.ntnu.idatt2001.paths.views;
 
-import edu.ntnu.idatt2001.paths.controllers.FileHandlerController;
-import edu.ntnu.idatt2001.paths.controllers.GameController;
-import edu.ntnu.idatt2001.paths.controllers.PlayerController;
-import edu.ntnu.idatt2001.paths.controllers.ScreenController;
+import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.player.Player;
+import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.utility.GameData;
 import javafx.animation.TranslateTransition;
 import javafx.geometry.Insets;
@@ -62,6 +60,7 @@ public class NewGameView extends View {
    * The gameController is used to create a new game.
    */
   GameController gameController = GameController.getInstance();
+  LanguageController languageController = LanguageController.getInstance();
 
   /**
    * Instantiates a new New game view.
@@ -92,21 +91,21 @@ public class NewGameView extends View {
   public void setup() {
     ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/images/create.png")));
 
-    Label labelName = new Label("Select name");
+    Label labelName = new Label(languageController.getTranslation(Dictionary.SELECT_NAME.getKey()));
     TextField textFieldName = new TextField();
-    textFieldName.setPromptText("Enter name");
+    textFieldName.setPromptText(languageController.getTranslation(Dictionary.ENTER_NAME.getKey()));
     HBox hBoxName = new HBox();
     hBoxName.getChildren().addAll(labelName, textFieldName);
     hBoxName.setSpacing(10);
     hBoxName.setAlignment(Pos.CENTER);
     hBoxName.setPadding(new Insets(10, 10, 10, 10));
 
-    Label labelDifficulty = new Label("Select difficulty");
+    Label labelDifficulty = new Label(languageController.getTranslation(Dictionary.SELECT_DIFFICULTY.getKey()));
     ToggleGroup toggleGroupDifficulty = new ToggleGroup();
-    ToggleButton easy = new ToggleButton("Easy");
-    ToggleButton standard = new ToggleButton("Standard");
-    ToggleButton hard = new ToggleButton("Hard");
-    ToggleButton custom = new ToggleButton("Custom");
+    ToggleButton easy = new ToggleButton(languageController.getTranslation(Dictionary.EASY.getKey()));
+    ToggleButton standard = new ToggleButton(languageController.getTranslation(Dictionary.STANDARD.getKey()));
+    ToggleButton hard = new ToggleButton(languageController.getTranslation(Dictionary.HARD.getKey()));
+    ToggleButton custom = new ToggleButton(languageController.getTranslation(Dictionary.CUSTOM.getKey()));
     easy.setToggleGroup(toggleGroupDifficulty);
     standard.setToggleGroup(toggleGroupDifficulty);
     hard.setToggleGroup(toggleGroupDifficulty);
@@ -124,7 +123,7 @@ public class NewGameView extends View {
 
     Label labelHealth = new Label("");
     TextField textFieldHealth = new TextField();
-    textFieldHealth.setPromptText("Enter health");
+    textFieldHealth.setPromptText(languageController.getTranslation(Dictionary.ENTER_HEALTH.getKey()));
     HBox hBoxHealth = new HBox();
     hBoxHealth.getChildren().addAll(labelHealth);
     hBoxHealth.setSpacing(10);
@@ -134,7 +133,7 @@ public class NewGameView extends View {
 
     Label labelGold = new Label("");
     TextField textFieldGold = new TextField();
-    textFieldGold.setPromptText("Enter gold");
+    textFieldGold.setPromptText(languageController.getTranslation(Dictionary.ENTER_GOLD.getKey()));
     HBox hBoxGold = new HBox();
     hBoxGold.getChildren().addAll(labelGold);
     hBoxGold.setSpacing(10);
@@ -148,54 +147,54 @@ public class NewGameView extends View {
         String difficulty = selectedButton.getText();
 
         switch (difficulty) {
-          case "Custom":
-            labelHealth.setText("Select health (Normal difficulty = 100)");
-            labelGold.setText("Select gold (Normal difficulty = 100)");
+          case "Custom" -> {
+            labelHealth.setText(languageController.getTranslation(Dictionary.SELECT_HEALTH.getKey()));
+            labelGold.setText(languageController.getTranslation(Dictionary.SELECT_GOLD.getKey()));
             hBoxHealth.getChildren().add(textFieldHealth);
             hBoxGold.getChildren().add(textFieldGold);
             hBoxGold.setAlignment(Pos.CENTER);
             hBoxHealth.setVisible(true);
             hBoxGold.setVisible(true);
-            break;
-          case "Easy":
-            labelHealth.setText("Health = 250 (Normal difficulty = 100)");
-            labelGold.setText("Gold = 250 (Normal difficulty = 100) \n\n* Sword added to inventory");
+          }
+          case "Easy" -> {
+            labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_EASY.getKey()));
+            labelGold.setText(languageController.getTranslation(Dictionary.GOLD_EASY.getKey()));
             hBoxHealth.getChildren().remove(textFieldHealth);
             hBoxGold.getChildren().remove(textFieldGold);
             hBoxGold.setAlignment(Pos.CENTER);
             hBoxHealth.setVisible(true);
             hBoxGold.setVisible(true);
-            break;
-          case "Hard":
-            labelHealth.setText("Health = 50 (Normal difficulty = 100)");
-            labelGold.setText("Gold = 0 (Normal difficulty = 100)");
+          }
+          case "Hard" -> {
+            labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_HARD.getKey()));
+            labelGold.setText(languageController.getTranslation(Dictionary.GOLD_HARD.getKey()));
             hBoxHealth.getChildren().remove(textFieldHealth);
             hBoxGold.getChildren().remove(textFieldGold);
             hBoxGold.setAlignment(Pos.CENTER);
             hBoxHealth.setVisible(true);
             hBoxGold.setVisible(true);
-            break;
-          case "Standard":
-            labelHealth.setText("Health = 100");
-            labelGold.setText("Gold = 100");
+          }
+          case "Standard" -> {
+            labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_STANDARD.getKey()));
+            labelGold.setText(languageController.getTranslation(Dictionary.GOLD_STANDARD.getKey()));
             hBoxHealth.getChildren().remove(textFieldHealth);
             hBoxGold.getChildren().remove(textFieldGold);
             hBoxGold.setAlignment(Pos.CENTER);
             hBoxHealth.setVisible(true);
             hBoxGold.setVisible(true);
-            break;
-          default:
+          }
+          default -> {
             hBoxHealth.setVisible(false);
             hBoxGold.setVisible(false);
-            break;
+          }
         }
       }
     });
 
 
-    Label labelCharacter = new Label("Select character model");
-    Image male = new Image(getClass().getResourceAsStream("/images/male.png"));
-    Image female = new Image(getClass().getResourceAsStream("/images/female.png"));
+    Label labelCharacter = new Label(languageController.getTranslation(Dictionary.SELECT_CHARACTER.getKey()));
+    Image male = new Image(getClass().getResourceAsStream("/images/m.png"));
+    Image female = new Image(getClass().getResourceAsStream("/images/f.png"));
     ImageView characterMale = new ImageView(male);
     ImageView characterFemale = new ImageView(female);
     characterFemale.setVisible(false);
@@ -229,14 +228,14 @@ public class NewGameView extends View {
     hBoxCharacter.setAlignment(Pos.CENTER);
     hBoxCharacter.setPadding(new Insets(10, 10, 10, 10));
 
-    Button button = new Button("Create Character");
+    Button button = new Button(languageController.getTranslation(Dictionary.CREATE_CHARACTER.getKey()));
     button.setId("subMenuButton");
     button.setOnAction(e -> {
       if (textFieldName.getText().isEmpty()) {
-        textFieldName.setPromptText("Enter name");
+        textFieldName.setPromptText(languageController.getTranslation(Dictionary.ENTER_NAME.getKey()));
         return;
       } else if (toggleGroupDifficulty.getSelectedToggle() == null) {
-        labelDifficulty.setText("Select difficulty");
+        labelDifficulty.setText(languageController.getTranslation(Dictionary.SELECT_DIFFICULTY.getKey()));
         return;
       }
 
