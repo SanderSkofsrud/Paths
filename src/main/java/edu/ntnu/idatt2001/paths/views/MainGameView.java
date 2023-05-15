@@ -336,9 +336,72 @@ public class MainGameView extends View{
     for (Link link : passage.getLinks()) {
       Button button = new Button(languageController.translate(link.getText()));
       button.setOnAction(event -> {
-        for (Action action : link.getActions()) {
-          action.execute(player);
+        try {
+          for (Action action : link.getActions()) {
+            action.execute(player);
+          }
+        } catch (Exception e) {
+          if (!player.isAlive()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Game over");
+            alert.setHeaderText("You have died");
+
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add("stylesheet.css");
+            alert.showAndWait();
+            borderPane.getStylesheets().add("stylesheet.css");
+            gameController.resetGame();
+            resetPane();
+            screenController.activate("MainMenu");
+          }
+
+          if (player.getGold() <= 0) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("gold");
+            alert.setHeaderText("gold");
+
+            ButtonType option1 = new ButtonType("option1");
+            ButtonType option2 = new ButtonType("option2");
+
+            alert.getButtonTypes().setAll(option1,option2);
+
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add("stylesheet.css");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent()) {
+              if (result.get() == option1) {
+                alert.close();
+              } else if (result.get() == option2) {
+                alert.close();
+              }
+            }
+          }
+
+          if (player.getScore() <= 0) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("score");
+            alert.setHeaderText("score");
+
+            ButtonType option1 = new ButtonType("option1");
+            ButtonType option2 = new ButtonType("option2");
+
+            alert.getButtonTypes().setAll(option1,option2);
+
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add("stylesheet.css");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent()) {
+              if (result.get() == option1) {
+                alert.close();
+              } else if (result.get() == option2) {
+                alert.close();
+              }
+            }
+          }
         }
+
         if (game.getStory().getBrokenLinks().contains(link)) {
           Alert alert = new Alert(Alert.AlertType.INFORMATION);
           alert.setTitle("Broken Link");

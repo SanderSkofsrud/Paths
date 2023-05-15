@@ -4,32 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Updated gitignore">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added restart button">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/323.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/3456.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/432.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/678.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/789.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/79.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/80.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/323.paths" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/3456.paths" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/432.paths" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/678.paths" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/789.paths" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/79.paths" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paths/80.paths" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/SoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/SoundPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/back.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/back.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/create.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/create.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/exit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/female.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/female.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gameBackground.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/gameBackground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/goals.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/goals.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/help.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/help.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/home.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/home.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/male.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/male.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/question.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/ambiance.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sounds/ambiance.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/confirm.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sounds/confirm.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tagline.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/tagline.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/troll.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/paths/story1.paths" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/paths/story1.paths" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,30 +57,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "Z:/Universitetet/V23/Paths",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GUI&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;Z:/Universitetet/V23/Paths&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\main\resources" />
@@ -150,47 +142,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PathsFileHandlerTest$pathsReader$loadGame.testThatReadFromFileReturnsAStory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest$removePassage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.paths.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths.PathsFileHandlerTest.pathsReader" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths.PathsFileHandlerTest$pathsReader$loadGame" />
-      <option name="METHOD_NAME" value="testThatReadFromFileReturnsAStory" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PathsFileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.paths.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths.PathsFileHandlerTest" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.StoryTest$removePassage" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="edu.ntnu.idatt2001.paths.models in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StoryTest$removePassage.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.player.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.StoryTest$removePassage" />
+      <option name="METHOD_NAME" value="testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StoryTest$removePassage.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.StoryTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.StoryTest$removePassage" />
+      <option name="METHOD_NAME" value="testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -254,21 +248,21 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.StoryTest$removePassage" />
+      <item itemvalue="JUnit.StoryTest$removePassage.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" />
+      <item itemvalue="JUnit.StoryTest$removePassage.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
       <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameLoadsAGameAndReturnsIt" />
-      <item itemvalue="JUnit.PathsFileHandlerTest" />
-      <item itemvalue="JUnit.PathsFileHandlerTest$pathsReader$loadGame.testThatReadFromFileReturnsAStory" />
       <item itemvalue="JUnit.JsonFileHandlerTest" />
-      <item itemvalue="JUnit.edu.ntnu.idatt2001.paths.models in paths" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StoryTest$removePassage.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist" />
+        <item itemvalue="JUnit.StoryTest$removePassage.testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks" />
+        <item itemvalue="JUnit.StoryTest$removePassage" />
         <item itemvalue="JUnit.JsonFileHandlerTest$jsonReader$loadGame.testThatLoadGameLoadsAGameAndReturnsIt" />
         <item itemvalue="JUnit.JsonFileHandlerTest" />
-        <item itemvalue="JUnit.PathsFileHandlerTest" />
-        <item itemvalue="JUnit.edu.ntnu.idatt2001.paths.models in paths" />
-        <item itemvalue="JUnit.PathsFileHandlerTest$pathsReader$loadGame.testThatReadFromFileReturnsAStory" />
       </list>
     </recent_temporary>
   </component>
@@ -312,41 +306,7 @@
       <workItem from="1682074673475" duration="21122000" />
       <workItem from="1683290057276" duration="2846000" />
       <workItem from="1683368668743" duration="2509000" />
-    </task>
-    <task id="LOCAL-00089" summary="added positive test and refactored nested test classes">
-      <created>1680006988179</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1680006988179</updated>
-    </task>
-    <task id="LOCAL-00090" summary="added positive test and refactored nested test classes. Removed savegame">
-      <created>1680007958121</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1680007958121</updated>
-    </task>
-    <task id="LOCAL-00091" summary="removed public from nested classes">
-      <created>1680008582164</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1680008582164</updated>
-    </task>
-    <task id="LOCAL-00092" summary="Made ChooseGoalsView create and save games">
-      <created>1681978700358</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1681978700358</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Made new FileEntry class that makes working with files easier, used for the tabelview in LoadGameView">
-      <created>1681978760493</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1681978760493</updated>
+      <workItem from="1684155004879" duration="1318000" />
     </task>
     <task id="LOCAL-00094" summary="Made FileHandlerController that is a controller used for saving and loading games">
       <created>1681978799414</created>
@@ -656,7 +616,42 @@
       <option name="project" value="LOCAL" />
       <updated>1683369031114</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="added information pop up for broken link">
+      <created>1684152728385</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1684152728385</updated>
+    </task>
+    <task id="LOCAL-00139" summary="deleted controller class">
+      <created>1684152882430</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1684152882430</updated>
+    </task>
+    <task id="LOCAL-00140" summary="removed sout">
+      <created>1684152991264</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1684152991264</updated>
+    </task>
+    <task id="LOCAL-00141" summary="added pop up for broken link">
+      <created>1684153164131</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1684153164131</updated>
+    </task>
+    <task id="LOCAL-00142" summary="added restart button">
+      <created>1684154464288</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1684154464288</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,11 +682,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated functionality to work with new FileEntry class. The program now works as this. If you try to load a paths file that is missing a player or goals, the program makes you add these things to your files before the game can be loaded" />
-    <MESSAGE value="Made JsonFileHandlerTest work" />
-    <MESSAGE value="Updated ChooseGoalsView to work with new functionality of loading a game without player and/or goals" />
-    <MESSAGE value="Added alert in LoadGameView to show what is missing when loading a game. Made handleGameData return string to work with alert shown in LoadGameView." />
-    <MESSAGE value="Updated NewGameView to work with new implementation of load game without story and/or goals" />
     <MESSAGE value="Added progressbar to show the progress of each goal" />
     <MESSAGE value="added dialog box to alert to style it" />
     <MESSAGE value="added gamehelp" />
@@ -712,7 +702,12 @@
     <MESSAGE value="Added actions to PathsReader" />
     <MESSAGE value="Updated module-info.java to include new changes made" />
     <MESSAGE value="Updated gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated gitignore" />
+    <MESSAGE value="added information pop up for broken link" />
+    <MESSAGE value="deleted controller class" />
+    <MESSAGE value="removed sout" />
+    <MESSAGE value="added pop up for broken link" />
+    <MESSAGE value="added restart button" />
+    <option name="LAST_COMMIT_MESSAGE" value="added restart button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -721,6 +716,16 @@
           <url>file://$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoalTest.java</url>
           <line>58</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/StoryTest.java</url>
+          <line>181</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/StoryTest.java</url>
+          <line>172</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -735,7 +740,7 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681805884296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680007855672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680193708824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681810472673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
