@@ -10,6 +10,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -66,15 +69,18 @@ public class LanguageController {
 
   public boolean isInternetAvailable() {
     try {
-      InetAddress address = InetAddress.getByName("8.8.8.8");
-      // Try to reach Google's DNS server with a 2 second timeout
-      return address.isReachable(2000);
-    } catch (Exception e) {
-      // If any exception occurs (e.g., UnknownHostException or IOException),
-      // then we're probably not connected to the internet
+      final URL url = new URL("http://www.google.com");
+      final URLConnection conn = url.openConnection();
+      conn.connect();
+      conn.getInputStream().close();
+      return true;
+    } catch (MalformedURLException e) {
+      throw new RuntimeException(e);
+    } catch (IOException e) {
       return false;
     }
   }
+
 
   public String translate(String sourceText) {
     String language = this.currentLanguage.toString().toUpperCase();
