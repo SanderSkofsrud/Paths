@@ -339,6 +339,16 @@ public class MainGameView extends View{
         for (Action action : link.getActions()) {
           action.execute(player);
         }
+        if (game.getStory().getBrokenLinks().contains(link)) {
+          Alert alert = new Alert(Alert.AlertType.INFORMATION);
+          alert.setTitle("Broken Link");
+          alert.setHeaderText("You have selected a passage with a broken link");
+
+          DialogPane dialogPane = alert.getDialogPane();
+          dialogPane.getStylesheets().add("stylesheet.css");
+          alert.showAndWait();
+          borderPane.getStylesheets().add("stylesheet.css");
+        }
         Passage nextPassage = game.go(link);
         undoButton.setDisable(false);
         timeline.stop();
