@@ -336,9 +336,81 @@ public class MainGameView extends View{
     for (Link link : passage.getLinks()) {
       Button button = new Button(languageController.translate(link.getText()));
       button.setOnAction(event -> {
-        for (Action action : link.getActions()) {
-          System.out.println(action);
-          action.execute(player);
+        try {
+          for (Action action : link.getActions()) {
+            action.execute(player);
+          }
+        } catch (Exception e) {
+          if (!player.isAlive()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Game over");
+            alert.setHeaderText("You have died");
+
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add("stylesheet.css");
+            alert.showAndWait();
+            borderPane.getStylesheets().add("stylesheet.css");
+            gameController.resetGame();
+            resetPane();
+            screenController.activate("MainMenu");
+          }
+
+          if (player.getGold() <= 0) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("gold");
+            alert.setHeaderText("gold");
+
+            ButtonType option1 = new ButtonType("option1");
+            ButtonType option2 = new ButtonType("option2");
+
+            alert.getButtonTypes().setAll(option1,option2);
+
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add("stylesheet.css");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent()) {
+              if (result.get() == option1) {
+                alert.close();
+              } else if (result.get() == option2) {
+                alert.close();
+              }
+            }
+          }
+
+          if (player.getScore() <= 0) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("score");
+            alert.setHeaderText("score");
+
+            ButtonType option1 = new ButtonType("option1");
+            ButtonType option2 = new ButtonType("option2");
+
+            alert.getButtonTypes().setAll(option1,option2);
+
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add("stylesheet.css");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent()) {
+              if (result.get() == option1) {
+                alert.close();
+              } else if (result.get() == option2) {
+                alert.close();
+              }
+            }
+          }
+        }
+
+        if (game.getStory().getBrokenLinks().contains(link)) {
+          Alert alert = new Alert(Alert.AlertType.INFORMATION);
+          alert.setTitle("Broken Link");
+          alert.setHeaderText("You have selected a passage with a broken link");
+
+          DialogPane dialogPane = alert.getDialogPane();
+          dialogPane.getStylesheets().add("stylesheet.css");
+          alert.showAndWait();
+          borderPane.getStylesheets().add("stylesheet.css");
         }
         Passage nextPassage = game.go(link);
         undoButton.setDisable(false);
@@ -416,6 +488,7 @@ public class MainGameView extends View{
     Image exitImage = new Image(getClass().getResourceAsStream("/images/exit.png"));
     Image helpImage = new Image(getClass().getResourceAsStream("/images/help.png"));
     Image homeImage = new Image(getClass().getResourceAsStream("/images/home.png"));
+    Image restartImage = new Image(getClass().getResourceAsStream("/images/restart.png"));
 
     ImageView undoImageView = new ImageView(undoImage);
     undoImageView.setFitWidth(30);
@@ -432,6 +505,10 @@ public class MainGameView extends View{
     ImageView homeImageView = new ImageView(homeImage);
     homeImageView.setFitWidth(30);
     homeImageView.setFitHeight(30);
+
+    ImageView restartImageView = new ImageView(restartImage);
+    restartImageView.setFitWidth(30);
+    restartImageView.setFitHeight(30);
 
     Image soundImage = new Image(getClass().getResourceAsStream("/images/sound.png"));
     soundImageView = new ImageView(soundImage);
@@ -545,7 +622,7 @@ public class MainGameView extends View{
 
       alert.showAndWait();
 
-        });
+    });
 
     Button homeButton = new Button();
     homeButton.setGraphic(homeImageView);
@@ -583,11 +660,38 @@ public class MainGameView extends View{
       }
       stackPane.getStylesheets().add("stylesheet.css");
     });
+    Button restartButton = new Button();
+    restartButton.setGraphic(restartImageView);
+    restartButton.setStyle("-fx-background-color: transparent;");
+
+    restartButton.setOnAction(event -> {
+      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+      alert.setTitle("Restart");
+      alert.setHeaderText("Do you want to restart the game?");
+
+      ButtonType cancel = new ButtonType("Cancel");
+      ButtonType restart = new ButtonType("Restart");
+
+      alert.getButtonTypes().setAll(restart, cancel);
+
+      DialogPane dialogPane = alert.getDialogPane();
+      dialogPane.getStylesheets().add("stylesheet.css");
+
+      Optional<ButtonType> result = alert.showAndWait();
+      if (result.isPresent()) {
+        if (result.get() == cancel) {
+          alert.close();
+        } else if (result.get() == restart) {
+          updateUIWithPassage(textFlow,game.begin());
+        }
+      }
+      borderPane.getStylesheets().add("stylesheet.css");
+    });
 
     HBox topRightBox = new HBox();
     topRightBox.setAlignment(Pos.TOP_RIGHT);
     topRightBox.setPadding(new Insets(10, 10, 10, 10));
-    topRightBox.getChildren().addAll(undoButton, homeButton, questionButton, exitButton, stackPane);
+    topRightBox.getChildren().addAll(undoButton, restartButton, homeButton, questionButton, exitButton, stackPane);
 
     VBox goalsVbox = goalsVbox();
 
