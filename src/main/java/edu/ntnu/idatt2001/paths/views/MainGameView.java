@@ -425,6 +425,7 @@ public class MainGameView extends View{
     Image exitImage = new Image(getClass().getResourceAsStream("/images/exit.png"));
     Image helpImage = new Image(getClass().getResourceAsStream("/images/help.png"));
     Image homeImage = new Image(getClass().getResourceAsStream("/images/home.png"));
+    Image restartImage = new Image(getClass().getResourceAsStream("/images/restart.png"));
 
     ImageView undoImageView = new ImageView(undoImage);
     undoImageView.setFitWidth(30);
@@ -441,6 +442,10 @@ public class MainGameView extends View{
     ImageView homeImageView = new ImageView(homeImage);
     homeImageView.setFitWidth(30);
     homeImageView.setFitHeight(30);
+
+    ImageView restartImageView = new ImageView(restartImage);
+    restartImageView.setFitWidth(30);
+    restartImageView.setFitHeight(30);
 
     Image soundImage = new Image(getClass().getResourceAsStream("/images/sound.png"));
     soundImageView = new ImageView(soundImage);
@@ -592,11 +597,38 @@ public class MainGameView extends View{
       }
       stackPane.getStylesheets().add("stylesheet.css");
     });
+    Button restartButton = new Button();
+    restartButton.setGraphic(restartImageView);
+    restartButton.setStyle("-fx-background-color: transparent;");
+
+    restartButton.setOnAction(event -> {
+      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+      alert.setTitle("Restart");
+      alert.setHeaderText("Do you want to restart the game?");
+
+      ButtonType cancel = new ButtonType("Cancel");
+      ButtonType restart = new ButtonType("Restart");
+
+      alert.getButtonTypes().setAll(restart, cancel);
+
+      DialogPane dialogPane = alert.getDialogPane();
+      dialogPane.getStylesheets().add("stylesheet.css");
+
+      Optional<ButtonType> result = alert.showAndWait();
+      if (result.isPresent()) {
+        if (result.get() == cancel) {
+          alert.close();
+        } else if (result.get() == restart) {
+          updateUIWithPassage(textFlow,game.begin());
+        }
+      }
+      borderPane.getStylesheets().add("stylesheet.css");
+    });
 
     HBox topRightBox = new HBox();
     topRightBox.setAlignment(Pos.TOP_RIGHT);
     topRightBox.setPadding(new Insets(10, 10, 10, 10));
-    topRightBox.getChildren().addAll(undoButton, homeButton, questionButton, exitButton, stackPane);
+    topRightBox.getChildren().addAll(undoButton, restartButton, homeButton, questionButton, exitButton, stackPane);
 
     VBox goalsVbox = goalsVbox();
 
