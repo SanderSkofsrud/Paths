@@ -130,7 +130,7 @@ public class Story {
   public void removePassage(Link link) {
     List<Passage> passagesWithLinks = passages.values().stream().filter(passage -> !passage.getLinks().isEmpty()).toList();
     if (getPassage(link) == null) {
-      throw new IllegalArgumentException("Can not find passage");
+      throw new NullPointerException("Can not find passage");
     }
     if (!passagesWithLinks.isEmpty()) {
       throw new IllegalArgumentException("Other passages has links to this passage");
