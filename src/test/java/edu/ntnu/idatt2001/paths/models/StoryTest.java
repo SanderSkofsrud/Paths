@@ -169,8 +169,8 @@ public class StoryTest {
      */
     @Test
     @DisplayName("Test that removePassage throws IllegalArgumentException if passage does not exist in Story")
-    void testThatRemovePassageThrowsNullPointerExceptionIfPassageDocentExist(){
-      assertThrows(NullPointerException.class, () ->
+    void testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageDocentExist(){
+      assertThrows(IllegalArgumentException.class, () ->
           story.removePassage(link));
     }
 
