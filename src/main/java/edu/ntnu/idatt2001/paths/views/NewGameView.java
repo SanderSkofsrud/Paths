@@ -121,7 +121,7 @@ public class NewGameView extends View {
     hBoxDifficulty.setPadding(new Insets(10, 10, 10, 10));
 
 
-    Label labelHealth = new Label("");
+    Label labelHealth = new Label();
     TextField textFieldHealth = new TextField();
     textFieldHealth.setPromptText(languageController.getTranslation(Dictionary.ENTER_HEALTH.getKey()));
     HBox hBoxHealth = new HBox();
@@ -131,7 +131,7 @@ public class NewGameView extends View {
     hBoxHealth.setPadding(new Insets(10, 10, 10, 10));
     hBoxHealth.setVisible(false);
 
-    Label labelGold = new Label("");
+    Label labelGold = new Label();
     TextField textFieldGold = new TextField();
     textFieldGold.setPromptText(languageController.getTranslation(Dictionary.ENTER_GOLD.getKey()));
     HBox hBoxGold = new HBox();
@@ -249,6 +249,9 @@ public class NewGameView extends View {
         player = playerController.addDefaultPlayer(textFieldName.getText(), STANDARD);
       }
 
+      String activeCharacter = characterMale.isVisible() ? "m.png" : "f.png";
+      playerController.setActiveCharacter(activeCharacter);
+
       GameData currentGameData = fileHandlerController.getCurrentGameData();
       if (currentGameData == null || currentGameData.getGoals().isEmpty()) {
         screenController.activate("ChooseGoals");
@@ -259,7 +262,7 @@ public class NewGameView extends View {
       resetPane();
 
       Game game = new Game(player, currentGameData.getStory(), currentGameData.getGoals());
-      fileHandlerController.saveGame(player.getName(),game);
+      fileHandlerController.saveGame(game.getStory(), player, game.getGoals(), activeCharacter);
       fileHandlerController.saveGameJson(player.getName(), game);
       gameController.setGame(game);
       screenController.activate("MainGame");
