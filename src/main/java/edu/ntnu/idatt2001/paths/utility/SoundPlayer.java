@@ -38,29 +38,24 @@ public class SoundPlayer {
    *
    * @param filename the filename of the sound file
    */
-  public void playOnLoop(String filename, double volume) {
+  public void playOnLoop(String filename) {
     try (InputStream is = new BufferedInputStream(getClass().getResourceAsStream(filename))) {
       AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(is);
       clip = AudioSystem.getClip();
       clip.open(audioInputStream);
-      setVolume(volume);
+      FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+      gainControl.setValue(-12.5f);
       clip.loop(Clip.LOOP_CONTINUOUSLY);
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
-  public void setVolume(double volume) {
-    if (clip != null) {
-      FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-      float dB = (float) (Math.log(volume) / Math.log(10.0) * 20.0);
-      gainControl.setValue(dB);
-    }
-  }
-
   public void stop() {
     if (clip != null && clip.isRunning()) {
+      clip.flush();
       clip.stop();
     }
   }
+
 }
