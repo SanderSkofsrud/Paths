@@ -45,7 +45,7 @@ public class GoldGoal implements Goal {
    */
   @Override
   public String toString() {
-    return "(GoldGoal)(" + this.minimumGold + ")";
+    return "GoldGoal: " + minimumGold;
   }
 
   public int getMinimumGold() {

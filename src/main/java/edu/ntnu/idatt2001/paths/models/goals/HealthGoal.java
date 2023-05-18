@@ -44,7 +44,7 @@ public class HealthGoal implements Goal {
    */
   @Override
   public String toString() {
-    return "(HealthGoal)(" + this.minimumHealth + ")";
+    return "HealthGoal: " + minimumHealth;
   }
 
   public int getMinimumHealth() {
