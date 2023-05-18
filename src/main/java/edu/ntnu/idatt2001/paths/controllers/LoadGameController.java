@@ -159,7 +159,7 @@ public class LoadGameController {
     if (story != null && player != null && !goals.isEmpty()) {
       Game game = new Game(player, story, goals);
       gameController.setGame(game);
-      screenController.activate("MainGame");
+      //screenController.activate("MainGame");
     } else {
       missingDataBuilder = new StringBuilder("Missing data:");
       if (player == null) {
