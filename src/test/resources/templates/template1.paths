@@ -1,0 +1,96 @@
+Haunted house
+
+::Beginnings
+You are standing in front of a creepy old house, its windows boarded up and the roof caving in. The yard is overgrown with weeds and the paint on the door is peeling. You hesitate for a moment before taking a step towards the door.
+[Try the doorknob](The entrance)[{ScoreAction}(5)]
+
+::The entrance
+You turn the doorknob and push the door open. You step inside and the door slams shut behind you. You find yourself in a small room with one door leading out.
+[Try open the door](The hallway)
+
+::The hallway
+You open the door and step into a long, dimly lit hallway. The air is musty and the walls are covered in cobwebs. As you make your way down the hallway, you see several doors lining the walls.
+[Open one of the doors](The bedroom)[{ScoreAction}(5)]
+[Keep walking down the hallway](The staircase)
+
+::The bedroom
+You push open the door and enter a small bedroom. The furniture is old and dusty, and there is a four-poster bed in the center of the room. You notice a book sitting on the nightstand next to the bed.
+[Open the book](The book of spells)[{GoldAction}(10)]
+[Leave the room](The hallway)
+
+::The book of spells
+You open the book and read the spells. Some of them seem harmless, but others make your blood run cold. You hear a creaking noise and quickly close the book.
+[Go back](The bedroom)
+[Cast the spell](The spell)[{GoldAction}(10){ScoreAction}(10)]
+
+::The spell
+You recite the incantation and suddenly the room begins to shake. The bed levitates off the ground and the doors slam shut. You hear a ghostly voice whisper in your ear.
+[Listen to the voice](The message)[{ScoreAction}(-10)]
+
+::The message
+The voice speaks to you in a language you don't understand. Suddenly, the room goes silent and everything returns to normal.
+[Leave the room](The hallway)
+
+::The staircase
+You continue down the hallway until you reach a staircase leading up. You hear strange noises coming from upstairs.
+[Go up the staircase](The attic)[{ScoreAction}(-5)]
+[Go back](The hallway)
+
+::The attic
+You climb up the staircase and find yourself in a dark, dusty attic. You hear footsteps and whispers coming from the shadows.
+[Investigate the noise](The ghost)[{ScoreAction}(-10)]
+[Leave the attic](The hallway)
+
+::The ghost
+You walk towards the source of the noise and suddenly a ghostly figure appears in front of you. It reaches out its hand and you feel a cold chill run down your spine.
+[Take the ghost's hand](The vision)[{ScoreAction}(-10)]
+[Run away](The hallway)
+
+::The vision
+You suddenly find yourself transported to a different time and place. You see a vision of a young girl running through the woods, chased by a group of angry villagers. The vision fades away and you are back in the attic.
+[Leave the attic](The hallway)
+
+::The dining room
+You enter a large dining room with a long table and chairs. The table is set with rotting food and there is a strange odor in the air.
+[Investigate the food](The poisoning)[{ScoreAction}(-5)]
+[Leave the room](The hallway)
+
+::The poisoning
+You investigate the food and realize it has been poisoned. You begin to feel dizzy and your vision blurs.
+[Drink the wine](The antidote)[{ScoreAction}(-10)]
+
+::The antidote
+You see a bottle of wine on the table and quickly drink it, hoping it will counteract the poison. You start to feel better and the room stops spinning.
+[Leave the room](The hallway)
+
+::The library
+You open the next door and find yourself in a large library. The shelves are filled with dusty old books and there is a fireplace burning in the corner of the room.
+[Investigate the books](The journal)[{ScoreAction}(-5)]
+[Go back](The hallway)
+
+::The journal
+You pull a book off the shelf and open it. Inside, you find a journal written by the former owner of the house. As you read, you discover the tragic history of the family who once lived here.
+[Keep reading](The curse)[{ScoreAction}(-10)]
+[Leave the library](The hallway)
+
+::The curse
+You read about a curse that was placed on the family and how it caused them to suffer for generations. As you read, you hear a strange noise coming from outside the room.
+[Investigate the noise](The curse's manifestation)[{ScoreAction}(-10)]
+[Leave the room](The hallway)
+
+::The curse's manifestation
+You walk towards the source of the noise and suddenly a ghostly figure appears. It is the manifestation of the curse that has haunted the family for generations. You feel a sense of dread wash over you as it approaches.
+[Confront the curse](The resolution)[{ScoreAction}(-10)]
+[Run away](The hallway)]
+
+::The hallway
+You ded son
+[Go back](The entrance)
+
+::The resolution
+You confront the curse and recite a spell from the book of spells. The curse suddenly dissipates and the ghostly figure disappears. You feel a sense of relief wash over you.
+[Leave the house](The end)]
+
+::The end
+You make your way back to the entrance and open the door. You step outside into the sunlight and breathe a sigh of relief. You turn to look back at the old house, wondering if anyone else will ever experience the terrors that you have just faced.
+
