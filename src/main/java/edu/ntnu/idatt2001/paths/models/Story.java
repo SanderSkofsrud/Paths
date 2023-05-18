@@ -127,7 +127,7 @@ public class Story {
    * @param link The link to the passage.
    * @throws IllegalArgumentException if link is null or if other passages has links to this passage.
    */
-  public void removePassage(Link link) {
+  public void removePassage(Link link) throws IllegalArgumentException {
     List<Passage> passagesWithLinks = passages.values().stream().filter(passage -> !passage.getLinks().isEmpty()).toList();
     if (getPassage(link) == null) {
       throw new IllegalArgumentException("Can not find passage");
