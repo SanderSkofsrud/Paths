@@ -377,7 +377,6 @@ public class MainGameView extends View{
               }
             }
           }
-
           if (player.getScore() <= 0) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("score");
@@ -401,17 +400,17 @@ public class MainGameView extends View{
             }
           }
         }
-
         if (game.getStory().getBrokenLinks().contains(link)) {
           Alert alert = new Alert(Alert.AlertType.INFORMATION);
           alert.setTitle("Broken Link");
           alert.setHeaderText("You have selected a passage with a broken link");
-
           DialogPane dialogPane = alert.getDialogPane();
           dialogPane.getStylesheets().add("stylesheet.css");
           alert.showAndWait();
+          alert.close();
+          button.setDisable(true);
           borderPane.getStylesheets().add("stylesheet.css");
-        }
+        } else {
         Passage nextPassage = game.go(link);
         undoButton.setDisable(false);
         timeline.stop();
@@ -424,6 +423,7 @@ public class MainGameView extends View{
             screenController.activate("Minigame");
           }
         }
+      }
         updatePlayerInfo();
       });
 
