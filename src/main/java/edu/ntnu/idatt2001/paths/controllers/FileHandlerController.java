@@ -2,13 +2,17 @@ package edu.ntnu.idatt2001.paths.controllers;
 
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Story;
+import edu.ntnu.idatt2001.paths.models.goals.Goal;
+import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.GameData;
 import edu.ntnu.idatt2001.paths.utility.json.JsonReader;
 import edu.ntnu.idatt2001.paths.utility.json.JsonWriter;
 import edu.ntnu.idatt2001.paths.utility.paths.PathsReader;
 import edu.ntnu.idatt2001.paths.utility.paths.PathsWriter;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 
 /**
  * The type File handler controller.
@@ -29,6 +33,10 @@ public class FileHandlerController {
    * The Path to the paths folder.
    */
   String path = "src/main/resources/paths/";
+  /**
+   * The Path to the templates folder.
+   */
+  String templatesPath = "src/main/resources/templates/";
   /**
    * The Json path to the json folder.
    */
@@ -55,28 +63,22 @@ public class FileHandlerController {
     return instance;
   }
 
-  /**
-   * A method to save a game to a paths file.
-   * It takes in a name and a story, and saves the story to a file with the name.
-   * Save the story to a file with the name.
-   *
-   * @param name  the name of the player, and the name of the file
-   * @param story the story to be saved
-   */
-  public void saveGame(String name, Story story) {
-    PathsWriter.saveGame(story, path + name + ".paths");
+  public Story loadTemplate(String name) throws FileNotFoundException {
+     return PathsReader.loadStory(templatesPath + name);
   }
 
   /**
    * A method to save a game to a paths file.
-   * It takes in a name and a game, and saves the game to a file with the name.
-   * Save the game to a file with the name.
+   * It takes in a name, a story, player, goals, and image, and saves them to a file with the name.
    *
-   * @param name the name of the player, and the name of the file
-   * @param game the game to be saved
+   * @param story  the story to be saved
+   * @param player the player to be saved
+   * @param goals  the goals to be saved
+   * @param image  the chosen image file name
    */
-  public void saveGame(String name, Game game) {
-    PathsWriter.saveGame(game, path + name + ".paths");
+  public void saveGame(Story story, Player player, List<Goal> goals, String image) {
+    String directory = path + player.getName();
+    PathsWriter.saveGame(story, player, goals, directory, image);
   }
 
   /**
@@ -88,7 +90,18 @@ public class FileHandlerController {
    * @throws FileNotFoundException the file not found exception
    */
   public GameData loadGame(String name) throws FileNotFoundException {
-    currentGameData = PathsReader.loadGame(path + name);
+    try {
+      currentGameData = PathsReader.loadGame(path + name);
+    } catch (FileNotFoundException e) {
+      String directory = null;
+      try {
+        directory = name.substring(0, name.lastIndexOf("."));
+        currentGameData = PathsReader.loadGame(path + directory + "/" + name);
+      } catch (FileNotFoundException ex) {
+        System.out.println(path + directory + "/" + name);
+        throw new FileNotFoundException(ex.getMessage());
+      }
+    }
     return currentGameData;
   }
 
