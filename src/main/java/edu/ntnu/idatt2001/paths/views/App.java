@@ -101,7 +101,7 @@
       screenController.addScreen("MainGame", mainGameView);
       screenController.addScreen("LoadGame", loadGameView);
       screenController.addScreen("Minigame", minigameView);
-      screenController.addScreen("FinalPassage", finalPassageView);
+      screenController.addScreen("FinalPassageView", finalPassageView);
 
       primaryStage.setTitle("Paths");
       primaryStage.setWidth(1000);
