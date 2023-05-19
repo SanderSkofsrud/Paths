@@ -4,11 +4,9 @@ import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.models.player.Player;
-import edu.ntnu.idatt2001.paths.utility.GameData;
 import edu.ntnu.idatt2001.paths.utility.json.JsonReader;
 import edu.ntnu.idatt2001.paths.utility.json.JsonWriter;
 import edu.ntnu.idatt2001.paths.utility.paths.PathsReader;
-import edu.ntnu.idatt2001.paths.utility.paths.PathsWriter;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,10 +40,6 @@ public class FileHandlerController {
    */
   String jsonPath = "src/main/resources/json/";
   /**
-   * The Current game data.
-   */
-  private GameData currentGameData;
-  /**
    * The Current game.
    */
   private FileHandlerController() {
@@ -65,44 +59,6 @@ public class FileHandlerController {
 
   public Story loadTemplate(String name) throws FileNotFoundException {
      return PathsReader.loadStory(templatesPath + name);
-  }
-
-  /**
-   * A method to save a game to a paths file.
-   * It takes in a name, a story, player, goals, and image, and saves them to a file with the name.
-   *
-   * @param story  the story to be saved
-   * @param player the player to be saved
-   * @param goals  the goals to be saved
-   * @param image  the chosen image file name
-   */
-  public void saveGame(Story story, Player player, List<Goal> goals, String image) {
-    String directory = path + player.getName();
-    PathsWriter.saveGame(story, player, goals, directory, image);
-  }
-
-  /**
-   * A method to load a game from a paths file.
-   * It takes in a name, and loads the game from a file with the name.
-   *
-   * @param name the name of the file to be loaded
-   * @return the game data
-   * @throws FileNotFoundException the file not found exception
-   */
-  public GameData loadGame(String name) throws FileNotFoundException {
-    try {
-      currentGameData = PathsReader.loadGame(path + name);
-    } catch (FileNotFoundException e) {
-      String directory = null;
-      try {
-        directory = name.substring(0, name.lastIndexOf("."));
-        currentGameData = PathsReader.loadGame(path + directory + "/" + name);
-      } catch (FileNotFoundException ex) {
-        System.out.println(path + directory + "/" + name);
-        throw new FileNotFoundException(ex.getMessage());
-      }
-    }
-    return currentGameData;
   }
 
   /**
@@ -126,25 +82,5 @@ public class FileHandlerController {
    */
   public Game loadGameJson(String name) throws FileNotFoundException {
     return JsonReader.loadGameJSON(jsonPath + name);
-  }
-
-  /**
-   * Returns the current game data.
-   * This is the data of the game that is currently being played.
-   *
-   * @return the current game data
-   */
-  public GameData getCurrentGameData() {
-    return currentGameData;
-  }
-
-  /**
-   * Sets the current game data.
-   * This is the data of the game that is currently being played.
-   *
-   * @param currentGameData the current game data
-   */
-  public void setCurrentGame(GameData currentGameData) {
-    this.currentGameData = currentGameData;
   }
 }

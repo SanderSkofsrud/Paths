@@ -5,7 +5,6 @@ import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.utility.FileEntry;
-import edu.ntnu.idatt2001.paths.utility.GameData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -127,7 +126,7 @@ public class LoadGameController {
    */
   public void addSavedGame(String fileName, String fileType, File selectedFile) throws IOException {
     // Get the path to the appropriate resources directory based on the fileType
-    Path resourcesPath = Paths.get("src/main/resources/" + fileType);
+    Path resourcesPath = Paths.get("src/main/resources/templates");
 
     // Create the resources directory if it doesn't exist
     if (!Files.exists(resourcesPath)) {
@@ -138,42 +137,6 @@ public class LoadGameController {
     Path sourcePath = selectedFile.toPath();
     Path destPath = resourcesPath.resolve(fileName);
     Files.copy(sourcePath, destPath, StandardCopyOption.REPLACE_EXISTING);
-  }
-
-  /**
-   * Handle game data string.
-   * It takes in game data, a game controller, and a screen controller.
-   * It checks if the game data is valid, and returns a string with the missing data if it is not.
-   *
-   * @param gameData         the game data to be checked
-   * @param gameController   the game controller to be set
-   * @param screenController the screen controller to be set
-   * @return the string with the missing data
-   */
-  public String handleGameData(GameData gameData, GameController gameController, ScreenController screenController) {
-    Story story = gameData.getStory();
-    Player player = gameData.getPlayer();
-    List<Goal> goals = gameData.getGoals();
-    StringBuilder missingDataBuilder = null;
-
-    if (story != null && player != null && !goals.isEmpty()) {
-      Game game = new Game(player, story, goals);
-      gameController.setGame(game);
-      //screenController.activate("MainGame");
-    } else {
-      missingDataBuilder = new StringBuilder("Missing data:");
-      if (player == null) {
-        missingDataBuilder.append(" Player");
-      }
-      if (goals.isEmpty()) {
-        if (player == null) {
-          missingDataBuilder.append(",");
-        }
-        missingDataBuilder.append(" Goals");
-      }
-    }
-
-    return missingDataBuilder != null ? missingDataBuilder.toString() : "";
   }
 
   /**
