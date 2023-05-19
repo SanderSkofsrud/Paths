@@ -20,6 +20,7 @@ public class Game {
   private Player player;
   private Story story;
   private List<Goal> goals;
+  private Passage currentPassage;
 
   /**
    * Constructor for Game.
@@ -30,7 +31,7 @@ public class Game {
    * @param goals The goals of the game - the achievements that the player must fulfill to win
    * @throws NullPointerException if player, story or goals is null.
    */
-  public Game(Player player, Story story, List<Goal> goals) throws NullPointerException {
+  public Game(Player player, Story story, List<Goal> goals, Passage currentPassage) throws NullPointerException {
     Objects.requireNonNull(player, "The player can´t be null");
     Objects.requireNonNull(story, "The story can´t be null");
     Objects.requireNonNull(goals, "The goals can´t be null");
@@ -45,6 +46,7 @@ public class Game {
     this.player = player;
     this.story = story;
     this.goals = goals;
+    this.currentPassage = currentPassage;
   }
 
   /**
@@ -58,6 +60,7 @@ public class Game {
     this.player = game.player;
     this.story = game.story;
     this.goals = game.goals;
+    this.currentPassage = game.currentPassage;
   }
 
   /**
@@ -88,6 +91,15 @@ public class Game {
   public List<Goal> getGoals() {
     return goals;
   }
+
+  public Passage getCurrentPassage() {
+    return currentPassage;
+  }
+
+  public void setCurrentPassage(Passage currentPassage) {
+    this.currentPassage = currentPassage;
+  }
+
 
   /**
    * Starts the game and returns the opening passage of the story.
