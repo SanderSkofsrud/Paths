@@ -261,18 +261,19 @@ public class NewGameView extends View {
         return;
       }
 
-      if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
-        player = playerController.addCustomPlayer(textFieldName.getText(), Integer.parseInt(textFieldHealth.getText()), Integer.parseInt(textFieldGold.getText()));
-      }  else if (toggleGroupDifficulty.getSelectedToggle().equals(easy)) {
-        player = playerController.addDefaultPlayer(textFieldName.getText(), EASY);
-      } else if (toggleGroupDifficulty.getSelectedToggle().equals(hard)) {
-        player = playerController.addDefaultPlayer(textFieldName.getText(),HARD);
-      } else {
-        player = playerController.addDefaultPlayer(textFieldName.getText(), STANDARD);
-      }
-
       String activeCharacter = characterMale.isVisible() ? "m.png" : "f.png";
       playerController.setActiveCharacter(activeCharacter);
+
+      if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
+        player = playerController.addCustomPlayer(textFieldName.getText(), Integer.parseInt(textFieldHealth.getText()), Integer.parseInt(textFieldGold.getText()), activeCharacter);
+      }  else if (toggleGroupDifficulty.getSelectedToggle().equals(easy)) {
+        player = playerController.addDefaultPlayer(textFieldName.getText(), EASY, activeCharacter);
+      } else if (toggleGroupDifficulty.getSelectedToggle().equals(hard)) {
+        player = playerController.addDefaultPlayer(textFieldName.getText(),HARD, activeCharacter);
+      } else {
+        player = playerController.addDefaultPlayer(textFieldName.getText(), STANDARD, activeCharacter);
+      }
+
       screenController.activate("ChooseGoals");
       resetPane();
     });

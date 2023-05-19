@@ -61,12 +61,13 @@ public class PlayerController {
    * @param difficulty the difficulty of the game
    * @return the player that is created
    */
-  public Player addDefaultPlayer(String name, Difficulty difficulty) {
+  public Player addDefaultPlayer(String name, Difficulty difficulty, String activeCharacter) {
     inventory.addAll(difficulty.getStartingInventory());
     player = new PlayerBuilder(name)
             .health(difficulty.getHealth())
             .gold(difficulty.getGold())
             .inventory(inventory)
+            .characterModel(activeCharacter)
             .build();
     return player;
   }
@@ -80,11 +81,12 @@ public class PlayerController {
    * @param gold   the gold of the player
    * @return the player that is created
    */
-  public Player addCustomPlayer(String name, int health, int gold) {
+  public Player addCustomPlayer(String name, int health, int gold, String activeCharacter) {
     player = new PlayerBuilder(name)
             .health(health)
             .gold(gold)
             .inventory(inventory)
+            .characterModel(activeCharacter)
             .build();
     return player;
   }

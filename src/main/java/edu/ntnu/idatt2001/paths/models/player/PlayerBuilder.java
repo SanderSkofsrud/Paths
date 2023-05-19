@@ -40,6 +40,7 @@ public class PlayerBuilder {
    * Inventory can be empty
    */
   List<String> inventory = new ArrayList<>();
+    String characterModel = "m.png";
 
   /**
    * Constructor for Builder.
@@ -110,6 +111,11 @@ public class PlayerBuilder {
   public PlayerBuilder inventory(List<String> inventory) {
     (this.inventory = new ArrayList<>()).addAll
             (inventory.stream().map(String::trim).map(String::toLowerCase).toList());
+    return this;
+  }
+
+  public PlayerBuilder characterModel(String characterModel) {
+    this.characterModel = characterModel;
     return this;
   }
 
