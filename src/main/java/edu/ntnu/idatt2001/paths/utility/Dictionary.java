@@ -94,6 +94,10 @@ public enum Dictionary {
 
   LINK_BROKEN("You have selected a passage with a broken link"),
 
+  SELECT_TEMPLATE("Select template"),
+
+  START("Start"),
+
   ;
   private final String key;
 

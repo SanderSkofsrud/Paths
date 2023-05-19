@@ -20,6 +20,7 @@ import javafx.scene.layout.*;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
 import static edu.ntnu.idatt2001.paths.models.goals.GoalFactory.createGoal;
@@ -49,6 +50,12 @@ public class ChooseGoalsView extends View {
    * The screenController is used to switch between the different views of the GUI.
    */
   private final ScreenController screenController;
+
+  /**
+   * The ChooseGame controller.
+   * The ChooseGameController is used to fetch all templates of the game.
+   */
+  private final ChooseGoalsController chooseGoalsController = ChooseGoalsController.getInstance();
   /**
    * The Goals.
    * The goals is a list of the goals of the game.
@@ -133,7 +140,15 @@ public class ChooseGoalsView extends View {
     CheckBox checkBox5 = new CheckBox(languageController.getTranslation(Dictionary.GOAL_5_1.getKey()) + "\n" + Dictionary.GOAL_5_2.getKey());
     CheckBox checkBox6 = new CheckBox(languageController.getTranslation(Dictionary.GOAL_6_1.getKey()) + "\n" + Dictionary.GOAL_6_2.getKey());
 
-    predefinedGoals.getChildren().addAll(standardGoals, checkBox1, checkBox2, checkBox3, checkBox4, impossibleGoals, checkBox5, checkBox6);
+    ComboBox <String> templates = new ComboBox();
+    Set<String> templateNames = chooseGoalsController.fetchTemplates("paths");
+    for (String templateName : templateNames) {
+      templates.getItems().add(templateName);
+    }
+    templates.setPromptText(languageController.getTranslation(Dictionary.SELECT_TEMPLATE.getKey()));
+
+
+    predefinedGoals.getChildren().addAll(standardGoals, checkBox1, checkBox2, checkBox3, checkBox4, impossibleGoals, checkBox5, checkBox6, templates);
 
     VBox customGoals = new VBox();
     customGoals.setSpacing(10);
@@ -158,6 +173,7 @@ public class ChooseGoalsView extends View {
         textField.setDisable(true);
       }
     });
+
     Button button = new Button(languageController.getTranslation(Dictionary.ADD_GOAL.getKey()));
     button.setId("subMenuButton");
     button.setOnAction(e -> {
@@ -184,7 +200,7 @@ public class ChooseGoalsView extends View {
             Goal goal = GoalFactory.createInventoryGoal(itemList.toArray(new String[0]));
             goals.add(goal);
           } else {
-            System.out.println("Error: " + ex.getMessage());
+            System.out.println("Error: " + ex.getMessage()); //TODO: Remove sout
           }
         }
       }
@@ -226,29 +242,36 @@ public class ChooseGoalsView extends View {
 
     customGoals.getChildren().addAll(customGoalsLabel, comboBox, textField, button, tableView);
 
-    Button startButton = new Button(languageController.translate("Start"));
+    Button startButton = new Button(languageController.getTranslation(Dictionary.START.getKey()));
     startButton.setId("subMenuButton");
     startButton.setOnAction(e -> {
       for (int i = 1; i < 7; i++) {
         if (i == 1 && checkBox1.isSelected()) {
-          goals.add(createGoal(GOLD, 100));
+          goals.add(createGoal(GOLD, 200));
         } else if (i == 2 && checkBox2.isSelected()) {
-          goals.add(createGoal(HEALTH, 1000));
-        } else if (i == 3 && checkBox3.isSelected()) {
-          goals.add(createInventoryGoal("Sword", "Shield", "Potion"));
-        } else if (i == 4 && checkBox4.isSelected()) {
           goals.add(createGoal(SCORE, 100));
+        } else if (i == 3 && checkBox3.isSelected()) {
+          goals.add(createGoal(HEALTH,50));
+        } else if (i == 4 && checkBox4.isSelected()) {
+          goals.add(createInventoryGoal("Sword"));
         } else if (i == 5 && checkBox5.isSelected()) {
-          goals.add(createGoal(GOLD, 1000));
+          goals.add(createGoal(GOLD, 200));
+          goals.add(createGoal(SCORE, 100));
+          goals.add(createGoal(HEALTH, 50));
+          goals.add(createInventoryGoal("Sword"));
         } else if (i == 6 && checkBox6.isSelected()) {
-          goals.add(createGoal(HEALTH, 1000));
+          goals.add(createGoal(HEALTH, 100));
+          goals.add(createGoal(SCORE, 200));
+          goals.add(createGoal(GOLD, 250));
+          goals.add(createInventoryGoal("Sword", "Potion", "Shield"));
         }
       }
 
-      if (!goals.isEmpty()) {
+      if (!goals.isEmpty() && templates.getValue() != null) {
         Game game;
           try {
-            Story story = fileHandlerController.loadTemplate("template2.paths");
+            String selectedTemplate = templates.getValue();
+            Story story = fileHandlerController.loadTemplate(selectedTemplate);
             game = new Game(playerController.getPlayer(), story, goals, story.getOpeningPassage());
           } catch (FileNotFoundException ex) {
             throw new RuntimeException(ex);
