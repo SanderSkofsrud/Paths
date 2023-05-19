@@ -255,6 +255,7 @@ public class NewGameView extends View {
       GameData currentGameData = fileHandlerController.getCurrentGameData();
       if (currentGameData == null || currentGameData.getGoals().isEmpty()) {
         screenController.activate("ChooseGoals");
+        resetPane();
         return;
       }
 

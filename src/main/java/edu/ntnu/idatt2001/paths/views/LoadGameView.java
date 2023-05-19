@@ -163,6 +163,7 @@ public class LoadGameView extends View{
               showAlertWindow(missingData);
             } else {
               screenController.activate("MainGame");
+              resetPane();
             }
           } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -299,6 +300,7 @@ public class LoadGameView extends View{
             throw new RuntimeException(e);
           }
           screenController.activate("MainGame");
+          resetPane();
         });
       }
 
@@ -323,6 +325,7 @@ public class LoadGameView extends View{
     backButton.setGraphic(backImage);
     backButton.setPadding(new Insets(10, 10, 10, 10));
     backButton.setOnAction(e -> screenController.activate("MainMenu"));
+    resetPane();
 
     // Add both tables to the stack pane
     HBox hBox = new HBox();
@@ -406,8 +409,10 @@ public class LoadGameView extends View{
     alert.showAndWait().ifPresent(response -> {
       if (response == buttonTypeContinue && missingData.equals("Missing data: Player, Goals") || missingData.equals("Missing data: Player")) {
         screenController.activate("NewGame");
+        resetPane();
       } else if (response == buttonTypeContinue && missingData.equals("Missing data: Goals")) {
         screenController.activate("ChooseGoals");
+        resetPane();
       } else {
         alert.close();
       }

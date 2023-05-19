@@ -383,8 +383,8 @@ public class MainGameView extends View{
             alert.showAndWait();
             borderPane.getStylesheets().add("stylesheet.css");
             gameController.resetGame();
-            resetPane();
             screenController.activate("MainMenu");
+            resetPane();
           }
 
           if (player.getGold() <= 0) {
@@ -653,12 +653,12 @@ public class MainGameView extends View{
           FileHandlerController.getInstance().saveGame(story, player, goals, "m.png");
           FileHandlerController.getInstance().saveGameJson(player.getName(),game);
           gameController.resetGame(); // Add this line
-          resetPane();
           screenController.activate("MainMenu");
+          resetPane();
         } else if (result.get() == goHomeWithoutSaving) {
           gameController.resetGame(); // Add this line
-          resetPane();
           screenController.activate("MainMenu");
+          resetPane();
         }
       }
       stackPane.getStylesheets().add("stylesheet.css");

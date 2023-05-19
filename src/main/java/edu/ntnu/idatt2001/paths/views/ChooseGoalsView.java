@@ -260,6 +260,7 @@ public class ChooseGoalsView extends View {
         gameController.setGame(game);
 
         screenController.activate("MainGame");
+        resetPane();
       } else {
         //TODO Show an error message stating that at least one goal must be selected
       }
