@@ -15,7 +15,7 @@ public enum Difficulty {
   /**
    * The Easy difficulty.
    */
-  EASY(250, 250, new ArrayList<>(List.of(Item.SWORD.toString(), Item.SHIELD.toString()))),
+  EASY(150, 150, new ArrayList<>(List.of(Item.SWORD.toString(), Item.SHIELD.toString()))),
   /**
    * The Standard difficulty.
    */
