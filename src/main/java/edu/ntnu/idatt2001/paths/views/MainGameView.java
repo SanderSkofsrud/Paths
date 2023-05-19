@@ -373,46 +373,29 @@ public class MainGameView extends View{
             action.execute(player);
           }
         } catch (Exception e) {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
           if (!player.isAlive()) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
             alert.setHeaderText(languageController.getTranslation(Dictionary.DIE.getKey()));
-
-            DialogPane dialogPane = alert.getDialogPane();
-            dialogPane.getStylesheets().add("stylesheet.css");
-            alert.showAndWait();
-            screenController.activate("FinalPassage");
-            resetPane();
           }
-
-          if (player.getGold() <= 0) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
-            alert.setHeaderText(languageController.getTranslation(Dictionary.EMPTY_GOLD.getKey()));
-
-            DialogPane dialogPane = alert.getDialogPane();
-            dialogPane.getStylesheets().add("stylesheet.css");
-            alert.showAndWait();
-            screenController.activate("FinalPassage");
-            resetPane();
-          }
-
           if (player.getScore() <= 0) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
             alert.setHeaderText(languageController.getTranslation(Dictionary.EMPTY_SCORE.getKey()));
-
-            DialogPane dialogPane = alert.getDialogPane();
-            dialogPane.getStylesheets().add("stylesheet.css");
-            alert.showAndWait();
-            screenController.activate("FinalPassage");
-            resetPane();
           }
+          if (player.getGold() <= 0) {
+            alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
+            alert.setHeaderText(languageController.getTranslation(Dictionary.EMPTY_GOLD.getKey()));
+          }
+          DialogPane dialogPane = alert.getDialogPane();
+          dialogPane.getStylesheets().add("stylesheet.css");
+          alert.showAndWait();
+          screenController.activate("FinalPassageView");
+          resetPane();
         }
         if (game.getStory().getBrokenLinks().contains(link)) {
           Alert alert = new Alert(Alert.AlertType.INFORMATION);
           alert.setTitle(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()));
-          alert.setHeaderText("You have selected a passage with a broken link");
+          alert.setHeaderText(languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
           DialogPane dialogPane = alert.getDialogPane();
           dialogPane.getStylesheets().add("stylesheet.css");
           alert.showAndWait();
