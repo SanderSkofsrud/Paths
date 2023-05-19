@@ -6,8 +6,6 @@
   import edu.ntnu.idatt2001.paths.utility.Language;
   import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
   import javafx.application.Application;
-  import javafx.beans.value.ChangeListener;
-  import javafx.beans.value.ObservableValue;
   import javafx.collections.FXCollections;
   import javafx.concurrent.Task;
   import javafx.geometry.Insets;
@@ -64,6 +62,7 @@
      * The minigameView is the view of the GUI where the player can play the minigame.
      */
     private MinigameView minigameView = new MinigameView(screenController);
+    private FinalPassageView finalPassageView = new FinalPassageView(screenController);
     private LanguageController languageController = LanguageController.getInstance();
     private ComboBox<Language> languageComboBox = new ComboBox<>(FXCollections.observableArrayList(Language.values()));
     /**
@@ -102,6 +101,7 @@
       screenController.addScreen("MainGame", mainGameView);
       screenController.addScreen("LoadGame", loadGameView);
       screenController.addScreen("Minigame", minigameView);
+      screenController.addScreen("FinalPassage", finalPassageView);
 
       primaryStage.setTitle("Paths");
       primaryStage.setWidth(1000);
