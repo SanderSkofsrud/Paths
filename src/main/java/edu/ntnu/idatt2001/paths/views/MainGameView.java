@@ -381,55 +381,32 @@ public class MainGameView extends View{
             DialogPane dialogPane = alert.getDialogPane();
             dialogPane.getStylesheets().add("stylesheet.css");
             alert.showAndWait();
-            borderPane.getStylesheets().add("stylesheet.css");
-            gameController.resetGame();
-            screenController.activate("MainMenu");
+            screenController.activate("FinalPassage");
             resetPane();
           }
 
           if (player.getGold() <= 0) {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("gold");
-            alert.setHeaderText("gold");
-
-            ButtonType option1 = new ButtonType("option1");
-            ButtonType option2 = new ButtonType("option2");
-
-            alert.getButtonTypes().setAll(option1,option2);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Game over");
+            alert.setHeaderText("You ran out of gold");
 
             DialogPane dialogPane = alert.getDialogPane();
             dialogPane.getStylesheets().add("stylesheet.css");
-
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.isPresent()) {
-              if (result.get() == option1) {
-                alert.close();
-              } else if (result.get() == option2) {
-                alert.close();
-              }
-            }
+            alert.showAndWait();
+            screenController.activate("FinalPassage");
+            resetPane();
           }
+
           if (player.getScore() <= 0) {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("score");
-            alert.setHeaderText("score");
-
-            ButtonType option1 = new ButtonType("option1");
-            ButtonType option2 = new ButtonType("option2");
-
-            alert.getButtonTypes().setAll(option1,option2);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Game over");
+            alert.setHeaderText("Your score got too low");
 
             DialogPane dialogPane = alert.getDialogPane();
             dialogPane.getStylesheets().add("stylesheet.css");
-
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.isPresent()) {
-              if (result.get() == option1) {
-                alert.close();
-              } else if (result.get() == option2) {
-                alert.close();
-              }
-            }
+            alert.showAndWait();
+            screenController.activate("FinalPassage");
+            resetPane();
           }
         }
         if (game.getStory().getBrokenLinks().contains(link)) {
