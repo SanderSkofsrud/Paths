@@ -373,69 +373,29 @@ public class MainGameView extends View{
             action.execute(player);
           }
         } catch (Exception e) {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
           if (!player.isAlive()) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Game over");
-            alert.setHeaderText("You have died");
-
-            DialogPane dialogPane = alert.getDialogPane();
-            dialogPane.getStylesheets().add("stylesheet.css");
-            alert.showAndWait();
-            borderPane.getStylesheets().add("stylesheet.css");
-            gameController.resetGame();
-            resetPane();
-            screenController.activate("MainMenu");
-          }
-
-          if (player.getGold() <= 0) {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("gold");
-            alert.setHeaderText("gold");
-
-            ButtonType option1 = new ButtonType("option1");
-            ButtonType option2 = new ButtonType("option2");
-
-            alert.getButtonTypes().setAll(option1,option2);
-
-            DialogPane dialogPane = alert.getDialogPane();
-            dialogPane.getStylesheets().add("stylesheet.css");
-
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.isPresent()) {
-              if (result.get() == option1) {
-                alert.close();
-              } else if (result.get() == option2) {
-                alert.close();
-              }
-            }
+            alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
+            alert.setHeaderText(languageController.getTranslation(Dictionary.DIE.getKey()));
           }
           if (player.getScore() <= 0) {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("score");
-            alert.setHeaderText("score");
-
-            ButtonType option1 = new ButtonType("option1");
-            ButtonType option2 = new ButtonType("option2");
-
-            alert.getButtonTypes().setAll(option1,option2);
-
-            DialogPane dialogPane = alert.getDialogPane();
-            dialogPane.getStylesheets().add("stylesheet.css");
-
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.isPresent()) {
-              if (result.get() == option1) {
-                alert.close();
-              } else if (result.get() == option2) {
-                alert.close();
-              }
-            }
+            alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
+            alert.setHeaderText(languageController.getTranslation(Dictionary.EMPTY_SCORE.getKey()));
           }
+          if (player.getGold() <= 0) {
+            alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
+            alert.setHeaderText(languageController.getTranslation(Dictionary.EMPTY_GOLD.getKey()));
+          }
+          DialogPane dialogPane = alert.getDialogPane();
+          dialogPane.getStylesheets().add("stylesheet.css");
+          alert.showAndWait();
+          screenController.activate("FinalPassageView");
+          resetPane();
         }
         if (game.getStory().getBrokenLinks().contains(link)) {
           Alert alert = new Alert(Alert.AlertType.INFORMATION);
-          alert.setTitle("Broken Link");
-          alert.setHeaderText("You have selected a passage with a broken link");
+          alert.setTitle(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()));
+          alert.setHeaderText(languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
           DialogPane dialogPane = alert.getDialogPane();
           dialogPane.getStylesheets().add("stylesheet.css");
           alert.showAndWait();
@@ -456,7 +416,7 @@ public class MainGameView extends View{
             screenController.activate("Minigame");
           }
         }
-      }
+        }
         updatePlayerInfo();
       });
 
@@ -465,7 +425,6 @@ public class MainGameView extends View{
     }
 
     updatePlayerInfo();
-    System.out.println(player);
     textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
     timeline.play();
     return new Pair<>(timeline, currentPassage);
@@ -653,12 +612,12 @@ public class MainGameView extends View{
           FileHandlerController.getInstance().saveGame(story, player, goals, "m.png");
           FileHandlerController.getInstance().saveGameJson(player.getName(),game);
           gameController.resetGame(); // Add this line
-          resetPane();
           screenController.activate("MainMenu");
+          resetPane();
         } else if (result.get() == goHomeWithoutSaving) {
           gameController.resetGame(); // Add this line
-          resetPane();
           screenController.activate("MainMenu");
+          resetPane();
         }
       }
       stackPane.getStylesheets().add("stylesheet.css");
@@ -728,15 +687,12 @@ public class MainGameView extends View{
     goalsVbox.setSpacing(10);
     goalsVbox.setAlignment(Pos.TOP_CENTER);
 
-    Label goalsLabel = new Label(languageController.translate("Goals"));
-    goalsLabel.setFont(Font.font("Arial", FontWeight.BOLD, 20));
-
+    Label goalsLabel = new Label(languageController.translate("Goals:"));
     goalsVbox.getChildren().add(goalsLabel);
 
     for (Goal goal : game.getGoals()) {
       HBox goalHbox = new HBox();
       Label goalLabel = new Label(goal.toString());
-      goalLabel.setFont(Font.font("Arial", FontWeight.BOLD, 15));
       ProgressBar goalProgressBar = new ProgressBar();
       goalProgressBar.setProgress(0);
       double progress = 0.0;

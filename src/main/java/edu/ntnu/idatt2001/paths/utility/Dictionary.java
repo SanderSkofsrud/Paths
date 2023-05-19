@@ -15,9 +15,11 @@ public enum Dictionary {
   SELECT_HEALTH("Select health (Normal difficulty = 100)"),
   SELECT_GOLD("Select gold (Normal difficulty = 100)"),
   HEALTH_EASY("Health = 250 (Normal difficulty = 100)"),
-  GOLD_EASY("Gold = 250 (Normal difficulty = 100) \n\n* Sword added to inventory"),
+  GOLD_EASY("Gold = 250 (Normal difficulty = 100)"),
+  INVENTORY_EASY("* Sword and shield added to inventory"),
   HEALTH_STANDARD("Health = 100"),
   GOLD_STANDARD("Gold = 100"),
+  INVENTORY_STANDARD("* Sword added to inventory"),
   HEALTH_HARD("Health = 50 (Normal difficulty = 100)"),
   GOLD_HARD("Gold = 0 (Normal difficulty = 100)"),
   HEALTH("Health"),
@@ -31,17 +33,20 @@ public enum Dictionary {
   HEALTH_GOAL("Health goal"),
   INVENTORY_GOAL("Inventory goal"),
   SCORE_GOAL("Score goal"),
-  STANDARD_GOALS("Standard goals"),
-  GOAL_1("Goal 1"),
-  GOAL_2("Goal 2"),
-  GOAL_3("Goal 3"),
-  GOAL_4("Goal 4"),
-  IMPOSSIBLE_GOALS("Impossible goals"),
-  GOAL_5("Goal 5"),
-  GOAL_6("Goal 6"),
+  STANDARD_GOALS("Standard goals:"),
+  GOAL_1("Gold: 200"),
+  GOAL_2("Score: 100"),
+  GOAL_3("Health: 50"),
+  GOAL_4("Inventory: Sword"),
+  IMPOSSIBLE_GOALS("Impossible goals:"),
+  GOAL_5_1("Gold: 200, Score: 100, Health: 50, "),
+
+  GOAL_5_2("Inventory: Sword"),
+  GOAL_6_1("Gold: 250, Score: 200, Health: 100, "),
+  GOAL_6_2("Inventory: Sword, Potion, Shield"),
   CUSTOM_GOALS("Custom goals:"),
   SELECT_GOAL_TYPE("Select goal type"),
-  ENTER_ITEM_NAME("Enter item name"),
+  ENTER_ITEM_NAME("item1, item2, item3, ..."),
   ENTER_GOAL_VALUE("Enter goal value"),
   ADD_GOAL("Add goal"),
   GOAL_TYPE("Goal type"),
@@ -80,7 +85,22 @@ public enum Dictionary {
   HOME("Home"),
   RETURN_TO_HOME("You will lose all progress if you return \nto home without saving."),
   SAVE_HOME("Save & home"),
-  UPLOAD_FILE("Upload file");
+
+  UPLOAD_FILE("Upload file"),
+
+  GAME_OVER("Game over"),
+
+  BROKEN_LINK("Broken link"),
+
+  DIE("You died"),
+
+  EMPTY_GOLD("You ran out of gold"),
+
+  EMPTY_SCORE("Your score got too low"),
+
+  LINK_BROKEN("You have selected a passage with a broken link"),
+
+  ;
   private final String key;
 
   Dictionary(String key) {
