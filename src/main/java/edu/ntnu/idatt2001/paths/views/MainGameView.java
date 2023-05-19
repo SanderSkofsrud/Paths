@@ -456,7 +456,7 @@ public class MainGameView extends View{
             screenController.activate("Minigame");
           }
         }
-      }
+        }
         updatePlayerInfo();
       });
 
@@ -728,9 +728,8 @@ public class MainGameView extends View{
     goalsVbox.setSpacing(10);
     goalsVbox.setAlignment(Pos.TOP_CENTER);
 
-    Label goalsLabel = new Label(languageController.translate("Goals"));
+    Label goalsLabel = new Label(languageController.translate("Goals:"));
     goalsLabel.setFont(Font.font("Arial", FontWeight.BOLD, 20));
-
     goalsVbox.getChildren().add(goalsLabel);
 
     for (Goal goal : game.getGoals()) {
