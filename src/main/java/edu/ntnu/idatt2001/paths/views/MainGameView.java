@@ -465,7 +465,6 @@ public class MainGameView extends View{
     }
 
     updatePlayerInfo();
-    System.out.println(player);
     textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
     timeline.play();
     return new Pair<>(timeline, currentPassage);
