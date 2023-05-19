@@ -1,6 +1,6 @@
 {
   "player": {
-    "name": "Test",
+    "name": "test1",
     "health": 50,
     "score": 0,
     "gold": 0,
@@ -263,5 +263,20 @@
     {
       "minimumHealth": 1000
     }
-  ]
+  ],
+  "currentPassage": {
+    "title": "Beginnings",
+    "content": "You find yourself standing at the edge of a dark forest. The trees are tall and ominous, their branches reaching out like skeletal fingers. You hesitate for a moment before stepping into the forest.",
+    "links": [
+      {
+        "text": "Proceed into the forest",
+        "reference": "The path",
+        "actions": [
+          {
+            "points": 5
+          }
+        ]
+      }
+    ]
+  }
 }
