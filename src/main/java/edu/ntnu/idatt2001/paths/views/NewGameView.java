@@ -4,7 +4,6 @@ import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
-import edu.ntnu.idatt2001.paths.utility.GameData;
 import javafx.animation.TranslateTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -61,6 +60,10 @@ public class NewGameView extends View {
    */
   GameController gameController = GameController.getInstance();
   LanguageController languageController = LanguageController.getInstance();
+  private String EASY_STRING;
+  private String STANDARD_STRING ;
+  private String HARD_STRING;
+  private String CUSTOM_STRING;
 
   /**
    * Instantiates a new New game view.
@@ -89,6 +92,11 @@ public class NewGameView extends View {
    * The method is used to create the view of the GUI where the player can create a new game.
    */
   public void setup() {
+    EASY_STRING = languageController.getTranslation(Dictionary.EASY.getKey());
+    STANDARD_STRING = languageController.getTranslation(Dictionary.STANDARD.getKey());
+    HARD_STRING = languageController.getTranslation(Dictionary.HARD.getKey());
+    CUSTOM_STRING = languageController.getTranslation(Dictionary.CUSTOM.getKey());
+
     ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/images/create.png")));
 
     Label labelName = new Label(languageController.getTranslation(Dictionary.SELECT_NAME.getKey()));
@@ -102,10 +110,10 @@ public class NewGameView extends View {
 
     Label labelDifficulty = new Label(languageController.getTranslation(Dictionary.SELECT_DIFFICULTY.getKey()));
     ToggleGroup toggleGroupDifficulty = new ToggleGroup();
-    ToggleButton easy = new ToggleButton(languageController.getTranslation(Dictionary.EASY.getKey()));
-    ToggleButton standard = new ToggleButton(languageController.getTranslation(Dictionary.STANDARD.getKey()));
-    ToggleButton hard = new ToggleButton(languageController.getTranslation(Dictionary.HARD.getKey()));
-    ToggleButton custom = new ToggleButton(languageController.getTranslation(Dictionary.CUSTOM.getKey()));
+    ToggleButton easy = new ToggleButton(EASY_STRING);
+    ToggleButton standard = new ToggleButton(STANDARD_STRING);
+    ToggleButton hard = new ToggleButton(HARD_STRING);
+    ToggleButton custom = new ToggleButton(CUSTOM_STRING);
     easy.setToggleGroup(toggleGroupDifficulty);
     standard.setToggleGroup(toggleGroupDifficulty);
     hard.setToggleGroup(toggleGroupDifficulty);
@@ -156,57 +164,52 @@ public class NewGameView extends View {
         ToggleButton selectedButton = (ToggleButton) toggleGroupDifficulty.getSelectedToggle();
         String difficulty = selectedButton.getText();
 
-        switch (difficulty) {
-          case "Custom" -> {
-            labelHealth.setText(languageController.getTranslation(Dictionary.SELECT_HEALTH.getKey()));
-            labelGold.setText(languageController.getTranslation(Dictionary.SELECT_GOLD.getKey()));
-            hBoxHealth.getChildren().add(textFieldHealth);
-            hBoxGold.getChildren().add(textFieldGold);
-            hBoxGold.setAlignment(Pos.CENTER);
-            hBoxHealth.setVisible(true);
-            hBoxGold.setVisible(true);
-            hBoxInventory.setVisible(false);
-          }
-          case "Easy" -> {
-            labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_EASY.getKey()));
-            labelGold.setText(languageController.getTranslation(Dictionary.GOLD_EASY.getKey()));
-            labelInventory.setText(languageController.getTranslation(Dictionary.INVENTORY_EASY.getKey()));
-            hBoxHealth.getChildren().remove(textFieldHealth);
-            hBoxGold.getChildren().remove(textFieldGold);
-            hBoxInventory.getChildren().remove(textFieldInventory);
-            hBoxGold.setAlignment(Pos.CENTER);
-            hBoxHealth.setVisible(true);
-            hBoxGold.setVisible(true);
-            hBoxInventory.setVisible(true);
-          }
-          case "Hard" -> {
-            labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_HARD.getKey()));
-            labelGold.setText(languageController.getTranslation(Dictionary.GOLD_HARD.getKey()));
-            hBoxHealth.getChildren().remove(textFieldHealth);
-            hBoxGold.getChildren().remove(textFieldGold);
-            hBoxGold.setAlignment(Pos.CENTER);
-            hBoxHealth.setVisible(true);
-            hBoxGold.setVisible(true);
-            hBoxInventory.setVisible(false);
-          }
-          case "Standard" -> {
-            labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_STANDARD.getKey()));
-            labelGold.setText(languageController.getTranslation(Dictionary.GOLD_STANDARD.getKey()));
-            labelInventory.setText(languageController.getTranslation(Dictionary.INVENTORY_STANDARD.getKey()));
-            hBoxHealth.getChildren().remove(textFieldHealth);
-            hBoxGold.getChildren().remove(textFieldGold);
-            hBoxInventory.getChildren().remove(textFieldInventory);
-            hBoxGold.setAlignment(Pos.CENTER);
-            hBoxHealth.setVisible(true);
-            hBoxGold.setVisible(true);
-            hBoxInventory.setVisible(true);
-          }
-          default -> {
-            hBoxHealth.setVisible(false);
-            hBoxGold.setVisible(false);
-            hBoxInventory.setVisible(false);
-          }
+        if (difficulty.equals(CUSTOM_STRING)) {
+          labelHealth.setText(languageController.getTranslation(Dictionary.SELECT_HEALTH.getKey()));
+          labelGold.setText(languageController.getTranslation(Dictionary.SELECT_GOLD.getKey()));
+          hBoxHealth.getChildren().add(textFieldHealth);
+          hBoxGold.getChildren().add(textFieldGold);
+          hBoxGold.setAlignment(Pos.CENTER);
+          hBoxHealth.setVisible(true);
+          hBoxGold.setVisible(true);
+          hBoxInventory.setVisible(false);
+        } else if (difficulty.equals(EASY_STRING)) {
+          labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_EASY.getKey()));
+          labelGold.setText(languageController.getTranslation(Dictionary.GOLD_EASY.getKey()));
+          labelInventory.setText(languageController.getTranslation(Dictionary.INVENTORY_EASY.getKey()));
+          hBoxHealth.getChildren().remove(textFieldHealth);
+          hBoxGold.getChildren().remove(textFieldGold);
+          hBoxInventory.getChildren().remove(textFieldInventory);
+          hBoxGold.setAlignment(Pos.CENTER);
+          hBoxHealth.setVisible(true);
+          hBoxGold.setVisible(true);
+          hBoxInventory.setVisible(true);
+        } else if (difficulty.equals(HARD_STRING)) {
+          labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_HARD.getKey()));
+          labelGold.setText(languageController.getTranslation(Dictionary.GOLD_HARD.getKey()));
+          hBoxHealth.getChildren().remove(textFieldHealth);
+          hBoxGold.getChildren().remove(textFieldGold);
+          hBoxGold.setAlignment(Pos.CENTER);
+          hBoxHealth.setVisible(true);
+          hBoxGold.setVisible(true);
+          hBoxInventory.setVisible(false);
+        } else if (difficulty.equals(STANDARD_STRING)) {
+          labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_STANDARD.getKey()));
+          labelGold.setText(languageController.getTranslation(Dictionary.GOLD_STANDARD.getKey()));
+          labelInventory.setText(languageController.getTranslation(Dictionary.INVENTORY_STANDARD.getKey()));
+          hBoxHealth.getChildren().remove(textFieldHealth);
+          hBoxGold.getChildren().remove(textFieldGold);
+          hBoxInventory.getChildren().remove(textFieldInventory);
+          hBoxGold.setAlignment(Pos.CENTER);
+          hBoxHealth.setVisible(true);
+          hBoxGold.setVisible(true);
+          hBoxInventory.setVisible(true);
+        } else {
+          hBoxHealth.setVisible(false);
+          hBoxGold.setVisible(false);
+          hBoxInventory.setVisible(false);
         }
+
       }
     });
 
@@ -270,22 +273,7 @@ public class NewGameView extends View {
 
       String activeCharacter = characterMale.isVisible() ? "m.png" : "f.png";
       playerController.setActiveCharacter(activeCharacter);
-
-      GameData currentGameData = fileHandlerController.getCurrentGameData();
-      if (currentGameData == null || currentGameData.getGoals().isEmpty()) {
-        screenController.activate("ChooseGoals");
-        resetPane();
-        return;
-      }
-
-      System.out.printf("Player created: %s%n", player.toString());
-      resetPane();
-
-      Game game = new Game(player, currentGameData.getStory(), currentGameData.getGoals());
-      fileHandlerController.saveGame(game.getStory(), player, game.getGoals(), activeCharacter);
-      fileHandlerController.saveGameJson(player.getName(), game);
-      gameController.setGame(game);
-      screenController.activate("MainGame");
+      screenController.activate("ChooseGoals");
     });
 
     VBox vBox = new VBox();

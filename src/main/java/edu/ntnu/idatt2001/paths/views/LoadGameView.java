@@ -6,7 +6,6 @@ import edu.ntnu.idatt2001.paths.models.Link;
 import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.utility.FileEntry;
-import edu.ntnu.idatt2001.paths.utility.GameData;
 import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -72,10 +71,6 @@ public class LoadGameView extends View{
   LoadGameController loadGameController = LoadGameController.getInstance();
   LanguageController languageController = LanguageController.getInstance();
   /**
-   * The Paths table view.
-   */
-  TableView<FileEntry> pathsTableView;
-  /**
    * The Json table view.
    */
   TableView<FileEntry> jsonTableView;
@@ -108,107 +103,6 @@ public class LoadGameView extends View{
    */
   @Override
   public void setup() {
-    // Create the TableView for .paths files
-    pathsTableView = new TableView<>();
-
-    TableColumn<FileEntry, String> pathsFileNameColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_NAME.getKey()));
-    pathsFileNameColumn.setCellValueFactory(new PropertyValueFactory<>("fileName"));
-
-    TableColumn<FileEntry, String> pathsFileLocationColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_LOCATION.getKey()));
-    pathsFileLocationColumn.setCellValueFactory(data -> new ReadOnlyStringWrapper(data.getValue().getFileLocation()));
-
-    TableColumn<FileEntry, FileEntry> pathsBrokenLinksColumn = new TableColumn<>(languageController.getTranslation(Dictionary.BROKEN_LINKS.getKey()));
-    pathsBrokenLinksColumn.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
-    pathsBrokenLinksColumn.setCellFactory(column -> new TableCell<>() {
-      @Override
-      protected void updateItem(FileEntry item, boolean empty) {
-        super.updateItem(item, empty);
-
-        if (item == null || empty) {
-          setText(null);
-        } else {
-          String fileName = item.getFileName();
-          Story story = null;
-          try {
-            story = fileHandlerController.loadGame(fileName).getStory();
-          } catch (FileNotFoundException | IllegalArgumentException e) {
-            System.out.println("Incorrect file format: " + e.getMessage());
-          }
-          List<Link> brokenLinks = null;
-          if (story != null) {
-            brokenLinks = story.getBrokenLinks();
-          }
-
-          if (brokenLinks != null && !brokenLinks.isEmpty()) {
-            setText(brokenLinks.stream().map(Link::getReference).collect(Collectors.joining(", ")));
-          } else {
-            setText(languageController.getTranslation(Dictionary.NO_BROKEN_LINKS.getKey()));
-          }
-        }
-      }
-    });
-
-    TableColumn<FileEntry, FileEntry> pathsClickableTextColumn = new TableColumn<>(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
-    pathsClickableTextColumn.setCellFactory(col -> new TableCell<>() {
-      private final Hyperlink hyperlink = new Hyperlink(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
-
-      {
-        hyperlink.setOnAction(event -> {
-          FileEntry fileEntry = getTableView().getItems().get(getIndex());
-          System.out.println("Clicked on file: " + fileEntry.getFileName());
-          try {
-            GameData gameData = fileHandlerController.loadGame(fileEntry.getFileName());
-            String missingData = loadGameController.handleGameData(gameData, gameController, screenController);
-            if (!missingData.isEmpty()) {
-              showAlertWindow(missingData);
-            } else {
-              screenController.activate("MainGame");
-              resetPane();
-            }
-          } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-          }
-        });
-      }
-
-      @Override
-      protected void updateItem(FileEntry item, boolean empty) {
-        super.updateItem(item, empty);
-        if (empty) {
-          setGraphic(null);
-        } else {
-          setGraphic(hyperlink);
-        }
-      }
-    });
-
-
-    pathsTableView.getColumns().addAll(pathsFileNameColumn, pathsFileLocationColumn, pathsBrokenLinksColumn, pathsClickableTextColumn);
-
-    // Filter files based on directory name
-    String pathsDirectoryName = "paths"; // The name of the "paths" directory
-    Path pathsDirectoryPath = Paths.get("src/main/resources", pathsDirectoryName);
-
-    try {
-      Stream<Path> pathStream = Files.walk(pathsDirectoryPath)
-              .filter(Files::isRegularFile)
-              .filter(path -> !path.getParent().equals(pathsDirectoryPath)) // Exclude files directly under the "paths" directory
-              .filter(path -> path.toString().endsWith(".paths"));
-
-      List<FileEntry> fileEntries = pathStream.map(path -> {
-        String fileName = path.getFileName().toString();
-        String directoryName = "src/main/resources/" + pathsDirectoryName + "/" + path.getParent().getFileName().toString() + "/" + fileName;
-        return new FileEntry(fileName, directoryName);
-      }).collect(Collectors.toList());
-
-      pathsTableView.setItems(FXCollections.observableArrayList(fileEntries));
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-
-    pathsTableView.setPrefWidth(650);
-
-    // Create the TableView for .json files
     jsonTableView = new TableView<>();
 
     TableColumn<FileEntry, String> jsonFileNameColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_NAME.getKey()));
@@ -230,17 +124,17 @@ public class LoadGameView extends View{
             if (event.getClickCount() == 2) {
               String fileName = item.getFileLocation();
 
-              Story story = null;
+              Game game = null;
 
               try {
-                story = fileHandlerController.loadGame(fileName).getStory();
+                game = fileHandlerController.loadGameJson(fileName);
               } catch (FileNotFoundException e) {
                 e.printStackTrace();
               } catch (IllegalArgumentException e) {
                 System.err.println("Incorrect file format: " + e.getMessage());
               }
 
-              if (story != null) {
+              if (game != null) {
                 String fileType = loadGameController.getFileType();
                 setText("src/main/resources/" + fileType + "/" + item.getFileName());
               }
@@ -262,15 +156,15 @@ public class LoadGameView extends View{
             setText(null);
           } else {
             String fileName = item.getFileName();
-            Story story = null;
+            Game game = null;
             try {
-              story = fileHandlerController.loadGame(fileName).getStory();
+              game = fileHandlerController.loadGameJson(fileName);
             } catch (FileNotFoundException | IllegalArgumentException e) {
               System.out.println("Incorrect file format: " + e.getMessage());
             }
             List<Link> brokenLinks = null;
-            if (story != null) {
-              brokenLinks = story.getBrokenLinks();
+            if (game != null) {
+              brokenLinks = game.getStory().getBrokenLinks();
             }
 
             if (brokenLinks != null && !brokenLinks.isEmpty()) {
@@ -328,12 +222,7 @@ public class LoadGameView extends View{
     resetPane();
 
     // Add both tables to the stack pane
-    HBox hBox = new HBox();
     Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
-    hBox.getChildren().addAll(pathsTableView, jsonTableView);
-    hBox.setSpacing(20);
-    hBox.setPadding(new Insets(20, 20, 20, 20));
-    hBox.setAlignment(Pos.CENTER);
 
     Button uploadButton = new Button(languageController.getTranslation(Dictionary.UPLOAD_FILE.getKey()));
 
@@ -343,8 +232,7 @@ public class LoadGameView extends View{
       fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
 
       fileChooser.getExtensionFilters().addAll(
-              new FileChooser.ExtensionFilter("PATHS Files", "*.paths"),
-              new FileChooser.ExtensionFilter("JSON Files", "*.json")
+              new FileChooser.ExtensionFilter("PATHS Files", "*.paths")
       );
 
       File selectedFile = fileChooser.showOpenDialog(null);
@@ -356,27 +244,15 @@ public class LoadGameView extends View{
         if (extension.equals("paths")) {
           try {
             loadGameController.addSavedGame(selectedFile.getName(), "paths", selectedFile);
-            Platform.runLater(this::refreshTables);
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        } else if (extension.equals("json")) {
-          try {
-            loadGameController.addSavedGame(selectedFile.getName(), "json", selectedFile);
-            Platform.runLater(this::refreshTables);
           } catch (IOException e) {
             throw new RuntimeException(e);
           }
         }
-
-        pathsTableView.setItems(loadGameController.getSavedGames("paths"));
-        jsonTableView.setItems(loadGameController.getSavedGames("json"));
-        refreshTables();
       }
     });
 
     VBox vBox = new VBox();
-    vBox.getChildren().addAll(hBox, uploadButton);
+    vBox.getChildren().addAll(jsonTableView, uploadButton);
     vBox.setSpacing(20);
     vBox.setPadding(new Insets(20, 20, 20, 20));
     vBox.setAlignment(Pos.CENTER);
@@ -388,77 +264,10 @@ public class LoadGameView extends View{
   }
 
   /**
-   * Show an alert window if the file is missing data.
-   *
-   * @param missingData The missing data.
-   */
-  private void showAlertWindow(String missingData) {
-    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-    alert.setTitle(languageController.getTranslation(Dictionary.MISSING_DATA.getKey()));
-    alert.setHeaderText(languageController.getTranslation(Dictionary.SOME_DATA_IS_MISSING.getKey()) + ":");
-    alert.setContentText(languageController.translate(missingData) + "\n" + languageController.getTranslation(Dictionary.DO_YOU_WANT_TO_CONTINUE.getKey()) + "?");
-
-    ButtonType buttonTypeContinue = new ButtonType(languageController.getTranslation(Dictionary.CONTINUE.getKey()), ButtonBar.ButtonData.OK_DONE);
-    ButtonType buttonTypeCancel = new ButtonType(languageController.getTranslation(Dictionary.CANCEL.getKey()), ButtonBar.ButtonData.CANCEL_CLOSE);
-
-    alert.getButtonTypes().setAll(buttonTypeContinue, buttonTypeCancel);
-
-    DialogPane dialogPane = alert.getDialogPane();
-    dialogPane.getStylesheets().add("stylesheet.css");
-
-    alert.showAndWait().ifPresent(response -> {
-      if (response == buttonTypeContinue && missingData.equals("Missing data: Player, Goals") || missingData.equals("Missing data: Player")) {
-        screenController.activate("NewGame");
-        resetPane();
-      } else if (response == buttonTypeContinue && missingData.equals("Missing data: Goals")) {
-        screenController.activate("ChooseGoals");
-        resetPane();
-      } else {
-        alert.close();
-      }
-      stackPane.getStylesheets().add("stylesheet.css");
-
-    });
-  }
-
-
-  /**
    * Reset the pane.
    */
   @Override
   void resetPane() {
     stackPane.getChildren().clear();
   }
-
-  /**
-   * Refresh the tables.
-   */
-  private void refreshTables() {
-    pathsTableView.getItems().clear();
-    String pathsDirectoryName = "paths"; // The name of the "paths" directory
-    Path pathsDirectoryPath = Paths.get("src/main/resources", pathsDirectoryName);
-
-    try {
-      Stream<Path> pathStream = Files.walk(pathsDirectoryPath)
-              .filter(Files::isRegularFile)
-              .filter(path -> !path.getParent().equals(pathsDirectoryPath)) // Exclude files directly under the "paths" directory
-              .filter(path -> path.toString().endsWith(".paths"));
-
-      List<FileEntry> fileEntries = pathStream.map(path -> {
-        String fileName = path.getFileName().toString();
-        String directoryName = path.getParent().getFileName().toString();
-        return new FileEntry(fileName, directoryName);
-      }).collect(Collectors.toList());
-
-      pathsTableView.setItems(FXCollections.observableArrayList(fileEntries));
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    pathsTableView.refresh();
-
-    jsonTableView.getItems().clear();
-    jsonTableView.setItems(loadGameController.getSavedGames("json"));
-    jsonTableView.refresh();
-  }
-
 }

@@ -169,7 +169,6 @@ public class MainGameView extends View{
    */
   PlayerController playerController = PlayerController.getInstance();
   LanguageController languageController = LanguageController.getInstance();
-  ProgressController progressController = ProgressController.getInstance();
   private ImageView soundImageView;
   private boolean isMuted = false;
   private SoundPlayer soundPlayer = new SoundPlayer();
@@ -227,6 +226,7 @@ public class MainGameView extends View{
   public void setup() {
     soundPlayer.playOnLoop("/sounds/ambiance.wav");
     game = gameController.getGame();
+    currentPassage = game.getCurrentPassage();
     player = game.getPlayer();
     goals = game.getGoals();
     story = game.getStory();
@@ -291,16 +291,18 @@ public class MainGameView extends View{
     HBox buttonsBox = new HBox();
     borderPane.setBottom(buttonsBox);
 
-    try {
-      progressController.loadProgress(player.getName());
-      if (progressController.getPlayer() != null) {
-        player = progressController.getPlayer();
-        Link link = new Link(progressController.getCurrentPassage().getTitle(), progressController.getCurrentPassage().getTitle());
-        currentPassage = game.go(link);
-      }
-    } catch (RuntimeException e) {
-      currentPassage = game.begin();
-    }
+//    try {
+//      progressController.loadProgress(player.getName());
+//      if (progressController.getPlayer() != null) {
+//        player = progressController.getPlayer();
+//        Link link = new Link(progressController.getCurrentPassage().getTitle(), progressController.getCurrentPassage().getTitle());
+//        System.out.println(link);
+//        currentPassage = game.go(link);
+//        System.out.println(currentPassage);
+//      }
+//    } catch (RuntimeException e) {
+//      currentPassage = game.begin();
+//    }
 
     setupTopBar(textFlow);
     setupAttributesBox();
@@ -407,7 +409,8 @@ public class MainGameView extends View{
         undoButton.setDisable(false);
         timeline.stop();
         updateUIWithPassage(textFlow, nextPassage);
-        progressController.saveProgress(player, previousPassage, currentPassage);
+        //progressController.saveProgress(player, previousPassage, currentPassage);
+        game.setCurrentPassage(nextPassage);
 
         if (!MinigameView.hasPlayed()) {
           int random = (int) (Math.random() * 100) + 1;
@@ -416,7 +419,7 @@ public class MainGameView extends View{
             screenController.activate("Minigame");
           }
         }
-        }
+      }
         updatePlayerInfo();
       });
 
@@ -559,7 +562,6 @@ public class MainGameView extends View{
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == saveAndExit) {
-          FileHandlerController.getInstance().saveGame(story, player, goals, "m.png");
           FileHandlerController.getInstance().saveGameJson(player.getName(),game);
           Platform.exit();
         } else if (result.get() == exitWithoutSaving) {
@@ -609,7 +611,6 @@ public class MainGameView extends View{
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == saveAndGoHome) {
-          FileHandlerController.getInstance().saveGame(story, player, goals, "m.png");
           FileHandlerController.getInstance().saveGameJson(player.getName(),game);
           gameController.resetGame(); // Add this line
           screenController.activate("MainMenu");

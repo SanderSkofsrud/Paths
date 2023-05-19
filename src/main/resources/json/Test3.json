@@ -1,9 +1,9 @@
 {
   "player": {
-    "name": "Sander",
+    "name": "Test3",
     "health": 50,
-    "score": 0,
-    "gold": 0,
+    "score": 5,
+    "gold": 10,
     "inventory": []
   },
   "story": {
@@ -258,7 +258,7 @@
   },
   "goals": [
     {
-      "minimumHealth": 1000
+      "minimumGold": 100
     },
     {
       "minimumGold": 1000
@@ -268,12 +268,21 @@
     }
   ],
   "currentPassage": {
-    "title": "Beginnings",
-    "content": "You find yourself standing at the edge of a dark forest. The trees are tall and ominous, their branches reaching out like skeletal fingers. You hesitate for a moment before stepping into the forest.",
+    "title": "The path",
+    "content": "You follow a narrow path deeper into the forest. The air is chilly and you can hear the rustling of leaves in the wind. Suddenly, you come across a fork in the path.",
     "links": [
       {
-        "text": "Proceed into the forest",
-        "reference": "The path",
+        "text": "Take the left path",
+        "reference": "The abandoned cabin",
+        "actions": [
+          {
+            "points": 5
+          }
+        ]
+      },
+      {
+        "text": "Take the right path",
+        "reference": "The graveyard",
         "actions": [
           {
             "points": 5

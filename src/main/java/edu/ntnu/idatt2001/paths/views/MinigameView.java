@@ -246,6 +246,7 @@ public class MinigameView extends View{
     }
     alert.showAndWait();
     hasPlayed = true;
+    playerController.setPlayer(player);
     screenController.activate("MainGame");
   }
 

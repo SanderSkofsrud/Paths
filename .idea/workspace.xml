@@ -4,23 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added progress files to track the progress of the player and enable reloading from previous active passage">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/Test3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/test2.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LanguageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LanguageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/PlayerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoalEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoalEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoldGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoldGoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/HealthGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/HealthGoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/InventoryGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/InventoryGoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/ScoreGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/ScoreGoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/SoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/SoundPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/ProgressController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/GameData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/ProgressData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/FinalPassageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/FinalPassageView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MinigameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MinigameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/json/Sander.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/Sander.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/json/Test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/test1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Sander/Sander.paths" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Sander/goals" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Sander/player" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Sander/progress" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Test/Test.paths" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Test/goals" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Test/player" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Test/progress" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +60,52 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="branchesCleanupHistory">
+      <BranchesCleanupHistory>
+        <option name="history">
+          <list>
+            <BranchCleanupEntry>
+              <option name="deletions">
+                <list>
+                  <BranchDeletion>
+                    <option name="hash" value="35c33c6d211f48cb130699d0f7d6d3e8c76efa94" />
+                    <option name="name" value="expansionOfStoryClass" />
+                  </BranchDeletion>
+                  <BranchDeletion>
+                    <option name="hash" value="33de9bb0ed194eb5f20b1e7dedbc3b92706f2ef2" />
+                    <option name="name" value="TestInterfaceClasses" />
+                  </BranchDeletion>
+                  <BranchDeletion>
+                    <option name="hash" value="1f5b45d17b0905285be4edd198b047948d91b002" />
+                    <option name="name" value="fileRefactoring" />
+                  </BranchDeletion>
+                  <BranchDeletion>
+                    <option name="hash" value="72ab17ad0dacc29dbc5626c567e612e70901a65e" />
+                    <option name="name" value="Tests" />
+                  </BranchDeletion>
+                  <BranchDeletion>
+                    <option name="hash" value="eb8f392374a3d36e73efe1752534b6416ee541f1" />
+                    <option name="name" value="actionSupport" />
+                  </BranchDeletion>
+                  <BranchDeletion>
+                    <option name="hash" value="de41f08420e265d81326f50787dc637b39e152ae" />
+                    <option name="name" value="FileHandlingTests" />
+                  </BranchDeletion>
+                  <BranchDeletion>
+                    <option name="hash" value="d10cd41309299e2c5d9265e5ba8835eb99230365" />
+                    <option name="name" value="ActionGoal" />
+                  </BranchDeletion>
+                </list>
+              </option>
+              <option name="timestamp" value="1684496667502" />
+            </BranchCleanupEntry>
+          </list>
+        </option>
+      </BranchesCleanupHistory>
+    </option>
+    <option name="projectConfigVersion" value="5" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -63,31 +124,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "OverrideImplement.generate.javadoc": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "FileHandling",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths/src/test/resources/templates",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.sync",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;FileHandling&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sande/OneDrive/Dokumenter/Skole/V23/Java/paths/src/test/resources/templates&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sande\OneDrive\Dokumenter\Skole\V23\Java\paths\src\test\resources\templates" />
@@ -321,70 +382,9 @@
       <workItem from="1684238061563" duration="708000" />
       <workItem from="1684238791230" duration="17020000" />
       <workItem from="1684392377565" duration="8046000" />
-      <workItem from="1684400587037" duration="13454000" />
-    </task>
-    <task id="LOCAL-00100" summary="Added MainGameView and LoadGameView to the controller so they work">
-      <created>1681979125329</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1681979125329</updated>
-    </task>
-    <task id="LOCAL-00101" summary="Implemented singleton functionality to all controllers to remove the need of static methods. Also updated the usages in all the view classes to match this change">
-      <created>1681980772352</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1681980772352</updated>
-    </task>
-    <task id="LOCAL-00102" summary="Added more directories in resources">
-      <created>1682151359367</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1682151359367</updated>
-    </task>
-    <task id="LOCAL-00103" summary="Added functionality to work with .json files. Added serializers and deserializers for the classes that did not have the proper methods or that were not built up in the proper way. Updated the module-info and pom to include the newly added functionality.">
-      <created>1682151486449</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1682151486451</updated>
-    </task>
-    <task id="LOCAL-00104" summary="Reorganized structure in resources again, when the previous one did not work">
-      <created>1682411671735</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1682411671735</updated>
-    </task>
-    <task id="LOCAL-00105" summary="Updated view classes to match the restructuring of the resources directory">
-      <created>1682411737849</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1682411737849</updated>
-    </task>
-    <task id="LOCAL-00106" summary="Created new files to split ut the readers and writers">
-      <created>1682411780751</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1682411780751</updated>
-    </task>
-    <task id="LOCAL-00107" summary="Moved all that has to do with serialization and deserialization into new json package">
-      <created>1682411811471</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1682411811471</updated>
-    </task>
-    <task id="LOCAL-00108" summary="Made GameController to work with the now functioning mainGame">
-      <created>1682411850753</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1682411850753</updated>
+      <workItem from="1684400587037" duration="15282000" />
+      <workItem from="1684417354119" duration="76000" />
+      <workItem from="1684417500089" duration="16921000" />
     </task>
     <task id="LOCAL-00109" summary="Made tests to match the new separation of paths and json file handling">
       <created>1682411886533</created>
@@ -666,7 +666,70 @@
       <option name="project" value="LOCAL" />
       <updated>1684414734079</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="Added inventory as a GoalEnum">
+      <created>1684414784296</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1684414784296</updated>
+    </task>
+    <task id="LOCAL-00150" summary="Updated toString">
+      <created>1684414806010</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1684414806010</updated>
+    </task>
+    <task id="LOCAL-00151" summary="Reverted changes to adjust volume, as they did not work">
+      <created>1684414827092</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1684414827092</updated>
+    </task>
+    <task id="LOCAL-00152" summary="Added activeCharacter, so the chosen character model gets shown in the game">
+      <created>1684414850905</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1684414850905</updated>
+    </task>
+    <task id="LOCAL-00153" summary="Added activeCharacter to be shown in the game">
+      <created>1684414882929</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1684414882929</updated>
+    </task>
+    <task id="LOCAL-00154" summary="Updated skip functionality to work when you click the whole box. Added functionality to load from previous active passage. Added method that saves progress. Removed volumeSlider, as it did not work. Updated saveGame functionality to work with new filehandling.">
+      <created>1684415078660</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1684415078660</updated>
+    </task>
+    <task id="LOCAL-00155" summary="Updated table to work with the new filehandling">
+      <created>1684415192983</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1684415192983</updated>
+    </task>
+    <task id="LOCAL-00156" summary="Removed double call to activate MainGameView">
+      <created>1684415223278</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1684415223278</updated>
+    </task>
+    <task id="LOCAL-00157" summary="Updated css">
+      <created>1684415245289</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1684415245289</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -697,16 +760,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Update files to match the change in the player class." />
-    <MESSAGE value="Updated action to work with the new playerBuilder, and added ActionDeserializer to work with that change" />
-    <MESSAGE value="Updated view classes to work with the new functionality added" />
-    <MESSAGE value="Updated action and goals classes to match the new player location in its own directory" />
-    <MESSAGE value="Created enum for standard items" />
-    <MESSAGE value="Created a factory for goals and enums for the types of goals" />
-    <MESSAGE value="Created difficulty enum that contains the different stats of the player in the different preset difficulties" />
-    <MESSAGE value="Added SoundPlayer to play sounds" />
-    <MESSAGE value="Updated controllers to match the changes done over the program" />
-    <MESSAGE value="Updated test to match changes made in the program, mostly to Player and PlayerBuilder" />
     <MESSAGE value="Added soundfiles and updated images" />
     <MESSAGE value="Updated JsonReader to include new ActionDeserializer class" />
     <MESSAGE value="Added actions to PathsReader" />
@@ -722,7 +775,17 @@
     <MESSAGE value="Added method to load template, and updated saveGame to work with new filehandling" />
     <MESSAGE value="Updated PathsReader and PathsWriter. Now saves the story, goals and player in different files in the same directory. Also creates progress file to enable reloading from previous active passage" />
     <MESSAGE value="Added progress files to track the progress of the player and enable reloading from previous active passage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added progress files to track the progress of the player and enable reloading from previous active passage" />
+    <MESSAGE value="Added inventory as a GoalEnum" />
+    <MESSAGE value="Updated toString" />
+    <MESSAGE value="Reverted changes to adjust volume, as they did not work" />
+    <MESSAGE value="Added activeCharacter, so the chosen character model gets shown in the game" />
+    <MESSAGE value="Added activeCharacter to be shown in the game" />
+    <MESSAGE value="Updated skip functionality to work when you click the whole box. Added functionality to load from previous active passage. Added method that saves progress. Removed volumeSlider, as it did not work. Updated saveGame functionality to work with new filehandling." />
+    <MESSAGE value="Updated table to work with the new filehandling" />
+    <MESSAGE value="Removed double call to activate mainGameView" />
+    <MESSAGE value="Removed double call to activate MainGameView" />
+    <MESSAGE value="Updated css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -748,6 +811,11 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.github.lppedd.cc.CommitBuilderDialog">
+    <footers>
+      <entry type="" value="" />
+    </footers>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681805884296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

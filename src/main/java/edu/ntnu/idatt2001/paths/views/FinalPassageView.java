@@ -152,7 +152,6 @@ public class FinalPassageView extends View{
    */
   PlayerController playerController = PlayerController.getInstance();
   LanguageController languageController = LanguageController.getInstance();
-  ProgressController progressController = ProgressController.getInstance();
   private ImageView soundImageView;
   private boolean isMuted = false;
   private SoundPlayer soundPlayer = new SoundPlayer();
@@ -273,17 +272,6 @@ public class FinalPassageView extends View{
 
     HBox buttonsBox = new HBox();
     borderPane.setBottom(buttonsBox);
-
-    try {
-      progressController.loadProgress(player.getName());
-      if (progressController.getPlayer() != null) {
-        player = progressController.getPlayer();
-        Link link = new Link(progressController.getCurrentPassage().getTitle(), progressController.getCurrentPassage().getTitle());
-        currentPassage = game.go(link);
-      }
-    } catch (RuntimeException e) {
-      currentPassage = game.begin();
-    }
 
     setupTopBar(textFlow);
     setupAttributesBox();
