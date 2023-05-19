@@ -141,6 +141,16 @@ public class NewGameView extends View {
     hBoxGold.setPadding(new Insets(10, 10, 10, 10));
     hBoxGold.setVisible(false);
 
+    Label labelInventory = new Label();
+    TextField textFieldInventory = new TextField();
+    textFieldInventory.setPromptText(languageController.getTranslation(Dictionary.ENTER_GOLD.getKey()));
+    HBox hBoxInventory = new HBox();
+    hBoxInventory.getChildren().addAll(labelInventory);
+    hBoxInventory.setSpacing(10);
+    hBoxInventory.setAlignment(Pos.CENTER);
+    hBoxInventory.setPadding(new Insets(10, 10, 10, 10));
+    hBoxInventory.setVisible(false);
+
     toggleGroupDifficulty.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
       if (toggleGroupDifficulty.getSelectedToggle() != null) {
         ToggleButton selectedButton = (ToggleButton) toggleGroupDifficulty.getSelectedToggle();
@@ -155,15 +165,19 @@ public class NewGameView extends View {
             hBoxGold.setAlignment(Pos.CENTER);
             hBoxHealth.setVisible(true);
             hBoxGold.setVisible(true);
+            hBoxInventory.setVisible(false);
           }
           case "Easy" -> {
             labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_EASY.getKey()));
             labelGold.setText(languageController.getTranslation(Dictionary.GOLD_EASY.getKey()));
+            labelInventory.setText(languageController.getTranslation(Dictionary.INVENTORY_EASY.getKey()));
             hBoxHealth.getChildren().remove(textFieldHealth);
             hBoxGold.getChildren().remove(textFieldGold);
+            hBoxInventory.getChildren().remove(textFieldInventory);
             hBoxGold.setAlignment(Pos.CENTER);
             hBoxHealth.setVisible(true);
             hBoxGold.setVisible(true);
+            hBoxInventory.setVisible(true);
           }
           case "Hard" -> {
             labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_HARD.getKey()));
@@ -173,19 +187,24 @@ public class NewGameView extends View {
             hBoxGold.setAlignment(Pos.CENTER);
             hBoxHealth.setVisible(true);
             hBoxGold.setVisible(true);
+            hBoxInventory.setVisible(false);
           }
           case "Standard" -> {
             labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_STANDARD.getKey()));
             labelGold.setText(languageController.getTranslation(Dictionary.GOLD_STANDARD.getKey()));
+            labelInventory.setText(languageController.getTranslation(Dictionary.INVENTORY_STANDARD.getKey()));
             hBoxHealth.getChildren().remove(textFieldHealth);
             hBoxGold.getChildren().remove(textFieldGold);
+            hBoxInventory.getChildren().remove(textFieldInventory);
             hBoxGold.setAlignment(Pos.CENTER);
             hBoxHealth.setVisible(true);
             hBoxGold.setVisible(true);
+            hBoxInventory.setVisible(true);
           }
           default -> {
             hBoxHealth.setVisible(false);
             hBoxGold.setVisible(false);
+            hBoxInventory.setVisible(false);
           }
         }
       }
@@ -270,7 +289,7 @@ public class NewGameView extends View {
     });
 
     VBox vBox = new VBox();
-    vBox.getChildren().addAll(imageView, hBoxName, hBoxDifficulty, hBoxHealth, hBoxGold, hBoxCharacter, button);
+    vBox.getChildren().addAll(imageView, hBoxName, hBoxDifficulty, hBoxHealth, hBoxGold, hBoxInventory, hBoxCharacter, button);
     vBox.setAlignment(Pos.CENTER);
     vBox.setSpacing(10);
     vBox.setPadding(new Insets(10, 10, 10, 10));
