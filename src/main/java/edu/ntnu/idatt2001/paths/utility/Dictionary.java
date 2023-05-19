@@ -41,7 +41,7 @@ public enum Dictionary {
   GOAL_6("Goal 6"),
   CUSTOM_GOALS("Custom goals:"),
   SELECT_GOAL_TYPE("Select goal type"),
-  ENTER_ITEM_NAME("Enter item name"),
+  ENTER_ITEM_NAME("[item1, item2, item3, ...]"),
   ENTER_GOAL_VALUE("Enter goal value"),
   ADD_GOAL("Add goal"),
   GOAL_TYPE("Goal type"),
@@ -80,7 +80,20 @@ public enum Dictionary {
   HOME("Home"),
   RETURN_TO_HOME("You will lose all progress if you return \nto home without saving."),
   SAVE_HOME("Save & home"),
-  UPLOAD_FILE("Upload file");
+
+  UPLOAD_FILE("Upload file"),
+
+  GAME_OVER("Game over"),
+
+  BROKEN_LINK("Broken link"),
+
+  DIE("You died"),
+
+  EMPTY_GOLD("You ran out of gold"),
+
+  EMPTY_SCORE("Your score got too low"),
+
+  ;
   private final String key;
 
   Dictionary(String key) {
