@@ -120,7 +120,8 @@ public class ChooseGoalsView extends View {
 
     VBox predefinedGoals = new VBox();
     predefinedGoals.setSpacing(10);
-    predefinedGoals.setAlignment(Pos.CENTER);
+    predefinedGoals.setAlignment(Pos.TOP_LEFT);
+    predefinedGoals.setPadding(new Insets(0, 0, 0, 120));
 
     Label standardGoals = new Label(languageController.getTranslation(Dictionary.STANDARD_GOALS.getKey()));
     CheckBox checkBox1 = new CheckBox(languageController.getTranslation(Dictionary.GOAL_1.getKey()));
@@ -128,14 +129,15 @@ public class ChooseGoalsView extends View {
     CheckBox checkBox3 = new CheckBox(languageController.getTranslation(Dictionary.GOAL_3.getKey()));
     CheckBox checkBox4 = new CheckBox(languageController.getTranslation(Dictionary.GOAL_4.getKey()));
     Label impossibleGoals = new Label(languageController.getTranslation(Dictionary.IMPOSSIBLE_GOALS.getKey()));
-    CheckBox checkBox5 = new CheckBox(languageController.getTranslation(Dictionary.GOAL_5.getKey()));
-    CheckBox checkBox6 = new CheckBox(languageController.getTranslation(Dictionary.GOAL_6.getKey()));
+    CheckBox checkBox5 = new CheckBox(languageController.getTranslation(Dictionary.GOAL_5_1.getKey()) + "\n" + Dictionary.GOAL_5_2.getKey());
+    CheckBox checkBox6 = new CheckBox(languageController.getTranslation(Dictionary.GOAL_6_1.getKey()) + "\n" + Dictionary.GOAL_6_2.getKey());
 
     predefinedGoals.getChildren().addAll(standardGoals, checkBox1, checkBox2, checkBox3, checkBox4, impossibleGoals, checkBox5, checkBox6);
 
     VBox customGoals = new VBox();
     customGoals.setSpacing(10);
     customGoals.setAlignment(Pos.CENTER);
+    customGoals.setPadding(new Insets(0, 0, 0, 20));
 
     Label customGoalsLabel = new Label(languageController.getTranslation(Dictionary.CUSTOM_GOALS.getKey()));
     ComboBox comboBox = new ComboBox();
@@ -267,7 +269,7 @@ public class ChooseGoalsView extends View {
     });
 
 
-    hBox.getChildren().addAll(predefinedGoals, customGoals);
+    hBox.getChildren().addAll(customGoals, predefinedGoals);
     vBox.getChildren().addAll(imageView, hBox, startButton);
 
     Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
