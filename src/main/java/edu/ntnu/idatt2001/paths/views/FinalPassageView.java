@@ -212,6 +212,7 @@ public class FinalPassageView extends View{
     player = game.getPlayer();
     goals = game.getGoals();
     story = game.getStory();
+    currentPassage = game.getCurrentPassage();
 
     passageContent = new TextArea();
     passageContent.setWrapText(true);

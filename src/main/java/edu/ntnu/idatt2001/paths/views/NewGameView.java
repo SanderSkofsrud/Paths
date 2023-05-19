@@ -274,6 +274,7 @@ public class NewGameView extends View {
       String activeCharacter = characterMale.isVisible() ? "m.png" : "f.png";
       playerController.setActiveCharacter(activeCharacter);
       screenController.activate("ChooseGoals");
+      resetPane();
     });
 
     VBox vBox = new VBox();

@@ -92,13 +92,11 @@ public enum Dictionary {
 
   BROKEN_LINK("Broken link"),
 
-  DIE("You died"),
-
-  EMPTY_GOLD("You ran out of gold"),
-
-  EMPTY_SCORE("Your score got too low"),
-
   LINK_BROKEN("You have selected a passage with a broken link"),
+
+  SELECT_TEMPLATE("Select template"),
+
+  START("Start"),
 
   ;
   private final String key;

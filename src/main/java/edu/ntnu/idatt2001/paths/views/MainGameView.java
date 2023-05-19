@@ -6,6 +6,7 @@ import edu.ntnu.idatt2001.paths.models.actions.Action;
 import edu.ntnu.idatt2001.paths.models.goals.*;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
+import edu.ntnu.idatt2001.paths.utility.ShowAlert;
 import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -154,6 +155,8 @@ public class MainGameView extends View{
    * Used for redo.
    */
   private Passage previousPassage;
+
+  private ShowAlert showAlert = new ShowAlert();
   /**
    * The Undo button.
    * The undoButton is the button that is used to undo the last action.
@@ -375,35 +378,13 @@ public class MainGameView extends View{
             action.execute(player);
           }
         } catch (Exception e) {
-          Alert alert = new Alert(Alert.AlertType.ERROR);
-          if (!player.isAlive()) {
-            alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
-            alert.setHeaderText(languageController.getTranslation(Dictionary.DIE.getKey()));
-          }
-          if (player.getScore() <= 0) {
-            alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
-            alert.setHeaderText(languageController.getTranslation(Dictionary.EMPTY_SCORE.getKey()));
-          }
-          if (player.getGold() <= 0) {
-            alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
-            alert.setHeaderText(languageController.getTranslation(Dictionary.EMPTY_GOLD.getKey()));
-          }
-          DialogPane dialogPane = alert.getDialogPane();
-          dialogPane.getStylesheets().add("stylesheet.css");
-          alert.showAndWait();
+          ShowAlert.showError(e.getMessage(),e.getMessage());
           screenController.activate("FinalPassageView");
           resetPane();
         }
         if (game.getStory().getBrokenLinks().contains(link)) {
-          Alert alert = new Alert(Alert.AlertType.INFORMATION);
-          alert.setTitle(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()));
-          alert.setHeaderText(languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
-          DialogPane dialogPane = alert.getDialogPane();
-          dialogPane.getStylesheets().add("stylesheet.css");
-          alert.showAndWait();
-          alert.close();
+          ShowAlert.showInformation(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()),languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
           button.setDisable(true);
-          borderPane.getStylesheets().add("stylesheet.css");
         } else {
         Passage nextPassage = game.go(link);
         undoButton.setDisable(false);
