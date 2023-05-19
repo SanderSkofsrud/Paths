@@ -2,6 +2,7 @@ package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.models.Game;
+import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.*;
 import edu.ntnu.idatt2001.paths.models.goals.GoalEnum;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
@@ -246,17 +247,13 @@ public class ChooseGoalsView extends View {
 
       if (!goals.isEmpty()) {
         Game game;
-        if (fileHandlerController.getCurrentGameData() != null && fileHandlerController.getCurrentGameData().getStory() != null) {
-          game = new Game(playerController.getPlayer(), fileHandlerController.getCurrentGameData().getStory(), goals);
-        } else {
           try {
-            game = new Game(playerController.getPlayer(), fileHandlerController.loadTemplate("template2.paths"), goals);
+            Story story = fileHandlerController.loadTemplate("template2.paths");
+            game = new Game(playerController.getPlayer(), story, goals, story.getOpeningPassage());
           } catch (FileNotFoundException ex) {
             throw new RuntimeException(ex);
           }
-        }
 
-        fileHandlerController.saveGame(game.getStory(), playerController.getPlayer(), game.getGoals(), playerController.getActiveCharacter());
         fileHandlerController.saveGameJson(playerController.getPlayer().getName(), game);
 
         gameController.setGame(game);
