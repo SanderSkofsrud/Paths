@@ -31,6 +31,10 @@ public class PlayerController {
    * The Inventory of the player.
    */
   private List<String> inventory = new ArrayList<>();
+  /**
+   * The active character.
+   */
+  private String activeCharacter;
 
   /**
    * Instantiates a new Player controller.
@@ -101,5 +105,23 @@ public class PlayerController {
    */
   public void setPlayer(Player player) {
     this.player = player;
+  }
+
+  /**
+   * Returns the active character model.
+   *
+   * @return the active character model
+   */
+  public String getActiveCharacter(){
+    return activeCharacter;
+  }
+
+  /**
+   * Sets the active character model.
+   *
+   * @param activeCharacter the active character model
+   */
+  public void setActiveCharacter(String activeCharacter){
+    this.activeCharacter = activeCharacter;
   }
 }

@@ -83,6 +83,10 @@ You walk towards the source of the noise and suddenly a ghostly figure appears. 
 [Confront the curse](The resolution)[{ScoreAction}(-10)]
 [Run away](The hallway)]
 
+::The hallway
+You ded son
+[Go back](The entrance)
+
 ::The resolution
 You confront the curse and recite a spell from the book of spells. The curse suddenly dissipates and the ghostly figure disappears. You feel a sense of relief wash over you.
 [Leave the house](The end)]

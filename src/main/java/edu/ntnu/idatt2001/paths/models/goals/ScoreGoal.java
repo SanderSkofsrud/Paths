@@ -45,7 +45,7 @@ public class ScoreGoal implements Goal {
    */
   @Override
   public String toString() {
-    return "(ScoreGoal)(" + this.minimumScore + ")";
+    return "ScoreGoal: " + minimumScore;
   }
 
   public int getMinimumScore() {

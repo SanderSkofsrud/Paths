@@ -1,0 +1,54 @@
+Dark forest
+
+::Beginnings
+You find yourself standing at the edge of a dark forest. The trees are tall and ominous, their branches reaching out like skeletal fingers. You hesitate for a moment before stepping into the forest.
+[Proceed into the forest](The path)[{ScoreAction}(5)]
+
+::The witch
+As you knock on the door, an old woman with a twisted smile opens it. She invites you inside and offers you a cup of tea. As you drink the tea, you begin to feel strange.
+[Confront the witch](The curse)[{ScoreAction}(10)]
+[Leave the cabin](The path)
+
+::The abandoned cabin
+You take the left path and soon come across an abandoned cabin. The windows are boarded up and the door is creaking in the wind. You hesitate for a moment before deciding what to do next.
+[Knock on the door](The witch)[{ScoreAction}(10)]
+[Leave the cabin](The path)
+
+::The curse
+You realize too late that the tea was cursed, and you feel yourself growing weaker by the moment. You try to run but find yourself unable to move. The witch cackles as she places a hex on you, cursing you to roam the forest forever.
+[Accept your fate](The end)[{HealthAction}(-10000)]
+
+::The river
+You continue down the path until you come across a small river. The water is murky and the trees on either side of the river are twisted and gnarled. You see a small boat moored at the bank.
+[Take the boat](The island)[{ScoreAction}(5)]
+[Follow the riverbank](The waterfall)
+
+::The end
+You ded.
+
+::The path
+You follow a narrow path deeper into the forest. The air is chilly and you can hear the rustling of leaves in the wind. Suddenly, you come across a fork in the path.
+[Take the left path](The abandoned cabin)[{ScoreAction}(5)]
+[Take the right path](The graveyard)[{ScoreAction}(5)]
+
+::The graveyard
+You take the right path and soon come across a graveyard. The headstones are old and cracked, and there's an eerie mist hanging in the air. You see an open mausoleum in the distance.
+[Investigate the mausoleum](The specter)[{ScoreAction}(10)]
+[Leave the graveyard](The path)
+
+::The hermit
+As you explore the island, you come across an old hermit who has been living there for years. He tells you about the dark secrets that lie within the forest and gives you a warning to leave.
+[Heed the warning](The path)[{ScoreAction}(5)]
+
+::The waterfall
+You follow the riverbank until you come across a waterfall. The water is crystal clear and you can see fish swimming in the water. You see a small cave behind the waterfall.
+[Enter the cave](The dragon)[{ScoreAction}(10)]
+
+::The specter
+As you enter the mausoleum, you see a ghostly figure floating in the corner. It's the specter of a long-dead grave robber who was cursed to haunt the graveyard. It approaches you, its eyes glowing with an otherworldly light.
+[Confront the specter](The ritual)[{ScoreAction}(10)]
+[Run away](The graveyard)
+
+::The ritual
+You confront the specter and recite a ritual from a book of spells you brought with you. The specter shrieks and disappears, leaving you feeling relieved.
+[Leave the graveyard](The path)

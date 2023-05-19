@@ -14,18 +14,21 @@ import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 import javafx.util.Duration;
 import javafx.util.Pair;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -166,6 +169,7 @@ public class MainGameView extends View{
    */
   PlayerController playerController = PlayerController.getInstance();
   LanguageController languageController = LanguageController.getInstance();
+  ProgressController progressController = ProgressController.getInstance();
   private ImageView soundImageView;
   private boolean isMuted = false;
   private SoundPlayer soundPlayer = new SoundPlayer();
@@ -221,7 +225,7 @@ public class MainGameView extends View{
    */
   @Override
   public void setup() {
-    soundPlayer.playOnLoop("/sounds/ambiance.wav", 0.5);
+    soundPlayer.playOnLoop("/sounds/ambiance.wav");
     game = gameController.getGame();
     player = game.getPlayer();
     goals = game.getGoals();
@@ -234,8 +238,6 @@ public class MainGameView extends View{
     TextFlow textFlow = new TextFlow(passageContent);
 
     setupButtonsBox();
-    setupTopBar(textFlow);
-    setupAttributesBox();
 
     ScrollPane scrollPane = new ScrollPane(textFlow);
     scrollPane.setFitToWidth(true);
@@ -247,7 +249,7 @@ public class MainGameView extends View{
     passageContent.setStyle("-fx-background-color: transparent;");
     textFlow.setStyle("-fx-background-color: transparent;");
 
-    textFlow.setOnMouseClicked(event -> {
+    EventHandler<MouseEvent> setOnMouseClicked = event -> {
       Pair<Timeline, Passage> timelineAndPassage = (Pair<Timeline, Passage>) textFlow.getUserData();
       timeline = timelineAndPassage.getKey();
       Passage passage = timelineAndPassage.getValue();
@@ -258,23 +260,52 @@ public class MainGameView extends View{
         String remainingText = String.join(" ", Arrays.copyOfRange(allWords, displayedWords.length, allWords.length));
         passageContent.appendText(remainingText);
       }
-    });
+    };
+
+    passageContent.setOnMouseClicked(setOnMouseClicked);
+    textFlow.setOnMouseClicked(setOnMouseClicked);
+    scrollPane.setOnMouseClicked(setOnMouseClicked);
 
     VBox scrollPaneAndButtonsBox = new VBox(scrollPane, buttonsBox);
     scrollPaneAndButtonsBox.setAlignment(Pos.BOTTOM_CENTER);
     borderPane.setBottom(scrollPaneAndButtonsBox);
 
+    HBox info = new HBox();
+    info.setAlignment(Pos.CENTER);
+    info.setPadding(new Insets(10, 10, 10, 10));
+
+    System.out.println(playerController.getActiveCharacter());
+    ImageView characterImage = new ImageView(new Image(getClass().getResourceAsStream("/images/" + playerController.getActiveCharacter())));
+    characterImage.setFitHeight(250);
+    characterImage.setFitWidth(250);
+    characterImage.setPreserveRatio(true);
+    info.getChildren().addAll(characterImage, scrollPane);
+
     VBox.setVgrow(scrollPane, Priority.ALWAYS);
-    stackPane.getChildren().add(scrollPane);
+    stackPane.getChildren().add(info);
     stackPane.setStyle("-fx-background-color: transparent;");
-    stackPane.setAlignment(scrollPane, Pos.CENTER);
+    stackPane.setAlignment(info, Pos.CENTER);
 
     borderPane.setCenter(stackPane);
 
     HBox buttonsBox = new HBox();
     borderPane.setBottom(buttonsBox);
 
-    textFlow.setUserData(updateUIWithPassage(textFlow, game.begin()));
+    try {
+      progressController.loadProgress(player.getName());
+      if (progressController.getPlayer() != null) {
+        player = progressController.getPlayer();
+        Link link = new Link(progressController.getCurrentPassage().getTitle(), progressController.getCurrentPassage().getTitle());
+        currentPassage = game.go(link);
+      }
+    } catch (RuntimeException e) {
+      currentPassage = game.begin();
+    }
+
+    setupTopBar(textFlow);
+    setupAttributesBox();
+
+    textFlow.setUserData(updateUIWithPassage(textFlow, currentPassage));
 
     Image background = new Image(getClass().getResourceAsStream("/images/gameBackground.png"));
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
@@ -308,13 +339,14 @@ public class MainGameView extends View{
    * @return the pair of the timeline and the passage
    */
   private Pair<Timeline, Passage> updateUIWithPassage(TextFlow textFlow, Passage passage) {
+    passageContent.clear();
+    setupTopBar(textFlow);
+    setupAttributesBox();
+
     previousPassage = currentPassage;
     currentPassage = passage;
 
-    passageContent.clear();
-    updatePlayerAttributes();
-
-    String translatedContent = languageController.translate(passage.getContent());
+    String translatedContent = languageController.translate(currentPassage.getContent());
 
     words = translatedContent.split("\\s+");
 
@@ -333,7 +365,7 @@ public class MainGameView extends View{
     buttonsBox.setPadding(new Insets(10, 0, 100, 0));
     buttonsBox.setSpacing(10);
 
-    for (Link link : passage.getLinks()) {
+    for (Link link : currentPassage.getLinks()) {
       Button button = new Button(languageController.translate(link.getText()));
       button.setOnAction(event -> {
         try {
@@ -415,6 +447,7 @@ public class MainGameView extends View{
         undoButton.setDisable(false);
         timeline.stop();
         updateUIWithPassage(textFlow, nextPassage);
+        progressController.saveProgress(player, previousPassage, currentPassage);
 
         if (!MinigameView.hasPlayed()) {
           int random = (int) (Math.random() * 100) + 1;
@@ -433,9 +466,9 @@ public class MainGameView extends View{
 
     updatePlayerInfo();
     System.out.println(player);
-    textFlow.setUserData(new Pair<>(timeline, passage)); // Store the Pair object in userData
+    textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
     timeline.play();
-    return new Pair<>(timeline, passage);
+    return new Pair<>(timeline, currentPassage);
   }
 
   /**
@@ -515,52 +548,22 @@ public class MainGameView extends View{
     soundImageView.setFitWidth(30);
     soundImageView.setFitHeight(30);
 
-    Slider volumeSlider = new Slider(0, 1, 0.5);
-    volumeSlider.setOrientation(Orientation.HORIZONTAL);
-    volumeSlider.setShowTickLabels(true);
-    volumeSlider.setShowTickMarks(true);
-    volumeSlider.setManaged(false);
-    volumeSlider.setVisible(false);
-
     Button soundButton = new Button();
     soundButton.setGraphic(soundImageView);
     soundButton.setStyle("-fx-background-color: transparent;");
 
-    StackPane stackPane = new StackPane(soundButton, volumeSlider);
-    StackPane.setAlignment(volumeSlider, Pos.TOP_CENTER);
-    stackPane.setPadding(new Insets(10)); // Adjust to your needs
-
-    TranslateTransition transition = new TranslateTransition(Duration.seconds(0.5), volumeSlider);
-    transition.setToY(-volumeSlider.getHeight());
-    transition.setCycleCount(1);
-
-    soundButton.setOnMouseEntered(event -> {
-      volumeSlider.setManaged(true);
-      volumeSlider.setVisible(true);
-      transition.play();
-    });
-
-    soundButton.setOnMouseExited(event -> {
-      volumeSlider.setManaged(false);
-      volumeSlider.setVisible(false);
-      volumeSlider.setTranslateY(0);
-    });
-
-    volumeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-      soundPlayer.setVolume(newValue.doubleValue());
-    });
-
     soundButton.setOnAction(event -> {
       if (isMuted) {
-        soundPlayer.playOnLoop("/sounds/ambiance.wav", volumeSlider.getValue());
+        soundPlayer.playOnLoop("/sounds/ambiance.wav");
         Image soundImageOn = new Image(getClass().getResourceAsStream("/images/sound.png"));
         soundImageView.setImage(soundImageOn);
+        isMuted = false;
       } else {
         soundPlayer.stop();
         Image soundImageOff = new Image(getClass().getResourceAsStream("/images/nosound.png"));
         soundImageView.setImage(soundImageOff);
+        isMuted = true;
       }
-      isMuted = !isMuted;
     });
 
     undoButton = new Button();
@@ -597,7 +600,7 @@ public class MainGameView extends View{
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == saveAndExit) {
-          FileHandlerController.getInstance().saveGame(player.getName(), story);
+          FileHandlerController.getInstance().saveGame(story, player, goals, "m.png");
           FileHandlerController.getInstance().saveGameJson(player.getName(),game);
           Platform.exit();
         } else if (result.get() == exitWithoutSaving) {
@@ -647,7 +650,7 @@ public class MainGameView extends View{
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == saveAndGoHome) {
-          FileHandlerController.getInstance().saveGame(player.getName(), story);
+          FileHandlerController.getInstance().saveGame(story, player, goals, "m.png");
           FileHandlerController.getInstance().saveGameJson(player.getName(),game);
           gameController.resetGame(); // Add this line
           resetPane();
@@ -691,7 +694,7 @@ public class MainGameView extends View{
     HBox topRightBox = new HBox();
     topRightBox.setAlignment(Pos.TOP_RIGHT);
     topRightBox.setPadding(new Insets(10, 10, 10, 10));
-    topRightBox.getChildren().addAll(undoButton, restartButton, homeButton, questionButton, exitButton, stackPane);
+    topRightBox.getChildren().addAll(undoButton, restartButton, homeButton, questionButton, exitButton, soundButton);
 
     VBox goalsVbox = goalsVbox();
 

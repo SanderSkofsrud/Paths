@@ -23,5 +23,10 @@ public enum GoalEnum {
    * Score goal enum.
    * The player has to reach a certain amount of score.
    */
-  SCORE
+  SCORE,
+  /**
+   * Inventory goal enum.
+   * The player has to reach certain items in the inventory.
+   */
+  INVENTORY;
 }

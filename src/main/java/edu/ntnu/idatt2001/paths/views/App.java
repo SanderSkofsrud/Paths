@@ -104,8 +104,10 @@
       screenController.addScreen("Minigame", minigameView);
 
       primaryStage.setTitle("Paths");
-      primaryStage.setWidth(500);
-      primaryStage.setHeight(500);
+      primaryStage.setWidth(1000);
+      primaryStage.setHeight(800);
+      primaryStage.setMinWidth(1000);
+      primaryStage.setMinHeight(800);
       primaryStage.setMaximized(true);
 
       primaryStage.setScene(frontPageScene);

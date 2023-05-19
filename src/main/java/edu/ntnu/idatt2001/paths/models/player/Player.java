@@ -180,16 +180,15 @@ public class Player {
         sb.append(", ");
       }
     }
-    return ";;"
+    return "Name: "
         + getName()
-        + ";"
+        + "\nHealth: "
         + getHealth()
-        + ";"
+        + "\nScore: "
         + getScore()
-        + ";"
+        + "\nGold: "
         + getGold()
-        + ";["
-        + sb
-        + "]";
+        + "\nInventory: "
+        + sb;
   }
 }

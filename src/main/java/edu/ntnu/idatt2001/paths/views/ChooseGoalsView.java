@@ -248,13 +248,13 @@ public class ChooseGoalsView extends View {
           game = new Game(playerController.getPlayer(), fileHandlerController.getCurrentGameData().getStory(), goals);
         } else {
           try {
-            game = new Game(playerController.getPlayer(), fileHandlerController.loadGame("template1.paths").getStory(), goals);
+            game = new Game(playerController.getPlayer(), fileHandlerController.loadTemplate("template2.paths"), goals);
           } catch (FileNotFoundException ex) {
             throw new RuntimeException(ex);
           }
         }
 
-        fileHandlerController.saveGame(playerController.getPlayer().getName(), game.getStory());
+        fileHandlerController.saveGame(game.getStory(), playerController.getPlayer(), game.getGoals(), playerController.getActiveCharacter());
         fileHandlerController.saveGameJson(playerController.getPlayer().getName(), game);
 
         gameController.setGame(game);

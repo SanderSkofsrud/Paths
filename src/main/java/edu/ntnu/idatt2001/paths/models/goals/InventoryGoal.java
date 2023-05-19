@@ -57,7 +57,7 @@ public class InventoryGoal implements Goal {
    */
   @Override
   public String toString() {
-    return "(InventoryGoal)(" + this.mandatoryItems + ")";
+    return "InventoryGoal: " + mandatoryItems ;
   }
 
   public List<String> getMandatoryItems() {
