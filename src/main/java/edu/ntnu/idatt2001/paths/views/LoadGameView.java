@@ -2,18 +2,11 @@ package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.models.Game;
-import edu.ntnu.idatt2001.paths.models.Link;
-import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
-import edu.ntnu.idatt2001.paths.utility.FileEntry;
-import javafx.application.Platform;
-import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
-import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -22,12 +15,6 @@ import javafx.stage.FileChooser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * The type Load game view.
@@ -70,10 +57,11 @@ public class LoadGameView extends View{
    */
   LoadGameController loadGameController = LoadGameController.getInstance();
   LanguageController languageController = LanguageController.getInstance();
+  PlayerController playerController = PlayerController.getInstance();
   /**
    * The Json table view.
    */
-  TableView<FileEntry> jsonTableView;
+  TableView<File> jsonTableView;
 
   /**
    * Instantiates a new Load game view.
@@ -105,91 +93,28 @@ public class LoadGameView extends View{
   public void setup() {
     jsonTableView = new TableView<>();
 
-    TableColumn<FileEntry, String> jsonFileNameColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_NAME.getKey()));
-    jsonFileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getFileName()));
+    TableColumn<File, String> fileNameColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_NAME.getKey()));
+    fileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getName()));
 
-    TableColumn<FileEntry, FileEntry> jsonFileLocationColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_LOCATION.getKey()));
-    jsonFileLocationColumn.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
-    jsonFileLocationColumn.setCellFactory(column -> new TableCell<FileEntry, FileEntry>() {
-      @Override
-      protected void updateItem(FileEntry item, boolean empty) {
-        super.updateItem(item, empty);
+    TableColumn<File, String> fileLocationColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_LOCATION.getKey()));
+    fileLocationColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getAbsolutePath()));
 
-        if (empty || item == null) {
-          setText(null);
-          setGraphic(null);
-        } else {
-          setText(item.getFileLocation());
-          setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) {
-              String fileName = item.getFileLocation();
+    TableColumn<File, String> brokenLinksColumn = new TableColumn<>(languageController.getTranslation(Dictionary.BROKEN_LINKS.getKey()));
+    brokenLinksColumn.setCellValueFactory(param -> new ReadOnlyStringWrapper(loadGameController.getBrokenLinksString(param.getValue())));
 
-              Game game = null;
-
-              try {
-                game = fileHandlerController.loadGameJson(fileName);
-              } catch (FileNotFoundException e) {
-                e.printStackTrace();
-              } catch (IllegalArgumentException e) {
-                System.err.println("Incorrect file format: " + e.getMessage());
-              }
-
-              if (game != null) {
-                String fileType = loadGameController.getFileType();
-                setText("src/main/resources/" + fileType + "/" + item.getFileName());
-              }
-            }
-          });
-        }
-      }
-    });
-
-    TableColumn<FileEntry, FileEntry> jsonBrokenLinksColumn = new TableColumn<>(languageController.getTranslation(Dictionary.BROKEN_LINKS.getKey()));
-    jsonBrokenLinksColumn.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
-    jsonBrokenLinksColumn.setCellFactory(column -> {
-      return new TableCell<FileEntry, FileEntry>() {
-        @Override
-        protected void updateItem(FileEntry item, boolean empty) {
-          super.updateItem(item, empty);
-
-          if (item == null || empty) {
-            setText(null);
-          } else {
-            String fileName = item.getFileName();
-            Game game = null;
-            try {
-              game = fileHandlerController.loadGameJson(fileName);
-            } catch (FileNotFoundException | IllegalArgumentException e) {
-              System.out.println("Incorrect file format: " + e.getMessage());
-            }
-            List<Link> brokenLinks = null;
-            if (game != null) {
-              brokenLinks = game.getStory().getBrokenLinks();
-            }
-
-            if (brokenLinks != null && !brokenLinks.isEmpty()) {
-              setText(brokenLinks.stream().map(Link::getReference).collect(Collectors.joining(", ")));
-            } else {
-              setText(languageController.getTranslation(Dictionary.NO_BROKEN_LINKS.getKey()));
-            }
-          }
-        }
-      };
-    });
-
-
-    TableColumn<FileEntry, String> jsonClickableTextColumn = new TableColumn<>(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
-    jsonClickableTextColumn.setPrefWidth(100);
-    jsonClickableTextColumn.setCellFactory(tc -> new TableCell<>() {
+    TableColumn<File, String> loadColumn = new TableColumn<>(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
+    loadColumn.setPrefWidth(100);
+    loadColumn.setCellFactory(tc -> new TableCell<>() {
       private final Hyperlink hyperlink = new Hyperlink(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
 
       {
         hyperlink.setOnAction(event -> {
-          FileEntry fileEntry = getTableView().getItems().get(getIndex());
-          System.out.println("Clicked on file: " + fileEntry.getFileName());
+          File selectedFile = getTableView().getItems().get(getIndex());
+          System.out.println("Clicked on file: " + selectedFile.getName());
           try {
-            game = fileHandlerController.loadGameJson(fileEntry.getFileName());
+            game = fileHandlerController.loadGameJson(selectedFile.getAbsolutePath());
             gameController.setGame(game);
+            playerController.setActiveCharacter(game.getPlayer().getCharacterModel());
           } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
           }
@@ -209,7 +134,7 @@ public class LoadGameView extends View{
       }
     });
 
-    jsonTableView.getColumns().addAll(jsonFileNameColumn, jsonFileLocationColumn, jsonBrokenLinksColumn, jsonClickableTextColumn);
+    jsonTableView.getColumns().addAll(fileNameColumn, fileLocationColumn, brokenLinksColumn, loadColumn);
     jsonTableView.setItems(loadGameController.getSavedGames("json"));
     jsonTableView.setPrefWidth(650);
 
