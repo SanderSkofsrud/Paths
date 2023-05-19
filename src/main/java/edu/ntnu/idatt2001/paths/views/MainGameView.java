@@ -375,8 +375,8 @@ public class MainGameView extends View{
         } catch (Exception e) {
           if (!player.isAlive()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Game over");
-            alert.setHeaderText("You have died");
+            alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
+            alert.setHeaderText(languageController.getTranslation(Dictionary.DIE.getKey()));
 
             DialogPane dialogPane = alert.getDialogPane();
             dialogPane.getStylesheets().add("stylesheet.css");
@@ -387,8 +387,8 @@ public class MainGameView extends View{
 
           if (player.getGold() <= 0) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Game over");
-            alert.setHeaderText("You ran out of gold");
+            alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
+            alert.setHeaderText(languageController.getTranslation(Dictionary.EMPTY_GOLD.getKey()));
 
             DialogPane dialogPane = alert.getDialogPane();
             dialogPane.getStylesheets().add("stylesheet.css");
@@ -399,8 +399,8 @@ public class MainGameView extends View{
 
           if (player.getScore() <= 0) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Game over");
-            alert.setHeaderText("Your score got too low");
+            alert.setTitle(languageController.getTranslation(Dictionary.GAME_OVER.getKey()));
+            alert.setHeaderText(languageController.getTranslation(Dictionary.EMPTY_SCORE.getKey()));
 
             DialogPane dialogPane = alert.getDialogPane();
             dialogPane.getStylesheets().add("stylesheet.css");
@@ -411,7 +411,7 @@ public class MainGameView extends View{
         }
         if (game.getStory().getBrokenLinks().contains(link)) {
           Alert alert = new Alert(Alert.AlertType.INFORMATION);
-          alert.setTitle("Broken Link");
+          alert.setTitle(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()));
           alert.setHeaderText("You have selected a passage with a broken link");
           DialogPane dialogPane = alert.getDialogPane();
           dialogPane.getStylesheets().add("stylesheet.css");
@@ -705,13 +705,11 @@ public class MainGameView extends View{
     goalsVbox.setAlignment(Pos.TOP_CENTER);
 
     Label goalsLabel = new Label(languageController.translate("Goals:"));
-    goalsLabel.setFont(Font.font("Arial", FontWeight.BOLD, 20));
     goalsVbox.getChildren().add(goalsLabel);
 
     for (Goal goal : game.getGoals()) {
       HBox goalHbox = new HBox();
       Label goalLabel = new Label(goal.toString());
-      goalLabel.setFont(Font.font("Arial", FontWeight.BOLD, 15));
       ProgressBar goalProgressBar = new ProgressBar();
       goalProgressBar.setProgress(0);
       double progress = 0.0;
