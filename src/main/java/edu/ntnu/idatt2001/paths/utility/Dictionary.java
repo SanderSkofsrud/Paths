@@ -93,6 +93,8 @@ public enum Dictionary {
 
   EMPTY_SCORE("Your score got too low"),
 
+  LINK_BROKEN("You have selected a passage with a broken link"),
+
   ;
   private final String key;
 
