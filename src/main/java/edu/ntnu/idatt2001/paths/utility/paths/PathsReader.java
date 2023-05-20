@@ -71,14 +71,14 @@ public class PathsReader {
         Link link = new Link(linkDescription, linkReference);
         List<Action> actions = new ArrayList<>();
         while (actionMatcher.find()) {
-          String actionType = actionMatcher.group(1);
+          String actionType = actionMatcher.group(1).replace("Action", "").toUpperCase();
           String actionValue = actionMatcher.group(2);
-          switch (actionType) {
-            case "GoldAction" -> actions.add(new GoldAction(Integer.parseInt(actionValue)));
-            case "ScoreAction" -> actions.add(new ScoreAction(Integer.parseInt(actionValue)));
-            case "HealthAction" -> actions.add(new HealthAction(Integer.parseInt(actionValue)));
-            case "InventoryAction" -> actions.add(new InventoryAction(actionValue));
-            default -> throw new IllegalArgumentException("Invalid action type: " + actionType);
+          Action action;
+          try {
+            action = ActionFactory.createAction(ActionEnum.valueOf(actionType), actionValue);
+            actions.add(action);
+          } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid action type: " + actionType);
           }
         }
         for (Action action : actions) {

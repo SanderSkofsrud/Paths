@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added playerModel to Player and PlayerBuilder, and added it to the constructor where it is needed">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/ActionEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/ActionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/json/Sander.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/json/Test3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/json/test1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/json/test2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/paths/PathsFileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/paths/PathsFileHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoalEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/goals/GoalEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +155,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult">
+  <component name="RunManager" selected="Maven.paths [javafx:run]">
     <configuration name="InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -360,14 +359,8 @@
       <workItem from="1684417354119" duration="76000" />
       <workItem from="1684417500089" duration="31035000" />
       <workItem from="1684515186737" duration="195000" />
-      <workItem from="1684515396061" duration="2944000" />
-    </task>
-    <task id="LOCAL-00117" summary="Updated NewGameView to work with new implementation of load game without story and/or goals">
-      <created>1683032827777</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1683032827777</updated>
+      <workItem from="1684515396061" duration="3344000" />
+      <workItem from="1684563213111" duration="1333000" />
     </task>
     <task id="LOCAL-00118" summary="Added progressbar to show the progress of each goal">
       <created>1683032860493</created>
@@ -705,7 +698,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684519129450</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="Fixed test that were broken after previous refactoring">
+      <created>1684563106866</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1684563106866</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -736,7 +736,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added images for flags for all countries to visualize what countries the language you are translating to are spoken in" />
     <MESSAGE value="Updated tests to work with new filehandling" />
     <MESSAGE value="Changed width and height of program" />
     <MESSAGE value="Updated to work with new filehandling" />
@@ -761,7 +760,8 @@
     <MESSAGE value="New, working json files" />
     <MESSAGE value="Removed FileEntry as it was not needed, and refactored all files that used it" />
     <MESSAGE value="Added playerModel to Player and PlayerBuilder, and added it to the constructor where it is needed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added playerModel to Player and PlayerBuilder, and added it to the constructor where it is needed" />
+    <MESSAGE value="Fixed test that were broken after previous refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed test that were broken after previous refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
