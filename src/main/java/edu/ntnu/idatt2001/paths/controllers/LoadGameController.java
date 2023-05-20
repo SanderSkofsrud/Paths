@@ -150,7 +150,7 @@ public class LoadGameController {
     String fileName = file.getName();
     Game game = null;
     try {
-      game = fileHandlerController.loadGameJson(file.getAbsolutePath());
+      game = fileHandlerController.loadGameJson(file.getName(), null);
     } catch (FileNotFoundException | IllegalArgumentException e) {
       System.out.println("Incorrect file format: " + e.getMessage());
     }
@@ -239,7 +239,7 @@ public class LoadGameController {
           String selectedFile = getTableView().getItems().get(getIndex()).getName();
           System.out.println("Clicked on file: " + selectedFile);
           try {
-            game = fileHandlerController.loadGameJson(selectedFile);
+            game = fileHandlerController.loadGameJson(selectedFile, null);
             gameController.setGame(game);
             playerController.setActiveCharacter(game.getPlayer().getCharacterModel());
           } catch (FileNotFoundException e) {
