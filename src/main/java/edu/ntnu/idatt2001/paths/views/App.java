@@ -170,10 +170,20 @@
             languageController.setLanguage(newValue.toString());
             return null;
           }
+
+          /**
+           * The running method is used to set the cursor to a waiting cursor.
+           * The text of the buttons is changed to "Changing language..." and the buttons are disabled.
+           * This is done to limit confusion for the user when the language is being changed.
+           */
           @Override
           protected void running() {
             super.running();
             frontPageScene.setCursor(Cursor.WAIT);
+            newGame.setText("Changing language...");
+            loadGame.setText("Changing language...");
+            newGame.setDisable(true);
+            loadGame.setDisable(true);
           }
           @Override
           protected void succeeded() {
@@ -181,6 +191,8 @@
             frontPageScene.setCursor(Cursor.DEFAULT);
             newGame.setText(languageController.getTranslation(Dictionary.NEW_GAME.getKey()));
             loadGame.setText(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
+            newGame.setDisable(false);
+            loadGame.setDisable(false);
           }
           @Override
           protected void failed() {

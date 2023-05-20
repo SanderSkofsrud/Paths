@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added new button for credits when winning a game">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/12.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/2345.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/32456.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/4356.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/546.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/FinalPassageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/FinalPassageView.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="removed credits button from FinalPassageView">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/435.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,13 +357,6 @@
       <workItem from="1684515186737" duration="195000" />
       <workItem from="1684515396061" duration="2944000" />
     </task>
-    <task id="LOCAL-00118" summary="Added progressbar to show the progress of each goal">
-      <created>1683032860493</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1683032860493</updated>
-    </task>
     <task id="LOCAL-00119" summary="added dialog box to alert to style it">
       <created>1683104883245</created>
       <option name="number" value="00119" />
@@ -704,7 +693,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684587941688</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="removed credits button from FinalPassageView">
+      <created>1684588008533</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1684588008533</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -735,7 +731,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated tests to work with new filehandling" />
     <MESSAGE value="Changed width and height of program" />
     <MESSAGE value="Updated to work with new filehandling" />
     <MESSAGE value="Added method to load template, and updated saveGame to work with new filehandling" />
@@ -760,7 +755,8 @@
     <MESSAGE value="Removed FileEntry as it was not needed, and refactored all files that used it" />
     <MESSAGE value="Added playerModel to Player and PlayerBuilder, and added it to the constructor where it is needed" />
     <MESSAGE value="added new button for credits when winning a game" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new button for credits when winning a game" />
+    <MESSAGE value="removed credits button from FinalPassageView" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed credits button from FinalPassageView" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
