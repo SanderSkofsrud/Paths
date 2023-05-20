@@ -336,7 +336,7 @@ public class FinalPassageView extends View{
     buttonsBox.setPadding(new Insets(10, 0, 100, 0));
     buttonsBox.setSpacing(10);
 
-    Button button = new Button("Credtis:");
+    Button button = new Button(languageController.getTranslation(Dictionary.CREDITS.getKey()));
     buttonsBox.getChildren().add(button);
     button.setId("subMenuButton");
 

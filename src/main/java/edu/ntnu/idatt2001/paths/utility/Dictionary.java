@@ -116,6 +116,8 @@ public enum Dictionary {
 
   GOALS_IN_GAME("Goals: "),
 
+  CREDITS("Credits"),
+
 
   ;
   private final String key;

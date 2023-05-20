@@ -366,8 +366,14 @@ public class MainGameView extends View{
             }
           } catch (Exception e) {
             ShowAlert.showError(e.getMessage(), e.getMessage());
-            screenController.activate("FinalPassageView");
-            resetPane();
+            Button credits = new Button(languageController.getTranslation(Dictionary.CREDITS.getKey()));
+            credits.setOnAction(event1 -> {
+              screenController.activate("FinalPassageView");
+              resetPane();
+            });
+            credits.setId("credits");
+            buttonsBox.getChildren().clear();
+            buttonsBox.getChildren().add(credits);
           }
           if (game.getStory().getBrokenLinks().contains(link)) {
             ShowAlert.showInformation(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()), languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
@@ -377,7 +383,6 @@ public class MainGameView extends View{
             undoButton.setDisable(false);
             timeline.stop();
             updateUIWithPassage(textFlow, nextPassage);
-            //progressController.saveProgress(player, previousPassage, currentPassage);
             game.setCurrentPassage(nextPassage);
 
             if (!MinigameView.hasPlayed()) {
@@ -400,7 +405,14 @@ public class MainGameView extends View{
       timeline.play();
       return new Pair<>(timeline, currentPassage);
     } else {
-      screenController.activate("FinalPassageView");
+      Button credits = new Button(languageController.getTranslation(Dictionary.CREDITS.getKey()));
+      credits.setOnAction(event1 -> {
+        screenController.activate("FinalPassageView");
+        resetPane();
+      });
+      credits.setId("subMenuButton");
+      buttonsBox.getChildren().clear();
+      buttonsBox.getChildren().add(credits);
       return null;
     }
   }
