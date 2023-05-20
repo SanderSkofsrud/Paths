@@ -4,38 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/Test3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/test2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added playerModel to Player and PlayerBuilder, and added it to the constructor where it is needed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FileHandlerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LoadGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/ProgressController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/GameData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/ProgressData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/paths/PathsWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/ChooseGoalsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/FinalPassageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/FinalPassageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/LoadGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MinigameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MinigameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/json/Sander.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/Sander.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/json/Test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/test1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Sander/Sander.paths" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Sander/goals" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Sander/player" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Sander/progress" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Test/Test.paths" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Test/goals" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Test/player" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paths/Test/progress" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/json/Sander.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/json/Test3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/json/test1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/json/test2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/paths/PathsFileHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/utility/paths/PathsFileHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,8 +156,24 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.paths [javafx:run]">
-    <configuration name="PathsFileHandlerTest$pathsReader$loadGame.testThatLoadGameThrowsIllegalArgumentException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult">
+    <configuration name="InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.goals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.goals.InventoryGoalTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.goals.InventoryGoalTest$fileHandling" />
+      <option name="METHOD_NAME" value="testThatToStringReturnsExpectedResult" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PathsFileHandlerTest$pathsReader$loadGame.testThatReadFromFileThrowsNullPointerException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
@@ -191,71 +183,53 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths.PathsFileHandlerTest.pathsReader" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths.PathsFileHandlerTest$pathsReader$loadGame" />
-      <option name="METHOD_NAME" value="testThatLoadGameThrowsIllegalArgumentException2" />
+      <option name="METHOD_NAME" value="testThatReadFromFileThrowsNullPointerException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PathsFileHandlerTest$pathsReader$loadGame.testThatReadFromFileReturnsAStoryWithCorrectValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest$fileHandling.testThatToStringWorks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.paths.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths.PathsFileHandlerTest.pathsReader" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths.PathsFileHandlerTest$pathsReader$loadGame" />
-      <option name="METHOD_NAME" value="testThatReadFromFileReturnsAStoryWithCorrectValues" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.PlayerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.PlayerTest$fileHandling" />
+      <option name="METHOD_NAME" value="testThatToStringWorks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PathsFileHandlerTest$pathsWriter$saveGame.testThatSaveGameCanLoadFromTemplate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.paths.*" />
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths.PathsFileHandlerTest.pathsWriter" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths.PathsFileHandlerTest$pathsWriter$saveGame" />
-      <option name="METHOD_NAME" value="testThatSaveGameCanLoadFromTemplate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PathsFileHandlerTest$pathsWriter$saveGame.testThatSaveGameThrowsNullPointerException5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.paths.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths.PathsFileHandlerTest.pathsWriter" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths.PathsFileHandlerTest$pathsWriter$saveGame" />
-      <option name="METHOD_NAME" value="testThatSaveGameThrowsNullPointerException5" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PathsFileHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="paths" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.utility.paths.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.utility.paths.PathsFileHandlerTest" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idatt2001.paths.models.PlayerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="edu.ntnu.idatt2001.paths.models in paths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="paths" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idatt2001.paths.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idatt2001.paths.models" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -319,21 +293,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.PathsFileHandlerTest$pathsReader$loadGame.testThatLoadGameThrowsIllegalArgumentException2" />
-      <item itemvalue="JUnit.PathsFileHandlerTest$pathsReader$loadGame.testThatReadFromFileReturnsAStoryWithCorrectValues" />
-      <item itemvalue="JUnit.PathsFileHandlerTest$pathsWriter$saveGame.testThatSaveGameCanLoadFromTemplate" />
-      <item itemvalue="JUnit.PathsFileHandlerTest$pathsWriter$saveGame.testThatSaveGameThrowsNullPointerException5" />
-      <item itemvalue="JUnit.PathsFileHandlerTest" />
+      <item itemvalue="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" />
+      <item itemvalue="JUnit.PathsFileHandlerTest$pathsReader$loadGame.testThatReadFromFileThrowsNullPointerException" />
+      <item itemvalue="JUnit.PlayerTest" />
+      <item itemvalue="JUnit.PlayerTest$fileHandling.testThatToStringWorks" />
+      <item itemvalue="JUnit.edu.ntnu.idatt2001.paths.models in paths" />
       <item itemvalue="Maven.paths [clean,test]" />
       <item itemvalue="Maven.paths [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PathsFileHandlerTest$pathsWriter$saveGame.testThatSaveGameCanLoadFromTemplate" />
-        <item itemvalue="JUnit.PathsFileHandlerTest" />
-        <item itemvalue="JUnit.PathsFileHandlerTest$pathsReader$loadGame.testThatReadFromFileReturnsAStoryWithCorrectValues" />
-        <item itemvalue="JUnit.PathsFileHandlerTest$pathsReader$loadGame.testThatLoadGameThrowsIllegalArgumentException2" />
-        <item itemvalue="JUnit.PathsFileHandlerTest$pathsWriter$saveGame.testThatSaveGameThrowsNullPointerException5" />
+        <item itemvalue="JUnit.InventoryGoalTest$fileHandling.testThatToStringReturnsExpectedResult" />
+        <item itemvalue="JUnit.edu.ntnu.idatt2001.paths.models in paths" />
+        <item itemvalue="JUnit.PlayerTest$fileHandling.testThatToStringWorks" />
+        <item itemvalue="JUnit.PlayerTest" />
+        <item itemvalue="JUnit.PathsFileHandlerTest$pathsReader$loadGame.testThatReadFromFileThrowsNullPointerException" />
       </list>
     </recent_temporary>
   </component>
@@ -384,63 +358,9 @@
       <workItem from="1684392377565" duration="8046000" />
       <workItem from="1684400587037" duration="15282000" />
       <workItem from="1684417354119" duration="76000" />
-      <workItem from="1684417500089" duration="16921000" />
-    </task>
-    <task id="LOCAL-00109" summary="Made tests to match the new separation of paths and json file handling">
-      <created>1682411886533</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1682411886533</updated>
-    </task>
-    <task id="LOCAL-00110" summary="Updated files to match the new changes">
-      <created>1682411898920</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1682411898920</updated>
-    </task>
-    <task id="LOCAL-00111" summary="Added template paths file to base new stories from">
-      <created>1683015959272</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1683015959273</updated>
-    </task>
-    <task id="LOCAL-00112" summary="Added new GameData class to store all data about a game but that still can be null">
-      <created>1683016009030</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1683016009031</updated>
-    </task>
-    <task id="LOCAL-00113" summary="Updated functionality to work with new FileEntry class. The program now works as this. If you try to load a paths file that is missing a player or goals, the program makes you add these things to your files before the game can be loaded">
-      <created>1683016116563</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1683016116563</updated>
-    </task>
-    <task id="LOCAL-00114" summary="Made JsonFileHandlerTest work">
-      <created>1683016295167</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1683016295167</updated>
-    </task>
-    <task id="LOCAL-00115" summary="Updated ChooseGoalsView to work with new functionality of loading a game without player and/or goals">
-      <created>1683032652804</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1683032652804</updated>
-    </task>
-    <task id="LOCAL-00116" summary="Added alert in LoadGameView to show what is missing when loading a game. Made handleGameData return string to work with alert shown in LoadGameView.">
-      <created>1683032712741</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1683032712741</updated>
+      <workItem from="1684417500089" duration="31035000" />
+      <workItem from="1684515186737" duration="195000" />
+      <workItem from="1684515396061" duration="2944000" />
     </task>
     <task id="LOCAL-00117" summary="Updated NewGameView to work with new implementation of load game without story and/or goals">
       <created>1683032827777</created>
@@ -729,7 +649,63 @@
       <option name="project" value="LOCAL" />
       <updated>1684415245289</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="Deleted classes and files that are no longer in use">
+      <created>1684499396141</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1684499396141</updated>
+    </task>
+    <task id="LOCAL-00159" summary="Updated classes to work with new filehandling">
+      <created>1684499508906</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1684499508906</updated>
+    </task>
+    <task id="LOCAL-00160" summary="Added current passage to game class">
+      <created>1684499540669</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1684499540669</updated>
+    </task>
+    <task id="LOCAL-00161" summary="Updated views to match new filehandling">
+      <created>1684499592273</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1684499592274</updated>
+    </task>
+    <task id="LOCAL-00162" summary="Added new strings to dictionary">
+      <created>1684499656845</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1684499656845</updated>
+    </task>
+    <task id="LOCAL-00163" summary="New, working json files">
+      <created>1684499678423</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1684499678423</updated>
+    </task>
+    <task id="LOCAL-00164" summary="Removed FileEntry as it was not needed, and refactored all files that used it">
+      <created>1684515845919</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1684515845919</updated>
+    </task>
+    <task id="LOCAL-00165" summary="Added playerModel to Player and PlayerBuilder, and added it to the constructor where it is needed">
+      <created>1684519129450</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1684519129450</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -760,14 +736,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added soundfiles and updated images" />
-    <MESSAGE value="Updated JsonReader to include new ActionDeserializer class" />
-    <MESSAGE value="Added actions to PathsReader" />
-    <MESSAGE value="Updated module-info.java to include new changes made" />
-    <MESSAGE value="Fixed error in previous module-info commit" />
-    <MESSAGE value="Updated to include new Player and PlayerBuilder" />
-    <MESSAGE value="Updated actions in templates and files used in tests" />
-    <MESSAGE value="Updated all views and soundplayer, as images and sounds did not load" />
     <MESSAGE value="Added images for flags for all countries to visualize what countries the language you are translating to are spoken in" />
     <MESSAGE value="Updated tests to work with new filehandling" />
     <MESSAGE value="Changed width and height of program" />
@@ -785,7 +753,15 @@
     <MESSAGE value="Removed double call to activate mainGameView" />
     <MESSAGE value="Removed double call to activate MainGameView" />
     <MESSAGE value="Updated css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated css" />
+    <MESSAGE value="Deleted classes and files that are no longer in use" />
+    <MESSAGE value="Updated classes to work with new filehandling" />
+    <MESSAGE value="Added current passage to game class" />
+    <MESSAGE value="Updated views to match new filehandling" />
+    <MESSAGE value="Added new strings to dictionary" />
+    <MESSAGE value="New, working json files" />
+    <MESSAGE value="Removed FileEntry as it was not needed, and refactored all files that used it" />
+    <MESSAGE value="Added playerModel to Player and PlayerBuilder, and added it to the constructor where it is needed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added playerModel to Player and PlayerBuilder, and added it to the constructor where it is needed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -794,11 +770,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/backend/goals/InventoryGoalTest.java</url>
           <line>58</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/LanguageController.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -811,11 +782,6 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
-  </component>
-  <component name="com.github.lppedd.cc.CommitBuilderDialog">
-    <footers>
-      <entry type="" value="" />
-    </footers>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681805884296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

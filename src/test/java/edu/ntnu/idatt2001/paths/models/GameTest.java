@@ -50,7 +50,7 @@ public class GameTest {
       Story story = new Story(title, new Passage(title, content));
       List<Goal> goals = new ArrayList<>();
       goals.add(new ScoreGoal(minimumScore));
-      Game game = new Game(player, story, goals);
+      Game game = new Game(player, story, goals, story.getOpeningPassage());
       assertEquals(player, game.getPlayer());
       assertEquals(story, game.getStory());
       assertEquals(goals, game.getGoals());
@@ -65,7 +65,7 @@ public class GameTest {
       Player player = null;
       Story story = new Story(title, new Passage(title, content));
       List<Goal> goals = new ArrayList<>();
-      assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
+      assertThrows(NullPointerException.class, () -> new Game(player, story, goals, story.getOpeningPassage()));
     }
 
     /**
@@ -77,7 +77,7 @@ public class GameTest {
       Player player = new PlayerBuilder(name).health(health).score(score).gold(gold).build();
       Story story = new Story(title, new Passage(title, content));
       List<Goal> goals = null;
-      assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
+      assertThrows(NullPointerException.class, () -> new Game(player, story, goals, story.getOpeningPassage()));
     }
     /**
      * Test that constructor throws NullPointerException when story is null
@@ -88,7 +88,7 @@ public class GameTest {
       Player player = new PlayerBuilder(name).health(health).score(score).gold(gold).build();
       Story story = null;
       List<Goal> goals = new ArrayList<>();
-      assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
+      assertThrows(NullPointerException.class, () -> new Game(player, story, goals, story.getOpeningPassage()));
     }
 
     /**
@@ -100,7 +100,7 @@ public class GameTest {
       Player player = new PlayerBuilder(name).health(health).score(score).gold(gold).build();
       Story story = new Story(title, new Passage(title, content));
       List<Goal> goals = new ArrayList<>();
-      assertThrows(IllegalArgumentException.class, () -> new Game(player,story,goals));
+      assertThrows(IllegalArgumentException.class, () -> new Game(player, story, goals, story.getOpeningPassage()));
     }
 
     /**
@@ -113,7 +113,7 @@ public class GameTest {
       Story story = new Story(title, new Passage(title, content));
       List<Goal> goals = new ArrayList<>();
       goals.add(null);
-      assertThrows(NullPointerException.class, () -> new Game(player,story,goals));
+      assertThrows(NullPointerException.class, () -> new Game(player, story, goals, story.getOpeningPassage()));
     }
   }
   /**
@@ -134,7 +134,7 @@ public class GameTest {
       List<Goal> goals = new ArrayList<>();
       goals.add(new ScoreGoal(minimumScore));
 
-      Game game = new Game(player, story, goals);
+      Game game = new Game(player, story, goals, story.getOpeningPassage());
       goals.add(new HealthGoal(20));
 
       assertEquals(openingPassage, game.begin());
@@ -159,7 +159,7 @@ public class GameTest {
       List<Goal> goals = new ArrayList<>();
       Passage passage = new Passage("title2", "content2");
       goals.add(new ScoreGoal(minimumScore));
-      Game game = new Game(player, story, goals);
+      Game game = new Game(player, story, goals, story.getOpeningPassage());
       game.getStory().addPassage(passage);
 
       assertEquals(passage, game.go(new Link(passage.getTitle(), passage.getTitle())));
@@ -177,7 +177,7 @@ public class GameTest {
       List<Goal> goals = new ArrayList<>();
       Passage passage = new Passage("title2", "content2");
       goals.add(new ScoreGoal(minimumScore));
-      Game game = new Game(player, story, goals);
+      Game game =new Game(player, story, goals, story.getOpeningPassage());
       game.getStory().addPassage(passage);
       game.go(new Link(passage.getTitle(), passage.getTitle()));
       assertEquals(story.getEndingPassage(), game.go(new Link(passage.getTitle(), passage.getTitle())));
@@ -194,7 +194,7 @@ public class GameTest {
       Story story = new Story(title, openingPassage);
       List<Goal> goals = new ArrayList<>();
       goals.add(new ScoreGoal(minimumScore));
-      Game game = new Game(player, story, goals);
+      Game game = new Game(player, story, goals, story.getOpeningPassage());
 
       assertThrows(NullPointerException.class, () -> game.go(null));
     }

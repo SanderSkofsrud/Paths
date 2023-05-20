@@ -89,7 +89,7 @@ class GoldGoalTest {
     @DisplayName("Test that toString returns correct string")
     void testThatToStringReturnsCorrectString() {
       GoldGoal goldGoal = new GoldGoal(10);
-      assertEquals("(GoldGoal)(10)", goldGoal.toString());
+      assertEquals("GoldGoal: 10", goldGoal.toString());
     }
   }
 }

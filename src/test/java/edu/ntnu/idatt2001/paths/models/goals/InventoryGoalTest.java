@@ -117,7 +117,7 @@ class InventoryGoalTest {
       mandatoryItems.add("Test1");
       mandatoryItems.add("Test2");
       InventoryGoal inventoryGoal = new InventoryGoal(mandatoryItems);
-      assertEquals("(InventoryGoal)([test1, test2])", inventoryGoal.toString());
+      assertEquals("InventoryGoal: [test1, test2]", inventoryGoal.toString());
     }
   }
 }
