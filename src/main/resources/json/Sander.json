@@ -1,0 +1,470 @@
+{
+  "player": {
+    "name": "Sander",
+    "health": 50,
+    "score": 40,
+    "gold": 20,
+    "inventory": [],
+    "characterModel": "m.png"
+  },
+  "story": {
+    "title": "Dark forest",
+    "openingPassage": {
+      "title": "Beginnings",
+      "content": "You find yourself standing at the edge of a dark forest. The trees are tall and ominous, their branches reaching out like skeletal fingers. You hesitate for a moment before stepping into the forest.",
+      "links": [
+        {
+          "text": "Proceed into the forest",
+          "reference": "The path",
+          "actions": [
+            {
+              "points": 20
+            }
+          ]
+        },
+        {
+          "text": "Be a coward",
+          "reference": "The abandoned cabin",
+          "actions": [
+            {
+              "points": -10000
+            }
+          ]
+        }
+      ]
+    },
+    "endingPassage": {
+      "title": "The End",
+      "content": "Congratulations! You won the game",
+      "links": []
+    },
+    "passages": {
+      "The witch": {
+        "title": "The witch",
+        "content": "As you knock on the door, an old woman with a twisted smile opens it. She invites you inside and offers you a cup of tea. As you drink the tea, you begin to feel strange.",
+        "links": [
+          {
+            "text": "Confront the witch",
+            "reference": "The curse",
+            "actions": [
+              {
+                "points": 20
+              },
+              {
+                "gold": 20
+              },
+              {
+                "health": -10
+              }
+            ]
+          },
+          {
+            "text": "Try to escape",
+            "reference": "The path",
+            "actions": [
+              {
+                "points": -20
+              },
+              {
+                "gold": -20
+              }
+            ]
+          }
+        ]
+      },
+      "The abandoned cabin": {
+        "title": "The abandoned cabin",
+        "content": "You take the left path and soon come across an abandoned cabin. The windows are boarded up and the door is creaking in the wind. You hesitate for a moment before deciding what to do next.",
+        "links": [
+          {
+            "text": "Knock on the door",
+            "reference": "The witch",
+            "actions": [
+              {
+                "points": 20
+              },
+              {
+                "gold": 20
+              }
+            ]
+          },
+          {
+            "text": "Leave the cabin",
+            "reference": "The path",
+            "actions": [
+              {
+                "points": -20
+              },
+              {
+                "gold": 20
+              }
+            ]
+          }
+        ]
+      },
+      "The curse": {
+        "title": "The curse",
+        "content": "You realize too late that the tea was cursed, and you feel yourself growing weaker by the moment. You try to run but find yourself unable to move. The witch cackles as she places a hex on you, cursing you to roam the forest forever.",
+        "links": [
+          {
+            "text": "Accept your fate",
+            "reference": "The end",
+            "actions": [
+              {
+                "health": -10000
+              }
+            ]
+          },
+          {
+            "text": "Outsmart the witch",
+            "reference": "The fight",
+            "actions": [
+              {
+                "points": 30
+              },
+              {
+                "gold": 30
+              },
+              {
+                "item": "\"sword\""
+              }
+            ]
+          }
+        ]
+      },
+      "The river": {
+        "title": "The river",
+        "content": "You continue down the path until you come across a small river. The water is murky and the trees on either side of the river are twisted and gnarled. You see a small boat moored at the bank.",
+        "links": [
+          {
+            "text": "Take the boat",
+            "reference": "The island",
+            "actions": [
+              {
+                "points": 5
+              },
+              {
+                "gold": 5
+              }
+            ]
+          },
+          {
+            "text": "Follow the riverbank",
+            "reference": "The waterfall",
+            "actions": [
+              {
+                "points": 5
+              },
+              {
+                "gold": 5
+              }
+            ]
+          }
+        ]
+      },
+      "The fight": {
+        "title": "The fight",
+        "content": "You draw your sword and charge at the witch. She tries to cast a spell on you, but you manage to dodge it and stab her in the heart. She falls to the ground, dead.",
+        "links": [
+          {
+            "text": "Run",
+            "reference": "The graveyard",
+            "actions": [
+              {
+                "points": 20
+              },
+              {
+                "gold": 20
+              }
+            ]
+          }
+        ]
+      },
+      "The path": {
+        "title": "The path",
+        "content": "You follow a narrow path deeper into the forest. The air is chilly and you can hear the rustling of leaves in the wind. Suddenly, you come across a fork in the path.",
+        "links": [
+          {
+            "text": "Take the left path",
+            "reference": "The abandoned cabin",
+            "actions": [
+              {
+                "points": 20
+              },
+              {
+                "gold": 20
+              }
+            ]
+          },
+          {
+            "text": "Take the right path",
+            "reference": "The graveyard",
+            "actions": [
+              {
+                "points": 20
+              },
+              {
+                "gold": 20
+              }
+            ]
+          }
+        ]
+      },
+      "The graveyard": {
+        "title": "The graveyard",
+        "content": "You take the right path and soon come across a graveyard. The headstones are old and cracked, and there\u0027s an eerie mist hanging in the air. You see an open mausoleum in the distance.",
+        "links": [
+          {
+            "text": "Investigate the mausoleum",
+            "reference": "The specter",
+            "actions": [
+              {
+                "points": 20
+              },
+              {
+                "gold": 20
+              }
+            ]
+          },
+          {
+            "text": "Retrieve",
+            "reference": "The path",
+            "actions": [
+              {
+                "points": -10
+              }
+            ]
+          }
+        ]
+      },
+      "The hermit": {
+        "title": "The hermit",
+        "content": "As you explore the island, you come across an old hermit who has been living there for years. He tells you about the dark secrets that lie within the forest and gives you a warning to leave.",
+        "links": [
+          {
+            "text": "Heed the warning",
+            "reference": "The path",
+            "actions": [
+              {
+                "points": -20
+              },
+              {
+                "gold": -20
+              }
+            ]
+          },
+          {
+            "text": "Ignore the warning",
+            "reference": "The dragon",
+            "actions": [
+              {
+                "points": 20
+              },
+              {
+                "gold": 20
+              },
+              {
+                "health": -10
+              }
+            ]
+          }
+        ]
+      },
+      "The waterfall": {
+        "title": "The waterfall",
+        "content": "You follow the riverbank until you come across a waterfall. The water is crystal clear and you can see fish swimming in the water. You see a small cave behind the waterfall.",
+        "links": [
+          {
+            "text": "Enter the cave",
+            "reference": "The dragon",
+            "actions": [
+              {
+                "points": 20
+              },
+              {
+                "gold": 20
+              }
+            ]
+          },
+          {
+            "text": "Continue along the riverbank",
+            "reference": "The path",
+            "actions": [
+              {
+                "points": -10
+              },
+              {
+                "gold": -10
+              }
+            ]
+          }
+        ]
+      },
+      "The specter": {
+        "title": "The specter",
+        "content": "As you enter the mausoleum, you see a ghostly figure floating in the corner. It\u0027s the specter of a long-dead grave robber who was cursed to haunt the graveyard. It approaches you, its eyes glowing with an otherworldly light.",
+        "links": [
+          {
+            "text": "Confront the specter",
+            "reference": "The ritual",
+            "actions": [
+              {
+                "points": 10
+              },
+              {
+                "item": "shield"
+              }
+            ]
+          },
+          {
+            "text": "Run away",
+            "reference": "The graveyard",
+            "actions": [
+              {
+                "points": -20
+              },
+              {
+                "gold": -10
+              }
+            ]
+          }
+        ]
+      },
+      "The ritual": {
+        "title": "The ritual",
+        "content": "You confront the specter and recite a ritual from a book of spells you brought with you. The specter shrieks and disappears, leaving you feeling relieved.",
+        "links": [
+          {
+            "text": "Continue left",
+            "reference": "The river",
+            "actions": [
+              {
+                "points": -20
+              },
+              {
+                "gold": -10
+              }
+            ]
+          },
+          {
+            "text": "Continue right",
+            "reference": "The island",
+            "actions": [
+              {
+                "points": 10
+              },
+              {
+                "gold": 10
+              }
+            ]
+          }
+        ]
+      },
+      "Beginnings": {
+        "title": "Beginnings",
+        "content": "You find yourself standing at the edge of a dark forest. The trees are tall and ominous, their branches reaching out like skeletal fingers. You hesitate for a moment before stepping into the forest.",
+        "links": [
+          {
+            "text": "Proceed into the forest",
+            "reference": "The path",
+            "actions": [
+              {
+                "points": 20
+              }
+            ]
+          },
+          {
+            "text": "Be a coward",
+            "reference": "The abandoned cabin",
+            "actions": [
+              {
+                "points": -10000
+              }
+            ]
+          }
+        ]
+      },
+      "The island": {
+        "title": "The island",
+        "content": "As you row across the river, you notice a small island in the distance. The island is covered in mist and seems to be shrouded in mystery.",
+        "links": [
+          {
+            "text": "Explore the island",
+            "reference": "The hermit",
+            "actions": [
+              {
+                "points": 10
+              },
+              {
+                "item": "sword"
+              }
+            ]
+          },
+          {
+            "text": "Leave the island",
+            "reference": "The river",
+            "actions": [
+              {
+                "points": -10
+              },
+              {
+                "gold": -10
+              }
+            ]
+          }
+        ]
+      },
+      "The dragon": {
+        "title": "The dragon",
+        "content": "As you enter the cave, you see a large dragon sleeping on a pile of gold. You try to sneak past it, but it wakes up and attacks you. You manage to escape, and win the game.",
+        "links": []
+      }
+    }
+  },
+  "goals": [
+    {
+      "minimumScore": 100
+    },
+    {
+      "minimumGold": 200
+    },
+    {
+      "minimumHealth": 50
+    },
+    {
+      "mandatoryItems": [
+        "sword"
+      ]
+    }
+  ],
+  "currentPassage": {
+    "title": "The abandoned cabin",
+    "content": "You take the left path and soon come across an abandoned cabin. The windows are boarded up and the door is creaking in the wind. You hesitate for a moment before deciding what to do next.",
+    "links": [
+      {
+        "text": "Knock on the door",
+        "reference": "The witch",
+        "actions": [
+          {
+            "points": 20
+          },
+          {
+            "gold": 20
+          }
+        ]
+      },
+      {
+        "text": "Leave the cabin",
+        "reference": "The path",
+        "actions": [
+          {
+            "points": -20
+          },
+          {
+            "gold": 20
+          }
+        ]
+      }
+    ]
+  }
+}

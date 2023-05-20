@@ -29,6 +29,7 @@ import javafx.scene.text.*;
 import javafx.util.Duration;
 import javafx.util.Pair;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -138,6 +139,7 @@ public class MainGameView extends View{
    * The words are stored in an array so that they can be displayed in a text area.
    */
   private String[] words;
+  private char[] characters;
   /**
    * The timeline.
    * The timeline is the timeline of the animation.
@@ -317,6 +319,7 @@ public class MainGameView extends View{
     borderPane.setCenter(null);
     inventoryBox.getChildren().clear();
     inventoryImageBox.getChildren().clear();
+    characters = null;
     words = null;
     timeline.stop();
   }
@@ -341,7 +344,7 @@ public class MainGameView extends View{
 
     String translatedContent = languageController.translate(currentPassage.getContent());
 
-    words = translatedContent.split("\\s+");
+    characters = translatedContent.toCharArray();
 
     SoundPlayer soundPlayer = new SoundPlayer();
     if (!isMuted) {
@@ -350,10 +353,10 @@ public class MainGameView extends View{
 
     timeline = new Timeline();
     timeline.getKeyFrames().clear();
-    for (int i = 0; i < words.length; i++) {
-      int wordIndex = i;
-      timeline.getKeyFrames().add(new KeyFrame(Duration.millis(i * 100), event -> {
-        passageContent.appendText(words[wordIndex] + " ");
+    for (int i = 0; i < characters.length; i++) {
+      int charIndex = i;
+      timeline.getKeyFrames().add(new KeyFrame(Duration.millis(i * 25), event -> {
+        passageContent.appendText(Character.toString(characters[charIndex]));
       }));
     }
 
@@ -566,7 +569,7 @@ public class MainGameView extends View{
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == saveAndExit) {
-          FileHandlerController.getInstance().saveGameJson(player.getName(),game);
+          FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
           Platform.exit();
         } else if (result.get() == exitWithoutSaving) {
           Platform.exit();
@@ -615,7 +618,7 @@ public class MainGameView extends View{
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == saveAndGoHome) {
-          FileHandlerController.getInstance().saveGameJson(player.getName(),game);
+          FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
           gameController.resetGame(); // Add this line
           screenController.activate("MainMenu");
           resetPane();
@@ -649,6 +652,15 @@ public class MainGameView extends View{
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == restart) {
+          try {
+            game = FileHandlerController.getInstance().loadGameJson(player.getName() + ".json", "src/main/resources/initialGame/");
+          } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+          }
+          player = game.getPlayer();
+          words = null;
+          characters = null;
+          timeline.stop();
           updateUIWithPassage(textFlow,game.begin());
         }
       }
