@@ -68,8 +68,11 @@ public class FileHandlerController {
    * @param name the name of the player, and the name of the file
    * @param game the game to be saved
    */
-  public void saveGameJson(String name, Game game) {
-    JsonWriter.saveGameJSON(game, jsonPath + name + ".json");
+  public void saveGameJson(String name, String path, Game game) {
+    if (path == null) {
+      path = jsonPath;
+    }
+    JsonWriter.saveGameJSON(game, path + name + ".json");
   }
 
   /**
@@ -80,7 +83,10 @@ public class FileHandlerController {
    * @return the game from the json file
    * @throws FileNotFoundException the file not found exception
    */
-  public Game loadGameJson(String name) throws FileNotFoundException {
-    return JsonReader.loadGameJSON(jsonPath + name);
+  public Game loadGameJson(String name, String path) throws FileNotFoundException {
+    if (path == null) {
+      path = jsonPath;
+    }
+    return JsonReader.loadGameJSON(path + name);
   }
 }
