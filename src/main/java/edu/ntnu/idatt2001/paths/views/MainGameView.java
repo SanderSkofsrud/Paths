@@ -175,6 +175,7 @@ public class MainGameView extends View{
   private ImageView soundImageView;
   private boolean isMuted = false;
   private SoundPlayer soundPlayer = new SoundPlayer();
+  private double playerStartHealth;
 
   /**
    * Instantiates a new Main game view.
@@ -233,6 +234,7 @@ public class MainGameView extends View{
     player = game.getPlayer();
     goals = game.getGoals();
     story = game.getStory();
+    playerStartHealth = player.getHealth();
 
     passageContent = new TextArea();
     passageContent.setWrapText(true);
@@ -355,6 +357,11 @@ public class MainGameView extends View{
 
     words = translatedContent.split("\\s+");
 
+    SoundPlayer soundPlayer = new SoundPlayer();
+    if (!isMuted) {
+      soundPlayer.playOnLoop("/sounds/typing.wav");
+    }
+
     timeline = new Timeline();
     timeline.getKeyFrames().clear();
     for (int i = 0; i < words.length; i++) {
@@ -411,6 +418,7 @@ public class MainGameView extends View{
     updatePlayerInfo();
     textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
     timeline.play();
+    timeline.setOnFinished(event -> soundPlayer.stop());
     return new Pair<>(timeline, currentPassage);
   }
 
@@ -424,6 +432,12 @@ public class MainGameView extends View{
 
     attributesBox.setAlignment(Pos.TOP_LEFT);
     attributesBox.setPadding(new Insets(10, 10, 10, 10));
+
+    ProgressBar healthBar = new ProgressBar();
+    healthBar.setMinWidth(100);
+    healthBar.setMaxWidth(Double.MAX_VALUE);
+    healthBar.setProgress(player.getHealth() / playerStartHealth);
+    healthBar.setStyle("-fx-accent: red;");
 
     playerHealthLabel.setText(languageController.getTranslation(Dictionary.HEALTH.getKey()) + ": " + player.getHealth());
     playerHealthLabel.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
@@ -486,7 +500,12 @@ public class MainGameView extends View{
     restartImageView.setFitWidth(30);
     restartImageView.setFitHeight(30);
 
-    Image soundImage = new Image(getClass().getResourceAsStream("/images/sound.png"));
+    Image soundImage;
+    if (!isMuted) {
+      soundImage = new Image(getClass().getResourceAsStream("/images/sound.png"));
+    } else {
+      soundImage = new Image(getClass().getResourceAsStream("/images/nosound.png"));
+    }
     soundImageView = new ImageView(soundImage);
     soundImageView.setFitWidth(30);
     soundImageView.setFitHeight(30);
@@ -639,7 +658,7 @@ public class MainGameView extends View{
 
     VBox goalsVbox = goalsVbox();
 
-    attributesBox.getChildren().addAll(playerHealthLabel, playerGoldLabel, playerScoreLabel, inventoryBox, goalsVbox);
+    attributesBox.getChildren().addAll(playerHealthLabel, healthBar, playerGoldLabel, playerScoreLabel, inventoryBox, goalsVbox);
 
     HBox topBox = new HBox();
     topBox.getChildren().addAll(attributesBox, topRightBox);
