@@ -370,48 +370,53 @@ public class MainGameView extends View{
     buttonsBox.setPadding(new Insets(10, 0, 100, 0));
     buttonsBox.setSpacing(10);
 
-    for (Link link : currentPassage.getLinks()) {
-      Button button = new Button(languageController.translate(link.getText()));
-      button.setOnAction(event -> {
-        try {
-          for (Action action : link.getActions()) {
-            action.execute(player);
+    if (passage.hasLinks()) {
+      for (Link link : currentPassage.getLinks()) {
+        Button button = new Button(languageController.translate(link.getText()));
+        button.setOnAction(event -> {
+          try {
+            for (Action action : link.getActions()) {
+              action.execute(player);
+            }
+          } catch (Exception e) {
+            ShowAlert.showError(e.getMessage(), e.getMessage());
+            screenController.activate("FinalPassageView");
+            resetPane();
           }
-        } catch (Exception e) {
-          ShowAlert.showError(e.getMessage(),e.getMessage());
-          screenController.activate("FinalPassageView");
-          resetPane();
-        }
-        if (game.getStory().getBrokenLinks().contains(link)) {
-          ShowAlert.showInformation(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()),languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
-          button.setDisable(true);
-        } else {
-        Passage nextPassage = game.go(link);
-        undoButton.setDisable(false);
-        timeline.stop();
-        updateUIWithPassage(textFlow, nextPassage);
-        //progressController.saveProgress(player, previousPassage, currentPassage);
-        game.setCurrentPassage(nextPassage);
+          if (game.getStory().getBrokenLinks().contains(link)) {
+            ShowAlert.showInformation(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()), languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
+            button.setDisable(true);
+          } else {
+            Passage nextPassage = game.go(link);
+            undoButton.setDisable(false);
+            timeline.stop();
+            updateUIWithPassage(textFlow, nextPassage);
+            //progressController.saveProgress(player, previousPassage, currentPassage);
+            game.setCurrentPassage(nextPassage);
 
-        if (!MinigameView.hasPlayed()) {
-          int random = (int) (Math.random() * 100) + 1;
-          if (random <= 10) {
-            playerController.setPlayer(player);
-            screenController.activate("Minigame");
+            if (!MinigameView.hasPlayed()) {
+              int random = (int) (Math.random() * 100) + 1;
+              if (random <= 10) {
+                playerController.setPlayer(player);
+                screenController.activate("Minigame");
+              }
+            }
           }
-        }
+          updatePlayerInfo();
+        });
+
+        buttonsBox.getChildren().add(button);
+        button.setId("subMenuButton");
       }
-        updatePlayerInfo();
-      });
 
-      buttonsBox.getChildren().add(button);
-      button.setId("subMenuButton");
+      updatePlayerInfo();
+      textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
+      timeline.play();
+      return new Pair<>(timeline, currentPassage);
+    } else {
+      screenController.activate("FinalPassageView");
     }
-
-    updatePlayerInfo();
-    textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
-    timeline.play();
-    return new Pair<>(timeline, currentPassage);
+    return null;
   }
 
   /**
