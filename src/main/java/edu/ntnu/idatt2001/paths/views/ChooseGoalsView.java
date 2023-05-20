@@ -290,14 +290,12 @@ public class ChooseGoalsView extends View {
             .stream()
             .collect(Collectors.toList());
 
-        System.out.println(distinctGoals.toString());
         goals.clear();
         goals.addAll(distinctGoals);
         Game game;
           try {
             String selectedTemplate = templates.getValue();
             Story story = fileHandlerController.loadTemplate(selectedTemplate);
-            System.out.println(goals.toString());
             game = new Game(playerController.getPlayer(), story, goals, story.getOpeningPassage());
           } catch (FileNotFoundException ex) {
             throw new RuntimeException(ex);
