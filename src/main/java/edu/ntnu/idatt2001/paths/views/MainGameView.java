@@ -279,7 +279,6 @@ public class MainGameView extends View{
     info.setAlignment(Pos.CENTER);
     info.setPadding(new Insets(10, 10, 10, 10));
 
-    System.out.println(playerController.getActiveCharacter());
     ImageView characterImage = new ImageView(new Image(getClass().getResourceAsStream("/images/" + playerController.getActiveCharacter())));
     characterImage.setFitHeight(250);
     characterImage.setFitWidth(250);
@@ -295,19 +294,6 @@ public class MainGameView extends View{
 
     HBox buttonsBox = new HBox();
     borderPane.setBottom(buttonsBox);
-
-//    try {
-//      progressController.loadProgress(player.getName());
-//      if (progressController.getPlayer() != null) {
-//        player = progressController.getPlayer();
-//        Link link = new Link(progressController.getCurrentPassage().getTitle(), progressController.getCurrentPassage().getTitle());
-//        System.out.println(link);
-//        currentPassage = game.go(link);
-//        System.out.println(currentPassage);
-//      }
-//    } catch (RuntimeException e) {
-//      currentPassage = game.begin();
-//    }
 
     setupTopBar(textFlow);
     setupAttributesBox();
@@ -377,49 +363,66 @@ public class MainGameView extends View{
     buttonsBox.setPadding(new Insets(10, 0, 100, 0));
     buttonsBox.setSpacing(10);
 
-    for (Link link : currentPassage.getLinks()) {
-      Button button = new Button(languageController.translate(link.getText()));
-      button.setOnAction(event -> {
-        try {
-          for (Action action : link.getActions()) {
-            action.execute(player);
+    if (passage.hasLinks()) {
+      for (Link link : currentPassage.getLinks()) {
+        Button button = new Button(languageController.translate(link.getText()));
+        button.setOnAction(event -> {
+          try {
+            for (Action action : link.getActions()) {
+              action.execute(player);
+            }
+          } catch (Exception e) {
+            ShowAlert.showError(e.getMessage(), e.getMessage());
+            Button credits = new Button(languageController.getTranslation(Dictionary.CREDITS.getKey()));
+            credits.setOnAction(event1 -> {
+              screenController.activate("FinalPassageView");
+              resetPane();
+            });
+            credits.setId("credits");
+            buttonsBox.getChildren().clear();
+            buttonsBox.getChildren().add(credits);
           }
-        } catch (Exception e) {
-          ShowAlert.showError(e.getMessage(),e.getMessage());
-          screenController.activate("FinalPassageView");
-          resetPane();
-        }
-        if (game.getStory().getBrokenLinks().contains(link)) {
-          ShowAlert.showInformation(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()),languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
-          button.setDisable(true);
-        } else {
-        Passage nextPassage = game.go(link);
-        undoButton.setDisable(false);
-        timeline.stop();
-        updateUIWithPassage(textFlow, nextPassage);
-        //progressController.saveProgress(player, previousPassage, currentPassage);
-        game.setCurrentPassage(nextPassage);
+          if (game.getStory().getBrokenLinks().contains(link)) {
+            ShowAlert.showInformation(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()), languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
+            button.setDisable(true);
+          } else {
+            Passage nextPassage = game.go(link);
+            undoButton.setDisable(false);
+            timeline.stop();
+            updateUIWithPassage(textFlow, nextPassage);
+            game.setCurrentPassage(nextPassage);
 
-        if (!MinigameView.hasPlayed()) {
-          int random = (int) (Math.random() * 100) + 1;
-          if (random <= 10) {
-            playerController.setPlayer(player);
-            screenController.activate("Minigame");
+            if (!MinigameView.hasPlayed()) {
+              int random = (int) (Math.random() * 100) + 1;
+              if (random <= 10) {
+                playerController.setPlayer(player);
+                screenController.activate("Minigame");
+              }
+            }
           }
-        }
+          updatePlayerInfo();
+        });
+
+        buttonsBox.getChildren().add(button);
+        button.setId("subMenuButton");
       }
-        updatePlayerInfo();
+
+      updatePlayerInfo();
+      textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
+      timeline.play();
+      timeline.setOnFinished(event -> soundPlayer.stop());
+      return new Pair<>(timeline, currentPassage);
+    } else {
+      Button credits = new Button(languageController.getTranslation(Dictionary.CREDITS.getKey()));
+      credits.setOnAction(event1 -> {
+        screenController.activate("FinalPassageView");
+        resetPane();
       });
-
-      buttonsBox.getChildren().add(button);
-      button.setId("subMenuButton");
+      credits.setId("subMenuButton");
+      buttonsBox.getChildren().clear();
+      buttonsBox.getChildren().add(credits);
+      return null;
     }
-
-    updatePlayerInfo();
-    textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
-    timeline.play();
-    timeline.setOnFinished(event -> soundPlayer.stop());
-    return new Pair<>(timeline, currentPassage);
   }
 
   /**
@@ -688,7 +691,7 @@ public class MainGameView extends View{
     goalsVbox.setSpacing(10);
     goalsVbox.setAlignment(Pos.TOP_CENTER);
 
-    Label goalsLabel = new Label(languageController.translate("Goals:"));
+    Label goalsLabel = new Label(languageController.getTranslation(Dictionary.GOALS_IN_GAME.getKey()));
     goalsVbox.getChildren().add(goalsLabel);
 
     for (Goal goal : game.getGoals()) {

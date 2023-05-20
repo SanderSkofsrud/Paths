@@ -130,12 +130,12 @@ public class Game {
   }
 
   /**
-   * Checks if the player has fulfilled any of the goals.
+   * Checks if the player has fulfilled all the goals.
    *
-   * @return True if the player has fulfilled any of the goals, false otherwise.
+   * @return True if the player has fulfilled all the goals, false otherwise.
    */
   public boolean checkGoals() {
-    return goals.stream().anyMatch(goal -> goal.isFulfilled(player));
+    return goals.stream().allMatch(goal -> goal.isFulfilled(player));
   }
 
   /**
