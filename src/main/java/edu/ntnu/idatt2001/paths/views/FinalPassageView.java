@@ -330,16 +330,6 @@ public class FinalPassageView extends View{
       }));
     }
 
-    HBox buttonsBox = (HBox) borderPane.getBottom();
-    buttonsBox.getChildren().clear();
-    buttonsBox.setAlignment(Pos.CENTER);
-    buttonsBox.setPadding(new Insets(10, 0, 100, 0));
-    buttonsBox.setSpacing(10);
-
-    Button button = new Button(languageController.getTranslation(Dictionary.CREDITS.getKey()));
-    buttonsBox.getChildren().add(button);
-    button.setId("subMenuButton");
-
     textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
     timeline.play();
     return new Pair<>(timeline, currentPassage);
