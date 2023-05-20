@@ -98,6 +98,23 @@ public enum Dictionary {
 
   START("Start"),
 
+  GOALS_NEED_SELECTION("Goals need to be selected"),
+
+  GOALS_NOT_SELECTED("Goals not selected"),
+
+  TEMPLATE_NEED_SELECTION("A template needs to be selected"),
+
+  TEMPLATE_NOT_SELECTED("Template not selected"),
+
+  GOALS_AND_TEMPLATE_NOT_SELECTED("Goals and a template not selected"),
+
+  GOALS_AND_TEMPLATE_NEED_SELECTION("Goals and a template need to be selected"),
+
+  GOAL_ALREADY_ADDED("Goal already added"),
+
+  THIS_GOAL_IS_ALREADY_ADDED("This goal is already added"),
+
+
   ;
   private final String key;
 
