@@ -415,8 +415,8 @@ public class MainGameView extends View{
       return new Pair<>(timeline, currentPassage);
     } else {
       screenController.activate("FinalPassageView");
+      return null;
     }
-    return null;
   }
 
   /**
