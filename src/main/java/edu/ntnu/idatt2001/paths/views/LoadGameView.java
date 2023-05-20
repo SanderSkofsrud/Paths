@@ -3,14 +3,21 @@ package edu.ntnu.idatt2001.paths.views;
 import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
+import javafx.animation.*;
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -98,6 +105,58 @@ public class LoadGameView extends View{
 
     TableColumn<File, String> fileLocationColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_LOCATION.getKey()));
     fileLocationColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getAbsolutePath()));
+    fileLocationColumn.setCellFactory(tc -> new TableCell<>() {
+      private final Text text = new Text();
+      private final VBox vbox = new VBox(text);
+      private final Pane container = new Pane(vbox);
+      private final TranslateTransition tt = new TranslateTransition(Duration.seconds(6.5), text);
+      private final PauseTransition ptBefore = new PauseTransition(Duration.seconds(1));
+      private final PauseTransition ptAfter = new PauseTransition(Duration.seconds(1));
+      private final SequentialTransition st = new SequentialTransition(ptBefore, tt, ptAfter);
+
+      {
+        st.setCycleCount(Timeline.INDEFINITE);
+
+        text.layoutBoundsProperty().addListener((observable, oldValue, newValue) -> {
+          container.setMinWidth(newValue.getWidth());
+          tt.setFromX(container.getWidth());
+          tt.setToX(-newValue.getWidth() + 365);
+        });
+        container.setPrefWidth(100);  // adjust to desired width
+        vbox.setPrefWidth(100);  // adjust to desired width
+        vbox.setFillWidth(true);
+        vbox.setAlignment(Pos.CENTER);
+      }
+
+      @Override
+      protected void updateItem(String item, boolean empty) {
+        super.updateItem(item, empty);
+        if (empty) {
+          setGraphic(null);
+          text.setText(null);
+          st.stop();
+        } else {
+          text.setText(item);
+          setGraphic(container);
+          st.play();
+        }
+      }
+
+      @Override
+      public void startEdit() {
+        super.startEdit();
+        st.pause();
+      }
+
+      @Override
+      public void cancelEdit() {
+        super.cancelEdit();
+        st.play();
+      }
+    });
+
+
+    fileLocationColumn.setPrefWidth(370);
 
     TableColumn<File, String> brokenLinksColumn = new TableColumn<>(languageController.getTranslation(Dictionary.BROKEN_LINKS.getKey()));
     brokenLinksColumn.setCellValueFactory(param -> new ReadOnlyStringWrapper(loadGameController.getBrokenLinksString(param.getValue())));
@@ -109,10 +168,10 @@ public class LoadGameView extends View{
 
       {
         hyperlink.setOnAction(event -> {
-          File selectedFile = getTableView().getItems().get(getIndex());
-          System.out.println("Clicked on file: " + selectedFile.getName());
+          String selectedFile = getTableView().getItems().get(getIndex()).getName();
+          System.out.println("Clicked on file: " + selectedFile);
           try {
-            game = fileHandlerController.loadGameJson(selectedFile.getAbsolutePath());
+            game = fileHandlerController.loadGameJson(selectedFile);
             gameController.setGame(game);
             playerController.setActiveCharacter(game.getPlayer().getCharacterModel());
           } catch (FileNotFoundException e) {
@@ -137,6 +196,10 @@ public class LoadGameView extends View{
     jsonTableView.getColumns().addAll(fileNameColumn, fileLocationColumn, brokenLinksColumn, loadColumn);
     jsonTableView.setItems(loadGameController.getSavedGames("json"));
     jsonTableView.setPrefWidth(650);
+
+    HBox hBox = new HBox();
+    hBox.getChildren().add(jsonTableView);
+    hBox.setAlignment(Pos.CENTER);
 
     ImageView backImage = new ImageView(new Image(getClass().getResourceAsStream("/images/back.png")));
     Button backButton = new Button();
@@ -177,7 +240,7 @@ public class LoadGameView extends View{
     });
 
     VBox vBox = new VBox();
-    vBox.getChildren().addAll(jsonTableView, uploadButton);
+    vBox.getChildren().addAll(hBox, uploadButton);
     vBox.setSpacing(20);
     vBox.setPadding(new Insets(20, 20, 20, 20));
     vBox.setAlignment(Pos.CENTER);
