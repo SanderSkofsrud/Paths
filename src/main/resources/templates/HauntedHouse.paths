@@ -16,7 +16,7 @@ You open the door and step into a long, dimly lit hallway. The air is musty and 
 ::The bedroom
 You push open the door and enter a small bedroom. The furniture is old and dusty, and there is a four-poster bed in the center of the room. You notice a book sitting on the nightstand next to the bed.
 [Open the book](The book of spells)[{GoldAction}(10){ScoreAction}(10)]
-[Leave the room](The hallway)[{ScoreAction}(-10)]
+[Leave the bedroom](The hallway)[{ScoreAction}(-10)]
 
 ::The book of spells
 You open the book and read the spells. Some of them seem harmless, but others make your blood run cold. You hear a creaking noise and quickly close the book.
@@ -36,7 +36,7 @@ The voice speaks to you in a language you don't understand. Suddenly, the room g
 ::The secret passage
 You search the room and find a secret passage hidden behind a bookcase. You enter the passage and find yourself in a dark tunnel.
 [Follow the tunnel](The basement)[{ScoreAction}(10){GoldAction}(10)]
-[Go back](The bedroom)[{ScoreAction}(-10){GoldAction}(-20)]
+[Return](The bedroom)[{ScoreAction}(-10){GoldAction}(-20)]
 
 ::The basement
 You follow the tunnel and eventually come to a staircase. The air is damp and musty, and there are cobwebs everywhere.
@@ -56,7 +56,7 @@ You climb up the staircase and find yourself in a dark, dusty attic. You hear fo
 ::The ghost
 You walk towards the source of the noise and suddenly a ghostly figure appears in front of you. It reaches out its hand and you feel a cold chill run down your spine.
 [Take the ghost's hand](The vision)[{ScoreAction}(10){HealthAction}(-10)]
-[Stand still](The vision)[{ScoreAction}(-10)]
+[Cover your eyes](Beginnings)[{ScoreAction}(-10)]
 
 ::The vision
 You suddenly find yourself transported to a different time and place. You see a vision of a young girl running through the woods, chased by a group of angry villagers. The vision fades away and you are back in the attic.
