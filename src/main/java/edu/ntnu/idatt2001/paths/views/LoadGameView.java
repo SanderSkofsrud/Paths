@@ -110,7 +110,6 @@ public class LoadGameView extends View{
       {
         hyperlink.setOnAction(event -> {
           File selectedFile = getTableView().getItems().get(getIndex());
-          System.out.println("Clicked on file: " + selectedFile.getName());
           try {
             game = fileHandlerController.loadGameJson(selectedFile.getAbsolutePath());
             gameController.setGame(game);
@@ -163,7 +162,6 @@ public class LoadGameView extends View{
       File selectedFile = fileChooser.showOpenDialog(null);
 
       if (selectedFile != null) {
-        System.out.println("Selected file: " + selectedFile.getName());
         String extension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf(".") + 1);
 
         if (extension.equals("paths")) {

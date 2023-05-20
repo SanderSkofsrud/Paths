@@ -257,7 +257,6 @@ public class FinalPassageView extends View{
     info.setAlignment(Pos.CENTER);
     info.setPadding(new Insets(10, 10, 10, 10));
 
-    System.out.println(playerController.getActiveCharacter());
     ImageView characterImage = new ImageView(new Image(getClass().getResourceAsStream("/images/" + playerController.getActiveCharacter())));
     characterImage.setFitHeight(250);
     characterImage.setFitWidth(250);
@@ -330,16 +329,6 @@ public class FinalPassageView extends View{
         passageContent.appendText(words[wordIndex] + " ");
       }));
     }
-
-    HBox buttonsBox = (HBox) borderPane.getBottom();
-    buttonsBox.getChildren().clear();
-    buttonsBox.setAlignment(Pos.CENTER);
-    buttonsBox.setPadding(new Insets(10, 0, 100, 0));
-    buttonsBox.setSpacing(10);
-
-    Button button = new Button("Credtis:");
-    buttonsBox.getChildren().add(button);
-    button.setId("subMenuButton");
 
     textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
     timeline.play();

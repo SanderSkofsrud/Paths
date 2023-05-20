@@ -6,6 +6,7 @@ import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.*;
 import edu.ntnu.idatt2001.paths.models.goals.GoalEnum;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
+import edu.ntnu.idatt2001.paths.utility.ShowAlert;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
@@ -19,8 +20,10 @@ import javafx.scene.layout.*;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
 import static edu.ntnu.idatt2001.paths.models.goals.GoalFactory.createGoal;
@@ -178,34 +181,36 @@ public class ChooseGoalsView extends View {
     button.setId("subMenuButton");
     button.setOnAction(e -> {
       if (comboBox.getValue() != null && !textField.getText().isEmpty()) {
-        try {
-          int value = Integer.parseInt(textField.getText());
-          String selectedTranslatedValue = comboBox.getValue().toString();
-          if (selectedTranslatedValue.equals(GOLDGOALTRANSLATED)) {
-            selectedTranslatedValue = GOLDGOAL;
-          } else if (selectedTranslatedValue.equals(HEALTHGOALTRANSLATED)) {
-            selectedTranslatedValue = HEALTHGOAL;
-          } else if (selectedTranslatedValue.equals(INVENTORYGOALTRANSLATED)) {
-            selectedTranslatedValue = INVENTORYGOAL;
-          } else if (selectedTranslatedValue.equals(SCOREGOALTRANSLATED)) {
-            selectedTranslatedValue = SCOREGOAL;
+        int value = Integer.parseInt(textField.getText());
+        String selectedTranslatedValue = comboBox.getValue().toString();
+        if (selectedTranslatedValue.equals(GOLDGOALTRANSLATED)) {
+          selectedTranslatedValue = GOLDGOAL;
+        } else if (selectedTranslatedValue.equals(HEALTHGOALTRANSLATED)) {
+          selectedTranslatedValue = HEALTHGOAL;
+        } else if (selectedTranslatedValue.equals(INVENTORYGOALTRANSLATED)) {
+          selectedTranslatedValue = INVENTORYGOAL;
+        } else if (selectedTranslatedValue.equals(SCOREGOALTRANSLATED)) {
+          selectedTranslatedValue = SCOREGOAL;
+        }
+        String selectedValue = languageController.translateToEnglish(selectedTranslatedValue.toUpperCase().replace(" GOAL", ""));
+        GoalEnum type = GoalEnum.valueOf(selectedValue);
+        Goal goal = GoalFactory.createGoal(type, value);
+
+        boolean isGoalAlreadyAdded = false;
+        for (Goal existingGoal : goals) {
+          if (existingGoal.getClass().equals(goal.getClass()) && existingGoal.toString().equals(goal.toString())) {
+            isGoalAlreadyAdded = true;
+            break;
           }
-          String selectedValue = languageController.translateToEnglish(selectedTranslatedValue.toUpperCase().replace(" GOAL", ""));
-          GoalEnum type = GoalEnum.valueOf(selectedValue);
-          Goal goal = GoalFactory.createGoal(type, value);
+        }
+
+        if (isGoalAlreadyAdded) {
+          ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOAL_ALREADY_ADDED.getKey()), languageController.getTranslation(Dictionary.THIS_GOAL_IS_ALREADY_ADDED.getKey()));
+        } else {
           goals.add(goal);
-        } catch (IllegalArgumentException ex) {
-          if (comboBox.getValue().toString().equals(languageController.getTranslation(Dictionary.INVENTORY_GOAL.getKey()))) {
-            List<String> itemList = Arrays.asList(textField.getText().split(","));
-            Goal goal = GoalFactory.createInventoryGoal(itemList.toArray(new String[0]));
-            goals.add(goal);
-          } else {
-            System.out.println("Error: " + ex.getMessage()); //TODO: Remove sout
-          }
         }
       }
     });
-
 
     TableView<Goal> tableView = new TableView<>();
     TableColumn<Goal, String> tableColumn1 = new TableColumn<>(languageController.getTranslation(Dictionary.GOAL_TYPE.getKey()));
@@ -245,6 +250,7 @@ public class ChooseGoalsView extends View {
     Button startButton = new Button(languageController.getTranslation(Dictionary.START.getKey()));
     startButton.setId("subMenuButton");
     startButton.setOnAction(e -> {
+
       for (int i = 1; i < 7; i++) {
         if (i == 1 && checkBox1.isSelected()) {
           goals.add(createGoal(GOLD, 200));
@@ -267,7 +273,25 @@ public class ChooseGoalsView extends View {
         }
       }
 
-      if (!goals.isEmpty() && templates.getValue() != null) {
+      if (goals.isEmpty() && templates.getValue() == null) {
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NEED_SELECTION.getKey()));
+      } else if (templates.getValue() == null) {
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary.TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.TEMPLATE_NEED_SELECTION.getKey()));
+      } else if (goals.isEmpty()) {
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_NEED_SELECTION.getKey()));
+      } else {
+        List<Goal> distinctGoals = goals.stream()
+            .collect(Collectors.toMap(
+                goal -> goal.toString(),
+                goal -> goal,
+                (existingGoal, newGoal) -> existingGoal
+            ))
+            .values()
+            .stream()
+            .collect(Collectors.toList());
+
+        goals.clear();
+        goals.addAll(distinctGoals);
         Game game;
           try {
             String selectedTemplate = templates.getValue();
@@ -283,11 +307,8 @@ public class ChooseGoalsView extends View {
 
         screenController.activate("MainGame");
         resetPane();
-      } else {
-        //TODO Show an error message stating that at least one goal must be selected
       }
     });
-
 
     hBox.getChildren().addAll(customGoals, predefinedGoals);
     vBox.getChildren().addAll(imageView, hBox, startButton);
