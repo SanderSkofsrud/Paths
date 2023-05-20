@@ -674,7 +674,7 @@ public class MainGameView extends View{
     goalsVbox.setSpacing(10);
     goalsVbox.setAlignment(Pos.TOP_CENTER);
 
-    Label goalsLabel = new Label(languageController.translate("Goals:"));
+    Label goalsLabel = new Label(languageController.getTranslation(Dictionary.GOALS_IN_GAME.getKey()));
     goalsVbox.getChildren().add(goalsLabel);
 
     for (Goal goal : game.getGoals()) {
