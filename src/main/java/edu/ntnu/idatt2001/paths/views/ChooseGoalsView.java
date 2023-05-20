@@ -20,8 +20,10 @@ import javafx.scene.layout.*;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
 import static edu.ntnu.idatt2001.paths.models.goals.GoalFactory.createGoal;
@@ -278,10 +280,24 @@ public class ChooseGoalsView extends View {
       } else if (goals.isEmpty()) {
         ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_NEED_SELECTION.getKey()));
       } else {
+        List<Goal> distinctGoals = goals.stream()
+            .collect(Collectors.toMap(
+                goal -> goal.toString(),
+                goal -> goal,
+                (existingGoal, newGoal) -> existingGoal
+            ))
+            .values()
+            .stream()
+            .collect(Collectors.toList());
+
+        System.out.println(distinctGoals.toString());
+        goals.clear();
+        goals.addAll(distinctGoals);
         Game game;
           try {
             String selectedTemplate = templates.getValue();
             Story story = fileHandlerController.loadTemplate(selectedTemplate);
+            System.out.println(goals.toString());
             game = new Game(playerController.getPlayer(), story, goals, story.getOpeningPassage());
           } catch (FileNotFoundException ex) {
             throw new RuntimeException(ex);

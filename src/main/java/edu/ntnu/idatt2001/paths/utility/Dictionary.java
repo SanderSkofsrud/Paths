@@ -114,6 +114,8 @@ public enum Dictionary {
 
   THIS_GOAL_IS_ALREADY_ADDED("This goal is already added"),
 
+  GOALS_IN_GAME("Goals: "),
+
 
   ;
   private final String key;
