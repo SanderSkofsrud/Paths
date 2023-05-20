@@ -55,7 +55,7 @@ You climb up the staircase and find yourself in a dark, dusty attic. You hear fo
 
 ::The ghost
 You walk towards the source of the noise and suddenly a ghostly figure appears in front of you. It reaches out its hand and you feel a cold chill run down your spine.
-[Take the ghost's hand](The vision)[{ScoreAction}(10){healthAction}(-10)]
+[Take the ghost's hand](The vision)[{ScoreAction}(10){HealthAction}(-10)]
 [Stand still](The vision)[{ScoreAction}(-10)]
 
 ::The vision
