@@ -34,6 +34,7 @@ public class Player {
    * The inventory of the player.
    */
   private final List<String> inventory;
+  private final String characterModel;
 
   /**
    * The constructor of the Player class.
@@ -49,6 +50,7 @@ public class Player {
     score = builder.score;
     gold = builder.gold;
     inventory = builder.inventory;
+    characterModel = builder.characterModel;
   }
 
   /**
@@ -161,6 +163,9 @@ public class Player {
    */
   public List<String> getInventory() {
     return inventory;
+  }
+  public String getCharacterModel() {
+    return characterModel;
   }
 
   /**

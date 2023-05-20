@@ -224,16 +224,12 @@ public class PlayerTest {
     void testThatToStringWorks() {
       player.addToInventory("Stick");
       player.addToInventory("Sword");
-      assertEquals(";;"
-          + "test"
-          + ";"
-          + 10
-          + ";"
-          + 30
-          + ";"
-          + 50
-          + ";"
-          + "[stick, sword]"
+      assertEquals("""
+                      Name: test
+                      Health: 10
+                      Score: 30
+                      Gold: 50
+                      Inventory: stick, sword"""
           ,player.toString());
     }
   }

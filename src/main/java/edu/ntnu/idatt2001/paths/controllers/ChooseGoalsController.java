@@ -4,7 +4,6 @@ import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
-import edu.ntnu.idatt2001.paths.utility.FileEntry;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -62,7 +61,7 @@ public class ChooseGoalsController {
 
   public Set<String> fetchTemplates(String fileType) {
     this.fileType = fileType;
-    ObservableList<FileEntry> filesList = FXCollections.observableArrayList();
+    ObservableList<File> filesList = FXCollections.observableArrayList();
     Set<String> fileNames = new HashSet<>();
 
     // Load files from file system
