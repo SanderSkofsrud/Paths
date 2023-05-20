@@ -378,9 +378,10 @@ public class MainGameView extends View{
               screenController.activate("FinalPassageView");
               resetPane();
             });
-            credits.setId("credits");
+            credits.setId("subMenuButton");
             buttonsBox.getChildren().clear();
             buttonsBox.getChildren().add(credits);
+            return;
           }
           if (game.getStory().getBrokenLinks().contains(link)) {
             ShowAlert.showInformation(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()), languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
