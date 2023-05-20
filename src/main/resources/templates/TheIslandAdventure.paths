@@ -1,0 +1,54 @@
+The island adventure
+
+::The journey
+You find yourself on a deserted island surrounded by vast ocean waves. The island is lush with tropical vegetation and there's a mysterious aura in the air. You gather your wits and decide what to do next.
+[Explore the jungle](The hidden temple)[{ScoreAction}(10){GoldAction}(10)]
+[Search the shoreline](The cave)[{ScoreAction}(10){GoldAction}(10)]
+
+::The hidden temple
+You venture into the dense jungle and stumble upon a hidden temple buried deep within the foliage. The temple's entrance beckons you to enter, promising untold treasures and ancient secrets.
+[Enter the temple](The chamber)[{ScoreAction}(10){GoldAction}(20)]
+[Stay outside](The jungle)[{ScoreAction}(-10)]
+
+::The chamber
+You cautiously step into the temple's chamber, adorned with intricate carvings and flickering torches. A sense of anticipation fills the air as you spot a pedestal at the center, holding a valuable artifact.
+[Approach the pedestal](The artifact)[{ScoreAction}(10){GoldAction}(30)]
+[Leave the chamber](The hidden temple)[{ScoreAction}(-10)]
+
+::The artifact
+As you reach the pedestal, you discover a dazzling artifact, emitting a faint glow. It exudes a mysterious power, promising both riches and peril. You contemplate your next move.
+[Take the artifact](The guardian)[{ScoreAction}(10){GoldAction}(30){InventoryAction}(Sword)]
+[Leave the artifact](The chamber)[{ScoreAction}(-10)]
+
+::The guardian
+As you lift the artifact, the ground beneath you trembles, and a colossal guardian emerges from the shadows. Its eyes glow fiercely as it prepares to attack.
+[Engage in combat](The victory)[{ScoreAction}(20){GoldAction}(40)]
+[Flee the guardian](The jungle)[{ScoreAction}(-100){GoldAction}(-100)]
+
+::The victory
+With courage and skill, you manage to defeat the guardian, acquiring its treasure and ensuring your survival.
+[Continue exploring](The hidden temple)[{ScoreAction}(10){GoldAction}(10)]
+[Leave the temple](The jungle)[{ScoreAction}(20){GoldAction}(30)]
+
+::The cave
+You explore the shoreline and discover a hidden cave nestled against a rocky cliff. The cave entrance appears dark and foreboding, tempting you with the allure of mysteries lurking within.
+[Enter the cave](The treasure)[{ScoreAction}(10){GoldAction}(20){InventoryAction}(Shield))]
+[Stay outside](The shoreline)[{ScoreAction}(-10)]
+
+::The treasure
+You cautiously enter the cave and navigate its winding passages. Eventually, you stumble upon a hidden treasure trove, glittering with precious gems and ancient relics.
+[Claim the treasure](The escape)[{ScoreAction}(10){GoldAction}(40)]
+[Leave the treasure](The cave)[{ScoreAction}(-10)]
+
+::The escape
+As you bask in the glory of your newfound wealth, you hear the rumbling sound of the cave collapsing. Time is of the essence as you scramble to find an escape route.
+[Find an alternative exit](The secret passage)[{ScoreAction}(10){GoldAction}(10)]
+[Retrace your steps](The cave)[{ScoreAction}(-20){GoldAction}(-20)]
+
+::The secret passage
+In a stroke of luck, you uncover a secret passage hidden behind a pile of rubble. It leads you to safety just as the cave collapses behind you.
+[Continue your adventure](The shoreline)[{ScoreAction}(10){GoldAction}(10)]
+[Reflect on your fortune](The escape)[{ScoreAction}(20){GoldAction}(30)]
+
+::The jungle
+You venture deep into a dense, untamed jungle. The air is thick with humidity, and the sounds of exotic birds and insects fill your ears. You spot a treasure chest hidden beneath a tree and open it. You become rich and win the game!
