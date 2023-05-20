@@ -277,7 +277,6 @@ public class MainGameView extends View{
     info.setAlignment(Pos.CENTER);
     info.setPadding(new Insets(10, 10, 10, 10));
 
-    System.out.println(playerController.getActiveCharacter());
     ImageView characterImage = new ImageView(new Image(getClass().getResourceAsStream("/images/" + playerController.getActiveCharacter())));
     characterImage.setFitHeight(250);
     characterImage.setFitWidth(250);
@@ -293,19 +292,6 @@ public class MainGameView extends View{
 
     HBox buttonsBox = new HBox();
     borderPane.setBottom(buttonsBox);
-
-//    try {
-//      progressController.loadProgress(player.getName());
-//      if (progressController.getPlayer() != null) {
-//        player = progressController.getPlayer();
-//        Link link = new Link(progressController.getCurrentPassage().getTitle(), progressController.getCurrentPassage().getTitle());
-//        System.out.println(link);
-//        currentPassage = game.go(link);
-//        System.out.println(currentPassage);
-//      }
-//    } catch (RuntimeException e) {
-//      currentPassage = game.begin();
-//    }
 
     setupTopBar(textFlow);
     setupAttributesBox();

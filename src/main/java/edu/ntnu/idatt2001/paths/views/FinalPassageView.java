@@ -257,7 +257,6 @@ public class FinalPassageView extends View{
     info.setAlignment(Pos.CENTER);
     info.setPadding(new Insets(10, 10, 10, 10));
 
-    System.out.println(playerController.getActiveCharacter());
     ImageView characterImage = new ImageView(new Image(getClass().getResourceAsStream("/images/" + playerController.getActiveCharacter())));
     characterImage.setFitHeight(250);
     characterImage.setFitWidth(250);
