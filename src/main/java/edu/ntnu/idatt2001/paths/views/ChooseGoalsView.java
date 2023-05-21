@@ -1,10 +1,7 @@
 package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.*;
-import edu.ntnu.idatt2001.paths.models.Game;
-import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.*;
-import edu.ntnu.idatt2001.paths.models.goals.GoalEnum;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.utility.ShowAlert;
 import javafx.beans.property.SimpleStringProperty;
@@ -18,16 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
-
-import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
-import static edu.ntnu.idatt2001.paths.models.goals.GoalFactory.createGoal;
-import static edu.ntnu.idatt2001.paths.models.goals.GoalFactory.createInventoryGoal;
 
 /**
  * The type Choose goals view.
@@ -78,16 +66,7 @@ public class ChooseGoalsView extends View {
    * The Player controller.
    * The playerController is used to create the player of the game.
    */
-  private final PlayerController playerController = PlayerController.getInstance();
   private final LanguageController languageController = LanguageController.getInstance();
-  private final String GOLDGOAL = "Gold goal";
-  private String GOLDGOALTRANSLATED;
-  private final String INVENTORYGOAL = "Inventory goal";
-  private String INVENTORYGOALTRANSLATED;
-  private final String HEALTHGOAL = "Health goal";
-  private String HEALTHGOALTRANSLATED;
-  private final String SCOREGOAL = "Score goal";
-  private String SCOREGOALTRANSLATED;
 
   /**
    * Instantiates a new Choose goals view.
@@ -116,11 +95,6 @@ public class ChooseGoalsView extends View {
    * The setup method is used to create the view.
    */
   public void setup() {
-    GOLDGOALTRANSLATED = languageController.getTranslation(Dictionary.GOLD_GOAL.getKey());
-    INVENTORYGOALTRANSLATED = languageController.getTranslation(Dictionary.INVENTORY_GOAL.getKey());
-    HEALTHGOALTRANSLATED = languageController.getTranslation(Dictionary.HEALTH_GOAL.getKey());
-    SCOREGOALTRANSLATED = languageController.getTranslation(Dictionary.SCORE_GOAL.getKey());
-
     ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/images/goals.png")));
     HBox hBox = new HBox();
     hBox.setSpacing(25);
@@ -146,7 +120,7 @@ public class ChooseGoalsView extends View {
     ComboBox <String> templates = new ComboBox();
     Set<String> templateNames = chooseGoalsController.fetchTemplates("paths");
     for (String templateName : templateNames) {
-      templates.getItems().add(templateName);
+      templates.getItems().add(templateName.replace(".paths", ""));
     }
     templates.setPromptText(languageController.getTranslation(Dictionary.SELECT_TEMPLATE.getKey()));
 
@@ -160,13 +134,16 @@ public class ChooseGoalsView extends View {
 
     Label customGoalsLabel = new Label(languageController.getTranslation(Dictionary.CUSTOM_GOALS.getKey()));
     ComboBox comboBox = new ComboBox();
-    comboBox.getItems().addAll(GOLDGOALTRANSLATED, HEALTHGOALTRANSLATED, INVENTORYGOALTRANSLATED, SCOREGOALTRANSLATED);
+    comboBox.getItems().addAll(languageController.getTranslation(Dictionary.GOLD_GOAL.getKey()),
+            languageController.getTranslation(Dictionary.INVENTORY_GOAL.getKey()),
+            languageController.getTranslation(Dictionary.SCORE_GOAL.getKey()),
+            languageController.getTranslation(Dictionary.HEALTH_GOAL.getKey()));
     comboBox.setPromptText(languageController.getTranslation(Dictionary.SELECT_GOAL_TYPE.getKey()));
     TextField textField = new TextField();
     textField.setDisable(true);
     comboBox.setOnAction(e -> {
       if (comboBox.getValue() != null) {
-        if (comboBox.getValue().equals(INVENTORYGOALTRANSLATED)) {
+        if (comboBox.getValue().equals(languageController.getTranslation(Dictionary.INVENTORY_GOAL.getKey()))) {
           textField.setPromptText(languageController.getTranslation(Dictionary.ENTER_ITEM_NAME.getKey()));
         } else {
           textField.setPromptText(languageController.getTranslation(Dictionary.ENTER_GOAL_VALUE.getKey()));
@@ -179,38 +156,7 @@ public class ChooseGoalsView extends View {
 
     Button button = new Button(languageController.getTranslation(Dictionary.ADD_GOAL.getKey()));
     button.setId("subMenuButton");
-    button.setOnAction(e -> {
-      if (comboBox.getValue() != null && !textField.getText().isEmpty()) {
-        int value = Integer.parseInt(textField.getText());
-        String selectedTranslatedValue = comboBox.getValue().toString();
-        if (selectedTranslatedValue.equals(GOLDGOALTRANSLATED)) {
-          selectedTranslatedValue = GOLDGOAL;
-        } else if (selectedTranslatedValue.equals(HEALTHGOALTRANSLATED)) {
-          selectedTranslatedValue = HEALTHGOAL;
-        } else if (selectedTranslatedValue.equals(INVENTORYGOALTRANSLATED)) {
-          selectedTranslatedValue = INVENTORYGOAL;
-        } else if (selectedTranslatedValue.equals(SCOREGOALTRANSLATED)) {
-          selectedTranslatedValue = SCOREGOAL;
-        }
-        String selectedValue = languageController.translateToEnglish(selectedTranslatedValue.toUpperCase().replace(" GOAL", ""));
-        GoalEnum type = GoalEnum.valueOf(selectedValue);
-        Goal goal = GoalFactory.createGoal(type, value);
-
-        boolean isGoalAlreadyAdded = false;
-        for (Goal existingGoal : goals) {
-          if (existingGoal.getClass().equals(goal.getClass()) && existingGoal.toString().equals(goal.toString())) {
-            isGoalAlreadyAdded = true;
-            break;
-          }
-        }
-
-        if (isGoalAlreadyAdded) {
-          ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOAL_ALREADY_ADDED.getKey()), languageController.getTranslation(Dictionary.THIS_GOAL_IS_ALREADY_ADDED.getKey()));
-        } else {
-          goals.add(goal);
-        }
-      }
-    });
+    button.setOnAction(e -> goals.add(chooseGoalsController.handleAddGoal(comboBox, textField)));
 
     TableView<Goal> tableView = new TableView<>();
     TableColumn<Goal, String> tableColumn1 = new TableColumn<>(languageController.getTranslation(Dictionary.GOAL_TYPE.getKey()));
@@ -251,64 +197,18 @@ public class ChooseGoalsView extends View {
     startButton.setId("subMenuButton");
     startButton.setOnAction(e -> {
 
-      for (int i = 1; i < 7; i++) {
-        if (i == 1 && checkBox1.isSelected()) {
-          goals.add(createGoal(GOLD, 200));
-        } else if (i == 2 && checkBox2.isSelected()) {
-          goals.add(createGoal(SCORE, 100));
-        } else if (i == 3 && checkBox3.isSelected()) {
-          goals.add(createGoal(HEALTH,50));
-        } else if (i == 4 && checkBox4.isSelected()) {
-          goals.add(createInventoryGoal("Sword"));
-        } else if (i == 5 && checkBox5.isSelected()) {
-          goals.add(createGoal(GOLD, 200));
-          goals.add(createGoal(SCORE, 100));
-          goals.add(createGoal(HEALTH, 50));
-          goals.add(createInventoryGoal("Sword"));
-        } else if (i == 6 && checkBox6.isSelected()) {
-          goals.add(createGoal(HEALTH, 100));
-          goals.add(createGoal(SCORE, 200));
-          goals.add(createGoal(GOLD, 250));
-          goals.add(createInventoryGoal("Sword", "Potion", "Shield"));
-        }
+      chooseGoalsController.handlePredefinedGoals(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6);
+
+      try {
+        chooseGoalsController.validateGame(templates);
+      } catch (Exception ex) {
+        ShowAlert.showError(ex.getMessage(), ex.getMessage());
+        return;
       }
 
-      if (goals.isEmpty() && templates.getValue() == null) {
-        ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NEED_SELECTION.getKey()));
-      } else if (templates.getValue() == null) {
-        ShowAlert.showInformation(languageController.getTranslation(Dictionary.TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.TEMPLATE_NEED_SELECTION.getKey()));
-      } else if (goals.isEmpty()) {
-        ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_NEED_SELECTION.getKey()));
-      } else {
-        List<Goal> distinctGoals = goals.stream()
-            .collect(Collectors.toMap(
-                goal -> goal.toString(),
-                goal -> goal,
-                (existingGoal, newGoal) -> existingGoal
-            ))
-            .values()
-            .stream()
-            .collect(Collectors.toList());
+      screenController.activate("MainGame");
+      resetPane();
 
-        goals.clear();
-        goals.addAll(distinctGoals);
-        Game game;
-          try {
-            String selectedTemplate = templates.getValue();
-            Story story = fileHandlerController.loadTemplate(selectedTemplate);
-            game = new Game(playerController.getPlayer(), story, goals, story.getOpeningPassage());
-          } catch (FileNotFoundException ex) {
-            throw new RuntimeException(ex);
-          }
-
-        fileHandlerController.saveGameJson(playerController.getPlayer().getName(), null, game);
-        fileHandlerController.saveGameJson(playerController.getPlayer().getName(), "src/main/resources/initialGame/", game);
-
-        gameController.setGame(game);
-
-        screenController.activate("MainGame");
-        resetPane();
-      }
     });
 
     hBox.getChildren().addAll(customGoals, predefinedGoals);

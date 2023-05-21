@@ -1,7 +1,6 @@
 package edu.ntnu.idatt2001.paths.models.actions;
 
 import edu.ntnu.idatt2001.paths.models.player.Player;
-import edu.ntnu.idatt2001.paths.models.player.PlayerBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -51,7 +50,7 @@ class HealthActionTest {
     @Test
     @DisplayName("Test that health is added to player")
     void testHealthActionAddsHealthToPlayer() {
-      Player player = new PlayerBuilder(name).health(health).score(score).gold(gold).build();
+      Player player = new Player.PlayerBuilder(name).health(health).score(score).gold(gold).build();
       HealthAction healthAction = new HealthAction(10);
       healthAction.execute(player);
       assertEquals(20, player.getHealth());

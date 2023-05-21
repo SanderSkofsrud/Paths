@@ -3,7 +3,6 @@ package edu.ntnu.idatt2001.paths.controllers;
 import edu.ntnu.idatt2001.paths.models.player.Difficulty;
 import edu.ntnu.idatt2001.paths.models.player.Item;
 import edu.ntnu.idatt2001.paths.models.player.Player;
-import edu.ntnu.idatt2001.paths.models.player.PlayerBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +62,7 @@ public class PlayerController {
    */
   public Player addDefaultPlayer(String name, Difficulty difficulty, String activeCharacter) {
     inventory.addAll(difficulty.getStartingInventory());
-    player = new PlayerBuilder(name)
+    player = new Player.PlayerBuilder(name)
             .health(difficulty.getHealth())
             .gold(difficulty.getGold())
             .inventory(inventory)
@@ -82,7 +81,7 @@ public class PlayerController {
    * @return the player that is created
    */
   public Player addCustomPlayer(String name, int health, int gold, String activeCharacter) {
-    player = new PlayerBuilder(name)
+    player = new Player.PlayerBuilder(name)
             .health(health)
             .gold(gold)
             .inventory(inventory)

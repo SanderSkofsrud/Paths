@@ -6,7 +6,6 @@ import edu.ntnu.idatt2001.paths.models.goals.GoalEnum;
 import edu.ntnu.idatt2001.paths.models.goals.GoalFactory;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.models.Story;
-import edu.ntnu.idatt2001.paths.models.player.PlayerBuilder;
 import edu.ntnu.idatt2001.paths.utility.paths.PathsReader;
 import org.junit.jupiter.api.*;
 

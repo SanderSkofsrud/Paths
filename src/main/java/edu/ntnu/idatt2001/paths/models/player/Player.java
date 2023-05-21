@@ -44,13 +44,13 @@ public class Player {
    * @param builder The PlayerBuilder object that is used to set the attributes of the player.
    */
 
-  Player(PlayerBuilder builder) {
-    name = builder.name;
-    health = builder.health;
-    score = builder.score;
-    gold = builder.gold;
-    inventory = builder.inventory;
-    characterModel = builder.characterModel;
+  private Player(PlayerBuilder builder) {
+    this.name = builder.name;
+    this.health = builder.health;
+    this.score = builder.score;
+    this.gold = builder.gold;
+    this.inventory = builder.inventory;
+    this.characterModel = builder.characterModel;
   }
 
   /**
@@ -167,6 +167,78 @@ public class Player {
   }
   public String getCharacterModel() {
     return characterModel;
+  }
+
+  /**
+   * Static inner class for building Player objects.
+   */
+  public static class PlayerBuilder {
+    private final String name;
+    private int health = 100;
+    private int score = 0;
+    private int gold = 0;
+    private List<String> inventory = new ArrayList<>();
+    private String characterModel = "m.png";
+
+    /**
+     * Constructor for PlayerBuilder.
+     *
+     * @param name The name of the player.
+     * @throws NullPointerException     if name is null.
+     * @throws IllegalArgumentException if the name is empty.
+     */
+    public PlayerBuilder(String name) {
+      Objects.requireNonNull(name, "The name can't be null");
+      if (name.isBlank()) {
+        throw new IllegalArgumentException("Name cannot be empty");
+      }
+      this.name = name;
+    }
+
+    // Setter methods for configuring the builder
+
+    public PlayerBuilder health(int health) {
+      if (health <= 0) {
+        throw new IllegalArgumentException("Health cannot be less than 0");
+      }
+      this.health = health;
+      return this;
+    }
+
+    public PlayerBuilder score(int score) {
+      if (score < 0) {
+        throw new IllegalArgumentException("Score cannot be less than 0");
+      }
+      this.score = score;
+      return this;
+    }
+
+    public PlayerBuilder gold(int gold) {
+      if (gold < 0) {
+        throw new IllegalArgumentException("Gold cannot be less than 0");
+      }
+      this.gold = gold;
+      return this;
+    }
+
+    public PlayerBuilder inventory(List<String> inventory) {
+      this.inventory = new ArrayList<>(inventory);
+      return this;
+    }
+
+    public PlayerBuilder characterModel(String characterModel) {
+      this.characterModel = characterModel;
+      return this;
+    }
+
+    /**
+     * Builds the Player object.
+     *
+     * @return The constructed Player object.
+     */
+    public Player build() {
+      return new Player(this);
+    }
   }
 
   /**
