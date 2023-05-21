@@ -128,11 +128,12 @@ public class Story {
    * @throws IllegalArgumentException if link is null or if other passages has links to this passage.
    */
   public void removePassage(Link link) throws IllegalArgumentException {
-    List<Passage> passagesWithLinks = passages.values().stream().filter(passage -> !passage.getLinks().isEmpty()).toList();
-    if (getPassage(link) == null) {
+    boolean otherPassagesLinkToPassage = passages.values().stream()
+        .flatMap(passage -> passage.getLinks().stream())
+        .anyMatch(l -> l.getReference().equals(link.getReference()));    if (getPassage(link) == null) {
       throw new IllegalArgumentException("Can not find passage");
     }
-    if (!passagesWithLinks.isEmpty()) {
+    if (otherPassagesLinkToPassage) {
       throw new IllegalArgumentException("Other passages has links to this passage");
     }
     passages.remove(link);

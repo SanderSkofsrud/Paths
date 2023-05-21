@@ -180,8 +180,8 @@
           protected void running() {
             super.running();
             frontPageScene.setCursor(Cursor.WAIT);
-            newGame.setText("Changing language...");
-            loadGame.setText("Changing language...");
+            newGame.setText(languageController.translate("Changing language..."));
+            loadGame.setText(languageController.translate("Changing language..."));
             newGame.setDisable(true);
             loadGame.setDisable(true);
           }

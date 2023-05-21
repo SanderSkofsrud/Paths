@@ -18,7 +18,8 @@ import java.io.InputStream;
 public class SoundPlayer {
   private Clip clip;
   /**
-   * A method that plays a sound file.
+   * A method that plays a sound file by taking in a filename.
+   * It tries to play the sound file and catches an exception if it fails.
    *
    * @param filename the filename of the sound file
    */
@@ -35,6 +36,7 @@ public class SoundPlayer {
 
   /**
    * A method that plays a sound file on loop.
+   * It tries to play the sound file and catches an exception if it fails.
    *
    * @param filename the filename of the sound file
    */
@@ -51,6 +53,9 @@ public class SoundPlayer {
     }
   }
 
+  /**
+   * A method that stops the sound file if one is currently playing.
+   */
   public void stop() {
     if (clip != null && clip.isRunning()) {
       clip.flush();

@@ -15,6 +15,8 @@ public class StoryTest {
   Story story;
   Passage passage;
   Passage passage2;
+
+  Passage passage3;
   Passage openingPassage;
   Story story2;
   Link link;
@@ -25,11 +27,12 @@ public class StoryTest {
   void setUp() {
     passage = new Passage("passage", "content");
     passage2 = new Passage("passage2", "content2");
+    passage3 = new Passage("passage2", "content3");
     openingPassage = new Passage("openingPassage", "content");
     story = new Story("story", openingPassage);
     story2 = new Story("story2",openingPassage);
-    link = new Link("passage", "passage2");
-    link2 = new Link("testhg", "test");
+    link = new Link("link", "passage2");
+    link2 = new Link("test", "test");
     passage.addLink(link);
   }
 
@@ -178,9 +181,11 @@ public class StoryTest {
      * Test that removePassage throws IllegalArgumentException if other passage has links to the passage
      */
     @Test
-    void testThatRemovePassageThrowsIllegalArgumentExceptionIfPassageHasLinks() {
+    void testThatRemovePassageThrowsIllegalArgumentExceptionIfOtherPassagesHaveLinksToPassage(){
+      passage2.addLink(link);
       story.addPassage(passage2);
-      story.addPassage(passage);
+      passage3.addLink(link);
+      story.addPassage(passage3);
       assertThrows(IllegalArgumentException.class, () ->
           story.removePassage(link));
     }
