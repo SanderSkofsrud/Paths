@@ -3,10 +3,14 @@ package edu.ntnu.idatt2001.paths.controllers;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
+import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextFlow;
 import java.util.List;
+
+import static javafx.scene.text.TextAlignment.CENTER;
 
 public class FinalPassageController {
   private LanguageController languageController = LanguageController.getInstance();
@@ -14,6 +18,7 @@ public class FinalPassageController {
 
   public VBox goalsAchieved() {
     VBox goalsVBox = new VBox();
+    goalsVBox.setAlignment(Pos.CENTER);
     List<Goal> goals = gameController.getGame().getGoals();
     Player player = gameController.getGame().getPlayer();
     for (Goal goal : goals) {
@@ -28,6 +33,7 @@ public class FinalPassageController {
 
   public VBox goalsFailed() {
     VBox goalsVBox = new VBox();
+    goalsVBox.setAlignment(Pos.CENTER);
     List<Goal> goals = gameController.getGame().getGoals();
     Player player = gameController.getGame().getPlayer();
     for (Goal goal : goals) {
@@ -56,6 +62,7 @@ public class FinalPassageController {
     String numberString = String.format("%.2f", percentage);
 
     TextFlow textFlow = new TextFlow();
+    textFlow.setTextAlignment(CENTER);
 
     Text nonColoredText = new Text(textString.substring(0, textString.indexOf(numberString)));
     nonColoredText.setId("creditsText");

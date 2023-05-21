@@ -35,7 +35,7 @@ public class FinalPassageView extends View{
    * The Credits duration.
    * The credits duration is the duration of the credits in seconds.
    */
-  private final double CREDITS_DURATION = 40;
+  private final double CREDITS_DURATION = 30;
   /**
    * The Screen controller.
    * The screenController is used to switch between the different views of the GUI.

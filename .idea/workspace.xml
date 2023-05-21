@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Added typing sound that plays while the text if being loaded">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FinalPassageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/MainGameController.java" afterDir="false" />
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="Created MainGameController and moved a lot of logic out of the view and into the controller">
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/Test2.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/test3.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/json/Test2.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/json/test3.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FinalPassageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/controllers/FinalPassageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/FinalPassageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/FinalPassageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/MainGameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,27 +364,6 @@
       <workItem from="1684563213111" duration="1333000" />
       <workItem from="1684589530644" duration="13797000" />
     </task>
-    <task id="LOCAL-00121" summary="customized alert-boxes">
-      <created>1683107562166</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1683107562166</updated>
-    </task>
-    <task id="LOCAL-00122" summary="Move PlayerBuilder into its own class">
-      <created>1683288439482</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1683288439483</updated>
-    </task>
-    <task id="LOCAL-00123" summary="Update files to match the change in the player class.">
-      <created>1683288469360</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1683288469360</updated>
-    </task>
     <task id="LOCAL-00124" summary="Updated action to work with the new playerBuilder, and added ActionDeserializer to work with that change">
       <created>1683292350813</created>
       <option name="number" value="00124" />
@@ -713,7 +686,28 @@
       <option name="project" value="LOCAL" />
       <updated>1684592006388</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="Made the FinalPassageView show the credits as well as the goals completed and uncompleted. Added the strings to the Dictionary, updated the css and created a controller for the logic.">
+      <created>1684682619393</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1684682619393</updated>
+    </task>
+    <task id="LOCAL-00171" summary="Made the program play a sound immediately on boot to initialize the soundPlayer">
+      <created>1684682659424</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1684682659424</updated>
+    </task>
+    <task id="LOCAL-00172" summary="Created MainGameController and moved a lot of logic out of the view and into the controller">
+      <created>1684682694851</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1684682694851</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -744,9 +738,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added method to load template, and updated saveGame to work with new filehandling" />
-    <MESSAGE value="Updated PathsReader and PathsWriter. Now saves the story, goals and player in different files in the same directory. Also creates progress file to enable reloading from previous active passage" />
-    <MESSAGE value="Added progress files to track the progress of the player and enable reloading from previous active passage" />
     <MESSAGE value="Added inventory as a GoalEnum" />
     <MESSAGE value="Updated toString" />
     <MESSAGE value="Reverted changes to adjust volume, as they did not work" />
@@ -769,7 +760,10 @@
     <MESSAGE value="Updated exception messages in Player" />
     <MESSAGE value="Fixed error where you did not get sent to final passage if you died" />
     <MESSAGE value="Added typing sound that plays while the text if being loaded" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added typing sound that plays while the text if being loaded" />
+    <MESSAGE value="Made the FinalPassageView show the credits as well as the goals completed and uncompleted. Added the strings to the Dictionary, updated the css and created a controller for the logic." />
+    <MESSAGE value="Made the program play a sound immediately on boot to initialize the soundPlayer" />
+    <MESSAGE value="Created MainGameController and moved a lot of logic out of the view and into the controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created MainGameController and moved a lot of logic out of the view and into the controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
