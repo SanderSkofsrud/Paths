@@ -262,7 +262,7 @@ public class LoadGameController {
 
     jsonTableView.getColumns().addAll(fileNameColumn, fileLocationColumn, brokenLinksColumn, loadColumn);
     jsonTableView.setItems(getSavedGames("json"));
-    jsonTableView.setPrefWidth(690);
+    jsonTableView.setPrefWidth(720);
     return jsonTableView;
   }
 
