@@ -123,6 +123,7 @@
      */
     private void setup() {
       SoundPlayer soundPlayer = new SoundPlayer();
+      soundPlayer.play("/sounds/confirm.wav");
       ImageView logo = new ImageView(new Image(getClass().getResourceAsStream("/images/logo.png")));
       logo.preserveRatioProperty().set(true);
       logo.setFitWidth(500);

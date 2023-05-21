@@ -97,22 +97,22 @@ public class MainGameView extends View{
    * The Player health label.
    * The playerHealthLabel is the label that shows the health of the player.
    */
-  private Label playerHealthLabel = new Label();
+  private Label playerHealthLabel;
   /**
    * The Player score label.
    * The playerScoreLabel is the label that shows the score of the player.
    */
-  private Label playerScoreLabel = new Label();
+  private Label playerScoreLabel;
   /**
    * The Player inventory label.
    * The playerInventoryLabel is the label that shows the inventory of the player.
    */
-  private Label playerInventoryLabel = new Label();
+  private Label playerInventoryLabel;
   /**
    * The Player gold label.
    * The playerGoldLabel is the label that shows the gold of the player.
    */
-  private Label playerGoldLabel = new Label();
+  private Label playerGoldLabel;
   /**
    * The buttons box.
    * The buttonsBox is the box that contains the buttons of the GUI.
@@ -174,6 +174,7 @@ public class MainGameView extends View{
    */
   PlayerController playerController = PlayerController.getInstance();
   LanguageController languageController = LanguageController.getInstance();
+  MainGameController mainGameController = MainGameController.getInstance(this);
   private ImageView soundImageView;
   private boolean isMuted = false;
   private SoundPlayer soundPlayer = new SoundPlayer();
@@ -216,7 +217,6 @@ public class MainGameView extends View{
     attributesBox = new HBox();
     attributesBox.setAlignment(Pos.TOP_LEFT);
     attributesBox.setPadding(new Insets(10, 10, 10, 10));
-    //borderPane.setTop(attributesBox);
   }
 
   /**
@@ -231,12 +231,8 @@ public class MainGameView extends View{
   @Override
   public void setup() {
     soundPlayer.playOnLoop("/sounds/ambiance.wav");
-    game = gameController.getGame();
-    currentPassage = game.getCurrentPassage();
-    player = game.getPlayer();
-    goals = game.getGoals();
-    story = game.getStory();
-    playerStartHealth = player.getHealth();
+    mainGameController.setup();
+    currentPassage = mainGameController.getCurrentPassage();
 
     passageContent = new TextArea();
     passageContent.setWrapText(true);
@@ -256,18 +252,7 @@ public class MainGameView extends View{
     passageContent.setStyle("-fx-background-color: transparent;");
     textFlow.setStyle("-fx-background-color: transparent;");
 
-    EventHandler<MouseEvent> setOnMouseClicked = event -> {
-      Pair<Timeline, Passage> timelineAndPassage = (Pair<Timeline, Passage>) textFlow.getUserData();
-      timeline = timelineAndPassage.getKey();
-      Passage passage = timelineAndPassage.getValue();
-      if (timeline != null && timeline.getStatus() == Animation.Status.RUNNING) {
-        timeline.stop();
-        String[] displayedWords = passageContent.getText().split("\\s+");
-        String[] allWords = passage.getContent().split("\\s+");
-        String remainingText = String.join(" ", Arrays.copyOfRange(allWords, displayedWords.length, allWords.length));
-        passageContent.appendText(remainingText);
-      }
-    };
+    EventHandler<MouseEvent> setOnMouseClicked = mainGameController.createMouseClickedEventHandler(textFlow, passageContent);
 
     passageContent.setOnMouseClicked(setOnMouseClicked);
     textFlow.setOnMouseClicked(setOnMouseClicked);
@@ -297,9 +282,6 @@ public class MainGameView extends View{
     HBox buttonsBox = new HBox();
     borderPane.setBottom(buttonsBox);
 
-    setupTopBar(textFlow);
-    setupAttributesBox();
-
     textFlow.setUserData(updateUIWithPassage(textFlow, currentPassage));
 
     Image background = new Image(getClass().getResourceAsStream("/images/gameBackground.png"));
@@ -312,7 +294,7 @@ public class MainGameView extends View{
    * Resets the pane of the GUI.
    */
   @Override
-  void resetPane() {
+  public void resetPane() {
     stackPane.getChildren().clear();
     borderPane.setTop(null);
     borderPane.setBottom(null);
@@ -334,15 +316,15 @@ public class MainGameView extends View{
    * @param passage  the passage
    * @return the pair of the timeline and the passage
    */
-  private Pair<Timeline, Passage> updateUIWithPassage(TextFlow textFlow, Passage passage) {
+  public Pair<Timeline, Passage> updateUIWithPassage(TextFlow textFlow, Passage passage) {
     passageContent.clear();
-    setupTopBar(textFlow);
     setupAttributesBox();
+    setupTopBar(textFlow);
 
     previousPassage = currentPassage;
     currentPassage = passage;
 
-    String translatedContent = languageController.translate(currentPassage.getContent());
+    String translatedContent = languageController.translate(mainGameController.setupCurrentPassage());
 
     characters = translatedContent.toCharArray();
 
@@ -371,11 +353,13 @@ public class MainGameView extends View{
         Button button = new Button(languageController.translate(link.getText()));
         button.setOnAction(event -> {
           try {
-            for (Action action : link.getActions()) {
-              action.execute(player);
-            }
+            mainGameController.executeActions(link);
           } catch (Exception e) {
             ShowAlert.showError(e.getMessage(), e.getMessage());
+            characters = null;
+            timeline.stop();
+            passageContent.clear();
+            passageContent.setText(languageController.getTranslation(Dictionary.LOST_GAME.getKey()));
             Button credits = new Button(languageController.getTranslation(Dictionary.CREDITS.getKey()));
             credits.setOnAction(event1 -> {
               screenController.activate("FinalPassageView");
@@ -386,37 +370,32 @@ public class MainGameView extends View{
             buttonsBox.getChildren().add(credits);
             return;
           }
-          if (game.getStory().getBrokenLinks().contains(link)) {
+          if (mainGameController.getGame().getStory().getBrokenLinks().contains(link)) {
             ShowAlert.showInformation(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()), languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
             button.setDisable(true);
           } else {
-            Passage nextPassage = game.go(link);
-            undoButton.setDisable(false);
-            timeline.stop();
-            updateUIWithPassage(textFlow, nextPassage);
-            game.setCurrentPassage(nextPassage);
+            mainGameController.go(link, textFlow);
 
-            if (!MinigameView.hasPlayed()) {
-              int random = (int) (Math.random() * 100) + 1;
-              if (random <= 10) {
-                playerController.setPlayer(player);
-                screenController.activate("Minigame");
-              }
+            if (mainGameController.minigameCheck()) {
+              characters = null;
+              screenController.activate("Minigame");
             }
           }
-          updatePlayerInfo();
         });
 
         buttonsBox.getChildren().add(button);
         button.setId("subMenuButton");
       }
 
-      updatePlayerInfo();
       textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
       timeline.play();
       timeline.setOnFinished(event -> soundPlayer.stop());
       return new Pair<>(timeline, currentPassage);
     } else {
+      characters = null;
+      timeline.stop();
+      passageContent.clear();
+      passageContent.setText(languageController.getTranslation(Dictionary.END_OF_GAME.getKey()));
       Button credits = new Button(languageController.getTranslation(Dictionary.CREDITS.getKey()));
       credits.setOnAction(event1 -> {
         screenController.activate("FinalPassageView");
@@ -440,42 +419,16 @@ public class MainGameView extends View{
     attributesBox.setAlignment(Pos.TOP_LEFT);
     attributesBox.setPadding(new Insets(10, 10, 10, 10));
 
-    ProgressBar healthBar = new ProgressBar();
-    healthBar.setMinWidth(100);
-    healthBar.setMaxWidth(Double.MAX_VALUE);
-    healthBar.setProgress(player.getHealth() / playerStartHealth);
-    healthBar.setStyle("-fx-accent: red;");
+    ProgressBar healthBar = mainGameController.createHealthBar();
 
-    playerHealthLabel.setText(languageController.getTranslation(Dictionary.HEALTH.getKey()) + ": " + player.getHealth());
-    playerHealthLabel.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
-    playerHealthLabel.setPadding(new Insets(10, 10, 10, 10));
+    playerHealthLabel = mainGameController.createLabel(languageController.getTranslation(Dictionary.HEALTH.getKey()), "Health");
+    playerHealthLabel.setGraphic(healthBar);
+    playerGoldLabel = mainGameController.createLabel(languageController.getTranslation(Dictionary.GOLD.getKey()), "Gold");
+    playerScoreLabel = mainGameController.createLabel(languageController.getTranslation(Dictionary.SCORE.getKey()), "Score");
 
-    playerGoldLabel.setText(languageController.getTranslation(Dictionary.GOLD.getKey()) + ": " + player.getGold());
-    playerGoldLabel.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
-    playerGoldLabel.setPadding(new Insets(10, 10, 10, 10));
+    inventoryImageBox = mainGameController.createInventoryBox();
 
-    playerScoreLabel.setText(languageController.getTranslation(Dictionary.SCORE.getKey()) + ": " + player.getScore());
-    playerScoreLabel.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
-    playerScoreLabel.setPadding(new Insets(10, 10, 10, 10));
-
-    inventoryImageBox = new HBox();
-    inventoryImageBox.setSpacing(7);
-    for (String item : player.getInventory()) {
-      String resourcePath = "/images/" + item + ".png";
-      InputStream imageStream = getClass().getResourceAsStream(resourcePath);
-
-      if (imageStream != null) {
-        ImageView itemImageView = new ImageView(new Image(imageStream));
-        itemImageView.setFitWidth(20);
-        itemImageView.setFitHeight(20);
-        inventoryImageBox.getChildren().add(itemImageView);
-      } else {
-        inventoryImageBox.getChildren().add(new Label(item));
-      }
-    }
-
-
-    playerInventoryLabel.setText(languageController.getTranslation(Dictionary.INVENTORY.getKey()) + ": ");
+    playerInventoryLabel = new Label(languageController.getTranslation(Dictionary.INVENTORY.getKey()) + ": ");
 
     inventoryBox = new HBox(playerInventoryLabel, inventoryImageBox);
     inventoryBox.setPadding(new Insets(10, 10, 0, 10));
@@ -545,136 +498,31 @@ public class MainGameView extends View{
       undoButton.setDisable(true);
     });
 
-    Button exitButton = new Button();
+    Button exitButton = mainGameController.createExitButton();
     exitButton.setGraphic(exitImageView);
     exitButton.setStyle("-fx-background-color: transparent;");
 
-    exitButton.setOnAction(event -> {
-      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-      alert.setTitle(languageController.getTranslation(Dictionary.EXIT.getKey()));
-      alert.setHeaderText(languageController.getTranslation(Dictionary.CHOOSE_AN_OPTION.getKey()));
-      alert.setContentText(languageController.getTranslation(Dictionary.LOSE_PROGRESS.getKey()));
+    Button helpButton = mainGameController.createHelpButton();
+    helpButton.setGraphic(helpImageView);
+    helpButton.setStyle("-fx-background-color: transparent;");
 
-      ButtonType cancel = new ButtonType(languageController.getTranslation(Dictionary.CANCEL.getKey()));
-      ButtonType saveAndExit = new ButtonType(languageController.getTranslation(Dictionary.SAVE_EXIT.getKey()));
-      ButtonType exitWithoutSaving = new ButtonType(languageController.getTranslation(Dictionary.EXIT.getKey()));
-
-      alert.getButtonTypes().setAll(saveAndExit,exitWithoutSaving, cancel);
-
-      DialogPane dialogPane = alert.getDialogPane();
-      dialogPane.getStylesheets().add("stylesheet.css");
-
-      Optional<ButtonType> result = alert.showAndWait();
-      if (result.isPresent()) {
-        if (result.get() == cancel) {
-          alert.close();
-        } else if (result.get() == saveAndExit) {
-          FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
-          Platform.exit();
-        } else if (result.get() == exitWithoutSaving) {
-          Platform.exit();
-        }
-      }
-      borderPane.getStylesheets().add("stylesheet.css");
-    });
-
-
-    Button questionButton = new Button();
-    questionButton.setGraphic(helpImageView);
-    questionButton.setStyle("-fx-background-color: transparent;");
-    questionButton.setOnAction(actionEvent -> {
-      Alert alert = new Alert(Alert.AlertType.INFORMATION);
-      alert.setTitle(languageController.getTranslation(Dictionary.GAME_HELP.getKey()));
-      alert.setHeaderText(languageController.getTranslation(Dictionary.GAME_HELP.getKey()));
-      alert.setContentText(languageController.getTranslation(Dictionary.GAME_HELP_TEXT.getKey()));
-
-      DialogPane dialogPane = alert.getDialogPane();
-      dialogPane.getStylesheets().add("stylesheet.css");
-
-      alert.showAndWait();
-
-    });
-
-    Button homeButton = new Button();
+    Button homeButton = mainGameController.createHomeButton(screenController);
     homeButton.setGraphic(homeImageView);
     homeButton.setStyle("-fx-background-color: transparent;");
-    homeButton.setOnAction(event -> {
-      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-      alert.setTitle(languageController.getTranslation(Dictionary.HOME.getKey()));
-      alert.setHeaderText(languageController.getTranslation(Dictionary.CHOOSE_AN_OPTION.getKey()));
-      alert.setContentText(languageController.getTranslation(Dictionary.LOSE_PROGRESS_HOME.getKey()));
 
-      ButtonType cancel = new ButtonType(languageController.getTranslation(Dictionary.CANCEL.getKey()));
-      ButtonType saveAndGoHome = new ButtonType(languageController.getTranslation(Dictionary.SAVE_HOME.getKey()));
-      ButtonType goHomeWithoutSaving = new ButtonType(languageController.getTranslation(Dictionary.HOME.getKey()));
-
-      alert.getButtonTypes().setAll(saveAndGoHome,goHomeWithoutSaving, cancel);
-
-      DialogPane dialogPane = alert.getDialogPane();
-      dialogPane.getStylesheets().add("stylesheet.css");
-
-      Optional<ButtonType> result = alert.showAndWait();
-      if (result.isPresent()) {
-        if (result.get() == cancel) {
-          alert.close();
-        } else if (result.get() == saveAndGoHome) {
-          FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
-          gameController.resetGame(); // Add this line
-          screenController.activate("MainMenu");
-          resetPane();
-        } else if (result.get() == goHomeWithoutSaving) {
-          gameController.resetGame(); // Add this line
-          screenController.activate("MainMenu");
-          resetPane();
-        }
-      }
-      stackPane.getStylesheets().add("stylesheet.css");
-    });
-    Button restartButton = new Button();
+    Button restartButton = mainGameController.createRestartButton(textFlow);
     restartButton.setGraphic(restartImageView);
     restartButton.setStyle("-fx-background-color: transparent;");
 
-    restartButton.setOnAction(event -> {
-      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-      alert.setTitle("Restart");
-      alert.setHeaderText("Do you want to restart the game?");
-
-      ButtonType cancel = new ButtonType("Cancel");
-      ButtonType restart = new ButtonType("Restart");
-
-      alert.getButtonTypes().setAll(restart, cancel);
-
-      DialogPane dialogPane = alert.getDialogPane();
-      dialogPane.getStylesheets().add("stylesheet.css");
-
-      Optional<ButtonType> result = alert.showAndWait();
-      if (result.isPresent()) {
-        if (result.get() == cancel) {
-          alert.close();
-        } else if (result.get() == restart) {
-          try {
-            game = FileHandlerController.getInstance().loadGameJson(player.getName() + ".json", "src/main/resources/initialGame/");
-          } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-          }
-          player = game.getPlayer();
-          words = null;
-          characters = null;
-          timeline.stop();
-          updateUIWithPassage(textFlow,game.begin());
-        }
-      }
-      borderPane.getStylesheets().add("stylesheet.css");
-    });
 
     HBox topRightBox = new HBox();
     topRightBox.setAlignment(Pos.TOP_RIGHT);
     topRightBox.setPadding(new Insets(10, 10, 10, 10));
-    topRightBox.getChildren().addAll(undoButton, restartButton, homeButton, questionButton, exitButton, soundButton);
+    topRightBox.getChildren().addAll(undoButton, restartButton, homeButton, helpButton, exitButton, soundButton);
 
     VBox goalsVbox = goalsVbox();
 
-    attributesBox.getChildren().addAll(playerHealthLabel, healthBar, playerGoldLabel, playerScoreLabel, inventoryBox, goalsVbox);
+    attributesBox.getChildren().addAll(playerHealthLabel, playerGoldLabel, playerScoreLabel, inventoryBox, goalsVbox);
 
     HBox topBox = new HBox();
     topBox.getChildren().addAll(attributesBox, topRightBox);
@@ -684,63 +532,16 @@ public class MainGameView extends View{
   }
 
   /**
-   * Updates the player attributes.
-   */
-  private void updatePlayerAttributes() {
-    playerHealthLabel = new Label(languageController.getTranslation(Dictionary.HEALTH.getKey()) + ": " + player.getHealth());
-    playerGoldLabel = new Label(languageController.getTranslation(Dictionary.GOLD.getKey()) + ": " + player.getGold());
-    playerScoreLabel = new Label(languageController.getTranslation(Dictionary.SCORE.getKey()) + ": " + player.getGold());
-    playerInventoryLabel = new Label(languageController.getTranslation(Dictionary.INVENTORY.getKey()) + ": " + player.getGold());
-  }
-
-  /**
    * Creates the goals VBox.
    *
    * @return the goals VBox
    */
   private VBox goalsVbox() {
-    VBox goalsVbox = new VBox();
+    VBox goalsVbox = mainGameController.setupGoals();
     goalsVbox.setPadding(new Insets(10, 10, 10, 10));
     goalsVbox.setSpacing(10);
     goalsVbox.setAlignment(Pos.TOP_CENTER);
-
-    Label goalsLabel = new Label(languageController.getTranslation(Dictionary.GOALS_IN_GAME.getKey()));
-    goalsVbox.getChildren().add(goalsLabel);
-
-    for (Goal goal : game.getGoals()) {
-      HBox goalHbox = new HBox();
-      Label goalLabel = new Label(goal.toString());
-      ProgressBar goalProgressBar = new ProgressBar();
-      goalProgressBar.setProgress(0);
-      double progress = 0.0;
-      if (goal.getClass() == ScoreGoal.class) {
-        progress = (double) player.getScore() / ((ScoreGoal) goal).getMinimumScore();
-      } else if (goal.getClass() == HealthGoal.class) {
-        progress = (double) player.getHealth() / ((HealthGoal) goal).getMinimumHealth();
-      } else if (goal.getClass() == InventoryGoal.class) {
-        progress = (double) player.getInventory().size() / ((InventoryGoal) goal).getMandatoryItems().size();
-      } else if (goal.getClass() == GoldGoal.class) {
-        progress = (double) player.getGold() / ((GoldGoal) goal).getMinimumGold();
-      }
-      if (progress != 0.0) {
-        goalProgressBar.setProgress(progress);
-      } else {
-        goalProgressBar.setProgress(0.0);
-      }
-      goalHbox.getChildren().addAll(goalLabel, goalProgressBar);
-      goalsVbox.getChildren().add(goalHbox);
-    }
-
     return goalsVbox;
-  }
-
-  /**
-   * Updates the player info.
-   */
-  private void updatePlayerInfo() {
-    updatePlayerAttributes();
-    VBox goalsVbox = goalsVbox();
-    attributesBox.getChildren().setAll(playerHealthLabel, playerGoldLabel, playerScoreLabel, playerInventoryLabel, goalsVbox);
   }
 
   private void redo(TextFlow textFlow) {
@@ -761,4 +562,12 @@ public class MainGameView extends View{
     }
   }
 
+  public void setCharacters(char[] characters) {
+    this.characters = characters;
+    timeline.stop();
+  }
+
+  public void stopTimeline() {
+    timeline.stop();
+  }
 }
