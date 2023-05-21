@@ -1,5 +1,13 @@
 package edu.ntnu.idatt2001.paths.utility;
 
+/**
+ * The enum Dictionary.
+ * The Dictionary enum is used to store all the strings used in the application to be able to change the language of the application.
+ *
+ * @author Helle R. & Sander S.
+ * @version 1.0 23.04.2020
+ */
+
 public enum Dictionary {
   NEW_GAME("New game"),
   LOAD_GAME("Load game"),
@@ -116,16 +124,28 @@ public enum Dictionary {
 
   GOALS_IN_GAME("Goals: "),
 
-  CREDITS("Credits"),
+  CREDITS("Credits"),;
 
-
-  ;
+  /**
+   * The Key.
+   * The key is the string that is used to fetch the correct string to be displayed in the application.
+   */
   private final String key;
 
+  /**
+   * Constructs a new Dictionary.
+   *
+   * @param key the key associated with the dictionary entry
+   */
   Dictionary(String key) {
     this.key = key;
   }
 
+  /**
+   * Gets the key associated with the dictionary entry.
+   *
+   * @return the key
+   */
   public String getKey() {
     return key;
   }
