@@ -116,7 +116,7 @@ public class LoadGameView extends View{
     Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
 
     Button uploadButton = new Button(languageController.getTranslation(Dictionary.UPLOAD_FILE.getKey()));
-    uploadButton.setId("SubMenuButton");
+    uploadButton.setId("subMenuButton");
 
     uploadButton.setOnAction(event -> {
       loadGameController.uploadGameFile();
