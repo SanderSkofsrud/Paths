@@ -224,13 +224,13 @@ public class LoadGameController {
     });
 
 
-    fileLocationColumn.setPrefWidth(370);
+    fileLocationColumn.setPrefWidth(350);
 
     TableColumn<File, String> brokenLinksColumn = new TableColumn<>(languageController.getTranslation(Dictionary.BROKEN_LINKS.getKey()));
     brokenLinksColumn.setCellValueFactory(param -> new ReadOnlyStringWrapper(getBrokenLinksString(param.getValue())));
 
     TableColumn<File, String> loadColumn = new TableColumn<>(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
-    loadColumn.setPrefWidth(100);
+    loadColumn.setPrefWidth(80);
     loadColumn.setCellFactory(tc -> new TableCell<>() {
       private final Hyperlink hyperlink = new Hyperlink(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
 
