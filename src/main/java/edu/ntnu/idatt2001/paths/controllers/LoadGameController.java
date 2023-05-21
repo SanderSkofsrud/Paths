@@ -6,8 +6,25 @@ import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
+import edu.ntnu.idatt2001.paths.views.LoadGameView;
+import javafx.animation.PauseTransition;
+import javafx.animation.SequentialTransition;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -44,12 +61,11 @@ public class LoadGameController {
    * The file type.
    */
   private String fileType;
-  /**
-   * The Missing data.
-   */
-  private StringBuilder missingData;
+  private Game game;
   FileHandlerController fileHandlerController = FileHandlerController.getInstance();
   LanguageController languageController = LanguageController.getInstance();
+  GameController gameController = GameController.getInstance();
+  PlayerController playerController = PlayerController.getInstance();
   /**
    * Instantiates a new Load game controller.
    */
@@ -134,7 +150,7 @@ public class LoadGameController {
     String fileName = file.getName();
     Game game = null;
     try {
-      game = fileHandlerController.loadGameJson(file.getAbsolutePath());
+      game = fileHandlerController.loadGameJson(file.getName(), null);
     } catch (FileNotFoundException | IllegalArgumentException e) {
       System.out.println("Incorrect file format: " + e.getMessage());
     }
@@ -150,4 +166,129 @@ public class LoadGameController {
     }
   }
 
+  public TableView<File> createTableView(ScreenController screenController) {
+    TableView<File> jsonTableView = new TableView<>();
+    TableColumn<File, String> fileNameColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_NAME.getKey()));
+    fileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getName()));
+
+    TableColumn<File, String> fileLocationColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_LOCATION.getKey()));
+    fileLocationColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getAbsolutePath()));
+    fileLocationColumn.setCellFactory(tc -> new TableCell<>() {
+      private final Text text = new Text();
+      private final VBox vbox = new VBox(text);
+      private final Pane container = new Pane(vbox);
+      private final TranslateTransition tt = new TranslateTransition(Duration.seconds(6.5), text);
+      private final PauseTransition ptBefore = new PauseTransition(Duration.seconds(1));
+      private final PauseTransition ptAfter = new PauseTransition(Duration.seconds(1));
+      private final SequentialTransition st = new SequentialTransition(ptBefore, tt, ptAfter);
+
+      {
+        st.setCycleCount(Timeline.INDEFINITE);
+
+        text.layoutBoundsProperty().addListener((observable, oldValue, newValue) -> {
+          container.setMinWidth(newValue.getWidth());
+          tt.setFromX(container.getWidth());
+          tt.setToX(-newValue.getWidth() + 365);
+        });
+        container.setPrefWidth(100);  // adjust to desired width
+        vbox.setPrefWidth(100);  // adjust to desired width
+        vbox.setFillWidth(true);
+        vbox.setAlignment(Pos.CENTER);
+      }
+
+      @Override
+      protected void updateItem(String item, boolean empty) {
+        super.updateItem(item, empty);
+        if (empty) {
+          setGraphic(null);
+          text.setText(null);
+          st.stop();
+        } else {
+          text.setText(item);
+          setGraphic(container);
+          st.play();
+        }
+      }
+
+      @Override
+      public void startEdit() {
+        super.startEdit();
+        st.pause();
+      }
+
+      @Override
+      public void cancelEdit() {
+        super.cancelEdit();
+        st.play();
+      }
+    });
+
+
+    fileLocationColumn.setPrefWidth(370);
+
+    TableColumn<File, String> brokenLinksColumn = new TableColumn<>(languageController.getTranslation(Dictionary.BROKEN_LINKS.getKey()));
+    brokenLinksColumn.setCellValueFactory(param -> new ReadOnlyStringWrapper(getBrokenLinksString(param.getValue())));
+
+    TableColumn<File, String> loadColumn = new TableColumn<>(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
+    loadColumn.setPrefWidth(100);
+    loadColumn.setCellFactory(tc -> new TableCell<>() {
+      private final Hyperlink hyperlink = new Hyperlink(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
+
+      {
+        hyperlink.setOnAction(event -> {
+          String selectedFile = getTableView().getItems().get(getIndex()).getName();
+          System.out.println("Clicked on file: " + selectedFile);
+          try {
+            game = fileHandlerController.loadGameJson(selectedFile, null);
+            gameController.setGame(game);
+            playerController.setActiveCharacter(game.getPlayer().getCharacterModel());
+          } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+          }
+          screenController.activate("MainGame");
+        });
+      }
+
+      @Override
+      protected void updateItem(String item, boolean empty) {
+        super.updateItem(item, empty);
+        if (empty) {
+          setGraphic(null);
+        } else {
+          setGraphic(hyperlink);
+        }
+      }
+    });
+
+    jsonTableView.getColumns().addAll(fileNameColumn, fileLocationColumn, brokenLinksColumn, loadColumn);
+    jsonTableView.setItems(getSavedGames("json"));
+    jsonTableView.setPrefWidth(690);
+    return jsonTableView;
+  }
+
+
+  public void uploadGameFile() {
+    FileChooser fileChooser = new FileChooser();
+    fileChooser.setTitle("Upload Game File");
+    fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+
+    fileChooser.getExtensionFilters().addAll(
+            new FileChooser.ExtensionFilter("PATHS Files", "*.paths")
+    );
+
+    File selectedFile = fileChooser.showOpenDialog(null);
+
+    if (selectedFile != null) {
+      System.out.println("Selected file: " + selectedFile.getName());
+      String extension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf(".") + 1);
+
+      if (extension.equals("paths")) {
+        try {
+          addSavedGame(selectedFile.getName(), "paths", selectedFile);
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+      }
+    }
+  }
 }

@@ -67,13 +67,14 @@ public class Player {
    * If the health is less than 0, the health is set to 0.
    *
    * @param health Number to add to health of the player - can be positive or negative.
+   * @throws IllegalArgumentException if health is less than 0.
    */
 
-  public void addHealth(int health) {
-    this.health += health;
-    if (this.health + health < 0) {
-      this.health = 0;
+  public void addHealth(int health) throws IllegalArgumentException {
+    if (this.health + health <= 0) {
+      throw new IllegalArgumentException("You died!");
     }
+    this.health += health;
   }
 
   /**
@@ -104,7 +105,7 @@ public class Player {
 
   public void addScore(int points) throws IllegalArgumentException{
     if (this.score + points < 0) {
-      throw new IllegalArgumentException("Player points can not be less than 0");
+      throw new IllegalArgumentException("Your score became lower than 0");
     }
     this.score += points;
   }
@@ -126,7 +127,7 @@ public class Player {
    */
   public void addGold(int gold) throws IllegalArgumentException{
     if (this.gold + gold < 0) {
-      throw new IllegalArgumentException("Player gold can not be less than 0");
+      throw new IllegalArgumentException("Your balance became lower than 0");
     }
     this.gold += gold;
   }

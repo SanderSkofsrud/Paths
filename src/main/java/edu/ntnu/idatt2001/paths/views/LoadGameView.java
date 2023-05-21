@@ -3,14 +3,21 @@ package edu.ntnu.idatt2001.paths.views;
 import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
+import javafx.animation.*;
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -91,51 +98,11 @@ public class LoadGameView extends View{
    */
   @Override
   public void setup() {
-    jsonTableView = new TableView<>();
+    jsonTableView = loadGameController.createTableView(screenController);
 
-    TableColumn<File, String> fileNameColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_NAME.getKey()));
-    fileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getName()));
-
-    TableColumn<File, String> fileLocationColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_LOCATION.getKey()));
-    fileLocationColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getAbsolutePath()));
-
-    TableColumn<File, String> brokenLinksColumn = new TableColumn<>(languageController.getTranslation(Dictionary.BROKEN_LINKS.getKey()));
-    brokenLinksColumn.setCellValueFactory(param -> new ReadOnlyStringWrapper(loadGameController.getBrokenLinksString(param.getValue())));
-
-    TableColumn<File, String> loadColumn = new TableColumn<>(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
-    loadColumn.setPrefWidth(100);
-    loadColumn.setCellFactory(tc -> new TableCell<>() {
-      private final Hyperlink hyperlink = new Hyperlink(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
-
-      {
-        hyperlink.setOnAction(event -> {
-          File selectedFile = getTableView().getItems().get(getIndex());
-          try {
-            game = fileHandlerController.loadGameJson(selectedFile.getAbsolutePath());
-            gameController.setGame(game);
-            playerController.setActiveCharacter(game.getPlayer().getCharacterModel());
-          } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-          }
-          screenController.activate("MainGame");
-          resetPane();
-        });
-      }
-
-      @Override
-      protected void updateItem(String item, boolean empty) {
-        super.updateItem(item, empty);
-        if (empty) {
-          setGraphic(null);
-        } else {
-          setGraphic(hyperlink);
-        }
-      }
-    });
-
-    jsonTableView.getColumns().addAll(fileNameColumn, fileLocationColumn, brokenLinksColumn, loadColumn);
-    jsonTableView.setItems(loadGameController.getSavedGames("json"));
-    jsonTableView.setPrefWidth(650);
+    HBox hBox = new HBox();
+    hBox.getChildren().add(jsonTableView);
+    hBox.setAlignment(Pos.CENTER);
 
     ImageView backImage = new ImageView(new Image(getClass().getResourceAsStream("/images/back.png")));
     Button backButton = new Button();
@@ -151,31 +118,11 @@ public class LoadGameView extends View{
     Button uploadButton = new Button(languageController.getTranslation(Dictionary.UPLOAD_FILE.getKey()));
 
     uploadButton.setOnAction(event -> {
-      FileChooser fileChooser = new FileChooser();
-      fileChooser.setTitle("Upload Game File");
-      fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-
-      fileChooser.getExtensionFilters().addAll(
-              new FileChooser.ExtensionFilter("PATHS Files", "*.paths")
-      );
-
-      File selectedFile = fileChooser.showOpenDialog(null);
-
-      if (selectedFile != null) {
-        String extension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf(".") + 1);
-
-        if (extension.equals("paths")) {
-          try {
-            loadGameController.addSavedGame(selectedFile.getName(), "paths", selectedFile);
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        }
-      }
+      loadGameController.uploadGameFile();
     });
 
     VBox vBox = new VBox();
-    vBox.getChildren().addAll(jsonTableView, uploadButton);
+    vBox.getChildren().addAll(hBox, uploadButton);
     vBox.setSpacing(20);
     vBox.setPadding(new Insets(20, 20, 20, 20));
     vBox.setAlignment(Pos.CENTER);

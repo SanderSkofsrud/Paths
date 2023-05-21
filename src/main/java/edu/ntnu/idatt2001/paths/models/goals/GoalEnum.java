@@ -3,7 +3,7 @@ package edu.ntnu.idatt2001.paths.models.goals;
 /**
  * The enum Goal enum.
  * The enum Goal enum is used to determine what type of goal the player has to reach.
- * The enum is used in the Goal class.
+ * The enum is used in the Goal factory class.
  *
  * @author Helle R. and Sander S.
  * @version 0.1 08.05.2023

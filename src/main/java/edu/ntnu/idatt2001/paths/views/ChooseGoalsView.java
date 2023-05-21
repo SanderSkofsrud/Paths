@@ -301,7 +301,8 @@ public class ChooseGoalsView extends View {
             throw new RuntimeException(ex);
           }
 
-        fileHandlerController.saveGameJson(playerController.getPlayer().getName(), game);
+        fileHandlerController.saveGameJson(playerController.getPlayer().getName(), null, game);
+        fileHandlerController.saveGameJson(playerController.getPlayer().getName(), "src/main/resources/initialGame/", game);
 
         gameController.setGame(game);
 

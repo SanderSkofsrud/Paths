@@ -29,6 +29,7 @@ import javafx.scene.text.*;
 import javafx.util.Duration;
 import javafx.util.Pair;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -138,6 +139,7 @@ public class MainGameView extends View{
    * The words are stored in an array so that they can be displayed in a text area.
    */
   private String[] words;
+  private char[] characters;
   /**
    * The timeline.
    * The timeline is the timeline of the animation.
@@ -175,6 +177,7 @@ public class MainGameView extends View{
   private ImageView soundImageView;
   private boolean isMuted = false;
   private SoundPlayer soundPlayer = new SoundPlayer();
+  private double playerStartHealth;
 
   /**
    * Instantiates a new Main game view.
@@ -233,6 +236,7 @@ public class MainGameView extends View{
     player = game.getPlayer();
     goals = game.getGoals();
     story = game.getStory();
+    playerStartHealth = player.getHealth();
 
     passageContent = new TextArea();
     passageContent.setWrapText(true);
@@ -315,6 +319,7 @@ public class MainGameView extends View{
     borderPane.setCenter(null);
     inventoryBox.getChildren().clear();
     inventoryImageBox.getChildren().clear();
+    characters = null;
     words = null;
     timeline.stop();
   }
@@ -339,14 +344,19 @@ public class MainGameView extends View{
 
     String translatedContent = languageController.translate(currentPassage.getContent());
 
-    words = translatedContent.split("\\s+");
+    characters = translatedContent.toCharArray();
+
+    SoundPlayer soundPlayer = new SoundPlayer();
+    if (!isMuted) {
+      soundPlayer.playOnLoop("/sounds/typing.wav");
+    }
 
     timeline = new Timeline();
     timeline.getKeyFrames().clear();
-    for (int i = 0; i < words.length; i++) {
-      int wordIndex = i;
-      timeline.getKeyFrames().add(new KeyFrame(Duration.millis(i * 100), event -> {
-        passageContent.appendText(words[wordIndex] + " ");
+    for (int i = 0; i < characters.length; i++) {
+      int charIndex = i;
+      timeline.getKeyFrames().add(new KeyFrame(Duration.millis(i * 25), event -> {
+        passageContent.appendText(Character.toString(characters[charIndex]));
       }));
     }
 
@@ -371,9 +381,10 @@ public class MainGameView extends View{
               screenController.activate("FinalPassageView");
               resetPane();
             });
-            credits.setId("credits");
+            credits.setId("subMenuButton");
             buttonsBox.getChildren().clear();
             buttonsBox.getChildren().add(credits);
+            return;
           }
           if (game.getStory().getBrokenLinks().contains(link)) {
             ShowAlert.showInformation(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()), languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
@@ -403,6 +414,7 @@ public class MainGameView extends View{
       updatePlayerInfo();
       textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
       timeline.play();
+      timeline.setOnFinished(event -> soundPlayer.stop());
       return new Pair<>(timeline, currentPassage);
     } else {
       Button credits = new Button(languageController.getTranslation(Dictionary.CREDITS.getKey()));
@@ -427,6 +439,12 @@ public class MainGameView extends View{
 
     attributesBox.setAlignment(Pos.TOP_LEFT);
     attributesBox.setPadding(new Insets(10, 10, 10, 10));
+
+    ProgressBar healthBar = new ProgressBar();
+    healthBar.setMinWidth(100);
+    healthBar.setMaxWidth(Double.MAX_VALUE);
+    healthBar.setProgress(player.getHealth() / playerStartHealth);
+    healthBar.setStyle("-fx-accent: red;");
 
     playerHealthLabel.setText(languageController.getTranslation(Dictionary.HEALTH.getKey()) + ": " + player.getHealth());
     playerHealthLabel.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
@@ -489,7 +507,12 @@ public class MainGameView extends View{
     restartImageView.setFitWidth(30);
     restartImageView.setFitHeight(30);
 
-    Image soundImage = new Image(getClass().getResourceAsStream("/images/sound.png"));
+    Image soundImage;
+    if (!isMuted) {
+      soundImage = new Image(getClass().getResourceAsStream("/images/sound.png"));
+    } else {
+      soundImage = new Image(getClass().getResourceAsStream("/images/nosound.png"));
+    }
     soundImageView = new ImageView(soundImage);
     soundImageView.setFitWidth(30);
     soundImageView.setFitHeight(30);
@@ -546,7 +569,7 @@ public class MainGameView extends View{
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == saveAndExit) {
-          FileHandlerController.getInstance().saveGameJson(player.getName(),game);
+          FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
           Platform.exit();
         } else if (result.get() == exitWithoutSaving) {
           Platform.exit();
@@ -595,7 +618,7 @@ public class MainGameView extends View{
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == saveAndGoHome) {
-          FileHandlerController.getInstance().saveGameJson(player.getName(),game);
+          FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
           gameController.resetGame(); // Add this line
           screenController.activate("MainMenu");
           resetPane();
@@ -629,6 +652,15 @@ public class MainGameView extends View{
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == restart) {
+          try {
+            game = FileHandlerController.getInstance().loadGameJson(player.getName() + ".json", "src/main/resources/initialGame/");
+          } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+          }
+          player = game.getPlayer();
+          words = null;
+          characters = null;
+          timeline.stop();
           updateUIWithPassage(textFlow,game.begin());
         }
       }
@@ -642,7 +674,7 @@ public class MainGameView extends View{
 
     VBox goalsVbox = goalsVbox();
 
-    attributesBox.getChildren().addAll(playerHealthLabel, playerGoldLabel, playerScoreLabel, inventoryBox, goalsVbox);
+    attributesBox.getChildren().addAll(playerHealthLabel, healthBar, playerGoldLabel, playerScoreLabel, inventoryBox, goalsVbox);
 
     HBox topBox = new HBox();
     topBox.getChildren().addAll(attributesBox, topRightBox);
