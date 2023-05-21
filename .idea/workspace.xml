@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed removePassage method and test">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added javdoc to Language">
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/12321.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/231.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/Helle.json" afterDir="false" />
@@ -13,7 +13,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/json/Helle.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/json/ella.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/ShowAlert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/ShowAlert.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -366,21 +366,7 @@
       <workItem from="1684515396061" duration="3344000" />
       <workItem from="1684563213111" duration="1333000" />
       <workItem from="1684589530644" duration="13797000" />
-      <workItem from="1684661449897" duration="3600000" />
-    </task>
-    <task id="LOCAL-00123" summary="Update files to match the change in the player class.">
-      <created>1683288469360</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1683288469360</updated>
-    </task>
-    <task id="LOCAL-00124" summary="Updated action to work with the new playerBuilder, and added ActionDeserializer to work with that change">
-      <created>1683292350813</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1683292350813</updated>
+      <workItem from="1684661449897" duration="5229000" />
     </task>
     <task id="LOCAL-00125" summary="Updated view classes to work with the new functionality added">
       <created>1683292416271</created>
@@ -711,7 +697,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684667127837</updated>
     </task>
-    <option name="localTasksCounter" value="172" />
+    <task id="LOCAL-00172" summary="added javdoc to Dictionary">
+      <created>1684667525649</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1684667525649</updated>
+    </task>
+    <task id="LOCAL-00173" summary="added javdoc to Language">
+      <created>1684667712871</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1684667712871</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -742,8 +742,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added progress files to track the progress of the player and enable reloading from previous active passage" />
-    <MESSAGE value="Added inventory as a GoalEnum" />
     <MESSAGE value="Updated toString" />
     <MESSAGE value="Reverted changes to adjust volume, as they did not work" />
     <MESSAGE value="Added activeCharacter, so the chosen character model gets shown in the game" />
@@ -767,7 +765,9 @@
     <MESSAGE value="Added typing sound that plays while the text if being loaded" />
     <MESSAGE value="added translation to changing language" />
     <MESSAGE value="fixed removePassage method and test" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed removePassage method and test" />
+    <MESSAGE value="added javdoc to Dictionary" />
+    <MESSAGE value="added javdoc to Language" />
+    <option name="LAST_COMMIT_MESSAGE" value="added javdoc to Language" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
