@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added translation to changing language">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="fixed removePassage method and test">
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/12321.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/231.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/Helle.json" afterDir="false" />
@@ -13,9 +13,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/json/Helle.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/json/ella.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/Story.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/StoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/StoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -368,14 +366,7 @@
       <workItem from="1684515396061" duration="3344000" />
       <workItem from="1684563213111" duration="1333000" />
       <workItem from="1684589530644" duration="13797000" />
-      <workItem from="1684661449897" duration="3100000" />
-    </task>
-    <task id="LOCAL-00122" summary="Move PlayerBuilder into its own class">
-      <created>1683288439482</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1683288439483</updated>
+      <workItem from="1684661449897" duration="3600000" />
     </task>
     <task id="LOCAL-00123" summary="Update files to match the change in the player class.">
       <created>1683288469360</created>
@@ -713,7 +704,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684657634300</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="fixed removePassage method and test">
+      <created>1684667127837</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1684667127837</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -744,7 +742,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated PathsReader and PathsWriter. Now saves the story, goals and player in different files in the same directory. Also creates progress file to enable reloading from previous active passage" />
     <MESSAGE value="Added progress files to track the progress of the player and enable reloading from previous active passage" />
     <MESSAGE value="Added inventory as a GoalEnum" />
     <MESSAGE value="Updated toString" />
@@ -769,7 +766,8 @@
     <MESSAGE value="Fixed error where you did not get sent to final passage if you died" />
     <MESSAGE value="Added typing sound that plays while the text if being loaded" />
     <MESSAGE value="added translation to changing language" />
-    <option name="LAST_COMMIT_MESSAGE" value="added translation to changing language" />
+    <MESSAGE value="fixed removePassage method and test" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed removePassage method and test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
