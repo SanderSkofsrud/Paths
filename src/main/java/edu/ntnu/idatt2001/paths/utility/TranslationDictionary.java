@@ -11,6 +11,9 @@ import java.util.Map;
  * It implements the singleton pattern, ensuring that only one instance of the dictionary
  * is created throughout the application. It provides methods to add translations for specific languages
  * and retrieve translations based on the language and source text.
+ *
+ * @author Helle R. and Sander S.
+ * @version 0.1 08.05.2023
  */
 
 public class TranslationDictionary {

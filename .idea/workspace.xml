@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added javdoc to Language">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="added javdoc to SoundPlayer">
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/12321.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/231.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/Helle.json" afterDir="false" />
@@ -13,7 +13,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/json/Helle.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/json/ella.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/ShowAlert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/ShowAlert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/TranslationDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/TranslationDictionary.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +158,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StoryTest$removePassage.testThatRemovePassageThrowsIllegalArgumentExceptionIfOtherPassagesHaveLinksToPassage">
+  <component name="RunManager" selected="Maven.paths [clean,test]">
     <configuration name="StoryTest$removePassage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -366,21 +366,7 @@
       <workItem from="1684515396061" duration="3344000" />
       <workItem from="1684563213111" duration="1333000" />
       <workItem from="1684589530644" duration="13797000" />
-      <workItem from="1684661449897" duration="5229000" />
-    </task>
-    <task id="LOCAL-00125" summary="Updated view classes to work with the new functionality added">
-      <created>1683292416271</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1683292416271</updated>
-    </task>
-    <task id="LOCAL-00126" summary="Updated action and goals classes to match the new player location in its own directory">
-      <created>1683292483006</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1683292483006</updated>
+      <workItem from="1684661449897" duration="6028000" />
     </task>
     <task id="LOCAL-00127" summary="Created enum for standard items">
       <created>1683292500568</created>
@@ -711,7 +697,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684667712871</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="added javdoc to ShowAlert">
+      <created>1684670770958</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1684670770958</updated>
+    </task>
+    <task id="LOCAL-00175" summary="added javdoc to SoundPlayer">
+      <created>1684671042419</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1684671042419</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -742,8 +742,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated toString" />
-    <MESSAGE value="Reverted changes to adjust volume, as they did not work" />
     <MESSAGE value="Added activeCharacter, so the chosen character model gets shown in the game" />
     <MESSAGE value="Added activeCharacter to be shown in the game" />
     <MESSAGE value="Updated skip functionality to work when you click the whole box. Added functionality to load from previous active passage. Added method that saves progress. Removed volumeSlider, as it did not work. Updated saveGame functionality to work with new filehandling." />
@@ -767,7 +765,9 @@
     <MESSAGE value="fixed removePassage method and test" />
     <MESSAGE value="added javdoc to Dictionary" />
     <MESSAGE value="added javdoc to Language" />
-    <option name="LAST_COMMIT_MESSAGE" value="added javdoc to Language" />
+    <MESSAGE value="added javdoc to ShowAlert" />
+    <MESSAGE value="added javdoc to SoundPlayer" />
+    <option name="LAST_COMMIT_MESSAGE" value="added javdoc to SoundPlayer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
