@@ -7,8 +7,6 @@ v
 Fsrc/main/java/edu/ntnu/idatt2001/paths/models/actions/ScoreAction.java,5\8\58886402eb45a866f8ea07d38500b1eda68a0713
 l
 <src/main/java/edu/ntnu/idatt2001/paths/utility/Language.java,9\2\92f6c75fd9ab81c8acd83107f0b5b6bd1c3976ff
-n
->src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java,1\c\1c06d382a816cdb546a7b57b55410b91c42a3a52
 z
 Jsrc/main/java/edu/ntnu/idatt2001/paths/models/actions/InventoryAction.java,7\d\7db899244d7b9aa357fb5ae5952d72530581bca7
 n
