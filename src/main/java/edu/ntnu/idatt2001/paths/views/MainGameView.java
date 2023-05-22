@@ -328,7 +328,6 @@ public class MainGameView extends View {
               characters = null;
               timeline.stop();
               soundPlayer.stop();
-              soundPlayerLoop.stop();
               soundPlayer.play("/sounds/confirm.wav");
               mainGameController.go(link, textFlow);
             }

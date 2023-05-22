@@ -9,7 +9,11 @@ import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.utility.paths.PathsReader;
 import org.junit.jupiter.api.*;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -139,6 +143,57 @@ public class PathsFileHandlerTest {
         assertThrows(NullPointerException.class, () -> {
           fileHandler.loadStory(string);
         });
+      }
+    }
+  }
+
+  @Nested
+  class pathsWriter {
+
+    private static final String directoryPath = "src/test/resources/paths/";
+    private static final String testImage = "testImage";
+
+    @Nested
+    class SaveStory {
+
+      private Story story;
+      private Player player;
+
+      @BeforeEach
+      void setUp() {
+        this.story = new Story("A Test Story", new Passage("Title", "Start"));
+        this.player = new Player.PlayerBuilder("TestWriter").build();
+      }
+
+      @Test
+      @DisplayName("Test that saveStory creates the correct file in the directory")
+      void testSaveStoryCreatesFile() {
+        PathsWriter.saveStory(story, player, directoryPath);
+
+        File storyFile = new File(directoryPath + player.getName() + ".paths");
+        assertTrue(storyFile.exists());
+      }
+
+      @Test
+      @DisplayName("Test that saveStory writes the correct content to the file")
+      void testSaveStoryWritesContent() throws IOException {
+        PathsWriter.saveStory(story, player, directoryPath);
+
+        String storyContent = Files.readString(Path.of(directoryPath + player.getName() + ".paths"));
+        assertEquals(story.toString(), storyContent);
+      }
+
+      @Test
+      @DisplayName("Test that saveStory throws RuntimeException when directory does not exist")
+      void testSaveStoryThrowsExceptionForNonexistentDirectory() {
+        String nonexistentDirectoryPath = directoryPath + "nonexistentDirectory/";
+
+        Exception exception = assertThrows(RuntimeException.class, () ->
+                PathsWriter.saveStory(story, player, nonexistentDirectoryPath));
+
+        String expectedMessage = "Could not write to file";
+        String actualMessage = exception.getMessage();
+        assertEquals(expectedMessage, actualMessage);
       }
     }
   }
