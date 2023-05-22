@@ -15,7 +15,7 @@ import static edu.ntnu.idatt2001.paths.models.player.Difficulty.*;
  * The class is used to control the behavior of the NewGameView.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.0 20.05.2023
  */
 public class NewGameController {
   /**
@@ -29,21 +29,35 @@ public class NewGameController {
    */
   PlayerController playerController = PlayerController.getInstance();
   /**
-   * The File handler controller.
-   * The fileHandlerController is used to save the game.
+   * The language controller.
+   * The languageController is used to get the translation of the strings.
    */
-  FileHandlerController fileHandlerController = FileHandlerController.getInstance();
-  /**
-   * The Game controller.
-   * The gameController is used to create a new game.
-   */
-  GameController gameController = GameController.getInstance();
   LanguageController languageController = LanguageController.getInstance();
+  /**
+   * The easy string.
+   * The EASY_STRING is used to store the translation of the easy difficulty.
+   */
   private String EASY_STRING;
+  /**
+   * The standard string.
+   * The STANDARD_STRING is used to store the translation of the standard difficulty.
+   */
   private String STANDARD_STRING;
+  /**
+   * The hard string.
+   * The HARD_STRING is used to store the translation of the hard difficulty.
+   */
   private String HARD_STRING;
+  /**
+   * The custom string.
+   * The CUSTOM_STRING is used to store the translation of the custom difficulty.
+   */
   private String CUSTOM_STRING;
 
+  /**
+   * Setup strings.
+   * The method is used to get the translation of the strings.
+   */
   public void setupStrings() {
     EASY_STRING = languageController.getTranslation(Dictionary.EASY.getKey());
     STANDARD_STRING = languageController.getTranslation(Dictionary.STANDARD.getKey());
@@ -51,6 +65,17 @@ public class NewGameController {
     CUSTOM_STRING = languageController.getTranslation(Dictionary.CUSTOM.getKey());
   }
 
+  /**
+   * Update player.
+   * The method is used to update the player.
+   * The method is used to define the stats of the player.
+   *
+   * @param name            the name of the player
+   * @param selectedToggle  the selected toggle button for the difficulty
+   * @param activeCharacter the active character of the player
+   * @param textFieldHealth the text field health of the player
+   * @param textFieldGold   the text field gold of the player
+   */
   public void updatePlayer(String name, Toggle selectedToggle, String activeCharacter, TextField textFieldHealth, TextField textFieldGold) {
     String toggleText = ((ToggleButton) selectedToggle).getText();
     if (toggleText.equals(CUSTOM_STRING)) {
@@ -64,7 +89,16 @@ public class NewGameController {
     }
   }
 
-
+  /**
+   * Swap character.
+   * The method is used to swap the character.
+   * The method is used to change the character of the player.
+   *
+   * @param right the right button
+   * @param left the left button
+   * @param characterMale the imageview for the male character
+   * @param characterFemale the imageview for the female character
+   */
   public void swapCharacter(Button right, Button left, ImageView characterMale, ImageView characterFemale) {
     right.setOnAction(e -> {
       ImageView current = characterMale.isVisible() ? characterMale : characterFemale;
@@ -79,6 +113,15 @@ public class NewGameController {
     });
   }
 
+  /**
+   * Swap images.
+   * The method is used to swap the images.
+   * The method is used to change the image of the character.
+   *
+   * @param current the current imageview
+   * @param next the next imageview
+   * @param direction the direction of the swap
+   */
   private void swapImages(ImageView current, ImageView next, String direction) {
     double currentWidth = current.getFitWidth();
 
