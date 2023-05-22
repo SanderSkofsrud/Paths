@@ -1,15 +1,16 @@
 package edu.ntnu.idatt2001.paths.controllers;
 
+import static javafx.scene.text.TextAlignment.CENTER;
+
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
+import java.util.List;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-import java.util.List;
 
-import static javafx.scene.text.TextAlignment.CENTER;
 
 /**
  * The type Final passage controller.
@@ -29,6 +30,12 @@ public class FinalPassageController {
   private GameController gameController = GameController.getInstance();
 
   /**
+   * The constant for credits color.
+   */
+  public static final String CREDITS_RED = "creditsRed";
+  public static final String CREDITS_GREEN = "creditsGreen";
+
+  /**
    * Goals achieved v box.
    * This method creates a v box with all the goals achieved by the player.
    *
@@ -41,7 +48,7 @@ public class FinalPassageController {
     Player player = gameController.getGame().getPlayer();
     for (Goal goal : goals) {
       Text text = new Text(goal.toString());
-      text.setId("creditsGreen");
+      text.setId(CREDITS_GREEN);
       if (goal.isFulfilled(player)) {
         goalsVBox.getChildren().add(text);
       }
@@ -62,7 +69,7 @@ public class FinalPassageController {
     Player player = gameController.getGame().getPlayer();
     for (Goal goal : goals) {
       Text text = new Text(goal.toString());
-      text.setId("creditsRed");
+      text.setId(CREDITS_RED);
       if (!goal.isFulfilled(player)) {
         goalsVBox.getChildren().add(text);
       }
@@ -95,16 +102,16 @@ public class FinalPassageController {
     textFlow.setTextAlignment(CENTER);
 
     Text nonColoredText = new Text(textString.substring(0, textString.indexOf(numberString)));
-    nonColoredText.setId("creditsText");
+    nonColoredText.setId(CREDITS_RED);
 
     Text coloredText = new Text(numberString);
     Text percentageText = new Text("%");
     if (percentage == 100) {
-      coloredText.setId("creditsGreen");
-      percentageText.setId("creditsGreen");
+      coloredText.setId(CREDITS_GREEN);
+      percentageText.setId(CREDITS_GREEN);
     } else {
-      coloredText.setId("creditsRed");
-      percentageText.setId("creditsRed");
+      coloredText.setId(CREDITS_RED);
+      percentageText.setId(CREDITS_RED);
     }
 
     textFlow.getChildren().addAll(nonColoredText, coloredText, percentageText);
