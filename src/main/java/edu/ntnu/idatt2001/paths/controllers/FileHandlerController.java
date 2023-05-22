@@ -2,11 +2,9 @@ package edu.ntnu.idatt2001.paths.controllers;
 
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Story;
-
 import edu.ntnu.idatt2001.paths.utility.json.JsonReader;
 import edu.ntnu.idatt2001.paths.utility.json.JsonWriter;
 import edu.ntnu.idatt2001.paths.utility.paths.PathsReader;
-
 import java.io.FileNotFoundException;
 
 /**
@@ -25,15 +23,16 @@ public class FileHandlerController {
    */
   private static FileHandlerController instance;
   /**
-   * The Path to the templates folder.
+   * The Path to the templates' folder.
    */
   String templatesPath = "src/main/resources/templates/";
   /**
    * The Json path to the json folder.
    */
   String jsonPath = "src/main/resources/json/";
+
   /**
-   * The Current game.
+   * Instantiates a new File handler controller.
    */
   private FileHandlerController() {
   }
@@ -59,7 +58,7 @@ public class FileHandlerController {
    * @throws FileNotFoundException the file not found exception
    */
   public Story loadTemplate(String name) throws FileNotFoundException {
-     return PathsReader.loadStory(templatesPath + name);
+    return PathsReader.loadStory(templatesPath + name);
   }
 
   /**
