@@ -2,7 +2,6 @@ package edu.ntnu.idatt2001.paths.controllers;
 
 import edu.ntnu.idatt2001.paths.models.player.Difficulty;
 import edu.ntnu.idatt2001.paths.models.player.Player;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -107,10 +106,11 @@ public class PlayerController {
   public void setPlayer(Player player) {
     this.player = player;
   }
+
   /**
    * Resets the player.
    */
-  public void resetPlayer(){
+  public void resetPlayer() {
     player = null;
     inventory.clear();
   }
@@ -120,7 +120,7 @@ public class PlayerController {
    *
    * @return the active character model
    */
-  public String getActiveCharacter(){
+  public String getActiveCharacter() {
     return activeCharacter;
   }
 
@@ -129,7 +129,7 @@ public class PlayerController {
    *
    * @param activeCharacter the active character model
    */
-  public void setActiveCharacter(String activeCharacter){
+  public void setActiveCharacter(String activeCharacter) {
     this.activeCharacter = activeCharacter;
   }
 }
