@@ -78,15 +78,6 @@ public class Player {
   }
 
   /**
-   * Checks if the player has health above 0.
-   *
-   * @return True if the player is alive, false if the player is dead.
-   */
-  public boolean isAlive() {
-    return health > 0;
-  }
-
-  /**
    * Returns the health of the player.
    *
    * @return The health of the player.
