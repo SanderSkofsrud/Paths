@@ -7,7 +7,6 @@ import com.google.gson.JsonSerializer;
 import edu.ntnu.idatt2001.paths.models.Link;
 import edu.ntnu.idatt2001.paths.models.Passage;
 import edu.ntnu.idatt2001.paths.models.Story;
-
 import java.lang.reflect.Type;
 import java.util.Map;
 
