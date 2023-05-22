@@ -182,7 +182,7 @@ public class MainGameController {
    */
   public boolean minigameCheck() {
     int random = (int) (Math.random() * 100) + 1;
-    if (random <= 100 && player.getGold() > 10) {
+    if (random <= 10 && player.getGold() > 10) {
       playerController.setPlayer(player);
       return true;
     } else {
