@@ -2,15 +2,12 @@ package edu.ntnu.idatt2001.paths.controllers;
 
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Story;
-import edu.ntnu.idatt2001.paths.models.goals.Goal;
-import edu.ntnu.idatt2001.paths.models.player.Player;
+
 import edu.ntnu.idatt2001.paths.utility.json.JsonReader;
 import edu.ntnu.idatt2001.paths.utility.json.JsonWriter;
 import edu.ntnu.idatt2001.paths.utility.paths.PathsReader;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.List;
 
 /**
  * The type File handler controller.
@@ -19,7 +16,7 @@ import java.util.List;
  * It can save and load games, both from json and from paths.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.3 20.05.2023
  */
 public class FileHandlerController {
   /**
@@ -27,10 +24,6 @@ public class FileHandlerController {
    * This is a singleton class, and can be accessed from anywhere in the program.
    */
   private static FileHandlerController instance;
-  /**
-   * The Path to the paths folder.
-   */
-  String path = "src/main/resources/paths/";
   /**
    * The Path to the templates folder.
    */
@@ -57,6 +50,14 @@ public class FileHandlerController {
     return instance;
   }
 
+  /**
+   * A method to load a template from a file.
+   * It takes in a name, and loads the template from a file with the name.
+   *
+   * @param name the name of the file to be loaded
+   * @return the template from the file
+   * @throws FileNotFoundException the file not found exception
+   */
   public Story loadTemplate(String name) throws FileNotFoundException {
      return PathsReader.loadStory(templatesPath + name);
   }
@@ -68,7 +69,7 @@ public class FileHandlerController {
    * @param name the name of the player, and the name of the file
    * @param game the game to be saved
    */
-  public void saveGameJson(String name, String path, Game game) {
+  public void saveGameJson(String name, String path, Game game) throws IllegalArgumentException {
     if (path == null) {
       path = jsonPath;
     }

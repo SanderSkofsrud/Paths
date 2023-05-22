@@ -30,7 +30,7 @@ public class SoundPlayer {
       playClip.open(audioInputStream);
       playClip.start();
     } catch (Exception e) {
-      e.printStackTrace();
+      throw new RuntimeException("Could not play sound file");
     }
   }
 
@@ -49,7 +49,7 @@ public class SoundPlayer {
       gainControl.setValue(-12.5f);
       clip.loop(Clip.LOOP_CONTINUOUSLY);
     } catch (Exception e) {
-      e.printStackTrace();
+      throw new RuntimeException("Could not play sound file");
     }
   }
 

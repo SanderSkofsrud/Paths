@@ -2,11 +2,7 @@ package edu.ntnu.idatt2001.paths.controllers;
 
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Link;
-import edu.ntnu.idatt2001.paths.models.player.Player;
-import edu.ntnu.idatt2001.paths.models.Story;
-import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
-import edu.ntnu.idatt2001.paths.views.LoadGameView;
 import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Timeline;
@@ -19,23 +15,18 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.stage.FileChooser;
 import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -45,21 +36,32 @@ import java.util.stream.Stream;
 /**
  * The type Load game controller.
  * This class is responsible for loading games.
- * It is a singleton class, and can be accessed from anywhere in the program.
  * It is used to show the user a list of saved games, and to load the selected game.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.3 20.05.2023
  */
 public class LoadGameController {
   /**
-   * The file type.
+   * The Game.
+   * This is the game that is being loaded.
    */
-  private String fileType;
   private Game game;
+  /**
+   * The file handler controller.
+   */
   FileHandlerController fileHandlerController = FileHandlerController.getInstance();
+  /**
+   * The language controller.
+   */
   LanguageController languageController = LanguageController.getInstance();
+  /**
+   * The game controller.
+   */
   GameController gameController = GameController.getInstance();
+  /**
+   * The player controller.
+   */
   PlayerController playerController = PlayerController.getInstance();
   /**
    * Instantiates a new Load game controller.
@@ -75,7 +77,6 @@ public class LoadGameController {
    * @return the saved games as a list of File
    */
   public ObservableList<File> getSavedGames(String fileType) {
-    this.fileType = fileType;
     ObservableList<File> filesList = FXCollections.observableArrayList();
     Set<File> fileSet = new LinkedHashSet<>();
 
@@ -97,45 +98,20 @@ public class LoadGameController {
     return filesList;
   }
 
-
-  /**
-   * Adds a saved game to the appropriate resources' directory.
-   * It takes in a file name, a file type, and a selected file.
-   *
-   * @param fileName     the file name of the saved game
-   * @param fileType     the file type of the saved game
-   * @param selectedFile the selected file to be saved
-   * @throws IOException the io exception if the file is not found
-   */
-  public void addSavedGame(String fileName, String fileType, File selectedFile) throws IOException {
-    // Get the path to the appropriate resources directory based on the fileType
-    Path resourcesPath = Paths.get("src/main/resources/templates");
-
-    // Create the resources directory if it doesn't exist
-    if (!Files.exists(resourcesPath)) {
-      Files.createDirectories(resourcesPath);
-    }
-
-    // Copy the selected file to the appropriate resources directory
-    Path sourcePath = selectedFile.toPath();
-    Path destPath = resourcesPath.resolve(fileName);
-    Files.copy(sourcePath, destPath, StandardCopyOption.REPLACE_EXISTING);
-  }
-
-
   /**
    * Helper method to get the broken links as a concatenated string.
+   * It takes in a file, and returns a string of all the broken links in that file.
    *
-   * @param file the file
-   * @return the broken links string
+   * @param file the file to get the broken links from
+   * @return the broken links as a string
    */
   public String getBrokenLinksString(File file) {
     String fileName = file.getName();
-    Game game = null;
+    Game game;
     try {
-      game = fileHandlerController.loadGameJson(file.getName(), null);
+      game = fileHandlerController.loadGameJson(fileName, null);
     } catch (FileNotFoundException | IllegalArgumentException e) {
-      System.out.println("Incorrect file format: " + e.getMessage());
+      throw new RuntimeException("Failed to load game from file", e);
     }
     List<Link> brokenLinks = null;
     if (game != null) {
@@ -149,7 +125,15 @@ public class LoadGameController {
     }
   }
 
+  /**
+   * Helper method to create a table view.
+   * It takes in a screen controller, and returns a table view of all the saved games.
+   *
+   * @param screenController the screen controller
+   * @return the table view of saved games
+   */
   public TableView<File> createTableView(ScreenController screenController) {
+    try {
     TableView<File> jsonTableView = new TableView<>();
     TableColumn<File, String> fileNameColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_NAME.getKey()));
     fileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getName()));
@@ -173,8 +157,8 @@ public class LoadGameController {
           tt.setFromX(container.getWidth());
           tt.setToX(-newValue.getWidth() + 365);
         });
-        container.setPrefWidth(100);  // adjust to desired width
-        vbox.setPrefWidth(100);  // adjust to desired width
+        container.setPrefWidth(100);
+        vbox.setPrefWidth(100);
         vbox.setFillWidth(true);
         vbox.setAlignment(Pos.CENTER);
       }
@@ -226,7 +210,7 @@ public class LoadGameController {
             gameController.setGame(game);
             playerController.setActiveCharacter(game.getPlayer().getCharacterModel());
           } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(e.getMessage());
           }
           screenController.activate("MainGame");
         });
@@ -251,5 +235,9 @@ public class LoadGameController {
     }
     jsonTableView.setPrefWidth(720);
     return jsonTableView;
+  }
+  catch (RuntimeException e) {
+    throw new RuntimeException(e.getMessage());
+  }
   }
 }

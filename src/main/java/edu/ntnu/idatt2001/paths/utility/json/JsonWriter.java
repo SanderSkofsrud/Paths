@@ -36,7 +36,7 @@ public class JsonWriter {
       String jsonString = gson.toJson(game);
       fileWriter.write(jsonString);
     } catch (IOException e) {
-      e.printStackTrace();
+      throw new IllegalArgumentException("Could not write to file: " + fileName);
     }
   }
 }

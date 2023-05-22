@@ -1,7 +1,6 @@
 package edu.ntnu.idatt2001.paths.controllers;
 
 import edu.ntnu.idatt2001.paths.models.player.Difficulty;
-import edu.ntnu.idatt2001.paths.models.player.Item;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 
 import java.util.ArrayList;
@@ -9,12 +8,10 @@ import java.util.List;
 
 /**
  * The type Player controller.
- * It is a singleton class, and can be accessed from anywhere in the program.
- * Can be accessed from anywhere in the program.
  * This class is responsible for creating the player.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.3 22.05.2023
  */
 public class PlayerController {
   /**
@@ -24,14 +21,17 @@ public class PlayerController {
   private static PlayerController instance;
   /**
    * The Player.
+   * The active player.
    */
   private Player player;
   /**
    * The Inventory of the player.
+   * The inventory is used to store the items the player has.
    */
   private List<String> inventory = new ArrayList<>();
   /**
    * The active character.
+   * The active character model.
    */
   private String activeCharacter;
 
@@ -106,6 +106,13 @@ public class PlayerController {
    */
   public void setPlayer(Player player) {
     this.player = player;
+  }
+  /**
+   * Resets the player.
+   */
+  public void resetPlayer(){
+    player = null;
+    inventory.clear();
   }
 
   /**

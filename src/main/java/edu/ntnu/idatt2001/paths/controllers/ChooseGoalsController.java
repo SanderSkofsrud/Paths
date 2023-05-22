@@ -3,7 +3,6 @@ package edu.ntnu.idatt2001.paths.controllers;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.goals.GoalEnum;
 import edu.ntnu.idatt2001.paths.models.goals.GoalFactory;
-import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
@@ -18,8 +17,6 @@ import javafx.stage.FileChooser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -35,30 +32,54 @@ import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
 /**
  * The type Load game controller.
  * This class is responsible for loading games.
- * It is a singleton class, and can be accessed from anywhere in the program.
+ * It is also responsible for creating the GUI elements
+ * for loading a game.
  * It is used to show the user a list of saved games, and to load the selected game.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.1 21.05.2023
  */
 public class ChooseGoalsController {
   /**
-   * The file type.
+   * The type of the file.
    */
   private String fileType;
+  /**
+   * The Goals of the game.
+   */
   private final ObservableList<Goal> goals;
+  /**
+   * The Game controller.
+   */
   private final GameController gameController = GameController.getInstance();
+  /**
+   * The File handler controller.
+   */
   private final FileHandlerController fileHandlerController = FileHandlerController.getInstance();
+  /**
+   * The Player controller.
+   */
   private final PlayerController playerController = PlayerController.getInstance();
+  /**
+   * The Language controller.
+   */
   private final LanguageController languageController = LanguageController.getInstance();
 
   /**
-   * Instantiates a new Load game controller.
+   * Instantiates a new Choose goals controller.
+   * Sets the goals observable list.
    */
   public ChooseGoalsController() {
     this.goals = FXCollections.observableArrayList();
   }
 
+  /**
+   * Fetch templates set.
+   * Fetches the templates from the file system.
+   *
+   * @param fileType the file type of the templates
+   * @return the set of templates
+   */
   public Set<String> fetchTemplates(String fileType) {
     this.fileType = fileType;
     ObservableList<File> filesList = FXCollections.observableArrayList();
@@ -77,11 +98,19 @@ public class ChooseGoalsController {
         }
       }
     } catch (IOException e) {
-      e.printStackTrace();
+      throw new RuntimeException("Failed to load files from file system");
     }
     return fileNames;
   }
 
+  /**
+   * Handle add goal goal.
+   * Handles the adding of a custom goal.
+   *
+   * @param comboBox  the combo box containing the goal types
+   * @param textField the text field containing the goal value
+   * @return the goal that was added
+   */
   public Goal handleAddGoal(ComboBox comboBox, TextField textField) {
     if (comboBox.getValue() != null && !textField.getText().isEmpty()) {
       int value = 0;
@@ -117,6 +146,17 @@ public class ChooseGoalsController {
     return null;
   }
 
+  /**
+   * Handle predefined goals.
+   * Handles the adding of predefined goals.
+   *
+   * @param checkBox1 the first predefined goal
+   * @param checkBox2 the second predefined goal
+   * @param checkBox3 the third predefined goal
+   * @param checkBox4 the fourth predefined goal
+   * @param checkBox5 the fifth predefined goal
+   * @param checkBox6 the sixth predefined goal
+   */
   public void handlePredefinedGoals(CheckBox checkBox1, CheckBox checkBox2, CheckBox checkBox3, CheckBox checkBox4, CheckBox checkBox5, CheckBox checkBox6) {
     if (checkBox1.isSelected()) {
       goals.add(GoalFactory.createGoal(GOLD, 200));
@@ -144,17 +184,33 @@ public class ChooseGoalsController {
     }
   }
 
+  /**
+   * Validates the game via the templates and goals.
+   *
+   * @param templates the combo box containing the templates
+   */
   public void validateGame(ComboBox<String> templates) {
-    if (goals.isEmpty() && templates.getValue() == null) {
-      ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NEED_SELECTION.getKey()));
-    } else if (templates.getValue() == null) {
-      ShowAlert.showInformation(languageController.getTranslation(Dictionary.TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.TEMPLATE_NEED_SELECTION.getKey()));
-    } else if (goals.isEmpty()) {
-      ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_NEED_SELECTION.getKey()));
-    } else {
-      createGame(templates);
+    try {
+      if (goals.isEmpty() && templates.getValue() == null) {
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NEED_SELECTION.getKey()));
+      } else if (templates.getValue() == null) {
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary.TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.TEMPLATE_NEED_SELECTION.getKey()));
+      } else if (goals.isEmpty()) {
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_NEED_SELECTION.getKey()));
+      } else {
+        createGame(templates);
+      }
+    } catch (Exception e) {
+      throw new RuntimeException(e.getMessage());
     }
   }
+
+  /**
+   * Creates the game.
+   * Creates the game with the selected template and goals.
+   *
+   * @param templates the combo box containing the templates
+   */
   public void createGame(ComboBox<String> templates) {
     List<Goal> distinctGoals = goals.stream()
             .collect(Collectors.toMap(Object::toString,
@@ -176,12 +232,20 @@ public class ChooseGoalsController {
       throw new RuntimeException(e);
     }
 
-    fileHandlerController.saveGameJson(playerController.getPlayer().getName(), null, game);
-    fileHandlerController.saveGameJson(playerController.getPlayer().getName(), "src/main/resources/initialGame/", game);
+    try {
+      fileHandlerController.saveGameJson(playerController.getPlayer().getName(), null, game);
+      fileHandlerController.saveGameJson(playerController.getPlayer().getName(), "src/main/resources/initialGame/", game);
+    } catch (IllegalArgumentException e) {
+      throw new RuntimeException(e.getMessage());
+    }
 
     gameController.setGame(game);
+    playerController.setPlayer(null);
   }
 
+  /**
+   * Uploads a game file from the user's computer.
+   */
   public void uploadGameFile() {
     FileChooser fileChooser = new FileChooser();
     fileChooser.setTitle("Upload Game File");
@@ -201,12 +265,20 @@ public class ChooseGoalsController {
         try {
           addSavedGame(selectedFile.getName(), selectedFile);
         } catch (IOException e) {
-          throw new RuntimeException(e);
+          throw new RuntimeException("Error uploading game file");
         }
       }
     }
   }
 
+  /**
+   * Add saved game.
+   * Adds the saved game to the resources directory.
+   *
+   * @param fileName     the file name of the saved game
+   * @param selectedFile the selected file to be added
+   * @throws IOException the io exception thrown if the file cannot be added
+   */
   public void addSavedGame(String fileName, File selectedFile) throws IOException {
     // Get the path to the appropriate resources directory based on the fileType
     Path resourcesPath = Paths.get("src/main/resources/templates");
@@ -222,10 +294,17 @@ public class ChooseGoalsController {
     Files.copy(sourcePath, destPath, StandardCopyOption.REPLACE_EXISTING);
   }
 
+  /**
+   * Gets the templates.
+   * Gets the templates from the resources directory.
+   *
+   * @param templates the templates combo box
+   * @return the set of templates
+   */
   public Set<String> addTemplates(Set<String> templates) {
     Set<String> templateNames = new HashSet<>();
     for (String template : templates) {
-      if (!template.endsWith(fileType)) {
+      if (template.endsWith(fileType)) {
         templateNames.add(template.replace(".paths", ""));
       }
     }
