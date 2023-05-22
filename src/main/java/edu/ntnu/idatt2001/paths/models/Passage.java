@@ -44,7 +44,7 @@ public class Passage {
 
     this.title = title;
     this.content = content;
-    this.links = new ArrayList<Link>();
+    this.links = new ArrayList<>();
   }
 
   /**
@@ -155,9 +155,7 @@ public class Passage {
 
     Passage passage = (Passage) object;
 
-    if (!getTitle().equals(passage.getTitle())) return false;
-
-    return true;
+    return getTitle().equals(passage.getTitle());
   }
 
   /**
