@@ -3,6 +3,7 @@ package edu.ntnu.idatt2001.paths.views;
 import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
+import edu.ntnu.idatt2001.paths.utility.ShowAlert;
 import javafx.animation.*;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -62,7 +63,7 @@ public class LoadGameView extends View{
   /**
    * The Load game controller.
    */
-  LoadGameController loadGameController = LoadGameController.getInstance();
+  LoadGameController loadGameController = new LoadGameController();
   LanguageController languageController = LanguageController.getInstance();
   PlayerController playerController = PlayerController.getInstance();
   /**
@@ -98,7 +99,11 @@ public class LoadGameView extends View{
    */
   @Override
   public void setup() {
-    jsonTableView = loadGameController.createTableView(screenController);
+    try {
+      jsonTableView = loadGameController.createTableView(screenController);
+    } catch (RuntimeException e) {
+      ShowAlert.showError(e.getMessage(), e.getMessage());
+    }
 
     HBox hBox = new HBox();
     hBox.getChildren().add(jsonTableView);
@@ -115,15 +120,8 @@ public class LoadGameView extends View{
     // Add both tables to the stack pane
     Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
 
-    Button uploadButton = new Button(languageController.getTranslation(Dictionary.UPLOAD_FILE.getKey()));
-    uploadButton.setId("subMenuButton");
-
-    uploadButton.setOnAction(event -> {
-      loadGameController.uploadGameFile();
-    });
-
     VBox vBox = new VBox();
-    vBox.getChildren().addAll(hBox, uploadButton);
+    vBox.getChildren().addAll(hBox);
     vBox.setSpacing(20);
     vBox.setPadding(new Insets(20, 20, 20, 20));
     vBox.setAlignment(Pos.CENTER);
