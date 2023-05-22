@@ -49,19 +49,6 @@ public class Story {
   }
 
   /**
-   * Copy constructor for Story.
-   *
-   * @param story The story to be copied.
-   * @throws NullPointerException if story is null.
-   */
-  public Story(Story story) {
-    this.title = story.title;
-    this.openingPassage = story.openingPassage;
-    this.passages = story.passages;
-    this.endingPassage = story.endingPassage;
-  }
-
-  /**
    * Returns the title of the story.
    *
    * @return The title of the story.

@@ -2,7 +2,6 @@ package edu.ntnu.idatt2001.paths.models;
 
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.models.player.Player;
-
 import java.util.List;
 import java.util.Objects;
 
@@ -51,20 +50,6 @@ public class Game {
     this.story = story;
     this.goals = goals;
     this.currentPassage = currentPassage;
-  }
-
-  /**
-   * Copy constructor for Game.
-   *
-   * @param game The game to be copied.
-   * @throws NullPointerException if game is null.
-   */
-
-  public Game(Game game) {
-    this.player = game.player;
-    this.story = game.story;
-    this.goals = game.goals;
-    this.currentPassage = game.currentPassage;
   }
 
   /**

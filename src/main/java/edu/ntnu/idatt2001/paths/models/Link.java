@@ -46,18 +46,6 @@ public class Link {
   }
 
   /**
-   * Copy constructor for Link.
-   *
-   * @param link The link to be copied.
-   * @throws NullPointerException if link is null.
-   */
-  public Link(Link link) {
-    this.text = link.text;
-    this.reference = link.reference;
-    this.actions = link.actions;
-  }
-
-  /**
    * Returns the text of the link.
    *
    * @return The text of the link.

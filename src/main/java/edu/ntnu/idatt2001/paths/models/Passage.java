@@ -48,18 +48,6 @@ public class Passage {
   }
 
   /**
-   * Copy constructor for Passage.
-   *
-   * @param passage The passage to be copied.
-   * @throws NullPointerException if passage is null.
-   */
-  public Passage(Passage passage) {
-    this.title = passage.title;
-    this.content = passage.content;
-    this.links = passage.links;
-  }
-
-  /**
    * Returns the title of the passage.
    *
    * @return The title of the passage.
