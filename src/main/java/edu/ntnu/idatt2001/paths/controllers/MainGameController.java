@@ -52,7 +52,7 @@ public class MainGameController {
    * The Goals.
    * This is the list of goals that the player has to achieve.
    */
-  List<Goal> goals;
+  static List<Goal> goals;
   /**
    * The Story.
    * This is the story that the player is playing.
@@ -342,7 +342,7 @@ public class MainGameController {
           screenController.activate("MainMenu");
           mainGameView.resetPane();
         } else if (result.get() == goHomeWithoutSaving) {
-          gameController.resetGame(); // Add this line
+          gameController.resetGame();
           goals.clear();
           playerController.resetPlayer();
           screenController.activate("MainMenu");
@@ -522,6 +522,9 @@ public class MainGameController {
    */
   public Game getGame() {
     return game;
+  }
+  public static void resetGoals() {
+    goals.clear();
   }
 
   /**

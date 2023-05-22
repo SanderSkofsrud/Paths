@@ -1,6 +1,7 @@
 package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.*;
+import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import javafx.animation.*;
 import javafx.application.Platform;
@@ -51,6 +52,10 @@ public class FinalPassageView extends View {
    * The Final passage controller.
    */
   FinalPassageController finalPassageController = new FinalPassageController();
+  /**
+   * The Player controller.
+   */
+  PlayerController playerController = PlayerController.getInstance();
 
   /**
    * Constant for text creditsText.
@@ -168,7 +173,13 @@ public class FinalPassageView extends View {
       translateTransition.setInterpolator(Interpolator.LINEAR);
       translateTransition.setCycleCount(1);
 
-      translateTransition.setOnFinished(event -> screenController.activate("MainMenu"));
+      translateTransition.setOnFinished(event -> {
+        gameController.resetGame();
+        MainGameController.resetGoals();
+        playerController.resetPlayer();
+        screenController.activate("MainMenu");
+        resetPane();
+      });
 
       Platform.runLater(translateTransition::play);
     });
