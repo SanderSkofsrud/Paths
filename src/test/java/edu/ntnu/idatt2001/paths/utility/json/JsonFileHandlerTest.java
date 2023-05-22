@@ -75,7 +75,7 @@ public class JsonFileHandlerTest {
       @DisplayName("Test that loadGame loads a game and returns it")
       void testThatLoadGameLoadsAGameAndReturnsIt() throws FileNotFoundException {
         JsonReader fileHandler = new JsonReader();
-        Game game = fileHandler.loadGameJSON("src/test/resources/json/test.json");
+        Game game = fileHandler.loadGameJson("src/test/resources/json/test.json");
         Story story = game.getStory();
         Passage openingPassage = story.getOpeningPassage();
         Link link = openingPassage.getLinks().get(0);
@@ -121,7 +121,7 @@ public class JsonFileHandlerTest {
       void testThatLoadGameThrowsFileNotFoundException() {
         JsonReader fileHandler = new JsonReader();
         assertThrows(FileNotFoundException.class, () -> {
-          fileHandler.loadGameJSON("src/test/resources/json/doesNotExist.json");
+          fileHandler.loadGameJson("src/test/resources/json/doesNotExist.json");
         });
       }
 
@@ -129,7 +129,7 @@ public class JsonFileHandlerTest {
       @DisplayName("Test with an invalid JSON file")
       void testWithInvalidJsonFile() {
         assertThrows(JsonParseException.class, () -> {
-          JsonReader.loadGameJSON("src/test/resources/json/invalid.json");
+          JsonReader.loadGameJson("src/test/resources/json/invalid.json");
         });
       }
     }
@@ -165,7 +165,7 @@ public class JsonFileHandlerTest {
       @DisplayName("Test saving a Game object to a JSON file")
       void testSaveGameToJsonFile() throws IOException {
         String filePath = "src/test/resources/json/output.json";
-        JsonWriter.saveGameJSON(game, filePath);
+        JsonWriter.saveGameJson(game, filePath);
 
         // Validate the file was created and is not empty
         File file = new File(filePath);
@@ -173,7 +173,7 @@ public class JsonFileHandlerTest {
         assertTrue(file.length() > 0);
 
         // Load the file and validate the Game object
-        Game loadedGame = JsonReader.loadGameJSON(filePath);
+        Game loadedGame = JsonReader.loadGameJson(filePath);
         assertEquals(story.getPassages().toString(), loadedGame.getStory().getPassages().toString());
         assertEquals(player.toString(), loadedGame.getPlayer().toString());
         assertEquals(goals.toString(), loadedGame.getGoals().toString());
@@ -185,7 +185,7 @@ public class JsonFileHandlerTest {
       @DisplayName("Test saving a Game object to a non-writable directory or file")
       void testSaveGameToNonWritableFile() {
         assertThrows(IllegalArgumentException.class, () -> {
-          JsonWriter.saveGameJSON(game, "/nonWritableDirectory/output.json");
+          JsonWriter.saveGameJson(game, "/nonWritableDirectory/output.json");
         });
       }
     }

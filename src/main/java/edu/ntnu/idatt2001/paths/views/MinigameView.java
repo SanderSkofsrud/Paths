@@ -4,12 +4,12 @@ import edu.ntnu.idatt2001.paths.controllers.LanguageController;
 import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.player.Player;
-import java.util.Random;
 import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import java.util.Random;
 
 
 /**
@@ -221,7 +221,9 @@ public class MinigameView extends View {
           break;
         }
       }
-      if (!isDraw) break;
+      if (!isDraw) {
+        break;
+      }
     }
 
     if (isDraw) {

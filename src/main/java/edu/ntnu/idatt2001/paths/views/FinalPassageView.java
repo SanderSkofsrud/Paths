@@ -1,14 +1,15 @@
 package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.*;
-import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
-import javafx.animation.*;
+import javafx.animation.Interpolator;
+import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.text.*;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.util.Duration;
 
 /**
@@ -110,7 +111,7 @@ public class FinalPassageView extends View {
         .CREDITS_TEXT_2_1.getKey()));
     goalsAchieved.setId(CREDITS_TEXT);
 
-    VBox goalsVBox = finalPassageController.goalsAchieved();
+    VBox goalsVbox = finalPassageController.goalsAchieved();
 
     Text goalsFailed = new Text(languageController.getTranslation(Dictionary
         .CREDITS_TEXT_2_2.getKey()));
@@ -152,7 +153,7 @@ public class FinalPassageView extends View {
             congratsText,
             goalsTitle,
             goalsAchieved,
-            goalsVBox,
+            goalsVbox,
             goalsFailed,
             goalsFailedVBox,
             goalPercentage,

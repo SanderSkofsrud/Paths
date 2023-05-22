@@ -30,7 +30,7 @@ public class ScoreAction implements Action {
   @Override
   public void execute(Player player) throws IllegalArgumentException {
     if (player.getScore() + this.points < 0) {
-      throw new IllegalArgumentException("You score got lower than 0");
+      throw new IllegalArgumentException("Your score got lower than 0");
     }
     player.addScore(points);
   }

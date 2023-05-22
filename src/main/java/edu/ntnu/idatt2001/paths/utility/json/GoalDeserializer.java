@@ -1,10 +1,6 @@
 package edu.ntnu.idatt2001.paths.utility.json;
 
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
+import com.google.gson.*;
 import edu.ntnu.idatt2001.paths.models.goals.*;
 import java.lang.reflect.Type;
 

@@ -1,15 +1,15 @@
 package edu.ntnu.idatt2001.paths.controllers;
 
-import static javafx.scene.text.TextAlignment.CENTER;
-
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
-import java.util.List;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import java.util.List;
+
+import static javafx.scene.text.TextAlignment.CENTER;
 
 
 /**
@@ -42,18 +42,18 @@ public class FinalPassageController {
    * @return the v box with all the goals achieved by the player
    */
   public VBox goalsAchieved() {
-    VBox goalsVBox = new VBox();
-    goalsVBox.setAlignment(Pos.CENTER);
+    VBox goalsVbox = new VBox();
+    goalsVbox.setAlignment(Pos.CENTER);
     List<Goal> goals = gameController.getGame().getGoals();
     Player player = gameController.getGame().getPlayer();
     for (Goal goal : goals) {
       Text text = new Text(goal.toString());
       text.setId(CREDITS_GREEN);
       if (goal.isFulfilled(player)) {
-        goalsVBox.getChildren().add(text);
+        goalsVbox.getChildren().add(text);
       }
     }
-    return goalsVBox;
+    return goalsVbox;
   }
 
   /**
@@ -63,18 +63,18 @@ public class FinalPassageController {
    * @return the v box with all the goals failed by the player
    */
   public VBox goalsFailed() {
-    VBox goalsVBox = new VBox();
-    goalsVBox.setAlignment(Pos.CENTER);
+    VBox goalsVbox = new VBox();
+    goalsVbox.setAlignment(Pos.CENTER);
     List<Goal> goals = gameController.getGame().getGoals();
     Player player = gameController.getGame().getPlayer();
     for (Goal goal : goals) {
       Text text = new Text(goal.toString());
       text.setId(CREDITS_RED);
       if (!goal.isFulfilled(player)) {
-        goalsVBox.getChildren().add(text);
+        goalsVbox.getChildren().add(text);
       }
     }
-    return goalsVBox;
+    return goalsVbox;
   }
 
   /**

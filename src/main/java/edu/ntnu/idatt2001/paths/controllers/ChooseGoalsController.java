@@ -1,15 +1,17 @@
 package edu.ntnu.idatt2001.paths.controllers;
 
-import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
-
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.models.goals.GoalEnum;
 import edu.ntnu.idatt2001.paths.models.goals.GoalFactory;
-import edu.ntnu.idatt2001.paths.models.goals.InventoryGoal;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
-import edu.ntnu.idatt2001.paths.utility.ShowAlert;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,12 +24,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
-import javafx.stage.FileChooser;
+
+import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
 
 
 /**

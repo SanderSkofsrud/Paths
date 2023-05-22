@@ -1,11 +1,11 @@
 package edu.ntnu.idatt2001.paths.utility;
 
-import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
+import java.util.Optional;
 
 
 /**

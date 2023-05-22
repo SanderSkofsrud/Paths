@@ -1,9 +1,7 @@
 package edu.ntnu.idatt2001.paths.utility.paths;
 
 import edu.ntnu.idatt2001.paths.models.Story;
-import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.models.player.Player;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

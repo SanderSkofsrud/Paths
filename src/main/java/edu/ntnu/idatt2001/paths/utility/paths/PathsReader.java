@@ -1,10 +1,16 @@
 package edu.ntnu.idatt2001.paths.utility.paths;
 
-import edu.ntnu.idatt2001.paths.models.*;
-import edu.ntnu.idatt2001.paths.models.actions.*;
+import edu.ntnu.idatt2001.paths.models.Link;
+import edu.ntnu.idatt2001.paths.models.Passage;
+import edu.ntnu.idatt2001.paths.models.Story;
+import edu.ntnu.idatt2001.paths.models.actions.Action;
+import edu.ntnu.idatt2001.paths.models.actions.ActionEnum;
+import edu.ntnu.idatt2001.paths.models.actions.ActionFactory;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

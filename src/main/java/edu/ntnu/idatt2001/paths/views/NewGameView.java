@@ -1,9 +1,12 @@
 package edu.ntnu.idatt2001.paths.views;
 
-import edu.ntnu.idatt2001.paths.controllers.*;
+import edu.ntnu.idatt2001.paths.controllers.LanguageController;
+import edu.ntnu.idatt2001.paths.controllers.NewGameController;
+import edu.ntnu.idatt2001.paths.controllers.PlayerController;
+import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
-import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
 import edu.ntnu.idatt2001.paths.utility.ShowAlert;
+import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -81,17 +84,14 @@ public class NewGameView extends View {
     HARD_STRING = languageController.getTranslation(Dictionary.HARD.getKey());
     CUSTOM_STRING = languageController.getTranslation(Dictionary.CUSTOM.getKey());
 
-    ImageView imageView = new ImageView(new Image(getClass()
-        .getResourceAsStream("/images/create.png")));
-
     Label labelName = new Label(languageController.getTranslation(Dictionary.SELECT_NAME.getKey()));
     TextField textFieldName = new TextField();
     textFieldName.setPromptText(languageController.getTranslation(Dictionary.ENTER_NAME.getKey()));
-    HBox hBoxName = new HBox();
-    hBoxName.getChildren().addAll(labelName, textFieldName);
-    hBoxName.setSpacing(10);
-    hBoxName.setAlignment(Pos.CENTER);
-    hBoxName.setPadding(new Insets(10, 10, 10, 10));
+    HBox hboxName = new HBox();
+    hboxName.getChildren().addAll(labelName, textFieldName);
+    hboxName.setSpacing(10);
+    hboxName.setAlignment(Pos.CENTER);
+    hboxName.setPadding(new Insets(10, 10, 10, 10));
 
     Label labelDifficulty = new Label(languageController
         .getTranslation(Dictionary.SELECT_DIFFICULTY.getKey()));
@@ -108,45 +108,45 @@ public class NewGameView extends View {
     standard.setId("subMenuButton");
     hard.setId("subMenuButton");
     custom.setId("subMenuButton");
-    HBox hBoxDifficulty = new HBox();
-    hBoxDifficulty.getChildren().addAll(labelDifficulty, easy, standard, hard, custom);
-    hBoxDifficulty.setSpacing(10);
-    hBoxDifficulty.setAlignment(Pos.CENTER);
-    hBoxDifficulty.setPadding(new Insets(10, 10, 10, 10));
+    HBox hboxDifficulty = new HBox();
+    hboxDifficulty.getChildren().addAll(labelDifficulty, easy, standard, hard, custom);
+    hboxDifficulty.setSpacing(10);
+    hboxDifficulty.setAlignment(Pos.CENTER);
+    hboxDifficulty.setPadding(new Insets(10, 10, 10, 10));
 
 
     Label labelHealth = new Label();
     TextField textFieldHealth = new TextField();
     textFieldHealth.setPromptText(languageController.getTranslation(Dictionary
         .ENTER_HEALTH.getKey()));
-    HBox hBoxHealth = new HBox();
-    hBoxHealth.getChildren().addAll(labelHealth);
-    hBoxHealth.setSpacing(10);
-    hBoxHealth.setAlignment(Pos.CENTER);
-    hBoxHealth.setPadding(new Insets(10, 10, 10, 10));
-    hBoxHealth.setVisible(false);
+    HBox hboxHealth = new HBox();
+    hboxHealth.getChildren().addAll(labelHealth);
+    hboxHealth.setSpacing(10);
+    hboxHealth.setAlignment(Pos.CENTER);
+    hboxHealth.setPadding(new Insets(10, 10, 10, 10));
+    hboxHealth.setVisible(false);
 
     Label labelGold = new Label();
     TextField textFieldGold = new TextField();
     textFieldGold.setPromptText(languageController.getTranslation(Dictionary
         .ENTER_GOLD.getKey()));
-    HBox hBoxGold = new HBox();
-    hBoxGold.getChildren().addAll(labelGold);
-    hBoxGold.setSpacing(10);
-    hBoxGold.setAlignment(Pos.CENTER);
-    hBoxGold.setPadding(new Insets(10, 10, 10, 10));
-    hBoxGold.setVisible(false);
+    HBox hboxGold = new HBox();
+    hboxGold.getChildren().addAll(labelGold);
+    hboxGold.setSpacing(10);
+    hboxGold.setAlignment(Pos.CENTER);
+    hboxGold.setPadding(new Insets(10, 10, 10, 10));
+    hboxGold.setVisible(false);
 
     Label labelInventory = new Label();
     TextField textFieldInventory = new TextField();
     textFieldInventory.setPromptText(languageController.getTranslation(Dictionary
         .ENTER_GOLD.getKey()));
-    HBox hBoxInventory = new HBox();
-    hBoxInventory.getChildren().addAll(labelInventory);
-    hBoxInventory.setSpacing(10);
-    hBoxInventory.setAlignment(Pos.CENTER);
-    hBoxInventory.setPadding(new Insets(10, 10, 10, 10));
-    hBoxInventory.setVisible(false);
+    HBox hboxInventory = new HBox();
+    hboxInventory.getChildren().addAll(labelInventory);
+    hboxInventory.setSpacing(10);
+    hboxInventory.setAlignment(Pos.CENTER);
+    hboxInventory.setPadding(new Insets(10, 10, 10, 10));
+    hboxInventory.setVisible(false);
 
     toggleGroupDifficulty.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
       if (toggleGroupDifficulty.getSelectedToggle() != null) {
@@ -156,33 +156,33 @@ public class NewGameView extends View {
         if (difficulty.equals(CUSTOM_STRING)) {
           labelHealth.setText(languageController.getTranslation(Dictionary.SELECT_HEALTH.getKey()));
           labelGold.setText(languageController.getTranslation(Dictionary.SELECT_GOLD.getKey()));
-          hBoxHealth.getChildren().add(textFieldHealth);
-          hBoxGold.getChildren().add(textFieldGold);
-          hBoxGold.setAlignment(Pos.CENTER);
-          hBoxHealth.setVisible(true);
-          hBoxGold.setVisible(true);
-          hBoxInventory.setVisible(false);
+          hboxHealth.getChildren().add(textFieldHealth);
+          hboxGold.getChildren().add(textFieldGold);
+          hboxGold.setAlignment(Pos.CENTER);
+          hboxHealth.setVisible(true);
+          hboxGold.setVisible(true);
+          hboxInventory.setVisible(false);
         } else if (difficulty.equals(EASY_STRING)) {
           labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_EASY.getKey()));
           labelGold.setText(languageController.getTranslation(Dictionary.GOLD_EASY.getKey()));
           labelInventory.setText(languageController.getTranslation(Dictionary
               .INVENTORY_EASY.getKey()));
-          hBoxHealth.getChildren().remove(textFieldHealth);
-          hBoxGold.getChildren().remove(textFieldGold);
-          hBoxInventory.getChildren().remove(textFieldInventory);
-          hBoxGold.setAlignment(Pos.CENTER);
-          hBoxHealth.setVisible(true);
-          hBoxGold.setVisible(true);
-          hBoxInventory.setVisible(true);
+          hboxHealth.getChildren().remove(textFieldHealth);
+          hboxGold.getChildren().remove(textFieldGold);
+          hboxInventory.getChildren().remove(textFieldInventory);
+          hboxGold.setAlignment(Pos.CENTER);
+          hboxHealth.setVisible(true);
+          hboxGold.setVisible(true);
+          hboxInventory.setVisible(true);
         } else if (difficulty.equals(HARD_STRING)) {
           labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_HARD.getKey()));
           labelGold.setText(languageController.getTranslation(Dictionary.GOLD_HARD.getKey()));
-          hBoxHealth.getChildren().remove(textFieldHealth);
-          hBoxGold.getChildren().remove(textFieldGold);
-          hBoxGold.setAlignment(Pos.CENTER);
-          hBoxHealth.setVisible(true);
-          hBoxGold.setVisible(true);
-          hBoxInventory.setVisible(false);
+          hboxHealth.getChildren().remove(textFieldHealth);
+          hboxGold.getChildren().remove(textFieldGold);
+          hboxGold.setAlignment(Pos.CENTER);
+          hboxHealth.setVisible(true);
+          hboxGold.setVisible(true);
+          hboxInventory.setVisible(false);
         } else if (difficulty.equals(STANDARD_STRING)) {
           labelHealth.setText(languageController.getTranslation(Dictionary
               .HEALTH_STANDARD.getKey()));
@@ -190,17 +190,17 @@ public class NewGameView extends View {
               .GOLD_STANDARD.getKey()));
           labelInventory.setText(languageController.getTranslation(Dictionary
               .INVENTORY_STANDARD.getKey()));
-          hBoxHealth.getChildren().remove(textFieldHealth);
-          hBoxGold.getChildren().remove(textFieldGold);
-          hBoxInventory.getChildren().remove(textFieldInventory);
-          hBoxGold.setAlignment(Pos.CENTER);
-          hBoxHealth.setVisible(true);
-          hBoxGold.setVisible(true);
-          hBoxInventory.setVisible(true);
+          hboxHealth.getChildren().remove(textFieldHealth);
+          hboxGold.getChildren().remove(textFieldGold);
+          hboxInventory.getChildren().remove(textFieldInventory);
+          hboxGold.setAlignment(Pos.CENTER);
+          hboxHealth.setVisible(true);
+          hboxGold.setVisible(true);
+          hboxInventory.setVisible(true);
         } else {
-          hBoxHealth.setVisible(false);
-          hBoxGold.setVisible(false);
-          hBoxInventory.setVisible(false);
+          hboxHealth.setVisible(false);
+          hboxGold.setVisible(false);
+          hboxInventory.setVisible(false);
         }
 
       }
@@ -228,54 +228,63 @@ public class NewGameView extends View {
 
     StackPane imageContainer = new StackPane(characterMale, characterFemale);
 
-    HBox hBoxCharacter = new HBox();
-    hBoxCharacter.getChildren().addAll(labelCharacter, left, imageContainer, right);
-    hBoxCharacter.setSpacing(10);
-    hBoxCharacter.setAlignment(Pos.CENTER);
-    hBoxCharacter.setPadding(new Insets(10, 10, 10, 10));
+    HBox hboxCharacter = new HBox();
+    hboxCharacter.getChildren().addAll(labelCharacter, left, imageContainer, right);
+    hboxCharacter.setSpacing(10);
+    hboxCharacter.setAlignment(Pos.CENTER);
+    hboxCharacter.setPadding(new Insets(10, 10, 10, 10));
 
 
     Button button = null;
-      button = new Button(languageController.getTranslation(Dictionary
-          .CREATE_CHARACTER.getKey()));
-      button.setId("subMenuButton");
-      button.setOnAction(e -> {
-        if (textFieldName.getText().isEmpty()) {
-          textFieldName.setPromptText(languageController.getTranslation(Dictionary
-              .ENTER_NAME.getKey()));
-          return;
-        } else if (toggleGroupDifficulty.getSelectedToggle() == null) {
-          labelDifficulty.setText(languageController.getTranslation(Dictionary
-              .SELECT_DIFFICULTY.getKey()));
-          return;
-        } else if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
-          try {
-            int health = Integer.parseInt(textFieldHealth.getText());
-            int gold = Integer.parseInt(textFieldGold.getText());
-
-          } catch (NumberFormatException ex) {
+    button = new Button(languageController.getTranslation(Dictionary
+        .CREATE_CHARACTER.getKey()));
+    button.setId("subMenuButton");
+    button.setOnAction(e -> {
+      if (textFieldName.getText().isEmpty()) {
+        textFieldName.setPromptText(languageController.getTranslation(Dictionary
+            .ENTER_NAME.getKey()));
+        return;
+      } else if (toggleGroupDifficulty.getSelectedToggle() == null) {
+        labelDifficulty.setText(languageController.getTranslation(Dictionary
+            .SELECT_DIFFICULTY.getKey()));
+        return;
+      } else if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
+        try {
+          int health = Integer.parseInt(textFieldHealth.getText());
+          int gold = Integer.parseInt(textFieldGold.getText());
+        if (health <= 0 || gold <= 0) {
             ShowAlert.showError(languageController.getTranslation(Dictionary
                 .INVALID_INPUT.getKey()), languageController.getTranslation(Dictionary
                 .GOAL_AND_HEALTH_VALUES_MUST_BE_NUMBERS_ABOVE_ZERO.getKey()));
             return;
           }
+
+        } catch (NumberFormatException ex) {
+          ShowAlert.showError(languageController.getTranslation(Dictionary
+              .INVALID_INPUT.getKey()), languageController.getTranslation(Dictionary
+              .GOAL_AND_HEALTH_VALUES_MUST_BE_NUMBERS_ABOVE_ZERO.getKey()));
+          return;
         }
+      }
 
-        String activeCharacter = characterMale.isVisible() ? "m.png" : "f.png";
-        playerController.setActiveCharacter(activeCharacter);
+      String activeCharacter = characterMale.isVisible() ? "m.png" : "f.png";
+      playerController.setActiveCharacter(activeCharacter);
 
-        Toggle selectedToggle = toggleGroupDifficulty.getSelectedToggle();
-        newGameController.updatePlayer(textFieldName.getText(), selectedToggle,
-            activeCharacter, textFieldHealth, textFieldGold);
+      Toggle selectedToggle = toggleGroupDifficulty.getSelectedToggle();
+      newGameController.updatePlayer(textFieldName.getText(), selectedToggle,
+          activeCharacter, textFieldHealth, textFieldGold);
 
       SoundPlayer.play("/sounds/confirm.wav");
       screenController.activate("ChooseGoals");
       resetPane();
     });
 
+    ImageView imageView = new ImageView(new Image(getClass()
+            .getResourceAsStream("/images/create.png")));
+
     VBox vBox = new VBox();
-    vBox.getChildren().addAll(imageView, hBoxName, hBoxDifficulty, hBoxHealth,
-        hBoxGold, hBoxInventory, hBoxCharacter, button);
+    vBox.getChildren().addAll(imageView, hboxName, hboxDifficulty, hboxHealth,
+        hboxGold, hboxInventory, hboxCharacter, button);
     vBox.setAlignment(Pos.CENTER);
     vBox.setSpacing(10);
     vBox.setPadding(new Insets(10, 10, 10, 10));

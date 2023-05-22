@@ -23,7 +23,9 @@ public class InventoryAction implements Action {
    */
   public InventoryAction(String item) throws IllegalArgumentException, NullPointerException {
     Objects.requireNonNull(item, "Item cannot be null");
-    if (item.isBlank()) throw new IllegalArgumentException("Item cannot be blank");
+    if (item.isBlank()) {
+      throw new IllegalArgumentException("Item cannot be blank");
+    }
     this.item = item.trim().toLowerCase();
   }
 

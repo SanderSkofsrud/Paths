@@ -17,7 +17,6 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-
 import java.util.Set;
 
 /**
@@ -90,14 +89,12 @@ public class ChooseGoalsView extends View {
    */
   public void setup() {
     try {
-      ImageView imageView = new ImageView(new Image(getClass()
-              .getResourceAsStream("/images/goals.png")));
-      HBox hBox = new HBox();
-      hBox.setSpacing(25);
-      hBox.setAlignment(Pos.CENTER);
-      VBox vBox = new VBox();
-      vBox.setSpacing(10);
-      vBox.setAlignment(Pos.CENTER);
+      HBox hbox = new HBox();
+      hbox.setSpacing(25);
+      hbox.setAlignment(Pos.CENTER);
+      VBox vbox = new VBox();
+      vbox.setSpacing(10);
+      vbox.setAlignment(Pos.CENTER);
 
       VBox predefinedGoals = new VBox();
       predefinedGoals.setSpacing(10);
@@ -273,8 +270,11 @@ public class ChooseGoalsView extends View {
 
       });
 
-      hBox.getChildren().addAll(customGoals, predefinedGoals);
-      vBox.getChildren().addAll(imageView, hBox, startButton);
+      ImageView imageView = new ImageView(new Image(getClass()
+              .getResourceAsStream("/images/goals.png")));
+
+      hbox.getChildren().addAll(customGoals, predefinedGoals);
+      vbox.getChildren().addAll(imageView, hbox, startButton);
 
       Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
       BackgroundImage backgroundImage = new BackgroundImage(background,
@@ -282,7 +282,7 @@ public class ChooseGoalsView extends View {
               new BackgroundSize(1.0, 1.0, true, true, false, true));
       borderPane.setBackground(new Background(backgroundImage));
 
-      stackPane.getChildren().add(vBox);
+      stackPane.getChildren().add(vbox);
       stackPane.getStylesheets().add("stylesheet.css");
 
       ImageView backImage = new ImageView(new Image(getClass()

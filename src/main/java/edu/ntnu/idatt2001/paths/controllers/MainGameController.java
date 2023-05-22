@@ -9,10 +9,6 @@ import edu.ntnu.idatt2001.paths.models.goals.*;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.views.MainGameView;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.List;
-import java.util.Optional;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -23,10 +19,16 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
 import javafx.util.Duration;
 import javafx.util.Pair;
+
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -523,6 +525,7 @@ public class MainGameController {
   public Game getGame() {
     return game;
   }
+
   public static void resetGoals() {
     goals.clear();
   }

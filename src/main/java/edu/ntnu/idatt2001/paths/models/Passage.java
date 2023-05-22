@@ -1,7 +1,8 @@
 package edu.ntnu.idatt2001.paths.models;
 
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -137,9 +138,15 @@ public class Passage {
    */
   @Override
   public boolean equals(Object object) {
-    if (this == object) return true;
-    if (!(object instanceof Passage)) return false;
-    if (!super.equals(object)) return false;
+    if (this == object) {
+      return true;
+    }
+    if (!(object instanceof Passage)) {
+      return false;
+    }
+    if (!super.equals(object)) {
+      return false;
+    }
 
     Passage passage = (Passage) object;
 

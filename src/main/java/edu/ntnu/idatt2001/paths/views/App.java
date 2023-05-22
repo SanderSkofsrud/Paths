@@ -49,7 +49,7 @@ public class App extends Application {
   /**
    * The ChooseGoalsView is the view of the GUI where the player can choose the goals of the game.
    */
-  private ChooseGoalsView ChooseGoalsView = new ChooseGoalsView(screenController);
+  private ChooseGoalsView chooseGoalsView = new ChooseGoalsView(screenController);
   /**
    * The mainGameView is the view of the GUI where the player can play the game.
    */
@@ -100,7 +100,7 @@ public class App extends Application {
       }
     });
     screenController.addScreen("NewGame", newGameView);
-    screenController.addScreen("ChooseGoals", ChooseGoalsView);
+    screenController.addScreen("ChooseGoals", chooseGoalsView);
     screenController.addScreen("MainGame", mainGameView);
     screenController.addScreen("LoadGame", loadGameView);
     screenController.addScreen("Minigame", minigameView);
@@ -134,11 +134,11 @@ public class App extends Application {
         .getResourceAsStream("/images/tagline.png")));
     tagline.preserveRatioProperty().set(true);
     tagline.setFitWidth(300);
-    VBox vBox = new VBox();
-    vBox.getChildren().addAll(logo, tagline);
-    vBox.setAlignment(Pos.CENTER);
-    vBox.setSpacing(25);
-    frontPage.setCenter(vBox);
+    VBox vbox = new VBox();
+    vbox.getChildren().addAll(logo, tagline);
+    vbox.setAlignment(Pos.CENTER);
+    vbox.setSpacing(25);
+    frontPage.setCenter(vbox);
 
     Button newGame = new Button(Dictionary.NEW_GAME.getKey());
     Button loadGame = new Button(Dictionary.LOAD_GAME.getKey());
@@ -213,13 +213,13 @@ public class App extends Application {
           new Thread(languageSettingTask).start();
         });
 
-    HBox hBox = new HBox();
-    hBox.getChildren().addAll(newGame, loadGame, languageComboBox);
-    hBox.setAlignment(Pos.CENTER);
-    hBox.getStylesheets().add("stylesheet.css");
-    hBox.setSpacing(20);
-    hBox.setPadding(new Insets(0, 0, 150, 0));
-    frontPage.setBottom(hBox);
+    HBox hbox = new HBox();
+    hbox.getChildren().addAll(newGame, loadGame, languageComboBox);
+    hbox.setAlignment(Pos.CENTER);
+    hbox.getStylesheets().add("stylesheet.css");
+    hbox.setSpacing(20);
+    hbox.setPadding(new Insets(0, 0, 150, 0));
+    frontPage.setBottom(hbox);
 
     Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT,

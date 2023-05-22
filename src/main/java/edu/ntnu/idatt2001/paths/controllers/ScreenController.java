@@ -1,9 +1,9 @@
 package edu.ntnu.idatt2001.paths.controllers;
 
 import edu.ntnu.idatt2001.paths.views.View;
-import java.util.HashMap;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import java.util.HashMap;
 
 
 /**

@@ -26,7 +26,7 @@ public class JsonWriter {
    * @param game     the game object that is to be saved
    * @param fileName the file name of the JSON file
    */
-  public static void saveGameJSON(Game game, String fileName) {
+  public static void saveGameJson(Game game, String fileName) {
     try (FileWriter fileWriter = new FileWriter(fileName, false)) {
       Gson gson = new GsonBuilder()
               .registerTypeAdapter(Story.class, new StorySerializer())

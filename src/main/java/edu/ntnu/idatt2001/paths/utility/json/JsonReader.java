@@ -32,7 +32,7 @@ public class JsonReader {
    * @return the game object that is loaded from the JSON file
    * @throws FileNotFoundException the file not found exception
    */
-  public static Game loadGameJSON(String fileName) throws FileNotFoundException {
+  public static Game loadGameJson(String fileName) throws FileNotFoundException {
     try (Reader reader = new FileReader(fileName)) {
       Gson gson = new GsonBuilder()
               .registerTypeAdapter(Story.class, new StoryDeserializer())
