@@ -25,11 +25,12 @@ public class ScoreAction implements Action {
    * Executes a score action on a player.
    *
    * @param player the player
+   * @throws IllegalArgumentException if the player's score become less than 0
    */
   @Override
-  public void execute(Player player) {
+  public void execute(Player player) throws IllegalArgumentException {
     if (player.getScore() + this.points < 0) {
-      throw new IllegalArgumentException("Score cannot be less than 0");
+      throw new IllegalArgumentException("You score got lower than 0");
     }
     player.addScore(points);
   }

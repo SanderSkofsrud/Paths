@@ -25,11 +25,12 @@ public class GoldAction implements Action {
    * Executes a gold action on a player.
    *
    * @param player the player
+   * @throws IllegalArgumentException if the player's gold become less than 0
    */
   @Override
-  public void execute(Player player) {
+  public void execute(Player player) throws IllegalArgumentException {
     if (player.getGold() + this.gold < 0) {
-      throw new IllegalArgumentException("Gold cannot be less than 0");
+      throw new IllegalArgumentException("Your balance got lower than 0");
     }
     player.addGold(this.gold);
   }

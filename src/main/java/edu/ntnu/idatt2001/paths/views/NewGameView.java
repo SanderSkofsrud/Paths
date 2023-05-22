@@ -3,6 +3,7 @@ package edu.ntnu.idatt2001.paths.views;
 import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
+import edu.ntnu.idatt2001.paths.utility.ShowAlert;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -233,26 +234,39 @@ public class NewGameView extends View {
     hBoxCharacter.setAlignment(Pos.CENTER);
     hBoxCharacter.setPadding(new Insets(10, 10, 10, 10));
 
-    Button button = new Button(languageController.getTranslation(Dictionary
-        .CREATE_CHARACTER.getKey()));
-    button.setId("subMenuButton");
-    button.setOnAction(e -> {
-      if (textFieldName.getText().isEmpty()) {
-        textFieldName.setPromptText(languageController.getTranslation(Dictionary
-            .ENTER_NAME.getKey()));
-        return;
-      } else if (toggleGroupDifficulty.getSelectedToggle() == null) {
-        labelDifficulty.setText(languageController.getTranslation(Dictionary
-            .SELECT_DIFFICULTY.getKey()));
-        return;
-      }
 
-      String activeCharacter = characterMale.isVisible() ? "m.png" : "f.png";
-      playerController.setActiveCharacter(activeCharacter);
+    Button button = null;
+      button = new Button(languageController.getTranslation(Dictionary
+          .CREATE_CHARACTER.getKey()));
+      button.setId("subMenuButton");
+      button.setOnAction(e -> {
+        if (textFieldName.getText().isEmpty()) {
+          textFieldName.setPromptText(languageController.getTranslation(Dictionary
+              .ENTER_NAME.getKey()));
+          return;
+        } else if (toggleGroupDifficulty.getSelectedToggle() == null) {
+          labelDifficulty.setText(languageController.getTranslation(Dictionary
+              .SELECT_DIFFICULTY.getKey()));
+          return;
+        } else if (toggleGroupDifficulty.getSelectedToggle().equals(custom)) {
+          try {
+            int health = Integer.parseInt(textFieldHealth.getText());
+            int gold = Integer.parseInt(textFieldGold.getText());
 
-      Toggle selectedToggle = toggleGroupDifficulty.getSelectedToggle();
-      newGameController.updatePlayer(textFieldName.getText(), selectedToggle,
-          activeCharacter, textFieldHealth, textFieldGold);
+          } catch (NumberFormatException ex) {
+            ShowAlert.showError(languageController.getTranslation(Dictionary
+                .INVALID_INPUT.getKey()), languageController.getTranslation(Dictionary
+                .GOAL_AND_HEALTH_VALUES_MUST_BE_NUMBERS_ABOVE_ZERO.getKey()));
+            return;
+          }
+        }
+
+        String activeCharacter = characterMale.isVisible() ? "m.png" : "f.png";
+        playerController.setActiveCharacter(activeCharacter);
+
+        Toggle selectedToggle = toggleGroupDifficulty.getSelectedToggle();
+        newGameController.updatePlayer(textFieldName.getText(), selectedToggle,
+            activeCharacter, textFieldHealth, textFieldGold);
 
       SoundPlayer.play("/sounds/confirm.wav");
       screenController.activate("ChooseGoals");
