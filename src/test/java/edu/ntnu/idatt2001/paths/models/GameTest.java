@@ -198,6 +198,24 @@ public class GameTest {
       assertThrows(NullPointerException.class, () -> game.go(null));
     }
 
+    /**
+     * Test that currentPassage is updated when go is called
+     */
+    @Test
+    @DisplayName("Test that currentPassage is changed when go is called")
+    void testThatCurrentPassageIsUpdatedWhenGoIsCalled() {
+      Player player = new Player.PlayerBuilder(name).health(health).score(score).gold(gold).build();
+      Passage openingPassage = new Passage(title, content);
+      Story story = new Story(title, openingPassage);
+      List<Goal> goals = new ArrayList<>();
+      goals.add(new ScoreGoal(minimumScore));
+      Game game = new Game(player, story, goals, story.getOpeningPassage());
+      Passage passage = new Passage("title2", "content2");
+      game.getStory().addPassage(passage);
+      game.go(new Link(passage.getTitle(), passage.getTitle()));
+      assertEquals(passage, game.getCurrentPassage());
+    }
+
   }
 }
 
