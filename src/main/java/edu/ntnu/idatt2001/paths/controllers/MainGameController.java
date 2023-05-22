@@ -9,6 +9,10 @@ import edu.ntnu.idatt2001.paths.models.goals.*;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.views.MainGameView;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.List;
+import java.util.Optional;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -24,9 +28,6 @@ import javafx.scene.text.TextFlow;
 import javafx.util.Duration;
 import javafx.util.Pair;
 
-import java.io.FileNotFoundException;
-import java.io.InputStream;import java.util.List;
-import java.util.Optional;
 
 /**
  * The type Main game controller.
@@ -117,7 +118,8 @@ public class MainGameController {
    * @param passageContent the passage content that is being clicked
    * @return the event handler that handles the mouse click
    */
-  public static EventHandler<MouseEvent> createMouseClickedEventHandler(TextFlow textFlow, TextArea passageContent) {
+  public static EventHandler<MouseEvent> createMouseClickedEventHandler(TextFlow textFlow,
+                                                                        TextArea passageContent) {
     return event -> handleMouseClickedEvent(textFlow, passageContent);
   }
 
@@ -149,9 +151,8 @@ public class MainGameController {
       timeline.getKeyFrames().clear();
       for (int i = currentLength; i < characters.length; i++) {
         int charIndex = i;
-        timeline.getKeyFrames().add(new KeyFrame(Duration.millis((charIndex - currentLength) * 25), event -> {
-          passageContent.appendText(Character.toString(characters[charIndex]));
-        }));
+        timeline.getKeyFrames().add(new KeyFrame(Duration.millis((charIndex - currentLength) * 25),
+            event -> passageContent.appendText(Character.toString(characters[charIndex]))));
       }
       timeline.play();
     }
@@ -224,40 +225,45 @@ public class MainGameController {
    */
   public Button createExitButton() {
     try {
-    Button exitButton = new Button();
-    exitButton.setOnAction(event -> {
-      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-      alert.setTitle(languageController.getTranslation(Dictionary.EXIT.getKey()));
-      alert.setHeaderText(languageController.getTranslation(Dictionary.CHOOSE_AN_OPTION.getKey()));
-      alert.setContentText(languageController.getTranslation(Dictionary.LOSE_PROGRESS.getKey()));
+      Button exitButton = new Button();
+      exitButton.setOnAction(event -> {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(languageController.getTranslation(Dictionary.EXIT.getKey()));
+        alert.setHeaderText(languageController.getTranslation(Dictionary
+            .CHOOSE_AN_OPTION.getKey()));
+        alert.setContentText(languageController.getTranslation(Dictionary
+            .LOSE_PROGRESS.getKey()));
 
-      ButtonType cancel = new ButtonType(languageController.getTranslation(Dictionary.CANCEL.getKey()));
-      ButtonType saveAndExit = new ButtonType(languageController.getTranslation(Dictionary.SAVE_EXIT.getKey()));
-      ButtonType exitWithoutSaving = new ButtonType(languageController.getTranslation(Dictionary.EXIT.getKey()));
+        ButtonType cancel = new ButtonType(languageController.getTranslation(Dictionary
+            .CANCEL.getKey()));
+        ButtonType saveAndExit = new ButtonType(languageController.getTranslation(Dictionary
+            .SAVE_EXIT.getKey()));
+        ButtonType exitWithoutSaving = new ButtonType(languageController.getTranslation(Dictionary
+            .EXIT.getKey()));
 
-      alert.getButtonTypes().setAll(saveAndExit,exitWithoutSaving, cancel);
+        alert.getButtonTypes().setAll(saveAndExit, exitWithoutSaving, cancel);
 
-      DialogPane dialogPane = alert.getDialogPane();
-      dialogPane.getStylesheets().add("stylesheet.css");
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add("stylesheet.css");
 
-      Optional<ButtonType> result = alert.showAndWait();
-      if (result.isPresent()) {
-        if (result.get() == cancel) {
-          alert.close();
-        } else if (result.get() == saveAndExit) {
-          try {
-            FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
-          } catch (IllegalArgumentException e) {
-            throw new RuntimeException(e.getMessage());
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent()) {
+          if (result.get() == cancel) {
+            alert.close();
+          } else if (result.get() == saveAndExit) {
+            try {
+              FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
+            } catch (IllegalArgumentException e) {
+              throw new RuntimeException(e.getMessage());
+            }
+            Platform.exit();
+          } else if (result.get() == exitWithoutSaving) {
+            Platform.exit();
           }
-          Platform.exit();
-        } else if (result.get() == exitWithoutSaving) {
-          Platform.exit();
         }
-      }
-    });
-    return exitButton;
-  } catch (Exception e) {
+      });
+      return exitButton;
+    } catch (Exception e) {
       throw new RuntimeException(e.getMessage());
     }
   }
@@ -303,14 +309,19 @@ public class MainGameController {
     homeButton.setOnAction(event -> {
       Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
       alert.setTitle(languageController.getTranslation(Dictionary.HOME.getKey()));
-      alert.setHeaderText(languageController.getTranslation(Dictionary.CHOOSE_AN_OPTION.getKey()));
-      alert.setContentText(languageController.getTranslation(Dictionary.LOSE_PROGRESS_HOME.getKey()));
+      alert.setHeaderText(languageController.getTranslation(Dictionary
+          .CHOOSE_AN_OPTION.getKey()));
+      alert.setContentText(languageController.getTranslation(Dictionary
+          .LOSE_PROGRESS_HOME.getKey()));
 
-      ButtonType cancel = new ButtonType(languageController.getTranslation(Dictionary.CANCEL.getKey()));
-      ButtonType saveAndGoHome = new ButtonType(languageController.getTranslation(Dictionary.SAVE_HOME.getKey()));
-      ButtonType goHomeWithoutSaving = new ButtonType(languageController.getTranslation(Dictionary.HOME.getKey()));
+      ButtonType cancel = new ButtonType(languageController.getTranslation(Dictionary
+          .CANCEL.getKey()));
+      ButtonType saveAndGoHome = new ButtonType(languageController.getTranslation(Dictionary
+          .SAVE_HOME.getKey()));
+      ButtonType goHomeWithoutSaving = new ButtonType(languageController.getTranslation(Dictionary
+          .HOME.getKey()));
 
-      alert.getButtonTypes().setAll(saveAndGoHome,goHomeWithoutSaving, cancel);
+      alert.getButtonTypes().setAll(saveAndGoHome, goHomeWithoutSaving, cancel);
 
       DialogPane dialogPane = alert.getDialogPane();
       dialogPane.getStylesheets().add("stylesheet.css");
@@ -357,8 +368,10 @@ public class MainGameController {
       alert.setTitle(languageController.getTranslation(Dictionary.RESTART.getKey()));
       alert.setHeaderText(languageController.getTranslation(Dictionary.RESTART_GAME.getKey()));
 
-      ButtonType cancel = new ButtonType(languageController.getTranslation(Dictionary.CANCEL.getKey()));
-      ButtonType restart = new ButtonType(languageController.getTranslation(Dictionary.RESTART.getKey()));
+      ButtonType cancel = new ButtonType(languageController.getTranslation(Dictionary
+          .CANCEL.getKey()));
+      ButtonType restart = new ButtonType(languageController.getTranslation(Dictionary
+          .RESTART.getKey()));
 
       alert.getButtonTypes().setAll(restart, cancel);
 
@@ -371,13 +384,14 @@ public class MainGameController {
           alert.close();
         } else if (result.get() == restart) {
           try {
-            game = FileHandlerController.getInstance().loadGameJson(player.getName() + ".json", "src/main/resources/initialGame/");
+            game = FileHandlerController.getInstance().loadGameJson(player
+                .getName() + ".json", "src/main/resources/initialGame/");
           } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
           }
           player = game.getPlayer();
           mainGameView.setCharacters(null);
-          mainGameView.updateUIWithPassage(textFlow,game.begin());
+          mainGameView.updateUIWithPassage(textFlow, game.begin());
         }
       }
     });
@@ -445,7 +459,8 @@ public class MainGameController {
    */
   public VBox setupGoals() {
     VBox goalsVbox = new VBox();
-    goalsVbox.getChildren().add(new Label(languageController.getTranslation(Dictionary.GOALS_IN_GAME.getKey())));
+    goalsVbox.getChildren().add(new Label(languageController.getTranslation(Dictionary
+        .GOALS_IN_GAME.getKey())));
     for (Goal goal : game.getGoals()) {
       HBox goalHbox = new HBox();
       Label goalLabel = new Label(goal.toString());
@@ -457,7 +472,8 @@ public class MainGameController {
       } else if (goal.getClass() == HealthGoal.class) {
         progress = (double) player.getHealth() / ((HealthGoal) goal).getMinimumHealth();
       } else if (goal.getClass() == InventoryGoal.class) {
-        progress = (double) player.getInventory().size() / ((InventoryGoal) goal).getMandatoryItems().size();
+        progress = (double) player.getInventory().size() / ((InventoryGoal) goal)
+            .getMandatoryItems().size();
       } else if (goal.getClass() == GoldGoal.class) {
         progress = (double) player.getGold() / ((GoldGoal) goal).getMinimumGold();
       }
