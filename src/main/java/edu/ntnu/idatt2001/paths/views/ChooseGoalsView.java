@@ -183,7 +183,16 @@ public class ChooseGoalsView extends View {
 
       Button button = new Button(languageController.getTranslation(Dictionary.ADD_GOAL.getKey()));
       button.setId("subMenuButton");
-      button.setOnAction(e -> goals.add(chooseGoalsController.handleAddGoal(comboBox, textField)));
+      button.setOnAction(e -> {
+        try {
+          goals.add(chooseGoalsController.handleAddGoal(comboBox, textField));
+        } catch (IllegalArgumentException ex) {
+          ShowAlert.showError(languageController.getTranslation(Dictionary
+                  .INVALID_INPUT.getKey()),
+              languageController.getTranslation(Dictionary
+                  .GOAL_HEALTH_SCORE_GOALS_MUST_BE_POSITIVE.getKey()));
+        }
+      });
 
       TableView<Goal> tableView = new TableView<>();
       TableColumn<Goal, String> tableColumn1 = new TableColumn<>(languageController
@@ -195,21 +204,23 @@ public class ChooseGoalsView extends View {
       tableColumn2.setCellValueFactory(cellData -> {
         Goal goal = cellData.getValue();
         String goalValueString = "";
-        if (goal instanceof GoldGoal goldGoal) {
-          goalValueString = Integer.toString(goldGoal.getMinimumGold());
-        } else if (goal instanceof HealthGoal healthGoal) {
-          goalValueString = Integer.toString(healthGoal.getMinimumHealth());
-        } else if (goal instanceof ScoreGoal scoreGoal) {
-          goalValueString = Integer.toString(scoreGoal.getMinimumScore());
-        } else if (goal instanceof InventoryGoal inventoryGoal) {
-          StringBuilder stringBuilder = new StringBuilder();
-          for (String item : inventoryGoal.getMandatoryItems()) {
-            stringBuilder.append(item).append(", ");
+          if (goal instanceof GoldGoal goldGoal) {
+            goalValueString = Integer.toString(goldGoal.getMinimumGold());
+          } else if (goal instanceof HealthGoal healthGoal) {
+            goalValueString = Integer.toString(healthGoal.getMinimumHealth());
+          } else if (goal instanceof ScoreGoal scoreGoal) {
+            goalValueString = Integer.toString(scoreGoal.getMinimumScore());
+          } else if (goal instanceof InventoryGoal inventoryGoal) {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (String item : inventoryGoal.getMandatoryItems()) {
+              stringBuilder.append(item).append(", ");
+            }
+            goalValueString = stringBuilder.toString();
           }
-          goalValueString = stringBuilder.toString();
-        }
+
         return new SimpleStringProperty(goalValueString);
       });
+
 
       tableView.getColumns().addAll(tableColumn1, tableColumn2);
 
