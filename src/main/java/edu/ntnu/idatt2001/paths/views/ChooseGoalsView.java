@@ -126,21 +126,22 @@ public class ChooseGoalsView extends View {
       templates.setPromptText(languageController.getTranslation(Dictionary
           .SELECT_TEMPLATE.getKey()));
 
-      Button upload = new Button(languageController.getTranslation(Dictionary
-          .UPLOAD_FILE.getKey()));
+      Button upload = new Button(languageController.getTranslation(Dictionary.UPLOAD_FILE.getKey()));
       upload.setId("subMenuButton");
       upload.setOnAction(e -> {
         try {
+          int initialTemplateCount = templates.getItems().size();
           chooseGoalsController.uploadGameFile();
           templates.getItems().clear();
-          templates.getItems().addAll(chooseGoalsController.addTemplates(chooseGoalsController
-              .fetchTemplates("paths")));
-          ShowAlert.showInformation(languageController.getTranslation(Dictionary
-              .UPLOAD_TEMPLATE.getKey()), languageController.getTranslation(Dictionary
-              .UPLOAD_TEMPLATE_SUCCESS.getKey()));
+          templates.getItems().addAll(chooseGoalsController.addTemplates(chooseGoalsController.fetchTemplates("paths")));
+          int updatedTemplateCount = templates.getItems().size(); // Get the updated template count
+          if (updatedTemplateCount > initialTemplateCount) {
+            ShowAlert.showInformation(languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE.getKey()),
+                languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE_SUCCESS.getKey()));
+          }
         } catch (Exception exception) {
-          ShowAlert.showError(languageController.getTranslation(Dictionary
-              .UPLOAD_TEMPLATE.getKey()), languageController.translate(exception.getMessage()));
+          ShowAlert.showError(languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE.getKey()),
+              languageController.translate(exception.getMessage()));
         }
       });
 
