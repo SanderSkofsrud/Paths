@@ -23,13 +23,17 @@ public class HealthAction implements Action {
   }
 
   /**
-   * Executes a gold action on a player.
+   * Executes a health action on a player.
    * Uses the addHealth method in the Player class.
    *
    * @param player the player
+   * @throws IllegalArgumentException if the player's health become less than 0
    */
   @Override
-  public void execute(Player player) {
+  public void execute(Player player) throws IllegalArgumentException {
+    if (player.getHealth() + this.health <= 0) {
+      throw new IllegalArgumentException("You died!");
+    }
     player.addHealth(health);
   }
 
