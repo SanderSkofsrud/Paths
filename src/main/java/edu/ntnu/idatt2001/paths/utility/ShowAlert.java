@@ -1,12 +1,12 @@
 package edu.ntnu.idatt2001.paths.utility;
 
+import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
 
-import java.util.Optional;
 
 /**
  * The show alert class
@@ -31,7 +31,8 @@ public class ShowAlert {
   }
 
   /**
-   * Displays an information alert dialog with the specified title and header text of the Information type.
+   * Displays an information alert dialog with the specified title and
+   * header text of the Information type.
    *
    * @param title The title of the alert dialog.
    * @param headerText The header text of the alert dialog.
@@ -49,7 +50,8 @@ public class ShowAlert {
    * @param headerText The header text of the alert dialog.
    * @return an Optional representing the user's response to the alert dialog.
    */
-  private static Optional<ButtonType> showAlert(Alert.AlertType alertType, String title, String headerText) {
+  private static Optional<ButtonType> showAlert(Alert.AlertType alertType,
+                                                String title, String headerText) {
     Alert alert = new Alert(alertType);
     alert.initModality(Modality.APPLICATION_MODAL);
     alert.initStyle(StageStyle.UNDECORATED);
