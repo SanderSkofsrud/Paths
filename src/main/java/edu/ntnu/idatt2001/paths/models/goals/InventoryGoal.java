@@ -1,8 +1,6 @@
 package edu.ntnu.idatt2001.paths.models.goals;
 
 import edu.ntnu.idatt2001.paths.models.player.Player;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,18 +20,23 @@ public class InventoryGoal implements Goal {
    * Creates a new goal for a certain amount of items.
    * The items are trimmed and converted to lowercase.
    *
-   * @param mandatoryItems the mandatory items - a list of items that must be in the player's inventory
+   * @param mandatoryItems the mandatory items - a list of items that must
+   *                       be in the player's inventory
    * @throws NullPointerException if the list of mandatory items is null
    * @throws IllegalArgumentException if the list of mandatory items is empty
    *
    */
-  public InventoryGoal(List<String> mandatoryItems) {
+  public InventoryGoal(List<String> mandatoryItems)
+      throws NullPointerException, IllegalArgumentException {
     Objects.requireNonNull(mandatoryItems, "Mandatory items cannot be null");
     if (mandatoryItems.isEmpty()) {
       throw new IllegalArgumentException("Mandatory items cannot be empty");
     }
-    (this.mandatoryItems = new ArrayList<>()).addAll
-        (mandatoryItems.stream().map(String::trim).map(String::toLowerCase).toList());
+    List<String> temp = mandatoryItems.stream()
+            .map(String::trim)
+            .map(String::toLowerCase)
+            .toList();
+    this.mandatoryItems = temp;
   }
 
   /**
@@ -46,8 +49,6 @@ public class InventoryGoal implements Goal {
   @Override
   public boolean isFulfilled(Player player) {
     return player.getInventory().containsAll(this.mandatoryItems);
-    // Alternative solution:
-    //return new HashSet<>(player.getInventory()).containsAll(this.mandatoryItems);
   }
 
   /**
@@ -57,7 +58,7 @@ public class InventoryGoal implements Goal {
    */
   @Override
   public String toString() {
-    return "InventoryGoal: " + mandatoryItems ;
+    return "InventoryGoal: " + mandatoryItems;
   }
 
   public List<String> getMandatoryItems() {
