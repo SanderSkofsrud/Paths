@@ -77,19 +77,12 @@ public enum Dictionary {
   LOSE_PROGRESS_HOME("You will lose all progress if you return \nto home without saving."),
   SAVE_EXIT("Save & exit"),
   GAME_HELP("Game help"),
-  GAME_HELP_TEXT("""
-          *The top left bar shows your current health, gold, score and inventory
-
-          *The goals progress bar shows your current progress in the game according to your goals
-
-          *The information bar describes the current passage you are in
-
-          *To play the game you must choose one of the options that appear in the bottom of the screen
-          
-          *You can exit the game at any time by clicking the exit button
-          
-          *You can return to home by clicking on the home button
-          """),
+  GAME_HELP_TEXT("*The top left bar shows your current health, gold, score and inventory"),
+  GAME_HELP_TEXT_1("*The goals progress bar shows your current progress in the game according to your goals "),
+  GAME_HELP_TEXT_2("*The information bar describes the current passage you are in "),
+  GAME_HELP_TEXT_3("*To play the game you must choose one of the options that appear in the bottom of the screen "),
+  GAME_HELP_TEXT_4("*You can exit the game at any time by clicking the exit button "),
+  GAME_HELP_TEXT_5("*You can return to home by clicking on the home button "),
   HOME("Home"),
   RETURN_TO_HOME("You will lose all progress if you return \nto home without saving."),
   SAVE_HOME("Save & home"),
