@@ -201,7 +201,7 @@ public class ChooseGoalsController {
         try {
           addSavedGame(selectedFile.getName(), selectedFile);
         } catch (IOException e) {
-          throw new RuntimeException(e);
+          throw new RuntimeException("Error uploading game file");
         }
       }
     }
@@ -225,7 +225,7 @@ public class ChooseGoalsController {
   public Set<String> addTemplates(Set<String> templates) {
     Set<String> templateNames = new HashSet<>();
     for (String template : templates) {
-      if (!template.endsWith(fileType)) {
+      if (template.endsWith(fileType)) {
         templateNames.add(template.replace(".paths", ""));
       }
     }

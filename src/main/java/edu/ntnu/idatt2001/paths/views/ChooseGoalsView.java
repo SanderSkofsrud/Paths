@@ -127,10 +127,14 @@ public class ChooseGoalsView extends View {
     Button upload = new Button(languageController.getTranslation(Dictionary.UPLOAD_FILE.getKey()));
     upload.setId("subMenuButton");
     upload.setOnAction(e -> {
-      chooseGoalsController.uploadGameFile();
-      templates.getItems().clear();
-      templates.getItems().addAll(chooseGoalsController.addTemplates(chooseGoalsController.fetchTemplates("paths")));
-      ShowAlert.showInformation(languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE.getKey()), languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE_SUCCESS.getKey()));
+      try {
+        chooseGoalsController.uploadGameFile();
+        templates.getItems().clear();
+        templates.getItems().addAll(chooseGoalsController.addTemplates(chooseGoalsController.fetchTemplates("paths")));
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE.getKey()), languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE_SUCCESS.getKey()));
+      } catch (Exception exception) {
+        ShowAlert.showError(languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE.getKey()), languageController.translate(exception.getMessage()));
+      }
     });
 
     predefinedGoals.getChildren().addAll(standardGoals, checkBox1, checkBox2, checkBox3, checkBox4, impossibleGoals, checkBox5, checkBox6, templatesLabel, templates, upload);
