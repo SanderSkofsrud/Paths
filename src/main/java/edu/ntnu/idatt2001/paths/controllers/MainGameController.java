@@ -111,8 +111,8 @@ public class MainGameController {
 
       if (imageStream != null) {
         ImageView itemImageView = new ImageView(new Image(imageStream));
-        itemImageView.setFitWidth(20);
-        itemImageView.setFitHeight(20);
+        itemImageView.setFitWidth(35);
+        itemImageView.setFitHeight(35);
         inventoryImageBox.getChildren().add(itemImageView);
       } else {
         inventoryImageBox.getChildren().add(new Label(item));
@@ -159,7 +159,12 @@ public class MainGameController {
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setTitle(languageController.getTranslation(Dictionary.GAME_HELP.getKey()));
       alert.setHeaderText(languageController.getTranslation(Dictionary.GAME_HELP.getKey()));
-      alert.setContentText(languageController.getTranslation(Dictionary.GAME_HELP_TEXT.getKey()));
+      alert.setContentText(languageController.getTranslation(Dictionary.GAME_HELP_TEXT.getKey())
+              + "\n\n" + languageController.getTranslation(Dictionary.GAME_HELP_TEXT_1.getKey())
+              + "\n\n" + languageController.getTranslation(Dictionary.GAME_HELP_TEXT_2.getKey())
+              + "\n\n" + languageController.getTranslation(Dictionary.GAME_HELP_TEXT_3.getKey())
+              + "\n\n" + languageController.getTranslation(Dictionary.GAME_HELP_TEXT_4.getKey())
+              + "\n\n" + languageController.getTranslation(Dictionary.GAME_HELP_TEXT_5.getKey()));
 
       DialogPane dialogPane = alert.getDialogPane();
       dialogPane.getStylesheets().add("stylesheet.css");
@@ -192,11 +197,15 @@ public class MainGameController {
           alert.close();
         } else if (result.get() == saveAndGoHome) {
           FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
-          gameController.resetGame(); // Add this line
+          gameController.resetGame();
+          goals.clear();
+          playerController.resetPlayer();
           screenController.activate("MainMenu");
           mainGameView.resetPane();
         } else if (result.get() == goHomeWithoutSaving) {
           gameController.resetGame(); // Add this line
+          goals.clear();
+          playerController.resetPlayer();
           screenController.activate("MainMenu");
           mainGameView.resetPane();
         }
@@ -256,11 +265,19 @@ public class MainGameController {
 
   public Label createLabel(String text, String type) {
     Label label = new Label();
-    label.setPadding(new Insets(10, 10, 10, 10));
     switch (type.toLowerCase()) {
-      case "health" -> label.setText(text + ": " + player.getHealth());
-      case "score" -> label.setText(text + ": " + player.getScore());
-      case "gold" -> label.setText(text + ": " + player.getGold());
+      case "health" -> {
+        label.setText(text + ": " + player.getHealth());
+        label.setPadding(new Insets(0, 10, 0, 0));
+      }
+      case "score" -> {
+        label.setText(text + ": " + player.getScore());
+        label.setPadding(new Insets(10, 10, 10, 10));
+      }
+      case "gold" -> {
+        label.setText(text + ": " + player.getGold());
+        label.setPadding(new Insets(10, 10, 10, 10));
+      }
       default -> label.setText(text);
     }
     return label;

@@ -252,5 +252,6 @@ public class ChooseGoalsView extends View {
    */
   public void resetPane() {
     stackPane.getChildren().clear();
+    goals.clear();
   }
 }

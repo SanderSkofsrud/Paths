@@ -180,6 +180,7 @@ public class ChooseGoalsController {
     fileHandlerController.saveGameJson(playerController.getPlayer().getName(), "src/main/resources/initialGame/", game);
 
     gameController.setGame(game);
+    playerController.setPlayer(null);
   }
 
   public void uploadGameFile() {
