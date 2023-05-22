@@ -1,4 +1,5 @@
 package edu.ntnu.idatt2001.paths.models.goals;
+
 import java.util.List;
 
 /**
@@ -30,7 +31,8 @@ public class GoalFactory {
 
   /**
    * Create a new goal with a list of items.
-   * The createInventoryGoal method is used to create a goal where the player has to collect a list of items.
+   * The createInventoryGoal method is used to create a goal where the
+   * player has to collect a list of items.
    *
    * @param items the items the player has to collect
    * @return the goal that is created
