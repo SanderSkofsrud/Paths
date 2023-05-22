@@ -122,6 +122,7 @@ public class MainGameController {
   }
 
   public Button createExitButton() {
+    try {
     Button exitButton = new Button();
     exitButton.setOnAction(event -> {
       Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -143,7 +144,11 @@ public class MainGameController {
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == saveAndExit) {
-          FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
+          try {
+            FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
+          } catch (IllegalArgumentException e) {
+            throw new RuntimeException(e.getMessage());
+          }
           Platform.exit();
         } else if (result.get() == exitWithoutSaving) {
           Platform.exit();
@@ -151,6 +156,9 @@ public class MainGameController {
       }
     });
     return exitButton;
+  } catch (Exception e) {
+      throw new RuntimeException(e.getMessage());
+    }
   }
 
   public Button createHelpButton() {
@@ -196,7 +204,11 @@ public class MainGameController {
         if (result.get() == cancel) {
           alert.close();
         } else if (result.get() == saveAndGoHome) {
-          FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
+          try {
+            FileHandlerController.getInstance().saveGameJson(player.getName(), null, game);
+          } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+          }
           gameController.resetGame();
           goals.clear();
           playerController.resetPlayer();

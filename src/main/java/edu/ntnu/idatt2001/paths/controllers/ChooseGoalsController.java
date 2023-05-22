@@ -77,7 +77,7 @@ public class ChooseGoalsController {
         }
       }
     } catch (IOException e) {
-      e.printStackTrace();
+      throw new RuntimeException("Failed to load files from file system");
     }
     return fileNames;
   }
@@ -145,14 +145,18 @@ public class ChooseGoalsController {
   }
 
   public void validateGame(ComboBox<String> templates) {
-    if (goals.isEmpty() && templates.getValue() == null) {
-      ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NEED_SELECTION.getKey()));
-    } else if (templates.getValue() == null) {
-      ShowAlert.showInformation(languageController.getTranslation(Dictionary.TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.TEMPLATE_NEED_SELECTION.getKey()));
-    } else if (goals.isEmpty()) {
-      ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_NEED_SELECTION.getKey()));
-    } else {
-      createGame(templates);
+    try {
+      if (goals.isEmpty() && templates.getValue() == null) {
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NEED_SELECTION.getKey()));
+      } else if (templates.getValue() == null) {
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary.TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.TEMPLATE_NEED_SELECTION.getKey()));
+      } else if (goals.isEmpty()) {
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_NEED_SELECTION.getKey()));
+      } else {
+        createGame(templates);
+      }
+    } catch (Exception e) {
+      throw new RuntimeException(e.getMessage());
     }
   }
   public void createGame(ComboBox<String> templates) {
@@ -176,8 +180,12 @@ public class ChooseGoalsController {
       throw new RuntimeException(e);
     }
 
-    fileHandlerController.saveGameJson(playerController.getPlayer().getName(), null, game);
-    fileHandlerController.saveGameJson(playerController.getPlayer().getName(), "src/main/resources/initialGame/", game);
+    try {
+      fileHandlerController.saveGameJson(playerController.getPlayer().getName(), null, game);
+      fileHandlerController.saveGameJson(playerController.getPlayer().getName(), "src/main/resources/initialGame/", game);
+    } catch (IllegalArgumentException e) {
+      throw new RuntimeException(e.getMessage());
+    }
 
     gameController.setGame(game);
     playerController.setPlayer(null);
