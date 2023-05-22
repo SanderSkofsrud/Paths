@@ -1,28 +1,15 @@
 package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.*;
-import edu.ntnu.idatt2001.paths.models.Game;
-import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.utility.ShowAlert;
-import javafx.animation.*;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.ReadOnlyStringWrapper;
-import javafx.beans.property.SimpleDoubleProperty;
+import java.io.File;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
-import javafx.stage.FileChooser;
-import javafx.util.Duration;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 /**
  * The type Load game view.
@@ -31,7 +18,7 @@ import java.io.IOException;
  * @author Helle R. and Sander S.
  * @version 0.1 08.05.2023
  */
-public class LoadGameView extends View{
+public class LoadGameView extends View {
   /**
    * The Border pane is the main pane of the GUI.
    */
@@ -46,16 +33,6 @@ public class LoadGameView extends View{
    * The screenController is used to switch between the different views of the GUI.
    */
   private ScreenController screenController;
-  /**
-   * The Game.
-   * The game to be loaded.
-   */
-  private Game game;
-  /**
-   * The Game controller.
-   * The gameController is used to control the game.
-   */
-  private GameController gameController = GameController.getInstance();
   /**
    * The File handler controller.
    */
@@ -109,7 +86,8 @@ public class LoadGameView extends View{
     hBox.getChildren().add(jsonTableView);
     hBox.setAlignment(Pos.CENTER);
 
-    ImageView backImage = new ImageView(new Image(getClass().getResourceAsStream("/images/back.png")));
+    ImageView backImage = new ImageView(new Image(getClass()
+        .getResourceAsStream("/images/back.png")));
     Button backButton = new Button();
     backButton.setId("seeThroughButton");
     backButton.setGraphic(backImage);
@@ -127,7 +105,9 @@ public class LoadGameView extends View{
     vBox.setAlignment(Pos.CENTER);
 
     stackPane.getChildren().add(vBox);
-    borderPane.setBackground(new Background(new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true))));
+    borderPane.setBackground(new Background(new BackgroundImage(background,
+        BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+        new BackgroundSize(1.0, 1.0, true, true, false, true))));
     borderPane.setTop(backButton);
     borderPane.getStylesheets().add("stylesheet.css");
   }

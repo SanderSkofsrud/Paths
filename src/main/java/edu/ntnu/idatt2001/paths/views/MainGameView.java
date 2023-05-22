@@ -2,43 +2,23 @@ package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.models.*;
-import edu.ntnu.idatt2001.paths.models.actions.Action;
-import edu.ntnu.idatt2001.paths.models.goals.*;
-import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.utility.ShowAlert;
 import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
-import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.animation.TranslateTransition;
-import javafx.application.Platform;
-import javafx.beans.binding.Bindings;
-import javafx.beans.binding.BooleanBinding;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 import javafx.util.Duration;
 import javafx.util.Pair;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 /**
  * The type Main game view.
@@ -47,7 +27,7 @@ import java.util.Optional;
  * @author Helle R. and Sander S.
  * @version 0.1 08.05.2023
  */
-public class MainGameView extends View{
+public class MainGameView extends View {
   /**
    * The Border pane.
    * The borderPane is the main pane of the GUI.
@@ -63,31 +43,12 @@ public class MainGameView extends View{
    * The screenController is used to switch between the different views of the GUI.
    */
   private ScreenController screenController;
-  /**
-   * The Game controller.
-   * The gameController is used to control the game.
-   */
-  private GameController gameController = GameController.getInstance();
-  /**
-   * The Game.
-   * The game is the game that is being played.
-   */
-  private Game game;
+
   /**
    * The Current passage.
    * The currentPassage is the passage that the player is currently in.
    */
   private Passage currentPassage;
-  /**
-   * The player.
-   * The player is the player that is playing the game.
-   */
-  private Player player;
-  /**
-   * The Goals.
-   * The goals are the goals of the game.
-   */
-  private List<Goal> goals;
   /**
    * The Passage content.
    * The passageContent is the text of the passage that the player is currently in.
@@ -133,12 +94,6 @@ public class MainGameView extends View{
    * The inventoryBox is the box that contains the inventory of the player.
    */
   private HBox inventoryBox = new HBox();
-  /**
-   * The array words.
-   * The words array is the array that contains the words of the passage that the player is currently in.
-   * The words are stored in an array so that they can be displayed in a text area.
-   */
-  private String[] words;
   private char[] characters;
   /**
    * The timeline.
@@ -146,24 +101,6 @@ public class MainGameView extends View{
    * The timeline is used to animate the text of the passage.
    */
   private Timeline timeline;
-  /**
-   * The Story.
-   * The story is the story that the player is playing.
-   */
-  private Story story;
-  /**
-   * The Previous passage.
-   * The previousPassage is the passage that the player was in before the current passage.
-   * Used for redo.
-   */
-  private Passage previousPassage;
-
-  private ShowAlert showAlert = new ShowAlert();
-  /**
-   * The File handler controller.
-   */
-  FileHandlerController fileHandlerController = FileHandlerController.getInstance();
-
   /**
    * The Player controller.
    */
@@ -173,13 +110,13 @@ public class MainGameView extends View{
   private ImageView soundImageView;
   private boolean isMuted = false;
   private SoundPlayer soundPlayerLoop = new SoundPlayer();
-  private double playerStartHealth;
   private boolean hasPlayed = false;
   /**
    * Instantiates a new Main game view.
    *
    * @param screenController the screen controller
    */
+
   public MainGameView(ScreenController screenController) {
     borderPane = new BorderPane();
     stackPane = new StackPane();
@@ -189,6 +126,7 @@ public class MainGameView extends View{
 
   /**
    * Returns the pane of the GUI.
+   *
    * @return the pane of the GUI.
    */
   @Override
@@ -247,7 +185,8 @@ public class MainGameView extends View{
     passageContent.setStyle("-fx-background-color: transparent;");
     textFlow.setStyle("-fx-background-color: transparent;");
 
-    EventHandler<MouseEvent> setOnMouseClicked = mainGameController.createMouseClickedEventHandler(textFlow, passageContent);
+    EventHandler<MouseEvent> setOnMouseClicked = mainGameController
+        .createMouseClickedEventHandler(textFlow, passageContent);
 
     passageContent.setOnMouseClicked(setOnMouseClicked);
     textFlow.setOnMouseClicked(setOnMouseClicked);
@@ -261,7 +200,8 @@ public class MainGameView extends View{
     info.setAlignment(Pos.CENTER);
     info.setPadding(new Insets(10, 10, 10, 10));
 
-    ImageView characterImage = new ImageView(new Image(getClass().getResourceAsStream("/images/" + playerController.getActiveCharacter())));
+    ImageView characterImage = new ImageView(new Image(getClass()
+        .getResourceAsStream("/images/" + playerController.getActiveCharacter())));
     characterImage.setFitHeight(250);
     characterImage.setFitWidth(250);
     characterImage.setPreserveRatio(true);
@@ -280,7 +220,9 @@ public class MainGameView extends View{
     textFlow.setUserData(updateUIWithPassage(textFlow, currentPassage));
 
     Image background = new Image(getClass().getResourceAsStream("/images/gameBackground.png"));
-    BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
+    BackgroundImage backgroundImage = new BackgroundImage(background,
+        BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+        new BackgroundSize(1.0, 1.0, true, true, false, true));
     borderPane.setBackground(new Background(backgroundImage));
     borderPane.getStylesheets().add("stylesheet.css");
   }
@@ -297,7 +239,6 @@ public class MainGameView extends View{
     inventoryBox.getChildren().clear();
     inventoryImageBox.getChildren().clear();
     characters = null;
-    words = null;
     timeline.stop();
   }
 
@@ -316,10 +257,10 @@ public class MainGameView extends View{
     setupAttributesBox();
     setupTopBar(textFlow);
 
-    previousPassage = currentPassage;
     currentPassage = passage;
 
-    String translatedContent = languageController.translate(mainGameController.setupCurrentPassage());
+    String translatedContent = languageController.translate(mainGameController
+        .setupCurrentPassage());
 
     characters = translatedContent.toCharArray();
 
@@ -356,8 +297,10 @@ public class MainGameView extends View{
             characters = null;
             timeline.stop();
             passageContent.clear();
-            passageContent.setText(languageController.getTranslation(Dictionary.LOST_GAME.getKey()));
-            Button credits = new Button(languageController.getTranslation(Dictionary.CREDITS.getKey()));
+            passageContent.setText(languageController.getTranslation(Dictionary
+                .LOST_GAME.getKey()));
+            Button credits = new Button(languageController.getTranslation(Dictionary
+                .CREDITS.getKey()));
             credits.setOnAction(event1 -> {
               screenController.activate("FinalPassageView");
               resetPane();
@@ -368,7 +311,9 @@ public class MainGameView extends View{
             return;
           }
           if (mainGameController.getGame().getStory().getBrokenLinks().contains(link)) {
-            ShowAlert.showInformation(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()), languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
+            ShowAlert.showInformation(languageController.getTranslation(Dictionary
+                .BROKEN_LINK.getKey()), languageController.getTranslation(Dictionary
+                .LINK_BROKEN.getKey()));
             button.setDisable(true);
           } else {
             if (mainGameController.minigameCheck() && !hasPlayed) {
@@ -394,7 +339,8 @@ public class MainGameView extends View{
         button.setId("subMenuButton");
       }
 
-      textFlow.setUserData(new Pair<>(timeline, currentPassage)); // Store the Pair object in userData
+      // Store the Pair object in userData
+      textFlow.setUserData(new Pair<>(timeline, currentPassage));
       timeline.play();
       timeline.setOnFinished(event -> soundPlayer.stop());
       return new Pair<>(timeline, currentPassage);
@@ -433,17 +379,21 @@ public class MainGameView extends View{
 
     ProgressBar healthBar = mainGameController.createHealthBar();
 
-    playerHealthLabel = mainGameController.createLabel(languageController.getTranslation(Dictionary.HEALTH.getKey()), "Health");
+    playerHealthLabel = mainGameController.createLabel(languageController
+        .getTranslation(Dictionary.HEALTH.getKey()), "Health");
 
     HBox healthBox = new HBox(playerHealthLabel, healthBar);
     healthBox.setPadding(new Insets(10, 10, 0, 10));
 
-    playerGoldLabel = mainGameController.createLabel(languageController.getTranslation(Dictionary.GOLD.getKey()), "Gold");
-    playerScoreLabel = mainGameController.createLabel(languageController.getTranslation(Dictionary.SCORE.getKey()), "Score");
+    playerGoldLabel = mainGameController.createLabel(languageController
+        .getTranslation(Dictionary.GOLD.getKey()), "Gold");
+    playerScoreLabel = mainGameController.createLabel(languageController
+        .getTranslation(Dictionary.SCORE.getKey()), "Score");
 
     inventoryImageBox = mainGameController.createInventoryBox();
 
-    playerInventoryLabel = new Label(languageController.getTranslation(Dictionary.INVENTORY.getKey()) + ": ");
+    playerInventoryLabel = new Label(languageController
+        .getTranslation(Dictionary.INVENTORY.getKey()) + ": ");
 
     inventoryBox = new HBox(playerInventoryLabel, inventoryImageBox);
     inventoryBox.setPadding(new Insets(10, 10, 0, 10));
@@ -501,7 +451,8 @@ public class MainGameView extends View{
     try {
       exitButton = mainGameController.createExitButton();
     } catch (RuntimeException e) {
-      ShowAlert.showError(languageController.translate(e.getMessage()), languageController.translate(e.getMessage()));
+      ShowAlert.showError(languageController.translate(e.getMessage()),
+          languageController.translate(e.getMessage()));
     }
     exitButton.setGraphic(exitImageView);
     exitButton.setStyle("-fx-background-color: transparent;");
@@ -514,7 +465,8 @@ public class MainGameView extends View{
     try {
       homeButton = mainGameController.createHomeButton(screenController);
     } catch (RuntimeException e) {
-      ShowAlert.showError(languageController.translate(e.getMessage()), languageController.translate(e.getMessage()));
+      ShowAlert.showError(languageController.translate(e.getMessage()),
+          languageController.translate(e.getMessage()));
     }
     homeButton.setGraphic(homeImageView);
     homeButton.setStyle("-fx-background-color: transparent;");
@@ -524,7 +476,8 @@ public class MainGameView extends View{
       restartButton = mainGameController.createRestartButton(textFlow);
     } catch (RuntimeException e) {
       restartButton.setDisable(true);
-      ShowAlert.showError(languageController.translate(e.getMessage()), languageController.translate(e.getMessage()));
+      ShowAlert.showError(languageController.translate(e.getMessage()),
+          languageController.translate(e.getMessage()));
     }
     restartButton.setGraphic(restartImageView);
     restartButton.setStyle("-fx-background-color: transparent;");
@@ -533,11 +486,13 @@ public class MainGameView extends View{
     HBox topRightBox = new HBox();
     topRightBox.setAlignment(Pos.TOP_RIGHT);
     topRightBox.setPadding(new Insets(10, 10, 10, 10));
-    topRightBox.getChildren().addAll(restartButton, homeButton, helpButton, exitButton, soundButton);
+    topRightBox.getChildren().addAll(restartButton, homeButton, helpButton,
+        exitButton, soundButton);
 
     VBox goalsVbox = goalsVbox();
 
-    attributesBox.getChildren().addAll(healthBox, playerGoldLabel, playerScoreLabel, inventoryBox, goalsVbox);
+    attributesBox.getChildren().addAll(healthBox, playerGoldLabel, playerScoreLabel,
+        inventoryBox, goalsVbox);
 
     HBox topBox = new HBox();
     topBox.getChildren().addAll(attributesBox, topRightBox);

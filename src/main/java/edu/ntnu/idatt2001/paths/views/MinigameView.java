@@ -4,13 +4,13 @@ import edu.ntnu.idatt2001.paths.controllers.LanguageController;
 import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.player.Player;
+import java.util.Random;
 import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
-import java.util.Random;
 
 /**
  * The type Minigame view.
@@ -22,7 +22,7 @@ import java.util.Random;
  * @author Helle R. and Sander S.
  * @version 0.1 08.05.2023
  */
-public class MinigameView extends View{
+public class MinigameView extends View {
   /**
    * The Border pane.
    * The borderPane is the main pane of the GUI.
@@ -103,7 +103,9 @@ public class MinigameView extends View{
     stackPane.getChildren().add(gridPane);
     borderPane.setCenter(stackPane);
     Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
-    BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
+    BackgroundImage backgroundImage = new BackgroundImage(background,
+        BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+        new BackgroundSize(1.0, 1.0, true, true, false, true));
     borderPane.setBackground(new Background(backgroundImage));
     borderPane.getStylesheets().add("stylesheet.css");
   }
@@ -151,7 +153,8 @@ public class MinigameView extends View{
    */
   private void computerMove() {
     Random random = new Random();
-    int i, j;
+    int i;
+    int j;
     do {
       i = random.nextInt(3);
       j = random.nextInt(3);
@@ -171,9 +174,9 @@ public class MinigameView extends View{
   private void checkWinCondition(String player) {
     // Check rows
     for (int i = 0; i < 3; i++) {
-      if (buttons[i][0].getText().equals(player) &&
-              buttons[i][1].getText().equals(player) &&
-              buttons[i][2].getText().equals(player)) {
+      if (buttons[i][0].getText().equals(player)
+          && buttons[i][1].getText().equals(player)
+          && buttons[i][2].getText().equals(player)) {
         isFinished = true;
         announceWinner(player);
         return;
@@ -182,9 +185,9 @@ public class MinigameView extends View{
 
     // Check columns
     for (int i = 0; i < 3; i++) {
-      if (buttons[0][i].getText().equals(player) &&
-              buttons[1][i].getText().equals(player) &&
-              buttons[2][i].getText().equals(player)) {
+      if (buttons[0][i].getText().equals(player)
+          && buttons[1][i].getText().equals(player)
+          && buttons[2][i].getText().equals(player)) {
         isFinished = true;
         announceWinner(player);
         return;
@@ -192,18 +195,18 @@ public class MinigameView extends View{
     }
 
     // Check diagonal (top-left to bottom-right)
-    if (buttons[0][0].getText().equals(player) &&
-            buttons[1][1].getText().equals(player) &&
-            buttons[2][2].getText().equals(player)) {
+    if (buttons[0][0].getText().equals(player)
+        && buttons[1][1].getText().equals(player)
+        && buttons[2][2].getText().equals(player)) {
       isFinished = true;
       announceWinner(player);
       return;
     }
 
     // Check diagonal (top-right to bottom-left)
-    if (buttons[0][2].getText().equals(player) &&
-            buttons[1][1].getText().equals(player) &&
-            buttons[2][0].getText().equals(player)) {
+    if (buttons[0][2].getText().equals(player)
+        && buttons[1][1].getText().equals(player)
+        && buttons[2][0].getText().equals(player)) {
       isFinished = true;
       announceWinner(player);
       return;
