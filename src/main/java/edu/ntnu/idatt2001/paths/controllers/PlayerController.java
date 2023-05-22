@@ -107,6 +107,13 @@ public class PlayerController {
   public void setPlayer(Player player) {
     this.player = player;
   }
+  /**
+   * Resets the player.
+   */
+  public void resetPlayer(){
+    player = null;
+    inventory.clear();
+  }
 
   /**
    * Returns the active character model.

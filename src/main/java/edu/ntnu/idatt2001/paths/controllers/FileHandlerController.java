@@ -68,7 +68,7 @@ public class FileHandlerController {
    * @param name the name of the player, and the name of the file
    * @param game the game to be saved
    */
-  public void saveGameJson(String name, String path, Game game) {
+  public void saveGameJson(String name, String path, Game game) throws IllegalArgumentException {
     if (path == null) {
       path = jsonPath;
     }

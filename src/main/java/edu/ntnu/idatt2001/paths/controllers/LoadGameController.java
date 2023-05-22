@@ -135,7 +135,7 @@ public class LoadGameController {
     try {
       game = fileHandlerController.loadGameJson(file.getName(), null);
     } catch (FileNotFoundException | IllegalArgumentException e) {
-      System.out.println("Incorrect file format: " + e.getMessage());
+      throw new RuntimeException("Failed to load game from file", e);
     }
     List<Link> brokenLinks = null;
     if (game != null) {
@@ -150,6 +150,7 @@ public class LoadGameController {
   }
 
   public TableView<File> createTableView(ScreenController screenController) {
+    try {
     TableView<File> jsonTableView = new TableView<>();
     TableColumn<File, String> fileNameColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_NAME.getKey()));
     fileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getName()));
@@ -251,5 +252,9 @@ public class LoadGameController {
     }
     jsonTableView.setPrefWidth(720);
     return jsonTableView;
+  }
+  catch (RuntimeException e) {
+    throw new RuntimeException(e.getMessage());
+  }
   }
 }

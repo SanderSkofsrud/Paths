@@ -457,7 +457,7 @@ public class MainGameView extends View{
     exitImageView.setFitWidth(30);
     exitImageView.setFitHeight(30);
 
-    ImageView helpImageView= new ImageView(helpImage);
+    ImageView helpImageView = new ImageView(helpImage);
     helpImageView.setFitWidth(30);
     helpImageView.setFitHeight(30);
 
@@ -497,7 +497,12 @@ public class MainGameView extends View{
       }
     });
 
-    Button exitButton = mainGameController.createExitButton();
+    Button exitButton = null;
+    try {
+      exitButton = mainGameController.createExitButton();
+    } catch (RuntimeException e) {
+      ShowAlert.showError(languageController.translate(e.getMessage()), languageController.translate(e.getMessage()));
+    }
     exitButton.setGraphic(exitImageView);
     exitButton.setStyle("-fx-background-color: transparent;");
 
@@ -505,11 +510,22 @@ public class MainGameView extends View{
     helpButton.setGraphic(helpImageView);
     helpButton.setStyle("-fx-background-color: transparent;");
 
-    Button homeButton = mainGameController.createHomeButton(screenController);
+    Button homeButton = null;
+    try {
+      homeButton = mainGameController.createHomeButton(screenController);
+    } catch (RuntimeException e) {
+      ShowAlert.showError(languageController.translate(e.getMessage()), languageController.translate(e.getMessage()));
+    }
     homeButton.setGraphic(homeImageView);
     homeButton.setStyle("-fx-background-color: transparent;");
 
-    Button restartButton = mainGameController.createRestartButton(textFlow);
+    Button restartButton = null;
+    try {
+      restartButton = mainGameController.createRestartButton(textFlow);
+    } catch (RuntimeException e) {
+      restartButton.setDisable(true);
+      ShowAlert.showError(languageController.translate(e.getMessage()), languageController.translate(e.getMessage()));
+    }
     restartButton.setGraphic(restartImageView);
     restartButton.setStyle("-fx-background-color: transparent;");
 
