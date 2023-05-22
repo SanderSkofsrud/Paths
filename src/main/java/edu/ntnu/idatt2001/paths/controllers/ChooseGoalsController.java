@@ -113,11 +113,12 @@ public class ChooseGoalsController {
   public Goal handleAddGoal(ComboBox comboBox, TextField textField) {
     if (comboBox.getValue() != null && !textField.getText().isEmpty()) {
       int value = 0;
-      String stringValue = null;
+      String stringValue = textField.getText();
       try {
         value = Integer.parseInt(textField.getText());
       } catch (NumberFormatException ex) {
-        stringValue = textField.getText();
+        throw new NumberFormatException(languageController.getTranslation(
+                Dictionary.INVALID_GOAL_VALUE.getKey()));
       }
       String selectedTranslatedValue = comboBox.getValue().toString();
       String selectedValue = languageController.translateToEnglish(selectedTranslatedValue
@@ -125,9 +126,19 @@ public class ChooseGoalsController {
       GoalEnum type = GoalEnum.valueOf(selectedValue);
       Goal goal = null;
       if (type.equals(GoalEnum.INVENTORY)) {
-        goal = GoalFactory.createInventoryGoal(stringValue);
+        try {
+          goal = GoalFactory.createInventoryGoal(stringValue);
+        } catch (IllegalArgumentException ex) {
+          throw new IllegalArgumentException(languageController.getTranslation(
+                  Dictionary.INVALID_INVENTORY_GOAL.getKey()));
+        }
       } else {
-        goal = GoalFactory.createGoal(type, value);
+        try {
+          goal = GoalFactory.createGoal(type, value);
+        } catch (IllegalArgumentException ex) {
+          throw new IllegalArgumentException(languageController.getTranslation(
+                  Dictionary.INVALID_GOAL_VALUE.getKey()));
+        }
       }
 
       boolean isGoalAlreadyAdded = false;
@@ -195,17 +206,14 @@ public class ChooseGoalsController {
   public void validateGame(ComboBox<String> templates) {
     try {
       if (goals.isEmpty() && templates.getValue() == null) {
-        ShowAlert.showInformation(languageController.getTranslation(Dictionary
-            .GOALS_AND_TEMPLATE_NOT_SELECTED.getKey()), languageController
-            .getTranslation(Dictionary.GOALS_AND_TEMPLATE_NEED_SELECTION.getKey()));
+        throw new RuntimeException(languageController.getTranslation(Dictionary
+            .GOALS_AND_TEMPLATE_NOT_SELECTED.getKey()));
       } else if (templates.getValue() == null) {
-        ShowAlert.showInformation(languageController.getTranslation(Dictionary
-            .TEMPLATE_NOT_SELECTED.getKey()), languageController
-            .getTranslation(Dictionary.TEMPLATE_NEED_SELECTION.getKey()));
+        throw new RuntimeException(languageController.getTranslation(Dictionary
+            .TEMPLATE_NOT_SELECTED.getKey()));
       } else if (goals.isEmpty()) {
-        ShowAlert.showInformation(languageController.getTranslation(Dictionary
-            .GOALS_NOT_SELECTED.getKey()), languageController
-            .getTranslation(Dictionary.GOALS_NEED_SELECTION.getKey()));
+        throw new RuntimeException(languageController.getTranslation(Dictionary
+            .GOALS_NOT_SELECTED.getKey()));
       } else {
         createGame(templates);
       }

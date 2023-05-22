@@ -1,11 +1,11 @@
 package edu.ntnu.idatt2001.paths.views;
 
-import edu.ntnu.idatt2001.paths.controllers.*;
+import edu.ntnu.idatt2001.paths.controllers.ChooseGoalsController;
+import edu.ntnu.idatt2001.paths.controllers.LanguageController;
+import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.goals.*;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.utility.ShowAlert;
-import java.util.Set;
-
 import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -17,6 +17,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+
+import java.util.Set;
 
 /**
  * The type Choose goals view.
@@ -89,7 +91,7 @@ public class ChooseGoalsView extends View {
   public void setup() {
     try {
       ImageView imageView = new ImageView(new Image(getClass()
-          .getResourceAsStream("/images/goals.png")));
+              .getResourceAsStream("/images/goals.png")));
       HBox hBox = new HBox();
       hBox.setSpacing(25);
       hBox.setAlignment(Pos.CENTER);
@@ -103,52 +105,57 @@ public class ChooseGoalsView extends View {
       predefinedGoals.setPadding(new Insets(0, 0, 0, 120));
 
       Label standardGoals = new Label(languageController.getTranslation(Dictionary
-          .STANDARD_GOALS.getKey()));
+              .STANDARD_GOALS.getKey()));
       CheckBox checkBox1 = new CheckBox(languageController.getTranslation(Dictionary
-          .GOAL_1.getKey()));
+              .GOAL_1.getKey()));
       CheckBox checkBox2 = new CheckBox(languageController.getTranslation(Dictionary
-          .GOAL_2.getKey()));
+              .GOAL_2.getKey()));
       CheckBox checkBox3 = new CheckBox(languageController.getTranslation(Dictionary
-          .GOAL_3.getKey()));
+              .GOAL_3.getKey()));
       CheckBox checkBox4 = new CheckBox(languageController.getTranslation(Dictionary
-          .GOAL_4.getKey()));
+              .GOAL_4.getKey()));
       Label impossibleGoals = new Label(languageController.getTranslation(Dictionary
-          .IMPOSSIBLE_GOALS.getKey()));
+              .IMPOSSIBLE_GOALS.getKey()));
       CheckBox checkBox5 = new CheckBox(languageController.getTranslation(Dictionary
-          .GOAL_5_1.getKey()) + "\n" + Dictionary.GOAL_5_2.getKey());
+              .GOAL_5_1.getKey()) + "\n" + Dictionary.GOAL_5_2.getKey());
       CheckBox checkBox6 = new CheckBox(languageController.getTranslation(Dictionary
-          .GOAL_6_1.getKey()) + "\n" + Dictionary.GOAL_6_2.getKey());
+              .GOAL_6_1.getKey()) + "\n" + Dictionary.GOAL_6_2.getKey());
 
       Label templatesLabel = new Label(languageController.getTranslation(Dictionary
-          .TEMPLATE.getKey()));
+              .TEMPLATE.getKey()));
 
       ComboBox<String> templates = new ComboBox();
       Set<String> templateNames = chooseGoalsController.fetchTemplates("paths");
       templates.getItems().addAll(chooseGoalsController.addTemplates(templateNames));
       templates.setPromptText(languageController.getTranslation(Dictionary
-          .SELECT_TEMPLATE.getKey()));
+              .SELECT_TEMPLATE.getKey()));
 
-      Button upload = new Button(languageController.getTranslation(Dictionary.UPLOAD_FILE.getKey()));
+      Button upload = new Button(languageController.getTranslation(
+              Dictionary.UPLOAD_FILE.getKey()));
       upload.setId("subMenuButton");
       upload.setOnAction(e -> {
         try {
           int initialTemplateCount = templates.getItems().size();
           chooseGoalsController.uploadGameFile();
           templates.getItems().clear();
-          templates.getItems().addAll(chooseGoalsController.addTemplates(chooseGoalsController.fetchTemplates("paths")));
+          templates.getItems().addAll(chooseGoalsController.addTemplates(
+                  chooseGoalsController.fetchTemplates("paths")));
           int updatedTemplateCount = templates.getItems().size(); // Get the updated template count
           if (updatedTemplateCount > initialTemplateCount) {
-            ShowAlert.showInformation(languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE.getKey()),
-                languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE_SUCCESS.getKey()));
+            ShowAlert.showInformation(languageController.getTranslation(
+                            Dictionary.UPLOAD_TEMPLATE.getKey()),
+                    languageController.getTranslation(
+                            Dictionary.UPLOAD_TEMPLATE_SUCCESS.getKey()));
           }
         } catch (Exception exception) {
-          ShowAlert.showError(languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE.getKey()),
-              languageController.translate(exception.getMessage()));
+          ShowAlert.showError(languageController.getTranslation(
+                          Dictionary.UPLOAD_TEMPLATE.getKey()),
+                  languageController.translate(exception.getMessage()));
         }
       });
 
       predefinedGoals.getChildren().addAll(standardGoals, checkBox1, checkBox2, checkBox3,
-          checkBox4, impossibleGoals, checkBox5, checkBox6, templatesLabel, templates, upload);
+              checkBox4, impossibleGoals, checkBox5, checkBox6, templatesLabel, templates, upload);
 
       VBox customGoals = new VBox();
       customGoals.setSpacing(10);
@@ -156,26 +163,26 @@ public class ChooseGoalsView extends View {
       customGoals.setPadding(new Insets(0, 0, 0, 20));
 
       Label customGoalsLabel = new Label(languageController.getTranslation(Dictionary
-          .CUSTOM_GOALS.getKey()));
+              .CUSTOM_GOALS.getKey()));
       ComboBox comboBox = new ComboBox();
       comboBox.getItems().addAll(languageController.getTranslation(Dictionary
-              .GOLD_GOAL.getKey()),
+                      .GOLD_GOAL.getKey()),
               languageController.getTranslation(Dictionary.INVENTORY_GOAL.getKey()),
               languageController.getTranslation(Dictionary.SCORE_GOAL.getKey()),
               languageController.getTranslation(Dictionary.HEALTH_GOAL.getKey()));
       comboBox.setPromptText(languageController.getTranslation(Dictionary
-          .SELECT_GOAL_TYPE.getKey()));
+              .SELECT_GOAL_TYPE.getKey()));
       TextField textField = new TextField();
       textField.setDisable(true);
       comboBox.setOnAction(e -> {
         if (comboBox.getValue() != null) {
           if (comboBox.getValue().equals(languageController.getTranslation(Dictionary
-              .INVENTORY_GOAL.getKey()))) {
+                  .INVENTORY_GOAL.getKey()))) {
             textField.setPromptText(languageController.getTranslation(Dictionary
-                .ENTER_ITEM_NAME.getKey()));
+                    .ENTER_ITEM_NAME.getKey()));
           } else {
             textField.setPromptText(languageController.getTranslation(Dictionary
-                .ENTER_GOAL_VALUE.getKey()));
+                    .ENTER_GOAL_VALUE.getKey()));
           }
           textField.setDisable(false);
         } else {
@@ -187,42 +194,52 @@ public class ChooseGoalsView extends View {
       button.setId("subMenuButton");
       button.setOnAction(e -> {
         try {
-          goals.add(chooseGoalsController.handleAddGoal(comboBox, textField));
+          Goal goal = chooseGoalsController.handleAddGoal(comboBox, textField);
+          if (goal != null) {
+            goals.add(goal);
+          } else {
+            ShowAlert.showError(languageController.getTranslation(Dictionary.ADD_GOAL.getKey()),
+                    languageController.getTranslation(Dictionary
+                            .SAME_GOAL_TWICE.getKey()));
+          }
+        } catch (NumberFormatException exception) {
+          ShowAlert.showError(languageController.getTranslation(Dictionary.ADD_GOAL.getKey()),
+                  languageController.translate(exception.getMessage()));
         } catch (IllegalArgumentException ex) {
           ShowAlert.showError(languageController.getTranslation(Dictionary
-                  .INVALID_INPUT.getKey()),
-              languageController.getTranslation(Dictionary
-                  .GOAL_HEALTH_SCORE_GOALS_MUST_BE_POSITIVE.getKey()));
+                          .INVALID_INPUT.getKey()),
+                  languageController.getTranslation(Dictionary
+                          .GOAL_HEALTH_SCORE_GOALS_MUST_BE_POSITIVE.getKey()));
         }
       });
 
+
       TableView<Goal> tableView = new TableView<>();
       TableColumn<Goal, String> tableColumn1 = new TableColumn<>(languageController
-          .getTranslation(Dictionary.GOAL_TYPE.getKey()));
+              .getTranslation(Dictionary.GOAL_TYPE.getKey()));
       tableColumn1.setCellValueFactory(data -> new SimpleStringProperty(data.getValue()
-          .getClass().getSimpleName()));
+              .getClass().getSimpleName()));
       TableColumn<Goal, String> tableColumn2 = new TableColumn<>(languageController
-          .getTranslation(Dictionary.GOAL_VALUE.getKey()));
+              .getTranslation(Dictionary.GOAL_VALUE.getKey()));
       tableColumn2.setCellValueFactory(cellData -> {
         Goal goal = cellData.getValue();
         String goalValueString = "";
-          if (goal instanceof GoldGoal goldGoal) {
-            goalValueString = Integer.toString(goldGoal.getMinimumGold());
-          } else if (goal instanceof HealthGoal healthGoal) {
-            goalValueString = Integer.toString(healthGoal.getMinimumHealth());
-          } else if (goal instanceof ScoreGoal scoreGoal) {
-            goalValueString = Integer.toString(scoreGoal.getMinimumScore());
-          } else if (goal instanceof InventoryGoal inventoryGoal) {
-            StringBuilder stringBuilder = new StringBuilder();
-            for (String item : inventoryGoal.getMandatoryItems()) {
-              stringBuilder.append(item).append(", ");
-            }
-            goalValueString = stringBuilder.toString();
+        if (goal instanceof GoldGoal goldGoal) {
+          goalValueString = Integer.toString(goldGoal.getMinimumGold());
+        } else if (goal instanceof HealthGoal healthGoal) {
+          goalValueString = Integer.toString(healthGoal.getMinimumHealth());
+        } else if (goal instanceof ScoreGoal scoreGoal) {
+          goalValueString = Integer.toString(scoreGoal.getMinimumScore());
+        } else if (goal instanceof InventoryGoal inventoryGoal) {
+          StringBuilder stringBuilder = new StringBuilder();
+          for (String item : inventoryGoal.getMandatoryItems()) {
+            stringBuilder.append(item).append(", ");
           }
+          goalValueString = stringBuilder.toString();
+        }
 
         return new SimpleStringProperty(goalValueString);
       });
-
 
       tableView.getColumns().addAll(tableColumn1, tableColumn2);
 
@@ -241,7 +258,7 @@ public class ChooseGoalsView extends View {
       startButton.setOnAction(e -> {
 
         chooseGoalsController.handlePredefinedGoals(checkBox1, checkBox2, checkBox3,
-            checkBox4, checkBox5, checkBox6);
+                checkBox4, checkBox5, checkBox6);
 
         try {
           chooseGoalsController.validateGame(templates);
@@ -261,15 +278,15 @@ public class ChooseGoalsView extends View {
 
       Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
       BackgroundImage backgroundImage = new BackgroundImage(background,
-          BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-          new BackgroundSize(1.0, 1.0, true, true, false, true));
+              BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+              new BackgroundSize(1.0, 1.0, true, true, false, true));
       borderPane.setBackground(new Background(backgroundImage));
 
       stackPane.getChildren().add(vBox);
       stackPane.getStylesheets().add("stylesheet.css");
 
       ImageView backImage = new ImageView(new Image(getClass()
-          .getResourceAsStream("/images/back.png")));
+              .getResourceAsStream("/images/back.png")));
       Button backButton = new Button();
       backButton.setId("seeThroughButton");
       backButton.setGraphic(backImage);
@@ -283,7 +300,7 @@ public class ChooseGoalsView extends View {
       borderPane.getStylesheets().add("stylesheet.css");
     } catch (Exception e) {
       ShowAlert.showError(languageController.translate(e.getMessage()),
-          languageController.translate(e.getMessage()));
+              languageController.translate(e.getMessage()));
     }
   }
 
