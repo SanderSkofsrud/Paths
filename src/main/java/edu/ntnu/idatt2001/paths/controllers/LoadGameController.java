@@ -26,7 +26,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -63,6 +62,7 @@ public class LoadGameController {
    * The player controller.
    */
   PlayerController playerController = PlayerController.getInstance();
+
   /**
    * Instantiates a new Load game controller.
    */
@@ -204,7 +204,6 @@ public class LoadGameController {
       {
         hyperlink.setOnAction(event -> {
           String selectedFile = getTableView().getItems().get(getIndex()).getName();
-          System.out.println("Clicked on file: " + selectedFile);
           try {
             game = fileHandlerController.loadGameJson(selectedFile, null);
             gameController.setGame(game);
