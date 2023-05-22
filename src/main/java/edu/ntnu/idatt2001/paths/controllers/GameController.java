@@ -4,11 +4,12 @@ import edu.ntnu.idatt2001.paths.models.Game;
 
 /**
  * The type Game controller.
+ * This class is responsible for the game.
  * Singleton class for the game
  * Can be accessed from anywhere in the program.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.1 22.05.2023
  */
 public class GameController {
   /*
