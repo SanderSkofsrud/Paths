@@ -136,6 +136,9 @@ public enum Dictionary {
 
   ERROR_UPLOADING_GAME_FILE("Error uploading game file"),
 
+  INVALID_INPUT("Invalid input"),
+  GOAL_AND_HEALTH_VALUES_MUST_BE_NUMBERS_ABOVE_ZERO(
+      "Goal and health values must be numbers above zero"),
   ;
 
   /**

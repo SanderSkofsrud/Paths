@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="removed unused copy-constructors">
+    <list default="true" id="d64c1e07-391a-4246-88f2-d2afed6d7776" name="Changes" comment="changed exception messages and added test for HealthAction">
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/432.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/initialGame/few.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/json/432.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/json/few.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/GoldAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/GoldAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/HealthAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/HealthAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/ScoreAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/actions/ScoreAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/models/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/actions/HealthActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idatt2001/paths/models/actions/HealthActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/utility/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idatt2001/paths/views/NewGameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +156,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.edu.ntnu.idatt2001.paths in paths">
+  <component name="RunManager" selected="Maven.paths [javafx:run]">
     <configuration name="HealthActionTest$Execute.testGoldActionThrowsExceptionWhenHealthIsZeroOrLess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="paths" />
       <extension name="coverage">
@@ -366,14 +362,7 @@
       <workItem from="1684515396061" duration="3344000" />
       <workItem from="1684563213111" duration="1333000" />
       <workItem from="1684589530644" duration="13797000" />
-      <workItem from="1684742128836" duration="20561000" />
-    </task>
-    <task id="LOCAL-00159" summary="Updated classes to work with new filehandling">
-      <created>1684499508906</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1684499508906</updated>
+      <workItem from="1684742128836" duration="21433000" />
     </task>
     <task id="LOCAL-00160" summary="Added current passage to game class">
       <created>1684499540669</created>
@@ -711,7 +700,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684767398276</updated>
     </task>
-    <option name="localTasksCounter" value="208" />
+    <task id="LOCAL-00208" summary="changed exception messages and added test for HealthAction">
+      <created>1684768984232</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1684768984232</updated>
+    </task>
+    <option name="localTasksCounter" value="209" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -742,7 +738,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="checkstyle and sonarlint for GoalFactory" />
     <MESSAGE value="checkstyle and sonarlint for HealthGoal" />
     <MESSAGE value="checkstyle and sonarlint for InventoryGoal" />
     <MESSAGE value="checkstyle and sonarlint for ScoreGoal" />
@@ -767,7 +762,8 @@
     <MESSAGE value="checkstyle and sonarlint for main" />
     <MESSAGE value="checkstyle and sonarlint for view classes" />
     <MESSAGE value="removed unused copy-constructors" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed unused copy-constructors" />
+    <MESSAGE value="changed exception messages and added test for HealthAction" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed exception messages and added test for HealthAction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -791,7 +787,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/paths$All_in_paths.ic" NAME="All in paths Coverage Results" MODIFIED="1680193708824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/paths$edu_ntnu_idatt2001_paths_in_paths.ic" NAME="edu.ntnu.idatt2001.paths in paths Coverage Results" MODIFIED="1684767538638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/paths$edu_ntnu_idatt2001_paths_in_paths.ic" NAME="edu.ntnu.idatt2001.paths in paths Coverage Results" MODIFIED="1684768949652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.ntnu.idatt2001.paths.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/paths$java_in_paths.ic" NAME="java in paths Coverage Results" MODIFIED="1681810472673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
