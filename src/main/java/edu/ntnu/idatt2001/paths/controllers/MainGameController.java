@@ -37,31 +37,24 @@ public class MainGameController {
   Player player;
   List<Goal> goals;
   Story story;
-  Passage previousPassage;
   Passage currentPassage;
   int playerStartHealth;
   GameController gameController = GameController.getInstance();
   PlayerController playerController = PlayerController.getInstance();
   LanguageController languageController = LanguageController.getInstance();
-  private static MainGameController instance;
   MainGameView mainGameView;
-  private MainGameController(MainGameView mainGameView) {
+  public MainGameController(MainGameView mainGameView) {
     this.mainGameView = mainGameView;
   }
-  public static MainGameController getInstance(MainGameView mainGameView) {
-    if (instance == null) {
-      instance = new MainGameController(mainGameView);
-    }
-    return instance;
-  }
-
   public void setup() {
     game = gameController.getGame();
     player = game.getPlayer();
     goals = game.getGoals();
     story = game.getStory();
     currentPassage = game.getCurrentPassage();
-    playerStartHealth = player.getHealth();
+    if (playerStartHealth == 0) {
+      playerStartHealth = player.getHealth();
+    }
   }
 
   public static EventHandler<MouseEvent> createMouseClickedEventHandler(TextFlow textFlow, TextArea passageContent) {
@@ -216,11 +209,11 @@ public class MainGameController {
     Button restartButton = new Button();
     restartButton.setOnAction(event -> {
       Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-      alert.setTitle("Restart");
-      alert.setHeaderText("Do you want to restart the game?");
+      alert.setTitle(languageController.getTranslation(Dictionary.RESTART.getKey()));
+      alert.setHeaderText(languageController.getTranslation(Dictionary.RESTART_GAME.getKey()));
 
-      ButtonType cancel = new ButtonType("Cancel");
-      ButtonType restart = new ButtonType("Restart");
+      ButtonType cancel = new ButtonType(languageController.getTranslation(Dictionary.CANCEL.getKey()));
+      ButtonType restart = new ButtonType(languageController.getTranslation(Dictionary.RESTART.getKey()));
 
       alert.getButtonTypes().setAll(restart, cancel);
 
@@ -250,7 +243,7 @@ public class MainGameController {
     ProgressBar healthBar = new ProgressBar();
     healthBar.setMinWidth(100);
     healthBar.setMaxWidth(Double.MAX_VALUE);
-    healthBar.setProgress(player.getHealth() / playerStartHealth);
+    healthBar.setProgress((double) player.getHealth() / playerStartHealth);
     if (player.getHealth() <= 0) {
       healthBar.setStyle("-fx-accent: red;");
     } else if (player.getHealth() <= playerStartHealth / 4) {
@@ -263,7 +256,6 @@ public class MainGameController {
 
   public Label createLabel(String text, String type) {
     Label label = new Label();
-    label.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
     label.setPadding(new Insets(10, 10, 10, 10));
     switch (type.toLowerCase()) {
       case "health" -> label.setText(text + ": " + player.getHealth());
@@ -318,7 +310,7 @@ public class MainGameController {
   public void go(Link link, TextFlow textFlow) {
     Passage nextPassage = game.go(link);
     mainGameView.stopTimeline();
-    mainGameView.updateUIWithPassage(textFlow, nextPassage);
     game.setCurrentPassage(nextPassage);
+    mainGameView.updateUIWithPassage(textFlow, nextPassage);
   }
 }

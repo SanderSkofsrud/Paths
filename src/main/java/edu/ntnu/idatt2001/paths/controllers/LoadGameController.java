@@ -53,11 +53,6 @@ import java.util.stream.Stream;
  */
 public class LoadGameController {
   /**
-   * The constant instance of the class.
-   * This is a singleton class, and can be accessed from anywhere in the program.
-   */
-  private static LoadGameController instance;
-  /**
    * The file type.
    */
   private String fileType;
@@ -69,19 +64,7 @@ public class LoadGameController {
   /**
    * Instantiates a new Load game controller.
    */
-  private LoadGameController() {
-  }
-
-  /**
-   * Returns the instance of the class.
-   *
-   * @return the instance of the class
-   */
-  public static LoadGameController getInstance() {
-    if (instance == null) {
-      instance = new LoadGameController();
-    }
-    return instance;
+  public LoadGameController() {
   }
 
   /**
@@ -107,7 +90,7 @@ public class LoadGameController {
         }
       }
     } catch (IOException e) {
-      e.printStackTrace();
+      throw new RuntimeException("Failed to load files from file system", e);
     }
 
     filesList.addAll(fileSet);
@@ -261,34 +244,12 @@ public class LoadGameController {
     });
 
     jsonTableView.getColumns().addAll(fileNameColumn, fileLocationColumn, brokenLinksColumn, loadColumn);
-    jsonTableView.setItems(getSavedGames("json"));
+    try {
+      jsonTableView.setItems(getSavedGames("json"));
+    } catch (RuntimeException e) {
+      throw new RuntimeException(e.getMessage());
+    }
     jsonTableView.setPrefWidth(720);
     return jsonTableView;
-  }
-
-
-  public void uploadGameFile() {
-    FileChooser fileChooser = new FileChooser();
-    fileChooser.setTitle("Upload Game File");
-    fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-
-    fileChooser.getExtensionFilters().addAll(
-            new FileChooser.ExtensionFilter("PATHS Files", "*.paths")
-    );
-
-    File selectedFile = fileChooser.showOpenDialog(null);
-
-    if (selectedFile != null) {
-      System.out.println("Selected file: " + selectedFile.getName());
-      String extension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf(".") + 1);
-
-      if (extension.equals("paths")) {
-        try {
-          addSavedGame(selectedFile.getName(), "paths", selectedFile);
-        } catch (IOException e) {
-          throw new RuntimeException(e);
-        }
-      }
-    }
   }
 }

@@ -46,7 +46,7 @@ public class ChooseGoalsView extends View {
    * The ChooseGame controller.
    * The ChooseGameController is used to fetch all templates of the game.
    */
-  private final ChooseGoalsController chooseGoalsController = ChooseGoalsController.getInstance();
+  private final ChooseGoalsController chooseGoalsController = new ChooseGoalsController();
   /**
    * The Goals.
    * The goals is a list of the goals of the game.
@@ -117,15 +117,23 @@ public class ChooseGoalsView extends View {
     CheckBox checkBox5 = new CheckBox(languageController.getTranslation(Dictionary.GOAL_5_1.getKey()) + "\n" + Dictionary.GOAL_5_2.getKey());
     CheckBox checkBox6 = new CheckBox(languageController.getTranslation(Dictionary.GOAL_6_1.getKey()) + "\n" + Dictionary.GOAL_6_2.getKey());
 
+    Label templatesLabel = new Label(languageController.getTranslation(Dictionary.TEMPLATE.getKey()));
+
     ComboBox <String> templates = new ComboBox();
     Set<String> templateNames = chooseGoalsController.fetchTemplates("paths");
-    for (String templateName : templateNames) {
-      templates.getItems().add(templateName.replace(".paths", ""));
-    }
+    templates.getItems().addAll(chooseGoalsController.addTemplates(templateNames));
     templates.setPromptText(languageController.getTranslation(Dictionary.SELECT_TEMPLATE.getKey()));
 
+    Button upload = new Button(languageController.getTranslation(Dictionary.UPLOAD_FILE.getKey()));
+    upload.setId("subMenuButton");
+    upload.setOnAction(e -> {
+      chooseGoalsController.uploadGameFile();
+      templates.getItems().clear();
+      templates.getItems().addAll(chooseGoalsController.addTemplates(chooseGoalsController.fetchTemplates("paths")));
+      ShowAlert.showInformation(languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE.getKey()), languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE_SUCCESS.getKey()));
+    });
 
-    predefinedGoals.getChildren().addAll(standardGoals, checkBox1, checkBox2, checkBox3, checkBox4, impossibleGoals, checkBox5, checkBox6, templates);
+    predefinedGoals.getChildren().addAll(standardGoals, checkBox1, checkBox2, checkBox3, checkBox4, impossibleGoals, checkBox5, checkBox6, templatesLabel, templates, upload);
 
     VBox customGoals = new VBox();
     customGoals.setSpacing(10);

@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,12 +43,6 @@ import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
  */
 public class ChooseGoalsController {
   /**
-   * The constant instance of the class.
-   * This is a singleton class, and can be accessed from anywhere in the program.
-   */
-  private static ChooseGoalsController instance;
-
-  /**
    * The file type.
    */
   private String fileType;
@@ -60,20 +55,8 @@ public class ChooseGoalsController {
   /**
    * Instantiates a new Load game controller.
    */
-  private ChooseGoalsController() {
+  public ChooseGoalsController() {
     this.goals = FXCollections.observableArrayList();
-  }
-
-  /**
-   * Returns the instance of the class.
-   *
-   * @return the instance of the class
-   */
-  public static ChooseGoalsController getInstance() {
-    if (instance == null) {
-      instance = new ChooseGoalsController();
-    }
-    return instance;
   }
 
   public Set<String> fetchTemplates(String fileType) {
@@ -197,5 +180,55 @@ public class ChooseGoalsController {
     fileHandlerController.saveGameJson(playerController.getPlayer().getName(), "src/main/resources/initialGame/", game);
 
     gameController.setGame(game);
+  }
+
+  public void uploadGameFile() {
+    FileChooser fileChooser = new FileChooser();
+    fileChooser.setTitle("Upload Game File");
+    fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+
+    fileChooser.getExtensionFilters().addAll(
+            new FileChooser.ExtensionFilter("PATHS Files", "*.paths")
+    );
+
+    File selectedFile = fileChooser.showOpenDialog(null);
+
+    if (selectedFile != null) {
+      System.out.println("Selected file: " + selectedFile.getName());
+      String extension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf(".") + 1);
+
+      if (extension.equals("paths")) {
+        try {
+          addSavedGame(selectedFile.getName(), selectedFile);
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+      }
+    }
+  }
+
+  public void addSavedGame(String fileName, File selectedFile) throws IOException {
+    // Get the path to the appropriate resources directory based on the fileType
+    Path resourcesPath = Paths.get("src/main/resources/templates");
+
+    // Create the resources directory if it doesn't exist
+    if (!Files.exists(resourcesPath)) {
+      Files.createDirectories(resourcesPath);
+    }
+
+    // Copy the selected file to the appropriate resources directory
+    Path sourcePath = selectedFile.toPath();
+    Path destPath = resourcesPath.resolve(fileName);
+    Files.copy(sourcePath, destPath, StandardCopyOption.REPLACE_EXISTING);
+  }
+
+  public Set<String> addTemplates(Set<String> templates) {
+    Set<String> templateNames = new HashSet<>();
+    for (String template : templates) {
+      if (!template.endsWith(fileType)) {
+        templateNames.add(template.replace(".paths", ""));
+      }
+    }
+    return templateNames;
   }
 }

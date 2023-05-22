@@ -1,4 +1,4 @@
-package edu.ntnu.idatt2001.paths.models.utility.paths;
+package edu.ntnu.idatt2001.paths.utility.paths;
 
 import edu.ntnu.idatt2001.paths.models.Passage;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
