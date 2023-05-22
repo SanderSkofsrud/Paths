@@ -472,8 +472,15 @@ public class MainGameController {
       } else if (goal.getClass() == HealthGoal.class) {
         progress = (double) player.getHealth() / ((HealthGoal) goal).getMinimumHealth();
       } else if (goal.getClass() == InventoryGoal.class) {
-        progress = (double) player.getInventory().size() / ((InventoryGoal) goal)
-            .getMandatoryItems().size();
+        List<String> inventoryItems = player.getInventory();
+        List<String> mandatoryItems = ((InventoryGoal) goal).getMandatoryItems();
+
+        long matchingItems = mandatoryItems.stream()
+                .filter(mandatoryItem -> inventoryItems.stream()
+                        .anyMatch(item -> item.equalsIgnoreCase(mandatoryItem)))
+                .count();
+
+        progress = (double) matchingItems / mandatoryItems.size();
       } else if (goal.getClass() == GoldGoal.class) {
         progress = (double) player.getGold() / ((GoldGoal) goal).getMinimumGold();
       }
