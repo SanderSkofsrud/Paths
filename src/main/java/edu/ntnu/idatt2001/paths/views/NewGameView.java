@@ -2,6 +2,7 @@ package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
+import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -253,6 +254,7 @@ public class NewGameView extends View {
       newGameController.updatePlayer(textFieldName.getText(), selectedToggle,
           activeCharacter, textFieldHealth, textFieldGold);
 
+      SoundPlayer.play("/sounds/confirm.wav");
       screenController.activate("ChooseGoals");
       resetPane();
     });

@@ -229,6 +229,7 @@ public class App extends Application {
 
     primaryStage.focusedProperty().addListener((ov, t, t1) -> languageComboBox
         .setDisable(!languageController.isInternetAvailable()));
+    primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/images/m.png")));
 
   }
 

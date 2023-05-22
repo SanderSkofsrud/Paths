@@ -24,8 +24,8 @@ public class SoundPlayer {
    *
    * @param filename the filename of the sound file
    */
-  public void play(String filename) {
-    try (InputStream is = new BufferedInputStream(getClass().getResourceAsStream(filename))) {
+  public static void play(String filename) {
+    try (InputStream is = new BufferedInputStream(SoundPlayer.class.getResourceAsStream(filename))) {
       AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(is);
       Clip playClip = AudioSystem.getClip();
       playClip.open(audioInputStream);

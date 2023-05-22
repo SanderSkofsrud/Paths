@@ -5,6 +5,8 @@ import edu.ntnu.idatt2001.paths.models.goals.*;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.utility.ShowAlert;
 import java.util.Set;
+
+import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
@@ -236,6 +238,7 @@ public class ChooseGoalsView extends View {
           return;
         }
 
+        SoundPlayer.play("/sounds/confirm.wav");
         screenController.activate("MainGame");
         resetPane();
 

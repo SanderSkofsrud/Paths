@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
 import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Timeline;
@@ -219,6 +221,7 @@ public class LoadGameController {
             } catch (FileNotFoundException e) {
               throw new RuntimeException(e.getMessage());
             }
+            SoundPlayer.play("/sounds/confirm.wav");
             screenController.activate("MainGame");
           });
         }
