@@ -160,11 +160,6 @@ public class MainGameView extends View{
 
   private ShowAlert showAlert = new ShowAlert();
   /**
-   * The Undo button.
-   * The undoButton is the button that is used to undo the last action.
-   */
-  private Button undoButton;
-  /**
    * The File handler controller.
    */
   FileHandlerController fileHandlerController = FileHandlerController.getInstance();
@@ -174,12 +169,12 @@ public class MainGameView extends View{
    */
   PlayerController playerController = PlayerController.getInstance();
   LanguageController languageController = LanguageController.getInstance();
-  MainGameController mainGameController = MainGameController.getInstance(this);
+  MainGameController mainGameController = new MainGameController(this);
   private ImageView soundImageView;
   private boolean isMuted = false;
-  private SoundPlayer soundPlayer = new SoundPlayer();
+  private SoundPlayer soundPlayerLoop = new SoundPlayer();
   private double playerStartHealth;
-
+  private boolean hasPlayed = false;
   /**
    * Instantiates a new Main game view.
    *
@@ -230,7 +225,7 @@ public class MainGameView extends View{
    */
   @Override
   public void setup() {
-    soundPlayer.playOnLoop("/sounds/ambiance.wav");
+    soundPlayerLoop.playOnLoop("/sounds/ambiance.wav");
     mainGameController.setup();
     currentPassage = mainGameController.getCurrentPassage();
 
@@ -356,6 +351,8 @@ public class MainGameView extends View{
             mainGameController.executeActions(link);
           } catch (Exception e) {
             ShowAlert.showError(e.getMessage(), e.getMessage());
+            soundPlayerLoop.stop();
+            soundPlayer.stop();
             characters = null;
             timeline.stop();
             passageContent.clear();
@@ -374,11 +371,21 @@ public class MainGameView extends View{
             ShowAlert.showInformation(languageController.getTranslation(Dictionary.BROKEN_LINK.getKey()), languageController.getTranslation(Dictionary.LINK_BROKEN.getKey()));
             button.setDisable(true);
           } else {
-            mainGameController.go(link, textFlow);
-
-            if (mainGameController.minigameCheck()) {
+            if (mainGameController.minigameCheck() && !hasPlayed) {
               characters = null;
+              timeline.stop();
+              soundPlayer.stop();
+              soundPlayerLoop.stop();
+              soundPlayer.play("/sounds/confirm.wav");
+              hasPlayed = true;
               screenController.activate("Minigame");
+            } else {
+              characters = null;
+              timeline.stop();
+              soundPlayer.stop();
+              soundPlayerLoop.stop();
+              soundPlayer.play("/sounds/confirm.wav");
+              mainGameController.go(link, textFlow);
             }
           }
         });
@@ -392,19 +399,24 @@ public class MainGameView extends View{
       timeline.setOnFinished(event -> soundPlayer.stop());
       return new Pair<>(timeline, currentPassage);
     } else {
-      characters = null;
-      timeline.stop();
-      passageContent.clear();
-      passageContent.setText(languageController.getTranslation(Dictionary.END_OF_GAME.getKey()));
-      Button credits = new Button(languageController.getTranslation(Dictionary.CREDITS.getKey()));
-      credits.setOnAction(event1 -> {
-        screenController.activate("FinalPassageView");
-        resetPane();
+      timeline.play();
+      timeline.setOnFinished(event -> {
+        soundPlayer.stop();
+        characters = null;
+        timeline.stop();
+        passageContent.clear();
+        passageContent.setText(languageController.getTranslation(Dictionary.END_OF_GAME.getKey()));
+        Button credits = new Button(languageController.getTranslation(Dictionary.CREDITS.getKey()));
+        credits.setOnAction(event1 -> {
+          soundPlayerLoop.stop();
+          screenController.activate("FinalPassageView");
+          resetPane();
+        });
+        credits.setId("subMenuButton");
+        buttonsBox.getChildren().clear();
+        buttonsBox.getChildren().add(credits);
       });
-      credits.setId("subMenuButton");
-      buttonsBox.getChildren().clear();
-      buttonsBox.getChildren().add(credits);
-      return null;
+      return new Pair<>(timeline, currentPassage);
     }
   }
 
@@ -422,7 +434,10 @@ public class MainGameView extends View{
     ProgressBar healthBar = mainGameController.createHealthBar();
 
     playerHealthLabel = mainGameController.createLabel(languageController.getTranslation(Dictionary.HEALTH.getKey()), "Health");
-    playerHealthLabel.setGraphic(healthBar);
+
+    HBox healthBox = new HBox(playerHealthLabel, healthBar);
+    healthBox.setPadding(new Insets(10, 10, 0, 10));
+
     playerGoldLabel = mainGameController.createLabel(languageController.getTranslation(Dictionary.GOLD.getKey()), "Gold");
     playerScoreLabel = mainGameController.createLabel(languageController.getTranslation(Dictionary.SCORE.getKey()), "Score");
 
@@ -432,17 +447,11 @@ public class MainGameView extends View{
 
     inventoryBox = new HBox(playerInventoryLabel, inventoryImageBox);
     inventoryBox.setPadding(new Insets(10, 10, 0, 10));
-    inventoryBox.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
 
-    Image undoImage = new Image(getClass().getResourceAsStream("/images/undo.png"));
     Image exitImage = new Image(getClass().getResourceAsStream("/images/exit.png"));
     Image helpImage = new Image(getClass().getResourceAsStream("/images/help.png"));
     Image homeImage = new Image(getClass().getResourceAsStream("/images/home.png"));
     Image restartImage = new Image(getClass().getResourceAsStream("/images/restart.png"));
-
-    ImageView undoImageView = new ImageView(undoImage);
-    undoImageView.setFitWidth(30);
-    undoImageView.setFitHeight(30);
 
     ImageView exitImageView = new ImageView(exitImage);
     exitImageView.setFitWidth(30);
@@ -476,26 +485,16 @@ public class MainGameView extends View{
 
     soundButton.setOnAction(event -> {
       if (isMuted) {
-        soundPlayer.playOnLoop("/sounds/ambiance.wav");
+        soundPlayerLoop.playOnLoop("/sounds/ambiance.wav");
         Image soundImageOn = new Image(getClass().getResourceAsStream("/images/sound.png"));
         soundImageView.setImage(soundImageOn);
         isMuted = false;
       } else {
-        soundPlayer.stop();
+        soundPlayerLoop.stop();
         Image soundImageOff = new Image(getClass().getResourceAsStream("/images/nosound.png"));
         soundImageView.setImage(soundImageOff);
         isMuted = true;
       }
-    });
-
-    undoButton = new Button();
-    undoButton.setGraphic(undoImageView);
-    undoButton.setStyle("-fx-background-color: transparent;");
-    undoButton.setDisable(true);
-
-    undoButton.setOnAction(event -> {
-      redo(textFlow);
-      undoButton.setDisable(true);
     });
 
     Button exitButton = mainGameController.createExitButton();
@@ -518,11 +517,11 @@ public class MainGameView extends View{
     HBox topRightBox = new HBox();
     topRightBox.setAlignment(Pos.TOP_RIGHT);
     topRightBox.setPadding(new Insets(10, 10, 10, 10));
-    topRightBox.getChildren().addAll(undoButton, restartButton, homeButton, helpButton, exitButton, soundButton);
+    topRightBox.getChildren().addAll(restartButton, homeButton, helpButton, exitButton, soundButton);
 
     VBox goalsVbox = goalsVbox();
 
-    attributesBox.getChildren().addAll(playerHealthLabel, playerGoldLabel, playerScoreLabel, inventoryBox, goalsVbox);
+    attributesBox.getChildren().addAll(healthBox, playerGoldLabel, playerScoreLabel, inventoryBox, goalsVbox);
 
     HBox topBox = new HBox();
     topBox.getChildren().addAll(attributesBox, topRightBox);
@@ -542,24 +541,6 @@ public class MainGameView extends View{
     goalsVbox.setSpacing(10);
     goalsVbox.setAlignment(Pos.TOP_CENTER);
     return goalsVbox;
-  }
-
-  private void redo(TextFlow textFlow) {
-    if (previousPassage != null) {
-      Passage tempPassage = currentPassage;
-      currentPassage = previousPassage;
-      for (Link link : currentPassage.getLinks()) {
-        if (Objects.equals(link.getReference(), tempPassage.getTitle())) {
-          for (Action action : link.getActions()) {
-            action.execute(player);
-          }
-        }
-      }
-      previousPassage = tempPassage;
-
-      timeline.stop();
-      updateUIWithPassage(textFlow, currentPassage);
-    }
   }
 
   public void setCharacters(char[] characters) {
