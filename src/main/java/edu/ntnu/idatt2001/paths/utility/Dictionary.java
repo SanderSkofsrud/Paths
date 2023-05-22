@@ -141,6 +141,9 @@ public enum Dictionary {
       "Goal and health values must be numbers above zero"),
 
   GOAL_HEALTH_SCORE_GOALS_MUST_BE_POSITIVE("Goal, health and score goals must be positive"),
+  SAME_GOAL_TWICE("You cannot add the same goal twice"),
+  INVALID_GOAL_VALUE("Invalid goal value"),
+  INVALID_INVENTORY_GOAL("Invalid inventory goal"),
   ;
 
   /**
