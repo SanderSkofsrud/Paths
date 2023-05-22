@@ -25,5 +25,4 @@ public enum Item {
    * The Key item.
    */
   KEY,
-  // Add more items here...
 }
