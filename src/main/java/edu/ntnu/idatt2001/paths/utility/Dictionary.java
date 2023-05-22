@@ -128,6 +128,10 @@ public enum Dictionary {
   UPLOAD_TEMPLATE_SUCCESS("Template was uploaded successfully"),
   RESTART("Restart"),
   RESTART_GAME("Are you sure you want to restart the game?"),
+
+  UPLOAD_GAME_FILE("Upload game file"),
+
+  ERROR_UPLOADING_GAME_FILE("Error uploading game file"),
   ;
 
   /**

@@ -1,19 +1,14 @@
 package edu.ntnu.idatt2001.paths.controllers;
 
+import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
+
 import edu.ntnu.idatt2001.paths.models.Game;
-import edu.ntnu.idatt2001.paths.models.goals.GoalEnum;
-import edu.ntnu.idatt2001.paths.models.goals.GoalFactory;
 import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
+import edu.ntnu.idatt2001.paths.models.goals.GoalEnum;
+import edu.ntnu.idatt2001.paths.models.goals.GoalFactory;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.utility.ShowAlert;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
-import javafx.stage.FileChooser;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -26,8 +21,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 
-import static edu.ntnu.idatt2001.paths.models.goals.GoalEnum.*;
 
 /**
  * The type Load game controller.
@@ -82,7 +82,6 @@ public class ChooseGoalsController {
    */
   public Set<String> fetchTemplates(String fileType) {
     this.fileType = fileType;
-    ObservableList<File> filesList = FXCollections.observableArrayList();
     Set<String> fileNames = new HashSet<>();
 
     // Load files from file system
@@ -121,7 +120,8 @@ public class ChooseGoalsController {
         stringValue = textField.getText();
       }
       String selectedTranslatedValue = comboBox.getValue().toString();
-      String selectedValue = languageController.translateToEnglish(selectedTranslatedValue.toUpperCase().replace(" GOAL", ""));
+      String selectedValue = languageController.translateToEnglish(selectedTranslatedValue
+          .toUpperCase().replace(" GOAL", ""));
       GoalEnum type = GoalEnum.valueOf(selectedValue);
       Goal goal = null;
       if (type.equals(GoalEnum.INVENTORY)) {
@@ -132,7 +132,8 @@ public class ChooseGoalsController {
 
       boolean isGoalAlreadyAdded = false;
       for (Goal existingGoal : goals) {
-        if (existingGoal.getClass().equals(goal.getClass()) && existingGoal.toString().equals(goal.toString())) {
+        if (existingGoal.getClass().equals(goal.getClass()) && existingGoal
+            .toString().equals(goal.toString())) {
           isGoalAlreadyAdded = true;
           break;
         }
@@ -157,7 +158,9 @@ public class ChooseGoalsController {
    * @param checkBox5 the fifth predefined goal
    * @param checkBox6 the sixth predefined goal
    */
-  public void handlePredefinedGoals(CheckBox checkBox1, CheckBox checkBox2, CheckBox checkBox3, CheckBox checkBox4, CheckBox checkBox5, CheckBox checkBox6) {
+  public void handlePredefinedGoals(CheckBox checkBox1, CheckBox checkBox2,
+                                    CheckBox checkBox3, CheckBox checkBox4,
+                                    CheckBox checkBox5, CheckBox checkBox6) {
     if (checkBox1.isSelected()) {
       goals.add(GoalFactory.createGoal(GOLD, 200));
     }
@@ -165,7 +168,7 @@ public class ChooseGoalsController {
       goals.add(GoalFactory.createGoal(SCORE, 100));
     }
     if (checkBox3.isSelected()) {
-      goals.add(GoalFactory.createGoal(HEALTH,50));
+      goals.add(GoalFactory.createGoal(HEALTH, 50));
     }
     if (checkBox4.isSelected()) {
       goals.add(GoalFactory.createInventoryGoal("Sword"));
@@ -192,11 +195,17 @@ public class ChooseGoalsController {
   public void validateGame(ComboBox<String> templates) {
     try {
       if (goals.isEmpty() && templates.getValue() == null) {
-        ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_AND_TEMPLATE_NEED_SELECTION.getKey()));
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary
+            .GOALS_AND_TEMPLATE_NOT_SELECTED.getKey()), languageController
+            .getTranslation(Dictionary.GOALS_AND_TEMPLATE_NEED_SELECTION.getKey()));
       } else if (templates.getValue() == null) {
-        ShowAlert.showInformation(languageController.getTranslation(Dictionary.TEMPLATE_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.TEMPLATE_NEED_SELECTION.getKey()));
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary
+            .TEMPLATE_NOT_SELECTED.getKey()), languageController
+            .getTranslation(Dictionary.TEMPLATE_NEED_SELECTION.getKey()));
       } else if (goals.isEmpty()) {
-        ShowAlert.showInformation(languageController.getTranslation(Dictionary.GOALS_NOT_SELECTED.getKey()), languageController.getTranslation(Dictionary.GOALS_NEED_SELECTION.getKey()));
+        ShowAlert.showInformation(languageController.getTranslation(Dictionary
+            .GOALS_NOT_SELECTED.getKey()), languageController
+            .getTranslation(Dictionary.GOALS_NEED_SELECTION.getKey()));
       } else {
         createGame(templates);
       }
@@ -229,12 +238,13 @@ public class ChooseGoalsController {
       Story story = fileHandlerController.loadTemplate(selectedTemplate + "." + fileType);
       game = new Game(playerController.getPlayer(), story, goals, story.getOpeningPassage());
     } catch (FileNotFoundException e) {
-      throw new RuntimeException(e);
+      throw new RuntimeException(e.getMessage());
     }
 
     try {
       fileHandlerController.saveGameJson(playerController.getPlayer().getName(), null, game);
-      fileHandlerController.saveGameJson(playerController.getPlayer().getName(), "src/main/resources/initialGame/", game);
+      fileHandlerController.saveGameJson(playerController.getPlayer().getName(),
+          "src/main/resources/initialGame/", game);
     } catch (IllegalArgumentException e) {
       throw new RuntimeException(e.getMessage());
     }
@@ -248,7 +258,7 @@ public class ChooseGoalsController {
    */
   public void uploadGameFile() {
     FileChooser fileChooser = new FileChooser();
-    fileChooser.setTitle("Upload Game File");
+    fileChooser.setTitle(languageController.getTranslation(Dictionary.UPLOAD_GAME_FILE.getKey()));
     fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
 
     fileChooser.getExtensionFilters().addAll(
@@ -258,14 +268,15 @@ public class ChooseGoalsController {
     File selectedFile = fileChooser.showOpenDialog(null);
 
     if (selectedFile != null) {
-      System.out.println("Selected file: " + selectedFile.getName());
-      String extension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf(".") + 1);
+      String extension = selectedFile.getName().substring(selectedFile
+          .getName().lastIndexOf(".") + 1);
 
       if (extension.equals("paths")) {
         try {
           addSavedGame(selectedFile.getName(), selectedFile);
         } catch (IOException e) {
-          throw new RuntimeException("Error uploading game file");
+          throw new RuntimeException(languageController.getTranslation(Dictionary
+              .ERROR_UPLOADING_GAME_FILE.getKey()));
         }
       }
     }
