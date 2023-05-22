@@ -130,7 +130,8 @@ public class Story {
   public void removePassage(Link link) throws IllegalArgumentException {
     boolean otherPassagesLinkToPassage = passages.values().stream()
         .flatMap(passage -> passage.getLinks().stream())
-        .anyMatch(l -> l.getReference().equals(link.getReference()));    if (getPassage(link) == null) {
+        .anyMatch(l -> l.getReference().equals(link.getReference()));
+    if (getPassage(link) == null) {
       throw new IllegalArgumentException("Can not find passage");
     }
     if (otherPassagesLinkToPassage) {
