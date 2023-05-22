@@ -6,7 +6,6 @@ import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.actions.Action;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
