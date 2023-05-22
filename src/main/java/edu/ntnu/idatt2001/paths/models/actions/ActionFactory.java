@@ -24,7 +24,7 @@ public class ActionFactory {
       case HEALTH -> new HealthAction(Integer.parseInt(value));
       case SCORE -> new ScoreAction(Integer.parseInt(value));
       case INVENTORY -> new InventoryAction(value);
-      default -> throw new IllegalArgumentException("Invalid action type: " + type);
+      default -> throw new NullPointerException("Invalid action type: " + type);
     };
   }
 }
