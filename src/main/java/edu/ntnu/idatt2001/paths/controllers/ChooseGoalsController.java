@@ -7,6 +7,7 @@ import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.models.goals.GoalEnum;
 import edu.ntnu.idatt2001.paths.models.goals.GoalFactory;
+import edu.ntnu.idatt2001.paths.models.goals.InventoryGoal;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.utility.ShowAlert;
 import java.io.File;
@@ -113,12 +114,17 @@ public class ChooseGoalsController {
   public Goal handleAddGoal(ComboBox comboBox, TextField textField) {
     if (comboBox.getValue() != null && !textField.getText().isEmpty()) {
       int value = 0;
-      String stringValue = textField.getText();
-      try {
-        value = Integer.parseInt(textField.getText());
-      } catch (NumberFormatException ex) {
-        throw new NumberFormatException(languageController.getTranslation(
-                Dictionary.INVALID_GOAL_VALUE.getKey()));
+      String stringValue = null;
+      String comboBoxValue = comboBox.getValue().toString();
+      if (!comboBoxValue.equalsIgnoreCase("Inventory Goal")) {
+        try {
+          value = Integer.parseInt(textField.getText());
+        } catch (NumberFormatException ex) {
+          throw new NumberFormatException(languageController.getTranslation(
+                  Dictionary.INVALID_GOAL_VALUE.getKey()));
+        }
+      } else {
+        stringValue = textField.getText();
       }
       String selectedTranslatedValue = comboBox.getValue().toString();
       String selectedValue = languageController.translateToEnglish(selectedTranslatedValue
@@ -127,7 +133,8 @@ public class ChooseGoalsController {
       Goal goal = null;
       if (type.equals(GoalEnum.INVENTORY)) {
         try {
-          goal = GoalFactory.createInventoryGoal(stringValue);
+          String[] split = stringValue.split(",");
+          goal = GoalFactory.createInventoryGoal(split);
         } catch (IllegalArgumentException ex) {
           throw new IllegalArgumentException(languageController.getTranslation(
                   Dictionary.INVALID_INVENTORY_GOAL.getKey()));
