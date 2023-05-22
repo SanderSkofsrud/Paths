@@ -1,4 +1,4 @@
-package edu.ntnu.idatt2001.paths.models.utility.json;
+package edu.ntnu.idatt2001.paths.utility.json;
 
 import edu.ntnu.idatt2001.paths.models.*;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
