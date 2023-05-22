@@ -3,6 +3,17 @@ package edu.ntnu.idatt2001.paths.controllers;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Link;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Timeline;
@@ -20,17 +31,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * The type Load game controller.
@@ -134,109 +134,117 @@ public class LoadGameController {
    */
   public TableView<File> createTableView(ScreenController screenController) {
     try {
-    TableView<File> jsonTableView = new TableView<>();
-    TableColumn<File, String> fileNameColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_NAME.getKey()));
-    fileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getName()));
+      TableView<File> jsonTableView = new TableView<>();
+      TableColumn<File, String> fileNameColumn = new TableColumn<>(languageController
+          .getTranslation(Dictionary.FILE_NAME.getKey()));
+      fileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData
+          .getValue().getName()));
 
-    TableColumn<File, String> fileLocationColumn = new TableColumn<>(languageController.getTranslation(Dictionary.FILE_LOCATION.getKey()));
-    fileLocationColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getAbsolutePath()));
-    fileLocationColumn.setCellFactory(tc -> new TableCell<>() {
-      private final Text text = new Text();
-      private final VBox vbox = new VBox(text);
-      private final Pane container = new Pane(vbox);
-      private final TranslateTransition tt = new TranslateTransition(Duration.seconds(6.5), text);
-      private final PauseTransition ptBefore = new PauseTransition(Duration.seconds(1));
-      private final PauseTransition ptAfter = new PauseTransition(Duration.seconds(1));
-      private final SequentialTransition st = new SequentialTransition(ptBefore, tt, ptAfter);
+      TableColumn<File, String> fileLocationColumn = new TableColumn<>(languageController
+          .getTranslation(Dictionary.FILE_LOCATION.getKey()));
+      fileLocationColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData
+          .getValue().getAbsolutePath()));
+      fileLocationColumn.setCellFactory(tc -> new TableCell<>() {
+        private final Text text = new Text();
+        private final VBox vbox = new VBox(text);
+        private final Pane container = new Pane(vbox);
+        private final TranslateTransition tt = new TranslateTransition(Duration.seconds(6.5), text);
+        private final PauseTransition ptBefore = new PauseTransition(Duration.seconds(1));
+        private final PauseTransition ptAfter = new PauseTransition(Duration.seconds(1));
+        private final SequentialTransition st = new SequentialTransition(ptBefore, tt, ptAfter);
 
-      {
-        st.setCycleCount(Timeline.INDEFINITE);
+        {
+          st.setCycleCount(Timeline.INDEFINITE);
 
-        text.layoutBoundsProperty().addListener((observable, oldValue, newValue) -> {
-          container.setMinWidth(newValue.getWidth());
-          tt.setFromX(container.getWidth());
-          tt.setToX(-newValue.getWidth() + 365);
-        });
-        container.setPrefWidth(100);
-        vbox.setPrefWidth(100);
-        vbox.setFillWidth(true);
-        vbox.setAlignment(Pos.CENTER);
-      }
+          text.layoutBoundsProperty().addListener((observable, oldValue, newValue) -> {
+            container.setMinWidth(newValue.getWidth());
+            tt.setFromX(container.getWidth());
+            tt.setToX(-newValue.getWidth() + 365);
+          });
+          container.setPrefWidth(100);
+          vbox.setPrefWidth(100);
+          vbox.setFillWidth(true);
+          vbox.setAlignment(Pos.CENTER);
+        }
 
-      @Override
-      protected void updateItem(String item, boolean empty) {
-        super.updateItem(item, empty);
-        if (empty) {
-          setGraphic(null);
-          text.setText(null);
-          st.stop();
-        } else {
-          text.setText(item);
-          setGraphic(container);
+        @Override
+        protected void updateItem(String item, boolean empty) {
+          super.updateItem(item, empty);
+          if (empty) {
+            setGraphic(null);
+            text.setText(null);
+            st.stop();
+          } else {
+            text.setText(item);
+            setGraphic(container);
+            st.play();
+          }
+        }
+
+        @Override
+        public void startEdit() {
+          super.startEdit();
+          st.pause();
+        }
+
+        @Override
+        public void cancelEdit() {
+          super.cancelEdit();
           st.play();
         }
-      }
-
-      @Override
-      public void startEdit() {
-        super.startEdit();
-        st.pause();
-      }
-
-      @Override
-      public void cancelEdit() {
-        super.cancelEdit();
-        st.play();
-      }
-    });
+      });
 
 
-    fileLocationColumn.setPrefWidth(350);
+      fileLocationColumn.setPrefWidth(350);
 
-    TableColumn<File, String> brokenLinksColumn = new TableColumn<>(languageController.getTranslation(Dictionary.BROKEN_LINKS.getKey()));
-    brokenLinksColumn.setCellValueFactory(param -> new ReadOnlyStringWrapper(getBrokenLinksString(param.getValue())));
+      TableColumn<File, String> brokenLinksColumn = new TableColumn<>(languageController
+          .getTranslation(Dictionary.BROKEN_LINKS.getKey()));
+      brokenLinksColumn.setCellValueFactory(param -> new ReadOnlyStringWrapper(
+          getBrokenLinksString(param.getValue())));
 
-    TableColumn<File, String> loadColumn = new TableColumn<>(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
-    loadColumn.setPrefWidth(80);
-    loadColumn.setCellFactory(tc -> new TableCell<>() {
-      private final Hyperlink hyperlink = new Hyperlink(languageController.getTranslation(Dictionary.LOAD_GAME.getKey()));
+      TableColumn<File, String> loadColumn = new TableColumn<>(languageController
+          .getTranslation(Dictionary.LOAD_GAME.getKey()));
+      loadColumn.setPrefWidth(80);
+      loadColumn.setCellFactory(tc -> new TableCell<>() {
+        private final Hyperlink hyperlink = new Hyperlink(languageController
+            .getTranslation(Dictionary.LOAD_GAME.getKey()));
 
-      {
-        hyperlink.setOnAction(event -> {
-          String selectedFile = getTableView().getItems().get(getIndex()).getName();
-          try {
-            game = fileHandlerController.loadGameJson(selectedFile, null);
-            gameController.setGame(game);
-            playerController.setActiveCharacter(game.getPlayer().getCharacterModel());
-          } catch (FileNotFoundException e) {
-            throw new RuntimeException(e.getMessage());
-          }
-          screenController.activate("MainGame");
-        });
-      }
-
-      @Override
-      protected void updateItem(String item, boolean empty) {
-        super.updateItem(item, empty);
-        if (empty) {
-          setGraphic(null);
-        } else {
-          setGraphic(hyperlink);
+        {
+          hyperlink.setOnAction(event -> {
+            String selectedFile = getTableView().getItems().get(getIndex()).getName();
+            try {
+              game = fileHandlerController.loadGameJson(selectedFile, null);
+              gameController.setGame(game);
+              playerController.setActiveCharacter(game.getPlayer().getCharacterModel());
+            } catch (FileNotFoundException e) {
+              throw new RuntimeException(e.getMessage());
+            }
+            screenController.activate("MainGame");
+          });
         }
-      }
-    });
 
-    jsonTableView.getColumns().addAll(fileNameColumn, fileLocationColumn, brokenLinksColumn, loadColumn);
-    try {
-      jsonTableView.setItems(getSavedGames("json"));
+        @Override
+        protected void updateItem(String item, boolean empty) {
+          super.updateItem(item, empty);
+          if (empty) {
+            setGraphic(null);
+          } else {
+            setGraphic(hyperlink);
+          }
+        }
+      });
+
+      jsonTableView.getColumns().addAll(fileNameColumn, fileLocationColumn,
+          brokenLinksColumn, loadColumn);
+      try {
+        jsonTableView.setItems(getSavedGames("json"));
+      } catch (RuntimeException e) {
+        throw new RuntimeException(e.getMessage());
+      }
+      jsonTableView.setPrefWidth(720);
+      return jsonTableView;
     } catch (RuntimeException e) {
       throw new RuntimeException(e.getMessage());
     }
-    jsonTableView.setPrefWidth(720);
-    return jsonTableView;
-  }
-  catch (RuntimeException e) {
-    throw new RuntimeException(e.getMessage());
-  }
   }
 }
