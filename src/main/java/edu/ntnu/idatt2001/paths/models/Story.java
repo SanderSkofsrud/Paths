@@ -167,7 +167,7 @@ public class Story {
     StringBuilder sb = new StringBuilder();
     for (Passage passage : passages.values()) {
       if (passage.equals(openingPassage)) {
-        break;
+        continue;
       }
       sb.append(passage.toString());
     }

@@ -25,7 +25,7 @@ public class GoalFactory {
       case GOLD -> new GoldGoal(value);
       case HEALTH -> new HealthGoal(value);
       case SCORE -> new ScoreGoal(value);
-      default -> throw new IllegalArgumentException("Invalid goal type: " + type);
+      default -> throw new NullPointerException("Invalid goal type: " + type);
     };
   }
 

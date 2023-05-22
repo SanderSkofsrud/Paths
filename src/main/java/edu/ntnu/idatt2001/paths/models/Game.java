@@ -116,6 +116,7 @@ public class Game {
     if (checkGoals()) {
       return story.getEndingPassage();
     }
+    currentPassage = story.getPassage(link);
     return story.getPassage(link);
   }
 

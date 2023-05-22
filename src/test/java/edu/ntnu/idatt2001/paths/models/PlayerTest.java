@@ -17,14 +17,14 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PlayerTest {
 
   Player player;
-  List<String> inventory;
+  List<String> inventory = new ArrayList<>();
+  List<String> emptyInventory = new ArrayList<>();
   String test;
 
   @BeforeEach
   void setUp() {
-    player = new Player.PlayerBuilder("test").health(10).score(30).gold(50).build();
-    inventory = new ArrayList<>();
-    test = "Item";
+    inventory.add("test");
+    player = new Player.PlayerBuilder("test").health(10).score(30).gold(50).inventory(inventory).characterModel("test.png").build();
   }
 
   /**
@@ -57,7 +57,7 @@ public class PlayerTest {
       assertEquals(100, player.getHealth());
       assertEquals(0, player.getScore());
       assertEquals(0, player.getGold());
-      assertEquals(inventory, player.getInventory());
+      assertEquals(emptyInventory, player.getInventory());
     }
 
     /**
@@ -128,6 +128,15 @@ public class PlayerTest {
     }
 
     /**
+     * Test that negative value in health will set the player´s health to zero and check if isAlive works
+     */
+    @Test
+    @DisplayName("Test negative value in health will set health to zero and check if isAlive works")
+    void testThatNegativeValueInHealthWillSetHealthToZeroAndCheckIfIsAliveWorks() {
+      assertThrows(IllegalArgumentException.class, () -> player.addHealth(-10));
+    }
+
+    /**
      * Test that addScore can not set negative value
      */
     @Test
@@ -177,7 +186,7 @@ public class PlayerTest {
     @DisplayName("Test that Items will be added to inventory")
     void testThatItemsAddToInventory() {
       player.addToInventory("item");
-      assertEquals(1, player.getInventory().size());
+      assertEquals(2, player.getInventory().size());
     }
 
     /**
@@ -217,7 +226,7 @@ public class PlayerTest {
                       Health: 10
                       Score: 30
                       Gold: 50
-                      Inventory: stick, sword"""
+                      Inventory: test, stick, sword"""
           ,player.toString());
     }
   }
