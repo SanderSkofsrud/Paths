@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * A class that represents a player in a game. A player has different attributes that can be affected by a story
+ * A class that represents a player in a game. A player has different attributes
+ * that can be affected by a story
  * A player has a name, health, score, gold and an inventory and represent who is playing the game.
  * When a player has 0 or less health, the player is dead and the game is over.
  *
@@ -34,6 +35,11 @@ public class Player {
    * The inventory of the player.
    */
   private final List<String> inventory;
+
+  /**
+   * The character model of the player.
+   * Used to save the chosen character model of the player
+   */
   private final String characterModel;
 
   /**
@@ -78,15 +84,6 @@ public class Player {
   }
 
   /**
-   * Checks if the player has health above 0.
-   *
-   * @return True if the player is alive, false if the player is dead.
-   */
-  public boolean isAlive() {
-    return health > 0;
-  }
-
-  /**
    * Returns the health of the player.
    *
    * @return The health of the player.
@@ -103,7 +100,7 @@ public class Player {
    * @throws IllegalArgumentException if score is less than 0.
    */
 
-  public void addScore(int points) throws IllegalArgumentException{
+  public void addScore(int points) throws IllegalArgumentException {
     if (this.score + points < 0) {
       throw new IllegalArgumentException("Your score became lower than 0");
     }
@@ -125,7 +122,7 @@ public class Player {
    * @param gold The gold of the player.
    * @throws IllegalArgumentException if gold is less than 0.
    */
-  public void addGold(int gold) throws IllegalArgumentException{
+  public void addGold(int gold) throws IllegalArgumentException {
     if (this.gold + gold < 0) {
       throw new IllegalArgumentException("Your balance became lower than 0");
     }
@@ -165,6 +162,12 @@ public class Player {
   public List<String> getInventory() {
     return inventory;
   }
+
+  /**
+   * Returns the character model of the player.
+   *
+   * @return The character model of the player.
+   */
   public String getCharacterModel() {
     return characterModel;
   }
@@ -182,6 +185,7 @@ public class Player {
 
     /**
      * Constructor for PlayerBuilder.
+     * Name is required to build a player, but health, score, gold and inventory are optional.
      *
      * @param name The name of the player.
      * @throws NullPointerException     if name is null.
@@ -197,6 +201,12 @@ public class Player {
 
     // Setter methods for configuring the builder
 
+    /**
+     * Sets the health of the player.
+     *
+     * @param health The health of the player.
+     * @return The PlayerBuilder object.
+     */
     public PlayerBuilder health(int health) {
       if (health <= 0) {
         throw new IllegalArgumentException("Health cannot be less than 0");
@@ -205,7 +215,15 @@ public class Player {
       return this;
     }
 
-    public PlayerBuilder score(int score) {
+    /**
+     * Sets the score of the player.
+     * Throws an IllegalArgumentException if score is less than 0.
+     *
+     * @param score The score of the player.
+     * @return The PlayerBuilder object.
+     * @throws IllegalArgumentException if score is less than 0.
+     */
+    public PlayerBuilder score(int score) throws IllegalArgumentException {
       if (score < 0) {
         throw new IllegalArgumentException("Score cannot be less than 0");
       }
@@ -213,7 +231,15 @@ public class Player {
       return this;
     }
 
-    public PlayerBuilder gold(int gold) {
+    /**
+     * Sets the gold of the player.
+     * Throws an IllegalArgumentException if gold is less than 0.
+     *
+     * @param gold The gold of the player
+     * @return The PlayerBuilder object.
+     * @throws IllegalArgumentException if gold is less than 0.
+     */
+    public PlayerBuilder gold(int gold) throws IllegalArgumentException {
       if (gold < 0) {
         throw new IllegalArgumentException("Gold cannot be less than 0");
       }
@@ -221,11 +247,23 @@ public class Player {
       return this;
     }
 
+    /**
+     * Sets the inventory of the player.
+     *
+     * @param inventory The inventory of the player.
+     * @return The PlayerBuilder object.
+     */
     public PlayerBuilder inventory(List<String> inventory) {
       this.inventory = new ArrayList<>(inventory);
       return this;
     }
 
+    /**
+     * Sets the character model of the player.
+     *
+     * @param characterModel The character model of the player.
+     * @return The PlayerBuilder object.
+     */
     public PlayerBuilder characterModel(String characterModel) {
       this.characterModel = characterModel;
       return this;

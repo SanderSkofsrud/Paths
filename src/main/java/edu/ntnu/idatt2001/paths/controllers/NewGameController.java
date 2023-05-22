@@ -1,6 +1,7 @@
 package edu.ntnu.idatt2001.paths.controllers;
 
-import edu.ntnu.idatt2001.paths.models.Game;
+import static edu.ntnu.idatt2001.paths.models.player.Difficulty.*;
+
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import javafx.animation.TranslateTransition;
@@ -8,7 +9,6 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-import static edu.ntnu.idatt2001.paths.models.player.Difficulty.*;
 
 /**
  * The type New game controller.
@@ -38,11 +38,7 @@ public class NewGameController {
    * The EASY_STRING is used to store the translation of the easy difficulty.
    */
   private String EASY_STRING;
-  /**
-   * The standard string.
-   * The STANDARD_STRING is used to store the translation of the standard difficulty.
-   */
-  private String STANDARD_STRING;
+
   /**
    * The hard string.
    * The HARD_STRING is used to store the translation of the hard difficulty.
@@ -54,13 +50,14 @@ public class NewGameController {
    */
   private String CUSTOM_STRING;
 
+  private static final String RIGHT = "RIGHT";
+
   /**
    * Setup strings.
    * The method is used to get the translation of the strings.
    */
   public void setupStrings() {
     EASY_STRING = languageController.getTranslation(Dictionary.EASY.getKey());
-    STANDARD_STRING = languageController.getTranslation(Dictionary.STANDARD.getKey());
     HARD_STRING = languageController.getTranslation(Dictionary.HARD.getKey());
     CUSTOM_STRING = languageController.getTranslation(Dictionary.CUSTOM.getKey());
   }
@@ -76,10 +73,12 @@ public class NewGameController {
    * @param textFieldHealth the text field health of the player
    * @param textFieldGold   the text field gold of the player
    */
-  public void updatePlayer(String name, Toggle selectedToggle, String activeCharacter, TextField textFieldHealth, TextField textFieldGold) {
+  public void updatePlayer(String name, Toggle selectedToggle, String activeCharacter,
+                           TextField textFieldHealth, TextField textFieldGold) {
     String toggleText = ((ToggleButton) selectedToggle).getText();
     if (toggleText.equals(CUSTOM_STRING)) {
-      player = playerController.addCustomPlayer(name, Integer.parseInt(textFieldHealth.getText()), Integer.parseInt(textFieldGold.getText()), activeCharacter);
+      player = playerController.addCustomPlayer(name, Integer.parseInt(textFieldHealth.getText()),
+          Integer.parseInt(textFieldGold.getText()), activeCharacter);
     } else if (toggleText.equals(EASY_STRING)) {
       player = playerController.addDefaultPlayer(name, EASY, activeCharacter);
     } else if (toggleText.equals(HARD_STRING)) {
@@ -99,11 +98,12 @@ public class NewGameController {
    * @param characterMale the imageview for the male character
    * @param characterFemale the imageview for the female character
    */
-  public void swapCharacter(Button right, Button left, ImageView characterMale, ImageView characterFemale) {
+  public void swapCharacter(Button right, Button left, ImageView characterMale,
+                            ImageView characterFemale) {
     right.setOnAction(e -> {
       ImageView current = characterMale.isVisible() ? characterMale : characterFemale;
       ImageView next = characterMale.isVisible() ? characterFemale : characterMale;
-      swapImages(current, next, "RIGHT");
+      swapImages(current, next, RIGHT);
     });
 
     left.setOnAction(e -> {
@@ -127,10 +127,10 @@ public class NewGameController {
 
     TranslateTransition slideOut = new TranslateTransition(Duration.millis(300), current);
     slideOut.setFromX(0);
-    slideOut.setToX(direction.equals("RIGHT") ? -currentWidth : currentWidth);
+    slideOut.setToX(direction.equals(RIGHT) ? -currentWidth : currentWidth);
 
     TranslateTransition slideIn = new TranslateTransition(Duration.millis(300), next);
-    slideIn.setFromX(direction.equals("RIGHT") ? currentWidth : -currentWidth);
+    slideIn.setFromX(direction.equals(RIGHT) ? currentWidth : -currentWidth);
     slideIn.setToX(0);
 
     current.setVisible(true);

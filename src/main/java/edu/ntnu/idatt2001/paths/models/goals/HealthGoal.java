@@ -27,7 +27,8 @@ public class HealthGoal implements Goal {
 
   /**
    * Checks if a goal is fulfilled.
-   * Calls the player's getHealth method to check if the player has more or equal to the minimum health.
+   * Calls the player's getHealth method to check if the player has more
+   * or equal to the minimum health.
    *
    * @param player the player
    * @return the boolean - true if the goal is fulfilled, false if not

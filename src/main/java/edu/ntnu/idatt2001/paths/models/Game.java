@@ -2,7 +2,6 @@ package edu.ntnu.idatt2001.paths.models;
 
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.models.player.Player;
-
 import java.util.List;
 import java.util.Objects;
 
@@ -26,12 +25,16 @@ public class Game {
    * Constructor for Game.
    * The player, story and goals can not be null.
    *
-   * @param player The player of the game - represents who is playing the game and their possessions
-   * @param story The story of the game - represents the structure of the game with links and passages
-   * @param goals The goals of the game - the achievements that the player must fulfill to win
+   * @param player The player of the game - represents who is playing the game
+   *               and their possessions
+   * @param story The story of the game - represents the structure of the game
+   *              with links and passages
+   * @param goals The goals of the game - the achievements that the player
+   *              must fulfill to win
    * @throws NullPointerException if player, story or goals is null.
    */
-  public Game(Player player, Story story, List<Goal> goals, Passage currentPassage) throws NullPointerException {
+  public Game(Player player, Story story, List<Goal> goals, Passage currentPassage)
+      throws NullPointerException {
     Objects.requireNonNull(player, "The player can´t be null");
     Objects.requireNonNull(story, "The story can´t be null");
     Objects.requireNonNull(goals, "The goals can´t be null");
@@ -47,20 +50,6 @@ public class Game {
     this.story = story;
     this.goals = goals;
     this.currentPassage = currentPassage;
-  }
-
-  /**
-   * Copy constructor for Game.
-   *
-   * @param game The game to be copied.
-   * @throws NullPointerException if game is null.
-   */
-
-  public Game(Game game) {
-    this.player = game.player;
-    this.story = game.story;
-    this.goals = game.goals;
-    this.currentPassage = game.currentPassage;
   }
 
   /**
@@ -116,7 +105,8 @@ public class Game {
    * If the player has fulfilled any of the goals, the ending passage is returned.
    *
    * @param link The link to the passage.
-   * @return The passage that is linked to by the given link or the ending passage if the player has fulfilled any of the goals.
+   * @return The passage that is linked to by the given link or the ending passage
+   *        if the player has fulfilled any of the goals.
    * @throws NullPointerException if link is null.
    */
   public Passage go(Link link) throws NullPointerException {

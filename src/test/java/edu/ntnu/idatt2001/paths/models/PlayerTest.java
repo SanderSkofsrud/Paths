@@ -44,7 +44,6 @@ public class PlayerTest {
       assertEquals(30, player.getScore());
       assertEquals(50, player.getGold());
       assertEquals(inventory, player.getInventory());
-      assertEquals("test.png", player.getCharacterModel());
     }
 
     /**

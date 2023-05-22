@@ -44,19 +44,7 @@ public class Passage {
 
     this.title = title;
     this.content = content;
-    this.links = new ArrayList<Link>();
-  }
-
-  /**
-   * Copy constructor for Passage.
-   *
-   * @param passage The passage to be copied.
-   * @throws NullPointerException if passage is null.
-   */
-  public Passage(Passage passage) {
-    this.title = passage.title;
-    this.content = passage.content;
-    this.links = passage.links;
+    this.links = new ArrayList<>();
   }
 
   /**
@@ -155,9 +143,7 @@ public class Passage {
 
     Passage passage = (Passage) object;
 
-    if (!getTitle().equals(passage.getTitle())) return false;
-
-    return true;
+    return getTitle().equals(passage.getTitle());
   }
 
   /**

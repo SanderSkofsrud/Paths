@@ -7,7 +7,8 @@ import java.util.Objects;
 
 /**
  * A class that represents a story.
- * A story is interactive, and non-linear and is of a collection of passages and the links that connect them.
+ * A story is interactive, and non-linear and is of
+ * a collection of passages and the links that connect them.
  * The story also has a title and an opening passage.
  *
  * @author Helle R. & Sander S.
@@ -42,22 +43,9 @@ public class Story {
 
     this.title = title;
     this.openingPassage = openingPassage;
-    this.passages = new HashMap<Link, Passage>();
+    this.passages = new HashMap<>();
     this.addPassage(openingPassage);
     this.endingPassage = new Passage("The End", "Congratulations! You won the game");
-  }
-
-  /**
-   * Copy constructor for Story.
-   *
-   * @param story The story to be copied.
-   * @throws NullPointerException if story is null.
-   */
-  public Story(Story story) {
-    this.title = story.title;
-    this.openingPassage = story.openingPassage;
-    this.passages = story.passages;
-    this.endingPassage = story.endingPassage;
   }
 
   /**
@@ -122,15 +110,18 @@ public class Story {
 
   /**
    * Removes a passage from the story.
-   * The passage can not be removed if it is null or if other passages has links to this passage.
+   * The passage can not be removed if it is null or if
+   * other passages has links to this passage.
    *
    * @param link The link to the passage.
-   * @throws IllegalArgumentException if link is null or if other passages has links to this passage.
+   * @throws IllegalArgumentException if link is null or if other
+   *        passages has links to this passage.
    */
   public void removePassage(Link link) throws IllegalArgumentException {
     boolean otherPassagesLinkToPassage = passages.values().stream()
         .flatMap(passage -> passage.getLinks().stream())
-        .anyMatch(l -> l.getReference().equals(link.getReference()));    if (getPassage(link) == null) {
+        .anyMatch(l -> l.getReference().equals(link.getReference()));
+    if (getPassage(link) == null) {
       throw new IllegalArgumentException("Can not find passage");
     }
     if (otherPassagesLinkToPassage) {
@@ -164,8 +155,10 @@ public class Story {
 
   /**
    * Return a String representation of the story.
-   * The String representation of the story is a concatenation of the title, the opening passage and the passages.
-   * Uses string builder to concatenate the passages and will therefore also display links from the passage toString.
+   * The String representation of the story is a concatenation of the title,
+   * the opening passage and the passages.
+   * Uses string builder to concatenate the passages and will therefore also
+   * display links from the passage toString.
    *
    * @return A String representation of the story.
    */

@@ -2,7 +2,6 @@ package edu.ntnu.idatt2001.paths.utility.json;
 
 import com.google.gson.*;
 import edu.ntnu.idatt2001.paths.models.actions.*;
-
 import java.lang.reflect.Type;
 
 /**

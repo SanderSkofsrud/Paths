@@ -2,7 +2,6 @@ package edu.ntnu.idatt2001.paths.utility.paths;
 
 import edu.ntnu.idatt2001.paths.models.*;
 import edu.ntnu.idatt2001.paths.models.actions.*;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -26,7 +25,8 @@ public class PathsReader {
    * @throws IllegalArgumentException the illegal argument exception if the file path is empty
    * @throws FileNotFoundException    the file not found exception if the file is not found
    */
-  public static Story loadStory(String filePath) throws IllegalArgumentException, FileNotFoundException {
+  public static Story loadStory(String filePath) throws IllegalArgumentException,
+      FileNotFoundException {
     if (filePath.isBlank()) {
       throw new IllegalArgumentException("The file path can't be empty");
     }
@@ -86,7 +86,8 @@ public class PathsReader {
         }
         currentPassage.addLink(link);
       } else {
-        throw new IllegalArgumentException("The file is not in the correct format: " + filePath + " - " + line);
+        throw new IllegalArgumentException("The file is not in the correct format: "
+            + filePath + " - " + line);
       }
     }
     scanner.close();

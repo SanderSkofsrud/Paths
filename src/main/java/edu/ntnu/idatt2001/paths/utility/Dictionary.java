@@ -2,7 +2,8 @@ package edu.ntnu.idatt2001.paths.utility;
 
 /**
  * The enum Dictionary.
- * The Dictionary enum is used to store all the strings used in the application to be able to change the language of the application.
+ * The Dictionary enum is used to store all the strings used in the
+ * application to be able to change the language of the application.
  *
  * @author Helle R. & Sander S.
  * @version 1.0 23.04.2020
@@ -78,9 +79,11 @@ public enum Dictionary {
   SAVE_EXIT("Save & exit"),
   GAME_HELP("Game help"),
   GAME_HELP_TEXT("*The top left bar shows your current health, gold, score and inventory"),
-  GAME_HELP_TEXT_1("*The goals progress bar shows your current progress in the game according to your goals "),
+  GAME_HELP_TEXT_1("*The goals progress bar shows your current progress "
+      + "in the game according to your goals "),
   GAME_HELP_TEXT_2("*The information bar describes the current passage you are in "),
-  GAME_HELP_TEXT_3("*To play the game you must choose one of the options that appear in the bottom of the screen "),
+  GAME_HELP_TEXT_3("*To play the game you must choose one of the options that "
+      + "appear in the bottom of the screen "),
   GAME_HELP_TEXT_4("*You can exit the game at any time by clicking the exit button "),
   GAME_HELP_TEXT_5("*You can return to home by clicking on the home button "),
   HOME("Home"),
@@ -128,11 +131,17 @@ public enum Dictionary {
   UPLOAD_TEMPLATE_SUCCESS("Template was uploaded successfully"),
   RESTART("Restart"),
   RESTART_GAME("Are you sure you want to restart the game?"),
+
+  UPLOAD_GAME_FILE("Upload game file"),
+
+  ERROR_UPLOADING_GAME_FILE("Error uploading game file"),
+
   ;
 
   /**
    * The Key.
-   * The key is the string that is used to fetch the correct string to be displayed in the application.
+   * The key is the string that is used to fetch the correct string
+   * to be displayed in the application.
    */
   private final String key;
 

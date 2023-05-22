@@ -28,7 +28,8 @@ public class ScoreGoal implements Goal {
 
   /**
    * Checks if a goal is fulfilled.
-   * Calls the player's getScore method to check if the player has more or equal to the minimum score.
+   * Calls the player's getScore method to check if the player has more or
+   * equal to the minimum score.
    *
    * @param player the player
    * @return the boolean - true if the goal is fulfilled, false if not

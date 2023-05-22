@@ -13,5 +13,7 @@ public class Main {
    *
    * @param args the args
    */
-  public static void main(final String[] args) { App.main(args); }
+  public static void main(final String[] args) {
+    App.main(args);
+  }
 }

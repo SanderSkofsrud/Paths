@@ -41,7 +41,7 @@ public class NewGameView extends View {
   LanguageController languageController = LanguageController.getInstance();
   NewGameController newGameController = new NewGameController();
   private String EASY_STRING;
-  private String STANDARD_STRING ;
+  private String STANDARD_STRING;
   private String HARD_STRING;
   private String CUSTOM_STRING;
 
@@ -56,6 +56,7 @@ public class NewGameView extends View {
     borderPane.setCenter(stackPane);
     this.screenController = screenController;
   }
+
   /**
    * Gets pane.
    * The method is used to get the pane of the view.
@@ -78,7 +79,8 @@ public class NewGameView extends View {
     HARD_STRING = languageController.getTranslation(Dictionary.HARD.getKey());
     CUSTOM_STRING = languageController.getTranslation(Dictionary.CUSTOM.getKey());
 
-    ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/images/create.png")));
+    ImageView imageView = new ImageView(new Image(getClass()
+        .getResourceAsStream("/images/create.png")));
 
     Label labelName = new Label(languageController.getTranslation(Dictionary.SELECT_NAME.getKey()));
     TextField textFieldName = new TextField();
@@ -89,7 +91,8 @@ public class NewGameView extends View {
     hBoxName.setAlignment(Pos.CENTER);
     hBoxName.setPadding(new Insets(10, 10, 10, 10));
 
-    Label labelDifficulty = new Label(languageController.getTranslation(Dictionary.SELECT_DIFFICULTY.getKey()));
+    Label labelDifficulty = new Label(languageController
+        .getTranslation(Dictionary.SELECT_DIFFICULTY.getKey()));
     ToggleGroup toggleGroupDifficulty = new ToggleGroup();
     ToggleButton easy = new ToggleButton(EASY_STRING);
     ToggleButton standard = new ToggleButton(STANDARD_STRING);
@@ -112,7 +115,8 @@ public class NewGameView extends View {
 
     Label labelHealth = new Label();
     TextField textFieldHealth = new TextField();
-    textFieldHealth.setPromptText(languageController.getTranslation(Dictionary.ENTER_HEALTH.getKey()));
+    textFieldHealth.setPromptText(languageController.getTranslation(Dictionary
+        .ENTER_HEALTH.getKey()));
     HBox hBoxHealth = new HBox();
     hBoxHealth.getChildren().addAll(labelHealth);
     hBoxHealth.setSpacing(10);
@@ -122,7 +126,8 @@ public class NewGameView extends View {
 
     Label labelGold = new Label();
     TextField textFieldGold = new TextField();
-    textFieldGold.setPromptText(languageController.getTranslation(Dictionary.ENTER_GOLD.getKey()));
+    textFieldGold.setPromptText(languageController.getTranslation(Dictionary
+        .ENTER_GOLD.getKey()));
     HBox hBoxGold = new HBox();
     hBoxGold.getChildren().addAll(labelGold);
     hBoxGold.setSpacing(10);
@@ -132,7 +137,8 @@ public class NewGameView extends View {
 
     Label labelInventory = new Label();
     TextField textFieldInventory = new TextField();
-    textFieldInventory.setPromptText(languageController.getTranslation(Dictionary.ENTER_GOLD.getKey()));
+    textFieldInventory.setPromptText(languageController.getTranslation(Dictionary
+        .ENTER_GOLD.getKey()));
     HBox hBoxInventory = new HBox();
     hBoxInventory.getChildren().addAll(labelInventory);
     hBoxInventory.setSpacing(10);
@@ -157,7 +163,8 @@ public class NewGameView extends View {
         } else if (difficulty.equals(EASY_STRING)) {
           labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_EASY.getKey()));
           labelGold.setText(languageController.getTranslation(Dictionary.GOLD_EASY.getKey()));
-          labelInventory.setText(languageController.getTranslation(Dictionary.INVENTORY_EASY.getKey()));
+          labelInventory.setText(languageController.getTranslation(Dictionary
+              .INVENTORY_EASY.getKey()));
           hBoxHealth.getChildren().remove(textFieldHealth);
           hBoxGold.getChildren().remove(textFieldGold);
           hBoxInventory.getChildren().remove(textFieldInventory);
@@ -175,9 +182,12 @@ public class NewGameView extends View {
           hBoxGold.setVisible(true);
           hBoxInventory.setVisible(false);
         } else if (difficulty.equals(STANDARD_STRING)) {
-          labelHealth.setText(languageController.getTranslation(Dictionary.HEALTH_STANDARD.getKey()));
-          labelGold.setText(languageController.getTranslation(Dictionary.GOLD_STANDARD.getKey()));
-          labelInventory.setText(languageController.getTranslation(Dictionary.INVENTORY_STANDARD.getKey()));
+          labelHealth.setText(languageController.getTranslation(Dictionary
+              .HEALTH_STANDARD.getKey()));
+          labelGold.setText(languageController.getTranslation(Dictionary
+              .GOLD_STANDARD.getKey()));
+          labelInventory.setText(languageController.getTranslation(Dictionary
+              .INVENTORY_STANDARD.getKey()));
           hBoxHealth.getChildren().remove(textFieldHealth);
           hBoxGold.getChildren().remove(textFieldGold);
           hBoxInventory.getChildren().remove(textFieldInventory);
@@ -195,7 +205,8 @@ public class NewGameView extends View {
     });
 
 
-    Label labelCharacter = new Label(languageController.getTranslation(Dictionary.SELECT_CHARACTER.getKey()));
+    Label labelCharacter = new Label(languageController.getTranslation(Dictionary
+        .SELECT_CHARACTER.getKey()));
     Image male = new Image(getClass().getResourceAsStream("/images/m.png"));
     Image female = new Image(getClass().getResourceAsStream("/images/f.png"));
     ImageView characterMale = new ImageView(male);
@@ -221,14 +232,17 @@ public class NewGameView extends View {
     hBoxCharacter.setAlignment(Pos.CENTER);
     hBoxCharacter.setPadding(new Insets(10, 10, 10, 10));
 
-    Button button = new Button(languageController.getTranslation(Dictionary.CREATE_CHARACTER.getKey()));
+    Button button = new Button(languageController.getTranslation(Dictionary
+        .CREATE_CHARACTER.getKey()));
     button.setId("subMenuButton");
     button.setOnAction(e -> {
       if (textFieldName.getText().isEmpty()) {
-        textFieldName.setPromptText(languageController.getTranslation(Dictionary.ENTER_NAME.getKey()));
+        textFieldName.setPromptText(languageController.getTranslation(Dictionary
+            .ENTER_NAME.getKey()));
         return;
       } else if (toggleGroupDifficulty.getSelectedToggle() == null) {
-        labelDifficulty.setText(languageController.getTranslation(Dictionary.SELECT_DIFFICULTY.getKey()));
+        labelDifficulty.setText(languageController.getTranslation(Dictionary
+            .SELECT_DIFFICULTY.getKey()));
         return;
       }
 
@@ -236,14 +250,16 @@ public class NewGameView extends View {
       playerController.setActiveCharacter(activeCharacter);
 
       Toggle selectedToggle = toggleGroupDifficulty.getSelectedToggle();
-      newGameController.updatePlayer(textFieldName.getText(), selectedToggle, activeCharacter, textFieldHealth, textFieldGold);
+      newGameController.updatePlayer(textFieldName.getText(), selectedToggle,
+          activeCharacter, textFieldHealth, textFieldGold);
 
       screenController.activate("ChooseGoals");
       resetPane();
     });
 
     VBox vBox = new VBox();
-    vBox.getChildren().addAll(imageView, hBoxName, hBoxDifficulty, hBoxHealth, hBoxGold, hBoxInventory, hBoxCharacter, button);
+    vBox.getChildren().addAll(imageView, hBoxName, hBoxDifficulty, hBoxHealth,
+        hBoxGold, hBoxInventory, hBoxCharacter, button);
     vBox.setAlignment(Pos.CENTER);
     vBox.setSpacing(10);
     vBox.setPadding(new Insets(10, 10, 10, 10));
@@ -252,13 +268,16 @@ public class NewGameView extends View {
     borderPane.setCenter(vBox);
 
     Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
-    BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
+    BackgroundImage backgroundImage = new BackgroundImage(background,
+        BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+        new BackgroundSize(1.0, 1.0, true, true, false, true));
     stackPane.setBackground(new Background(backgroundImage));
 
     stackPane.getChildren().add(borderPane);
     stackPane.getStylesheets().add("stylesheet.css");
 
-    ImageView backImage = new ImageView(new Image(getClass().getResourceAsStream("/images/back.png")));
+    ImageView backImage = new ImageView(new Image(getClass()
+        .getResourceAsStream("/images/back.png")));
     Button backButton = new Button();
     backButton.setId("seeThroughButton");
     backButton.setGraphic(backImage);

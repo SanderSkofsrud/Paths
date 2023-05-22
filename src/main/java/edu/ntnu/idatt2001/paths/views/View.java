@@ -11,20 +11,20 @@ import javafx.scene.layout.Pane;
  * @version 0.1 08.05.2023
  */
 public abstract class View {
-        /**
-         * Gets pane.
-         *
-         * @return the pane
-         */
-        public abstract Pane getPane();
+  /**
+   * Gets pane.
+   *
+   * @return the pane
+   **/
+  public abstract Pane getPane();
 
-        /**
-         * Sets up the pane.
-         */
-        public abstract void setup();
+  /**
+   * Sets up the pane.
+   */
+  public abstract void setup();
 
-        /**
-         * Reset pane.
-         */
-        abstract void resetPane();
+  /**
+   * Reset pane.
+   */
+  abstract void resetPane();
 }

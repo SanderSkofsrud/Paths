@@ -1,12 +1,12 @@
 package edu.ntnu.idatt2001.paths.utility;
 
+import java.io.BufferedInputStream;
+import java.io.InputStream;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+
 
 /**
  * The type Sound player.
@@ -17,6 +17,7 @@ import java.io.InputStream;
  */
 public class SoundPlayer {
   private Clip clip;
+
   /**
    * A method that plays a sound file by taking in a filename.
    * It tries to play the sound file and catches an exception if it fails.
