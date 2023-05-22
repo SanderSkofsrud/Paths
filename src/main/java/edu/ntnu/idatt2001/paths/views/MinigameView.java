@@ -7,10 +7,8 @@ import edu.ntnu.idatt2001.paths.models.player.Player;
 import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 
 import java.util.Random;
 
@@ -104,6 +102,9 @@ public class MinigameView extends View{
 
     stackPane.getChildren().add(gridPane);
     borderPane.setCenter(stackPane);
+    Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
+    BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, new BackgroundSize(1.0, 1.0, true, true, false, true));
+    borderPane.setBackground(new Background(backgroundImage));
     borderPane.getStylesheets().add("stylesheet.css");
   }
 
@@ -134,7 +135,7 @@ public class MinigameView extends View{
   private void playerMove(Button button) {
     if (!isFinished && button.getText().equals(" ")) {
       button.setText("X");
-      button.setStyle("-fx-background-color: green;");
+      button.setStyle("-fx-background-color: green; -fx-text-fill: white; -fx-font-size: 30px;");
       button.setDisable(true);
       checkWinCondition("X");
       if (!isFinished) {
@@ -156,7 +157,7 @@ public class MinigameView extends View{
       j = random.nextInt(3);
     } while (!buttons[i][j].getText().equals(" "));
     buttons[i][j].setText("O");
-    buttons[i][j].setStyle("-fx-background-color: red;");
+    buttons[i][j].setStyle("-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 30px;");
     buttons[i][j].setDisable(true);
     checkWinCondition("O");
   }
@@ -221,7 +222,6 @@ public class MinigameView extends View{
     }
 
     if (isDraw) {
-      isDraw = true;
       announceDraw();
     }
   }
