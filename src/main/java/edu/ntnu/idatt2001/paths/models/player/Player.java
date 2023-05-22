@@ -78,7 +78,7 @@ public class Player {
 
   public void addHealth(int health) throws IllegalArgumentException {
     if (this.health + health <= 0) {
-      throw new IllegalArgumentException("You died!");
+      throw new IllegalArgumentException("Health cannot be less than 0");
     }
     this.health += health;
   }
@@ -102,7 +102,7 @@ public class Player {
 
   public void addScore(int points) throws IllegalArgumentException {
     if (this.score + points < 0) {
-      throw new IllegalArgumentException("Your score became lower than 0");
+      throw new IllegalArgumentException("Score cannot be less than 0");
     }
     this.score += points;
   }
@@ -124,7 +124,7 @@ public class Player {
    */
   public void addGold(int gold) throws IllegalArgumentException {
     if (this.gold + gold < 0) {
-      throw new IllegalArgumentException("Your balance became lower than 0");
+      throw new IllegalArgumentException("Gold cannot be less than 0");
     }
     this.gold += gold;
   }

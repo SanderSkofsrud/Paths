@@ -126,21 +126,22 @@ public class ChooseGoalsView extends View {
       templates.setPromptText(languageController.getTranslation(Dictionary
           .SELECT_TEMPLATE.getKey()));
 
-      Button upload = new Button(languageController.getTranslation(Dictionary
-          .UPLOAD_FILE.getKey()));
+      Button upload = new Button(languageController.getTranslation(Dictionary.UPLOAD_FILE.getKey()));
       upload.setId("subMenuButton");
       upload.setOnAction(e -> {
         try {
+          int initialTemplateCount = templates.getItems().size();
           chooseGoalsController.uploadGameFile();
           templates.getItems().clear();
-          templates.getItems().addAll(chooseGoalsController.addTemplates(chooseGoalsController
-              .fetchTemplates("paths")));
-          ShowAlert.showInformation(languageController.getTranslation(Dictionary
-              .UPLOAD_TEMPLATE.getKey()), languageController.getTranslation(Dictionary
-              .UPLOAD_TEMPLATE_SUCCESS.getKey()));
+          templates.getItems().addAll(chooseGoalsController.addTemplates(chooseGoalsController.fetchTemplates("paths")));
+          int updatedTemplateCount = templates.getItems().size(); // Get the updated template count
+          if (updatedTemplateCount > initialTemplateCount) {
+            ShowAlert.showInformation(languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE.getKey()),
+                languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE_SUCCESS.getKey()));
+          }
         } catch (Exception exception) {
-          ShowAlert.showError(languageController.getTranslation(Dictionary
-              .UPLOAD_TEMPLATE.getKey()), languageController.translate(exception.getMessage()));
+          ShowAlert.showError(languageController.getTranslation(Dictionary.UPLOAD_TEMPLATE.getKey()),
+              languageController.translate(exception.getMessage()));
         }
       });
 
@@ -182,7 +183,16 @@ public class ChooseGoalsView extends View {
 
       Button button = new Button(languageController.getTranslation(Dictionary.ADD_GOAL.getKey()));
       button.setId("subMenuButton");
-      button.setOnAction(e -> goals.add(chooseGoalsController.handleAddGoal(comboBox, textField)));
+      button.setOnAction(e -> {
+        try {
+          goals.add(chooseGoalsController.handleAddGoal(comboBox, textField));
+        } catch (IllegalArgumentException ex) {
+          ShowAlert.showError(languageController.getTranslation(Dictionary
+                  .INVALID_INPUT.getKey()),
+              languageController.getTranslation(Dictionary
+                  .GOAL_HEALTH_SCORE_GOALS_MUST_BE_POSITIVE.getKey()));
+        }
+      });
 
       TableView<Goal> tableView = new TableView<>();
       TableColumn<Goal, String> tableColumn1 = new TableColumn<>(languageController
@@ -194,21 +204,23 @@ public class ChooseGoalsView extends View {
       tableColumn2.setCellValueFactory(cellData -> {
         Goal goal = cellData.getValue();
         String goalValueString = "";
-        if (goal instanceof GoldGoal goldGoal) {
-          goalValueString = Integer.toString(goldGoal.getMinimumGold());
-        } else if (goal instanceof HealthGoal healthGoal) {
-          goalValueString = Integer.toString(healthGoal.getMinimumHealth());
-        } else if (goal instanceof ScoreGoal scoreGoal) {
-          goalValueString = Integer.toString(scoreGoal.getMinimumScore());
-        } else if (goal instanceof InventoryGoal inventoryGoal) {
-          StringBuilder stringBuilder = new StringBuilder();
-          for (String item : inventoryGoal.getMandatoryItems()) {
-            stringBuilder.append(item).append(", ");
+          if (goal instanceof GoldGoal goldGoal) {
+            goalValueString = Integer.toString(goldGoal.getMinimumGold());
+          } else if (goal instanceof HealthGoal healthGoal) {
+            goalValueString = Integer.toString(healthGoal.getMinimumHealth());
+          } else if (goal instanceof ScoreGoal scoreGoal) {
+            goalValueString = Integer.toString(scoreGoal.getMinimumScore());
+          } else if (goal instanceof InventoryGoal inventoryGoal) {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (String item : inventoryGoal.getMandatoryItems()) {
+              stringBuilder.append(item).append(", ");
+            }
+            goalValueString = stringBuilder.toString();
           }
-          goalValueString = stringBuilder.toString();
-        }
+
         return new SimpleStringProperty(goalValueString);
       });
+
 
       tableView.getColumns().addAll(tableColumn1, tableColumn2);
 
