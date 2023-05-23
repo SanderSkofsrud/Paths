@@ -12,14 +12,14 @@ import java.lang.reflect.Type;
  * @version 0.1 08.05.2023
  */
 public class ActionDeserializer implements JsonDeserializer<Action> {
-
-  /*
+  /**
    * The deserialize method is used to deserialize the different types of actions.
    *
-   * @param json    the json
-   * @param typeOfT the type of t
-   * @param context the context
-   * @return the action
+   * @param json    the json element
+   * @param typeOfT the type of the target (Action)
+   * @param context the context (JsonDeserializationContext)
+   * @return the action object
+   * @throws JsonParseException the json parse exception
    */
   @Override
   public Action deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)

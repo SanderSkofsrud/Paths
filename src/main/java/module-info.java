@@ -1,9 +1,9 @@
 module paths {
-    requires javafx.controls;
-    requires javafx.graphics;
-    requires javafx.base;
-    requires com.google.gson;
-    requires java.desktop;
+    requires transitive javafx.controls;
+    requires transitive javafx.graphics;
+    requires transitive javafx.base;
+    requires transitive com.google.gson;
+    requires transitive java.desktop;
     requires google.cloud.translate;
     requires google.cloud.core;
 

@@ -11,8 +11,8 @@ import java.util.Objects;
  * a collection of passages and the links that connect them.
  * The story also has a title and an opening passage.
  *
- * @author Helle R. & Sander S.
- * @version 0.5 - 11.04.2023
+ * @author Helle R. and Sander S.
+ * @version 1.2 - 22.05.2023
  */
 
 public class Story {
@@ -20,7 +20,6 @@ public class Story {
   private String title;
   private Map<Link, Passage> passages;
   private Passage openingPassage;
-
   private Passage endingPassage;
 
   /**

@@ -7,8 +7,8 @@ import java.util.Objects;
  * Inventory action.
  * An action that adds inventory items to the player when executed.
  *
- * @author Helle R. & Sander S.
- * @version 0.1 - 11.04.2023
+ * @author Helle R. and Sander S.
+ * @version 1.0 - 11.04.2023
  */
 public class InventoryAction implements Action {
   private final String item;
@@ -23,7 +23,9 @@ public class InventoryAction implements Action {
    */
   public InventoryAction(String item) throws IllegalArgumentException, NullPointerException {
     Objects.requireNonNull(item, "Item cannot be null");
-    if (item.isBlank()) throw new IllegalArgumentException("Item cannot be blank");
+    if (item.isBlank()) {
+      throw new IllegalArgumentException("Item cannot be blank");
+    }
     this.item = item.trim().toLowerCase();
   }
 

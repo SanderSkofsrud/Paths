@@ -1,11 +1,11 @@
 package edu.ntnu.idatt2001.paths.utility;
 
-import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.stage.Modality;
 import javafx.stage.StageStyle;
+import java.util.Optional;
 
 
 /**
@@ -13,8 +13,8 @@ import javafx.stage.StageStyle;
  * Provides methods for displaying alerts in the GUI and is used to avoid code duplication.
  * Supports the display of error and information alerts.
  *
- * @author Helle R. & Sander S.
- * @version 0.1 08.05.2023
+ * @author Helle R. and Sander S.
+ * @version 1.0 19.05.2023
  */
 
 public class ShowAlert {

@@ -6,8 +6,8 @@ import edu.ntnu.idatt2001.paths.models.player.Player;
  * Gold goal.
  * A goal that is fulfilled when the player has a certain amount of gold.
  *
- * @author Helle R. & Sander S.
- * @version 0.1 - 11.04.2023
+ * @author Helle R. and Sander S.
+ * @version 1.0 - 11.04.2023
  */
 public class GoldGoal implements Goal {
   private final int minimumGold;

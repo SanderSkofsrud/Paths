@@ -23,7 +23,7 @@ As you knock on the door, an old woman with a twisted smile opens it. She invite
 ::The curse
 You realize too late that the tea was cursed, and you feel yourself growing weaker by the moment. You try to run but find yourself unable to move. The witch cackles as she places a hex on you, cursing you to roam the forest forever.
 [Accept your fate](The end)][{HealthAction}(-10000)]
-[Outsmart the witch](The fight)][{ScoreAction}(30){GoldAction}(30){InventoryAction}("Sword")]
+[Outsmart the witch](The fight)][{ScoreAction}(30){GoldAction}(30){InventoryAction}(Sword)]
 
 ::The fight
 You draw your sword and charge at the witch. She tries to cast a spell on you, but you manage to dodge it and stab her in the heart. She falls to the ground, dead.

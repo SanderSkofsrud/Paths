@@ -18,13 +18,13 @@ import java.util.Map;
  * @version 0.1 08.05.2023
  */
 public class StoryDeserializer implements JsonDeserializer<Story> {
-  /*
+  /**
    * The deserialize method is used to deserialize the different types of stories.
    *
-   * @param json    the json
-   * @param typeOfT the type of t
-   * @param context the context
-   * @return the story
+   * @param json    the json element
+   * @param typeOfT the type of t (Story)
+   * @param context the context (JsonDeserializationContext)
+   * @return the story object
    * @throws JsonParseException the json parse exception
    */
   @Override
@@ -68,6 +68,14 @@ public class StoryDeserializer implements JsonDeserializer<Story> {
   }
 }
 
-
+/*
+ * The deserialize method is used to deserialize the different types of stories.
+ *
+ * @param json    the json
+ * @param typeOfT the type of t
+ * @param context the context
+ * @return the story
+ * @throws JsonParseException the json parse exception
+ */
 
 

@@ -1,11 +1,11 @@
 package edu.ntnu.idatt2001.paths.utility;
 
-import java.io.BufferedInputStream;
-import java.io.InputStream;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
+import java.io.BufferedInputStream;
+import java.io.InputStream;
 
 
 /**
@@ -13,7 +13,7 @@ import javax.sound.sampled.FloatControl;
  * The SoundPlayer class is used to play sound files.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.1 22.05.2023
  */
 public class SoundPlayer {
   private Clip clip;
@@ -25,7 +25,8 @@ public class SoundPlayer {
    * @param filename the filename of the sound file
    */
   public static void play(String filename) {
-    try (InputStream is = new BufferedInputStream(SoundPlayer.class.getResourceAsStream(filename))) {
+    try (InputStream is = new BufferedInputStream(
+            SoundPlayer.class.getResourceAsStream(filename))) {
       AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(is);
       Clip playClip = AudioSystem.getClip();
       playClip.open(audioInputStream);

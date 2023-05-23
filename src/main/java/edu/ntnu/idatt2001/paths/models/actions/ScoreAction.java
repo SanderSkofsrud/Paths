@@ -6,8 +6,8 @@ import edu.ntnu.idatt2001.paths.models.player.Player;
  * Inventory action.
  * An action that adds or removes score to the player when executed.
  *
- * @author Helle R. & Sander S.
- * @version 0.1 - 11.04.2023
+ * @author Helle R. and Sander S.
+ * @version 1.0 - 11.04.2023
  */
 public class ScoreAction implements Action {
   private final int points;
@@ -30,7 +30,7 @@ public class ScoreAction implements Action {
   @Override
   public void execute(Player player) throws IllegalArgumentException {
     if (player.getScore() + this.points < 0) {
-      throw new IllegalArgumentException("You score got lower than 0");
+      throw new IllegalArgumentException("Your score got lower than 0");
     }
     player.addScore(points);
   }

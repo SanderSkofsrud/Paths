@@ -11,8 +11,8 @@ import java.util.Objects;
  * The links connect the different parts of the story.
  * A link has a text, a reference to the passage that the link will lead to and a list of actions
  *
- * @author Helle R. & Sander S.
- * @version 0.5 - 11.04.2023
+ * @author Helle R. and Sander S.
+ * @version 1.1 - 31.03.2023
  */
 
 public class Link {

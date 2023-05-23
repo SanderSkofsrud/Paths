@@ -4,12 +4,12 @@ import edu.ntnu.idatt2001.paths.controllers.LanguageController;
 import edu.ntnu.idatt2001.paths.controllers.PlayerController;
 import edu.ntnu.idatt2001.paths.controllers.ScreenController;
 import edu.ntnu.idatt2001.paths.models.player.Player;
-import java.util.Random;
 import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import java.util.Random;
 
 
 /**
@@ -20,7 +20,7 @@ import javafx.scene.layout.*;
  * The player is X and the computer is O.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.1 22.05.2023
  */
 public class MinigameView extends View {
   /**
@@ -221,7 +221,9 @@ public class MinigameView extends View {
           break;
         }
       }
-      if (!isDraw) break;
+      if (!isDraw) {
+        break;
+      }
     }
 
     if (isDraw) {

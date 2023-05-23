@@ -5,6 +5,8 @@ import edu.ntnu.idatt2001.paths.views.App;
 /**
  * The type Main.
  * The Main class is used to start the game.
+ *
+ * @version 1.1 11.05.2023
  */
 public class Main {
 

@@ -9,10 +9,6 @@ import edu.ntnu.idatt2001.paths.models.goals.*;
 import edu.ntnu.idatt2001.paths.models.player.Player;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.views.MainGameView;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.List;
-import java.util.Optional;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -23,10 +19,16 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
 import javafx.util.Duration;
 import javafx.util.Pair;
+
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -52,7 +54,7 @@ public class MainGameController {
    * The Goals.
    * This is the list of goals that the player has to achieve.
    */
-  List<Goal> goals;
+  static List<Goal> goals;
   /**
    * The Story.
    * This is the story that the player is playing.
@@ -342,7 +344,7 @@ public class MainGameController {
           screenController.activate("MainMenu");
           mainGameView.resetPane();
         } else if (result.get() == goHomeWithoutSaving) {
-          gameController.resetGame(); // Add this line
+          gameController.resetGame();
           goals.clear();
           playerController.resetPlayer();
           screenController.activate("MainMenu");
@@ -522,6 +524,10 @@ public class MainGameController {
    */
   public Game getGame() {
     return game;
+  }
+
+  public static void resetGoals() {
+    goals.clear();
   }
 
   /**

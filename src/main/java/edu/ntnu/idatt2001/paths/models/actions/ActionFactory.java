@@ -6,7 +6,7 @@ package edu.ntnu.idatt2001.paths.models.actions;
  * The class is used in the Action class.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 20.05.2023
+ * @version 1.0 20.05.2023
  */
 public class ActionFactory {
 

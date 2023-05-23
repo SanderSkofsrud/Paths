@@ -3,18 +3,6 @@ package edu.ntnu.idatt2001.paths.controllers;
 import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Link;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
 import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
@@ -32,6 +20,17 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 /**
@@ -136,7 +135,6 @@ public class LoadGameController {
    */
   public TableView<File> createTableView(ScreenController screenController) {
     try {
-      TableView<File> jsonTableView = new TableView<>();
       TableColumn<File, String> fileNameColumn = new TableColumn<>(languageController
           .getTranslation(Dictionary.FILE_NAME.getKey()));
       fileNameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData
@@ -236,6 +234,8 @@ public class LoadGameController {
           }
         }
       });
+
+      TableView<File> jsonTableView = new TableView<>();
 
       jsonTableView.getColumns().addAll(fileNameColumn, fileLocationColumn,
           brokenLinksColumn, loadColumn);

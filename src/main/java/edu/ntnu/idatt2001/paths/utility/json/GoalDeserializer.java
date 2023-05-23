@@ -1,10 +1,6 @@
 package edu.ntnu.idatt2001.paths.utility.json;
 
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
+import com.google.gson.*;
 import edu.ntnu.idatt2001.paths.models.goals.*;
 import java.lang.reflect.Type;
 
@@ -16,15 +12,16 @@ import java.lang.reflect.Type;
  * @version 0.1 08.05.2023
  */
 public class GoalDeserializer implements JsonDeserializer<Goal> {
-  /*
+  /**
    * The deserialize method is used to deserialize the different types of goals.
    * The method checks for a unique property that can differentiate between the four
    * goal implementations.
    *
-   * @param json    the json
-   * @param typeOfT the type of t
-   * @param context the context
-   * @return the goal
+   * @param json    the JSON element
+   * @param typeOfT the type of the target (Goal)
+   * @param context the context (JsonDeserializationContext)
+   * @return the goal object
+   * @throws JsonParseException the json parse exception
    */
   @Override
   public Goal deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
@@ -54,3 +51,14 @@ public class GoalDeserializer implements JsonDeserializer<Goal> {
     }
   }
 }
+
+/*
+ * The deserialize method is used to deserialize the different types of goals.
+ * The method checks for a unique property that can differentiate between the four
+ * goal implementations.
+ *
+ * @param json    the json
+ * @param typeOfT the type of t
+ * @param context the context
+ * @return the goal
+ */

@@ -5,8 +5,8 @@ package edu.ntnu.idatt2001.paths.utility;
  * The Language enum is used to represent the different languages that the application supports.
  * Each enum value corresponds to a language code.
  *
- * @author Helle R. & Sander S.
- * @version 0.1 - 11.04.2023
+ * @author Helle R. and Sander S.
+ * @version 1.1 - 15.05.2023
  */
 
 public enum Language {

@@ -1,7 +1,8 @@
 package edu.ntnu.idatt2001.paths.models;
 
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -11,8 +12,8 @@ import java.util.List;
  * A passage has a title, content of the passage and a list of links.
  * The title describes the passage and the content is the text that will be displayed to the user.
  *
- * @author Helle R. & Sander S.
- * @version 0.3 - 11.04.2023
+ * @author Helle R. and Sander S.
+ * @version 1.2 - 23.05.2023
  */
 
 public class Passage {
@@ -137,9 +138,15 @@ public class Passage {
    */
   @Override
   public boolean equals(Object object) {
-    if (this == object) return true;
-    if (!(object instanceof Passage)) return false;
-    if (!super.equals(object)) return false;
+    if (this == object) {
+      return true;
+    }
+    if (!(object instanceof Passage)) {
+      return false;
+    }
+    if (!super.equals(object)) {
+      return false;
+    }
 
     Passage passage = (Passage) object;
 

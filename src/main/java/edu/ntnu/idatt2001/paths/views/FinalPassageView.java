@@ -2,12 +2,14 @@ package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
-import javafx.animation.*;
+import javafx.animation.Interpolator;
+import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.text.*;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.util.Duration;
 
 /**
@@ -16,7 +18,7 @@ import javafx.util.Duration;
  * It is also used to show the goals achieved and failed.
  *
  * @author Helle R. and Sander S.
- * @version 0.2 21.05.2023
+ * @version 1.2 21.05.2023
  */
 public class FinalPassageView extends View {
   /**
@@ -51,6 +53,10 @@ public class FinalPassageView extends View {
    * The Final passage controller.
    */
   FinalPassageController finalPassageController = new FinalPassageController();
+  /**
+   * The Player controller.
+   */
+  PlayerController playerController = PlayerController.getInstance();
 
   /**
    * Constant for text creditsText.
@@ -105,7 +111,7 @@ public class FinalPassageView extends View {
         .CREDITS_TEXT_2_1.getKey()));
     goalsAchieved.setId(CREDITS_TEXT);
 
-    VBox goalsVBox = finalPassageController.goalsAchieved();
+    VBox goalsVbox = finalPassageController.goalsAchieved();
 
     Text goalsFailed = new Text(languageController.getTranslation(Dictionary
         .CREDITS_TEXT_2_2.getKey()));
@@ -147,7 +153,7 @@ public class FinalPassageView extends View {
             congratsText,
             goalsTitle,
             goalsAchieved,
-            goalsVBox,
+            goalsVbox,
             goalsFailed,
             goalsFailedVBox,
             goalPercentage,
@@ -168,7 +174,13 @@ public class FinalPassageView extends View {
       translateTransition.setInterpolator(Interpolator.LINEAR);
       translateTransition.setCycleCount(1);
 
-      translateTransition.setOnFinished(event -> screenController.activate("MainMenu"));
+      translateTransition.setOnFinished(event -> {
+        gameController.resetGame();
+        MainGameController.resetGoals();
+        playerController.resetPlayer();
+        screenController.activate("MainMenu");
+        resetPane();
+      });
 
       Platform.runLater(translateTransition::play);
     });

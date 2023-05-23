@@ -2,13 +2,14 @@ package edu.ntnu.idatt2001.paths.views;
 
 import edu.ntnu.idatt2001.paths.controllers.*;
 import edu.ntnu.idatt2001.paths.utility.ShowAlert;
-import java.io.File;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import java.io.File;
 
 
 /**
@@ -16,7 +17,7 @@ import javafx.scene.layout.*;
  * The class is used to create the GUI of the load game view.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.3 20.05.2023
  */
 public class LoadGameView extends View {
   /**
@@ -82,9 +83,9 @@ public class LoadGameView extends View {
       ShowAlert.showError(e.getMessage(), e.getMessage());
     }
 
-    HBox hBox = new HBox();
-    hBox.getChildren().add(jsonTableView);
-    hBox.setAlignment(Pos.CENTER);
+    HBox hbox = new HBox();
+    hbox.getChildren().add(jsonTableView);
+    hbox.setAlignment(Pos.CENTER);
 
     ImageView backImage = new ImageView(new Image(getClass()
         .getResourceAsStream("/images/back.png")));
@@ -95,16 +96,15 @@ public class LoadGameView extends View {
     backButton.setOnAction(e -> screenController.activate("MainMenu"));
     resetPane();
 
-    // Add both tables to the stack pane
+    VBox vbox = new VBox();
+    vbox.getChildren().addAll(hbox);
+    vbox.setSpacing(20);
+    vbox.setPadding(new Insets(20, 20, 20, 20));
+    vbox.setAlignment(Pos.CENTER);
+
     Image background = new Image(getClass().getResourceAsStream("/images/background.png"));
 
-    VBox vBox = new VBox();
-    vBox.getChildren().addAll(hBox);
-    vBox.setSpacing(20);
-    vBox.setPadding(new Insets(20, 20, 20, 20));
-    vBox.setAlignment(Pos.CENTER);
-
-    stackPane.getChildren().add(vBox);
+    stackPane.getChildren().add(vbox);
     borderPane.setBackground(new Background(new BackgroundImage(background,
         BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
         new BackgroundSize(1.0, 1.0, true, true, false, true))));

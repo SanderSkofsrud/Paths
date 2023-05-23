@@ -9,7 +9,7 @@ import java.util.List;
  * The enum determines the player's health, gold and starting inventory.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.1 - 19.05.2023
  */
 public enum Difficulty {
   /**

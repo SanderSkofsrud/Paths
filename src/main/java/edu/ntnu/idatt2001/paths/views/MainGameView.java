@@ -1,7 +1,11 @@
 package edu.ntnu.idatt2001.paths.views;
 
-import edu.ntnu.idatt2001.paths.controllers.*;
-import edu.ntnu.idatt2001.paths.models.*;
+import edu.ntnu.idatt2001.paths.controllers.LanguageController;
+import edu.ntnu.idatt2001.paths.controllers.MainGameController;
+import edu.ntnu.idatt2001.paths.controllers.PlayerController;
+import edu.ntnu.idatt2001.paths.controllers.ScreenController;
+import edu.ntnu.idatt2001.paths.models.Link;
+import edu.ntnu.idatt2001.paths.models.Passage;
 import edu.ntnu.idatt2001.paths.utility.Dictionary;
 import edu.ntnu.idatt2001.paths.utility.ShowAlert;
 import edu.ntnu.idatt2001.paths.utility.SoundPlayer;
@@ -15,7 +19,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.text.*;
+import javafx.scene.text.TextFlow;
 import javafx.util.Duration;
 import javafx.util.Pair;
 
@@ -25,7 +29,7 @@ import javafx.util.Pair;
  * The class is used to create the GUI of the game and to start the game.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.1 22.05.2023
  */
 public class MainGameView extends View {
   /**
@@ -398,22 +402,21 @@ public class MainGameView extends View {
     inventoryBox.setPadding(new Insets(10, 10, 0, 10));
 
     Image exitImage = new Image(getClass().getResourceAsStream("/images/exit.png"));
-    Image helpImage = new Image(getClass().getResourceAsStream("/images/help.png"));
-    Image homeImage = new Image(getClass().getResourceAsStream("/images/home.png"));
-    Image restartImage = new Image(getClass().getResourceAsStream("/images/restart.png"));
-
     ImageView exitImageView = new ImageView(exitImage);
     exitImageView.setFitWidth(30);
     exitImageView.setFitHeight(30);
 
+    Image helpImage = new Image(getClass().getResourceAsStream("/images/help.png"));
     ImageView helpImageView = new ImageView(helpImage);
     helpImageView.setFitWidth(30);
     helpImageView.setFitHeight(30);
 
+    Image homeImage = new Image(getClass().getResourceAsStream("/images/home.png"));
     ImageView homeImageView = new ImageView(homeImage);
     homeImageView.setFitWidth(30);
     homeImageView.setFitHeight(30);
 
+    Image restartImage = new Image(getClass().getResourceAsStream("/images/restart.png"));
     ImageView restartImageView = new ImageView(restartImage);
     restartImageView.setFitWidth(30);
     restartImageView.setFitHeight(30);

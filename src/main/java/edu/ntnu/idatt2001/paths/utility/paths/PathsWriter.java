@@ -1,9 +1,7 @@
 package edu.ntnu.idatt2001.paths.utility.paths;
 
 import edu.ntnu.idatt2001.paths.models.Story;
-import edu.ntnu.idatt2001.paths.models.goals.Goal;
 import edu.ntnu.idatt2001.paths.models.player.Player;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,7 +11,7 @@ import java.io.IOException;
  * The PathsWriter class is used to write the Game object to a paths file.
  *
  * @author Helle R. and Sander S.
- * @version 1.0 08.05.2023
+ * @version 1.1 22.05.2023
  */
 public class PathsWriter {
 

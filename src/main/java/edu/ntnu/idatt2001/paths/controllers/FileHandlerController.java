@@ -72,7 +72,7 @@ public class FileHandlerController {
     if (path == null) {
       path = jsonPath;
     }
-    JsonWriter.saveGameJSON(game, path + name + ".json");
+    JsonWriter.saveGameJson(game, path + name + ".json");
   }
 
   /**
@@ -87,6 +87,6 @@ public class FileHandlerController {
     if (path == null) {
       path = jsonPath;
     }
-    return JsonReader.loadGameJSON(path + name);
+    return JsonReader.loadGameJson(path + name);
   }
 }
