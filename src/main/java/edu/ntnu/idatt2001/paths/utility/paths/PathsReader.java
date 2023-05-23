@@ -7,7 +7,11 @@ import edu.ntnu.idatt2001.paths.models.actions.Action;
 import edu.ntnu.idatt2001.paths.models.actions.ActionEnum;
 import edu.ntnu.idatt2001.paths.models.actions.ActionFactory;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -37,8 +41,21 @@ public class PathsReader {
       throw new IllegalArgumentException("The file path can't be empty");
     }
 
-    File file = new File(filePath);
-    Scanner scanner = new Scanner(file);
+    InputStream inputStream;
+    if (Files.exists(Paths.get(filePath))) {
+      try {
+        inputStream = new FileInputStream(filePath);
+      } catch (FileNotFoundException e) {
+        throw new IllegalArgumentException("The file was not found: " + filePath);
+      }
+    } else {
+      String resourcePath = filePath.replaceFirst("src/main/resources", "");
+      inputStream = Story.class.getResourceAsStream(resourcePath);
+      if (inputStream == null) {
+        throw new IllegalArgumentException("The file was not found: " + filePath);
+      }
+    }
+    Scanner scanner = new Scanner(inputStream);
 
     String title = scanner.nextLine();
     Passage openingPassage = null;

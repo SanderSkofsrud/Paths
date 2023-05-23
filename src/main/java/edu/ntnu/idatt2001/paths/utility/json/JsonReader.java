@@ -6,10 +6,10 @@ import edu.ntnu.idatt2001.paths.models.Game;
 import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.actions.Action;
 import edu.ntnu.idatt2001.paths.models.goals.Goal;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /**
  * The type Json reader.
@@ -32,8 +32,23 @@ public class JsonReader {
    * @return the game object that is loaded from the JSON file
    * @throws FileNotFoundException the file not found exception
    */
-  public static Game loadGameJson(String fileName) throws FileNotFoundException {
-    try (Reader reader = new FileReader(fileName)) {
+  public static Game loadGameJson(String fileName) {
+    InputStream inputStream;
+    if (Files.exists(Paths.get(fileName))) {
+      try {
+        inputStream = new FileInputStream(fileName);
+      } catch (FileNotFoundException e) {
+        throw new IllegalArgumentException("The file was not found: " + fileName);
+      }
+    } else {
+      String resourcePath = fileName.replaceFirst("src/main/resources", "");
+      inputStream = Game.class.getResourceAsStream(resourcePath);
+      if (inputStream == null) {
+        throw new IllegalArgumentException("The file was not found: " + fileName);
+      }
+    }
+
+    try (Reader reader = new InputStreamReader(inputStream)) {
       Gson gson = new GsonBuilder()
               .registerTypeAdapter(Story.class, new StoryDeserializer())
               .registerTypeAdapter(Goal.class, new GoalDeserializer())
@@ -42,7 +57,8 @@ public class JsonReader {
 
       return gson.fromJson(reader, Game.class);
     } catch (IOException e) {
-      throw new FileNotFoundException("File not found or could not be read: " + fileName);
+      throw new RuntimeException("Failed to load game", e);
     }
   }
+
 }

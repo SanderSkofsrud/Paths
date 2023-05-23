@@ -120,7 +120,7 @@ public class JsonFileHandlerTest {
       @DisplayName("Test that loadGame throws FileNotFoundException when file is not found")
       void testThatLoadGameThrowsFileNotFoundException() {
         JsonReader fileHandler = new JsonReader();
-        assertThrows(FileNotFoundException.class, () -> {
+        assertThrows(IllegalArgumentException.class, () -> {
           fileHandler.loadGameJson("src/test/resources/json/doesNotExist.json");
         });
       }
