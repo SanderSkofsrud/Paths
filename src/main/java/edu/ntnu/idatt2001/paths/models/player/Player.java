@@ -10,7 +10,7 @@ import java.util.Objects;
  * A player has a name, health, score, gold and an inventory and represent who is playing the game.
  * When a player has 0 or less health, the player is dead and the game is over.
  *
- * @author Helle R. & Sander S.
+ * @author Helle R. and Sander S.
  * @version 0.2 - 11.04.2023
  */
 

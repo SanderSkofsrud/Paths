@@ -5,7 +5,7 @@ package edu.ntnu.idatt2001.paths.utility;
  * The Dictionary enum is used to store all the strings used in the
  * application to be able to change the language of the application.
  *
- * @author Helle R. & Sander S.
+ * @author Helle R. and Sander S.
  * @version 1.0 23.04.2020
  */
 

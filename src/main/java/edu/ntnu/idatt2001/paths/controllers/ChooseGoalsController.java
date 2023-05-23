@@ -15,13 +15,9 @@ import javafx.stage.FileChooser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.net.URI;
+import java.nio.file.*;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -83,23 +79,54 @@ public class ChooseGoalsController {
     this.fileType = fileType;
     Set<String> fileNames = new HashSet<>();
 
-    // Load files from file system
-    try {
-      Path resourcesPath = Paths.get("src/main/resources/templates/");
-      if (Files.exists(resourcesPath)) {
-        try (Stream<Path> stream = Files.list(resourcesPath)) {
-          stream.forEach(file -> {
-            if (Files.isRegularFile(file) && file.toString().endsWith(fileType)) {
-              fileNames.add(file.getFileName().toString());
-            }
-          });
-        }
+    // Try loading from the file system first
+    Path resourcesPath = Paths.get("src/main/resources/templates/");
+    if (Files.exists(resourcesPath)) {
+      try (Stream<Path> paths = Files.list(resourcesPath)) {
+        paths.forEach(path -> {
+          if (Files.isRegularFile(path) && path.toString().endsWith(fileType)) {
+            fileNames.add(path.getFileName().toString());
+          }
+        });
+      } catch (IOException e) {
+        throw new RuntimeException("Failed to load files from file system", e);
       }
-    } catch (IOException e) {
-      throw new RuntimeException("Failed to load files from file system");
+    } else { // Try loading from classpath (e.g., inside a JAR)
+      try {
+        URI uri = getClass().getResource("/templates/").toURI();
+        Path myPath;
+        if (uri.getScheme().equals("jar")) {
+          try (FileSystem fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap())) {
+            myPath = fileSystem.getPath("/templates/");
+            try (Stream<Path> walk = Files.walk(myPath, 1)) {
+              for (Iterator<Path> it = walk.iterator(); it.hasNext(); ) {
+                Path path = it.next();
+                if (path.toString().endsWith(fileType)) {
+                  fileNames.add(path.getFileName().toString());
+                }
+              }
+            }
+          }
+        } else {
+          myPath = Paths.get(uri);
+          try (Stream<Path> walk = Files.walk(myPath, 1)) {
+            for (Iterator<Path> it = walk.iterator(); it.hasNext(); ) {
+              Path path = it.next();
+              if (path.toString().endsWith(fileType)) {
+                fileNames.add(path.getFileName().toString());
+              }
+            }
+          }
+        }
+      } catch (Exception e) {
+        throw new RuntimeException("Failed to load files from classpath", e);
+      }
     }
+
     return fileNames;
   }
+
+
 
   /**
    * Handle add goal goal.

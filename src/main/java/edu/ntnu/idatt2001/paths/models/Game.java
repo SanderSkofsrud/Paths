@@ -11,7 +11,7 @@ import java.util.Objects;
  * It has a player, a story and a list of goals and represent what the user will use.
  * The game have goals that the player must fulfill to win the game.
  *
- * @author Helle R. & Sander S.
+ * @author Helle R. and Sander S.
  * @version 0.2 - 11.04.2023
  */
 

@@ -13,7 +13,7 @@ import java.util.Optional;
  * Provides methods for displaying alerts in the GUI and is used to avoid code duplication.
  * Supports the display of error and information alerts.
  *
- * @author Helle R. & Sander S.
+ * @author Helle R. and Sander S.
  * @version 0.1 08.05.2023
  */
 

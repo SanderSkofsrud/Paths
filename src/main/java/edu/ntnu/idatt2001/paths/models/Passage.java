@@ -12,7 +12,7 @@ import java.util.Objects;
  * A passage has a title, content of the passage and a list of links.
  * The title describes the passage and the content is the text that will be displayed to the user.
  *
- * @author Helle R. & Sander S.
+ * @author Helle R. and Sander S.
  * @version 0.3 - 11.04.2023
  */
 

@@ -9,7 +9,7 @@ import java.util.Objects;
  * A goal that is fulfilled when the player has a certain amount of items.
  * The items are case insensitive and trimmed.
  *
- * @author Helle R. & Sander S.
+ * @author Helle R. and Sander S.
  * @version 0.1 - 11.04.2023
  */
 public class InventoryGoal implements Goal {

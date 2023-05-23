@@ -11,7 +11,7 @@ import java.util.Objects;
  * a collection of passages and the links that connect them.
  * The story also has a title and an opening passage.
  *
- * @author Helle R. & Sander S.
+ * @author Helle R. and Sander S.
  * @version 0.5 - 11.04.2023
  */
 

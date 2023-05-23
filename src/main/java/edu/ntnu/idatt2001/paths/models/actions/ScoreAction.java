@@ -6,7 +6,7 @@ import edu.ntnu.idatt2001.paths.models.player.Player;
  * Inventory action.
  * An action that adds or removes score to the player when executed.
  *
- * @author Helle R. & Sander S.
+ * @author Helle R. and Sander S.
  * @version 0.1 - 11.04.2023
  */
 public class ScoreAction implements Action {
