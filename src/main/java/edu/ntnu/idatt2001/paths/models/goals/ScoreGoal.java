@@ -7,7 +7,7 @@ import edu.ntnu.idatt2001.paths.models.player.Player;
  * A goal that is fulfilled when the player has a certain score.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 - 11.04.2023
+ * @version 1.0 - 11.04.2023
  */
 public class ScoreGoal implements Goal {
   private final int minimumScore;

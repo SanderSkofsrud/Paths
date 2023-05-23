@@ -29,7 +29,7 @@ import javafx.util.Pair;
  * The class is used to create the GUI of the game and to start the game.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.1 22.05.2023
  */
 public class MainGameView extends View {
   /**

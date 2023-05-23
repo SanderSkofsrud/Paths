@@ -14,7 +14,7 @@ import java.util.Optional;
  * Supports the display of error and information alerts.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.0 19.05.2023
  */
 
 public class ShowAlert {

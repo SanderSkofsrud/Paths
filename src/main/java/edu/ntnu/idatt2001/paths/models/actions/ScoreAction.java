@@ -7,7 +7,7 @@ import edu.ntnu.idatt2001.paths.models.player.Player;
  * An action that adds or removes score to the player when executed.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 - 11.04.2023
+ * @version 1.0 - 11.04.2023
  */
 public class ScoreAction implements Action {
   private final int points;

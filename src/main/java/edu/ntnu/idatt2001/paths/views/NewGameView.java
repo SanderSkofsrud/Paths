@@ -20,7 +20,7 @@ import javafx.scene.layout.*;
  * The class extends the View class.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.2 19.05.2023
  */
 public class NewGameView extends View {
   /**

@@ -11,7 +11,7 @@ import java.util.Objects;
  * When a player has 0 or less health, the player is dead and the game is over.
  *
  * @author Helle R. and Sander S.
- * @version 0.2 - 11.04.2023
+ * @version 1.3 - 22.05.2023
  */
 
 public class Player {

@@ -18,7 +18,7 @@ import javafx.util.Duration;
  * It is also used to show the goals achieved and failed.
  *
  * @author Helle R. and Sander S.
- * @version 0.2 21.05.2023
+ * @version 1.2 21.05.2023
  */
 public class FinalPassageView extends View {
   /**

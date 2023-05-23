@@ -8,7 +8,7 @@ import javafx.scene.layout.Pane;
  * The class is abstract and is used to create the different views of the GUI.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.0 13.04.2023
  */
 public abstract class View {
   /**

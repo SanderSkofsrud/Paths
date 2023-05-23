@@ -13,7 +13,7 @@ import java.io.InputStream;
  * The SoundPlayer class is used to play sound files.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.1 22.05.2023
  */
 public class SoundPlayer {
   private Clip clip;

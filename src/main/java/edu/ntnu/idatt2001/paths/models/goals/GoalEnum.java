@@ -6,7 +6,7 @@ package edu.ntnu.idatt2001.paths.models.goals;
  * The enum is used in the Goal factory class.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.1 18.05.2023
  */
 public enum GoalEnum {
   /**

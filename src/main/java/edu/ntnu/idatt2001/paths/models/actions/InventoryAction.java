@@ -8,7 +8,7 @@ import java.util.Objects;
  * An action that adds inventory items to the player when executed.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 - 11.04.2023
+ * @version 1.0 - 11.04.2023
  */
 public class InventoryAction implements Action {
   private final String item;

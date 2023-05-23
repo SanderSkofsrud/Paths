@@ -18,12 +18,12 @@ import java.util.Map;
  * @version 0.1 08.05.2023
  */
 public class StorySerializer implements JsonSerializer<Story> {
-  /*
+  /**
    * The serialize method is used to serialize the different types of stories.
    *
-   * @param story      the story
-   * @param typeOfSrc  the type of src
-   * @param context    the context
+   * @param story     the story object that is to be serialized
+   * @param typeOfSrc the type of the source (Story)
+   * @param context   the context (JsonSerializationContext)
    * @return the json element
    */
   @Override

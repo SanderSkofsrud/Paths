@@ -6,7 +6,6 @@ import edu.ntnu.idatt2001.paths.models.Story;
 import edu.ntnu.idatt2001.paths.models.actions.Action;
 import edu.ntnu.idatt2001.paths.models.actions.ActionEnum;
 import edu.ntnu.idatt2001.paths.models.actions.ActionFactory;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -23,7 +22,7 @@ import java.util.regex.Pattern;
 * The PathsReader class is used to read a file and create a story from the file.
 *
 * @author Helle R. and Sander S.
-* @version 0.2 19.05.2023
+* @version 1.3 23.05.2023
 */
 public class PathsReader {
   /**

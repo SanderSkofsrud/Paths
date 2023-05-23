@@ -12,7 +12,7 @@ import java.util.Objects;
  * The game have goals that the player must fulfill to win the game.
  *
  * @author Helle R. and Sander S.
- * @version 0.2 - 11.04.2023
+ * @version 1.1 - 19.05.2023
  */
 
 public class Game {

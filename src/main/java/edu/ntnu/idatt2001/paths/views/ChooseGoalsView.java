@@ -25,7 +25,7 @@ import java.util.Set;
  * The class extends the View class.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.1 22.05.2023
  */
 public class ChooseGoalsView extends View {
   /**

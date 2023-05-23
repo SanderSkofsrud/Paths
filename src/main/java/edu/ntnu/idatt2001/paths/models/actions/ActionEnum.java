@@ -6,7 +6,7 @@ package edu.ntnu.idatt2001.paths.models.actions;
  * The enum is used in the Action factory class.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.0 20.05.2023
  */
 public enum ActionEnum {
 

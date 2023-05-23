@@ -8,7 +8,7 @@ import edu.ntnu.idatt2001.paths.models.player.Player;
  * Have a method that executes the action when a player goes through a link.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 - 11.04.2023
+ * @version 1.0 - 11.04.2023
  */
 public interface Action {
   /**

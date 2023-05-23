@@ -8,7 +8,7 @@ import edu.ntnu.idatt2001.paths.models.player.Player;
  * Goal checks if the player has reached a goal.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 - 11.04.2023
+ * @version 1.0 - 11.04.2023
  */
 public interface Goal {
 

@@ -6,7 +6,7 @@ package edu.ntnu.idatt2001.paths.utility;
  * application to be able to change the language of the application.
  *
  * @author Helle R. and Sander S.
- * @version 1.0 23.04.2020
+ * @version 1.1 22.05.2020
  */
 
 public enum Dictionary {
@@ -131,15 +131,11 @@ public enum Dictionary {
   UPLOAD_TEMPLATE_SUCCESS("Template was uploaded successfully"),
   RESTART("Restart"),
   RESTART_GAME("Are you sure you want to restart the game?"),
-
   UPLOAD_GAME_FILE("Upload game file"),
-
   ERROR_UPLOADING_GAME_FILE("Error uploading game file"),
-
   INVALID_INPUT("Invalid input"),
   GOAL_AND_HEALTH_VALUES_MUST_BE_NUMBERS_ABOVE_ZERO(
       "Goal and health values must be numbers above zero"),
-
   GOAL_HEALTH_SCORE_GOALS_MUST_BE_POSITIVE("Goal, health and score goals must be positive"),
   SAME_GOAL_TWICE("You cannot add the same goal twice"),
   INVALID_GOAL_VALUE("Invalid goal value"),

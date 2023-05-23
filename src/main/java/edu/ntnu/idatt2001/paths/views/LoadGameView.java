@@ -17,7 +17,7 @@ import java.io.File;
  * The class is used to create the GUI of the load game view.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.3 20.05.2023
  */
 public class LoadGameView extends View {
   /**

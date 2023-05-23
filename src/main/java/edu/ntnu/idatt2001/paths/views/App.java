@@ -26,7 +26,7 @@ import javafx.stage.Stage;
  * The class is used to create the GUI of the game and to start the game.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.1 15.05.2023
  */
 public class App extends Application {
   /**
@@ -62,8 +62,17 @@ public class App extends Application {
    * The minigameView is the view of the GUI where the player can play the minigame.
    */
   private MinigameView minigameView = new MinigameView(screenController);
+  /**
+   * The finalPassageView is the view of the GUI where the player can see the final passage.
+   */
   private FinalPassageView finalPassageView = new FinalPassageView(screenController);
+  /**
+   * The languageController.
+   */
   private LanguageController languageController = LanguageController.getInstance();
+  /**
+   * The languageComboBox is used to change the language of the GUI.
+   */
   private ComboBox<Language> languageComboBox = new ComboBox<>(FXCollections
       .observableArrayList(Language.values()));
   /**
@@ -178,12 +187,6 @@ public class App extends Application {
               return null;
             }
 
-            /**
-             * The running method is used to set the cursor to a waiting cursor.
-             * The text of the buttons is changed to "Changing language..." and the
-             * buttons are disabled.
-             * This is done to limit confusion for the user when the language is being changed.
-             */
             @Override
             protected void running() {
               super.running();
@@ -233,6 +236,11 @@ public class App extends Application {
 
   }
 
+  /**
+   * The createLanguageCell method is used to create a cell for the languageComboBox.
+   *
+   * @return The cell for the languageComboBox.
+   */
   private ListCell<Language> createLanguageCell() {
     return new ListCell<>() {
       private final ImageView flagImageView = new ImageView();

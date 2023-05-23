@@ -20,7 +20,7 @@ import java.util.Random;
  * The player is X and the computer is O.
  *
  * @author Helle R. and Sander S.
- * @version 0.1 08.05.2023
+ * @version 1.1 22.05.2023
  */
 public class MinigameView extends View {
   /**
