@@ -7,7 +7,7 @@ import edu.ntnu.idatt2001.paths.models.player.Player;
  * A goal will be fulfilled when a player has reached a certain attribute.
  * Goal checks if the player has reached a goal.
  *
- * @author Helle R. & Sander S.
+ * @author Helle R. and Sander S.
  * @version 0.1 - 11.04.2023
  */
 public interface Goal {

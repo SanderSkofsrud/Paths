@@ -7,7 +7,7 @@ import edu.ntnu.idatt2001.paths.models.player.Player;
  * An action will modify the player´s attributes.
  * Have a method that executes the action when a player goes through a link.
  *
- * @author Helle R. & Sander S.
+ * @author Helle R. and Sander S.
  * @version 0.1 - 11.04.2023
  */
 public interface Action {

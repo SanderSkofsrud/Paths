@@ -1,0 +1,11 @@
+module:paths
+edu.ntnu.idatt2001.paths
+edu.ntnu.idatt2001.paths.controllers
+edu.ntnu.idatt2001.paths.models
+edu.ntnu.idatt2001.paths.models.actions
+edu.ntnu.idatt2001.paths.models.goals
+edu.ntnu.idatt2001.paths.models.player
+edu.ntnu.idatt2001.paths.utility
+edu.ntnu.idatt2001.paths.utility.json
+edu.ntnu.idatt2001.paths.utility.paths
+edu.ntnu.idatt2001.paths.views
